@@ -13,6 +13,16 @@ gems:
  - jekyll-sitemap
  - jekyll-feed
  - jekyll-mentions
+ 
+exclude:
+ - psakefile.ps1
+ - CNAME
+ - README.md
+ - ConvertFrom-HtmlEntity.ps1
+ - ConvertTo-MarkdownLinks.ps1
+ - Set-Links.ps1
+ - Test_RegEx.ps1
+ - Test_StringOps.ps1
 
 highlighter:      rouge
 permalink:        pretty

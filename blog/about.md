@@ -16,5 +16,3 @@ Since 2002, Nicholas concerns himself in centralization, Server-Based Computing 
 <a href="http://www.makrofactory.com/" target="_blank">Makro Factory</a> is a consultancy based in Karlsruhe, Germany. In addition to being a Citrix Platinum partner they possess several Microsoft Gold competencies.
 
 <a href="http://www.sepago.de" target="_blank">sepago</a> is a consultantcy based in Cologne, Germany with a Citrix Gold partnership and several Microsoft Gold competencies.
-
-&nbsp;
