@@ -1,0 +1,329 @@
+TITLE:		    Boot-CD
+LFS VERSION:	3.0 (cvs snapshot)
+AUTHOR:	        Nicholas Dille <webmaster@rakshas.de>
+
+SYNOPSIS:
+	How to create a bootcd from a working lfs system
+
+HINT:
+ver 1.0
+02/12/2001
+
+Contents
+--------
+
+    1. Why create a boot cd
+    2. Kernel customization
+    3. LFS system preparation
+        3.1 Introduction
+        3.2 Handling of /tmp
+        3.3 Handling of /var
+        3.4 Boot script(s)
+    4. Installation script
+    5. Burning
+    6. Listings
+        6.1  /
+        6.2  /etc/init.d
+        6.3  /etc/rc0.d
+        6.4  /etc/rc1.d
+        6.5  /etc/rc2.d
+        6.6  /etc/rc3.d
+        6.7  /etc/rc4.d
+        6.8  /etc/rc5.d
+        6.9  /etc/rc6.d
+        6.10 /etc/rc6.d
+        6.11 /etc/inittab
+    
+    
+1. Why create a boot cd
+   ---------------------
+   
+    Although I'm not that long with LFS I already read several threads on lfs-
+    discuss about people having problems compiling certain parts of an LFS sys-
+    tem due to beta version of gcc or other important packages shipped with
+    their favorite distribution.
+    In addition I don't like the idea of installing a "commercial" distribution
+    in order to install a customized LFS system. That ain't right ;-)
+    
+    So I figured that we should be able to create a bootable cd with some kind
+    of linux system on it which will provide a proper environment for the in-
+    stallation.
+    
+    And what fits better than LFS itself? (I leave that one to you ...)
+    
+    It also gives some clues about automatically starting the installation
+    which then is left to you to hack/figure out. But we should probably start
+    using alfs (to give them testers?).
+    
+    So that's what it's all about.
+    
+
+2. Kernel customization
+   ---------------------
+   
+    Since we are about to boot from a cd and use the cd image as root partition
+    we certainly need ISO9660 support compiled in. This part is absolutly vi-
+    tal!
+    When trying to mount the root partition the kernel does not have access to
+    any kind of modules (since they are on the root partition which is to be
+    mounted) so it has to rely on compiled-in support.
+    
+    After the system has booted up we also want to partition our harddrive.
+    Therefore you should include any filesystems you might need during instal-
+    lation.
+
+    [So far I have not tested including those additional filesystems as module
+     but I guess that should work just fine]
+     
+     
+3. LFS system preparation
+   -----------------------
+   
+3.1 Introduction
+    -------------
+   
+    The major problem which arises when having a read-only root partition is
+    that some part of the system may be relying on writable access in certain
+    directories.
+    
+    Let us have a quick look at the content of / of a typical system:
+    
+        drwxr-xr-x   2 root     root         1603 Oct 15 22:16 bin
+        drwxr-xr-x   4 root     root         4096 Dec  5 00:12 boot
+        drwxr-xr-x   8 root     root        44096 Feb 11 10:02 dev
+        drwxr-xr-x  45 root     root         5334 Feb 11 11:02 etc
+        drwxr-xr-x  13 root     root          250 Jan  9 00:39 home
+        drwxr-xr-x   5 root     root         1869 Jan  4 23:58 lib
+        drwxr-xr-x   5 root     root           95 Aug 27 22:12 mnt
+        dr-xr-xr-x  54 root     root            0 Feb 11 11:02 proc
+        drwx--x--x  20 root     root          679 Jan 30 17:27 root
+        drwxr-xr-x   5 root     root         5068 Jan  4 23:58 sbin
+        drwxrwxrwt   5 root     root          200 Feb 11 10:03 tmp
+        drwxr-xr-x  27 root     root          663 Dec 13 17:34 usr
+        drwxr-xr-x  26 root     root          541 Sep  5 23:53 var
+        
+    The following directories should not cause any problems:
+        bin, boot, etc, lib, root, sbin, usr
+    [Need explanation why no problem?]
+    The content of those directories should be static and seldomly changed.
+    
+    Mount points for other filesystems won't cause a problem because you can
+    mount a filesystem with writable access on a mount point in a read-only
+    filesystem. I guess the kernel keeps those mappings in memory and not in
+    the inodes. [Any proof for that assumption?]
+    That means we can cancel out problems caused by: dev, home, mnt, proc.
+    
+    This leaves us with tmp and var.
+    
+    
+3.2 Handling of /tmp
+    -----------------
+    
+    As implied by the name /tmp is used for storing temporary data. Unfortuna-
+    tely this is not under our control whether this directory is used and,
+    therefore, needs some special handling.
+    
+    Since there is no standardized structure for this place we can simply link
+    it to the tmp directory on the partition which we will use for instal-
+    lation.
+    [Is it clear that we will mount our new root partition into our root par-
+     tition? eg /lfs or /alfs?]
+     
+
+3.3 Handling of /var
+    -----------------
+
+    /var usually contains runtime or state stuff and may also be changed [is
+    that right? clumsily expressed?].
+    
+    Since /var may contain mail spool directories, pid files and has a prede-
+    fined directory structure, we can't just link it onto our install partition
+    since that could be causing collisions with programs run in our chroot en-
+    vironment or perhaps even earlier.
+    
+    Therefore we should tar /var and put it in /. After bootup after we mounted
+    our install partition, we create a directory "whatever" and untar /var in
+    "whatever".
+    
+    The original /var should be a symlink to this directory, eg
+        var -> /lfs/whatever/var
+
+    [Clear enough?]
+  
+  
+3.4 Boot scripts
+    -------------
+
+    I stripped /etc/init.d and /etc/rc?.d off everything that is not absolutly
+    vital.
+    The only task left is loading a keymap.
+        
+    Please refer to the directory listing (chapter 5) at the end of the docu-
+    ment.
+
+
+4. Installation script
+   --------------------
+
+    The installation script sits in /etc/init.d/install but you can put it any-
+    where you like. Especially the contents are left to your discretion since I
+    certainly don't want to tell you how to install you system.
+    You might even want to boot to a bash and leave out any kind of automatic
+    installation.
+    
+    As you can see from chapter 5.11 the installation script will be started by
+    init once.
+    
+    But as I stated before the automatic installation is simply an option.
+
+
+5. Burning
+   --------
+
+    After creating a proper boot floppy with your custom kernel (see 1) put the
+    image in /boot.
+    To burn the whole stuff on cd I used the following command:
+    
+        mkisofs -rlDJLV "LFS" /lfscd -b boot/image -c boot/catalog \
+            | cdrecord -v -eject dev=/dev/cdroms/cdrom0 speed=4 -data -
+            
+    Things to check:
+    
+        a) Don't use -f. It causes symlinks to be ignored.
+           [Correct reason?]
+           
+        b) substitute dev=... with your cdrom device
+
+
+6. Listing
+   --------
+
+6.1  /
+     --
+    
+        drwxr-xr-x   2 root  root    35 Feb  9 21:10 alfs
+        drwxr-xr-x   2 root  root  1250 Feb  9 20:10 bin
+        drwxr-xr-x   3 root  root   295 Feb 10 14:05 boot
+        drwxr-xr-x   3 root  root    54 Feb  9 17:33 dev
+        drwxr-xr-x  12 root  root   795 Feb 12 13:48 etc
+        drwxr-xr-x   2 root  root    35 Feb  9 17:33 home
+        drwxr-xr-x   3 root  root  2494 Feb  9 20:52 lib
+        drwxr-xr-x   2 root  root    35 Feb  9 17:33 mnt
+        drwxr-xr-x   2 root  root    35 Feb  9 17:33 proc
+        drwxr-x---   2 root  root    64 Feb  9 18:13 root
+        drwxr-xr-x   2 root  root  1272 Feb  9 20:10 sbin
+        lrwxrwxrwx   1 root  root     8 Feb 10 21:57 tmp -> alfs/tmp
+        drwxr-xr-x  14 root  root   346 Feb  9 20:10 usr
+        lrwxrwxrwx   1 root  root    14 Feb 10 21:57 var -> alfs/00-rw/var
+        -rw-r--r--   1 root  root  1043 Feb 10 21:56 var.tar.gz
+
+
+6.2  /etc/init.d
+     ------------
+
+    This directory contains a new script "install" which goes through the in-
+    stallation procedure and should be specific for your setup.
+
+        -rwxr-xr--   1 root  root  1734 Jan 26 02:05 checkfs
+        -rwxr-xr--   1 root  root  1118 Jan 26 02:05 ethnet
+        -rwxr-xr--   1 root  root   867 Feb  2 02:46 fcron
+        -rwxr-xr--   1 root  root  4940 Jan 26 02:05 functions
+        -rwxr-xr--   1 root  root    83 Jan 26 02:05 halt
+        -rwxr-xr-x   1 root  root   988 Feb 12 13:51 install
+        -rwxr-xr--   1 root  root   200 Jan 26 02:05 loadkeys
+        -rwxr-xr--   1 root  root   725 Jan 26 02:05 localnet
+        -rwxr-xr--   1 root  root   355 Jan 26 02:05 mountfs
+        -rwxr-xr--   1 root  root  4219 Jan 26 02:05 rc
+        -rwxr-xr--   1 root  root   235 Jan 26 02:05 rcS
+        -rwxr-xr--   1 root  root   123 Jan 26 02:05 reboot
+        -rwxr-xr--   1 root  root   276 Jan 26 02:05 sendsignals
+        -rwxr-xr--   1 root  root   338 Jan 26 02:05 setclock
+        -rwxr-xr--   1 root  root  1062 Jan 26 02:05 sysklogd
+        -rwxr-xr--   1 root  root   696 Jan 26 02:05 template
+        -rwxr-xr--   1 root  root   234 Jan 26 02:05 umountfs
+
+
+6.3  /etc/rc0.d
+     -----------
+
+        lrwxrwxrwx   1 root  root  21 Feb 12 13:44 S80sendsignals
+                                                    -> ../init.d/sendsignals
+        lrwxrwxrwx   1 root  root  14 Feb 12 13:44 S99halt -> ../init.d/halt
+
+
+6.4  /etc/rc1.d
+     -----------
+
+    [empty]
+
+
+6.5  /etc/rc2.d
+     -----------
+
+    [empty]
+
+
+6.6  /etc/rc3.d
+     -----------
+
+    [empty]
+
+
+6.7  /etc/rc4.d
+     -----------
+
+    [empty]
+
+
+6.8  /etc/rc5.d
+     -----------
+
+    [empty]
+
+
+6.9  /etc/rc6.d
+     -----------
+
+        lrwxrwxrwx 1 root  root   21 Feb 12 13:44 S80sendsignals
+                                                   -> ../init.d/sendsignals
+        lrwxrwxrwx 1 root  root   16 Feb 12 13:44 S99reboot -> ../init.d/reboot
+
+6.10 /etc/rcS.d
+     -----------
+
+        lrwxrwxrwx 1 root  root   18 Jan 26 02:11 S30loadkeys
+                                                   -> ../init.d/loadkeys
+
+
+6.11 /etc/inittab
+     -------------
+     
+    Please note that I replaced the definition for an agetty on vc/1 with the
+    install script /etc/init.d/install which will only be run once (keyword
+    "once").
+    I also removed 4 of the 5 remaining agetty definitions since this installa-
+    tion will run automatically.
+
+        # Begin /etc/inittab
+        
+        id:3:initdefault:
+        
+        si::sysinit:/etc/init.d/rcS
+        
+        l0:0:wait:/etc/init.d/rc 0
+        l1:S1:wait:/etc/init.d/rc 1
+        l2:2:wait:/etc/init.d/rc 2
+        l3:3:wait:/etc/init.d/rc 3
+        l4:4:wait:/etc/init.d/rc 4
+        l5:5:wait:/etc/init.d/rc 5
+        l6:6:wait:/etc/init.d/rc 6
+        
+        ft:06:respawn:/sbin/sulogin
+        
+        ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now
+        
+        su:S1:respawn:/sbin/sulogin
+        1:3:once:/etc/init.d/install
+        2:2345:respawn:/sbin/agetty vc/2 9600
+        
+        # End /etc/inittab

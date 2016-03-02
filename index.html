@@ -1,9 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="refresh" content="0; URL=http://nicholasdille.github.io/blog/">
-</head>
-<body>
-In case you are not redirected, please click <a href="http://nicholasdille.github.io/blog/">here</a>.
-</body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+{% for post in paginator.posts %}
+<div class="post">
+<h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+
+<span class="post-date">Published on {{ post.date | date_to_string }}</span>
+
+{{ post.excerpt }}
+</div>
+{% endfor %}
+</div>
+
+<div class="pagination">
+{% if paginator.next_page %}
+<a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
+{% else %}
+<span class="pagination-item older">Older</span>
+{% endif %}
+{% if paginator.previous_page %}
+{% if paginator.page == 2 %}
+<a class="pagination-item newer" href="/">Newer</a>
+{% else %}
+<a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
+{% endif %}
+{% else %}
+<span class="pagination-item newer">Newer</span>
+{% endif %}
+</div>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Installer version="2.0"> 
+  <Variable Name="SystemCenter2012ProductKey" Value="" />
+  <Variable Name="InstallerServiceAccount" Value="DEMO\Pdt-Installer" /> 
+  <Variable Name="InstallerServiceAccountPassword" Value="P@ssw0rd!" /> 
+  <Variable Name="RegisteredUser" Value="Microsoft Corporation" /> 
+  <Variable Name="RegisteredOrganization" Value="Microsoft Corporation" /> 
+  <Variable Name="MicrosoftUpdate" Value="1" /> 
+  <Variable Name="CustomerExperienceImprovementProgram" Value="0" /> 
+  <Variable Name="ErrorReporting" Value="Never" /> 
+  <Variable Name="OperationalDataReporting" Value="0" /> 
+  <Components> 
+    <Component Name="System Center 2012 R2 Virtual Machine Manager"> 
+      <Variable Name="SystemCenter2012R2VirtualMachineManagerAdminGroup" Value="DEMO\Vmm-Admin" /> 
+      <Variable Name="SystemCenter2012R2VirtualMachineManagerDatabase" Value="PDT_VMM" /> 
+      <Variable Name="SystemCenter2012R2VirtualMachineManagerBitsTcpPort" Value="444" /> 
+      <Variable Name="SystemCenter2012R2VirtualMachineManagerServiceAccount" Value="DEMO\Vmm-Service" /> 
+      <Variable Name="SystemCenter2012R2VirtualMachineManagerServiceAccountPassword" Value="P@ssw0rd!" /> 
+      <Variable Name="SystemCenter2012R2VirtualMachineManagerTopContainerName" Value="CN=DKM_VMM-01,CN=System,DC=demo,DC=local" /> 
+    </Component> 
+    <Component Name="System Center 2012 R2 Service Provider Foundation"> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationDatabaseName" Value="SCSPFDB" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationVMMSecurityGroupUsers" Value="DEMO\Spf-Vmm" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationAdminSecurityGroupUsers" Value="DEMO\Spf-Admin" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationProviderSecurityGroupUsers" Value="DEMO\Spf-Provider" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationUsageSecurityGroupUsers" Value="DEMO\Spf-Usage" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCVMMServiceAccount" Value="DEMO\Spf-Pool" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCVMMServiceAccountPassword" Value="P@ssw0rd!" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCAdminServiceAccount" Value="DEMO\Spf-Pool" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCAdminServiceAccountPassword" Value="P@ssw0rd!" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCProviderServiceAccount" Value="DEMO\Spf-Pool" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCProviderServiceAccountPassword" Value="P@ssw0rd!" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCUsageServiceAccount" Value="DEMO\Spf-Pool" /> 
+      <Variable Name="SystemCenter2012R2ServiceProviderFoundationSCUsageServiceAccountPassword" Value="P@ssw0rd!" /> 
+    </Component> 
+    <Component Name="Windows Azure Pack 2013"> 
+      <Variable Name="WindowsAzurePack2013AdminGroup" Value="DEMO\Wap-Admin" /> 
+      <Variable Name="WindowsAzurePack2013ConfigStorePassphrase" Value="WAP2013_P@ssw0rd" /> 
+    </Component> 
+    <Component Name="System Center 2012 R2 Service Management Automation"> 
+      <Variable Name="SystemCenter2012R2ServiceManagementAutomationAdminGroup" Value="DEMO\Sma-Admin" /> 
+      <Variable Name="SystemCenter2012R2ServiceManagementAutomationDatabase" Value="PDT_SMA" /> 
+      <Variable Name="SystemCenter2012R2ServiceManagementAutomationServiceAccount" Value="DEMO\Sma-Pool" /> 
+      <Variable Name="SystemCenter2012R2ServiceManagementAutomationServiceAccountPassword" Value="P@ssw0rd!" /> 
+    </Component> 
+  </Components> 
+  <Roles> 
+    <Role Name="System Center 2012 R2 Virtual Machine Manager Database Server" Server="SQL-01.demo.local" Instance="VMM"></Role> 
+    <Role Name="System Center 2012 R2 Virtual Machine Manager Management Server" Server="VMM-01.demo.local"></Role> 
+    <Role Name="System Center 2012 R2 Service Provider Foundation Database Server" Server="SQL-01.demo.local" Instance="WAP"></Role> 
+    <Role Name="System Center 2012 R2 Service Provider Foundation Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="Windows Azure Pack 2013 Database Server" Server="SQL-01.demo.local" Instance="WAP"></Role> 
+    <Role Name="Windows Azure Pack 2013 Admin API Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="Windows Azure Pack 2013 Tenant API Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="Windows Azure Pack 2013 Tenant Public API Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="Windows Azure Pack 2013 Admin Site Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="Windows Azure Pack 2013 Tenant Site Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="System Center 2012 R2 Service Management Automation Database Server" Server="SQL-01.demo.local" Instance="WAP"></Role> 
+    <Role Name="System Center 2012 R2 Service Management Automation Web Service Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="System Center 2012 R2 Service Management Automation Runbook Worker Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="Windows Azure Pack 2013 Admin Authentication Site Server" Server="WAP-01.demo.local"></Role> 
+    <Role Name="Windows Azure Pack 2013 Tenant Authentication Site Server" Server="WAP-01.demo.local"></Role> 
+  </Roles> 
+  <SQL> 
+    <Instance Server="SQL-01.demo.local" Instance="VMM" Version="SQL Server 2012"> 
+      <Variable Name="SQLAdmins" Value="DEMO\SQL-Admin" /> 
+      <Variable Name="SQLInstallSQLDataDir" Value="C:\Program Files\Microsoft SQL Server"/> 
+      <Variable Name="SQLUserDBDir" Value="D:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLUserDBLogDir" Value="D:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLTempDBDir" Value="D:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLTempDBLogDir" Value="D:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLAgtServiceAccount" Value="DEMO\Sql-Service" /> 
+      <Variable Name="SQLAgtServiceAccountPassword" Value="P@ssw0rd!" /> 
+      <Variable Name="SQLServiceAccount" Value="DEMO\Sql-Service" /> 
+      <Variable Name="SQLServiceAccountPassword" Value="P@ssw0rd!" /> 
+    </Instance> 
+    <Instance Server="SQL-01.demo.local" Instance="WAP" Version="SQL Server 2012" Port="1434"> 
+      <Variable Name="SQLAdmins" Value="DEMO\SQL-Admin" /> 
+      <Variable Name="SQLInstallSQLDataDir" Value="C:\Program Files\Microsoft SQL Server"/> 
+      <Variable Name="SQLUserDBDir" Value="E:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLUserDBLogDir" Value="E:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLTempDBDir" Value="E:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLTempDBLogDir" Value="E:\Program Files\Microsoft SQL Server\MSSQL11.$Instance\MSSQL\Data"/> 
+      <Variable Name="SQLAgtServiceAccount" Value="DEMO\Sql-Service" /> 
+      <Variable Name="SQLAgtServiceAccountPassword" Value="P@ssw0rd!" /> 
+      <Variable Name="SQLServiceAccount" Value="DEMO\Sql-Service" /> 
+      <Variable Name="SQLServiceAccountPassword" Value="P@ssw0rd!" /> 
+    </Instance> 
+  </SQL> 
+  <VMs> 
+    <Count>3</Count> 
+    <Default> 
+      <Host>hv02.demo.local</Host> 
+      <VMFolder>\\srv2\VMM_Storage_SSD</VMFolder> 
+      <VHDFolder>\\srv2\VMM_Storage_SSD</VHDFolder> 
+      <VMName> 
+        <Prefix>PDT-</Prefix> 
+        <Sequence>1</Sequence> 
+      </VMName> 
+      <Processor>2</Processor> 
+      <Memory> 
+        <Startup>1024</Startup> 
+        <Minimum>1024</Minimum> 
+        <Maximum>2048</Maximum> 
+        <Buffer>20</Buffer> 
+      </Memory> 
+      <NetworkAdapter> 
+        <VirtualSwitch>vSwitch Test</VirtualSwitch> 
+        <MAC> 
+          <Prefix>00:15:5D:65:01:</Prefix> 
+          <Sequence>4</Sequence> 
+        </MAC> 
+        <IP> 
+          <Prefix>10.0.0.</Prefix> 
+          <Sequence>60</Sequence> 
+          <Mask>24</Mask> 
+          <Gateway>10.0.0.1</Gateway> 
+          <DNS>10.0.0.2</DNS> 
+        </IP> 
+      </NetworkAdapter> 
+      <VMGeneration>2</VMGeneration> 
+      <OSDisk> 
+        <Parent>\\srv2\VMM_Library\VHD\HyperV_Gen2_WS12R2U1_20140404_RTM.vhdx</Parent> 
+        <Type>Copy</Type><!-- Differencing | Copy --> 
+      </OSDisk> 
+      <DataDisks> 
+        <Count>1</Count> 
+        <Format>VHDX</Format> 
+        <Size>100</Size> 
+      </DataDisks> 
+      <DVD>False</DVD> 
+      <AutoStart> 
+        <Action>Nothing</Action> 
+        <Delay>0</Delay> 
+      </AutoStart> 
+      <JoinDomain> 
+        <Domain>demo.local</Domain> 
+        <Credentials> 
+          <Domain>demo.local</Domain> 
+          <Password>P@ssw0rd!</Password> 
+          <Username>administrator</Username> 
+        </Credentials> 
+      </JoinDomain> 
+      <AdministratorPassword>P@ssw0rd!</AdministratorPassword> 
+      <WindowsTimeZone>W. Europe Standard Time</WindowsTimeZone> 
+    </Default> 
+    <VM Count="1"> 
+      <VMName>SQL-01</VMName> 
+      <VMFolder>\\srv2\VMM_Storage_HDD</VMFolder> 
+      <VHDFolder>\\srv2\VMM_Storage_HDD</VHDFolder> 
+      <DataDisks> 
+        <Count>2</Count> 
+        <Format>VHDX</Format> 
+        <Size>100</Size> 
+      </DataDisks> 
+    </VM> 
+    <VM Count="2"> 
+      <VMName>VMM-01</VMName> 
+      <Memory> 
+        <Startup>2048</Startup> 
+        <Minimum>2048</Minimum> 
+        <Maximum>4096</Maximum> 
+        <Buffer>20</Buffer> 
+      </Memory> 
+    </VM> 
+    <VM Count="3"> 
+      <VMName>WAP-01</VMName> 
+    </VM> 
+  </VMs> 
+</Installer>

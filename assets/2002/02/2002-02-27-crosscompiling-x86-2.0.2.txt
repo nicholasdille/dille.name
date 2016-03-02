@@ -1,0 +1,301 @@
+TITLE:			Crosscompiling on ix86 platforms
+LFS VERSION:	3.1, 3.2-rc1
+AUTHOR:			Nicholas Dille <webmaster@rakshas.de>
+
+SYNOPSIS:
+	How to compile LFS on a fast machine and use this system on your old box
+
+HINT:
+version 2.0.2 (27.02.2002)
+
+
+===============================================================================
+ 0  Table of contents
+----------------------
+
+	0	Table of contents
+	1	Introduction
+	2	Why the naive approach fails
+	3	Preparation
+	4	The uname hack
+	5	Setting CFLAGS
+	6	Targetting using configure
+	7	Patches
+		7.1	bzip2 1.0.1
+		7.2	kbd 1.06
+		7.3	procinfo 18
+		7.4	procps 2.0.7
+		7.5	sysklogd 1.4.1
+		7.6	Remaining packages
+	8	Summary
+
+	A	Changelog
+
+
+===============================================================================
+ 1	Introduction
+-----------------
+
+Alright, we have gathered here to mourn our failing in compiling our favourite
+LFS system for our beloved outdated hardware and have either dived right into
+it being stopped by unforseen difficulties or been hinted at this document to
+circumvent some known problems.
+
+Lets say you call an old i486 your own but moved on to some i686 based box some
+time ago. Now you decided that the i486 might serve wonderfully as your perso-
+nal file/printer server, internet gateway, MP3 player, a combination or some
+entirely different purpose.
+Without even trying you can imagine that it will probably take quite some time
+to compile a LFS system caused by the lack of memory, harddisk space and mere
+performance. Wouldn't it be nice to have your, by comparison, blindingly fast
+i686 compile LFS and then use the resulting system on your i486?
+
+I can assure you that several people had the same idea (including me ... wow,
+how surprising) and tried solving the difficulties encountered. I hope to com-
+pile most of those experiences here to help you find the least time consuming
+path from a bare i486 to a lovely lfs'd linux box.
+
+To give you a rough outline how I organized the hint let me elaborate shortly:
+We will learn what problems you may encounter, under what conditions, why they
+exist AFAIK and then at last come to the part where you can actively profit
+from this by giving it a try.
+
+In any case if you feel the hint missing something important, doesn't explain
+something to your convenience, completely missed some point or if you'd just
+like to give me a big hug, I'd be honestly happy to hear you out.
+
+I'd also like to thank:
+	* Gerard Beekmans for this wonderful project
+	* Tommy Wareing for the uname hack
+	* Arthur H. Johnson II for bullying me into rewriting this hint and helping
+	  collecting new material
+
+(If you feel you need to receive credits here or that I wrongly credited some-
+ one here, please let me know.)
+
+
+===============================================================================
+ 2	Why the naive approach fails
+---------------------------------
+
+In case you only paste the commands provided by the LFS book to your console,
+wait some time and come back for the next package you might want to read
+through this to understand what really happens.
+
+Let us devide the package which you are about to compile into two destinct
+categories: the friendly and the painful packages.
+
+Friendly packages are configured using autoconf (./configure ...) which
+usually check for a sane environment and also try to determine which system it
+will be compiled on. This information is then passed on to gcc which then knows
+which architecture specific features it is allows to use. These packages are
+easily persuaded to believe they are being compiled on a weaker platform.
+
+In contrast, the painful packages do not provide any automatic check whether
+their prerequisites are satisfied and trust the user to know what he is doing.
+In this case the decision which platform is present is left to gcc which uses
+uname and C(XX)FLAGS to guess it. Unfortunately these packages are harder to
+force to compile for a weaker platform.
+
+So, if you leave any of those packages alone they will compile for the platform
+they detect either by the configure script or by means of gcc.
+We need to make configure and gcc think that the underlying architecture is of
+a different type. The following chapter will describe the method which have
+proven to work for me.
+
+
+===============================================================================
+ 3	Preparation
+----------------
+
+Before starting off please obtain the architecture name from the machine which will profit from the resulting LFS system:
+
+	# uname -m
+
+I will use $ARCH in the following chapters to refer to this value.
+
+
+===============================================================================
+ 4	The uname hack
+-------------------
+
+AFAIK the uname hack was first introduced by Tommy Wareing. It is a small
+script which mangles the output obtained from uname to provide a different
+architecture than is actually present.
+
+Install the uname hack using the following commands:
+
+	# cd /bin
+	# mv uname uname.orig
+
+Now create a file /bin/uname with the following content:
+-------------------------8<-----------------------------
+#!/bin/bash
+
+/bin/uname.orig "$@" | sed "s/i[456]86/$ARCH/"
+-------------------------8<-----------------------------
+
+And give it the correct permissions:
+
+	# chmod 755 uname
+
+The uname hack needs to be applied on your host system before starting off with
+chapter 5, then after entering chroot to ensure that the fake architecture will
+be used there and a last time after installing sh-utils in chapter 6 since
+uname will be reinstalled overwriting the hacked uname.
+
+Please make sure that you have a backup of your original uname binary. And
+don't get confused and make the mistake of installing the uname hack twice
+ending up with the hack in uname and uname.orig.
+
+
+===============================================================================
+ 5	Setting CFLAGS
+-------------------
+
+CFLAGS is an environment variable which is used by any honourable package to
+pass user flags on to gcc. It is often used to set the optimization level (-On
+where n is a number). For details please refer to the optimization hint.
+In our case we additionally try to force gcc to compile for the desired archi-
+tecture by setting CFLAGS:
+
+	# export CFLAGS="-march=$ARCH"
+
+
+===============================================================================
+ 6	Targetting using configure
+-------------------------------
+
+As I have stated before configure scripts are specially easy to persuade into
+believing to be running on a different architecture.
+You will have to add "--host=$ARCH-pc-linux-gnu --target=$ARCH-pc-linux-gnu"
+to the configure scripts' arguments.
+[exceptions]
+
+The host parameter tells configure to compile for the host system specified,
+whereas target causes compile tools shipped with the package to be compiled
+for the specified architecture.
+
+
+===============================================================================
+ 7	Patches
+------------
+
+This chapter will provide you with a list of packages which do not come with a
+configure script or which come with one that does not honour --host and
+--target options. These packages will have to be patched to use the value of
+CFLAGS.
+
+Please note that some patches may have lines longer than 80 characters.
+
+
+===============================================================================
+ 7.1	bzip2 1.0.1
+--------------------
+
+Use the following patch and add 'OPT="$CFLAGS"' to make commands:
+
+	For chapter 5:
+	# make CC="gcc -static" OPT="$CFLAGS"
+
+	For chapter 6:
+	# make -f Makefile-libbz2_so OPT="$CFLAGS"
+	# make OPT="$CFLAGS" bzip2recover libbz2.a
+
+--- bzip2-1.0.1/Makefile.orig   Tue Feb 12 22:33:12 2002
++++ bzip2-1.0.1/Makefile        Tue Feb 12 22:38:44 2002
+@@ -2,7 +2,7 @@
+ SHELL=/bin/sh
+ CC=gcc
+ BIGFILES=-D_FILE_OFFSET_BITS=64
+-CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
++CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES) $(OPT)
+
+ OBJS= blocksort.o  \
+       huffman.o    \
+--- bzip2-1.0.1/Makefile-libbz2_so.orig Tue Feb 12 22:33:16 2002
++++ bzip2-1.0.1/Makefile-libbz2_so      Tue Feb 12 22:44:41 2002
+@@ -8,7 +8,7 @@
+ SHELL=/bin/sh
+ CC=gcc
+ BIGFILES=-D_FILE_OFFSET_BITS=64
+-CFLAGS=-fpic -fPIC -Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
++CFLAGS=-fpic -fPIC -Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES) $(OPT)
+
+ OBJS= blocksort.o  \
+       huffman.o    \
+
+This
+
+
+===============================================================================
+ 7.2	kbd 1.06
+-----------------
+
+Use the following commands to write your CFLAGS variable into kbd's Makefile.
+
+	# cp src/Makefile.in src/Makefile.in.backup
+	# sed -e "s/CFLAGS  = -O2/CFLAGS  = $CFLAGS/" \
+		src/Makefile.in.backup > src/Makefile.in
+	# cp openvt/Makefile openvt/Makefile.backup
+	# sed -e "s/CFLAGS=-O2 -Wall -ansi/CFLAGS=$CFLAGS -Wall -ansi/" \
+		openvt/Makefile.backup > openvt/Makefile
+
+
+===============================================================================
+ 7.3	procinfo 18
+--------------------
+
+Add 'CFLAGS="$CFLAGS"' to the make command:
+
+	# make LDLIBS=-lncurses CFLAGS="$CFLAGS"
+
+
+===============================================================================
+ 7.4	procps 2.0.7
+---------------------
+
+Add 'OPT="$CFLAGS"' to the make command:
+
+	# make OPT="$CFLAGS"
+
+
+===============================================================================
+ 7.5	sysklogd 1.4.1
+-----------------------
+
+Add 'RPM_OPT_FLAGS="$CFLAGS"' to the make command:
+
+	# make RPM_OPT_FLAGS="$CFLAGS"
+
+
+===============================================================================
+ 7.6	Remaining packages
+---------------------------
+
+You do not need to worry about any remaining packages. They honour the CFLAGS
+variable or deduce the correct architecture (correct meaning the fake) from
+uname.
+I have confirmed that browsing my logs from various test compilations.
+
+
+===============================================================================
+ 8	Summary
+------------
+
+I cannot say for sure whether the uname hack of the setting of CFLAGS is vital
+but I am sure that using both will result in a properly working system.
+Consider them to be safeguards in case something happens which causes one to
+fail.
+
+
+===============================================================================
+ A	Changelog
+--------------
+
+2.0.1		added some more explanations in the uname hack section
+2.0.2		corrected the uname hack sed'ing
+
+
+===============================================================================
+ Copyright (c) 2002 by Nicholas Dille <webmaster@rakshas.de>

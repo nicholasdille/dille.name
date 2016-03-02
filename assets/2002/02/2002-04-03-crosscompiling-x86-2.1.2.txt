@@ -1,0 +1,511 @@
+TITLE:			Crosscompiling on ix86 platforms
+LFS VERSION:	3.1, 3.2-rc1
+AUTHOR:			Nicholas Dille <webmaster@rakshas.de>
+
+SYNOPSIS:
+	How to compile LFS on a fast machine and use it on your old box
+
+HINT:
+version 2.1.2 (03.04.2002)
+
+
+===============================================================================
+ 0  Table of contents
+----------------------
+
+	0	Table of contents
+	1	Introduction
+	2	Why the naive approach fails
+	3	Preparation
+	4	Setting CFLAGS
+	5	Targetting using configure
+		5.1	perl 5.6.1
+	6	Patches
+		6.1	bin86 0.16.0
+		6.2	bzip2 1.0.2
+		6.3	kbd 1.06
+		6.4	lilo 22.1
+		6.5	man 1.5j
+		6.6	net-tools 1.60
+		6.7	procinfo 18
+		6.8	procps 2.0.7
+		6.9	psmisc 20.2
+		6.10	sysklogd 1.4.1
+		6.11	sysvinit 2.84
+	7	Extra packages
+		7.1	pam 0.75
+		7.2	simpleinit-msb 1.0
+	8	Notes
+		8.1	kernel
+
+	A	The uname hack
+		A.1	Traditional
+		A.2	Kernel module
+	B	Online
+	C	Changelog
+
+
+===============================================================================
+ 1	Introduction
+---------------------
+
+Alright, we have gathered here to mourn our failing in compiling our favourite
+LFS system for our beloved outdated hardware and have either dived right into
+it being stopped by unforseen difficulties or been hinted at this document to
+circumvent some known problems.
+
+Lets say you call an old i486 your own but moved on to some i686 based box some
+time ago. Now you decided that the i486 might serve wonderfully as your perso-
+nal file/printer server, internet gateway, MP3 player, a combination or some
+entirely different purpose.
+Without even trying you can imagine that it will probably take quite some time
+to compile a LFS system caused by the lack of memory, harddisk space and mere
+performance. Wouldn't it be nice to have your, by comparison, blindingly fast
+i686 compile LFS and then use the resulting system on your i486?
+
+I can assure you that several people had the same idea (including me ... wow,
+how surprising) and tried solving the difficulties encountered. I hope to com-
+pile most of those experiences here to help you find the least time consuming
+path from a bare i486 to a lovely lfs'd linux box.
+
+To give you a rough outline how I organized the hint let me elaborate shortly:
+We will learn what problems you may encounter, under what conditions, why they
+exist AFAIK and then at last come to the part where you can actively profit
+from this by giving it a try.
+
+In any case if you feel the hint missing something important, doesn't explain
+something to your convenience, completely missed some point or if you'd just
+like to give me a big hug, I'd be honestly happy to hear you out.
+
+I'd also like to thank:
+	* Gerard Beekmans for this wonderful project
+	* Tommy Wareing for the uname hack
+	* Arthur H. Johnson II for bullying me into rewriting this hint and
+	  helping collecting new material
+	* Christophe Devine for the kernel module uname hack
+
+(If you feel you need to receive credits here or that I wrongly credited some-
+ one here, please let me know.)
+
+
+===============================================================================
+ 2	Why the naive approach fails
+-------------------------------------
+
+In case you only paste the commands provided by the LFS book to your console,
+wait some time and come back for the next package you might want to read
+through this to understand what really happens.
+
+Let us devide the package which you are about to compile into two destinct
+categories: the friendly and the painful packages.
+
+Friendly packages are configured using autoconf (./configure ...) which
+usually check for a sane environment and also try to determine which system it
+will be compiled on. This information is then passed on to gcc which then knows
+which architecture specific features it is allows to use. These packages are
+easily persuaded to believe they are being compiled on a weaker platform.
+
+In contrast, the painful packages do not provide any automatic check whether
+their prerequisites are satisfied and trust the user to know what he is doing.
+In this case the decision which platform is present is left to gcc which uses
+uname and C(XX)FLAGS to guess it. Unfortunately these packages are harder to
+force to compile for a weaker platform.
+
+So, if you leave any of those packages alone they will compile for the platform
+they detect either by the configure script or by means of gcc.
+We need to make configure and gcc think that the underlying architecture is of
+a different type. The following chapter will describe the method which have
+proven to work for me.
+
+
+===============================================================================
+ 3	Preparation
+--------------------
+
+Before starting off please obtain the architecture name from the machine which
+will profit from the resulting LFS system:
+
+	# uname -m
+
+I will use $ARCH in the following chapters to refer to this value.
+
+Common values for this are:
+
+	architecture	processor(s)
+	---------------------------------------------------
+	i386		Intel 386 SX and DX
+	i486		Intel 486 SX, DX, DX2, DX4
+			AMD Am486
+	i586		Intel Pentium
+			AMD Am5x86
+			AMD K5
+			Cyrix 6x86
+	i686		Intel Pentium II
+			Intel Celeron (PII based)
+			Intel Pentium III
+			Intel Celeron (PIII based)
+			AMD K6
+			AMD K6-2
+			AMD K6-III
+
+(i am sure this is not an exhaustive list, so please feel free to mail me your
+ additions!)
+
+
+===============================================================================
+ 4	Setting CFLAGS
+-----------------------
+
+CFLAGS is an environment variable which is used by any honourable package to
+pass user flags on to gcc. It is often used to set the optimization level (-On
+where n is a number). For details please refer to the optimization hint.
+In our case we additionally try to force gcc to compile for the desired archi-
+tecture by setting CFLAGS:
+
+	# export CFLAGS="-march=$ARCH"
+
+
+===============================================================================
+ 5	Targetting using configure
+-----------------------------------
+
+As I have stated before configure scripts are specially easy to persuade into
+believing to be running on a different architecture.
+You will have to add "--host=$ARCH-pc-linux-gnu --target=$ARCH-pc-linux-gnu"
+to the configure scripts' arguments.
+
+
+===============================================================================
+ 5.1	perl 5.6.1
+--------------------
+
+unfortunately this will not work with the configure scripts shipped with perl
+which does not recognize --host or --target. But you can still target perl
+using the -Dhost, -Dtarget and -Darchname switches:
+
+"-Dhost=$ARCH-pc-linux-gnu -Dtarget=$ARCH-pc-linux-gnu -Darchname=$ARCH-linux"
+
+The host parameter tells configure to compile for the host system specified,
+whereas target causes compile tools shipped with the package to be compiled
+for the specified architecture.
+
+
+===============================================================================
+ 6	Patches
+----------------
+
+This chapter will provide you with a list of packages which do not come with a
+configure script or which come with one that does not honour --host and
+--target options. These packages will have to be patched to use the value of
+CFLAGS.
+
+Please note that some patches may have lines longer than 80 characters.
+
+
+===============================================================================
+ 6.1	bin86 0.16.0
+---------------------
+
+Use the following commands to write your CFLAGS variable into bin86's Makefile.
+
+	# cp Makefile Makefile.backup
+	# sed -e "s/CFLAGS=-O2 -D_POSIX_SOURCE/CFLAGS=-D_POSIX_SOURCE $CFLAGS/" \
+		Makefile.backup > Makefile
+
+
+===============================================================================
+ 6.2	bzip2 1.0.2
+--------------------
+
+Use the following commands to patch bzip2:
+
+	# cp Makefile Makefile.backup
+	# sed -e 's%$(BIGFILES)%$(BIGFILES) $(OPT)%' \
+		Makefile.backup > Makefile
+	# cp Makefile-libbz2_so Makefile-libbz2_so.backup
+	# sed -e 's%$(BIGFILES)%$(BIGFILES) $(OPT)%' \
+		Makefile-libbz2_so.backup > Makefile-libbz2_so
+
+Add 'OPT="$CFLAGS"' to the make commands:
+
+	For chapter 5:
+	# make CC="gcc -static" OPT="$CFLAGS"
+
+	For chapter 6:
+	# make -f Makefile-libbz2_so OPT="$CFLAGS"
+	# make OPT="$CFLAGS" bzip2recover libbz2.a
+
+
+===============================================================================
+ 6.3	kbd 1.06
+-----------------
+
+Use the following commands to write your CFLAGS variable into kbd's Makefile.
+
+	# cp src/Makefile.in src/Makefile.in.backup
+	# sed -e "s/CFLAGS  = -O2/CFLAGS  = $CFLAGS/" \
+		src/Makefile.in.backup > src/Makefile.in
+	# cp openvt/Makefile openvt/Makefile.backup
+	# sed -e "s/CFLAGS=-O2 -Wall -ansi/CFLAGS=$CFLAGS -Wall -ansi/" \
+		openvt/Makefile.backup > openvt/Makefile
+
+
+===============================================================================
+ 6.4	lilo 22.1
+------------------
+
+Use the following make commands:
+
+	# make OPT="$CFLAGS"
+
+This is not thoroughly tested since i don't use lilo. Please report any
+problems or corrections to me!
+
+
+===============================================================================
+ 6.5	man 1.5j
+-----------------------
+
+Use the following commands to add your CFLAGS variable to man2html's Makefile:
+
+	# cp man2html/Makefile.in man2html/Makefile.in.backup
+	# sed -e "s/CFLAGS = /CFLAGS = $CFLAGS /" \
+		man2html/Makefile.in.backup man2html/Makefile.in
+
+
+===============================================================================
+ 6.6	net-tools 1.60
+-----------------------
+
+Use the following make command:
+
+	# make COPTS="-D_GNU_SOURCE -Wall $CFLAGS"
+
+
+===============================================================================
+ 6.7	procinfo 18
+--------------------
+
+Add 'CFLAGS="$CFLAGS"' to the make command:
+
+	# make LDLIBS=-lncurses CFLAGS="$CFLAGS"
+
+
+===============================================================================
+ 6.8	procps 2.0.7
+---------------------
+
+Add 'OPT="$CFLAGS"' to the make command:
+
+	# make OPT="$CFLAGS"
+
+
+===============================================================================
+ 6.9	psmisc 20.2
+---------------------
+
+Add 'CFLAGS="-Wall -DLOCALEDIR=\\\"/usr/share/locale\\\" $CFLAGS"' to the make
+command:
+
+	# make CFLAGS="-Wall -DLOCALEDIR=\\\"/usr/share/locale\\\" $CFLAGS"
+
+
+===============================================================================
+ 6.10	sysklogd 1.4.1
+-----------------------
+
+Add 'RPM_OPT_FLAGS="$CFLAGS"' to the make command:
+
+	# make RPM_OPT_FLAGS="$CFLAGS"
+
+
+===============================================================================
+ 6.11	sysvinit 2.84
+-----------------------
+
+Add 'CFLAGS="-Wall -D_GNU_SOURCE $CFLAGS"' to the make command:
+
+	# make -C src CFLAGS="-Wall -D_GNU_SOURCE $CFLAGS"
+
+
+===============================================================================
+ 7	Extra packages
+-----------------------
+
+I have added the following packages to give LFS users a chance to profit from
+my tests even with non-standard packages.
+I am actively using those packages with the given optimization method.
+
+
+===============================================================================
+ 7.1	pam 0.75
+-----------------
+
+Add 'OS_CFLAGS="$CFLAGS"' to your make command:
+
+	# make OS_CFLAGS="$CFLAGS"
+
+
+===============================================================================
+ 7.2	simpleinit-msb 1.0
+---------------------------
+
+Isn't it weird that removing CFLAGS from a Makefile enables proper optimiza-
+tion? You'll figure it out ;-)
+
+	# cp sysvtools/Makefile sysvtools/Makefile.backup
+        # cat sysvtools/Makefile.backup | \
+        	grep -vE "^CFLAGS" > sysvtools/Makefile
+
+
+===============================================================================
+ 8	Notes
+---------------------------
+
+Just some notes ;-)
+
+
+===============================================================================
+ 8.1	kernel
+---------------------------
+
+When installing the kernel headers in chapter 5 you do not need to worry about
+any information about the architecture leaking into the headers.
+
+
+===============================================================================
+ A	The uname hack
+-----------------------
+
+Generally spoken the uname hack will fool the system. It pretends that linux is
+running on different hardware.
+For example, you are using an i686 based system to compile a lfs for an old
+i586. Then the uname hack would force uname to lie about the underlying hard-
+ware - not reporting i686 but i586.
+
+
+===============================================================================
+ A.1	Traditional
+--------------------
+
+Install the uname hack using the following commands:
+
+	# cd /bin
+	# mv uname uname.orig
+
+Now create a file /bin/uname with the following content:
+-------------------------8<-----------------------------
+#!/bin/bash
+
+/bin/uname.orig "$@" | sed "s/i[456]86/$ARCH/"
+-------------------------8<-----------------------------
+
+And give it the correct permissions:
+
+	# chmod 755 uname
+
+The traditional uname hack will have to be installed thrice: once before you
+start your lfs compilation to replace the uname binary of you host system, then
+when you enter chroot to force your statically linked environment into assuming
+a different architecture and last after installing sh-utils in chapter6 because
+they will replace the uname binary.
+
+
+===============================================================================
+ A.2	Kernel module
+----------------------
+
+Please check out the niftiness of this version of the uname hack!
+
+I experienced some problems since my lfs system was compiled with kernel 2.4.10
+but is not running 2.4.17. It turned out that adding '-I/usr/src/linux/include'
+to the compilation command solved the problem. This change is assuming that the
+sources in /usr/src/linux match the currently running kernel.
+
+Please note that you will have to adjust the '3' to reflect the architecture
+you are compiling for.
+
+/*
+This simple piece of code simply turns your ix86 into a i386 -
+useful if you're cross-compiling for a weaker platform.
+
+Compile with: gcc -c -DMODULE uname_i386.c
+and then: insmod ./uname_i386.o
+*/
+
+#include <linux/module.h>
+#include <linux/utsname.h>
+
+char save;
+
+int init_module( void )
+{
+    save = system_utsname.machine[1];
+    system_utsname.machine[1] = '3';
+    return( 0 );
+}
+
+void cleanup_module( void )
+{
+    system_utsname.machine[1] = save;
+}
+
+
+===============================================================================
+ B	Online
+-----------
+
+This document will from now on be hosted on http://rakshas.de/lfs/xcompile.html
+where it will be presented in a nicely chunked html version.
+
+I will also make this site the primary location for the document where you will
+be able to view the latest release version as well as the latest development
+snapshot which I did not yet pass on to Ian for inclusion in cvs.
+
+
+===============================================================================
+ C	Changelog
+------------------
+
+2.1.2
+	- replaced bzip2 patch with sed
+	- unified and condensed the changelog
+	- reversed changelog; latest entry now at the top
+	- added note about website
+	- updated bzip2 to 1.0.2
+
+2.1.1
+	- added notes section
+	- added man optimization
+	- corrected perl targetting
+	- corrected heading of sysvinit section
+
+2.1
+	- no changes since 2.1pre10
+
+2.1pre
+	- moved non-standard packages to separate chapter
+	- added a table of intel architecture names
+	- added uname appendix
+	- moved the traditional uname hack to appendix
+	- added kernel module uname hack
+	- added optimization for simpleinit
+	- added optimization for pam
+	- added optimization for bin86
+	- added optimization for lilo
+	- added optimization for sysvinit
+	- added note about packages which are left out
+	- added psmisc optimization
+	- added net-tools patch
+	- added targetting description for perl
+	- removed the uname hack
+
+2.0.2
+	- corrected the uname hack sed'ing
+
+2.0.1
+	- added some more explanations in the uname hack section
+
+
+===============================================================================
+ Copyright (c) 2002 by Nicholas Dille <webmaster@rakshas.de>

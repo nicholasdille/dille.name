@@ -1,0 +1,24 @@
+title:            'Nicholas Dille'
+tagline:          'Cloud, Virtualization and Automation'
+description:      'Cloud, Virtualization and Automation'
+#url:              http://dille.name
+#baseurl:          /blog/
+
+author:
+  name:           'Nicholas Dille'
+  url:            https://twitter.com/nicholasdille
+
+gems:
+ - jekyll-paginate
+ - jekyll-sitemap
+ - jekyll-feed
+ - jekyll-mentions
+
+highlighter:      rouge
+permalink:        pretty
+
+paginate:         10
+excerpt_separator: <!--more-->
+
+jekyll-mentions:
+  base_url: https://www.twitter.com

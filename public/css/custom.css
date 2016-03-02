@@ -1,0 +1,10 @@
+/** Badges */
+.badge { background-color: #999; border-radius: 3.75em; color: black; display: inline-block; font-size: 0.75em; font-weight: 600; line-height: 1; padding: 0.4em 1.2em; }
+
+.badge-alert { background-color: #fff6bf; border-radius: 3.75em; color: #8c7800; display: inline-block; font-size: 0.75em; font-weight: 600; line-height: 1; padding: 0.4em 1.2em; }
+
+.badge-error { background-color: #fbe3e4; border-radius: 3.75em; color: #97161b; display: inline-block; font-size: 0.75em; font-weight: 600; line-height: 1; padding: 0.4em 1.2em; }
+
+.badge-notice { background-color: #e5edf8; border-radius: 3.75em; color: #244e87; display: inline-block; font-size: 0.75em; font-weight: 600; line-height: 1; padding: 0.4em 1.2em; }
+
+.badge-success { background-color: #e6efc2; border-radius: 3.75em; color: #56651a; display: inline-block; font-size: 0.75em; font-weight: 600; line-height: 1; padding: 0.4em 1.2em; }

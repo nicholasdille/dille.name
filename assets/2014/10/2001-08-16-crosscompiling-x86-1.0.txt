@@ -1,0 +1,128 @@
+TITLE:		    Cross-compiling on ix86 platforms
+LFS VERSION:	All
+AUTHOR:		    Nicholas Dille
+
+SYNOPSIS:
+	How to save time when compiling lfs for weaker platforms without running
+	into unresolved problems
+
+HINT:
+version 1.0 (16.08.2001)
+
+
+Contents
+---------
+
+  1  Introduction
+  2  Pitfall
+  3  Temporary solution
+      3.1  Introduction
+      3.2  Creating our compilation system
+      3.3  Keeping our compilation system up to date
+
+
+1  Introduction
+----------------
+
+  Don't we all like the idea of replacing any distribution with LFS  on all our
+  systems? Don't we just love the idea of optimized LFS systems? We do!
+
+  Then why should I wait for the compilation to finish on an elderly i486?
+
+  The logical reason  would be to do the compilation stuff  on a fast i686  and
+  then later move the system to the i486, reboot and enjoy.
+
+  But  unfortunately,  it is not that easy  :-(  There are certain problems you
+  will encounter when compiling on an i686 optimized LFS system using the uname
+  hack.
+  Although I don't have a satisfying solution for this problem which I am about
+  to elabourate on in the next section,  I will prosent a workaround at the end
+  of this hint.
+
+
+2  Pitfall
+-----------
+
+  For the sake of readability  I will describe a situation  similar to mine.  I
+  was using an i686  with an optimized LFS 2.4.4 system  to do  the dirty work,
+  i.e. compiling a new 3.0-pre4 system.
+  The system was intended  for an i586  which does not have the performance  to
+  complete the work in acceptable time.  In addition I did not want to miss its
+  services  which it could  not have  served  under the load  a LFS compilation
+  would have put on it.
+
+  After completing the first compilation  (chapter 5 and 6),  I moved the 3.0p4
+  system to the i586 which was able to chroot into it  and boot into it but gcc
+  failed to work due to a signal 4 (illegal instruction) in as.
+  I checked and rechecked that I was using the uname hack correctly for chapter
+  5 and 6  and the correct instructions from the book.  I even wrote patches to
+  enforce proper compilation for i586 for packages which did not use CFLAGS and
+  CXXFLAGS.
+  But it was all in vain.  The LFS system worked perfectly  on the i686 but gcc
+  terminated as a result of the segfault in as.
+
+  Although  I do not have a firm answer  on the question  what happened,  I can
+  make some guesses as to the cause:
+  The mysterious signal 4 will be caused by the linux kernel in case it catches
+  an exception  by the processor  when it encounters an unknown instruction.
+  Therefore some evil instructions have found their way into the new LFS system
+  although we tried to enforce optimization for i586.
+  My guess is that some piece of statically linked code was carried from a lib-
+  rary which was compiled in chapter 5 over to chapter 6  when statically link-
+  ing a library or an executable.
+
+  How this was possible to happen and whose fault it is  I was unable to deter-
+  mine so far. But if you'd like to read more about this, please have a look at
+  http://rakshas.de  where you will find a longer discussion of this problem in
+  the documentation section.
+
+
+3  Temporary solution
+----------------------
+
+
+3.1  Introduction
+------------------
+
+  By now  we know  that we won't be able  to compile an i586 system  on an i686
+  which is running an optimized LFS system.
+  If this code chunk is carried from chapter 5 to 6 where it remains to pollute
+  our new systen, we need to create an environment where we can be sure that no
+  i686 code is carried over.
+
+  The best way to ensure this would be to have an i486  (or even i386) LFS sys-
+  tem handy. This would allow us to compile LFS without having to fear the out-
+  come.
+  But  we cannot compile and i486 system  since we cannot even compile for i586
+  on our optimized i686 system.
+
+
+3.2  Creating our compilation system
+-------------------------------------
+
+  Therefore we need to install our old distribution once more. Since those com-
+  merial distributions  are binary  (with the source supplied)  and need ensure
+  that they work  on i486 as well as  on i686 they are mostly compiled for i486
+  (or even i386).  I once heard about one that was compiled for i586  but I can
+  not remember which it was.
+  We are now able  to compile chapter 5  for i486  on our i686  from our former
+  distribution  and then use our i686 optimized LFS system to continue the com-
+  pilation with chapter 6.
+  Although this code chunk will be carried over to our resulting system it will
+  not be able  to cause a signal 4  since it has  i486 instructions  only which
+  will work on ix86 with x > 3.
+
+  This system will enable us to compile optimized LFS system for i486, i586 and
+  i686 system without stumbling over any signal 4 exceptions.
+  We do not even need to boot into the system.  It suffices to compile any fur-
+  ther LFS system in  a chroot cage with this i486 system.
+
+
+3.3  Keeping our compilation system up to date
+-----------------------------------------------
+
+  This is  fortunately not so big  an issue  since all release books are tested
+  whether they can compile themselves and be compiled using older books.
+
+  Therefore we can simply rebuild  an i486 system  and use that for all further
+  compilations.
