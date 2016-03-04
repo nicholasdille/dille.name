@@ -1,7 +1,6 @@
 ---
-#id: nnnn
 title: 'Are Windows Containers a new Deployment Model for End User Applications?'
-date: 2016-03-04T22:22:23+00:00
+date: 2016-03-04T21:22:23+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2016/03/04/are-windows-containers-a-new-deployment-model-for-end-user-applications/
