@@ -32,8 +32,8 @@ PS> Test-ReturnFromFunction -ReturnFromBegin -ReturnFromProcess -ReturnFromEnd
 
 Note how return only stops execution of the current code block and continues with the next code block in the following order:
 
-  1. Begin
-  2. Process
-  3. End
+1. Begin
+1. Process
+1. End
 
 Unfortunately, there is not easy solution to this except throwing an exception. But the effect may not be desirable because it requires the surrounding code to handle the exception properly.
