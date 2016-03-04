@@ -1,14 +1,15 @@
 ---
-#id: nnnn 
-title: 'Jekyll'
+#id: nnnn
+title: 'Migrating from WordPress to a Static Site using Jekyll'
 #date: 2016-03-05T07:02:56+00:00
 author: Nicholas Dille
 layout: post
-#permalink: /2016/03/01/are-windows-containers-a-new-deployment-model-for-end-user-applications/
+#permalink: /blog/2016/03/01/migrating-from-wordpress-to-a-static-site-using-jekyll/
 categories:
   - Makro Factory
 tags:
   - Jekyll
+  - WordPress
   - GitHub
   - GitHub Pages
 ---
