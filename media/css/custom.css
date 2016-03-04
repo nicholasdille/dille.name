@@ -9,12 +9,12 @@
 
 .badge-success { background-color: #e6efc2; border-radius: 3.75em; color: #56651a; display: inline-block; font-size: 0.75em; font-weight: 600; line-height: 1; padding: 0.4em 1.2em; }
 
+/** Features Topics */
 .topics {
     margin-bottom: 4em;
     display: flex;
     justify-content: space-between;
 }
-
 .topic {
     color: white;
     background-color: #6a9fb5;
@@ -23,7 +23,6 @@
     float: left;
     text-align: center;
 }
-
 .posts {
     clear: both;
 }
