@@ -15,5 +15,5 @@ I have submitted a new hint to the [Linux From Scratch](http://www.linuxfromscra
 
 I have called this hint crosscompiling x86 because it is limited to the x86 architecture and does not embrace compiling to different architectures.
 
-You can also download this hint [here](/assets/2014/10/2001-08-16-crosscompiling-x86-1.0.txt).
+You can also download this hint [here](/media/2014/10/2001-08-16-crosscompiling-x86-1.0.txt).
 

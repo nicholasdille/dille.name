@@ -35,33 +35,33 @@ Adding a vCenter hosts succeeds when the vCenter runas account has read-only pem
 
 I have determined the following global rights that need to be granted at the datacenter level:
 
-[![Permissions on datacenter](/assets/2014/07/image.png)](/assets/2014/07/image.png)
+[![Permissions on datacenter](/media/2014/07/image.png)](/media/2014/07/image.png)
 
 Managing the storage configuration of a host requires the following permissions on the appropriate datastores:
 
-[![Permissions on datastore](/assets/2014/07/image1.png)](/assets/2014/07/image1.png)
+[![Permissions on datastore](/media/2014/07/image1.png)](/media/2014/07/image1.png)
 
 Managing the host configuration requires the folloing permissions on the hosts:
 
-[![Permissions on hosts](/assets/2014/07/image2.png)](/assets/2014/07/image2.png)
+[![Permissions on hosts](/media/2014/07/image2.png)](/media/2014/07/image2.png)
 
 Managing network connectivity for virtual machines requires the following permissions in the network view:
 
-[![Permissions on networks](/assets/2014/07/image3.png)](/assets/2014/07/image3.png)
+[![Permissions on networks](/media/2014/07/image3.png)](/media/2014/07/image3.png)
 
 Managing resource pools for virtual machines requires the following permissions:
 
-[![Permissions on resource pools](/assets/2014/07/image4.png)](/assets/2014/07/image4.png)
+[![Permissions on resource pools](/media/2014/07/image4.png)](/media/2014/07/image4.png)
 
 All VM operations are a bit more tricky to determine because the necessary permissions can be granted through separate approaches. Whenever a new VM is created, it is placed at the root of the datacenter. This is something you will have to live with because there is nothing you can do about it. Fortunately, the VM objects inherits the permissions from the host it resides on. Consequently, you can specify the permissions for VM operations through the appropriate role.
 
 If you decide to grant permissions for VM operations through the host subtree (see screenshot below), there is no granularity what VMM is allowed to do. Depending on your level of paranoia this can be a good or a bad thing.
 
-[![Permissions for VM operations through hosts](/assets/2014/07/image5.png)](/assets/2014/07/image5.png)
+[![Permissions for VM operations through hosts](/media/2014/07/image5.png)](/media/2014/07/image5.png)
 
 You can also utilize the very granular permissions in the subtree called Virtual Machine (see below) to decide which VM operations are supported.
 
-[![Permissions for VM operations through VMs](/assets/2014/07/image6.png)](/assets/2014/07/image6.png)
+[![Permissions for VM operations through VMs](/media/2014/07/image6.png)](/media/2014/07/image6.png)
 
 Note that my tests have showed no difference in functionality. Still there is more work to do regarding the latter approach because I have allowed everything in the VM subtree.
 

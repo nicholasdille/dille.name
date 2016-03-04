@@ -87,7 +87,7 @@ Now you only need to pin those folders to your taskbar to easily access recently
 
 This finally leads me to my answer to Helges question “Show me your start menu and I’ll tell you who you are”. The following screenshot shows my taskbar on which the last to icons represent my shortcut folders to customers and recently changed documents.
 
-[![My taskbar](/assets/2013/02/Taskbar.png)](/assets/2013/02/Taskbar.png)
+[![My taskbar](/media/2013/02/Taskbar.png)](/media/2013/02/Taskbar.png)
 
 BTW, my recently changed documents are made up of the following file types regardless of the frequency a file may have been used.
 

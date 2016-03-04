@@ -22,7 +22,7 @@ In today’s world, talk about virtualization and centralization is hot. Both ha
 
 As Windows 7 is a client operating system, it is usually deployed on the personal computer located under an employee’s desk. Of course, you can use a centralized infrastructure to deploy the client but why not go a step further and centralize the client altogether? Microsoft has been offering this feature for years: it’s called Remote Desktop Services but is better known by its former name Terminal Services. How – I hear you asking – is this going to work?
 
-[![Remote Desktop Services](/assets/2014/02/RDS.jpg)](/assets/2014/02/RDS.jpg)
+[![Remote Desktop Services](/media/2014/02/RDS.jpg)](/media/2014/02/RDS.jpg)
 
 With the release of Windows Server 2008, Microsoft not only changed the name to Remote Desktop Services but also added support for virtual desktops. The late versions only offered session-based desktops by running several desktop sessions on the same machine. Therefore, you now have two technologies for providing centralized desktops: the session-based desktop and the virtual desktop. Let’s have a quick look at both.
 
@@ -30,7 +30,7 @@ With the release of Windows Server 2008, Microsoft not only changed the name to 
 
 A virtual desktop is made up of a virtual machine running a Windows client operating system in a centralized environment. It is offered to users for exclusive access and usage. It is either personal, meaning it is reserved for a single user, or pooled when a set of desktops is available for use by any user of a group. See the illustration below.
 
-[![Assignments for VDI](/assets/2014/02/VDI_0.jpg)](/assets/2014/02/VDI_0.jpg)
+[![Assignments for VDI](/media/2014/02/VDI_0.jpg)](/media/2014/02/VDI_0.jpg)
 
 The user controls this virtual machine remotely. Display information is transferred from the virtual machine to the user’s device and control data like keyboard and mouse are sent to the virtual desktop. The user experience of a fat client can be duplicated by [Aero Glass Remoting](http://blogs.msdn.com/b/rds/archive/2009/06/23/aero-glass-remoting-in-windows-server-2008-r2.aspx) enabling all graphical features of Windows 7 to work in the remote session.
 
@@ -38,7 +38,7 @@ The user controls this virtual machine remotely. Display information is transfer
 
 In contrast to the virtual desktop, a session-based desktop is executed on a Windows server operating system. In addition, many such desktops are served in parallel on the same machine. See illustration below.
 
-[![Session Based Desktops](/assets/2014/02/TS.jpg)](/assets/2014/02/TS.jpg)
+[![Session Based Desktops](/media/2014/02/TS.jpg)](/media/2014/02/TS.jpg)
   
 Although a Windows server operating system is utilized, the look and feel of Windows 7 can be mimicked by using [Aero Glass Remoting](http://blogs.msdn.com/b/rds/archive/2009/06/23/aero-glass-remoting-in-windows-server-2008-r2.aspx) as well. As Windows 7 and Windows Server 2008 R2 are built on the same code base, Windows Server 2008 R2 can be configured to offer all the graphical features available in Windows 7. This includes installing the Desktop Experience feature and setting the Themes service to autostart to [enable Aero Glass Remoting](http://blogs.msdn.com/b/rds/archive/2009/06/23/aero-glass-remoting-in-windows-server-2008-r2.aspx).
 
@@ -46,7 +46,7 @@ Although a Windows server operating system is utilized, the look and feel of Win
 
 Although both strategies implement the same access method via remote control, they are targeted for different use cases. As virtual desktops are based on a Windows client and are used exclusively by a single user, the working environment can be configured to be very flexible with regard to administrative rights and performance. Consequently, offering virtual desktops in have a significant overhead on the underlying hypervisor as many components are executed separately in every virtual machine.
 
-[![Comparing virtual and session based desktops](/assets/2014/02/Desktops.jpg)](/assets/2014/02/Desktops.jpg)
+[![Comparing virtual and session based desktops](/media/2014/02/Desktops.jpg)](/media/2014/02/Desktops.jpg)
 
 The session-based desktop is executed in parallel with several other users. For obvious reasons, the users cannot be offered extended rights on this desktop as they cannot be allowed to affect the other users working on the same server. Although the session-based desktop requires a much stricter concept for isolating users, a much higher user density is achieved.
 

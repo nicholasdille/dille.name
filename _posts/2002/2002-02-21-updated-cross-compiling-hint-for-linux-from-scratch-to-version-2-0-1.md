@@ -15,5 +15,5 @@ I have updated the crosscompiling hint with the following:
 
   * added some more explanations in the uname hack section
 
-It can be downloaded [here](/assets/2002/02/2002-02-21-crosscompiling-x86-2.0.1.txt).
+It can be downloaded [here](/media/2002/02/2002-02-21-crosscompiling-x86-2.0.1.txt).
 

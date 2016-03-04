@@ -33,7 +33,7 @@ Apart from using a redirecting load balancer, there are at least three alternati
 
 The load balancer manages two nodes which host a Web Interface with WI and PNA sites as displayed below.
 
-[![Load Balancer](/assets/2007/12/Load-Balancer.png)](/assets/2007/12/Load-Balancer.png)
+[![Load Balancer](/media/2007/12/Load-Balancer.png)](/media/2007/12/Load-Balancer.png)
 
 For the sake of simplicity, the three machines have consecutive IP addresses, starting with 192.168.182.4 for the load balancer and followed by the next two addresses in the same class C segment for node one and node two, respectively. Names have also been chosen intuitionally: loadbalancer, node1 and node2.
 
@@ -41,7 +41,7 @@ For the sake of simplicity, the three machines have consecutive IP addresses, st
 
 Let's start out by preparing a (virtual) machine to emulate a load balanced installation of Web Interface. Either grab your favourite template for virtual machines or set up a new installation of a Windows Server operating system. All three IP addresses need to be assigned to this system. Neither of them need to be the primary address. A possible network configuration is illustrated in the screenshot below.
 
-[![IP Addresses](/assets/2007/12/ip_addresses.png)](/assets/2007/12/ip_addresses.png)
+[![IP Addresses](/media/2007/12/ip_addresses.png)](/media/2007/12/ip_addresses.png)
 
 As humans tend to prefer names to IP addresses, edit the system's `hosts` file and append three lines containing the introduced IP addresses and the assigned names.
 
@@ -73,11 +73,11 @@ Response.Redirect("http://" & Targets(Second(Now) Mod TargetCount) & "/" & Url)
 
 This code defines the URLs for the two load balanced nodes and determines the number of nodes followed by three lines of code to extract the requested path and file from the query string contained in the variable `QUERY_STRING` which is provided by default on web servers. The last line first rotates through the defined nodes by calculating the modulus of the current number of seconds divided by the number of nodes. The path and file of the original URL are appended to the result which is written to the client using the error code 302, "Temporarily Moved". The expected outcome is shown in the following screenshot.
 
-[![](/assets/2007/12/redirect_aspx.png)](/assets/2007/12/redirect_aspx.png)
+[![](/media/2007/12/redirect_aspx.png)](/media/2007/12/redirect_aspx.png)
 
 Redirection is triggered by a custom error page for non-existent pages. Select the tab "Custom Errors" in the properties of the standard website and click on the entry for the error code 404 in the list box. Edit this entry to set the message type to "URL" and enter the URL `/redirect.aspx`. The configuration for error code 404 is illustrated in the following screenshot.
 
-[![](/assets/2007/12/custom_errors.png)](/assets/2007/12/custom_errors.png)
+[![](/media/2007/12/custom_errors.png)](/media/2007/12/custom_errors.png)
 
 ## Setting up PS and WI
 
@@ -127,11 +127,11 @@ Originally, this modification of `config.xml` was introduced to redirect PNA to 
 
 First, validate that the IIS websites for node one and node two contain a WI and a PNA site as shown in the screenshot below.
 
-[![Check WebInterface sites](/assets/2007/12/result.png)](/assets/2007/12/result.png)
+[![Check WebInterface sites](/media/2007/12/result.png)](/media/2007/12/result.png)
 
 To check the Web Interface for correct operation, use your favourite web browser to navigate to the URL of the load balancer: `http://loadbalancer/Citrix/AccessPlatform`. For earlier versions of Web Interface use `http://loadbalancer/Citrix/MetaFrame`. The web browser is now redirected to one of the configured nodes as shown in the following screenshot.
 
-[![Check redirection](/assets/2007/12/WI.png)](/assets/2007/12/WI.png)
+[![Check redirection](/media/2007/12/WI.png)](/media/2007/12/WI.png)
 
 PNA is to be configured with the load balanced URL. Entering the server name (`loadbalancer`) suffices for default configurations but the full URL (`http://loadbalancer/Citrix/PNAgent/config.xml`) may be required for some setups especially when sites are not installed to the predefined location. If PNA throws an error, please refer to the section about setting up `config.xml` and double-check your modifications because this is likely to be the cause. In addition please continue to the next section for important notes.
 

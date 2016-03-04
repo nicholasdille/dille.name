@@ -36,33 +36,33 @@ Windows RE offers the following features:
 
 On Windows 7 and Windows Server 2008 R2 is installed on the system partition by default and is accessible through the Windows boot menu. After authenticating with a local administrator accout, Win RE displays several recovery options including a command prompt.
 
-[![Advanced boot options including "Repair your Computer"](/assets/2012/07/W2k8r2menu_21.png)](/assets/2012/07/W2k8r2menu_21.png)
+[![Advanced boot options including "Repair your Computer"](/media/2012/07/W2k8r2menu_21.png)](/media/2012/07/W2k8r2menu_21.png)
 
-[![Authenticate against Windows installation](/assets/2012/07/W2k8r2auth_21.png)](/assets/2012/07/W2k8r2auth_21.png)
+[![Authenticate against Windows installation](/media/2012/07/W2k8r2auth_21.png)](/media/2012/07/W2k8r2auth_21.png)
 
-[![Choose command prompt](/assets/2012/07/W2k8r2options_21.png)](/assets/2012/07/W2k8r2options_21.png)
+[![Choose command prompt](/media/2012/07/W2k8r2options_21.png)](/media/2012/07/W2k8r2options_21.png)
 
 Windows 8 and Windows Server 2012 handle the recovery environment entirely different. It puts Windows RE on the MSR partition by default. The following screenshots show the (now graphical) boot menu as well as Win RE. Note that Windows 8 may be booting to fast to reach the boot menu by pressing F8. Instead you can hold down the shift key when pressing reboot on a started Windows 8. This will allow you to choose how to proceed after rebooting the machine.
 
-[![Advanced boot options including "Repair your Computer"](/assets/2012/07/WS12rcmenu_21.png)](/assets/2012/07/WS12rcmenu_21.png)
+[![Advanced boot options including "Repair your Computer"](/media/2012/07/WS12rcmenu_21.png)](/media/2012/07/WS12rcmenu_21.png)
 
-[![Choose troubleshooting option](/assets/2012/07/WS12rcmenu2_21.png)](/assets/2012/07/WS12rcmenu2_21.png)
+[![Choose troubleshooting option](/media/2012/07/WS12rcmenu2_21.png)](/media/2012/07/WS12rcmenu2_21.png)
 
-[![]({ site.baseurl }}/wp-content/uploads/2012/07/WS12rcoptions_21.png)](/assets/2012/07/WS12rcoptions_21.png)
+[![]({ site.baseurl }}/wp-content/uploads/2012/07/WS12rcoptions_21.png)](/media/2012/07/WS12rcoptions_21.png)
 
-[![Choose an account name](/assets/2012/07/WS12rcauth1_21.png)](/assets/2012/07/WS12rcauth1_21.png)
+[![Choose an account name](/media/2012/07/WS12rcauth1_21.png)](/media/2012/07/WS12rcauth1_21.png)
 
-[![Enter administrator password](/assets/2012/07/WS12rcauth2_21.png)](/assets/2012/07/WS12rcauth2_21.png)
+[![Enter administrator password](/media/2012/07/WS12rcauth2_21.png)](/media/2012/07/WS12rcauth2_21.png)
 
 Windows offers a command line tool called `reagentc.exe` to configure Windows RE. Running `reagentc.exe /info` displays the current configuration.
 
-[![Current configuration for WinRE](/assets/2012/07/image_2_141.png)](/assets/2012/07/image_2_141.png)
+[![Current configuration for WinRE](/media/2012/07/image_2_141.png)](/media/2012/07/image_2_141.png)
 
 Windows RE is usually configured to take over if the default boot entry fails for some reason. For this purpose, the boot entry contains a parameter called recoverysequence (first screenshot below) which links to the appropriate boot entry for Windows RE (second screenshot below).
 
-[![Recovery sequence in BCD](/assets/2012/07/image_4_61.png)](/assets/2012/07/image_4_61.png)
+[![Recovery sequence in BCD](/media/2012/07/image_4_61.png)](/media/2012/07/image_4_61.png)
 
-[![Boot entry for WinRE](/assets/2012/07/image_6_51.png)](/assets/2012/07/image_6_51.png)
+[![Boot entry for WinRE](/media/2012/07/image_6_51.png)](/media/2012/07/image_6_51.png)
 
 ## Move Windows RE to Separate Partition
 

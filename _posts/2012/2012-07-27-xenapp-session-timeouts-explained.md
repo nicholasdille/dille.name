@@ -66,9 +66,9 @@ The Citrix eDocs contain a [short description of both timers](http://support.cit
 
 The following illustration shows the possible states for the user session based on session and application state and how to move from one state to another.
 
-[![Session and application states](/assets/2012/07/XenApp-Session-Timeouts-Explained_2.png)](/assets/2012/07/XenApp-Session-Timeouts-Explained_2.png)
+[![Session and application states](/media/2012/07/XenApp-Session-Timeouts-Explained_2.png)](/media/2012/07/XenApp-Session-Timeouts-Explained_2.png)
 
-[![Session and application states](/assets/2012/07/XenApp-Session-Timeouts-Explained2_2.png)](/assets/2012/07/XenApp-Session-Timeouts-Explained2_2.png)
+[![Session and application states](/media/2012/07/XenApp-Session-Timeouts-Explained2_2.png)](/media/2012/07/XenApp-Session-Timeouts-Explained2_2.png)
 
 ## Summary: Design Considerations
 

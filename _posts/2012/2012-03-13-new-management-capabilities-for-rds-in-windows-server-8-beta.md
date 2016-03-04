@@ -34,7 +34,7 @@ But in Windows Server 8, Microsoft has entirely revamped the Server Manager. I h
 
 By using the scenario-based installation for RDS, Server Manager automatically deploys role services on the local server as well as remote servers. An entire RDS environment can be built from a single Server Manager without logging into the individual servers.
 
-[![RDS scenario based installation](/assets/2012/03/AddRolesScenario_2.jpg)](/assets/2012/03/AddRolesScenario_2.jpg)
+[![RDS scenario based installation](/media/2012/03/AddRolesScenario_2.jpg)](/media/2012/03/AddRolesScenario_2.jpg)
 
 As RDS consist of several role services depending on each other, it was extremely time consuming to configure all servers correctly. Server Manager now automatically configures RD Connection Broker, RD Session Host and RD Web Access when deploying role services in a scenatio-based installation.
 
@@ -44,7 +44,7 @@ When a RDS server is added to the new Server Manager, it displays a new category
 
 The overview (see screenshot below) provides a graphical representation of the RDS environment as well as a list of servers with the role services deployed on them.
 
-[![RDS console overview](/assets/2012/03/RDS-Overview_2.jpg)](/assets/2012/03/RDS-Overview_2.jpg)
+[![RDS console overview](/media/2012/03/RDS-Overview_2.jpg)](/media/2012/03/RDS-Overview_2.jpg)
 
 The illustration of the current deployment can be used to extend it by adding new role services as well as configuring existing role services, e.g. [high availability for RD Connection Broker](http://microsoftplatform.blogspot.com/2012/03/rds-in-win8-feature-highlight-no.html) and adding a new collection. The tasks for this pane offer the deployment properties to be changed like configuring for RD Gateway for encrypted access, specifying RD Licensing servers, configuring RD Web Access and configuring certificates for privacy.
 
@@ -54,7 +54,7 @@ The server list on the right hand side allows for role services to be added to t
 
 Server Manager also introduces a new concept called collections. RDSH server can be grouped into session collections and RDVH (Virtualization Host) can be grouped into virtual desktop collections (see screenshot below). By grouping servers into collections, the administrator can push a configuration to all contained servers. This feature is very similar to the concept of a farm in XenApp. Note that any one RDSH and RDVH can only be added to a single collection.
 
-[![RDS session collection](/assets/2012/03/RDS-Collection_2.jpg)](/assets/2012/03/RDS-Collection_2.jpg)
+[![RDS session collection](/media/2012/03/RDS-Collection_2.jpg)](/media/2012/03/RDS-Collection_2.jpg)
 
 A collection is be configured by using the tasks in the Properties pane. The configuration includes a new for the collection, a user group which is allowed to connect to the contained server, session settings like timeouts and load balancing settings to distribute session across multiple servers.
 
@@ -68,7 +68,7 @@ More than a third of the available space is used by the list of connections. Ses
 
 All collections are displayed under the node called “Collections”. It will list session as well as virtual desktop collections and allows for new collections to be created (through the tasks) and removed (by right-clicking a collection). By selecting any collection on the top pane, the two lower panes will adjust their contents. See the screenshot below.
 
-[![RDS session collections](/assets/2012/03/RDS-Collections_2.jpg)](/assets/2012/03/RDS-Collections_2.jpg)
+[![RDS session collections](/media/2012/03/RDS-Collections_2.jpg)](/media/2012/03/RDS-Collections_2.jpg)
 
 The pane called Host Servers works very similar to the pane described above. but it will allow for RDSH or RDVH servers to be added depending on the type of collection selected above. By right-clicking connections to the selected server can be disabled.
 

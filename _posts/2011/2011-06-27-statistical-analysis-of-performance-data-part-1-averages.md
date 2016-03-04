@@ -37,13 +37,13 @@ It is especially problematic to use averages when the data set includes sequence
 
 The following chart displays hourly load values for a single server over a single day. Apparently, the average load per day will be wrong by a large percentage due to the hours with low load:
 
-[![Averages are off due to many zero values](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_image_1.png)](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_image_1.png)
+[![Averages are off due to many zero values](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_image_1.png)](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_image_1.png)
 
 Therefore it is necessary to exclude nightly hours by filtering for business hours. When considering average values for a whole server farm, some servers may be configured to not take part in load balancing and therefore not accept user sessions. This causes average values to be much lower.
 
-[![Difference between regular and corrected averages](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_image_2.png)](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_image_2.png)
+[![Difference between regular and corrected averages](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_image_2.png)](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_image_2.png)
 
-The effect of wrongly including zero values can easily be analyzed in a spreadsheet. Most spreadsheet applications provide a function for calculating the average value from a column of values, like `AVERAGE` in Microsoft Excel. This may not lead to the desired outcome. Instead a slightly more complex formula removes apparent outliers: `SUMIF/COUNTIF` or even easier `AVERAGEIF`. See [this Excel file](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_example.zip) for a demonstration of these functions.
+The effect of wrongly including zero values can easily be analyzed in a spreadsheet. Most spreadsheet applications provide a function for calculating the average value from a column of values, like `AVERAGE` in Microsoft Excel. This may not lead to the desired outcome. Instead a slightly more complex formula removes apparent outliers: `SUMIF/COUNTIF` or even easier `AVERAGEIF`. See [this Excel file](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_example.zip) for a demonstration of these functions.
 
 Although your spreadsheet application offers similar functions, you need to be very careful about considering values to be outliers. From a mathematical point of view you either need to have very good arguments for excluding values or need to use a well-known method to ensure a statistically correct result. I will expand on this topic in a later article of this series.
 
@@ -57,7 +57,7 @@ There are several properties of a series of values that can hint towards a trust
 
 Many statistical properties of a data set assume that you are analyzing [normally distributed values](http://en.wikipedia.org/wiki/Normal_distribution) (see image below) which many data sets indeed are. Usually the peak value is set off to the left or right and the peak may be higher or lower. Just because your values do not look like they are distributed similarly to such a curve usually only means that you do not have a sufficiently high number of values.
 
-[![Normal distribution](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_de_moivre-laplace.gif)](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_de_moivre-laplace.gif)
+[![Normal distribution](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_de_moivre-laplace.gif)](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_de_moivre-laplace.gif)
 
 (Source: Wikipedia about [Normal distribution](http://en.wikipedia.org/wiki/Normal_distribution), image [http://en.wikipedia.org/wiki/File:De_moivre-laplace.gif](http://en.wikipedia.org/wiki/File:De_moivre-laplace.gif))
 
@@ -69,7 +69,7 @@ Another downside of statistical analysis is the case of looking at a small data 
 
 For example, the standard deviation needs to be corrected by a small factor based on the number of values. Microsoft Excel offers two functions for calculating the standard deviation, [`STDEV.S`](http://office.microsoft.com/en-us/excel-help/stdev-s-function-HP010335698.aspx) and [`STDEV.P`](http://office.microsoft.com/en-us/excel-help/stdev-p-function-HP010335772.aspx). The latter assumes that your data set has a sufficient number of values whereas `STDEV.P` is calculated from `STDEV.S` by multiplying by `SQRT(N/(N-1))` with `N` being the number of values. See the end of this article for the mathematical connection between these two functions.
 
-[![Comparing functions for standard deviation in Excel](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_image_3_0_corrected.png)](/assets/2011/06/statistical_analysis_of_performance_data_part_1_-_image_3_0_corrected.png)
+[![Comparing functions for standard deviation in Excel](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_image_3_0_corrected.png)](/media/2011/06/statistical_analysis_of_performance_data_part_1_-_image_3_0_corrected.png)
 
 Fortunately, in performance analysis you are usually confronted with too many values. Although this may cause other problems (like the maximum number of rows in Excel 2003), from a statistical point of view this is a very comfortable situation!
 
@@ -79,15 +79,15 @@ This section contains the mathematical proof why calculating the average of aver
 
 Let’s consider the following two sets of values. The first set consist of values a<sub>1</sub>, ..., a<sub>n</sub> and the second set consist of values b<sub>1</sub>, ..., b<sub>m</sub>. The left side of the first line represents the average of the two averages and the right side shows the average over all the individual values.
 
-[![Formula for average of averages](/assets/2011/06/formula_1.png)](/assets/2011/06/formula_1.png)
+[![Formula for average of averages](/media/2011/06/formula_1.png)](/media/2011/06/formula_1.png)
 
 To make the equation more readable, I have substituted the sums with upper letters, so that A represents the sum of all a<sub>i</sub> and B represents the sum of all b<sub>j</sub>.
 
-[![Substituted sum for upper letters](/assets/2011/06/formula_2.png)](/assets/2011/06/formula_2.png)
+[![Substituted sum for upper letters](/media/2011/06/formula_2.png)](/media/2011/06/formula_2.png)
 
 The remaining lines are basic algebraic operations to simplify the equation.
 
-[![Proof that all averages must come the same number of items](/assets/2011/06/formula_3.png)](/assets/2011/06/formula_3.png)
+[![Proof that all averages must come the same number of items](/media/2011/06/formula_3.png)](/media/2011/06/formula_3.png)
 
 Apparently, the initial equation is only valid if n and m are the same value. This translates to the result that the average of averages may only be used when the individual data sets have exactly the same size.
 
@@ -97,6 +97,6 @@ Excel offers two functions for calculating the standard deviation. `STDEV.P` ass
 
 In case, you have less than 30 values, you must either use `STDEV.S` or apply a correction to `STDEV.P` as displayed below.
 
-[![Standard deviation for small and large sets](/assets/2011/06/formula_4_corrected.png)](/assets/2011/06/formula_4_corrected.png)
+[![Standard deviation for small and large sets](/media/2011/06/formula_4_corrected.png)](/media/2011/06/formula_4_corrected.png)
 
 Apparently, the right-hand side can be simplified to be equal to the left-hand side.

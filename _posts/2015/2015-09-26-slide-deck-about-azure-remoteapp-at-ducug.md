@@ -33,9 +33,9 @@ The DuCUG community events are well-known throughout Europe as the Dutch are a v
 
 ## Slide Deck for #Azure #RemoteApp at #DuCUG
 
-[![First slide of presentation](/assets/2015/09/ARA@DuCUG.png)](/assets/2015/09/2015-09-25-ARA-@-DuCUG-Amsterdam-with-Links.pdf)
+[![First slide of presentation](/media/2015/09/ARA@DuCUG.png)](/media/2015/09/2015-09-25-ARA-@-DuCUG-Amsterdam-with-Links.pdf)
 
-Either click the image above or [this link](/assets/2015/09/2015-09-25-ARA-@-DuCUG-Amsterdam-with-Links.pdf) to download the slide deck for #Azure #RemoteApp at #DuCUG.
+Either click the image above or [this link](/media/2015/09/2015-09-25-ARA-@-DuCUG-Amsterdam-with-Links.pdf) to download the slide deck for #Azure #RemoteApp at #DuCUG.
 
 I covered the following topics with a heavy focus on the infrastructure necessary to run a hybrid deployment including detailed demos about virtual networks, site-2-site VPN and Azure AD Connect.
 

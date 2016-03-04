@@ -22,9 +22,9 @@ After writing and publishing the [XmlServiceExplorer](/blog/tags#xmlserviceexplo
 
 ## New Free Tool
 
-I have just completed another little project which involves reading as much information about a farm as possible from the XML service: <span style="font-family: courier new;">XmlServiceDigger</span>. Download it [here](/assets/2008/12/XmlServiceDigger.zip) and get started right away.
+I have just completed another little project which involves reading as much information about a farm as possible from the XML service: <span style="font-family: courier new;">XmlServiceDigger</span>. Download it [here](/media/2008/12/XmlServiceDigger.zip) and get started right away.
 
-[![XmlServiceDigger](/assets/2008/12/xmlservicedigger.png)](/assets/2008/12/xmlservicedigger.png)
+[![XmlServiceDigger](/media/2008/12/xmlservicedigger.png)](/media/2008/12/xmlservicedigger.png)
 
 The tool requires entering the name or address of a server running Presentation Server or XenApp and the port of the XML service (default is 80) and allows configuring the usage of the proxy server configured in Internet Explorer. So far, it is very similar to the [XmlServiceExplorer](/blog/tags#xmlserviceexplorer/). After pressing the Go button, the configured XML service is sent several requests about the farm, its servers and applications. The data gathered in this process is displayed in the lower part of the window. All requests and responses exchanged are logged and can be accessed in a separate window opened by the Log button.
 

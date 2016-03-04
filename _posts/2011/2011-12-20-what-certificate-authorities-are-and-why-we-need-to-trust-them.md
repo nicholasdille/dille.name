@@ -32,7 +32,7 @@ It all starts with the root certificate authority. This entity is the highest si
 
 Often a root CA does not directly offer certificates to users and companies but rather certifies intermediate CAs to do this job. From an end-user point of view noting changes. The process of obtaining a certificate does not change whether it is a root or intermediate certificate authority.
 
-[![Certificate Authorities](/assets/2011/12/p2f1.png)](/assets/2011/12/p2f1.png)
+[![Certificate Authorities](/media/2011/12/p2f1.png)](/media/2011/12/p2f1.png)
 
 When I am writing of trust do not take it literally by thinking that every end user needs to trust a CA. It is the system and software vendors that need to place trust in a CA and include the CA’s certificate in their product. Windows ships with a long list of certificate authorities which are known to be reliable. Effectively, everybody is living with implicit trust in a set of well-behaving root and intermedia certificate authorities. The certificates for these CAs are built into operating systems, shipped and updated by the vendors. Some applications also ship with a separate set of CA certificates, for example [Mozilla Firefox](http://www.mozilla.org/firefox/fx/).
 
@@ -42,11 +42,11 @@ Now that you know about root and intermediate certificate authorities, let’s t
 
 When a certificate is created by signing a public key and the owner’s identity information, the CA also embeds some data about itself such as the name and unique information about the key used for signing. Based on this information, the signer can be derived and the corresponding certificate can be used to check the signature (see part 1 for [details about signatures](/blog/2011/12/13/what-certificates-are-and-how-they-work/)). At this point the signer may be a trusted root CA resulting in a successful validation. If the signer is an intermediate CA, it needs to be tested against its signing certificate in turn.
 
-[![Certificate validation](/assets/2011/12/p2f2.png)](/assets/2011/12/p2f2.png)
+[![Certificate validation](/media/2011/12/p2f2.png)](/media/2011/12/p2f2.png)
 
 By checking the signer in the described manner the system receives a list of entities who participated in issuing the original certificate. This list is called a Trust Chain or a Certificate Path which begins with the original certificate, may contain intermediate certificate authorities and ends with a root certificate. The process only completes successfully, if the whole chain consists of trusted certificate authorities.
 
-[![Trust and Verification](/assets/2011/12/p2f3.png)](/assets/2011/12/p2f3.png)
+[![Trust and Verification](/media/2011/12/p2f3.png)](/media/2011/12/p2f3.png)
 
 At this point, you know all elements in a [Public Key Infrastructure (PKI)](http://en.wikipedia.org/wiki/Public_key_infrastructure).
 

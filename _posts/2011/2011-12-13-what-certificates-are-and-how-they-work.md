@@ -28,7 +28,7 @@ The terms we use to refer to certificates are actually misleading because we do 
 
 Consider a web server certificate … this kind of certificate can only be used for securing communication with SSL if the web server is in possession of the private key – whereas the system accessing the web server only requires the certificate (without the private key) to talk to the server in a secure manner. In general terms, you require a certificate with a private key to **provide** a secure channel.
 
-[![Certificate and private key](/assets/2011/12/p1f1.png)](/assets/2011/12/p1f1.png)
+[![Certificate and private key](/media/2011/12/p1f1.png)](/media/2011/12/p1f1.png)
 
 Well-known examples for using certificates include:
 
@@ -45,11 +45,11 @@ In cryptography, where are two types of encryption:
 
   * Symetric encryption requires all involved parties to be in possession of the same encryption key (shared secret) to access, read, present, store and modify data. It is of the utmost importance that the shared secret is stored securely – better yet, it is never written down. Still the more participants the less secure the system is because the shared secret can be exposed in more places. To begin with, the shared secret needs to be distributed amonst the participants causing a possible security breach because it is imperitive that a private channel is used – like a personal meeting. Well-known algorithms for symetric encryption are the Advanced Encryption Standard (AES), its predecessor Data Encryption Standard (DES) or Wi-Fi Protected Access (WPA) which all require a Pre-Shared Key (PSK).
   
-  [![Symetric encryption](/assets/2011/12/p1f2.png)](/assets/2011/12/p1f2.png)
+  [![Symetric encryption](/media/2011/12/p1f2.png)](/media/2011/12/p1f2.png)
   
   * Asymetric encryption relies on matching private and public pieces of information. The private key belongs to a person and is to be stored securely because it is even more vital than a shared key. But there is no need to share the private key making asymetric encryption more secure in the first place. The public key can and must be shared communication partners. Apparently, certificates and protocols like TLS and SSL are using public and private keys and are therefore based on asymetric encryption. This type of encryption is also called [public key encryption](http://en.wikipedia.org/wiki/Public-key_cryptography). Let’s have a closer look.
   
-  [![Asymetric encryption](/assets/2011/12/p1f3.png)](/assets/2011/12/p1f3.png)
+  [![Asymetric encryption](/media/2011/12/p1f3.png)](/media/2011/12/p1f3.png)
 
 ## Encryption and Signatures
 
@@ -57,11 +57,11 @@ The public and the private key are mathematically related. It all starts with th
 
 When the public key is used to encrypt data, only the private key can convert it back to plain text. Therefore, encryption always requires the public key of the recipient. After encryption only he can read the original data.
 
-[![Public key encryption](/assets/2011/12/p1f4.png)](/assets/2011/12/p1f4.png)
+[![Public key encryption](/media/2011/12/p1f4.png)](/media/2011/12/p1f4.png)
 
 By using the private key for encryption you generate a signature. It can be verified by anybody in possession of your public key but only you could have created the signature in the first place. The trick – when working with signatures – is that you do not have to encrypt the whole message. Instead you create a so-called hash value of the message and encrypt it with your private key. So everybody can check your signature by creating a the hash value of your message and comparing it to your decrypted hash value.
 
-[![Public key signatures](/assets/2011/12/p1f5.png)](/assets/2011/12/p1f5.png)
+[![Public key signatures](/media/2011/12/p1f5.png)](/media/2011/12/p1f5.png)
 
 A hash is a one-way function that produces a short, fixed-length representation from text of arbitrary length. The hash value is reproducible but not reversible so that it is impossible (or at least close to impossible) to retrieve the original message from a hash value.
 
@@ -83,11 +83,11 @@ Therefore, the concept of certificates was created. A certificate combines a pub
 
 Pretty Good Privacy (PGP) and Gnu Privacy Guard (GPG) let users build a web of trust. So any participant can certify an identity and its corresponding public key by placing an additional signature on it. Therefore, you only need to have several very close friend to trust. Foreign public keys need to have signatures of someone close by or someone who is in your web of trust. There needs to be a chain of signatures between the public key oft he recipient and yourself. The web of trust is a community-based approach to certificates and requires a critical mass for foreign people to be connected.
 
-[![Community based trusts](/assets/2011/12/p1f6.png)](/assets/2011/12/p1f6.png)
+[![Community based trusts](/media/2011/12/p1f6.png)](/media/2011/12/p1f6.png)
 
 The more popular system which – for example – TLS/SSL is based on relies on the centralized certification of public keys and the corresponding identity information. There are – by comparison – only few entities trusted to sign public keys. Those are called [Certificate Authorities (CAs)](http://en.wikipedia.org/wiki/Certificate_authority). I will dive deeper into this concept in the [next part of this series](/blog/2011/12/20/what-certificate-authorities-are-and-why-we-need-to-trust-them/ "What Certificate Authorities Are and Why We Need to Trust Them").
 
-[![centralized trusts](/assets/2011/12/p1f7.png)](/assets/2011/12/p1f7.png)
+[![centralized trusts](/media/2011/12/p1f7.png)](/media/2011/12/p1f7.png)
 
 As I will not cover PGP/GPG in detail, please refer to [S/MIME](http://en.wikipedia.org/wiki/S/MIME) for additional information about encryption and signatures for email-based communication.
 

@@ -20,7 +20,7 @@ Since I have released the [XmlServiceExplorer](/blog/tags#xmlserviceexplorer/) a
 
 <!--more-->
 
-The XmlServiceReader is available for download [here](/assets/2014/02/xmlservicereader.zip).
+The XmlServiceReader is available for download [here](/media/2014/02/xmlservicereader.zip).
 
 ## Specifying the Target Host and Port
 
@@ -44,7 +44,7 @@ Although the built-in request allows for a basic health check of the XML service
   
 The following image contains the transcript of an example using the request parameter.
 
-[![Request switch](/assets/2009/05/request.png)](/assets/2009/05/request.png)
+[![Request switch](/media/2009/05/request.png)](/media/2009/05/request.png)
 
 Mind that such a command line tends to get very long. In addition,the request is lost after closing the command prompt window. Alternatively, you can save the request to a file and pipe it to the XmlServiceExplorer:
   
@@ -52,7 +52,7 @@ Mind that such a command line tends to get very long. In addition,the request is
   
 The following image contains the transcript of an example using the stream switch.
 
-[![Stream switch](/assets/2009/05/stream.png)](/assets/2009/05/stream.png)
+[![Stream switch](/media/2009/05/stream.png)](/media/2009/05/stream.png)
 
 XmlServiceReader will automatically add the `XML`, `DOCTYPE` and `NFuseProtocol` definitions enabling you to concentrate on building the request.
 
@@ -70,4 +70,4 @@ If you experience unexpected behaviour or would simply like to trace what the Xm
   
 The following image contains the transcript of an example using the debug switch.
 
-[![Debug switch](/assets/2009/05/debug.png)](/assets/2009/05/debug.png)
+[![Debug switch](/media/2009/05/debug.png)](/media/2009/05/debug.png)

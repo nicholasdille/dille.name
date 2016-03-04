@@ -54,7 +54,7 @@ A list of all available articles covering the XmlServiceExplorer can be found un
 
 ## Download
 
-The current version of the XmlServiceExplorer can be downloaded [here](/assets/2008/07/XmlServiceExplorer.zip).
+The current version of the XmlServiceExplorer can be downloaded [here](/media/2008/07/XmlServiceExplorer.zip).
 
 ## Issues Resolved
 

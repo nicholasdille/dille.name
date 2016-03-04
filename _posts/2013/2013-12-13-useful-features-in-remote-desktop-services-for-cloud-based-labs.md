@@ -42,19 +42,19 @@ I have recently [blogged about the cloud-based lab](/blog/2013/11/10/my-lab-in-t
 
 I will not go into too many details on this because there is a [very detailed article about implementing SSO for RDP](http://blogs.msdn.com/b/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx). You just need to define a group policy and bind it to the hosts that should be able to pass on the credentials. The target hosts are specified in the policy setting. In the policy object called **Allow delegating default credentials** (see first screenshot below), you need to create a list of entries in the form `TERMSRV/host.mydomain.tld` (see second screenshot below). You can also use wildcard like in `TERMSRV/*.mydomain.tld`. The hostname with or without wildcards is matched against the string you use when connecting to the target server. So, if you use the IP address, the hostname entry will not work. But, hey, why would you use IPs when there’s DNS?
 
-[![Allow delagating fresh credentials](/assets/2014/01/SSO-GPO.png)](/assets/2014/01/SSO-GPO.png)
+[![Allow delagating fresh credentials](/media/2014/01/SSO-GPO.png)](/media/2014/01/SSO-GPO.png)
 
-[![Allow delagating fresh credentials](/assets/2014/01/SSO-TERMSRV.png)](/assets/2014/01/SSO-TERMSRV.png)
+[![Allow delagating fresh credentials](/media/2014/01/SSO-TERMSRV.png)](/media/2014/01/SSO-TERMSRV.png)
 
 ## Use Trusted Certificates for RDP
 
 Just like above, Microsoft has already done a really great job documenting [how to force target hosts to present a trusted certificate](http://blogs.msdn.com/b/rds/archive/2010/04/09/configuring-remote-desktop-certificates.aspx) (i.e. signed by a certificate authority) instead of a self-signed certificate. In a nutshell this requires Active Directory Certificate Services because you need to issue a certificate template (see first screenshot below) which is referenced in a group policy called **Server authentication certificate template** (see second screenshot below) to force hosts to request a certificate for the RDP listener (see third screenshot below) based on this template. The group policy object is located in `Computer Configuration\Policies\Windows Components\Remote Desktop Services\Remote Desktop Session Host\Security`.
 
-[![Issue certificate template for RDP](/assets/2014/01/Cert-AvailableTemplate-censored.png)](/assets/2014/01/Cert-AvailableTemplate-censored.png)
+[![Issue certificate template for RDP](/media/2014/01/Cert-AvailableTemplate-censored.png)](/media/2014/01/Cert-AvailableTemplate-censored.png)
 
-[![Configure template for RDP certificates](/assets/2014/01/Cert-GPO.png)](/assets/2014/01/Cert-GPO.png)
+[![Configure template for RDP certificates](/media/2014/01/Cert-GPO.png)](/media/2014/01/Cert-GPO.png)
 
-[![Certificate purpose in RDP template](/assets/2014/01/Cert-IssuedTemplate.png)](/assets/2014/01/Cert-IssuedTemplate.png)
+[![Certificate purpose in RDP template](/media/2014/01/Cert-IssuedTemplate.png)](/media/2014/01/Cert-IssuedTemplate.png)
 
 ## Remote Desktop Gateway
 
@@ -62,23 +62,23 @@ In Windows Server 2008, Microsoft introduced the predecessor of Remote Desktop G
 
 RD Gateway requires the Network Policy Server but is really straight forward to configure. On the **Getting Started** page of the NPS console, click **Configure NAP** and complete the wizard. It will automatically create a connection request policy, several health policy as well as several network policies. Those policies not only govern who is permitted to access what but also implements health policies which may deny access in case the client device is considered insecure.
 
-[![Network Policy Server](/assets/2014/01/RDGW-NPS.png)](/assets/2014/01/RDGW-NPS.png)
+[![Network Policy Server](/media/2014/01/RDGW-NPS.png)](/media/2014/01/RDGW-NPS.png)
 
-[![Configure network connection model for NAP](/assets/2014/01/RDGW-NAP1.png)](/assets/2014/01/RDGW-NAP1.png)
+[![Configure network connection model for NAP](/media/2014/01/RDGW-NAP1.png)](/media/2014/01/RDGW-NAP1.png)
 
-[![Configure NAP enforcement servers](/assets/2014/01/RDGW-NAP3.png)](/assets/2014/01/RDGW-NAP3.png)
+[![Configure NAP enforcement servers](/media/2014/01/RDGW-NAP3.png)](/media/2014/01/RDGW-NAP3.png)
 
-[![Configure users for NAP](/assets/2014/01/RDGW-NAP6.png)](/assets/2014/01/RDGW-NAP6.png)
+[![Configure users for NAP](/media/2014/01/RDGW-NAP6.png)](/media/2014/01/RDGW-NAP6.png)
 
-[![Configure NAP health policy](/assets/2014/01/RDGW-NAP7.png)](/assets/2014/01/RDGW-NAP7.png)
+[![Configure NAP health policy](/media/2014/01/RDGW-NAP7.png)](/media/2014/01/RDGW-NAP7.png)
 
-[![Health policies](/assets/2014/01/RDGW-NAP-HealthPolicies.png)](/assets/2014/01/RDGW-NAP-HealthPolicies.png)
+[![Health policies](/media/2014/01/RDGW-NAP-HealthPolicies.png)](/media/2014/01/RDGW-NAP-HealthPolicies.png)
 
-[![Network policies](/assets/2014/01/RDGW-NAP-Compliant.png)](/assets/2014/01/RDGW-NAP-Compliant.png)
+[![Network policies](/media/2014/01/RDGW-NAP-Compliant.png)](/media/2014/01/RDGW-NAP-Compliant.png)
 
 Connecting to servers through RD Gateway requires some additional clicks:
 
-[![Client configuration for RD gateway](/assets/2014/01/mstsc-RDGW.png)](/assets/2014/01/mstsc-RDGW.png)
+[![Client configuration for RD gateway](/media/2014/01/mstsc-RDGW.png)](/media/2014/01/mstsc-RDGW.png)
 
 ## Quick Launch using RDP Files
 
@@ -106,7 +106,7 @@ Let me provide you with a quick reference what those commands mean:
 
 Such a RDP file is created by configuring a connection in the Remote Desktop Connection tool and saving it to a file:
 
-[![Save RDP file](/assets/2014/01/mstsc-save.png)](/assets/2014/01/mstsc-save.png)
+[![Save RDP file](/media/2014/01/mstsc-save.png)](/media/2014/01/mstsc-save.png)
 
 Instead of using a RDP file I could logon RD WebAccess to launch a connection but this is much slower than having a local RDP file and launching a connecting by double clicking it.
 
@@ -114,7 +114,7 @@ Instead of using a RDP file I could logon RD WebAccess to launch a connection bu
 
 If you choose to use RD WebAccess to access your lab environment, you will see a warning about the RDP file coming from an unknown publisher. Users can accept publishers on their own by choosing **This is a private computer** on the logon page. After launching a connection the dialog showing the publisher warning contains a checkbox to accept the publisher permanently. But often, end users will not be able to decide whether a publisher can be trusted. In a managed environment, [trusted publishers can be deployed via a group policy](http://blogs.msdn.com/b/rds/archive/2011/04/05/how-to-resolve-the-issue-a-website-wants-to-start-a-remote-connection-the-publisher-of-this-remote-connection-cannot-be-identified.aspx) called **Specify SHA1 thumbprints of certificates representing trusted .rdp publishers** located in `Computer Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Connection Client`.  The thumbprint can be retrieved from the details tab of a certificate.
 
-[![Configure certificate thumbprints](/assets/2014/01/TrustedPublishers.png)](/assets/2014/01/TrustedPublishers.png)
+[![Configure certificate thumbprints](/media/2014/01/TrustedPublishers.png)](/media/2014/01/TrustedPublishers.png)
 
 ## Explicit RemoteApp
 

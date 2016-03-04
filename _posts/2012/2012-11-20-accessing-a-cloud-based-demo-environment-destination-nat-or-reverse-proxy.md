@@ -62,25 +62,25 @@ You need to take the following steps to setup WinGate for proper external access
 
   * Configure the listener on the external interface: Go to "Control Panel –> Services –> WWW Proxy Server" and activate the external interface. You may want to choose a custom port for security by obsturity.
 
-[![Activate proxy on external interface](/assets/2012/11/Services-Bindings_2.png)](/assets/2012/11/Services-Bindings_2.png)
+[![Activate proxy on external interface](/media/2012/11/Services-Bindings_2.png)](/media/2012/11/Services-Bindings_2.png)
 
   * (Optional) If you are planning to authenticate against your reverse proxy first, go to "Control Panel -> Users and Groups" and create a new group (e.g. Reverse Users).
 
-[![Create users and groups for authentication](/assets/2012/11/Users-and-Groups-Kopie_2.png)](/assets/2012/11/Users-and-Groups-Kopie_2.png)
+[![Create users and groups for authentication](/media/2012/11/Users-and-Groups-Kopie_2.png)](/media/2012/11/Users-and-Groups-Kopie_2.png)
 
   * To make sure, users can only access internal sites, go to "Control Panel –> Data –> Type: List" and create a new list (e.g. Internal Sites). I added my internal sites using DNS names and IP addresses.
 
-[![Define a list of internal sites](/assets/2012/11/Data-Internal-Sites_2.png)](/assets/2012/11/Data-Internal-Sites_2.png)
+[![Define a list of internal sites](/media/2012/11/Data-Internal-Sites_2.png)](/media/2012/11/Data-Internal-Sites_2.png)
 
   * To build a rule based on the list with internal sites, go to "Web Access Control –> Categories" and create a category (e.g. Reverse). Then go to "Web Access Control –> Classifiers –> Manual Classifiers" and create a manual classifier to push the internal sites into the new category.
 
-[![Create a category](/assets/2012/11/Categories_2.png)](/assets/2012/11/Categories_2.png)
+[![Create a category](/media/2012/11/Categories_2.png)](/media/2012/11/Categories_2.png)
 
-[![Create a manual classifier](/assets/2012/11/Manual-Classifier_2.png)](/assets/2012/11/Manual-Classifier_2.png)
+[![Create a manual classifier](/media/2012/11/Manual-Classifier_2.png)](/media/2012/11/Manual-Classifier_2.png)
 
   * At last, go to "Web Access Control –> Access Rules" and create a new access rule to allow connections by authenticated users (Reverse Users) to sites in the category Reverse.
 
-[![Create an access rule](/assets/2012/11/image_4_15.png)](/assets/2012/11/image_4_15.png)
+[![Create an access rule](/media/2012/11/image_4_15.png)](/media/2012/11/image_4_15.png)
 
 Voila, your reverse proxy is ready to serve connections!
 

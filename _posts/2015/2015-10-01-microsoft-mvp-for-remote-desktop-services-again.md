@@ -15,4 +15,4 @@ tags:
 ---
 I am honored and proud to announce that I have been awarded the Most Valuable Professional - MVP for Remote Desktop Services (RDS). This has been the sixth time in a row!
 
-[![MVP Logo](/assets/2011/12/Microsoft-MVP.png)](/assets/2011/12/Microsoft-MVP.png)
+[![MVP Logo](/media/2011/12/Microsoft-MVP.png)](/media/2011/12/Microsoft-MVP.png)

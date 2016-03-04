@@ -13,4 +13,4 @@ tags:
   - Slide Deck
   - Slides
 ---
-On 10.09.2010 I held a session at the [NRWconf in Wuppertal](http://www.nrwconf.de) about performance monitoring and capacity management of Windows Servers. Attached you’ll find [my slides](/assets/2014/10/NRWconf-2010-Skalierbarkeit-messbar-machen.pdf).
+On 10.09.2010 I held a session at the [NRWconf in Wuppertal](http://www.nrwconf.de) about performance monitoring and capacity management of Windows Servers. Attached you’ll find [my slides](/media/2014/10/NRWconf-2010-Skalierbarkeit-messbar-machen.pdf).

@@ -40,11 +40,11 @@ In the default configuration, Web Interface attempts to reconnect any disconnect
 
 Step | User                      | Web Interface | XML Service
 -----|---------------------------|---------------|------------
-1    | Navidate to Web Interface | [RequestCapabilities](/assets/2008/07/RequestCapabilities.png) | [ResponseCapabilities](/assets/2008/07/ResponseCapabilities.png)
-2    | Logon                     | [RequestValidateCredentials](/assets/2008/07/RequestValidateCredentials.png) | [ResponseValidateCredentials](/assets/2008/07/ResponseValidateCredentials.png)
-3    |                           | [RequestAppData](/assets/2008/07/RequestAppData1.png) | [ResponseAppData](/assets/2008/07/ResponseAppData1.png)
-4    |                           | [RequestAppData](/assets/2008/07/RequestAppData2.png) | [ResponseAppData](/assets/2008/07/ResponseAppData2.png)
-5    |                           | [RequestReconnectSessionData](/assets/2008/07/RequestReconnectSessionData.png) | [ResponseReconnectSessionData](/assets/2008/07/ResponseReconnectSessionData.png)
+1    | Navidate to Web Interface | [RequestCapabilities](/media/2008/07/RequestCapabilities.png) | [ResponseCapabilities](/media/2008/07/ResponseCapabilities.png)
+2    | Logon                     | [RequestValidateCredentials](/media/2008/07/RequestValidateCredentials.png) | [ResponseValidateCredentials](/media/2008/07/ResponseValidateCredentials.png)
+3    |                           | [RequestAppData](/media/2008/07/RequestAppData1.png) | [ResponseAppData](/media/2008/07/ResponseAppData1.png)
+4    |                           | [RequestAppData](/media/2008/07/RequestAppData2.png) | [ResponseAppData](/media/2008/07/ResponseAppData2.png)
+5    |                           | [RequestReconnectSessionData](/media/2008/07/RequestReconnectSessionData.png) | [ResponseReconnectSessionData](/media/2008/07/ResponseReconnectSessionData.png)
 
 ## Hands-On: Launch
 
@@ -54,8 +54,8 @@ Most information used to build the file `launch.ica` results from the second `Re
 
 Step | User   | Web Interface | XML Service
 -----|--------|---------------|------------
-6    | Launch | [RequestAddress](/assets/2008/07/RequestAddress.png) | [ResponseAddress](/assets/2008/07/ResponseAddress.png)
-7    |        | [RequestTicket](/assets/2008/07/RequestTicket.png) | [ResponseTicket](/assets/2008/07/ResponseTicket.png)
+6    | Launch | [RequestAddress](/media/2008/07/RequestAddress.png) | [ResponseAddress](/media/2008/07/ResponseAddress.png)
+7    |        | [RequestTicket](/media/2008/07/RequestTicket.png) | [ResponseTicket](/media/2008/07/ResponseTicket.png)
 8    |        | Serve launch.ica
 
 ## Hands-On: Disconnect
@@ -64,7 +64,7 @@ When a user hits the disconnect button or link in Web Interface (depending on th
 
 Step | User       | Web Interface | XML Service
 -----|------------|---------------|------------
-9    | Disconnect | [RequestDisconnectUserSessions](/assets/2008/07/RequestDisconnectUserSessions.png) | [ResponseDisconnectUserSessions](/assets/2008/07/ResponseDisconnectUserSessions.png)
+9    | Disconnect | [RequestDisconnectUserSessions](/media/2008/07/RequestDisconnectUserSessions.png) | [ResponseDisconnectUserSessions](/media/2008/07/ResponseDisconnectUserSessions.png)
 
 ## Hands-On: Reconnect
 
@@ -72,9 +72,9 @@ Web Interface enables users to reconnect previously disconnected session either 
 
 Step | User | Web Interface | XML Service
 -----|------|---------------|------------
-10   | Reconnect | [RequestReconnectSessionData](/assets/2008/07/RequestReconnectSessionData2.png) | [ResponseReconnectSessionData](/assets/2008/07/ResponseReconnectSessionData2.png)
-11   |      | [RequestAddress](/assets/2008/07/RequestAddress2.png) | [ResponseAddress](/assets/2008/07/ResponseAddress2.png)
-12   |      | [RequestTicket](/assets/2008/07/RequestTicket2.png) | [ResponseTicket](/assets/2008/07/ResponseTicket2.png)
+10   | Reconnect | [RequestReconnectSessionData](/media/2008/07/RequestReconnectSessionData2.png) | [ResponseReconnectSessionData](/media/2008/07/ResponseReconnectSessionData2.png)
+11   |      | [RequestAddress](/media/2008/07/RequestAddress2.png) | [ResponseAddress](/media/2008/07/ResponseAddress2.png)
+12   |      | [RequestTicket](/media/2008/07/RequestTicket2.png) | [ResponseTicket](/media/2008/07/ResponseTicket2.png)
 13   |      | Serve launch.ica
 
 ## Hands-On: Logoff
@@ -83,7 +83,7 @@ Similar to the request for disconnecting any active sessions, the logoff command
 
 Step | User       | Web Interface | XML Service
 -----|------------|---------------|-------------
-14   | Disconnect | [RequestLogoffUserSessions](/assets/2008/07/RequestLogoffUserSessions.png) | [ResponseLogoffUserSessions](/assets/2008/07/ResponseLogoffUserSessions.png)
+14   | Disconnect | [RequestLogoffUserSessions](/media/2008/07/RequestLogoffUserSessions.png) | [ResponseLogoffUserSessions](/media/2008/07/ResponseLogoffUserSessions.png)
 
 ## XmlServiceExplorer
 
@@ -93,9 +93,9 @@ So far, so good. But it's one thing to read about my discoveries. You could now 
   * ... debug the behaviour of the server farm.
   * ... mimic the steps performed by Web Interface like I did for this article.
 
-[![XmlServiceExplorer](/assets/2008/07/XmlServiceExplorer.png)](/assets/2008/07/XmlServiceExplorer.png)
+[![XmlServiceExplorer](/media/2008/07/XmlServiceExplorer.png)](/media/2008/07/XmlServiceExplorer.png)
 
-To get going, all you need is to [download the executable](/assets/2008/07/XmlServiceExplorer.zip) and place a copy of your `NFuse.dtd` in the same directory as the executable. It is based on Visual Basic .NET so that the .NET Framework 2.0 is also a requirement to run the XmlServiceExplorer.
+To get going, all you need is to [download the executable](/media/2008/07/XmlServiceExplorer.zip) and place a copy of your `NFuse.dtd` in the same directory as the executable. It is based on Visual Basic .NET so that the .NET Framework 2.0 is also a requirement to run the XmlServiceExplorer.
 
 **<span style="color: #ff0000;">Update:</span>** Using the original DTD provided by Citrix Web Interface results in an exception after launch. This is caused by a syntactical error in two definitions. To resolve this issue, replace the definition of the attribute list of `IconData` and `DesiredIconData` with the following text. This change does not alter the specified XML structure but merely moves the comments to correct the syntactical error in the DTD.
   

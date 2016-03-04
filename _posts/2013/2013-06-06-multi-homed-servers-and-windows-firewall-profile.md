@@ -28,7 +28,7 @@ The service responsible for evaluating network connections – Network Location 
 
 Unfortunately, [the behaviour of the NLA service is by design](http://blogs.technet.com/b/networking/archive/2010/09/08/network-location-awareness-nla-and-how-it-relates-to-windows-firewall-profiles.aspx). The only resolution is based on tweaking the Windows Firewall. Every profile can be configured which network connection it may be applied to.
 
-[![Specify network adapters](/assets/2013/06/fw-w-adv-feat-w-red_2.png)](/assets/2013/06/fw-w-adv-feat-w-red_2.png)
+[![Specify network adapters](/media/2013/06/fw-w-adv-feat-w-red_2.png)](/media/2013/06/fw-w-adv-feat-w-red_2.png)
 
 ## Summary
 

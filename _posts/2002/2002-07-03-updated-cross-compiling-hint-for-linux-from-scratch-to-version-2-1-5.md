@@ -20,7 +20,7 @@ I have updated the crosscompiling hint with the following:
   * updated psmisc to 21
   * updated simpleinit to 1.1
 
-It can be downloaded [here](/assets/2002/02/2002-07-03-crosscompiling-x86-2.1.5.txt).
+It can be downloaded [here](/media/2002/02/2002-07-03-crosscompiling-x86-2.1.5.txt).
 
 
 

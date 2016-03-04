@@ -15,4 +15,4 @@ tags:
   - Slides
   - VDI
 ---
-I held a presentation about Citrix XenDesktop - the VDI product. Please download the slides [here.](/assets/2009/05/sepago-Inner-Circle-VDI-v001.pdf)
+I held a presentation about Citrix XenDesktop - the VDI product. Please download the slides [here.](/media/2009/05/sepago-Inner-Circle-VDI-v001.pdf)

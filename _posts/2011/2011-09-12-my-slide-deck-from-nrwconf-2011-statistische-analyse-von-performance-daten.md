@@ -15,4 +15,4 @@ tags:
   - SQL
   - Statistics
 ---
-For those interested, find attached the [slides](/assets/2011/09/nrwconf_2011_-_nicholas_dille_-_statische_analyse_von_performance-daten.zip) I presented at [NRWconf 2011 in Wuppertal](http://nrwconf.de). Mind - they are in German!
+For those interested, find attached the [slides](/media/2011/09/nrwconf_2011_-_nicholas_dille_-_statische_analyse_von_performance-daten.zip) I presented at [NRWconf 2011 in Wuppertal](http://nrwconf.de). Mind - they are in German!

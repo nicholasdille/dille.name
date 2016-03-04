@@ -32,7 +32,7 @@ Beginning with Windows Server 2008 and Windows Vista, Microsoft decided to use E
 
 One thing that is more confusing than dangerous is the contents of %ProgramFiles%. In 64-bit applications it points to "Program Files" and in 32-bit applications it resolves to "Program Files (x86)". Therefore, beware of the bitness of your application and the contents of %ProgramFiles%. Whenever a 32-bit application writes a string into the registry containing %ProgramFiles%, it is substituted by %ProgramFiles(x86)%. The screenshot below illustrates the behaviour. Note that I take these steps to prevent the command shell from resolving the environment variable before it gets written to the registry.
 
-[![Exploring program files variables](/assets/2009/08/image1.png)](/assets/2009/08/image1.png)
+[![Exploring program files variables](/media/2009/08/image1.png)](/media/2009/08/image1.png)
 
 ## Registry
 

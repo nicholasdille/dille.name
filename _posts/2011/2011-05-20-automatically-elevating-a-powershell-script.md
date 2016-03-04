@@ -24,7 +24,7 @@ You will be able to explore the script execution using two switches (verbose and
 
 When the script recognizes that it is already executed with administrative rights, it immediately continues with the main body at the bottom. But if it is not run under an administrative account (up to and including Windows XP/2003) or the user is protected by UAC (since Windows Vista/2008), the script needs to be able to tell those two situations apart – which it does via WMI. Only the latter case allows for the script to launch a second, elevated instance. The administration will have to confirm this.
 
-(The script header can also be downloaded [here](/assets/2011/05/elevation_header.zip).)
+(The script header can also be downloaded [here](/media/2011/05/elevation_header.zip).)
   
 ```powershell
 param(

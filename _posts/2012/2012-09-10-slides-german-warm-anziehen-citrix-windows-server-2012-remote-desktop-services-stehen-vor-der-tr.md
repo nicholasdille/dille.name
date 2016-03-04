@@ -23,6 +23,6 @@ On 08.09.2012 I held a session at the [ice conference in Lingen](http://www.ice-
 
 <!--more-->
 
-Attached you'll find [my slides](/assets/2012/09/ice-2012-Nicholas-Dille-Windows-Server-2012-RDS.pdf) as well as the [two scripts](/assets/2012/09/ice-2012-Nicholas-Dille-Windows-Server-2012-RDS.zip) I used for demonstrating the new deployment options based on PowerShell v3.
+Attached you'll find [my slides](/media/2012/09/ice-2012-Nicholas-Dille-Windows-Server-2012-RDS.pdf) as well as the [two scripts](/media/2012/09/ice-2012-Nicholas-Dille-Windows-Server-2012-RDS.zip) I used for demonstrating the new deployment options based on PowerShell v3.
 
 **Update.** My talk was recorded and is [available through TechNet media.](https://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032532012)

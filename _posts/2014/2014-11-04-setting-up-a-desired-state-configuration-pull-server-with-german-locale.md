@@ -21,7 +21,7 @@ When I started working with Desired State Configuration (DSC), I decided to use 
 
 I was following the [detailed description provided by Microsoft](http://technet.microsoft.com/library/dn249913.aspx). But instead of a nifty pull server, I got the following error message:
 
-[<img class="alignnone wp-image-2940 size-medium" src="/assets/2014/11/DSC_PullServer_de_error1-300x196.png" alt="" width="300" height="196" />](/assets/2014/11/DSC_PullServer_de_error1.png)
+[<img class="alignnone wp-image-2940 size-medium" src="/media/2014/11/DSC_PullServer_de_error1-300x196.png" alt="" width="300" height="196" />](/media/2014/11/DSC_PullServer_de_error1.png)
 
 In essence, it tells me that a DLL does not exist in the subdirectory for the German locale:
 

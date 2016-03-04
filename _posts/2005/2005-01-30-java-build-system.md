@@ -10,7 +10,7 @@ categories:
 tags:
   - Java
 ---
-This Java [build system](/assets/2005/01/java-build-20040522.zip) is based on `ant`. It comes with a `build.xml` that contains project configuration variables. This file includes `include.xml` that defines the available targets.
+This Java [build system](/media/2005/01/java-build-20040522.zip) is based on `ant`. It comes with a `build.xml` that contains project configuration variables. This file includes `include.xml` that defines the available targets.
   
 <!--more-->
 

@@ -46,7 +46,7 @@ $Jobs = Invoke-Queue -InputObject $Servers -ArgumentList $RegPath -ThrottleLimit
 
 When a huge number of input objects is supplied it is helpful to receive progress information. By specifying the `-ShowProgress` switch, `Invoke-Queue` will display a progress bar (see screenshot below).
 
-[![Invoke-Queue(Progress)](/assets/2015/09/Invoke-QueueProgress.png)](/assets/2015/09/Invoke-QueueProgress.png)
+[![Invoke-Queue(Progress)](/media/2015/09/Invoke-QueueProgress.png)](/media/2015/09/Invoke-QueueProgress.png)
 
 The following code implements the backend for processing the queue (`$Servers`) and for throttling the parallelization:
 

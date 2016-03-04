@@ -32,7 +32,7 @@ During the configuration of [SQL Server](http://www.microsoft.com/sqlserver/2008
 
 All these obstacles lead to a design of EdgeSight with an isolated instance of Reporting Services as depicted in the following illustration.
 
-[![Edgesight installation options](/assets/2009/06/edgesightimplementationoptions.png)](/assets/2009/06/edgesightimplementationoptions.png)
+[![Edgesight installation options](/media/2009/06/edgesightimplementationoptions.png)](/media/2009/06/edgesightimplementationoptions.png)
 
 The first option (on the left of the illustration) shows a stand-alone installation in which all components are dedicated to serving EdgeSight. This design is very popular in small environments and especially where database servers are not managed by another department. The second and third options show variants of providing a dedicated instance of Reporting Services. This can either be achieved by installing the instance on the EdgeSight server (in the middle of the above illustration) or by adding another instance on an existing database server (on the right of the above illustration). Deciding for one of these options usually depends on the preferences of the database administration team.
 

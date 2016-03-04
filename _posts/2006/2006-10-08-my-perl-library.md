@@ -14,4 +14,4 @@ The modules collected herein provide perl classes which I base further projects 
 
 <!--more-->
 
-Download the tarball [Library-0.1.4.tar.gz](/assets/2013/06/Library-0.1.4.tar.gz).
+Download the tarball [Library-0.1.4.tar.gz](/media/2013/06/Library-0.1.4.tar.gz).

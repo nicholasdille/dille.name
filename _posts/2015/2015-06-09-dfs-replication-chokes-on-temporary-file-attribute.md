@@ -26,11 +26,11 @@ I was involved in the issue because I had designed and built the file server bas
 
 To get a better understanding of this issue, I copied the contents of the file and created a new file. For some reason this new file was successfully replicated to all other target servers. This could only mean that the cause for this issue lies in the file metadata. When comparing the properties of the file at hand with another file that was replicated successfully, I came across file attribute called T:
 
-[![Comparison of the details tab in the file properties. The good file only has the attribute &quot;A&quot; but the bad file has the attributes &quot;AT&quot; set. The bad file was skipped by DFS replication (DFS-R)](/assets/2015/06/FileAttributes.png)](/assets/2015/06/FileAttributes.png)
+[![Comparison of the details tab in the file properties. The good file only has the attribute &quot;A&quot; but the bad file has the attributes &quot;AT&quot; set. The bad file was skipped by DFS replication (DFS-R)](/media/2015/06/FileAttributes.png)](/media/2015/06/FileAttributes.png)
 
 When taking a closer look using PowerShell, the file attribute called T in the GUI resolved to "Temporary":
 
-[![Get-Item for the bad file shows that the attributes &quot;Archive&quot; and &quot;Temporary&quot; are set. Maybe DFS replication did not work because of this](/assets/2015/06/GetItemFlStar.png)](/assets/2015/06/GetItemFlStar.png)
+[![Get-Item for the bad file shows that the attributes &quot;Archive&quot; and &quot;Temporary&quot; are set. Maybe DFS replication did not work because of this](/media/2015/06/GetItemFlStar.png)](/media/2015/06/GetItemFlStar.png)
 
 Although I could not be sure that this was the root cause, I continued investigating how to clear and set the attributes. Unfortunately, the good old attrib.exe was not able to help. So I turned back to PowerShell.
 

@@ -23,7 +23,7 @@ So far, I have written about [averages](/blog/2011/06/27/statistical-analysis-of
 
 A histogram is a very effective tool for analyzing a data set. It shows an aggregated representation of the values and provides an impression of the distribution of the values. Take a look at the following histogram.
 
-[![Histogram](/assets/2011/11/histogram.png)](/assets/2011/11/histogram.png)
+[![Histogram](/media/2011/11/histogram.png)](/media/2011/11/histogram.png)
 
 In the image above, values have been counted based on their size displayed on the horizontal axis. From a histogram, it is really easy to extract some important information. In this case, the smallest value is greater than or equal to zero and the largest value is smaller than 9. And apparently, most values fall into the range between 3 and 8. Therefore, the values in the first bucket are outliers. A histogram can also help you determine whether your data is distributed normally - which is an important prerequisite for many methods presented in this series.
 
@@ -53,13 +53,13 @@ When building a histogram fully automated, it is much easier to treat the bucket
 
 Sometimes, a histogram is used to show the relative frequency of values instead of the actual occurrences. This is often more conclusive, e.g. when applying a [truncated mean](/blog/2011/07/15/statistical-analysis-of-performance-data-part-2-correcting-the-data-set/ "Statistical Analysis of Performance Data Part 2 – Correcting the Data Set") to your data set because the histogram quickly tell you what percentage to exclude from the bottom and the top of your data set.
 
-[![Relative frequency](/assets/2011/11/relativefrequency.png)](/assets/2011/11/relativefrequency.png)
+[![Relative frequency](/media/2011/11/relativefrequency.png)](/media/2011/11/relativefrequency.png)
 
 ## Creating Histogram Using Excel
 
 Excel offers a built-in function called `FREQUENCY` (German: `HÄUFIGKEIT`) for calculating histograms from a data set. Unfortunately, you need to specify the full list of buckets by their middle value. In addition, you need to execute the function again whenever your data changes. I was looking for a more comfortable way of creating histograms.
 
-You’ll find an [Excel file attached to this article](/assets/2011/11/statistical_analysis_of_performance_data_part_3_-_histograms.zip) demonstrating how to use Excel to calculate histograms from an arbitrary data set. The file contains three sheets:
+You’ll find an [Excel file attached to this article](/media/2011/11/statistical_analysis_of_performance_data_part_3_-_histograms.zip) demonstrating how to use Excel to calculate histograms from an arbitrary data set. The file contains three sheets:
 
   1. “Data” contains some sample data
   2. “Histogram” displays the histogram based on the sample data
@@ -76,7 +76,7 @@ The sheet contains a few fields that require some explanation:
 
 Below the configuration values, the configuration sheet contains a table listing all buckets with the corresponding value count and relative frequency. In case, you are deviating from the preset bucket count - by specifying a new bucket count or using a custom bucket size - you may need to manually adjust the number of rows in the table. Either delete excess rows or use auto fill to create more rows.
 
-Download the Excel file [here](/assets/2011/11/statistical_analysis_of_performance_data_part_3_-_histograms.zip).
+Download the Excel file [here](/media/2011/11/statistical_analysis_of_performance_data_part_3_-_histograms.zip).
 
 ## Generating Sample Data Using Excel
 

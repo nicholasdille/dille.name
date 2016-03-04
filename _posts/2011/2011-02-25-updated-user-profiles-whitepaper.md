@@ -19,7 +19,7 @@ tags:
   - VDI
   - XenApp
 ---
-I have just released an [updated version of the whitepaper](/assets/2011/02/sepago_-_whitepaper_-_user_profiles.pdf) about user profiles. In addition to a general overview of user profile and the challenges involved in managing them, it now includes a section about profile migration.
+I have just released an [updated version of the whitepaper](/media/2011/02/sepago_-_whitepaper_-_user_profiles.pdf) about user profiles. In addition to a general overview of user profile and the challenges involved in managing them, it now includes a section about profile migration.
 
 <!--more-->
 

@@ -23,11 +23,11 @@ I have been using VMware Workstation for my lab for several years now. Using Cli
 
 The first network adapter in a virtual machine in VMware Workstation is an Intel 82574L Gigabit Network Adapter. But the second network adapter is an Intel PRO/1000 MT.
 
-[![Different network adapters in virtual machine](/assets/2014/01/e1000.png)](/assets/2014/01/e1000.png)
+[![Different network adapters in virtual machine](/media/2014/01/e1000.png)](/media/2014/01/e1000.png)
 
 Unfortunately, those two types of network adapters do not offer the same features which seems to be the cause for my issue:
 
-[![Different capabilities of network adapters](/assets/2014/01/AdvancedProperty.png)](/assets/2014/01/AdvancedProperty.png)
+[![Different capabilities of network adapters](/media/2014/01/AdvancedProperty.png)](/media/2014/01/AdvancedProperty.png)
 
 The VM configuration (.VMX) revealed different device types for the two adapters:
 
@@ -45,6 +45,6 @@ ethernet1.virtualDev = "e1000e"
 
 After booting the VM, it shows two Intel 82574L adapters:
 
-[![Identical network adapters](/assets/2014/01/e1000e_2.png)](/assets/2014/01/e1000e_2.png)
+[![Identical network adapters](/media/2014/01/e1000e_2.png)](/media/2014/01/e1000e_2.png)
 
 Two of those adapters finally enable a working configuration of network teaming in Windows Server 2012 R2 unter VMware Workstation 10.

@@ -17,7 +17,7 @@ Performance Monitor is usually used to [record performance data of one or more s
 
 <!--more-->
 
-Attached to this article is a [PowerShell script file](/assets/2011/02/perfmon-stats.zip) containing two user-functions:
+Attached to this article is a [PowerShell script file](/media/2011/02/perfmon-stats.zip) containing two user-functions:
 
   * `Get-Metric`
   
@@ -33,7 +33,7 @@ Note that both functions should be called with the same delay to ensure the cons
 
 ## Retrieving Real-Time Performance Data
 
-Performance data is obtained using the function called `Get-Metric` which is available after [PerfMon-Stats.ps1](/assets/2011/02/perfmon-stats.zip) has been sourced. By default, `Get-Metric` displays a value every 500ms. The timestamp and value are display semicolon-separated. The timestamp is formatted `YYYY-MM-DD_hh:mm:ss.mmm`.
+Performance data is obtained using the function called `Get-Metric` which is available after [PerfMon-Stats.ps1](/media/2011/02/perfmon-stats.zip) has been sourced. By default, `Get-Metric` displays a value every 500ms. The timestamp and value are display semicolon-separated. The timestamp is formatted `YYYY-MM-DD_hh:mm:ss.mmm`.
   
 ```
 PS C:\> . PerfMon-Stats.ps1

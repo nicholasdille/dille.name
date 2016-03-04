@@ -21,7 +21,7 @@ The [PowerShell Deployment Toolkit](http://gallery.technet.microsoft.com/PowerSh
 
 <!--more-->
 
-The following lines provide a walkthrough of my variable.xml which installs System Center Virtual Machine Manager, Service Provider Foundation and Windows Azure Pack. The necessary databases are distributed across two instances of SQL server due to the requirements ad conflicts of said components. The entire file is also attached to this post and can be downloaded [here](/assets/2014/05/variable.xml_.txt).
+The following lines provide a walkthrough of my variable.xml which installs System Center Virtual Machine Manager, Service Provider Foundation and Windows Azure Pack. The necessary databases are distributed across two instances of SQL server due to the requirements ad conflicts of said components. The entire file is also attached to this post and can be downloaded [here](/media/2014/05/variable.xml_.txt).
 
 ```xml
 &lt;?xml version="1.0" encoding="utf-8"?>
@@ -231,4 +231,4 @@ Mind that VMM requires a minimum of 2GB RAM to install.
 &lt;/Installer>
 ```
 
-The entire variable.xml can be downloaded [here](/assets/2014/05/variable.xml_.txt).
+The entire variable.xml can be downloaded [here](/media/2014/05/variable.xml_.txt).

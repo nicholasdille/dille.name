@@ -32,4 +32,4 @@ This poster describes performance analysis for the most important subsystems by 
 
 ## Download
 
-[Download the poster](/assets/2014/02/performance_monitoring_poster_v1.0.pdf) and have a look for yourself. I'll be happy to have your comments and ideas for improvement.
+[Download the poster](/media/2014/02/performance_monitoring_poster_v1.0.pdf) and have a look for yourself. I'll be happy to have your comments and ideas for improvement.

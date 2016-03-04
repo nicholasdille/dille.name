@@ -34,7 +34,7 @@ Let me quickly outline the process of requesting a certificate:
   4. The CA (hopefully) issues a certificate
   5. You store the certificate next to the private key
 
-[![Requesting a certificate](/assets/2011/12/p3f1.png)](/assets/2011/12/p3f1.png)
+[![Requesting a certificate](/media/2011/12/p3f1.png)](/media/2011/12/p3f1.png)
 
 Note: Depending on your system, steps 1-3 may be combined in a single process only asking you for identiy information and producing the necessary files.
 
@@ -46,7 +46,7 @@ Sometimes a certificate authority uses special browser plugins to generate the p
 
 Just like the certificate, a CSR only contains public information: a public key and identity information. In addition it is signed by the requesting party’s private key. Therefore, anybody can validate that the CSR originates from the owner of the enclosed public key. A CSR can be shared over public channels as no private information is disclosed.
 
-[![Certificate Signing Request](/assets/2011/12/p3f2.png)](/assets/2011/12/p3f2.png)
+[![Certificate Signing Request](/media/2011/12/p3f2.png)](/media/2011/12/p3f2.png)
 
 The identity information contained in a CSR is expressed in [X.509](http://en.wikipedia.org/wiki/X.509), a so-called distinguished name, for example: `CN=Nicholas Dille, O=sepago GmbH, OU=Technology and Innovation, C=DE, L=Cologne`. The following list shows common components of a distinguished name in certficates:
 

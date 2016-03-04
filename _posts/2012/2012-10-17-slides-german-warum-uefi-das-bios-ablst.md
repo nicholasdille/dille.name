@@ -23,4 +23,4 @@ tags:
   - VBR
   - Windows 8
 ---
-On 12.10.2012 I held a session at the [NRWconf in Wuppertal](http://www.nrwconf.de) about why vendors are pushing UEFI to replace BIOS with the release of Windows 8. Attached you'll find [my slides](/assets/2012/10/nrwconf_2012_-_nicholas_dille_-_warum_uefi_das_bios_ersetzt.pdf).
+On 12.10.2012 I held a session at the [NRWconf in Wuppertal](http://www.nrwconf.de) about why vendors are pushing UEFI to replace BIOS with the release of Windows 8. Attached you'll find [my slides](/media/2012/10/nrwconf_2012_-_nicholas_dille_-_warum_uefi_das_bios_ersetzt.pdf).

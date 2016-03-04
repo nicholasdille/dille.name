@@ -24,5 +24,5 @@ I have updated the crosscompiling hint with the following:
   * added a table of intel architecture names
   * moved non-standard packages to separate chapter
 
-It can be downloaded [here](/assets/2002/02/2002-03-04-crosscompiling-x86-2.1.txt).
+It can be downloaded [here](/media/2002/02/2002-03-04-crosscompiling-x86-2.1.txt).
 

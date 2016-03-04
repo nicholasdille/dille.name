@@ -37,9 +37,9 @@ Both parameters can be set to zero to indicate that no filter is required throug
 
 The following screenshots visualize which input fields control which parameters:
 
-[![EdgeSight report parameters 1](/assets/2011/04/parameters1.png)](/assets/2011/04/parameters1.png)
+[![EdgeSight report parameters 1](/media/2011/04/parameters1.png)](/media/2011/04/parameters1.png)
 
-[![EdgeSight report parameters 2](/assets/2011/04/parameters2.png)](/assets/2011/04/parameters2.png)
+[![EdgeSight report parameters 2](/media/2011/04/parameters2.png)](/media/2011/04/parameters2.png)
 
 Yet, there are certainly more parameters for selecting individual devices, users and processes. But so far, I have not had the need to use them.
 
@@ -51,9 +51,9 @@ But SSMS does not handle parameters for EdgeSight reports properly so that we wi
 
 Unfortunately, these values are far from realistic. Because proper values for all report parameters can only be pulled from the EdgeSight console, I have created a report that displays the values for all report parameters currently known to me and resolves them to human readable values.
 
-[![Example report to visualize EdgeSight report parameters](/assets/2011/04/edgesight_parameters.jpg)](/assets/2011/04/edgesight_parameters.jpg)
+[![Example report to visualize EdgeSight report parameters](/media/2011/04/edgesight_parameters.jpg)](/media/2011/04/edgesight_parameters.jpg)
 
-So, if you are working on new reports, [grab my report](/assets/2011/04/sepago_-_edgesight_parameters.zip) and explore those parameter values. Afterwards build a proper header (like the one below) and use it in SSMS for testing your SQL queries.
+So, if you are working on new reports, [grab my report](/media/2011/04/sepago_-_edgesight_parameters.zip) and explore those parameter values. Afterwards build a proper header (like the one below) and use it in SSMS for testing your SQL queries.
   
 ```sql
 DECLARE @CompId INT

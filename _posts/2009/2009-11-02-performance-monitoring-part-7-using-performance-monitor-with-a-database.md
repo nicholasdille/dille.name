@@ -40,9 +40,9 @@ After these preliminary steps, we can finally configure a new data collector set
       * The file name format allows some predefined variables to be appended to the log file name. This helps to identify individual runs of the same data collector set.
       * By activating the check box the log file name is prefixed with the computer name executing the data collector set.
 
-[![Configure data collector 1](/assets/2009/11/datacollector01counters.png)](/assets/2009/11/datacollector01counters.png)
+[![Configure data collector 1](/media/2009/11/datacollector01counters.png)](/media/2009/11/datacollector01counters.png)
 
-[![Configure data collector 2](/assets/2009/11/datacollector01file.png)](/assets/2009/11/datacollector01file.png)
+[![Configure data collector 2](/media/2009/11/datacollector01file.png)](/media/2009/11/datacollector01file.png)
 
 The settings above result in a unique name identifying every single run of the data collector set.
 
@@ -50,11 +50,11 @@ The settings above result in a unique name identifying every single run of the d
 
 When Performance Monitor writes to a database, three tables are involved in the process: `CounterData`, `CounterDetails` and `DisplayToID` (see screenshot below).
 
-[![Explore database schema 1](/assets/2009/11/tables.png)](/assets/2009/11/tables.png)
+[![Explore database schema 1](/media/2009/11/tables.png)](/media/2009/11/tables.png)
 
 The table `CounterData` contains the collected data for the selected performance counters. It also references the other two tables to identify which counter and which data set the data belongs to. The screenshow below shows the relationships between the three tables.
 
-[![Explore database schema 2](/assets/2009/11/databaseschema.png)](/assets/2009/11/databaseschema.png)
+[![Explore database schema 2](/media/2009/11/databaseschema.png)](/media/2009/11/databaseschema.png)
 
 The following screenshot shows the columns of the table `DisplayToID` and some example data for two runs of the above data collector set. Expect a new line for every execution of every data collector. It identifies the individual runs by the following (selected) fields:
 
@@ -62,7 +62,7 @@ The following screenshot shows the columns of the table `DisplayToID` and some e
   * The `DisplayString` corresponding to the example file name above
   * The time when the log was started and stopped (`LogStartTime` and `LogStopTime`)
 
-[![Explore database schema 3](/assets/2009/11/displaytoid.png)](/assets/2009/11/displaytoid.png)
+[![Explore database schema 3](/media/2009/11/displaytoid.png)](/media/2009/11/displaytoid.png)
 
 The table `CounterDetails` contains a description of the performance counters logged in the database. These records are independent of the data set and can be used from several data sets at once. These details contain the following information:
 
@@ -75,7 +75,7 @@ The table `CounterDetails` contains a description of the performance counters lo
 
 If, for example, you have added the counter **Processor(_Total)\% Processor Time** this resolves to the following: `ObjectName` is Processor, `CounterName` is % Processor Time and `InstanceName` is _Total.
 
-[![Explore database schema 4](/assets/2009/11/counterdetails.png)](/assets/2009/11/counterdetails.png)
+[![Explore database schema 4](/media/2009/11/counterdetails.png)](/media/2009/11/counterdetails.png)
 
 The last table called `CounterData` contains the data for all counters collected in individual runs of data collector sets. The following fields are relevant for an analysis:
 
@@ -84,7 +84,7 @@ The last table called `CounterData` contains the data for all counters collected
   * The `CounterDateTime` represents the time stamp at which the data was collected
   * The `CounterValue` contains the value collected at the specified point in time
 
-[![Explore database schema 5](/assets/2009/11/counterdata.png)](/assets/2009/11/counterdata.png)
+[![Explore database schema 5](/media/2009/11/counterdata.png)](/media/2009/11/counterdata.png)
 
 ## How to Analyze the Data
 

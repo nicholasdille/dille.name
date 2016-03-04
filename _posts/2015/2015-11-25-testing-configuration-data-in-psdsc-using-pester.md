@@ -105,6 +105,6 @@ foreach ($Node in $ConfigurationData.AllNodes) {
 
 You can download the above example from [GitHub Gist](https://gist.github.com/nicholasdille/7583617d6a271b5e8623) to start playing with this. When you execute this example you will see the following output:
 
-[![#PSDSC using #Pester to validate configuration data](/assets/2015/11/PSDSCusingPester1.png)](/assets/2015/11/PSDSCusingPester1.png)
+[![#PSDSC using #Pester to validate configuration data](/media/2015/11/PSDSCusingPester1.png)](/media/2015/11/PSDSCusingPester1.png)
 
 In the end, you will have to test for successful validation before compiling your configuration.

@@ -29,7 +29,7 @@ These metrics can be followed as a sum of all cores (called "_Total") or as a si
 
 You have certainly experienced processes gone haywire and grabbing as much processor time as possible. As each thread (which are ultimately responsible for this behaviour) is limited to using a single core, the affected core will show 100% processor time. But the total processor time increases in characteristic steps as individual cores are fully utilized. The following graph shows the total processor time on my system as I calculate a large factorial (e.g. 99999!).
 
-[![Processor time](/assets/2009/08/image.png)](/assets/2009/08/image.png)
+[![Processor time](/media/2009/08/image.png)](/media/2009/08/image.png)
 
 Due to the step seen in the graph, you can easily tell that my system is equipped with a dual-core processor. The baseline oscillates around 10% but as the calculator kicks in, the processor time jumps to roughly 60% which is my baseline plus 50% for the fully utilized processor.
 

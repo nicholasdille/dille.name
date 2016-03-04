@@ -23,23 +23,23 @@ Now, I'd like to demonstrate how chatty the XML service is when it comes to appl
 
 **Enumerating Applications**
 
-For obvious reasons, the XML service is able to present a list of published applications for a specific user. By selecting the `AppData` tab and providing valid credentials, the resulting response (see [the following screen shot](/assets/2008/07/AppData-User.png)) contains an `AppDataSet` tag enclosing a number of `AppData` tags describing each published application.
+For obvious reasons, the XML service is able to present a list of published applications for a specific user. By selecting the `AppData` tab and providing valid credentials, the resulting response (see [the following screen shot](/media/2008/07/AppData-User.png)) contains an `AppDataSet` tag enclosing a number of `AppData` tags describing each published application.
 
-[![Request AppData information with user authentication](/assets/2008/07/AppData-User.png)](/assets/2008/07/AppData-User.png)
+[![Request AppData information with user authentication](/media/2008/07/AppData-User.png)](/media/2008/07/AppData-User.png)
 
-In addition to this very valid reason for enumerating applications, the XML service readily provides a list of ALL published applications regardless of their permissions. Simply reuse the previous request and choose to send no credentials. [The following screen shot](/assets/2008/07/AppData-General.png) shows the resulting list of applications including those not published for the user specified in the last request.
+In addition to this very valid reason for enumerating applications, the XML service readily provides a list of ALL published applications regardless of their permissions. Simply reuse the previous request and choose to send no credentials. [The following screen shot](/media/2008/07/AppData-General.png) shows the resulting list of applications including those not published for the user specified in the last request.
 
-[![Requesting AppData information without user authentication](/assets/2008/07/AppData-General.png)](/assets/2008/07/AppData-General.png)
+[![Requesting AppData information without user authentication](/media/2008/07/AppData-General.png)](/media/2008/07/AppData-General.png)
 
 **Exploring Application Settings**
 
-After a user has authenticated with Web Interface, a list of application configuration details is retrieved from the XML service to be cached and used for building web pages and launching applications. Using the `AppName` field for the name of the application and the `DesiredDetails` drop-down list for the level of details, the XML service discloses a large amount of configuration details. [The following screen shot](/assets/2008/07/AppData-Details.png) lists all details for the published application `Notepad`.
+After a user has authenticated with Web Interface, a list of application configuration details is retrieved from the XML service to be cached and used for building web pages and launching applications. Using the `AppName` field for the name of the application and the `DesiredDetails` drop-down list for the level of details, the XML service discloses a large amount of configuration details. [The following screen shot](/media/2008/07/AppData-Details.png) lists all details for the published application `Notepad`.
 
-[![Requesting information for a specific application](/assets/2008/07/AppData-Details.png)](/assets/2008/07/AppData-Details.png)
+[![Requesting information for a specific application](/media/2008/07/AppData-Details.png)](/media/2008/07/AppData-Details.png)
 
-While exploring the `DesiredDetails` drop-down list you will sooner or later try out the `access-list` value. To my distress, the XML service does not require any authentication before returning this information. [The last screen shot](/assets/2008/07/AppData-Access-List.png) shows such a case: anyone with network access to my XML service is able to retrieve the full list of permissions for any application.
+While exploring the `DesiredDetails` drop-down list you will sooner or later try out the `access-list` value. To my distress, the XML service does not require any authentication before returning this information. [The last screen shot](/media/2008/07/AppData-Access-List.png) shows such a case: anyone with network access to my XML service is able to retrieve the full list of permissions for any application.
 
-[![Request access lists for a specific application](/assets/2008/07/AppData-Access-List.png)](/assets/2008/07/AppData-Access-List.png)
+[![Request access lists for a specific application](/media/2008/07/AppData-Access-List.png)](/media/2008/07/AppData-Access-List.png)
 
 **References**
 

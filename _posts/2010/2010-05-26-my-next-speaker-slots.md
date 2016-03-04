@@ -28,7 +28,7 @@ I thought I’d let you know when and where I’ll be speaking this year. Note t
 
             [Speaker Profile](http://www.ice-lingen.de/)
 
-            [![Hear Me Speak](/assets/2014/02/hearmespeak_2010.gif)](/assets/2014/02/hearmespeak_2010.gif)
+            [![Hear Me Speak](/media/2014/02/hearmespeak_2010.gif)](/media/2014/02/hearmespeak_2010.gif)
         </td>
     </tr> 
     <tr>
@@ -37,7 +37,7 @@ I thought I’d let you know when and where I’ll be speaking this year. Note t
         <td align="left" valign="top">
             Skalierbarkeit messbar machen[Speaker Profile](http://www.nrwconf.de/2010/Event/Speakers)</p> 
 
-            [![NRWconf logo](/assets/2014/02/NRWconf.png)](/assets/2014/02/NRWconf.png)
+            [![NRWconf logo](/media/2014/02/NRWconf.png)](/media/2014/02/NRWconf.png)
         </td>
     </tr> 
     <tr>

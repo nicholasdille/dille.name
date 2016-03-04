@@ -31,7 +31,7 @@ In contrast, the Zone Data Collector manages all information about the current s
 
 As you may have noticed when looking at the database containing the Data Store, it does not use a relational database design to store the configuration data but rather a large number of data BLOBs (Binary Large OBjects).
 
-[![BLOBs](/assets/2008/01/Database_Fields.png)](/assets/2008/01/Database_Fields.png)
+[![BLOBs](/media/2008/01/Database_Fields.png)](/media/2008/01/Database_Fields.png)
 
 Originally, Citrix was planning to store all configuration data inside of Microsoft Active Directory. Due to the nature of a directory service, which is usually based on X.501, there is no relational design. Data is referenced by a distinguished name which induces a tree-like structure of objects and relations between objects are expressed by adding an attribute referencing another object. In the end, Citrix decided to move all data to a database management system due to replication issues in early releases of Active Directory as well as the slow acceptance of Microsoft's directory service. Instead of redesigning the abstraction layer, the binary data was moved to a database in the least time consuming manner.
 

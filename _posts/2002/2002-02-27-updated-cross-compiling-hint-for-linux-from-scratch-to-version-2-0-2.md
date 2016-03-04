@@ -15,7 +15,7 @@ I have updated the crosscompiling hint with the following:
 
   * corrected the uname hack sed'ing
 
-It can be downloaded [here](/assets/2002/02/2002-02-27-crosscompiling-x86-2.0.2.txt).
+It can be downloaded [here](/media/2002/02/2002-02-27-crosscompiling-x86-2.0.2.txt).
 
 
 

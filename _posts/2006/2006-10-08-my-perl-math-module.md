@@ -15,4 +15,4 @@ This perl module contains several useful functions for the statistical analysis 
 
 <!--more-->
 
-Download the Perl module [Math.pm](/assets/2013/06/Math.zip)
+Download the Perl module [Math.pm](/media/2013/06/Math.zip)

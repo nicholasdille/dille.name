@@ -30,13 +30,13 @@ In a recent deployment of Remote Desktop Services with Windows Server 2012, I ex
 
 Launching a RemoteApp from WebAccess is usually a very simple thing to do. After logging on (see first screenshot below), the assigned RemoteApps are displayed (see second screenshot below). When a RemoteApp is launched by clicking on the icon, the user first sees an error to inform him that the connection information is signed by an untrusted publisher (see third screenshot below). After choosing to continue, the user is presented a second credential prompt after he has already authenticated to WebAccess (see fourth screenshow below).
 
-[![Logon to RD Web Access](/assets/2012/12/01_RDWA_Logon-anon.png)](/assets/2012/12/01_RDWA_Logon-anon.png)
+[![Logon to RD Web Access](/media/2012/12/01_RDWA_Logon-anon.png)](/media/2012/12/01_RDWA_Logon-anon.png)
 
-[!RD Web Access displays RemoteApps](/assets/2012/12/03_RemoteApps-crop-anon.png)](/assets/2012/12/03_RemoteApps-crop-anon.png)
+[!RD Web Access displays RemoteApps](/media/2012/12/03_RemoteApps-crop-anon.png)](/media/2012/12/03_RemoteApps-crop-anon.png)
 
-[![Warning about an untrusted publisher for RDP file](/assets/2012/12/04_Publisher_error-anon.png)](/assets/2012/12/04_Publisher_error-anon.png)
+[![Warning about an untrusted publisher for RDP file](/media/2012/12/04_Publisher_error-anon.png)](/media/2012/12/04_Publisher_error-anon.png)
 
-[![Credential prompt for remote desktop connection](/assets/2012/12/05_credentials-anon.png)](/assets/2012/12/05_credentials-anon.png)
+[![Credential prompt for remote desktop connection](/media/2012/12/05_credentials-anon.png)](/media/2012/12/05_credentials-anon.png)
 
 ## How authentication works with WebAccess
 
@@ -44,11 +44,11 @@ When the user authenticates against WebAccess, the credentials are only known to
 
 As soon as the user connects WebAccess for the first time, he should be prompted to allow the addon to install and run (see first and second screenshow below). After authentication against WebAccess, the addon shows an icon in the system tray informing the user that it is handling the credentials (see third screenshot below).
 
-[![Prompt to install addon](/assets/2012/12/Addon-crop-anon.png)](/assets/2012/12/Addon-crop-anon.png)
+[![Prompt to install addon](/media/2012/12/Addon-crop-anon.png)](/media/2012/12/Addon-crop-anon.png)
 
-[![Launch addon](/assets/2012/12/Ausführen.png)](/assets/2012/12/Ausführen.png)
+[![Launch addon](/media/2012/12/Ausführen.png)](/media/2012/12/Ausführen.png)
 
-[![Addon handles credentials](/assets/2012/12/02_RADC_message-crop-anon1.png)](/assets/2012/12/02_RADC_message-crop-anon1.png)
+[![Addon handles credentials](/media/2012/12/02_RADC_message-crop-anon1.png)](/media/2012/12/02_RADC_message-crop-anon1.png)
 
 ## What to do against the second prompt
 
@@ -58,11 +58,11 @@ The addon still does not pass on the user credentials to the remote desktop clie
 
 The first step to making the publisher known to the user is configuring a proper certificate. Remote Desktop Services are preconfigured with a self-signed certificate which is not accepted by default. You must at least configure a certificate for the "RD Connection Broker – Publishing" (see screenshow below).
 
-[![Configure a certificate](/assets/2012/12/Certificates-anon.png)](/assets/2012/12/Certificates-anon.png)
+[![Configure a certificate](/media/2012/12/Certificates-anon.png)](/media/2012/12/Certificates-anon.png)
 
 With a proper certificate, the publisher error changes into a warning (see screenshot below). The user is still presented a dialog because the publisher is not trusted explicitly. Therefore, the user must accept the dialog after ticking the checkbox stating: “Don’t ask me again for remote connections from this publisher” (see screenshot below).
 
-[![Accept remote connection for this publisher](/assets/2012/12/04_Publisher_warning-anon1.png)](/assets/2012/12/04_Publisher_warning-anon1.png)
+[![Accept remote connection for this publisher](/media/2012/12/04_Publisher_warning-anon1.png)](/media/2012/12/04_Publisher_warning-anon1.png)
 
 This step results in storing the fingerprint of the certificate in the user’s registry:
 
@@ -70,7 +70,7 @@ This step results in storing the fingerprint of the certificate in the user’s 
 
 … and makes this a permenent configuration in this user profile. You can also deploy trusted publishers in your organization using group policy. The following setting contains a comma separated list of fingerprints (see screenshot below).
 
-[![Deploy trusted publishers using group policy](/assets/2012/12/PublisherBypassList.png)](/assets/2012/12/PublisherBypassList.png)
+[![Deploy trusted publishers using group policy](/media/2012/12/PublisherBypassList.png)](/media/2012/12/PublisherBypassList.png)
 
 The setting is called _Specify SHA1 thumbprints of certificates representing trusted .rdp publishers_ and is located under `User Configuration\Policies\Administrative Templates\Windows Components\Remote Desktop Services\Remote Desktop Connection Client`.
 

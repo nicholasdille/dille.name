@@ -40,7 +40,7 @@ When the above prerequisites are met, you can determine the ID of your remote de
 
 The following screenshow shows example output from my environment:
 
-[![Output of the above command](/assets/2014/01/image.png)](/assets/2014/01/image.png)
+[![Output of the above command](/media/2014/01/image.png)](/media/2014/01/image.png)
 
 The latter is usually a lot faster because it does not involve launching Server Manager and click the integrated RDS console. In case you are using Server Manager, you can also use it to launch shadowing. But more often you will be on a different network without the appropriate credentials to access you demo servers. In this case, the session ID is used in a new parameter of mstsc.exe:
 
@@ -48,7 +48,7 @@ The latter is usually a lot faster because it does not involve launching Server 
 
 The following screenshot shows the consent prompt from the remote desktop session because my group policies force such a prompt:
 
-[![Consent prompt](/assets/2014/01/image1.png)](/assets/2014/01/image1.png)
+[![Consent prompt](/media/2014/01/image1.png)](/media/2014/01/image1.png)
 
 There are several optional parameters for the above command. All are explained in detail in the [blog mentioned above](http://blogs.technet.com/b/askperf/archive/2013/10/22/windows-8-1-windows-server-2012-r2-rds-shadowing-is-back.aspx).
 
@@ -56,7 +56,7 @@ In this case, you do not need to control the session because your audience only 
 
 The following screenshot shows both of my desktops:
 
-[![Shadowed desktop](/assets/2014/01/Shadowing.png)](/assets/2014/01/Shadowing.png)
+[![Shadowed desktop](/media/2014/01/Shadowing.png)](/media/2014/01/Shadowing.png)
 
 ## Sidenote
 

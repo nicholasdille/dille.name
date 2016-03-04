@@ -31,6 +31,6 @@ I have divided the components of an EdgeSight infrastructure into three categori
 
 The colored arrows indicate how the components interact with one another. Red arrows represent a components writing to the other, green arrows are used for reading connections and blue arrows show how a component is built.
 
-[![EdgeSight architecture](/assets/2010/07/EdgeSight_Architecture.png)](/assets/2010/07/EdgeSight_Architecture.png)
+[![EdgeSight architecture](/media/2010/07/EdgeSight_Architecture.png)](/media/2010/07/EdgeSight_Architecture.png)
 
 In the first two articles of this series, I will be focusing on the server-side components [explaining the database schema](/blog/2010/07/26/building-custom-edgesight-reports-part-3-the-query) and the [peculiarities of a query](/blog/2010/07/26/building-custom-edgesight-reports-part-3-the-query) against the database through reporting services. The last article will demonstrate how to [build a layout definition](/blog/2010/09/27/building-custom-edgesight-reports-part-4-the-wedding) for an example report. So, stay tuned ;-)

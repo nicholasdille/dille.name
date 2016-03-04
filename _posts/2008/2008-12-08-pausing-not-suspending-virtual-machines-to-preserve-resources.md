@@ -27,6 +27,6 @@ I recently read about the tool `vmrun` which is installed with [VMware Workstati
 
 Now, consider a situation when a virtual machine causes a lot of stress on the local hard drive. This usually happens when I am in dire need of the resources to continue my work. I can now identify the guest responsible for the issue and pause it. But I still need to open a command prompt, enter the command and the path to the misbehaving virtual machine which takes too much time for my taste.
 
-Being an evangelist of automating as much as possible and being a lazy guy (which may be quite the same thing), I wrapped these commands in a PowerShell script to display a small graphical user interface. After selecting any of the running virtual machines, I can pause and unpause them to free resources. You will find the script [attached to this article](/assets/2008/12/vmpause.zip).
+Being an evangelist of automating as much as possible and being a lazy guy (which may be quite the same thing), I wrapped these commands in a PowerShell script to display a small graphical user interface. After selecting any of the running virtual machines, I can pause and unpause them to free resources. You will find the script [attached to this article](/media/2008/12/vmpause.zip).
 
 Although the script is working and suffices for my needs, please consider this as a proof of concept of how to add some management to your virtual machines and system resources.

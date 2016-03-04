@@ -20,11 +20,11 @@ On the 11th of March, Citrix quietly released EdgeSight 5.3. Apart from endpoint
 
 To gain this improved view on the license repository and usage data, EdgeSight needs to know about your license servers. On the configure tab, a new section called "License Monitor Configuration" allows for license servers to be specified:
 
-[![License server monitoring configuration](/assets/2010/03/Settings1.png)](/assets/2010/03/Settings1.png)
+[![License server monitoring configuration](/media/2010/03/Settings1.png)](/media/2010/03/Settings1.png)
 
 They are regularly polled to collect information about available license types and usage data:
 
-[![Monitored license servers](/assets/2010/03/License-Servers.png)](/assets/2010/03/License-Servers.png)
+[![Monitored license servers](/media/2010/03/License-Servers.png)](/media/2010/03/License-Servers.png)
 
 The choice of the polling interval directly affects the granularity of the graphical representations.
 
@@ -32,15 +32,15 @@ The choice of the polling interval directly affects the granularity of the graph
 
 After the EdgeSight server has polled the specified license servers several times, reports based on the collected data can be accessed on the new tab called "Track Usage":
 
-[![Track Usage](/assets/2010/03/Tab-Track-Usage.png)](/assets/2010/03/Tab-Track-Usage.png)
+[![Track Usage](/media/2010/03/Tab-Track-Usage.png)](/media/2010/03/Tab-Track-Usage.png)
 
 The first new report ("License Usage Trending") displays available and used licenses over time. The licenses are grouped by product by default to abstract from individual license files.
 
-[![License Usage Trending](/assets/2010/03/License-Usage-Trend.png)](/assets/2010/03/License-Usage-Trend.png)
+[![License Usage Trending](/media/2010/03/License-Usage-Trend.png)](/media/2010/03/License-Usage-Trend.png)
 
 A more simplified view is presented by another report ("License Usage Summary"). For all license types, the report displays the license count as well as used and available licenses:
 
-[![License Usage Summary](/assets/2010/03/License-Usage-Summary1.png)](/assets/2010/03/License-Usage-Summary1.png)
+[![License Usage Summary](/media/2010/03/License-Usage-Summary1.png)](/media/2010/03/License-Usage-Summary1.png)
 
 See this article about EdgeSight 5.3 for [more screenshots](http://www.archy.net/citrix-edgesight-5-3/).
 

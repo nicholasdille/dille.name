@@ -23,7 +23,7 @@ EdgeSight differentiates between the instance of an agent and the machine which 
 
 The following image displays the relationship between the tables introduced above:
 
-[![Relationship between organizational tables](/assets/2010/07/Bild1.png)](/assets/2010/07/Bild1.png)
+[![Relationship between organizational tables](/media/2010/07/Bild1.png)](/media/2010/07/Bild1.png)
 
 Details about the organizational tables called `image` and `vendor` will be explained in the next section as the relationship will become more obvious.
 
@@ -55,15 +55,15 @@ The following views follow the general schema described above:
 
 The following image displays the relationship between the tables containing performance data.
 
-[![Relationship between tables with performance data](/assets/2010/07/Bild2.png)](/assets/2010/07/Bild2.png)
+[![Relationship between tables with performance data](/media/2010/07/Bild2.png)](/media/2010/07/Bild2.png)
 
 Process performance data from `vw_image_perf` requires two additional tables to resolve the data contained therein: `image` and `vendor`. Detailed information about processes and vendors are separated from the performance data to prevent redundant data to be stored. A process is represented by an entry in the table `image` encompassing a unique id (`imid`), the executable name (`filename`), the version of the file (`file_version`) and a reference to the vendor (`vendid`). A vendor is stored in the table `vendor` by a unique id (`vendid`) and a name (`name`). The following image displays the relationship between the tables `vw_image_perf`, `image` and `vendor`.
 
-[![Relationship between tables with process information](/assets/2010/07/Bild3.png)](/assets/2010/07/Bild3.png)
+[![Relationship between tables with process information](/media/2010/07/Bild3.png)](/media/2010/07/Bild3.png)
 
 Apart from relating performance data through the agent instance (table `instance`), tables like `vw_ctrx_session_perf` contain information about individual user sessions. The following image displays the relationship between tables based on user sessions.
 
-[![Relationship between tables with session information](/assets/2010/07/Bild4_0.png)](/assets/2010/07/Bild4_0.png)
+[![Relationship between tables with session information](/media/2010/07/Bild4_0.png)](/media/2010/07/Bild4_0.png)
 
 The tables `session` and `principal` are used to resolve the session if (`sessid`) found in `vw_ctrx_system_perf` and `vw_ctrx_session_perf`. The table `session` contains a list of all sessions perceived by the agents. The account information for a session is stored in the table `principal` being referenced by `prid` from the table `session`.
 

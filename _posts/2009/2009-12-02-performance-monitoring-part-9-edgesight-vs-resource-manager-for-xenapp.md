@@ -27,11 +27,11 @@ This article is not meant to compare all available monitoring solutions as both 
 
 [Resource Manager](/blog/tags#resource-manager/) is a component shipping with Presentation Server for a long time. By installing Resource Manager on a XenApp server, an additional component is responsible for collecting performance data on all servers. This data is aggregated on a daily basis and collected by the Farm Metric Server. This role has a primary and a secondary instance to ensure its availability. The Farm Metric Server stores the data inside the configured database through the Database Connection Server represented by a XenApp server.
 
-[![Resource Manager data handling](/assets/2009/12/RM.png)](/assets/2009/12/RM.png)
+[![Resource Manager data handling](/media/2009/12/RM.png)](/media/2009/12/RM.png)
 
 [EdgeSight](/blog/tags#edgesight/) has a very similar design. Although data is also collected on all servers, this is done by an agent independent of XenApp which allows for additional platforms to be monitored, e.g. endpoints. The XenApp agent is responsible for collecting performance data and uploading the data to the EdgeSight server on a daily basis. The EdgeSight server stores the data provided by the agent inside its database. The web-based console offers a large number of reports rendered by MS SQL Server Reporting Services.
 
-[![EdgeSight data handling](/assets/2009/12/ES.png)](/assets/2009/12/ES.png)
+[![EdgeSight data handling](/media/2009/12/ES.png)](/media/2009/12/ES.png)
 
 ## Architecture
 

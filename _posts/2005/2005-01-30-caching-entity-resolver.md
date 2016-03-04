@@ -15,7 +15,7 @@ Both SAX and DOM parsers attempt to download document type definitions everytime
   
 <!--more-->
 
-Get it while it's hot: [CachingEntityResolver.java](/assets/2005/01/CachingEntityResolver.zip)
+Get it while it's hot: [CachingEntityResolver.java](/media/2005/01/CachingEntityResolver.zip)
 
 See also the [XML Validator](/blog/2005/01/30/xml-validator/) and the [Null Entity Resolver](/blog/2005/01/30/null-entity-resolver/ "Null Entity Resolver")
 

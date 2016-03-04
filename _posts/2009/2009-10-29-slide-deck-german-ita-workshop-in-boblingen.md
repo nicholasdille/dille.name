@@ -12,4 +12,4 @@ tags:
   - Slides
   - VDI
 ---
-I held a talk about VDI at the IT-Administrator Workshop in Böblingen. Please download the slide deck [here](/assets/2014/10/VDI-Die-Revolution-der-Arbeitsplatzbereitstellung-small.pdf).
+I held a talk about VDI at the IT-Administrator Workshop in Böblingen. Please download the slide deck [here](/media/2014/10/VDI-Die-Revolution-der-Arbeitsplatzbereitstellung-small.pdf).

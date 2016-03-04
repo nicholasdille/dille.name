@@ -35,9 +35,9 @@ Although the Virtualization Community NRW (VCNRW) is a rather new community even
 
 My session was titled "Ein Arbeitsplatz in der Cloud durch Azure RemoteApp". VCNRW has published [a very benevolent article about me and my session (German)](http://vcnrw.de/referentenportraet-nicholas-dille/)</a>.
 
-[![Ein Arbeitsplatz in der Cloud durch #Azure #RemoteApp at #VCNRW](/assets/2015/06/2015-06-18-VCNRW-Azure-RemoteApp.png]](/assets/2015/06/2015-06-18-VCNRW-Azure-RemoteApp.pdf)
+[![Ein Arbeitsplatz in der Cloud durch #Azure #RemoteApp at #VCNRW](/media/2015/06/2015-06-18-VCNRW-Azure-RemoteApp.png]](/media/2015/06/2015-06-18-VCNRW-Azure-RemoteApp.pdf)
 
-Either click the image above or [this link](/assets/2015/06/2015-06-18-VCNRW-Azure-RemoteApp.pdf) to download the slide deck for #Azure #RemoteApp at #VCNRW.
+Either click the image above or [this link](/media/2015/06/2015-06-18-VCNRW-Azure-RemoteApp.pdf) to download the slide deck for #Azure #RemoteApp at #VCNRW.
 
 I covered the following topics:
 

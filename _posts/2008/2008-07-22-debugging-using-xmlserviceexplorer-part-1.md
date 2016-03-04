@@ -21,7 +21,7 @@ After [publishing the XmlServiceExplorer](/blog/2008/07/17/talking-to-the-xml-se
 
 Note: For this tutorial to work, you will need the XMLServiceExplorer 1.0.1 available 
 
-[here](/assets/2008/07/XmlServiceExplorer.zip).
+[here](/media/2008/07/XmlServiceExplorer.zip).
 
 Stay tuned for more articles [about the XmlServiceExplorer](/blog/tags#xmlserviceexplorer/).
 
@@ -37,7 +37,7 @@ After starting XmlServiceExplorer and filling in the server name and port of a X
 
 After pressing the request button (see the screen shot below), the response windows displays the result (presuming that the server name and port are valid). If the response does not contain any error tags, the request was successful and the farm attempts to disconnect any active session of the specified used from the specified client device. Errors are only reported if the request is invalid, therefore, the response does not inform you if the request does not match any disconnected session.
 
-[![Disconnect user sessions](/assets/2008/07/DisconnectUserSessions.png)](/assets/2008/07/DisconnectUserSessions.png)
+[![Disconnect user sessions](/media/2008/07/DisconnectUserSessions.png)](/media/2008/07/DisconnectUserSessions.png)
 
 After a successful request you are left with all sessions to the specified farm in the disconnected state.
 
@@ -49,11 +49,11 @@ Again you need to supply credentials on the right-hand side and the client name 
 
 In this example, the specified user has a disconnected session running Notepad on the server identified by the IMA host id 23363 with session id 2.
 
-[![Requesting reconnection data](/assets/2008/07/ReconnectSessionData.png)](/assets/2008/07/ReconnectSessionData.png)
+[![Requesting reconnection data](/media/2008/07/ReconnectSessionData.png)](/media/2008/07/ReconnectSessionData.png)
 
 Unfortunately, the IMA host id needs to be resolved using a separate request. The following screen displays a `RequestAddress` XML structure with the above session information supplied. Make sure to choose an address type to obtain a human readable address.
 
-[![Request the server address for a specific app in an existing session](/assets/2008/07/Address-Notepad.png)](/assets/2008/07/Address-Notepad.png)
+[![Request the server address for a specific app in an existing session](/media/2008/07/Address-Notepad.png)](/media/2008/07/Address-Notepad.png)
 
 Web Interface uses the information supplied by `ResponseReconnectSessionData` and `ResponseAddress` to build an ICA file to reconnect to the session. This is a step not reproducible by XmlServiceExplorer because it is not designed to mimic Web Interface. Please reconnect to your sessions manually.
 
@@ -61,7 +61,7 @@ Web Interface uses the information supplied by `ResponseReconnectSessionData` an
 
 The logoff request works very similar to the reconnect request (see the screen shot below). You need to supply the same information to log off all user session. After entering the client name and the credentials, an empty response indicates that the information is valid no matter whether such a session really exists.
 
-[![Logging off a user session](/assets/2008/07/LogoffUserSessions.png)](/assets/2008/07/LogoffUserSessions.png)
+[![Logging off a user session](/media/2008/07/LogoffUserSessions.png)](/media/2008/07/LogoffUserSessions.png)
 
 At this point, all your sessions are logged off.
 

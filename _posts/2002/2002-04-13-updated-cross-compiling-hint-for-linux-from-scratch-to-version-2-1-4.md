@@ -21,5 +21,5 @@ I have updated the crosscompiling hint with the following:
   * simplified kbd 1.06 commands
   * replaced the original uname hack kernel module with an easier to use by Yann Guidon
 
-It can be downloaded [here](/assets/2002/02/2002-04-13-crosscompiling-x86-2.1.4.txt).
+It can be downloaded [here](/media/2002/02/2002-04-13-crosscompiling-x86-2.1.4.txt).
 

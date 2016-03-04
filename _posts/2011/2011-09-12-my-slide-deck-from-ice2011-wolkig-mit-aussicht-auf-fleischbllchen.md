@@ -13,4 +13,4 @@ tags:
   - Slide Deck
   - Slides
 ---
-For those interested, find attached the [slides](/assets/2014/02/ice2011_-_nicholas_dille_-_wolkig_mit_aussicht_auf_fleischbaellchen.zip) I presented at [ice:2011 in Lingen](http://www.ice-lingen.de/). Mind - they are in German! I also discontinue sharing the material via Amazon S3 as propagated in the slides.
+For those interested, find attached the [slides](/media/2014/02/ice2011_-_nicholas_dille_-_wolkig_mit_aussicht_auf_fleischbaellchen.zip) I presented at [ice:2011 in Lingen](http://www.ice-lingen.de/). Mind - they are in German! I also discontinue sharing the material via Amazon S3 as propagated in the slides.

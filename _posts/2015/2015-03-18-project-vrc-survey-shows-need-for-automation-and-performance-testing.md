@@ -25,7 +25,7 @@ Two of the questions sparked my interest when filling out the survey because I c
 
 As you can see in the image below, more than a third of the participants admitted that their master image is managed manually. Luckily the implemented provisioning technology prevents you from manually modifying the individual machines. But the manual management of the master image makes you dependent of his image and its evolution over time.
 
-[![Application management](/assets/2015/03/ProjectVRC_Preview1.png)](/assets/2015/03/ProjectVRC_Preview1.png)
+[![Application management](/media/2015/03/ProjectVRC_Preview1.png)](/media/2015/03/ProjectVRC_Preview1.png)
 
 Incremental updates of the master image do not suffice to have a repeatable installation. In case of a corruption you will have a really hard time to reproduce all the steps taken to create your master image. Even if you thoroughly document all your changes you are not able to eliminate human error when the master image is recreated from the documentation.
 
@@ -39,7 +39,7 @@ If you are building a new environment, you will not be able to predict the peak 
 
 Apparently, 45% of the participants do not use performance testing and do not plan to implement it. This will inevitably lead to large overhead or poor performance.
 
-[![Load testing](/assets/2015/03/ProjectVRC_Preview2.png)](/assets/2015/03/ProjectVRC_Preview2.png)
+[![Load testing](/media/2015/03/ProjectVRC_Preview2.png)](/media/2015/03/ProjectVRC_Preview2.png)
 
 There are two aspects to load testing that must be considered:
 

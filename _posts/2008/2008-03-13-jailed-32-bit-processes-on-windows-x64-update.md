@@ -51,7 +51,7 @@ Example 2: If caught in a 32-bit command prompt, Start64 breaks free and launche
 
 The second example uses an advanced construct to ensure that Start64 returns immediately because it does not have to wait for the interactive 64-bit command prompt to terminate.
 
-You can download Start64 [here](/assets/2008/03/start64.zip "Start64"). A help message is displayed when calling the tool without any parameters.
+You can download Start64 [here](/media/2008/03/start64.zip "Start64"). A help message is displayed when calling the tool without any parameters.
 
 ## References
 

@@ -67,7 +67,7 @@ The following new features are implemented by leveraging Microsoft group policy:
 
 Finally let's have a look at the user interface:
 
-[![Citrx policies editor](/assets/2009/12/image.png)](/assets/2009/12/image.png)
+[![Citrx policies editor](/media/2009/12/image.png)](/media/2009/12/image.png)
 
 Citrix has extended the group policy editor to include a new node called Citrix Policies under computer and user configuration. Both of these nodes show the same layout in the content pane. The top half shows a list of Citrix policies contained in this group policy and the bottom half displays detailed information (settings and filters) about the policy selected above.
 
@@ -75,27 +75,27 @@ A new policy is created through a wizard in three easy steps:
 
   1. Configure the settings to be contained in the policy:
     
-    [![Policy settings](/assets/2009/12/image1.png)](/assets/2009/12/image1.png)
+    [![Policy settings](/media/2009/12/image1.png)](/media/2009/12/image1.png)
     
   2. Select how the policy is applied:
     
-    [![Policy filters](/assets/2009/12/image2.png)](/assets/2009/12/image2.png)
+    [![Policy filters](/media/2009/12/image2.png)](/media/2009/12/image2.png)
     
   3. Choose whether to enable the policy:
     
-    [![Enable policy](/assets/2009/12/image3.png)](/assets/2009/12/image3.png)
+    [![Enable policy](/media/2009/12/image3.png)](/media/2009/12/image3.png)
 
 After a policy has been created, it can be configured from the content pane of the group policy editor. The summary tab displays all active settings and filters which can be modified and removed with a single click:
 
-[![Quick edit settings](/assets/2009/12/image4.png)](/assets/2009/12/image4.png)
+[![Quick edit settings](/media/2009/12/image4.png)](/media/2009/12/image4.png)
 
 On the settings tab, new configuration options can be added to the policy from the full list with or without categories:
 
-[![Quick add settings](/assets/2009/12/image5.png)](/assets/2009/12/image5.png)
+[![Quick add settings](/media/2009/12/image5.png)](/media/2009/12/image5.png)
 
 On the filters tab, configured are displayed and new filters can be configured:
 
-[![Quick edit filters](/assets/2009/12/image6.png)](/assets/2009/12/image6.png)
+[![Quick edit filters](/media/2009/12/image6.png)](/media/2009/12/image6.png)
 
 ## **Summary**
 

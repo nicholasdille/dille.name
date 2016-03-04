@@ -26,6 +26,6 @@ NOTE: You will also need the [Caching Entity Resolver](/blog/2005/01/30/caching-
 
 When calling the validator without any arguments, it will display the public IDs of all cached external entities. To validate XML documents supply as many document as you like: `java Validator file1 file2 ... fileN`
 
-Ladies and gentlemen: the [Validator.java](/assets/2005/01/Validator.zip)
+Ladies and gentlemen: the [Validator.java](/media/2005/01/Validator.zip)
 
 See also the [Caching Entity Resolver](/blog/2005/01/30/caching-entity-resolver/) and the [Null Entity Resolver](/blog/2005/01/30/null-entity-resolver/)

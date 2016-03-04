@@ -24,23 +24,23 @@ First, the data needs to be pulled into Excel. Instead of pulling tables or the 
 
 On the data tab, Excel offers several methods for reading data from different sources. We will use the "From SQL Server" button to create a connection to the Performance Monitor database.
 
-[![Data from SQL server](/assets/2009/11/DataFromSQLServer.png)](/assets/2009/11/DataFromSQLServer.png)
+[![Data from SQL server](/media/2009/11/DataFromSQLServer.png)](/media/2009/11/DataFromSQLServer.png)
 
 In the first dialog, enter the server name and click next. The following step of the wizard select the relevant database (in my case, it is called PerfMonDB) and uncheck the option to "Connect to a specific table" because we do not intend to use one of the tables. Then click "Next" and "Finish".
 
-[![Do not connect specific table](/assets/2009/11/NoSpecificTable.png)](/assets/2009/11/NoSpecificTable.png)
+[![Do not connect specific table](/media/2009/11/NoSpecificTable.png)](/media/2009/11/NoSpecificTable.png)
 
 In the next dialog you will be asked to select a table. At this point, it is the selection you make is insignificant because we will use a SQL statement later on.
 
-[![Choose any table](/assets/2009/11/SelectTable.png)](/assets/2009/11/SelectTable.png)
+[![Choose any table](/media/2009/11/SelectTable.png)](/media/2009/11/SelectTable.png)
 
 Before any data is inserted into your Excel sheet, the following dialog allows the data connection to be customized. Select "PivotChart and PivotTable Report" and click "Properties" to insert a custom SQL statement.
 
-[![Add pivot table and chart](/assets/2009/11/Properties.png)](/assets/2009/11/Properties.png)
+[![Add pivot table and chart](/media/2009/11/Properties.png)](/media/2009/11/Properties.png)
 
 On the "Definition" tab of the new dialog, select "SQL" to be the "Command type" and page the following SQL statement into "Command text". Then click "Ok".
 
-[![Add SQL query to definition of data properties](/assets/2009/11/CommandType.png)](/assets/2009/11/CommandType.png)
+[![Add SQL query to definition of data properties](/media/2009/11/CommandType.png)](/media/2009/11/CommandType.png)
 
 ```sql
 SELECT
@@ -55,13 +55,13 @@ FROM
 
 After closing the dialog, Excel may ask you to confirm the change of the connection definition. Please confirm this by clicking "Yes".
 
-[![Confirm chaning the definition](/assets/2009/11/Dialog.png)](/assets/2009/11/Dialog.png)
+[![Confirm chaning the definition](/media/2009/11/Dialog.png)](/media/2009/11/Dialog.png)
 
 ## Using the PivotChart
 
 You have now created a blank PivotTable and PivotChart report with a direct connection to your Performance Monitor database. All this is achieved without pulling in the actual data from the database. You Excel sheet should look similar to the following screenshot.
 
-[![Empty pivot table and chart](/assets/2009/11/Components1.png)](/assets/2009/11/Components1.png)
+[![Empty pivot table and chart](/media/2009/11/Components1.png)](/media/2009/11/Components1.png)
 
 The Excel window now contains several new elements: a PivotTable area on the left, a blank PivotChart accompanied with a filter pane in the middle and a PivotTable field list on the right. I will now expand on the PivotTable stuff but rather demonstrate how to use the PivotChart as a dashboard for analyzing the performance data contained in the database.
 
@@ -74,12 +74,12 @@ First, we will move the PivotChart to a separate sheet to have a well-arranged w
 
 After some adjustments to the layout, I arrived at the PivotChart displayed in the screenshot below. Without much hassle, I am able to view the counter values from the database and create a nice visual representation.
 
-[![Pivot chart](/assets/2009/11/PivotChart.png)](/assets/2009/11/PivotChart.png)
+[![Pivot chart](/media/2009/11/PivotChart.png)](/media/2009/11/PivotChart.png)
 
 Using the filter pane allows you to filter which data is actually displayed in the PivotChart. If your Performance Monitor database contains several series of measurements for different machines, filtering focuses the PivotChart on the exact amount of data you intend to view from the database.
 
-[![Filter data 1](/assets/2009/11/DisplayString.png)](/assets/2009/11/DisplayString.png)
+[![Filter data 1](/media/2009/11/DisplayString.png)](/media/2009/11/DisplayString.png)
 
-[![Filter data 2](/assets/2009/11/MachineName.png)](/assets/2009/11/MachineName.png)
+[![Filter data 2](/media/2009/11/MachineName.png)](/media/2009/11/MachineName.png)
 
-[![Filter data 3](/assets/2009/11/CounterName.png)](/assets/2009/11/CounterName.png)
+[![Filter data 3](/media/2009/11/CounterName.png)](/media/2009/11/CounterName.png)

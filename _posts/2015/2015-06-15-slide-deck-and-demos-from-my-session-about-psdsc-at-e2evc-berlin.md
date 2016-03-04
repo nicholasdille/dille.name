@@ -28,9 +28,9 @@ My session was titled "Why I am a fan of PowerShell Desired State Configuration 
 
 > In PowerShell 4, Jeffrey Snover brought us Desired State Configuration (DSC) - the next level of automation. Instead of writing code to configure a certain service role, describe the outcome you want to achieve. I will provide only a short introduction to DSC and then quickly move on to tell you about the lessons I have learned.
 
-[![First slide of presentation](/assets/2015/06/Why-I-am-a-fan-of-PSDSC-and-you-should-be-as-well.png)](/assets/2015/06/2015-06-12-E2EVC-Why-I-love-DSC-and-you-should-as-well-with-Video-Links.pdf)
+[![First slide of presentation](/media/2015/06/Why-I-am-a-fan-of-PSDSC-and-you-should-be-as-well.png)](/media/2015/06/2015-06-12-E2EVC-Why-I-love-DSC-and-you-should-as-well-with-Video-Links.pdf)
 
-Either click the image above or [this link](/assets/2015/06/2015-06-12-E2EVC-Why-I-love-DSC-and-you-should-as-well-with-Video-Links.pdf) to download the slide deck for PSDSC at E2EVC Berlin.
+Either click the image above or [this link](/media/2015/06/2015-06-12-E2EVC-Why-I-love-DSC-and-you-should-as-well-with-Video-Links.pdf) to download the slide deck for PSDSC at E2EVC Berlin.
 
 ## Demos
 

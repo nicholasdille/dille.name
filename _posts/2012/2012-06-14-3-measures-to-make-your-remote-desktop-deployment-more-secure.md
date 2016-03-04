@@ -31,9 +31,9 @@ The RDP file is transmitted through the same channel that is used for access RD 
 
 Windows server can be configured to digitally sign RDP files before they are sent to the end-user device. This is configured in the RD RemoteApp Manager. By default, Windows uses a self-signed certificate which does not provide any security at all. This must be replaced by a custom certificate signed by an appropriate certificate authority so that the client is able to verify the signature to establish the authenticity of the RDP file.
 
-[![Change certificate](/assets/2012/06/image_2_12.png)](/assets/2012/06/image_2_12.png)
+[![Change certificate](/media/2012/06/image_2_12.png)](/media/2012/06/image_2_12.png)
 
-[![Configure certificate](/assets/2012/06/image_4_3.png)](/assets/2012/06/image_4_3.png)
+[![Configure certificate](/media/2012/06/image_4_3.png)](/media/2012/06/image_4_3.png)
 
 ## #2 Tighten Connection Security
 
@@ -42,9 +42,9 @@ Windows server provides two switches to control the security of data transmitted
   1. **Security Layer** configures the type of encryption used for the RDP connection. By default, it is set to “Negotiate” to determine the most secure setting. It is not recommended to use “RDP security layer” which only provides native RDP encryption and does not support Network Level Authentication (see #3 for more). It is seriously recommended to increase this setting to “SSL (TLS 1.0)” effectively establishing security equivalent to a web server using HTTPS. Sill the key to a secure RDP connection is selecting a certificate provided by an appropriate certificate authority.
   2. **Encryption Level** should be increased to “high” to force a 128 bit key to be used for bulk encryption because “low” only uses a 56 bit key which is too short for a proper security level.
 
-[![Configure listener](/assets/2012/06/image_6_3.png)](/assets/2012/06/image_6_3.png)
+[![Configure listener](/media/2012/06/image_6_3.png)](/media/2012/06/image_6_3.png)
 
-[![Configure listener security](/assets/2012/06/image_12_1.png)](/assets/2012/06/image_12_1.png)
+[![Configure listener security](/media/2012/06/image_12_1.png)](/media/2012/06/image_12_1.png)
 
 This configuration is only supported for clients running at least Windows XP SP3. More information about those switches is published by Microsoft at [http://technet.microsoft.com/en-us/magazine/ff458357.aspx](http://technet.microsoft.com/en-us/magazine/ff458357.aspx).
 
@@ -54,7 +54,7 @@ By default, the RDP client performs user authentication against the target serve
 
 By enabling Network Level Authentication the target server forces the client to authenticate before the logon screen is displayed. Note that it breaks compatibility with older and simple RDP clients. Especially cheap RDP clients on alternative platforms (e.g. iOS) may not support NLA. But this can be solved by updating to current version or purchasing an appropriate RDP client app.
 
-[![Enable Network Level Authentication](/assets/2012/06/image_14_0.png)](/assets/2012/06/image_14_0.png)
+[![Enable Network Level Authentication](/media/2012/06/image_14_0.png)](/media/2012/06/image_14_0.png)
 
 ## Relevant Group Policy Objects
 
@@ -71,6 +71,6 @@ The security layer (#2) is responsible for the certificate warning in many cases
 
 Note that you must not configure your RDP client to never warn about the certificate for a host again because it will effectively enable Man-in-the-Middle attacks. You must configure a proper certificate or you might as well set the security layer to “RDP security layer”. But I advise you against going down that path because it effectively decreases security.
 
-[![Endure certificate warnings](/assets/2012/06/image_16_0.png)](/assets/2012/06/image_16_0.png)
+[![Endure certificate warnings](/media/2012/06/image_16_0.png)](/media/2012/06/image_16_0.png)
 
 My best practice is to use an internal certificate authority to enrol certificates for those servers – preferably by using the group policy object called "Server Authentication Certificate Template”. After distributing the CA certificate to all managed devices (clients and servers), administrators will be able to launch remote desktop sessions without warnings.

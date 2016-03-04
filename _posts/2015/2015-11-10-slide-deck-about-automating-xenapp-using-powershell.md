@@ -22,9 +22,9 @@ Today I talked (in German) about automating #XenApp using #PowerShell at [DCUG](
 
 ## Slide Deck for Automating #XenApp using #PowerShell
 
-[![First slide of presentation](/assets/2015/11/Tastatur-statt-Maus.png)](/assets/2015/11/2015-11-05-XA-PS-@-DCUG-Karlsruhe.pdf)
+[![First slide of presentation](/media/2015/11/Tastatur-statt-Maus.png)](/media/2015/11/2015-11-05-XA-PS-@-DCUG-Karlsruhe.pdf)
 
-Either click the image above or [this link](/assets/2015/11/2015-11-05-XA-PS-@-DCUG-Karlsruhe.pdf) to download the slide deck for automating #XenApp using #PowerShell.
+Either click the image above or [this link](/media/2015/11/2015-11-05-XA-PS-@-DCUG-Karlsruhe.pdf) to download the slide deck for automating #XenApp using #PowerShell.
 
 I covered the following topics with a heavy focus on making changes to many servers at the same time with or without throttling:
 

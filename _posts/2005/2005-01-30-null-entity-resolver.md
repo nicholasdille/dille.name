@@ -15,6 +15,6 @@ Instead of permitting the XML parser to download document type definitions, this
   
 <!--more-->
 
-There you go: [NullEntityReslver.java](/assets/2005/01/NullEntityResolver.zip)
+There you go: [NullEntityReslver.java](/media/2005/01/NullEntityResolver.zip)
 
 See also the [XML Validator](/blog/2005/01/30/xml-validator/) and the [Caching Entity Resolver](/blog/2005/01/30/caching-entity-resolver/)
