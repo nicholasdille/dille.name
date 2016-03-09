@@ -6,7 +6,7 @@ featured_topic: true
 sidebar_exclude: true
 icon: fa-desktop
 ---
-XXX
+The following list shows all the slide deck I have published after presenting a session at a conference or a user group meeting.
 
 ## Previously Published Articles
 

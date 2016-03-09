@@ -6,7 +6,7 @@ featured_topic: true
 sidebar_exclude: true
 icon: fa-cogs
 ---
-XXX
+PowerShell 4 introduced a new feature called Desired State Configuration (PSDSC). It enables administrators to specify a system configuration in a declarative manner instead of writing the code to achieve a certain state.
 
 ## Previously Published Articles
 
