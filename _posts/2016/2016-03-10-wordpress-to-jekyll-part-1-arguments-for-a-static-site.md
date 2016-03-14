@@ -59,4 +59,4 @@ The decision process for a blogging system depends heavily on the requirements o
 
 On the other hand, WordPress may no be the optimal choice because many sites - like mine - do not require server-side code. By eliminating the complexity of such a blogging system and choosing a static site generator, it is not necessary to setup, operate and update a blogging system.
 
-In the next parts, I will document my journey away from WordPress to Jekyll, a very prominent static site generator. I will demonstrate how to export the content from your blog and how to integrate it into the directory structure of Jekyll. In addition, I will show your how to host your static blog on GitHub Pages as well as Azure Websites.
+In the next parts, I will document my journey away from WordPress to Jekyll, a very prominent static site generator. I will demonstrate how to export the content from your blog and how to integrate it into the [directory structure of Jekyll](/blog/2016/03/14/wordpress-to-jekyll-part-2-how-jekyll-works/). In addition, I will show your how to host your static blog on GitHub Pages as well as how to host it on Azure Websites.
