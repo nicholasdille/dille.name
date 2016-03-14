@@ -1,44 +1,22 @@
 ---
-layout: default
 title: Home
 ---
+<!DOCTYPE html>
+<html lang="en-us">
 
-<div class="topics">
-{% for page in site.pages %}
-{% if page.featured_topic %}
-<div class="topic">
-    <p><i class="fa {{ page.icon }} fa-2x"></i></p>
-    <p><a class="topic_link" style="color: white;" href="{{ page.url }}">{{ page.title }}</a></p>
-</div>
-{% endif %}
-{% endfor %}
-</div>
+  <head>
+  <meta http-equiv="refresh" content="0; url=/blog/" />
+  {% include head.html %}
+  </head>
 
-<div class="posts">
-{% for post in paginator.posts %}
-<div class="post">
-<h1 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <body class="theme-base-0d layout-reverse">
 
-<span class="post-date">Published on {{ post.date | date_to_string }}</span>
+    {% include sidebar.html %}
 
-{{ post.excerpt }}
-</div>
-{% endfor %}
-</div>
+    <div class="content container">
+      If you are not automatically redirected, please click <a href="/blog/">here</a> to continue to my blog.
+    </div>
 
-<div class="pagination">
-{% if paginator.next_page %}
-<a class="pagination-item older" href="/page{{paginator.next_page}}">Older</a>
-{% else %}
-<span class="pagination-item older">Older</span>
-{% endif %}
-{% if paginator.previous_page %}
-{% if paginator.page == 2 %}
-<a class="pagination-item newer" href="/">Newer</a>
-{% else %}
-<a class="pagination-item newer" href="/page{{paginator.previous_page}}">Newer</a>
-{% endif %}
-{% else %}
-<span class="pagination-item newer">Newer</span>
-{% endif %}
-</div>
+    <script src="/media/js/shariff.complete.js"></script>
+  </body>
+</html>

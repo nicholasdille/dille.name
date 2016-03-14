@@ -1,19 +1,19 @@
-title:            'Nicholas Dille'
-tagline:          'Cloud, Virtualization and Automation'
-description:      'Cloud, Virtualization and Automation'
+title:              'Nicholas Dille'
+tagline:            'Cloud, Virtualization and Automation'
+description:        'Cloud, Virtualization and Automation'
 #url:              http://dille.name
 #baseurl:          /blog/
 
 author:
-  name:           'Nicholas Dille'
-  url:            https://twitter.com/nicholasdille
+  name:             'Nicholas Dille'
+  url:              https://twitter.com/nicholasdille
 
 gems:
  - jekyll-paginate
  - jekyll-sitemap
  - jekyll-feed
  - jekyll-mentions
- 
+
 exclude:
  - psakefile.ps1
  - CNAME
@@ -24,11 +24,12 @@ exclude:
  - Test_RegEx.ps1
  - Test_StringOps.ps1
 
-highlighter:      rouge
-permalink:        pretty
+highlighter:        rouge
+permalink:          pretty
 
-paginate:         10
-excerpt_separator: <!--more-->
+paginate:           10
+paginate_path:      /blog/page:num/
+excerpt_separator:  <!--more-->
 
 jekyll-mentions:
   base_url: https://www.twitter.com

@@ -3,6 +3,8 @@ layout: default
 title: Blog
 ---
 
+{% include topics.html %}
+
 <div class="posts">
 {% for post in site.posts limit:10 %}
 <div class="post">
