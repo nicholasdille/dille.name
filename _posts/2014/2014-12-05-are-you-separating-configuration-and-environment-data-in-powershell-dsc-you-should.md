@@ -74,7 +74,7 @@ PushExampleWithParams -OutputPath (Join-Path $PSScriptRoot 'SimpleExample_Output
 
 # Separating Parameters and Configuration Definition
 
-When [separating the parameters from the configuration definition](http://technet.microsoft.com/library/dn249925.aspx), environment information is stored in a hash array and can be managed separately from the configuration. This process also simplifies the configuration calls because the environment data provided with the call produces several MOF files at once. This variant is a tiny but necessary step towards a CMDB.
+When [separating the parameters from the configuration definition](https://technet.microsoft.com/library/dn249925.aspx), environment information is stored in a hash array and can be managed separately from the configuration. This process also simplifies the configuration calls because the environment data provided with the call produces several MOF files at once. This variant is a tiny but necessary step towards a CMDB.
 
 Unfortunately, this separation comes at the price of parameter validation.
 

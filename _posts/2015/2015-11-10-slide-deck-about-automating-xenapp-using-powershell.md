@@ -16,7 +16,7 @@ tags:
   - XenApp
   - XenDesktop
 ---
-Today I talked (in German) about automating #XenApp using #PowerShell at [DCUG](http://www.dcug.de/) in Freiburg. I'd like to share the short slide deck as well as the code for my extensive demos. DCUG is a Citrix User Group event held in German and is organized by [Roy Textor](https://twitter.com/roytextor).
+Today I talked (in German) about automating #XenApp using #PowerShell at [DCUG](https://www.dcug.de/) in Freiburg. I'd like to share the short slide deck as well as the code for my extensive demos. DCUG is a Citrix User Group event held in German and is organized by [Roy Textor](https://twitter.com/roytextor).
 
 <!--more-->
 

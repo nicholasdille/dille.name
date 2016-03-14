@@ -48,7 +48,7 @@ The following commands are used to work with Jekyll:
 
 * Create a new blog: `jekyll new mysite`
 * Building your site: `jekyll build`
-* Previewing your site with the [builtin web server](http://localhost:4000): `jekyll serve`
+* Previewing your site with the builtin web server on http://localhost:4000: `jekyll serve`
 * Cleaning the site directory: `jekyll clean`
 
 ## Anatomy of a Post

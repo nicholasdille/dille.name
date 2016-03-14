@@ -15,7 +15,7 @@ tags:
   - PowerShell
   - PSDSC
 ---
-When you are [designing node configuration](/blog/2014/12/23/designing-node-configurations-in-powershell-dsc/ "Designing Node Configurations in PowerShell DSC") of increasing complexity, you will soon realize that some elements should be easily reusable to clean up your code and prevent duplicate code. Although [Microsoft provides an introduction to reusing configurations](http://blogs.msdn.com/b/powershell/archive/2014/02/25/reusing-existing-configuration-scripts-in-powershell-desired-state-configuration.aspx), it does not properly document the poor state of nested configurations in PowerShell 4.0. In this post I will explain how those work and what caveats to expect from them.
+When you are [designing node configuration](/blog/2014/12/23/designing-node-configurations-in-powershell-dsc/ "Designing Node Configurations in PowerShell DSC") of increasing complexity, you will soon realize that some elements should be easily reusable to clean up your code and prevent duplicate code. Although [Microsoft provides an introduction to reusing configurations](https://blogs.msdn.com/b/powershell/archive/2014/02/25/reusing-existing-configuration-scripts-in-powershell-desired-state-configuration.aspx), it does not properly document the poor state of nested configurations in PowerShell 4.0. In this post I will explain how those work and what caveats to expect from them.
 
 <!--more-->
 
