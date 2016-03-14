@@ -13,6 +13,14 @@
 {% endif %}
 </title>
 
+{% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+{% endif %}
+
+{% if page.author %}
+  <meta name="author" content="{{ page.author }}" />
+{% endif %}
+
 <!-- CSS -->
 <link rel="stylesheet" href="/media/css/poole.css">
 <link rel="stylesheet" href="/media/css/syntax.css">
