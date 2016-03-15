@@ -15,6 +15,7 @@ gems:
  - jekyll-mentions
 
 exclude:
+ - .git
  - psakefile.ps1
  - CNAME
  - README.md
