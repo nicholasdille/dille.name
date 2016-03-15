@@ -15,28 +15,36 @@ XXX
 
 ## Social Buttons
 
-XXX
+XXX Shariff
 
 ## Analytics
 
-XXX
+XXX Google
 
 ## Comments
 
-XXX
+XXX ???
 
 ## Scheduled Posts
 
-XXX
+XXX ???
 
 ## Post Archive
 
-XXX
+XXX archive.md
 
 ## Tag Archive
 
-XXX
+XXX tags.md
 
 ## Font Awesome
 
 XXX
+
+## Search
+
+XXX lunrjs
+
+## Lightbox
+
+XXX slimbox2
