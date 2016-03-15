@@ -1,8 +1,8 @@
 title:              'Nicholas Dille'
 tagline:            'Cloud, Virtualization and Automation'
 description:        'Cloud, Virtualization and Automation'
-#url:              http://dille.name
-#baseurl:          /blog/
+url:                http://dille.name
+#baseurl:           /blog/
 
 author:
   name:             'Nicholas Dille'
