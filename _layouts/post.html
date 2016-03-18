@@ -1,30 +1,24 @@
 ---
 layout: default
 ---
-
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-    <span class="post-date">Published on {{ page.date | date_to_string }}<br/>
-    Tags {% for tag in page.tags %}
-    <a href="/blog/tags/#{{tag}}">#{{tag}}</a>
-    {% endfor %}
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-date">
+        Published on {{ page.date | date_to_string }}<br/>
+        Tags {% for tag in page.tags %}<a href="/blog/tags/#{{tag}}">#{{tag}}</a>{% endfor %}
     </span>
-  {{ content }}
-  <div class="shariff" data-lang="en" data-services="[twitter&quot;, &quot;facebook&quot;, &quot;googleplus&quot;, &quot;xing&quot;, &quot;linkedin&quot;]" ></div>
+    {{ content }}
+
+    <!-- requires shariff.css to be loaded -->
+    <!-- must be defined before shariff.js -->
+    <div class="shariff" data-lang="en" data-services="[&quot;twitter&quot;, &quot;facebook&quot;, &quot;googleplus&quot;, &quot;xing&quot;, &quot;linkedin&quot;]" ></div>
 </div>
 
 <div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+    <h2>Related Posts</h2>
+    <ul class="related-posts">
+{% for post in site.related_posts limit:3 %}
+        <li><h3><a href="{{ post.url }}">{{ post.title }}<small>{{ post.date | date_to_string }}</small></a></h3></li>
+{% endfor %}
+    </ul>
 </div>

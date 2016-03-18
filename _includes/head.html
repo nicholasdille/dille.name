@@ -5,23 +5,43 @@
 <!-- Enable responsiveness on mobile devices-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<title>{{ page.title }} &middot; {{ site.title }}</title>
-{% if page.description %}<meta name="description" content="{{ page.description }}" />{% endif %}
-{% if page.author %}<meta name="author" content="{{ page.author }}" />{% endif %}
+<title>
+{% if page.title == "Home" %}
+    {{ site.title }} &middot; {{ site.tagline }}
+{% else %}
+    {{ page.title }} &middot; {{ site.title }}
+{% endif %}
+</title>
 
-{% feed_meta %}
+{% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+{% endif %}
 
+{% if page.author %}
+  <meta name="author" content="{{ page.author }}" />
+{% endif %}
+
+<!-- CSS -->
 <link rel="stylesheet" href="/media/css/poole.css">
 <link rel="stylesheet" href="/media/css/syntax.css">
 <link rel="stylesheet" href="/media/css/hyde.css">
 <link rel="stylesheet" href="/media/css/custom.css">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+<!-- must be loaded before shariff -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- requires awesome font to be loaded -->
 <link rel="stylesheet" href="/media/shariff/1.23.0/shariff.min.css">
-<link rel="stylesheet" href="/media/slimbox/2.05/slimbox2.css" />
+
+<!-- no prerequisites -->
+<link rel="stylesheet" href="/media/lightbox/2.8.2/css/lightbox.min.css">
+
+<!-- RSS -->
+{% feed_meta %}
 
 <script>
-var gaProperty = 'UA-27700931-1';
+var gaProperty = 'UA-73853730-1';
 var disableStr = 'ga-disable-' + gaProperty;
 if (document.cookie.indexOf(disableStr + '=true') > -1) {
     window[disableStr] = true;
@@ -30,7 +50,9 @@ function gaOptout() {
 document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
     window[disableStr] = true;
 }
+</script>
 
+<script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
