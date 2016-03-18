@@ -138,4 +138,4 @@ You are probably wondering about the `paginator` object used in the code above. 
 
 ## Interested?
 
-If this short introduction to Jekyll sounds interesting, stay tuned for the next part about exporting your WordPress content.
+If this short introduction to Jekyll sounds interesting, stay tuned for the next part about [exporting your WordPress content](/blog/2016/03/18/wordpress-to-jekyll-part-3-exporting-your-blog-content/).
