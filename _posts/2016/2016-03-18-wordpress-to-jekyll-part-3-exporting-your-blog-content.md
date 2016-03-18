@@ -1,5 +1,5 @@
 ---
-title: 'WordPress to Jekyll Part 3 - Exporting you Blog Content'
+title: 'WordPress to Jekyll Part 3 - Exporting your Blog Content'
 date: 2016-03-18T19:55:23+01:00
 author: Nicholas Dille
 layout: post
@@ -36,12 +36,14 @@ Based on your knowledge from [my previous post about how Jekyll works](/blog/201
 You may be feeling enthusiastic about your progress but there are still several steps ahead of you before the existing pages and posts will be properly displayed.
 
 While I am preparing the next part in this series about hosting your blog you need to take care of the following steps:
-  * Move additional content from your WordPress site to your Jekyll based blog. I have decided to move all images, slides and documents from `/wp-upload/uploads` to `/media` and retained the directory structure
-  * I decided to move my posts to yearly subdirectories
+
+* Move additional content from your WordPress site to your Jekyll based blog. I have decided to move all images, slides and documents from `/wp-upload/uploads` to `/media` and retained the directory structure
+* I decided to move my posts to yearly subdirectories
 
 In addition, it may be necessary to make several corrections to the markdown code produced by the Jekyll Exporter. You probably want to use PowerShell to make those corrections against a large number of posts.
-  * Correct the frontmatter. In addition to the expected fields, the export plugin has added additional and probably useless fields
-  * Correct links and images. The generated files usually consist of markdown as well as HTML code. But the export plugin leaves the HTML code for many links and images untouched because they contain additional attributes
+
+* Correct the frontmatter. In addition to the expected fields, the export plugin has added additional and probably useless fields
+* Correct links and images. The generated files usually consist of markdown as well as HTML code. But the export plugin leaves the HTML code for many links and images untouched because they contain additional attributes
 
 You need to take into account that markdown does not offer the same features for layout manipulation as HTML. For example, the HTML `a` tag accepts an attribute called target which allows to force the link to open in a new window. This is something markdown cannot do. Therefore, before you begin to modify your posts, you need to decide whether pure markdown is the way to go. I have tried this and realized that there are some features of HTML that I do not want to live without. Therefore, my posts are a mix of markdown and HTML.
 
