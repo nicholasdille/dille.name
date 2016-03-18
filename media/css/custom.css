@@ -26,3 +26,8 @@
 .posts {
     clear: both;
 }
+
+/** Shariff */
+.shariff .share_text {
+    color: white;
+}
