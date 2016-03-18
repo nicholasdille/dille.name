@@ -1,10 +1,10 @@
 <div class="topics">
 {% for page in site.pages %}
 {% if page.featured_topic %}
-<div class="topic">
-<p><i class="fa {{ page.icon }} fa-2x"></i></p>
-<p><a class="topic_link" style="color: white;" href="{{ page.url }}">{{ page.title }}</a></p>
-</div>
+    <div class="topic">
+        <p><i class="fa {{ page.icon }} fa-2x"></i></p>
+        <p><a class="topic_link" style="color: white;" href="{{ page.url }}">{{ page.title }}</a></p>
+    </div>
 {% endif %}
 {% endfor %}
 </div>
