@@ -13,6 +13,10 @@ XXX
 
 <!--more-->
 
+## Theme
+
+[Hyde](https://github.com/poole/hyde)
+
 ## Social Buttons
 
 XXX Shariff
