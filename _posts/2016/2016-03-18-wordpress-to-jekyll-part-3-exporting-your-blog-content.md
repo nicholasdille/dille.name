@@ -19,7 +19,7 @@ The [Jekyll exporter](https://wordpress.org/plugins/jekyll-exporter/) is a WordP
 
 ## Export Process
 
-<a href="/media/2016/03/Tools-Export.png" data-lightbox="WordPress2Jekyll" title="Launching the WordPress to Jekyll exporter"><img src="/media/2016/03/Tools-Export.png" alt="Launching the WordPress to Jekyll exporter" style="width: 50%; float: right;" /></a>As soon as the plugin is installed and activated, you can initiate the export process from the tools menu (see screenshot).
+<div style="position: relative; overflow: hidden; width: 300px; height: 120px; float: right;"><a href="/media/2016/03/Tools-Export.png" data-lightbox="WordPress2Jekyll" title="Launching the WordPress to Jekyll exporter"><img src="/media/2016/03/Tools-Export.png" alt="Launching the WordPress to Jekyll exporter" style="max-width: none; position: absolute; top: -507px" /></a></div>As soon as the plugin is installed and activated, you can initiate the export process from the tools menu (see screenshot).
 
 In case this method does not work, you can launch the export process from the command line on your web server. You need to change to the plugin directory and execute the following command: `php jekyll-export-cli.php > jekyll-export.zip`
 
