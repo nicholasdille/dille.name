@@ -1,5 +1,5 @@
 ---
-title: 'WordPress to Jekyll Part 3 - Exporting your Blog Content'
+title: '#WordPress to #Jekyll Part 3 - Exporting your Blog Content'
 date: 2016-03-18T19:55:23+01:00
 author: Nicholas Dille
 layout: post
@@ -49,6 +49,6 @@ You need to take into account that markdown does not offer the same features for
 
 ## Upcoming Parts
 
-In the next two parts of this series I will demonstrate how to use GitHub Pages and Azure Websites to host your site.
+In the next two parts of this series I will demonstrate [how to use GitHub Pages](/blog/2016/03/21/wordpress-to-jekyll-part-4-hosting-on-github-pages/) and how to use Azure Websites to host your site.
 
 Note that at this point you have all the pieces to generate a static site containing your original blog content. Still there are many features missing from your new blog. Many of which I will cover in a separate article including an archive, tags, search, social buttons and many more.
