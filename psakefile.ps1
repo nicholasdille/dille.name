@@ -5,5 +5,5 @@ task Build {
 }
 
 task Serve {
-    jekyll serve
+    jekyll serve --no-watch
 }
