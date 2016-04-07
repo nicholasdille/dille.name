@@ -49,4 +49,4 @@ The documentation for GitHub Pages contains detailed instructions how to configu
 
 ## Next Steps
 
-In the next part, I will present an alternative to GitHub Pages by hosting on Azure Websites.
+In the next part, I will present an alternative to GitHub Pages by [hosting on Azure Websites](/blog/2016/04/07/wordpress-to-jekyll-part-5-hosting-on-azure-websites/).
