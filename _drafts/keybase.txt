@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/nicholasdille
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://dille.name
+  * I am nicholasdille (https://keybase.io/nicholasdille) on keybase.
+  * I have a public key with fingerprint 6FA7 3A4F 40D9 5BFF 3338  8072 686E 1548 50D2 50F8
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101245f686407416d79acfb30a3ecd3e124a0228850786dfafb7808de7b553626c20a",
+            "fingerprint": "6fa73a4f40d95bff33388072686e154850d250f8",
+            "host": "keybase.io",
+            "key_id": "686e154850d250f8",
+            "kid": "0101245f686407416d79acfb30a3ecd3e124a0228850786dfafb7808de7b553626c20a",
+            "uid": "e5477bced7d6c05c7b84e7aa4a14d819",
+            "username": "nicholasdille"
+        },
+        "revoke": {
+            "sig_ids": [
+                "efccdaebef3083ef48de8fb1ece0f606b04662602131d5334dab4d8d47c5fe470f"
+            ]
+        },
+        "service": {
+            "hostname": "dille.name",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1461068921,
+    "expire_in": 157680000,
+    "prev": "6531130e7ae13aac5d5f2d5a370e3d781cfec8f2b94f1c562a7b2c38e01f25eb",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMJrAnicrVJdbFRFGN1akXT9KyBFq5Fwg8XAUmbu3LkzuzFi0pCQ8hdDEAmYdX6+
+2b3d7d7l3rtLm2pSTTSYFCIxmmCKJCRKQwiGl/oCEUgFgTchBAM2SvVRlKgNGETn
+bvDNR+dl8s2c75wzZ76pR9sz2bYDv89/7onvt/zZdvH0H43M1q6lwyOODPWwUxhx
+KtDaoKohToqVQDsFB2GEXY8an/seYh72NcsLZSRBgoDSBOytQK7LOUWM+9oIIxlH
+XAOTlBLf9ZWLhJNzTFArQVSPglpiaX0jGBGe8ZDOU2kMIYRzxFwrA5h6lky7FBlu
+G8thnHZYc1LE0BuE9swWxZa9/8D/z74bLTqgHmNSgWbaV4gqJrkHTAhPYE9znE+B
+MUQ1MQgWXQtUOayKWAfVKjhv5pwImmEF0nDjoGSdx05huwNGKS1AgiGIEzCeFedG
+YlCAjI98iTzf+kAuJlhTQjwtpBXTHlPUgMeQcV6z3Fa2GagWeRrVfQst6d5WkXPq
+UZiEKqza83KS1AuppWS4nuJ2gSzeZyjKoKbtL9mGJkRxENacArZIlQQpJfZ8jHye
+d3HOgaF6EEExSBGU+RzZlcpAM/0TSjAmyMYDmAihqKbG1VQQhoBoxrEyoLhxZd4z
+WFHfFUy6inBA2LgUpJO+aWctdArU2hQlS2lTq4mkEdkwz5za8WCmLZt5aM4D6fRm
+sh2d/870xPTcv+H4hYr+YWCg/7H+ffUVXdfWvHuoa8v4olsHx1D3yoOXTtw6uuzt
+L/LvL1m6/kpy905jdvDwsa2Tz5zZNcP3f/l65ZHz7pHLJTHRc3dmJ+oujS47Gv26
+/EZzw7bnN0Pf4v5Vi37+qP3QyNd79o6NNube/La98WJuaGXXb5uDqcP+gol93/x1
+e+DA/J7dq6urs5+89Pn0unjtePfD5f4n1y38UbwyPbjq43mf7m0bfW/2yr09s5um
+39qwYuGSid2/LJ6ZGrrw+Kuf3bneubFjgdwefffh2v0v9D4V8PHBOZe/it8pXDp7
+b+h4eHtTZ8Wd7LvZ95MWk9mz58vn+p4de/pqhzqpb3xwqufIG7mX1/wDxsNVzg==
+=pkAN
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nicholasdille
+
+==================================================================
