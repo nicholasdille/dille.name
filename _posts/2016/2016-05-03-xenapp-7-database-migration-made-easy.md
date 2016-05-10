@@ -18,6 +18,8 @@ For a successful database migration 13 PowerShell commands must be executed in a
 
 When looking at the registry of a delivery controller with such a broken database connection, I noticed several values containing the old or a broken connection string. Because I was unable to fix this using PowerShell, I changed the following registry values to the new connection string and rebooted the delivery controller. After applying this to all delivery controllers, the database connection was established using the new connection string.
 
+*Note:* This applies to a XenApp environment where a single database is used. If you are using three separate databases, please check the contents of the registry key listed below to substitute the connection strings correctly.
+
 ```
 Windows Registry Editor Version 5.00
 
