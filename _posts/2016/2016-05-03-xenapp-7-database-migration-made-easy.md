@@ -59,4 +59,6 @@ Windows Registry Editor Version 5.00
 
 I suspect that rebooting is not necessary to apply the new connection string but I have not been able to take a closer look at the services involved.
 
+*Note:* The registry keys only apply to the site database and not to the monitoring and logging databases. To migrate the latter two you still need to use Citrix Studio or PowerShell.
+
 Note that I have only tested this against XenApp 7.6. Newer version may require the connection string to be set in additional or fewer locations.
