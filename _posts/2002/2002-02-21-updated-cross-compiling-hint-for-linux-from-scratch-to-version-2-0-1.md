@@ -13,7 +13,6 @@ tags:
 ---
 I have updated the crosscompiling hint with the following:
 
-  * added some more explanations in the uname hack section
+  * added some more explanations in the uname hack section<!--more-->
 
 It can be downloaded [here](/media/2002/02/2002-02-21-crosscompiling-x86-2.0.1.txt).
-

@@ -18,9 +18,6 @@ I have updated the crosscompiling hint with the following:
   * sync'd bzip2 with the book
   * fixed typo in man 1.5j
   * updated psmisc to 21
-  * updated simpleinit to 1.1
+  * updated simpleinit to 1.1<!--more-->
 
 It can be downloaded [here](/media/2002/02/2002-07-03-crosscompiling-x86-2.1.5.txt).
-
-
-

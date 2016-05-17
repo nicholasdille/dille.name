@@ -13,9 +13,6 @@ tags:
 ---
 I have updated the crosscompiling hint with the following:
 
-  * corrected the uname hack sed'ing
+  * corrected the uname hack sed'ing<!--more-->
 
 It can be downloaded [here](/media/2002/02/2002-02-27-crosscompiling-x86-2.0.2.txt).
-
-
-

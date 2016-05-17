@@ -19,7 +19,6 @@ I have updated the crosscompiling hint with the following:
   * updated lilo to 22.2
   * updated bin86 to 0.16.2
   * simplified kbd 1.06 commands
-  * replaced the original uname hack kernel module with an easier to use by Yann Guidon
+  * replaced the original uname hack kernel module with an easier to use by Yann Guidon<!--more-->
 
 It can be downloaded [here](/media/2002/02/2002-04-13-crosscompiling-x86-2.1.4.txt).
-

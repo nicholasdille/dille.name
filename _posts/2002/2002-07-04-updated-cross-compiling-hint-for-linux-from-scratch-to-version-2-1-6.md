@@ -15,7 +15,6 @@ I have updated the crosscompiling hint with the following:
 
   * fixed typo in toc
   * added workaround for a weird procps behaviour
-  * added chapter for netkit-base 0.17
+  * added chapter for netkit-base 0.17<!--more-->
 
 It can be downloaded [here](/media/2002/02/2002-07-04-crosscompiling-x86-2.1.6.txt).
-

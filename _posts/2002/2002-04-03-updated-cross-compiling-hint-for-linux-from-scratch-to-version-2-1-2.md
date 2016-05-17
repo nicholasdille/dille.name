@@ -21,7 +21,6 @@ I have updated the crosscompiling hint with the following:
   * added notes section
   * added man optimization
   * corrected perl targetting
-  * corrected heading of sysvinit section
+  * corrected heading of sysvinit section<!--more-->
 
 It can be downloaded [here](/media/2002/02/2002-04-03-crosscompiling-x86-2.1.2.txt).
-

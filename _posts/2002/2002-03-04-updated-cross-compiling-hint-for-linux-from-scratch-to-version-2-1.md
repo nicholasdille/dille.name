@@ -22,7 +22,6 @@ I have updated the crosscompiling hint with the following:
   * added optimization for simpleinit, pam
   * added description of the traditional and the kernel module uname hack
   * added a table of intel architecture names
-  * moved non-standard packages to separate chapter
+  * moved non-standard packages to separate chapter<!--more-->
 
 It can be downloaded [here](/media/2002/02/2002-03-04-crosscompiling-x86-2.1.txt).
-

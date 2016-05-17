@@ -11,9 +11,8 @@ tags:
   - LFS
   - Linux
 ---
-I have submitted a new hint to the [Linux From Scratch](http://www.linuxfromscratch.org/) project describing modifications to the build process to compile on a fast machine and use the result on an older and slower machine.
+I have submitted a new hint to the [Linux From Scratch](http://www.linuxfromscratch.org/) project describing modifications to the build process to compile on a fast machine and use the result on an older and slower machine.<!--more-->
 
 I have called this hint crosscompiling x86 because it is limited to the x86 architecture and does not embrace compiling to different architectures.
 
 You can also download this hint [here](/media/2014/10/2001-08-16-crosscompiling-x86-1.0.txt).
-
