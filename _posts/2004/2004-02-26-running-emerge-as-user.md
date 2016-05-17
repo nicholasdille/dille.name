@@ -10,9 +10,7 @@ categories:
 tags:
   - gentoo
 ---
-Normal users will most certainly experience some problems running `emerge` because it does not have the permissions required to cache calculations.
-  
-<!--more-->
+Normal users will most certainly experience some problems running `emerge` because it does not have the permissions required to cache calculations.<!--more-->
 
 To allow users to access basic features they need to be added to the group `portage`. This will enable users to issue pretend and search commands. For them to acquire correct results `PORTDIR_OVERLAY` needs to be accessible.
 

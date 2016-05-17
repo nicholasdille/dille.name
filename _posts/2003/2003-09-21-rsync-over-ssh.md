@@ -11,16 +11,10 @@ tags:
   - rsync
   - SSH
 ---
-Although <code class="command">rsync</code> is also able to connect to a daemon to synchronize with remote locations, it isn't always possible to install or customize a remote <code class="command">rsync</code> server, which makes tunnelling through SSH the only alternative. This also ensures privacy and data integrity.
+Although `rsync` is also able to connect to a daemon to synchronize with remote locations, it isn't always possible to install or customize a remote `rsync` server, which makes tunnelling through SSH the only alternative. This also ensures privacy and data integrity.<!--more-->
 
-<!--more-->
-
-<pre class="listing">RSYNC_RSH="ssh -l ssh-user" rsync -avz rsync-host:source destination</pre>
+`RSYNC_RSH="ssh -l ssh-user" rsync -avz rsync-host:source destination`
 
 NOTE: This note assumes that you own a SSH login on the remote machine.
 
-<p class="note">
-  NOTE: You may experience interoperability problem depending on the versions of rsync present on client and server.
-</p>
-
-
+NOTE: You may experience interoperability problem depending on the versions of rsync present on client and server.

@@ -10,22 +10,20 @@ categories:
 tags:
   - Subversion
 ---
-Subversion supports some keywords which it is able to substitute in a versioned file though there are two things you need to do:
+Subversion supports some keywords which it is able to substitute in a versioned file though there are two things you need to do:<!--more-->
 
-<!--more-->
+1. _Add keywords to your file:_ The format is `$KEYWORD$`.
 
-  1. _Add keywords to your file:_ The format is <code class="command">$KEYWORD$</code>.
-
-  1. _Tell subversion about it:_ You will have to set the <code class="command">svn:keywords</code> property to contain a space separated list of keywords which you expect to have substituted, e.g. <code class="command">svn propset svn:keywords "LastChangedRevision Id" FILE</code>
+1. _Tell subversion about it:_ You will have to set the `svn:keywords` property to contain a space separated list of keywords which you expect to have substituted, e.g. `svn propset svn:keywords "LastChangedRevision Id" FILE`
 
 The following provides a short list of supported keywords:
 
-  * <code class="command">LastChangedDate</code>
+* `LastChangedDate`
 
-  * <code class="command">LastChangedRevision</code>
+* `LastChangedRevision`
 
-  * <code class="command">LastChangedBy</code>
+* `LastChangedBy`
 
-  * <code class="command">HeadURL</code>
+* `HeadURL`
 
-  * <code class="command">Id</code>
+* `Id`

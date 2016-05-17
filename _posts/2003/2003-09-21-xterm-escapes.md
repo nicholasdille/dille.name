@@ -11,12 +11,10 @@ tags:
   - Bash
   - Linux
 ---
-You can modify the title of an XTerm window by printing a certain escape sequence:
+You can modify the title of an XTerm window by printing a certain escape sequence.<!--more-->
 
-<!--more-->
-
-<pre class="listing">echo -n $'x1b];'$USER@$HOSTNAME:${PWD/#$HOME/~}$'x7'</pre>
+`echo -n $'x1b];'$USER@$HOSTNAME:${PWD/#$HOME/~}$'x7'`
 
 The following command will force your bash to update the title after command execution:
 
-<pre class="listing">PROMPT_COMMAND='echo -ne "\033]0;${USER}: ${PWD/#$HOME/~}\007"'</pre>
+`PROMPT_COMMAND='echo -ne "\033]0;${USER}: ${PWD/#$HOME/~}\007"'`

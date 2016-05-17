@@ -10,12 +10,10 @@ categories:
 tags:
   - Subversion
 ---
-The property <code class="command">svn:ignore</code> may contain new-line separated patterns which describe filenames to ignore for repository actions. Specifying a single pattern is rather straight forward:
+The property `svn:ignore` may contain new-line separated patterns which describe filenames to ignore for repository actions. Specifying a single pattern is rather straight forward.<!--more-->
 
-<!--more-->
-
-<pre class="listing">svn propset [-R] svn:ignore '*.o' .</pre>
+`svn propset [-R] svn:ignore '*.o' .`
 
 So far the only known reliable method to create a new-line separated list on a bash command-line is:
 
-<pre class="listing">svn propset [-R] svn:ignore "$(echo '*.o'; echo '*.a')" .</pre>
+`svn propset [-R] svn:ignore "$(echo '*.o'; echo '*.a')" .`

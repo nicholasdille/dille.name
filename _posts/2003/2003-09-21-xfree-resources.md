@@ -10,13 +10,12 @@ categories:
 tags:
   - X11
 ---
-XFree resources allow presetting preferences of most clients in <code class="command">~/.Xdefaults</code> and <code class="command">~/.Xresources</code>. These files are merged into the resources database by running <code class="command">xrdb -merge ~/.Xresource</code>. Resources that are recognized by a client are usually documented in the accompanying man page.
-
-<!--more-->
+XFree resources allow presetting preferences of most clients in `~/.Xdefaults` and `~/.Xresources`. These files are merged into the resources database by running `xrdb -merge ~/.Xresource`. Resources that are recognized by a client are usually documented in the accompanying man page.<!--more-->
 
 The following example contains my XTerm and XScreensaver preferences:
 
-<pre class="listing">XTerm*font: -*-lucidatypewriter-medium-r-*-*-12-*-*-*-*-*-*
+```
+XTerm*font: -*-lucidatypewriter-medium-r-*-*-12-*-*-*-*-*-*
 XTerm*boldFont: -*-lucidatypewriter-medium-r-*-*-12-*-*-*-*-*-*
 XTerm*boldMode: false
 XTerm*reverseVideo: true
@@ -44,4 +43,5 @@ xscreensaver.fadeSeconds: 3
 xscreensaver.fadeTicks: 20
 xscreensaver.mode: blank
 xscreensaver.pointerPollTime: 10
-xscreensaver.procInterrupts: true</pre>
+xscreensaver.procInterrupts: true
+```

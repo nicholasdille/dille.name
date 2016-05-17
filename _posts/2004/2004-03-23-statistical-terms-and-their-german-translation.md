@@ -10,148 +10,20 @@ categories:
 tags:
   - Statistics
 ---
-The following table provides a list of well-known german term and their english translation:
-  
-<!--more-->
+The following table provides a list of well-known german term and their english translation:<!--more-->
 
-<table summary="This table contains commonly used terms with english translations">
-  <tr>
-    <th id="german">
-      German
-    </th>
-    
-    <th id="english">
-      English
-    </th>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Messreihe
-    </td>
-    
-    <td headers="english">
-      Series of measurements
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Ausreisser
-    </td>
-    
-    <td headers="english">
-      Outlier
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      arithmetisches Mittel
-    </td>
-    
-    <td headers="english">
-      Mean value
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Durchschnitt
-    </td>
-    
-    <td headers="english">
-      Average
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Mittelwert
-    </td>
-    
-    <td headers="english">
-      Mean value
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Varianz
-    </td>
-    
-    <td headers="english">
-      Variance
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Standardabweichung
-    </td>
-    
-    <td headers="english">
-      Mean deviation
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Konfidenz
-    </td>
-    
-    <td headers="english">
-      Confidence
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Konfidenzinterval
-    </td>
-    
-    <td headers="english">
-      Confidence interval
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Quantil
-    </td>
-    
-    <td headers="english">
-      Quantile
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Median
-    </td>
-    
-    <td headers="english">
-      Median
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Histogramm
-    </td>
-    
-    <td headers="english">
-      Histogram, bar chart
-    </td>
-  </tr>
-  
-  <tr>
-    <td headers="german">
-      Verteilung
-    </td>
-    
-    <td headers="english">
-      Distribution
-    </td>
-  </tr>
-</table>
+German                | English
+----------------------|--------
+Messreihe             | Series of measurements
+Ausreisser            | Outlier
+Arithmetisches Mittel | Mean value
+Durchschnitt          | Average
+Mittelwert            | Mean value
+Varianz               | Variance
+Standardabweichung    | Mean deviation
+Konfidenz             | Confidence
+Konfidenzintervall    | Confidence interval
+Quantil               | Quantile
+Median                | Median
+Histogram             | Histogram, bar chart
+Verteilung            | Distribution

@@ -10,17 +10,11 @@ categories:
 tags:
   - gentoo
 ---
-WARNING: `etcat` and `qpkg` are superceded by `equery` as of portage-2.0.50 and gentoolkit-0.2
+It is sometimes useful to obtain a list of files which were merged for a certain package. **`etcat` and `qpkg` are superceded by `equery` as of portage-2.0.50 and gentoolkit-0.2.**<!--more-->
 
-It is sometimes useful to obtain a list of files which were merged for a certain package:
-  
-<!--more-->
+* _List all files_: `equery files STRING`
+* _List all files with timestamps_: `equery files --timestamp STRING`
+* _List all files with md5 sums_: `equery files --md5sum STRING`
+* _List all files with type_: `equery files --type STRING`
 
-  * _List all files_: `equery files STRING`
-  * _List all files with timestamps_: `equery files --timestamp STRING`
-  * _List all files with md5 sums_: `equery files --md5sum STRING`
-  * _List all files with type_: `equery files --type STRING`
-
-NOTE: For systems <portage-2.0.50 and <gentoolkit-0.2 use:
-  
-`etcat files STRING`
+NOTE: For systems &lt;portage-2.0.50 and &lt;gentoolkit-0.2 use: `etcat files STRING`

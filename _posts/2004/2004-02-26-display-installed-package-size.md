@@ -10,16 +10,6 @@ categories:
 tags:
   - gentoo
 ---
-WARNING: `etcat` and `qpkg` are superceded by `equery` as of portage-2.0.50 and gentoolkit-0.2
+The size of an installed package can be retrieved by `equery size STRING`. **`etcat` and `qpkg` are superceded by `equery` as of portage-2.0.50 and gentoolkit-0.2.**<!--more-->
 
-The size of an installed package can be retrieved by:
-  
-`equery size STRING`
-  
-<!--more-->
-
-
-  
-NOTE: For systems <portage-2.0.50 and <=gentoolkit-0.2 use:
-  
-`etcat size STRING`
+For systems &lt;portage-2.0.50 and &lt;=gentoolkit-0.2 use: `etcat size STRING`

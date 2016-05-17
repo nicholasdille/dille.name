@@ -10,24 +10,16 @@ categories:
 tags:
   - SSH
 ---
-SSH usually operates in the foreground where it provides an interactive login or displays the output of a remote command (see [remote commands](/blog/2004/03/24/remote-commands/ "Remote Commands")). Although using the forwarding services (see [port forwarding](/blog/2004/06/07/port-forwarding/ "Port Forwarding") and [agent forwarding](/blog/2005/02/17/agent-forwarding/ "Agent Forwarding")) requires successful authentication, it does not have to result in a shell.
+SSH usually operates in the foreground where it provides an interactive login or displays the output of a remote command (see [remote commands](/blog/2004/03/24/remote-commands/ "Remote Commands")). Although using the forwarding services (see [port forwarding](/blog/2004/06/07/port-forwarding/ "Port Forwarding") and [agent forwarding](/blog/2005/02/17/agent-forwarding/ "Agent Forwarding")) requires successful authentication, it does not have to result in a shell.<!--more-->
 
-<!--more-->Therefore, SSH may be pushed into the background with the 
+Therefore, SSH may be pushed into the background with the `-f` parameter just before the command is executed: `ssh -f HOST COMMAND`
 
-<code class="command">-f</code> parameter just before the command is executed:
+The only requirement is using a remote command (see [remote commands](/blog/2004/03/24/remote-commands/)). This is especially useful if running a remote X client for which the SSH tunnel will remain active until the command terminates.
 
-<pre class="listing">ssh -f HOST COMMAND</pre>
+There is also a way of restricting such a forwarding to an interval of time: `ssh -f HOST sleep N`
 
-The only requirement is using a remote command (see [remote commands](/blog/2004/03/24/remote-commands/ "Remote Commands")). This is especially useful if running a remote X client for which the SSH tunnel will remain active until the command terminates.
+Independent of the actual usage, the instance of SSH will terminate after `N` seconds.
 
-There is also a way of restricting such a forwarding to an interval of time:
+Most of the time you will probably want a forwarding to be available for an unlimited amount of time: `ssh -fN HOST`
 
-<pre class="listing">ssh -f HOST sleep N</pre>
-
-Independent of the actual usage, the instance of SSH will terminate after <code class="command">N</code> seconds.
-
-Most of the time you will probably want a forwarding to be available for an unlimited amount of time:
-
-<pre class="listing">ssh -fN HOST</pre>
-
-(The <code class="command">-N</code> parameter prevents the execution of a remote command.)
+(The `-N` parameter prevents the execution of a remote command.)

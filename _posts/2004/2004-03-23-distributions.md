@@ -10,10 +10,10 @@ categories:
 tags:
   - Statistics
 ---
-When comparing two or more series of measurements, it is useful have a relative measure like the distribution of values.
+When comparing two or more series of measurements, it is useful have a relative measure like the distribution of values.<!--more-->
 
 The easilest way to build a distribution of a series of measurements `$x_i = x_1, \dots, x_n$` is from a histogram. For each bucket `$b$`:
 
 `$D(b) = \frac{\sum_{i=1}^m d[i]}{n}$`
 
-where <code class="command">$n$</code> is the total number of values.
+where `$n$` is the total number of values.

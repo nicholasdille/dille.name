@@ -10,26 +10,16 @@ categories:
 tags:
   - gentoo
 ---
-When managing the packages installed on your system `emerge` logs start and stop times of merging and unmerging packages:
-  
-<!--more-->
+When managing the packages installed on your system `emerge` logs start and stop times of merging and unmerging packages.<!--more-->
 
-  * _Install:_
-  
-    `emerge app-portage/genlop`
-  * _Display time of merge:_
-  
-    `genlop PACKAGE`
-  * _Display time taken to merge:_
-  
-    `genlop -t PACKAGE`
-  * _Display time of merge/unmerge:_
-  
-    `genlop -u PACKAGE`
-  * _Display merge history of all package:_
-  
-    `genlop -l`
-  * _Display merge/unmerge history of all packages:_
-  
-    `genlop -l -u`
+* Install: `emerge app-portage/genlop`
 
+* Display time of merge: `genlop PACKAGE`
+
+* Display time taken to merge: `genlop -t PACKAGE`
+
+* Display time of merge/unmerge: `genlop -u PACKAGE`
+
+* Display merge history of all package: `genlop -l`
+
+* Display merge/unmerge history of all packages: `genlop -l -u`

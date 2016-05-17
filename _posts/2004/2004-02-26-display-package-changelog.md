@@ -10,10 +10,6 @@ categories:
 tags:
   - gentoo
 ---
-WARNING: `etcat` and `qpkg` are superceded by `equery` as of portage-2.0.50 and gentoolkit-0.2
+This feature has not been implemented in gentoolkit-0.2 yet but the `etcat` variant which is presented below does still work. **`etcat` and `qpkg` are superceded by `equery` as of portage-2.0.50 and gentoolkit-0.2.**<!--more-->
 
-WARNING: This feature has not been implemented in gentoolkit-0.2 yet but the `etcat` variant which is presented below does still work.
-
-NOTE: For systems <portage-2.0.50 and <=gentoolkit-0.2 use:
-  
-`etcat changes PACKAGE[-VERSION]`
+NOTE: For systems &lt;portage-2.0.50 and &lt;=gentoolkit-0.2 use: `etcat changes PACKAGE[-VERSION]`

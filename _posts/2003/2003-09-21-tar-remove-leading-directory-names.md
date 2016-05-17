@@ -10,8 +10,6 @@ categories:
 tags:
   - Linux
 ---
-Here is an example how to archive files removing leading directory names:
+Here is an example how to archive files removing leading directory names.<!--more-->
 
-<!--more-->
-
-<code class="command">tar -czf ARCHIVE.tar.gz -C ~/backup/ today/</code>
+`tar -czf ARCHIVE.tar.gz -C ~/backup/ today/`

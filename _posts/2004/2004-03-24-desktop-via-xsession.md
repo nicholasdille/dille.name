@@ -13,11 +13,10 @@ tags:
   - SSH
   - X11
 ---
-Instead of choosing your favourite dektop environment when logging in via a display manager, use XSession to gain more control over the login process. This will invoke <code class="command">~/.xsession</code> (permissions: 0755):
+Instead of choosing your favourite dektop environment when logging in via a display manager, use XSession to gain more control over the login process. This will invoke `~/.xsession` (permissions: 0755):<!--more-->
 
-<!--more-->
-
-<pre class="listing">#!/bin/bash
+```bash
+#!/bin/bash
 
 # resources
 xrdb -merge ~/.Xresources
@@ -32,8 +31,9 @@ eval $(ssh-agent -s)
 ssh-add &lt;/dev/null
 
 # desktop
-exec startxfce4</pre>
+exec startxfce4
+```
 
-Also note the last line which does not simply invoke <code class="command">startxfce4</code> but substitutes it for the current process (<code class="command">bash</code>).
+Also note the last line which does not simply invoke `startxfce4` but substitutes it for the current process (`bash`).
 
-See also: [XFree Resources](/blog/2003/09/21/xfree-resources/ "XFree Resources"), [XFree Key Bindings](/blog/2003/09/21/xfree-key-bindings/ "XFree Key Bindings"), [SSH Agent](/blog/2005/11/27/ssh-agent/ "SSH Agent") and [ssh-askpass](/blog/2005/11/27/ssh_askpass/ "SSH_ASKPASS")
+See also: [XFree Resources](/blog/2003/09/21/xfree-resources/), [XFree Key Bindings](/blog/2003/09/21/xfree-key-bindings/), [SSH Agent](/blog/2005/11/27/ssh-agent/) and [ssh-askpass](/blog/2005/11/27/ssh_askpass/)

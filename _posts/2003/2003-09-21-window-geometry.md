@@ -11,12 +11,10 @@ tags:
   - Linux
   - X11
 ---
-The positions and size of the window of an X client is controlled by the <code class="command">-geometry</code> switch:
+The positions and size of the window of an X client is controlled by the `-geometry` switch.<!--more-->
 
-<!--more-->
-
-<pre class="listing">&lt;client&gt; -geometry &lt;width&gt;x&lt;height&gt;+&lt;xoffset&gt;&lt;yoffset&gt;</pre>
+`<client> -geometry <width>x<height>+<xoffset><yoffset>`
 
 _Example:_ To open a new XTerm zero pixels from the left side and 37 pixels from the top of the screen with width of 89 columns and 71 rows run:
 
-<pre class="listing">xterm -geometry 89x71+0+37</pre>
+`xterm -geometry 89x71+0+37`

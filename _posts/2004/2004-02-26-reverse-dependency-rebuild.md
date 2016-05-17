@@ -10,9 +10,7 @@ categories:
 tags:
   - gentoo
 ---
-Many packages install dynamic libraries which other packages link against. When updating such a package the old instance of a dynamic library is removed causing dynamic links to break. The package `gentoolkit` contains a tool to check an repair the dynamic linking of your system: `revdep-rebuild`.
-  
-<!--more-->
+Many packages install dynamic libraries which other packages link against. When updating such a package the old instance of a dynamic library is removed causing dynamic links to break. The package `gentoolkit` contains a tool to check an repair the dynamic linking of your system: `revdep-rebuild`.<!--more-->
 
 You should always run `revdep-rebuild` after updating packages which may potentially cause dynamic linking to break. It will check all binaries and libraries for a broken dynamic link. Those will be matched to packages which need to be recompiled to create dynamic links to the updated library. Usually `revdep-rebuild` will solve these problems automatically.
 
