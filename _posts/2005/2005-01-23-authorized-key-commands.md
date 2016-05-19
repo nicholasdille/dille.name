@@ -10,45 +10,42 @@ categories:
 tags:
   - SSH
 ---
-Please be sure to have read and understood [public key authentication](/blog/2005/01/23/public-key-authentication/ "Public Key Authentication").
+Please be sure to have read and understood [public key authentication](/blog/2005/01/23/public-key-authentication/). In `~/.ssh/authorized_keys` a public key may be prepended by comma-separated list of options:<!--more-->
 
-In <code class="command">~/.ssh/authorized_keys</code> a public key may be prepended by comma-separated list of options:
+* _command="HARD_CMD"_
 
-<!--more-->
+  The supplied command (HARD_CMD) is executed instead of any command which is supplied via the command line (SOFT_CMD). Although the client cannot bypass this mechanism, the server can still allow SOFT_CMD to be executed. read on the find out more.
 
-  * _command="HARD_CMD"_
-  
-    The supplied command (HARD\_CMD) is executed instead of any command which is supplied via the command line (SOFT\_CMD). Although the client cannot bypass this mechanism, the server can still allow SOFT_CMD to be executed. read on the find out more.
+* _from="PATTERN-LIST"_
 
-  * _from="PATTERN-LIST"_
-  
-    This is a comma-separated list of patterns to restrict the client addresses which are allowed to use the corresponding private key to connect to the server. pattern may use * and ?.
+  This is a comma-separated list of patterns to restrict the client addresses which are allowed to use the corresponding private key to connect to the server. pattern may use * and ?.
 
-  * _no-port-forwarding_
-  
-    Port forwarding is prohibited for connections using this public key.
+* _no-port-forwarding_
 
-  * _no-X11-forwarding_
-  
-    x11 forwarding is prohibited for connections using this public key.
+  Port forwarding is prohibited for connections using this public key.
 
-  * _no-agent-forwarding_
-  
-    Agent forwarding is prohibited for connections using this public key.
+* _no-X11-forwarding_
 
-Executing SOFT\_CMD although HARD\_CMD is specified:
+  x11 forwarding is prohibited for connections using this public key.
 
-  * Make HARD_CMD a script and place it on the server
+* _no-agent-forwarding_
 
-  * The corresponding client can be identified by an environment variable (<code class="command">SSH_CLIENT</code>)
+  Agent forwarding is prohibited for connections using this public key.
 
-  * SOFT_CMD is provided via an environment variable (<code class="command">SSH_ORIGINAL_COMMAND</code>)
+Executing SOFT_CMD although HARD_CMD is specified:
 
-  * Based on those two environment variables HARD\_CMD can decide whether to execute SOFT\_CMD
+* Make HARD_CMD a script and place it on the server
+
+* The corresponding client can be identified by an environment variable (`SSH_CLIENT`)
+
+* SOFT_CMD is provided via an environment variable (`SSH_ORIGINAL_COMMAND`)
+
+* Based on those two environment variables HARD\_CMD can decide whether to execute SOFT_CMD
 
 Example script:
 
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -65,6 +62,5 @@ if ($remote_ip =~ m/^XXX.YYY./) {
 
 if ($oh_yeah) {
     system($command);
-}</pre>
-
-
+}
+```

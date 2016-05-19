@@ -11,19 +11,19 @@ tags:
   - Perl
   - RegEx
 ---
-Regular expressions can easily be documented which is demonstrated in the following example matching floating point numbers:
+Regular expressions can easily be documented which is demonstrated in the following example matching floating point numbers:<!--more-->
 
-<!--more-->
-
-<pre class="listing">/^
+```perl
+/^
     [+-]?            # first, match an optional sign
     (                # then match integers or f.p. mantissas:
-         d+.d+    # mantissa of the form a.b
-        |d+.       # mantissa of the form a.
-        |.d+       # mantissa of the form .b
-        |d+         # integer of the form a
+        \d+.\d+      # mantissa of the form a.b
+        |\d+.        # mantissa of the form a.
+        |\.\d+       # mantissa of the form .b
+        |\d+         # integer of the form a
     )
-    ([eE][+-]?d+)?  # finally, optionally match an exponent
-$/x;</pre>
+    ([eE][+-]?\d+)?  # finally, optionally match an exponent
+$/x;
+```
 
-See also: [Avoiding Regular Expressions](/blog/2005/01/30/avoiding-perl-regular-expressions/ "Avoiding Perl Regular Expressions")
+See also: [Avoiding Regular Expressions](/blog/2005/01/30/avoiding-perl-regular-expressions/)

@@ -10,25 +10,20 @@ categories:
 tags:
   - SSH
 ---
-The following code chunk is copied from my <code class="command">~/.bash_profile</code> and demonstrates how to ensure that all login shells share a single SSH agent. You will also want to distribute your public key(s) and enable agent forwarding.
-
-<!--more-->
+The following code chunk is copied from my `~/.bash_profile` and demonstrates how to ensure that all login shells share a single SSH agent. You will also want to distribute your public key(s) and enable agent forwarding.<!--more-->
 
 The code contains come configuration options:
 
-<code class="command">IDENTITY</code>
-:   The identity that is to be added
+* The IDENTITY that is to be added
 
-<code class="command">LIFETIME</code>
-:   The lifetime of the identity
+* The LIFETIME of the identity
 
-<code class="command">DEFAULT_LIFETIME</code>
-:   The default lifetime that is applied to all identities
+* The DEFAULT_LIFETIME that is applied to all identities
 
-<code class="command">ADD_ON_LOGIN</code>
-:   Whether the identity is added on login or when using ssh
+* Whether the identity is added on login or when using ssh (ADD_ON_LOGIN)
 
-<pre class="listing">##################################################
+```bash
+##################################################
 ### ssh agent
 ###
 
@@ -86,4 +81,5 @@ fi
 unset IDENTITY
 unset LIFETIME
 unset DEFAULT_LIFETIME
-unset SSH_ADD_OPTS</pre>
+unset SSH_ADD_OPTS
+```

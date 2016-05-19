@@ -10,18 +10,16 @@ categories:
 tags:
   - Perl
 ---
-To ensure that URLs can be displayed regardless of the locale, special characters are substituted by a percent sign followed by their two digit hexadecimal equivalent.
+To ensure that URLs can be displayed regardless of the locale, special characters are substituted by a percent sign followed by their two digit hexadecimal equivalent.<!--more-->
 
-<!--more-->
+The following two Perl scripts were created to encode and decode URLs.
 
-The following two Perl scripts were created to encode and decode URLs:
+Note: This procedure is defined in [RFC 2396 - Uniform Resource Identifiers (URI): Generic Syntax](http://www.ietf.org/rfc/rfc2396.txt)
 
-<p class="note">
-  NOTE: This procedure is defined in <a href="http://www.ietf.org/rfc/rfc2396.txt">RFC 2396 - Uniform Resource Identifiers (URI): Generic Syntax</a>
-</p>
+## Escaping
 
-Escaping
-:   <pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -44,10 +42,13 @@ for (my $i = 0; $i &lt; length($url); ++$i) {
         print $char;
     }
 }
-print "n";</pre>
+print "n";
+```
 
-De-escaping
-:   <pre class="listing">#!/usr/bin/perl
+## De-escaping
+
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -56,6 +57,5 @@ use English;
 my $url = $ARGV[0];
 $url =~ s/%(..)/pack('c', hex($1))/eg;
 
-print $url . "n";</pre>
-
-
+print $url . "n";
+```

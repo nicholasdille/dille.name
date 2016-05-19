@@ -10,8 +10,6 @@ categories:
 tags:
   - SSH
 ---
-To change the passphrase of your ssh private key:
+To change the passphrase of your ssh private key:<!--more-->
 
-<!--more-->
-
-<code class="command">ssh-keygen -t dsa -p</code>
+`ssh-keygen -t dsa -p`
