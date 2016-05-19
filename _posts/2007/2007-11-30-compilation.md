@@ -12,29 +12,26 @@ tags:
   - LaTeX
   - PDF
 ---
-The following commands provide a sane way from the LaTeX source document to a PDF document.
+The following commands provide a sane way from the LaTeX source document to a PDF document.<!--more-->
 
-<!--more-->
+```
+while (changed .aux .out .toc .lot .lof .ind .bbl .gls)
+    pdflatex <file>
 
-<pre class="listing"><code class="command">while (changed .aux .out .toc .lot .lof .ind .bbl .gls)</code>
-    <code class="command">pdflatex &lt;file&gt;</code>
+    if (changed .idx) [[indexes](/blog/2007/11/30/index/)]
+        makeindex <file>
 
-    <code class="command">if (changed .idx)</code> [[indexes]("Index" /blog/2007/11/30/index/)]
-	    <code class="command">makeindex &lt;file&gt;</code>
+    if (.log contains "No file <file>.bbl.") [[bibliography](/blog/2007/11/30/bibliography/)]
+	      bibtex <file>
 
-    <code class="command">if (.log contains "No file &lt;file&gt;.bbl.")</code> [[bibliography]("Bibliography" /blog/2007/11/30/bibliography/)]
-	    <code class="command">bibtex &lt;file&gt;</code>
+    if (changed .glo) [[glossary](/blog/2007/11/30/glossary/)]
+        makeindex -o <file>.gls -t <file>.glg -s nomencl.ist <file>.glo
+```
 
-    <code class="command">if (changed .glo)</code> [[glossary]("Glossary" /blog/2007/11/30/glossary/)]
-	    <code class="command">makeindex -o &lt;file&gt;.gls -t &lt;file&gt;.glg -s nomencl.ist &lt;file&gt;.glo</code></pre>
+NOTE: By using the `latex` command, you can create a DVI file instead of a PDF document.
 
-<p class="note">
-  NOTE: By using the <code class="command">latex</code> command, you can create a DVI file instead of a PDF document.
-</p>
+It is also possible to have a personal repository of styles in your home directory. In this case you need to adjust the `TEXINPUTS` environment variable to tell LaTeX where to search:
 
-It is also possible to have a personal repository of styles in your home directory. In this case you need to adjust the <code class="command">TEXINPUTS</code> environment variable to tell LaTeX where to search:
+`TEXINPUTS="${TEXINPUTS}:~/.tex" pdflatex <file>`
 
-<pre class="listing">TEXINPUTS="${TEXINPUTS}:~/.tex" pdflatex &lt;file&gt;</pre>
-
-Be aware that the order of the elements of <code class="command">TEXINPUTS</code> either makes your repository the default (if it is listed at the front) or the fallback (if it is listed at the rear).
-
+Be aware that the order of the elements of `TEXINPUTS` either makes your repository the default (if it is listed at the front) or the fallback (if it is listed at the rear).

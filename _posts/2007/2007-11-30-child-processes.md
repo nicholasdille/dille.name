@@ -11,59 +11,57 @@ tags:
   - Bash
   - Perl
 ---
-The following code snipplet defines two functions:
+The following code snipplet defines two functions:<!--more-->
 
-<!--more-->
+* `childrenOf`: Accepts a process ID and produces a list of child process IDs.
 
-  * `childrenOf`: Accepts a process ID and produces a list of child process IDs.
-  
-    **Usage:** `PIDS="$(childrenOf ${SOME_PID})"`
-  * `allChildrenOf`: Recursively produces a list of child process IDs for a given process ID. This function needs `childrenOf` to be defined.
-  
-    **Usage:** `PIDS="$(allChildrenOf ${SOME_PID})"`
+  **Usage:** `PIDS="$(childrenOf ${SOME_PID})"`
 
-<pre>function childrenOf() {
-PARENT_PID="${1}"
+* `allChildrenOf`: Recursively produces a list of child process IDs for a given process ID. This function needs `childrenOf` to be defined.
 
-CHILDREN_PIDS=""
-TEST_PIDS="$(cd /proc; ls -d *
-| perl -ne 'print if m/^d+$/')"
-for CHILD_PID in ${TEST_PIDS}
-do
-if test -f /proc/${CHILD_PID}/status
-then
-CHILD_PPID="$(cat /proc/${CHILD_PID}/status
-| grep PPid
-| perl -pe 's/^PPid:s+//g')"
-if test ${CHILD_PPID} -eq ${PARENT_PID}
-then
-CHILDREN_PIDS="${CHILDREN_PIDS} ${CHILD_PID}"
-fi
-fi
-done
+  **Usage:** `PIDS="$(allChildrenOf ${SOME_PID})"`
 
-echo "${CHILDREN_PIDS/# /}"
+```bash
+function childrenOf() {
+  PARENT_PID="${1}"
+
+  CHILDREN_PIDS=""
+  TEST_PIDS="$(cd /proc; ls -d * | perl -ne 'print if m/^\d+$/')"
+  for CHILD_PID in ${TEST_PIDS}
+  do
+    if test -f /proc/${CHILD_PID}/status
+    then
+      CHILD_PPID="$(cat /proc/${CHILD_PID}/status | grep PPid | perl -pe 's/^PPid:\s+//g')"
+      if test ${CHILD_PPID} -eq ${PARENT_PID}
+      then
+        CHILDREN_PIDS="${CHILDREN_PIDS} ${CHILD_PID}"
+      fi
+    fi
+  done
+
+  echo "${CHILDREN_PIDS/# /}"
 }
 
 function allChildrenOf() {
-PARENT_PID="${1}"
+  PARENT_PID="${1}"
 
-ALL_PIDS="$(childrenOf ${PARENT_PID})"
+  ALL_PIDS="$(childrenOf ${PARENT_PID})"
 
-CHECK_PIDS="${ALL_PIDS}"
-NEW_PIDS=""
-while test "${CHECK_PIDS}x" != "x"
-do
-for CHILD_PID in "${CHECK_PIDS}"
-do
-NEW_PIDS="${NEW_PIDS} $(childrenOf ${CHILD_PID})"
-done
-NEW_PIDS="${NEW_PIDS/# /}"
+  CHECK_PIDS="${ALL_PIDS}"
+  NEW_PIDS=""
+  while test "${CHECK_PIDS}x" != "x"
+  do
+    for CHILD_PID in "${CHECK_PIDS}"
+    do
+      NEW_PIDS="${NEW_PIDS} $(childrenOf ${CHILD_PID})"
+    done
+    NEW_PIDS="${NEW_PIDS/# /}"
 
-CHECK_PIDS="${NEW_PIDS}"
-ALL_PIDS="${ALL_PIDS} ${NEW_PIDS}"
-NEW_PIDS=""
-done
+    CHECK_PIDS="${NEW_PIDS}"
+    ALL_PIDS="${ALL_PIDS} ${NEW_PIDS}"
+    NEW_PIDS=""
+  done
 
-echo "${ALL_PIDS}"
-}</pre>
+  echo "${ALL_PIDS}"
+}
+```

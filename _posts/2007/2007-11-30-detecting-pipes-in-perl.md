@@ -10,13 +10,12 @@ categories:
 tags:
   - Perl
 ---
-This is something you won't need each and every day of your life but I won't have to rethink it once I need it ;-)
-
-<!--more-->
+This is something you won't need each and every day of your life but I won't have to rethink it once I need it ;-)<!--more-->
 
 test.pl:
 
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
      if (-c STDIN) { print STDERR 'stdin : char' . "n";
 } elsif (-p STDIN) { print STDERR 'stdin : pipe' . "n";
@@ -28,11 +27,13 @@ test.pl:
 } elsif (-f STDIN) { print STDERR 'stdout: file' . "n";
 }
 
-print STDERR "n";</pre>
+print STDERR "n";
+```
 
 tests:
 
-<pre class="listing">$ ./test.pl
+```
+$ ./test.pl
 stdin : char
 stdout: char
 
@@ -40,7 +41,7 @@ $ cat file | ./test.pl
 stdin : pipe
 stdout: char
 
-$ ./test.pl &lt; file
+$ ./test.pl < file
 stdin : file
 stdout: char
 
@@ -48,12 +49,11 @@ $ ./test.pl | cat
 stdin : char
 stdout: pipe
 
-$ ./test.pl &gt; file
+$ ./test.pl > file
 stdin : char
 stdout: file
 
-$ ./test.pl &gt; /dev/null
+$ ./test.pl > /dev/null
 stdin : char
-stdout: char</pre>
-
-
+stdout: char
+```

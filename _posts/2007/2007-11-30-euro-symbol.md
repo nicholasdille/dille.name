@@ -10,30 +10,32 @@ categories:
 tags:
   - LaTeX
 ---
-Include the Euro symbol in your document:
-
-<!--more-->
+Include the Euro symbol in your document:<!--more-->
 
 ## Standard method
 
-<pre class="listing">% ...
+```latex
+% ...
 \usepackage{textcomp}
 % ...
 \begin{document}
 % ...
 \texteuro
 % ...
-\end{document}</pre>
+\end{document}
+```
 
 ## Font without Euro symbol
 
 Use this if your font does not seem to include an Euro symbol
 
-<pre class="listing">% ...
+```latex
+% ...
 \usepackage[gen]{eurosym}
 % ...
 \begin{document}
 % ...
 \euro
 % ...
-\end{document}</pre>
+\end{document}
+```

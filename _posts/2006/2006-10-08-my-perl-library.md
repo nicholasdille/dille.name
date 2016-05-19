@@ -10,8 +10,6 @@ categories:
 tags:
   - Perl
 ---
-The modules collected herein provide perl classes which I base further projects on.
-
-<!--more-->
+The modules collected herein provide perl classes which I base further projects on.<!--more-->
 
 Download the tarball [Library-0.1.4.tar.gz](/media/2013/06/Library-0.1.4.tar.gz).

@@ -10,8 +10,6 @@ categories:
 tags:
   - Bash
 ---
-This is very useful for debugging:
+This is very useful for debugging:<!--more-->
 
-<!--more-->
-
-<pre class="listing">bash -x SCRIPT.sh</pre>
+`bash -x SCRIPT.sh`

@@ -10,26 +10,27 @@ categories:
 tags:
   - LaTeX
 ---
-Fancy headers allow you to customize the header and footer line.
-
-<!--more-->
+Fancy headers allow you to customize the header and footer line.<!--more-->
 
 ## Document layout:
 
-<pre class="listing">% ...
+```latex
+% ...
 \usepackage{fancyhdr}
 % ...
 \begin{document}
 % ...
-\end{document}</pre>
+\end{document}
+```
 
 ## Index page:
 
-To find out how to force your index to use fancy headers see [Indexes](/blog/2007/11/30/index/ "Indexes")
+To find out how to force your index to use fancy headers see [Indexes](/blog/2007/11/30/index/)
 
 ## Example for an article:
 
-<pre class="listing">% ...
+```latex
+% ...
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
@@ -41,13 +42,11 @@ To find out how to force your index to use fancy headers see [Indexes](/blog/200
 \renewcommand{\footrulewidth}{0.5pt}
 \addtolength{\headheight}{0.5pt}
 \addtolength{\footskip}{0.5pt}
-\cfoot{&lt;author&gt;}
+\cfoot{<author>}
 % ...
 \begin{document}
 % ...
-\end{document}</pre>
+\end{document}
+```
 
-<p class="note">
-  NOTE: Fancyhdr will use [Margin]("Page Margins" /blog/2007/11/30/page-margins/) lengths (as in [Small Page Margins]("Small Page Margins" /blog/2007/11/30/small-page-margins/)), therefore margins should be set before fancyhdr.
-</p>
-
+NOTE: Fancyhdr will use [Margin](/blog/2007/11/30/page-margins/) lengths (as in [Small Page Margins](/blog/2007/11/30/small-page-margins/)), therefore margins should be set before fancyhdr.

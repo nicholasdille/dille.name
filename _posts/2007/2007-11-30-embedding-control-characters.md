@@ -11,47 +11,49 @@ tags:
   - SSH
   - Bash
 ---
-The following example demonstrates how to use control characters to change characters on the current line:
+The following example demonstrates how to use control characters to change characters on the current line:<!--more-->
 
-<!--more-->
-
-<pre class="listing">echo -n aaa
+```bash
+echo -n aaa
 sleep 2
 echo -n $'b'b
 sleep 2
-echo -n $'r'c</pre>
+echo -n $'r'c
+```
 
 Keeping a console alive:
 
-<pre class="listing">#!/bin/bash
+```bash
+#!/bin/bash
 
 function wakeup() {
-        echo -n $'r';
-        exit 0;
+    echo -n $'r';
+    exit 0;
 }
 
 trap 'eval wakeup' INT
 
 while true; do
-        echo -n "k"; sleep 1;
-        echo -n "e"; sleep 1;
-        echo -n "e"; sleep 1;
-        echo -n "p"; sleep 1;
-        echo -n "i"; sleep 1;
-        echo -n "n"; sleep 1;
-        echo -n "g"; sleep 1;
-        echo -n " a"; sleep 1;
-        echo -n "l"; sleep 1;
-        echo -n "i"; sleep 1;
-        echo -n "v"; sleep 1;
-        echo -n "e"; sleep 1;
-        echo -n " ."; sleep 1;
-        echo -n "."; sleep 1;
-        echo -n ".";
+    echo -n "k"; sleep 1;
+    echo -n "e"; sleep 1;
+    echo -n "e"; sleep 1;
+    echo -n "p"; sleep 1;
+    echo -n "i"; sleep 1;
+    echo -n "n"; sleep 1;
+    echo -n "g"; sleep 1;
+    echo -n " a"; sleep 1;
+    echo -n "l"; sleep 1;
+    echo -n "i"; sleep 1;
+    echo -n "v"; sleep 1;
+    echo -n "e"; sleep 1;
+    echo -n " ."; sleep 1;
+    echo -n "."; sleep 1;
+    echo -n ".";
 
-        sleep 10;
+    sleep 10;
 
-        echo -n $'r'
-        echo -n "                 "
-        echo -n $'r'
-done</pre>
+    echo -n $'r'
+    echo -n "                 "
+    echo -n $'r'
+done
+```

@@ -10,11 +10,10 @@ categories:
 tags:
   - Perl
 ---
-This modules visualizes data structures:
+This modules visualizes data structures:<!--more-->
 
-<!--more-->
-
-<pre class="listing">use Data::Dumper;
+```perl
+use Data::Dumper;
 
 # indent level (0 = off, 1 = basic, 2 = extended)
 $Data::Dumper::Indent = 1;
@@ -36,4 +35,5 @@ $Data::Dumper::Quotekeys = 1;
 
 my $data = {};
 
-print Dumper($data);</pre>
+print Dumper($data);
+```

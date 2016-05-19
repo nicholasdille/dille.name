@@ -10,15 +10,13 @@ categories:
 tags:
   - Bash
 ---
-In case you would ever like to duplicate standard output to log the stream of data while processing it, <code class="command">tee</code> is your friend:
+In case you would ever like to duplicate standard output to log the stream of data while processing it, `tee` is your friend:<!--more-->
 
-<!--more-->
-
-<pre class="listing">{
+```bash
+{
 	echo stdout
-	echo stderr &gt;&2
-} 2&gt; &gt;(tee &gt;(cat &gt;stderr1) &gt;stderr2)</pre>
+	echo stderr >&2
+} 2> >(tee >(cat >stderr1) >stderr2)
+```
 
-<p class="note">
-  NOTE: The output will is not synchronized line-wise. So redirecting both lines of processing into the same file (using <code class="command">&gt;&gt;</code>) will cause the individual results to be garbled.
-</p>
+NOTE: The output will is not synchronized line-wise. So redirecting both lines of processing into the same file (using `>>`) will cause the individual results to be garbled.

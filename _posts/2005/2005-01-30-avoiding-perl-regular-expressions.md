@@ -27,4 +27,4 @@ While the mentioned internal functions must be glued into a parser to be of any 
 
   use `split(' ')`
 
-See also: [Documenting Regular Expressions](/blog/2005/01/30/documenting-perl-regular-expressions/") and [performance considerations](/blog/?p=308)
+See also: [Documenting Regular Expressions](/blog/2005/01/30/documenting-perl-regular-expressions/") and [performance considerations](/blog/2007/05/30/perl-performance-considerations/)

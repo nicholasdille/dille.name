@@ -10,18 +10,19 @@ categories:
 tags:
   - LaTeX
 ---
-This tells LaTeX how to map a character inside the document:
+This tells LaTeX how to map a character inside the document:<!--more-->
 
-<!--more-->
-
-<pre class="listing">% ...
+```latex
+% ...
 \usepackage[ENCODING]{inputenc}
 % ...
-\begin{document</pre>
+\begin{document}
+```
 
 Values for ENCODING:
 
-  * <code class="command">latin1</code>: Use on unix systems
-  * <code class="command">ansinew</code>: Use on windows systems
+* `latin1`: Use on unix systems
 
-See [UniCode](/blog/2007/11/30/unicode/ "UniCode")
+* `ansinew`: Use on windows systems
+
+See [UniCode](/blog/2007/11/30/unicode/)

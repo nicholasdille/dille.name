@@ -10,16 +10,14 @@ categories:
 tags:
   - Perl
 ---
-The following code chunk demonstrates how to add functions to the current namespace during runtime:
+The following code chunk demonstrates how to add functions to the current namespace during runtime:<!--more-->
 
-<!--more-->
-
-<pre class="listing">*test = sub {
+```perl
+*test = sub {
     print 'blarg' . "n";
-};</pre>
+};
+```
 
-<p class="note">
-  NOTE: When using this code inside objects the function is available globally.
-</p>
+NOTE: When using this code inside objects the function is available globally.
 
-See also: [Adding methods](/blog/2007/11/30/adding-perl-methods-during-runtime/ "Adding Perl Methods during Runtime") and [Dynamic code considerations](/blog/?p=284)
+See also: [Adding methods](/blog/2007/11/30/adding-perl-methods-during-runtime/) and [Dynamic code considerations](/blog/2007/11/30/perl-dynamic-code-considerations/)

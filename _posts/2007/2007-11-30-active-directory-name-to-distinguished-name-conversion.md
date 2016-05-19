@@ -13,24 +13,25 @@ tags:
   - Perl
   - X.500
 ---
-This note demonstrates some exciting Perl magic. It presents several ways to convert a directory-like name of an object in Active Directory to a X.500 Distonguished name.
-
-<!--more-->
+This note demonstrates some exciting Perl magic. It presents several ways to convert a directory-like name of an object in Active Directory to a X.500 Distonguished name.<!--more-->
 
 The script is interrupted by useful comments explaining the following chunk.
 
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
 use locale;
 use English;
 
-my $user = 'userName@sub.domain.de/ou 1/ou2';</pre>
+my $user = 'userName@sub.domain.de/ou 1/ou2';
+```
 
 The following code chunk demonstrates how to perform the conversion in two lines. Unfortunately, this is rather hard to read.
 
-<pre class="listing">print "n";
+```perl
+print "n";
 {
     print 'line ' . __LINE__ . ': ' . $user . "n";
     my ($userName, $dnsDomain, $ou)
@@ -39,11 +40,13 @@ The following code chunk demonstrates how to perform the conversion in two lines
              . ',ou=' . join(',ou=', reverse split('/', $ou))
              . ',dc=' . join(',dc=', split('.', $dnsDomain));
     print 'line ' . __LINE__ . ': ' . $ldap . "n";
-}</pre>
+}
+```
 
 This three-liner makes the conversion rather easy to understand after several months.
 
-<pre class="listing">print "n";
+```perl
+print "n";
 {
     print 'line ' . __LINE__ . ': ' . $user . "n";
     my ($userName, $dnsDomain, @ou) = split(m![@/]!, $user);
@@ -52,11 +55,13 @@ This three-liner makes the conversion rather easy to understand after several mo
              . ',ou=' . join(',ou=', reverse @ou)
              . ',dc=' . $dnsDomain;
     print 'line ' . __LINE__ . ': ' . $ldap . "n";
-}</pre>
+}
+```
 
-Although the following chunk consist of several lines, it contains a single regular expression performing the conversion. To run it using <code class="command">strict</code>, you need to declare <code class="command">$ldap</code>.
+Although the following chunk consist of several lines, it contains a single regular expression performing the conversion. To run it using `strict`, you need to declare `$ldap`.
 
-<pre class="listing">print "n";
+```perl
+print "n";
 {
     my $ldap;
     print 'line ' . __LINE__ . ': ' . $user . "n";
@@ -73,4 +78,5 @@ Although the following chunk consist of several lines, it contains a single regu
         (?{$ldap='cn='.$1.$ldap})         # prepends the common name
     !x;
     print 'line ' . __LINE__ . ': ' . $ldap . "n";
-}</pre>
+}
+```

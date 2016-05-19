@@ -10,9 +10,9 @@ categories:
 tags:
   - Perl
 ---
-The following code chunk was found in [Perl Best Practices](http://www.amazon.de/Perl-Best-Practices-Damian-Conway/dp/0596001738/). Its syntactic symmetry and elegance caught my attention.
+The following code chunk was found in [Perl Best Practices](http://www.amazon.de/Perl-Best-Practices-Damian-Conway/dp/0596001738/). Its syntactic symmetry and elegance caught my attention.<!--more-->
 
-<!--more-->
-
-<pre class="listing">print [$result1=&gt;$result2]-&gt;[$result2&lt;=$result1];</pre>
+```perl
+print [$result1=>$result2]->[$result2<=$result1];
+```
 

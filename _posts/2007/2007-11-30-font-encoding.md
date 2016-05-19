@@ -10,16 +10,17 @@ categories:
 tags:
   - LaTeX
 ---
-How characaters are produced:
+How characaters are produced:<!--more-->
 
-<!--more-->
-
-<pre class="listing">% ...
+```latex
+% ...
 \usepackage[ENCODING]{fontenc}
 % ...
-\begin{document}</pre>
+\begin{document}
+```
 
 Values for ENCODING:
 
-  * <code class="command">T1</code>: Normal letter with accent
-  * <code class="command">EC</code>: For most European languages
+* `T1`: Normal letter with accent
+
+* `EC`: For most European languages

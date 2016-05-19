@@ -10,28 +10,30 @@ categories:
 tags:
   - LaTeX
 ---
-It often makes reading equations a lot easier when breaking them up across lines:
-
-<!--more-->
+It often makes reading equations a lot easier when breaking them up across lines:<!--more-->
 
 ## Aligning with line numbering
 
 Aligned equation with a number on each line: The equation is aligned at the & character. This feels quite like a tabular environment.
 
-<pre>\begin{align}
+```latex
+\begin{align}
 (a + b)^2 &= a^2 + 2ab + b^2 \\\
           &= b^2 + 2ba + a^2 \\\
           &= (b + a)^2 \\\
-\end{align}</pre>
+\end{align}
+```
 
 ## Aligning with single line number
 
 Aligned equation with a single number:
 
-<pre class="listing">\begin{equation}
+```latex
+\begin{equation}
 \begin{split}
 (a + b)^2 &= a^2 + 2ab + b^2 \\\
           &= b^2 + 2ba + a^2 \\\
           &= (b + a)^2 \\\
 \end{split}
-\end{equation}</pre>
+\end{equation}
+```

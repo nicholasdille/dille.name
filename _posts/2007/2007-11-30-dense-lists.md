@@ -10,11 +10,10 @@ categories:
 tags:
   - LaTeX
 ---
-This compresses list environments:
+This compresses list environments:<!--more-->
 
-<!--more-->
-
-<pre class="listing">\let\@@listi=\@listi
+```latex
+\let\@@listi=\@listi
 \def\@listi{
 	\@@listi
 	\topsep 5\p@
@@ -31,4 +30,5 @@ This compresses list environments:
 	\@@listiii
 	\topsep 1\p@
 	\itemsep 0\p@
-}</pre>
+}
+```

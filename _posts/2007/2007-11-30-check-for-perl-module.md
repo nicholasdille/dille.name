@@ -10,18 +10,20 @@ categories:
 tags:
   - Perl
 ---
-Sometimes you'll need to decide on a course of action depending on the presence of a certain module.
+Sometimes you'll need to decide on a course of action depending on the presence of a certain module.<!--more-->
 
-<!--more-->
+* The way you'd usually pull in a module:
 
-  * The way you'd usually pull in a module:
-  
-    <code class="command">use MODULE qw(SYMBOLS);</code>
+  ```perl
+  use MODULE qw(SYMBOLS);
+  ```
 
-  * Instead of pulling in the module: <pre class="listing">eval "use MODULE";
-if (not $EVAL_ERROR) { # use English: $@ -&gt; $EVAL_ERROR
-    require MODULE;
-	import MODULE qw(SYMBOLS);
-}</pre>
+* Instead of pulling in the module:
 
-
+  ```perl
+  eval "use MODULE";
+  if (not $EVAL_ERROR) { # use English: $@ -> $EVAL_ERROR
+      require MODULE;
+    import MODULE qw(SYMBOLS);
+  }
+  ```

@@ -10,15 +10,14 @@ categories:
 tags:
   - LaTeX
 ---
-Some comments about document classes
-
-<!--more-->
+Some comments about document classes<!--more-->
 
 ## Book
 
 The following listing shows the typical layout of a book.
 
-<pre class="listing">% ...
+```latex
+% ...
 \begin{document}
 
 % switches to roman page numbering and clears double page
@@ -35,8 +34,9 @@ The following listing shows the typical layout of a book.
 \backmatter
 
 % ...
-\end{document}</pre>
+\end{document}
+```
 
 ## Sectioning
 
-See [Sectioning](/blog/2007/11/30/sections/ "Sections")
+See [Sectioning](/blog/2007/11/30/sections/)

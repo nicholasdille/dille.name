@@ -10,11 +10,10 @@ categories:
 tags:
   - Perl
 ---
-It is often useful to produce different return values depending on the context in which the subrouting or method was called, i.e. the type of return value that the caller expects:
+It is often useful to produce different return values depending on the context in which the subrouting or method was called, i.e. the type of return value that the caller expects:<!--more-->
 
-<!--more-->
-
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -32,4 +31,5 @@ my @test = &test();
 print '@test: ' . join(' ', @test) . "n";
 my $test = &test();
 print '$test: ' . $test . "n";
-&test();</pre>
+&test();
+```

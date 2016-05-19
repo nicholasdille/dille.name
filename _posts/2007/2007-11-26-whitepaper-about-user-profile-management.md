@@ -12,11 +12,13 @@ tags:
   - User Profile Whitepaper
   - User Profiles
 ---
-As application delivery scenarios grow increasingly complex, user profile management becomes even more of an issue than in times of server-based computing.There is a whole market focussing on managing a user's environment. One aspect of these efforts is to handle a user's personal settings which sepagoPROFILE solely concentrates on.<!--break--> Unfortunately, there are still folks thinking that the traditional methods suffice to solve the issues which are caused by the limitations of Windows user profiles. Due to this, I initiated the writing of this whitepaper to cover in depth the subject of user profiles and to reveal the pitfalls encountered in traditional handling of profiles. An exerpt from the Management Summary of the whitepaper is included below.
+As application delivery scenarios grow increasingly complex, user profile management becomes even more of an issue than in times of server-based computing.There is a whole market focussing on managing a user's environment. One aspect of these efforts is to handle a user's personal settings which sepagoPROFILE solely concentrates on.<!--more-->
+
+Unfortunately, there are still folks thinking that the traditional methods suffice to solve the issues which are caused by the limitations of Windows user profiles. Due to this, I initiated the writing of this whitepaper to cover in depth the subject of user profiles and to reveal the pitfalls encountered in traditional handling of profiles. An exerpt from the Management Summary of the whitepaper is included below.
 
 ## Download
 
-The current version of the whitepaper is available [here]("Updated: User Profiles Whitepaper" /blog/2011/02/25/updated-user-profiles-whitepaper/) as well as subsequent revisions of the document. They will be announced in this blog. Updates will be made available [here](/blog/tags#user-profile-whitepaper/).
+The current version of the whitepaper is available [here](/blog/2011/02/25/updated-user-profiles-whitepaper/) as well as subsequent revisions of the document. They will be announced in this blog. Updates will be made available [here](/blog/tags#user-profile-whitepaper/).
 
 ## Management Summary (excerpt from the document)
 

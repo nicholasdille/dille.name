@@ -10,42 +10,46 @@ categories:
 tags:
   - LaTeX
 ---
-Create an bibliography.
-
-<!--more-->
+Create an bibliography.<!--more-->
 
 ## Simple bibliography
 
-<pre class="listing">% ...
+```latex
+% ...
 \begin{document}
 % ...
 \begin{thebibliography}{LONGEST_KEY}
-\bibitem[KEY]{KEY} &lt;entry&gt;
+\bibitem[KEY]{KEY} <entry>
 \end{thebibliography}
 % ...
-\end{document}</pre>
+\end{document}
+```
 
 ## Proper bibliography
 
-<pre class="listing">% ...
+```latex
+% ...
 \bibliographystyle{plain}
 % ...
 \begin{document}
 % ...
 \bibliography{BIBFILE}
 % ...
-\end{document}</pre>
+\end{document}
+```
 
 You will have to create a BIBFILE.bib in the current directory.
 
 ## Referencing bibliography items:
 
-<pre class="listing">\cite{KEY}</pre>
+```latex
+\cite{KEY}
+```
 
 ## Bibtex command line:
 
-<pre class="listing">bibtex &lt;file&gt;</pre>
+`bibtex <file>`
 
 By setting the environment variable BIBINPUTS you can save your .bib file in a different directory
 
-See also [Compiling LaTeX Documents](/blog/2007/11/30/compilation/ "Compilation")
+See also [Compiling LaTeX Documents](/blog/2007/11/30/compilation/)

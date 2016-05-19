@@ -11,8 +11,6 @@ tags:
   - Perl
   - Statistics
 ---
-This perl module contains several useful functions for the statistical analysis of a series of measurements. These were implemented during my diploma thesis to.
-
-<!--more-->
+This perl module contains several useful functions for the statistical analysis of a series of measurements. These were implemented during my diploma thesis to.<!--more-->
 
 Download the Perl module [Math.pm](/media/2013/06/Math.zip)
