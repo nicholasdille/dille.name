@@ -12,32 +12,40 @@ tags:
   - LaTeX
   - Localization
 ---
-Use the following hints to add German language support:
-
-<!--more-->
+Use the following hints to add German language support:<!--more-->
 
 ## Document layout
 
-<pre class="listing">% ...
+```latex
+% ...
 \usepackage[german,ngerman]{babel}
 % ...
-\begin{document}</pre>
+\begin{document}
+```
 
 ## Typographical quotation marks
 
-<pre class="listing">"`Text"'</pre>
+```latex
+"`Text"'
+```
 
 ## Umlauts
 
-<pre class="listing">% Ä ä Ü ü Ö ö
-"A "a "U "u "O "o</pre>
+```latex
+% Ä ä Ü ü Ö ö
+"A "a "U "u "O "o
+```
 
 Depending on the context using the above notation will fail and you will have to fallback to:
 
-<pre class="listing">% Ä ä Ü ü Ö ö
-"A "a "U "u "O "o</pre>
+```latex
+% Ä ä Ü ü Ö ö
+"A "a "U "u "O "o
+```
 
 ## sz
 
-<pre class="listing">% ß
-"s</pre>
+```latex
+% ß
+"s
+```

@@ -10,20 +10,14 @@ categories:
 tags:
   - LaTeX
 ---
-<div id="content">
-  <p>
-    The following commands change the numbering of equations to include the current section:
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <pre class="listing">% ...
+The following commands change the numbering of equations to include the current section:<!--more-->
+
+```latex
+% ...
 \usepackage{amsmath,amsfonts}
 \numberwithin{equation}{subsection}
 % ...
 \begin{document}
 % ...
-\end{document}</pre>
-</div>
+\end{document}
+```

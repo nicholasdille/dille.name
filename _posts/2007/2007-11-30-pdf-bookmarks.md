@@ -11,12 +11,12 @@ tags:
   - LaTeX
   - PDF
 ---
-Sometimes it is desirable to add custom lines to the list of bookmarks inside a PDF file:
+Sometimes it is desirable to add custom lines to the list of bookmarks inside a PDF file:<!--more-->
 
-<!--more-->
-
-<pre class="listing">\pdfbookmark[LEVEL]{TEXT}{UNIQUE_LABEL}</pre>
+```latex
+\pdfbookmark[LEVEL]{TEXT}{UNIQUE_LABEL}
+```
 
 Where LEVEL is the number of the corresponding sectioning command
 
-See [Sections](/blog/2007/11/30/sections/ "Sections")
+See [Sections](/blog/2007/11/30/sections/)

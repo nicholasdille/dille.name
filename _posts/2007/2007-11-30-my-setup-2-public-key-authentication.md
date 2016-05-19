@@ -10,23 +10,20 @@ categories:
 tags:
   - SSH
 ---
-In addition to [my setup](/blog/2005/01/23/my-setup-public-key-authentication/ "My Setup: Public Key Authentication"), this code assumes that your SSH keys are stored on a hot-swappable mass storage device (USB stick, flash card etc.). It first asks you to connect the storage device and then adds your key(s) into the SSH agent.
+In addition to [my setup](/blog/2005/01/23/my-setup-public-key-authentication/), this code assumes that your SSH keys are stored on a hot-swappable mass storage device (USB stick, flash card etc.). It first asks you to connect the storage device and then adds your key(s) into the SSH agent.<!--more-->
 
-<!--more-->The code contains come configuration options:
+The code contains come configuration options:
 
-<code class="command">MOUNTPOINT</code>
-:   The path where your mass storage device can be mounted
+* MOUNTPOINT contains the path where your mass storage device can be mounted
 
-<code class="command">IDENTITY</code>
-:   The identity that is to be added
+* IDENTITY that is to be added
 
-<code class="command">LIFETIME</code>
-:   The lifetime of the identity
+* LIFETIME of the identity
 
-<code class="command">DEFAULT_LIFETIME</code>
-:   The default lifetime that is applied to all identities 
+* The DEFAULT_LIFETIME that is applied to all identities 
 
-<pre class="listing">##################################################
+```bash
+##################################################
 ### ssh agent
 ###
 
@@ -90,4 +87,5 @@ unset MOUNTPOINT
 unset LIFETIME
 unset DEFAULT_LIFETIME
 unset SSH_ADD_OPTS
-unset COMMAND</pre>
+unset COMMAND
+```

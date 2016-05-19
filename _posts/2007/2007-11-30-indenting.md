@@ -10,16 +10,18 @@ categories:
 tags:
   - LaTeX
 ---
-Not much to say about that:
-
-<!--more-->
+Not much to say about that:<!--more-->
 
 ## Forced:
 
-<pre class="listing">\indent
-some text</pre>
+```latex
+\indent
+some text
+```
 
 ## Suppressed:
 
-<pre class="listing">\noindent
-some text</pre>
+```latex
+\noindent
+some text
+```

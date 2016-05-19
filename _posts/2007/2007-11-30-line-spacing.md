@@ -10,8 +10,8 @@ categories:
 tags:
   - LaTeX
 ---
-This command will alter the spacing of the lines of text by the specified factor:
+This command will alter the spacing of the lines of text by the specified factor:<!--more-->
 
-<!--more-->
-
-<pre class="listing">\linespread{factor}</pre>
+```latex
+\linespread{factor}
+```

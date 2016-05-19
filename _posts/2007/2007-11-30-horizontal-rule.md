@@ -10,14 +10,8 @@ categories:
 tags:
   - LaTeX
 ---
-<div id="content">
-  <p>
-    Include an horizontal rule in your text:
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <pre class="listing">\rule{linewidth}{HEIGHT}</pre>
-</div>
+Include an horizontal rule in your text:<!--more-->
+
+```latex
+\rule{linewidth}{HEIGHT}
+```

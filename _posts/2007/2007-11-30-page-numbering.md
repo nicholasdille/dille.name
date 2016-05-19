@@ -10,22 +10,10 @@ categories:
 tags:
   - LaTeX
 ---
-<div id="content">
-  <p>
-    Change the style of the page numbering:
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <pre class="listing">\pagenumbering{STYLE}</pre>
-  
-  <p>
-    Where STYLE is one of <code class="command">arabic</code>, <code class="command">roman</code>, <code class="command">Roman</code>, <code class="command">alph</code> and <code class="command">Alph</code>.
-  </p>
-  
-  <p>
-    &nbsp;
-  </p>
-</div>
+Change the style of the page numbering:<!--more-->
+
+```latex
+\pagenumbering{STYLE}
+```
+
+Where STYLE is one of `arabic`, `roman`, `Roman`, `alph` and `Alph`.

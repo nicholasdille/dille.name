@@ -10,10 +10,6 @@ categories:
 tags:
   - Perl
 ---
-Ain't no big deal, right?
+Ain't no big deal, right?<!--more-->
 
-<!--more-->
-
-Have a look at <code class="command">&lt;a title="My Perl Library" href="/blog/2013/06/18/my-perl-library/">Library&lt;/a>::Class</code> for a more universal approach.
-
-
+Have a look at [Library](/blog/2013/06/18/my-perl-library/)::Class for a more universal approach.

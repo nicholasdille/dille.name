@@ -11,20 +11,24 @@ tags:
   - Fun
   - German
 ---
-Folgendes Gedicht wurde durch ein Übersetzungsprogramm geschickt, das es ins Japanische, dann ins Französische und zurück ins Deutsche übersetzt hat:
-  
-`Über allen Gipfeln<br />
-Ist Ruh.<br />
-In allen Wipfeln<br />
-Spürest du<br />
-Kaum einen Hauch.<br />
-Warte nur, balde<br />
-ruhest du auch.`
+Folgendes Gedicht wurde durch ein Übersetzungsprogramm geschickt, das es ins Japanische, dann ins Französische und zurück ins Deutsche übersetzt hat:<!--more-->
+
+```
+Über allen Gipfeln
+Ist Ruh.
+In allen Wipfeln
+Spürest du
+Kaum einen Hauch.
+Warte nur, balde
+ruhest du auch.
+```
 
 Das Ergebnis war:
-  
-`Stille ist im Pavillon aus Jade.<br />
-Krähen fliegen stumm<br />
-zu beschneiten Kirschbäumen im Mondlicht.<br />
-Ich sitze<br />
-und weine.`
+
+```
+Stille ist im Pavillon aus Jade.
+Krähen fliegen stumm
+zu beschneiten Kirschbäumen im Mondlicht.
+Ich sitze
+und weine.
+```

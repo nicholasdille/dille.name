@@ -10,24 +10,28 @@ categories:
 tags:
   - LaTeX
 ---
-Not much to say about that.
-
-<!--more-->
+Not much to say about that.<!--more-->
 
 ## Paragraphs with indenting
 
-<pre class="listing">some text
+```latex
+some text
 
-some more text</pre>
+some more text
+```
 
 ## Paragraphs with indenting and empty line
 
-<pre class="listing">some text
+```latex
+some text
 \\
-some more text</pre>
+some more text
+```
 
 This is equivalent to:
 
-<pre class="listing">some text\par some more text</pre>
+```latex
+some text\par some more text
+```
 
-See also [Vertical Spaces](/blog/2007/11/30/vertical-spaces/ "Vertical Spaces")
+See also [Vertical Spaces](/blog/2007/11/30/vertical-spaces/)

@@ -10,14 +10,8 @@ categories:
 tags:
   - LaTeX
 ---
-<div id="content">
-  <p>
-    The following command will produce a single footnote. They are automatically numbered:
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <pre class="listing">\footnote{Text}</pre>
-</div>
+The following command will produce a single footnote. They are automatically numbered:<!--more-->
+
+```latex
+\footnote{Text}
+```

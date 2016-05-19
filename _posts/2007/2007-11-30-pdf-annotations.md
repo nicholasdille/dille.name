@@ -11,22 +11,28 @@ tags:
   - LaTeX
   - PDF
 ---
-PDF annotations provide a nice way to add notes to your document (actually they are much more powerful, but i have merely used text annotations so far):
+PDF annotations provide a nice way to add notes to your document (actually they are much more powerful, but i have merely used text annotations so far):<!--more-->
 
-<!--more-->
-
-<pre class="listing">\pdfannot{/Subtype/Text/Contents(TEXT)}</pre>
+```latex
+\pdfannot{/Subtype/Text/Contents(TEXT)}
+```
 
 You can also force the annotations to the margin paragraph:
 
-<pre class="listing">\marginpar{\pdfannot{/Subtype/Text/Contents(TEXT)}}</pre>
+```latex
+\marginpar{\pdfannot{/Subtype/Text/Contents(TEXT)}}
+```
 
-The standard LaTeX line break using <code class="command"></code> do not work, therefore:
+The standard LaTeX line break using `\\` does not work, therefore:
 
-<pre class="listing">\marginpar{\edef\\{\string\r}\pdfannot{/Subtype/Text/Contents(TEXT)}}</pre>
+```latex
+\marginpar{\edef\\{\string\r}\pdfannot{/Subtype/Text/Contents(TEXT)}}
+```
 
-Be caseful to limit the <code class="command">edef</code> construct to the PDF annotation. This is achieved by the <code class="command">marginpar</code> command here.
+Be caseful to limit the `edef` construct to the PDF annotation. This is achieved by the `marginpar` command here.
 
 You can also adjust the size of the PDF annotation:
 
-<pre class="listing">\pdfannot with 10cm depth 7cm {/Subtype/Text/Contents(TEXT)}</pre>
+```latex
+\pdfannot with 10cm depth 7cm {/Subtype/Text/Contents(TEXT)}
+```

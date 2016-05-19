@@ -10,23 +10,25 @@ categories:
 tags:
   - LaTeX
 ---
-Hyphenation automatically breaks a word across a line break in sensible places. In case this fails use the following commands.
-
-<!--more-->
+Hyphenation automatically breaks a word across a line break in sensible places. In case this fails use the following commands.<!--more-->
 
 ## Global:
 
-<pre class="listing">% ...
+```latex
+% ...
 \hyphenation{laugh-ing de-cla-ra-tion}
 % ...
 \begin{document}
 % ...
-\end{document}</pre>
+\end{document}
+```
 
 ## Once:
 
-<pre class="listing">\begin{document}
+```latex
+\begin{document}
 % ...
 \laugh\-ing
 % ...
-\end{document}</pre>
+\end{document}
+```

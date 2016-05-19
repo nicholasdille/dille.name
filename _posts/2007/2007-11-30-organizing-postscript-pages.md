@@ -11,8 +11,6 @@ tags:
   - LaTeX
   - PostScript
 ---
-The following command creates a new PostScript document containing n pages per page:
+The following command creates a new PostScript document containing `n` pages per page:<!--more-->
 
-<!--more-->
-
-<pre class="listing">psnup -l -&lt;n&gt; &lt;file&gt;.ps &lt;file&gt;.&lt;n&gt;.ps</pre>
+`psnup -l -<n> <file>.ps <file>.<n>.ps`
