@@ -10,14 +10,15 @@ categories:
 tags:
   - Statistics
 ---
-For a series of measurements `$x_i = x_1, \dots, x_n$`, it is useful to examine the magnitude of a certain fraction of the number of values.
+For a series of measurements `$x_i = x_1, \dots, x_n$`, it is useful to examine the magnitude of a certain fraction of the number of values.<!--more-->
 
 NOTE: The following descriptions assume that the series of measurements is available in a sorted manner.
 
 The p-quantile (`$0 \le p \le 1$`) is the value that devides the series of measurements into `$i=p*n$` measurements that are smaller than `$x_i$` and the rest of the measurements. It is important to note that the previously calculated value `$x_i$` cannot be considered to be final. There are two rules that need to be obeyed:
 
-  1. _`$i$` is a whole number_: The p-quantile is calculated by interpolating `$x_i$` and `$x_{i+1}$`: `$Q(p)=\frac{(x_i+x_{i+1})}{2}$`
-  2. _`$i$` is not a whole number_: The p-quantile is calculated by rounding down: `$Q(p)=x_{\lfloor \irfloor)}$`
+1. _`$i$` is a whole number_: The p-quantile is calculated by interpolating `$x_i$` and `$x_{i+1}$`: `$Q(p)=\frac{(x_i+x_{i+1})}{2}$`
+
+2. _`$i$` is not a whole number_: The p-quantile is calculated by rounding down: `$Q(p)=x_{\lfloor \irfloor)}$`
 
 The 0.5-quantile is called the median. It represents the value for which 50% of all measurements are smaller and 50% are greater or equal.
 

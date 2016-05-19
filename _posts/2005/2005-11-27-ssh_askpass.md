@@ -10,11 +10,10 @@ categories:
 tags:
   - SSH
 ---
-The <code class="command">ssh-add</code> utility (see [SSH agent](/blog/2005/11/27/ssh-agent/ "SSH Agent") for details) accepts a program in the environment variable <code class="command">SSH_ASKPASS</code> that retrieves a passphrase from the user. This is especially useful to use the SSH agent from a script or a GUI (i.e. without a console).
+The `ssh-add` utility (see [SSH agent](/blog/2005/11/27/ssh-agent/) for details) accepts a program in the environment variable `SSH_ASKPASS` that retrieves a passphrase from the user. This is especially useful to use the SSH agent from a script or a GUI (i.e. without a console).<!--more-->
 
-<!--more-->
-
-<pre class="listing">$ ssh-agent bash --login
+```
+$ ssh-agent bash --login
 $ export SSH_ASKPASS="$(which x11-ssh-askpass)"
 $ ssh-keygen -t dsa -f TEST
 Generating public/private dsa key pair.
@@ -27,4 +26,5 @@ The key fingerprint is:
 $ ssh-add TEST &lt;/dev/null
 # x11-ask-pass opens
 Identity added: TEST (TEST)
-$ _</pre>
+$ _
+```

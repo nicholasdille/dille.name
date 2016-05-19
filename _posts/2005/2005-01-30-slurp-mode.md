@@ -10,11 +10,10 @@ categories:
 tags:
   - Perl
 ---
-The internal variable <code class="command">INPUT_RECORD_SEPARATOR</code> determines which string of characters closes a line of input data.
+The internal variable `INPUT_RECORD_SEPARATOR` determines which string of characters closes a line of input data.<!--more-->
 
-<!--more-->
-
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -22,11 +21,12 @@ use English;
 
 {
     local $INPUT_RECORD_SEPARATOR = '&';
-    while (&lt;DATA&gt;) {
+    while (<DATA>) {
         print 'XXX' . $ARG . 'XXX' . "n";
     }
 }
 
 __DATA__
 blarg&test&hal
-lo&ende</pre>
+lo&ende
+```

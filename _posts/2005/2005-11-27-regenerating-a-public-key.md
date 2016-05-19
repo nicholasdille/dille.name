@@ -10,8 +10,6 @@ categories:
 tags:
   - SSH
 ---
-To regenerate your public key from the private key:
+To regenerate your public key from the private key:<!--more-->
 
-<!--more-->
-
-<code class="command">ssh-keygen -t dsa -y</code>
+`ssh-keygen -t dsa -y`

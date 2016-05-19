@@ -10,11 +10,10 @@ categories:
 tags:
   - Perl
 ---
-When a variable is passed by value, Perl does not create a copy of the contents to build @_ but, rather, creates an alias to the contents of the original variable. Therefore, a memory blow-up is caused by reading from @_.
+When a variable is passed by value, Perl does not create a copy of the contents to build `@_` but, rather, creates an alias to the contents of the original variable. Therefore, a memory blow-up is caused by reading from `@_`.<!--more-->
 
-<!--more-->
-
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -28,4 +27,5 @@ print $variable . "n";
 sub implicit_pass_by_reference {
     my $argument = $_[0];
     $$argument = 'new data';
-}</pre>
+}
+```

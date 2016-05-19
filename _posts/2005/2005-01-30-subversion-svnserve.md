@@ -10,19 +10,14 @@ categories:
 tags:
   - Subversion
 ---
-Instead of publishing subversion repositories via its integration in the apache web server, you can use the <code class="command">svnserve</code> daemon which run on port 3690 by default (but can be used with an inetd).
+Instead of publishing subversion repositories via its integration in the apache web server, you can use the `svnserve` daemon which run on port 3690 by default (but can be used with an inetd).<!--more-->
 
-<!--more-->
+The `svnserve` daemon obtains a directory from the client and expects to find a subversion reporitory relative to the configured root directory (via `-r ROOT`). Client access a repository via a `svn://` url:
 
-The <code class="command">svnserve</code> daemon obtains a directory from the client and expects to find a subversion reporitory relative to the configured root directory (via <code class="command">-r ROOT</code>). Client access a repository via a <code class="command">svn://</code> url:
+`$ svn list svn://HOST/path/to/REPOS1`
 
-<pre class="listing">$ svn list svn://HOST/path/to/REPOS1</pre>
+This way a single `svnserve` daemon is able to publish several repositories.
 
-This way a single <code class="command">svnserve</code> daemon is able to publish several repositories.
-
-<p class="note">
-  NOTE: Access permissions can be configured in the configuration file <code class="command">conf/svnserve.conf</code> of a repository.
-</p>
+NOTE: Access permissions can be configured in the configuration file `conf/svnserve.conf` of a repository.
 
 See also: [Subversion over SSH](/blog/2003/09/21/subversion-over-ssh/ "Subversion over SSH")
-

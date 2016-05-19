@@ -11,10 +11,10 @@ tags:
   - Perl
   - XML
 ---
-Use the following modules to process XML in Perl:
+Use the following modules to process XML in Perl:<!--more-->
 
-<!--more-->
-
-<pre>XML::LibXML
+```
+XML::LibXML
 XML::Simple
-XML::XSH</pre>
+XML::XSH
+```

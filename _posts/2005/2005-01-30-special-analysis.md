@@ -10,7 +10,7 @@ categories:
 tags:
   - Statistics
 ---
-In addition to the commonly known properties of a statistic, a special analysis of the data can be performed based on the type of the individual values:
+In addition to the commonly known properties of a statistic, a special analysis of the data can be performed based on the type of the individual values:<!--more-->
 
 ## Event Times
 
@@ -20,4 +20,4 @@ Interarrival Times: This value is calculated as the difference between two adjac
 
 Expected Residual Lifetime: This is computed for each bucket of the histogram of lifetimes by calculating the mean expected lifetime which is based on all buckets containing higher lifetimes and subtracting the current lifeitme.
 
-See [Histogram](/blog/2004/03/23/histograms/ "Histograms")
+See [Histogram](/blog/2004/03/23/histograms/)

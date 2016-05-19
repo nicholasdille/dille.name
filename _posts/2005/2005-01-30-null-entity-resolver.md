@@ -11,9 +11,7 @@ tags:
   - Java
   - XML
 ---
-Instead of permitting the XML parser to download document type definitions, this entity resolver returns an empty string for all entities.
-  
-<!--more-->
+Instead of permitting the XML parser to download document type definitions, this entity resolver returns an empty string for all entities.<!--more-->
 
 There you go: [NullEntityReslver.java](/media/2005/01/NullEntityResolver.zip)
 

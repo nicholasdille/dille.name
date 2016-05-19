@@ -12,15 +12,17 @@ tags:
   - Java
   - XML
 ---
-This is a validator for XML documents with the foillowing features:
-  
-<!--more-->
+This is a validator for XML documents with the foillowing features:<!--more-->
 
-  * Check your XML document against a DTD
-  * Check your XML document against a schema (untested)
-  * Transparent download of external entities
-  * Local caching of external entities to speed up validation
-  * Compressed entity cache to save space
+* Check your XML document against a DTD
+
+* Check your XML document against a schema (untested)
+
+* Transparent download of external entities
+
+* Local caching of external entities to speed up validation
+
+* Compressed entity cache to save space
 
 NOTE: You will also need the [Caching Entity Resolver](/blog/2005/01/30/caching-entity-resolver/)
 

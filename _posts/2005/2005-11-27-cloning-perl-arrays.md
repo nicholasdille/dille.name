@@ -10,13 +10,12 @@ categories:
 tags:
   - Perl
 ---
-Continuous script interrupted by comments ...
-
-<!--more-->
+Continuous script interrupted by comments ...<!--more-->
 
 Basic infrastructure:
 
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use strict;
 use warnings;
@@ -37,21 +36,24 @@ sub print_array {
         }
     }
     print ']' . "n";
-}</pre>
+}
+```
 
 Cloning of array contents into a new array
 
-<pre class="listing">my @array = @$ref_array;
+```perl
+my @array = @$ref_array;
 $array[4] = 5;
 &print_array('ref_array', $ref_array);
-&print_array('array', @array);</pre>
+&print_array('array', @array);
+```
 
 Cloning of array contents into a new array reference
 
-<pre class="listing">my $ref2_array;
+```perl
+my $ref2_array;
 @$ref2_array = @$ref_array;
 $ref_array-&gt;[5] = 6;
 &print_array('ref_array', $ref_array);
-&print_array('ref2_array', $ref2_array);</pre>
-
-
+&print_array('ref2_array', $ref2_array);
+```

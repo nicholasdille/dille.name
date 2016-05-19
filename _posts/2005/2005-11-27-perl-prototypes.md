@@ -10,11 +10,10 @@ categories:
 tags:
   - Perl
 ---
-The following code forms the typical header for my Perl scripts:
+The following code forms the typical header for my Perl scripts:<!--more-->
 
-<!--more-->
-
-<pre class="listing">#!/usr/bin/perl
+```perl
+#!/usr/bin/perl
 
 use 5.8.0;
 
@@ -34,4 +33,5 @@ $Data::Dumper::Terse = 1;
 $Data::Dumper::Deepcopy = 1;
 $Data::Dumper::Quotekeys = 1;
 
-# put code here</pre>
+# put code here
+```
