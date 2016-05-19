@@ -10,12 +10,10 @@ categories:
 tags:
   - SSH
 ---
-SSH is most commonly known for its ability to login to remote hosts. But it also allows the execution of commands on the remote host without a prior login although it still requires successful authentication (otherwise, there would be no sense in using SSH, right?!):
+SSH is most commonly known for its ability to login to remote hosts. But it also allows the execution of commands on the remote host without a prior login although it still requires successful authentication (otherwise, there would be no sense in using SSH, right?!):<!--more-->
 
-<!--more-->
-
-<code class="command">ssh HOST COMMAND</code>.
+`ssh HOST COMMAND`.
 
 This will not work for screen-based commands which will probably come as a surprise. SSH does not allocate a pseudo-tty for those remote commands but you can force it to do so anyway:
 
-<code class="command">ssh -t HOST COMMAND</code>.
+`ssh -t HOST COMMAND`.

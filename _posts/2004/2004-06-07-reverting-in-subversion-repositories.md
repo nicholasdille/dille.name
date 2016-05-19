@@ -10,14 +10,12 @@ categories:
 tags:
   - Subversion
 ---
-It is sometimes useful to revert to the revision of a file that has already been checked in:
+It is sometimes useful to revert to the revision of a file that has already been checked in:<!--more-->
 
-<!--more-->
+1. Retrieve previous revision X of file FILE:
 
-  1. Retrieve previous revision X of file FILE:
-  
-    <code class="command">svn cat -r X FILE &gt;FILE</code>
+  `svn cat -r X FILE &gt;FILE`
 
-  1. Commit previous revision to repository:
-  
-    <code class="command">svn commit --message "reverted to rX" FILE</code>
+1. Commit previous revision to repository:
+
+  `svn commit --message "reverted to rX" FILE`

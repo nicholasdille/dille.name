@@ -10,8 +10,6 @@ categories:
 tags:
   - Linux
 ---
-Have you ever wanted to remove the content of one file from the content of another file linewise? I have been in the situation several times.
+Have you ever wanted to remove the content of one file from the content of another file linewise? I have been in the situation several times.<!--more-->
 
-<!--more-->
-
-And I am more than happy to have discovered the solution however lame it may seem to you: <code class="command">cat FILE1 | grep -vf FILE2</code>
+And I am more than happy to have discovered the solution however lame it may seem to you: `cat FILE1 | grep -vf FILE2`

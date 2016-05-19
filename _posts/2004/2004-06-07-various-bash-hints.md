@@ -10,10 +10,8 @@ categories:
 tags:
   - Bash
 ---
-Various hints that do not justify a dedicated node:
+Various hints that do not justify a dedicated node:<!--more-->
 
-<!--more-->
+* It is faster to `$(&lt;FILE)` than to `$(cat FILE)`.
 
-  * It is faster to <code class="command">$(&lt;FILE)</code> than to <code class="command">$(cat FILE)</code>.
-
-  * Cryptic fork bomb: <code class="command">:(){:|:&};:</code>
+* Cryptic fork bomb: `:(){:|:&};:`

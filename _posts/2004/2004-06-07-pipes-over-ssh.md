@@ -10,19 +10,14 @@ categories:
 tags:
   - SSH
 ---
-Instead of first creating a tarball and then using scp to transfer it to another host, you could simply:
+Instead of first creating a tarball and then using scp to transfer it to another host, you could simply:<!--more-->
 
-<!--more-->
+`tar -cz foo/ | ssh USER@HOST 'tar -xzC /remote/dir/'`
 
-<pre class="listing">tar -cz foo/ | ssh USER@HOST 'tar -xzC /remote/dir/'</pre>
+This command will compress the directory `foo` on the host you are logged in, pipe the tarball through SSH and redirect the output to the file `foo.tar.gz` on the remote host.
 
-This command will compress the directory <code class="command">foo</code> on the host you are logged in, pipe the tarball through SSH and redirect the output to the file <code class="command">foo.tar.gz</code> on the remote host.
-
-NOTE: In contrast to the description of [remote commands](/blog/2004/03/24/remote-commands/ "Remote Commands") you need to use quotes in this example. otherwise the redirection would take place on the local instead of the remote host.
+NOTE: In contrast to the description of [remote commands](/blog/2004/03/24/remote-commands/) you need to use quotes in this example. otherwise the redirection would take place on the local instead of the remote host.
 
 NOTE: This command will create 'trailing garbage' in the archive. This does not violate your data but causes an annoying error message to be printed out upon archive operations. Currently i don't know how to solve this.
 
-For a practical scenario see the note about xauth.
-
-
-
+For a practical scenario see the note about [xauth](/blog/2004/06/07/xauth/).

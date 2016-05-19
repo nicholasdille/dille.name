@@ -11,20 +11,26 @@ tags:
   - Linux
   - X11
 ---
-To change the keymap of your X server while it is running use the following command:
+To change the keymap of your X server while it is running use the following command:<!--more-->
 
-<!--more-->
-
-<pre class="listing">setxkbmap us</pre>
+`setxkbmap us`
 
 You can also achieve a similar behaviour as in windows by implementing one of the following:
 
-  * In your X config: <pre class="listing">Option "XkbLayout" "us,de" 
-Option "XkbVariant" ",nodeadkeys" 
-Option "XkbOptions" "grp:alt_shift_toggle"</pre>
+* In your X config:
 
-  * One the command line: <pre class="listing">setxkbmap  
-    -rules xorg|xfree86  
-    -layout "us,de"  
-    -variant ",nodeadkeys"  
-    -option "grp:alt_shift_toggle"</pre>
+  ```
+  Option "XkbLayout" "us,de"
+  Option "XkbVariant" ",nodeadkeys"
+  Option "XkbOptions" "grp:alt_shift_toggle"
+  ```
+
+* One the command line:
+
+  ```
+  setxkbmap
+  -rules xorg|xfree86
+  -layout "us,de"
+  -variant ",nodeadkeys"
+  -option "grp:alt_shift_toggle"
+  ```

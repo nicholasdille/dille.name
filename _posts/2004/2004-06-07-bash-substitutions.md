@@ -10,34 +10,36 @@ categories:
 tags:
   - Bash
 ---
-Bash supports various constructs for substituting contents of variables.
-
-<!--more-->
+Bash supports various constructs for substituting contents of variables.<!--more-->
 
 Setting default values:
 
-  * Return on unset value: <code class="command">VAR=${VAR:-blarg}</code>
+* Return on unset value: `VAR=${VAR:-blarg}`
 
-  * Assign on unset value: <code class="command">${VAR:=blarg}</code>
+* Assign on unset value: `${VAR:=blarg}`
 
 Substituting substring:
 
-  * First occurence: <code class="command">${FILE/urs/usr}</code>
+* First occurence: `${FILE/urs/usr}`
 
-  * All occurences: <code class="command">${FILE//urs/usr}</code>
+* All occurences: `${FILE//urs/usr}`
 
-  * At end of string: <code class="command">${FILE/%.jpg/.png}</code>
+* At end of string: `${FILE/%.jpg/.png}`
 
-  * At front of string: <code class="command">${FILE/#${HOME}/~/}</code>
+* At front of string: `${FILE/#${HOME}/~/}`
 
 Command substitutions:
 
-  * _Either:_ <code class="command">`pwd`</code>
+* _Either:_ ``pwd``
 
-  * _Or:_ <code class="command">$(pwd)</code>
+* _Or:_ `$(pwd)`
 
 The latter is easier to nest:
 
-  * _Either:_ <code class="command">`basename `pwd``</code>
+* _Either:_
 
-  * _Or:_ <code class="command">$(basename $(pwd))</code>
+  ```
+  `basename `pwd``
+  ```
+
+* _Or:_ `$(basename $(pwd))`
