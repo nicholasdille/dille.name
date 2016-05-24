@@ -40,6 +40,7 @@
 <!-- RSS -->
 {% feed_meta %}
 
+<!-- Google Analytics Opt-Out Cookie -->
 <script>
 var gaProperty = 'UA-27700931-1';
 var disableStr = 'ga-disable-' + gaProperty;
@@ -52,6 +53,7 @@ document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; pa
 }
 </script>
 
+<!-- Google Analytics with IP Anonymization -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -62,3 +64,12 @@ ga('create', 'UA-27700931-1', 'auto');
 ga('set', 'anonymizeIp', true);
 ga('send', 'pageview');
 </script>
+
+<!-- Live Tile -->
+<meta name="application-name" content="dille.name"/>
+<meta name="msapplication-square70x70logo" content="/media/live_tile/small.jpg"/>
+<meta name="msapplication-square150x150logo" content="/media/live_tile/medium.jpg"/>
+<meta name="msapplication-wide310x150logo" content="/media/live_tile/wide.jpg"/>
+<meta name="msapplication-square310x310logo" content="/media/live_tile/large.jpg"/>
+<meta name="msapplication-TileColor" content="#6a9fb5"/>
+<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=5; cycle=1"/>
