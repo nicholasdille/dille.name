@@ -10,44 +10,56 @@ categories:
 tags:
   - Perl
 ---
-All blessed references inherit from <code class="command">UNIVERSAL</code>: <!--more-->
+All blessed references inherit from `UNIVERSAL`:<!--more-->
 
-  * _Checking the type of a reference:_ <pre class="listing">$obj-&gt;isa(TYPE)
-CLASS-&gt;isa(TYPE)
-isa(VAL, TYPE)</pre>
+* _Checking the type of a reference:_
 
-  * _Checking for the existence of a function:_ <pre class="listing">$obj-&gt;can(METHOD)
-CLASS-&gt;can(METHOD)
-can(VAL, METHOD)</pre>
+  ```perl
+  $obj->isa(TYPE)
+  CLASS->isa(TYPE)
+  isa(VAL, TYPE)
+  ```
 
-  * _Example for the above:_ <pre class="listing">#!/usr/bin/perl
+* _Checking for the existence of a function:_
 
-use strict;
-use warnings;
+  ```perl
+  $obj->can(METHOD)
+  CLASS->can(METHOD)
+  can(VAL, METHOD)
+  ```
 
-if (not Test-&gt;can('new')) {
-    die 'do not know how to create an object of type "Test"' . "n";
-}
+* _Example for the above:_
 
-my $obj = Test-&gt;new();
+  ```perl
+  #!/usr/bin/perl
 
-if ($obj-&gt;isa('Test')) {
-    print '$obj is a "Test"' . "n";
-}
-if ($obj-&gt;can('print')) {
-    print '$obj can "print"' . "n";
-}
+  use strict;
+  use warnings;
 
-package Test;
+  if (not Test->can('new')) {
+      die 'do not know how to create an object of type "Test"' . "n";
+  }
 
-sub new {
-    my $pkg = shift;
+  my $obj = Test->new();
 
-    return bless {}, $pkg;
-}
+  if ($obj->isa('Test')) {
+      print '$obj is a "Test"' . "n";
+  }
+  if ($obj->can('print')) {
+      print '$obj can "print"' . "n";
+  }
 
-sub print {
-    print 'Hello, world!' . "n";
-}
+  package Test;
 
-1;</pre>
+  sub new {
+      my $pkg = shift;
+
+      return bless {}, $pkg;
+  }
+
+  sub print {
+      print 'Hello, world!' . "n";
+  }
+
+  1;
+  ```

@@ -22,9 +22,7 @@ tags:
   - Project Parra
   - PSC
 ---
-Haven't we all wondered why Presentation Server has two management interfaces, the Presentation Server Console (PSC) and the Access Management Console (AMC)?
-
-<!--more-->
+Haven't we all wondered why Presentation Server has two management interfaces, the Presentation Server Console (PSC) and the Access Management Console (AMC)?<!--more-->
 
 To begin with, PSC was supplemented by the ASC providing the Common Diagnostic Facility (CDF), Report Center and basic browsing of farm objects which was read only. Shortly afterwards, ASC was established to configure and operate Web Interface and Access Gateway Advanced, though, there were a lot of pains involved due to different versions of ASC and confusing hotfixes to fix behaviour for WI and AG based tasks.
 

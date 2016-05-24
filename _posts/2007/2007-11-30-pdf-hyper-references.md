@@ -101,6 +101,3 @@ pdfpagetransition | Blinds         |         | How a page transition is performe
 ```
 
 `\url{URL}` corresponds to `\href{URL}{URL}`
-
-
-

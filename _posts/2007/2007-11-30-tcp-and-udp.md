@@ -11,33 +11,33 @@ tags:
   - Bash
   - Network
 ---
-In case you do not have telnet or netcat handy to open a TCP or UDP client connection:
+In case you do not have telnet or netcat handy to open a TCP or UDP client connection:<!--more-->
 
-<!--more-->
-
-<pre class="listing">function send() {
-    echo -e "$1" 1&gt;&3
+```bash
+function send() {
+    echo -e "$1" 1>&3
 }
 
 function receive() {
-    read -u 3 0&lt;&3
+    read -u 3 0<&3
 }
 
 function openUDP() {
     (
         eval $3
-    ) 3&lt;&gt; /dev/udp/$1/$2
-}       
+    ) 3<> /dev/udp/$1/$2
+}
 
 function openTCP() {
     (
         eval $3
-    ) 3&lt;&gt; /dev/tcp/$1/$2
-}       
+    ) 3<> /dev/tcp/$1/$2
+}
 
 function worker() {
     send "hallo"
     echo "got: $(receive)"
-}   
+}
 
-openTCP 10.1.1.1 8000 worker</pre>
+openTCP 10.1.1.1 8000 worker
+```

@@ -10,20 +10,12 @@ categories:
 tags:
   - LaTeX
 ---
-<div id="content">
-  <p>
-    Vanilla tabular environments are not broken at page breaks. They are moved to the next page where they will produce an overfull vbox when exceeding the length of the text area.
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <p>
-    This note describes the longtabular environment which will insert page break in sensible places. It takes the same arguments as the tabular environment:
-  </p>
-  
-  <pre class="listing">% ...
+Vanilla tabular environments are not broken at page breaks. They are moved to the next page where they will produce an overfull vbox when exceeding the length of the text area.<!--more-->
+
+This note describes the longtabular environment which will insert page break in sensible places. It takes the same arguments as the tabular environment:
+
+```latex
+% ...
 \usepackage{longtabular}
 % ...
 \begin{document}
@@ -40,5 +32,5 @@ tags:
 % standard tabular environment content
 \end{longtable}
 % ...
-\end{document}</pre>
-</div>
+\end{document}
+```

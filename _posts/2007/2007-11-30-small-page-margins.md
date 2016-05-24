@@ -10,11 +10,10 @@ categories:
 tags:
   - LaTeX
 ---
-The following example illustrates how to use various lengths to implement smaller [Margins](/blog/2007/11/30/page-margins/ "Page Margins"):
+The following example illustrates how to use various lengths to implement smaller [Margins](/blog/2007/11/30/page-margins/):<!--more-->
 
-<!--more-->
-
-<pre class="listing">% ...
+```latex
+% ...
 \setlength{\hoffset}{0mm}
 \addtolength{\textwidth}{2 \evensidemargin}
 \addtolength{\textheight}{2 \voffset}
@@ -29,9 +28,7 @@ The following example illustrates how to use various lengths to implement smalle
 % ...
 \begin{document}
 % ...
-\end{document}</pre>
+\end{document}
+```
 
-<p class="note">
-  NOTE: You should place those command as close to the top of your preamble as possible because [Fancy Page Headings]("Fancy Page Headers" /blog/2007/11/30/fancy-page-headers/) use the margin lengths when defined.
-</p>
-
+NOTE: You should place those command as close to the top of your preamble as possible because [Fancy Page Headings](/blog/2007/11/30/fancy-page-headers/) use the margin lengths when defined.

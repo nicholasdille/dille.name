@@ -10,8 +10,8 @@ categories:
 tags:
   - Perl
 ---
-When writing object oriented code, you will most certainly have stumbled across the problem of calling super method explicitly. That need might arise if you have overwritten such a method in the inheriting class but now need the functionality of the super method:
+When writing object oriented code, you will most certainly have stumbled across the problem of calling super method explicitly. That need might arise if you have overwritten such a method in the inheriting class but now need the functionality of the super method:<!--more-->
 
-<!--more-->
-
-<pre class="listing">$self-&gt;SUPER::method()</pre>
+```perl
+$self->SUPER::method()
+```

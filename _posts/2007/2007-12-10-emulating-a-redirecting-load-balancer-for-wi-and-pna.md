@@ -19,9 +19,7 @@ tags:
   - Program Neighborhood Agent
   - Web Interface
 ---
-I recently had to reproduce an error concerning a load balanced Program Neighborhood Agent (PNA) installation. As this was a hardware load balancer, it was rather difficult to set up an equivalent environment because such a box is usually not available for testing purposes. So I ended up asking myself whether it is possible to build a virtualised environment with a minimum of resources, preferably in a single virtual machine. At the same time, the underlying concepts still need to apply for the error to be reproducible.
-
-<!--more-->
+I recently had to reproduce an error concerning a load balanced Program Neighborhood Agent (PNA) installation. As this was a hardware load balancer, it was rather difficult to set up an equivalent environment because such a box is usually not available for testing purposes. So I ended up asking myself whether it is possible to build a virtualised environment with a minimum of resources, preferably in a single virtual machine. At the same time, the underlying concepts still need to apply for the error to be reproducible.<!--more-->
 
 In my case, the load balancer was set up to redirect requests to four nodes by returning the HTTP code 302 (Temporarily Moved) accompanied by the corresponding location on one of the load balanced nodes. After tracing the network traffic, I confirmed that this was the only task of the load balancer apart from checking which nodes are alive. I came up with the idea of building a single virtual machine to emulate the load balancer and a number of nodes by exploiting the features offered by the Internet Information Services (IIS) of Windows Server. The load balancer as well as the nodes are represented by individual web sites and a custom error page is used to redirect requests. By tracing the network traffic again, I was able to show the resemblance to the original setup. This reduces the complexity of the testing environment considerably so that only the configuration of the PNA sites in Web Interface needs to be reproduced. This article describes the steps required to build an emulated load balancer to redirect requests to backend nodes. Beware that the instructions contained herein are not meant to be used in a production environment.
 
@@ -56,8 +54,8 @@ Redirection is caused by a custom error page for the error code 404, "Page not f
 For the sake of this example, simply place the following code inside of a file called `redirect.aspx` in the root of the standard website.
 
 ```
-&lt;%@ Language=VBScript %&gt;
-&lt;%
+<%@ Language=VBScript>
+<%
 Dim Targets(2)
 Targets(0) = "node1"
 Targets(1) = "node2"
@@ -68,7 +66,7 @@ Url = Split(Request.ServerVariables("QUERY_STRING"), ";", 2)(1)
 Url = Split(Url, ":", 3)(2)
 Url = Split(Url, "/", 2)(1)
 Response.Redirect("http://" & Targets(Second(Now) Mod TargetCount) & "/" & Url)
-%&gt;
+%>
 ```
 
 This code defines the URLs for the two load balanced nodes and determines the number of nodes followed by three lines of code to extract the requested path and file from the query string contained in the variable `QUERY_STRING` which is provided by default on web servers. The last line first rotates through the defined nodes by calculating the modulus of the current number of seconds divided by the number of nodes. The path and file of the original URL are appended to the result which is written to the client using the error code 302, "Temporarily Moved". The expected outcome is shown in the following screenshot.
@@ -88,37 +86,37 @@ You may as well skip this section if you do not intend to emulate a load balance
 So far, this setup only works for Web Interface sites. PNA failes to connect to the load balanced node which is caused by several configuration options in `config.xml`. The observed behaviour is documented in CTX110266 and a remedy is presented which involves modifying `config.xml` for every PNA site for load balanced nodes. The important configuration options are emphasized in the following code excerpt.
 
 ```xml
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;!DOCTYPE PNAgent_Configuration SYSTEM "PNAgent.dtd"[]&gt;
-&lt;PNAgent_Configuration xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PNAgent_Configuration SYSTEM "PNAgent.dtd"[]>
+<PNAgent_Configuration xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
 ...
-&lt;ConfigurationFile&gt;
-&lt;Location modifiable="<strong>false</strong>" forcedefault="<strong>true</strong>" replaceServerLocation="<strong>false</strong>" RedirectNow="false"&gt;http://<strong>loadbalancer</strong>/Citrix/PNAgent/config.xml&lt;/Location&gt;
+<ConfigurationFile>
+<Location modifiable="<strong>false</strong>" forcedefault="<strong>true</strong>" replaceServerLocation="<strong>false</strong>" RedirectNow="false">http://<strong>loadbalancer</strong>/Citrix/PNAgent/config.xml</Location>
 ...
-&lt;/ConfigurationFile&gt;
-&lt;Request&gt;
-&lt;Enumeration&gt;
-&lt;Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="<strong>true</strong>"&gt;http://[SERVER_AND_PATH]/enum.[FILE_FORMAT]&lt;/Location&gt;
-&lt;Smartcard_Location replaceServerLocation="<strong>false</strong>"&gt;https://[SERVER_AND_PATH]/smartcard_enum.[FILE_FORMAT]&lt;/Smartcard_Location&gt;
-&lt;Integrated_Location replaceServerLocation="<strong>false</strong>"&gt;http://[SERVER_AND_PATH]/integrated_enum.[FILE_FORMAT]&lt;/Integrated_Location&gt;
+</ConfigurationFile>
+<Request>
+<Enumeration>
+<Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="<strong>true</strong>">http://[SERVER_AND_PATH]/enum.[FILE_FORMAT]</Location>
+<Smartcard_Location replaceServerLocation="<strong>false</strong>">https://[SERVER_AND_PATH]/smartcard_enum.[FILE_FORMAT]</Smartcard_Location>
+<Integrated_Location replaceServerLocation="<strong>false</strong>">http://[SERVER_AND_PATH]/integrated_enum.[FILE_FORMAT]</Integrated_Location>
 ...
-&lt;/Enumeration&gt;
-&lt;Resource&gt;
-&lt;Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="false"&gt;http://[SERVER_AND_PATH]/launch.[FILE_FORMAT]&lt;/Location&gt;
-&lt;Smartcard_Location replaceServerLocation="<strong>false</strong>"&gt;https://[SERVER_AND_PATH]/smartcard_launch.[FILE_FORMAT]&lt;/Smartcard_Location&gt;
-&lt;Integrated_Location replaceServerLocation="<strong>false</strong>"&gt;http://[SERVER_AND_PATH]/integrated_launch.[FILE_FORMAT]&lt;/Integrated_Location&gt;
-&lt;/Resource&gt;
-&lt;Reconnect&gt;
-&lt;Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="false"&gt;http://[SERVER_AND_PATH]/reconnect.[FILE_FORMAT]&lt;/Location&gt;
-&lt;Smartcard_Location replaceServerLocation="<strong>false</strong>"&gt;https://[SERVER_AND_PATH]/smartcard_reconnect.[FILE_FORMAT]&lt;/Smartcard_Location&gt;
-&lt;Integrated_Location replaceServerLocation="<strong>false</strong>"&gt;http://[SERVER_AND_PATH]/integrated_reconnect.[FILE_FORMAT]&lt;/Integrated_Location&gt;
-&lt;/Reconnect&gt;
-&lt;Change_Password&gt;
-&lt;Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="false"&gt;http://[SERVER_AND_PATH]/change_password.[FILE_FORMAT]&lt;/Location&gt;
-&lt;/Change_Password&gt;
-&lt;/Request&gt;
+</Enumeration>
+<Resource>
+<Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="false">http://[SERVER_AND_PATH]/launch.[FILE_FORMAT]</Location>
+<Smartcard_Location replaceServerLocation="<strong>false</strong>">https://[SERVER_AND_PATH]/smartcard_launch.[FILE_FORMAT]</Smartcard_Location>
+<Integrated_Location replaceServerLocation="<strong>false</strong>">http://[SERVER_AND_PATH]/integrated_launch.[FILE_FORMAT]</Integrated_Location>
+</Resource>
+<Reconnect>
+<Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="false">http://[SERVER_AND_PATH]/reconnect.[FILE_FORMAT]</Location>
+<Smartcard_Location replaceServerLocation="<strong>false</strong>">https://[SERVER_AND_PATH]/smartcard_reconnect.[FILE_FORMAT]</Smartcard_Location>
+<Integrated_Location replaceServerLocation="<strong>false</strong>">http://[SERVER_AND_PATH]/integrated_reconnect.[FILE_FORMAT]</Integrated_Location>
+</Reconnect>
+<Change_Password>
+<Location replaceServerLocation="<strong>false</strong>" modifiable="true" forcedefault="false" RedirectNow="false">http://[SERVER_AND_PATH]/change_password.[FILE_FORMAT]</Location>
+</Change_Password>
+</Request>
 ...
-&lt;/PNAgent_Configuration&gt;
+</PNAgent_Configuration>
 ```
 
 Originally, this modification of `config.xml` was introduced to redirect PNA to a new site when migrating to a new location. Instead of retrieving the new configuration data once, PNA can be forced to load the configuration from alternating locations.

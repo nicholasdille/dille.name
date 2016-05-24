@@ -10,11 +10,10 @@ categories:
 tags:
   - Bash
 ---
-You can easily catch signals thrown at your process and set variables accordingly:
+You can easily catch signals thrown at your process and set variables accordingly:<!--more-->
 
-<!--more-->
-
-<pre class="listing">trap "TEST=blah" HUP
+```bash
+trap "TEST=blah" HUP
 
 TEST=
 while true
@@ -25,4 +24,5 @@ do
 	TEST=
 done
 
-trap -</pre>
+trap -
+```

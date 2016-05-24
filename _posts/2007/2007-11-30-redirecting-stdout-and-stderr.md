@@ -10,13 +10,13 @@ categories:
 tags:
   - Bash
 ---
-In case you would ever like to process standard output and standard error separately:
+In case you would ever like to process standard output and standard error separately:<!--more-->
 
-<!--more-->
-
-<pre class="listing">{
+```bash
+{
 	echo stdout
-	echo stderr &gt;&2
-} 2&gt; &gt;(cat &gt; stderr) &gt; &gt;(cat &gt; stdout)</pre>
+	echo stderr >&2
+} 2> >(cat > stderr) > >(cat > stdout)
+```
 
-NOTE: The output is not synchronized line-wise. So redirecting both lines of processing into the same file (using <code class="command">&gt;&gt;</code>) will cause the individual results to be garbled.
+NOTE: The output is not synchronized line-wise. So redirecting both lines of processing into the same file (using `>>`) will cause the individual results to be garbled.

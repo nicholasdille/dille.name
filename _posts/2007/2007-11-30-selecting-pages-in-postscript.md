@@ -11,12 +11,12 @@ tags:
   - LaTeX
   - PostScript
 ---
-Prepare a PostScript document for printing doublesided by generating new PostScript documents containing only even or odd pages:
+Prepare a PostScript document for printing doublesided by generating new PostScript documents containing only even or odd pages:<!--more-->
 
-<!--more-->
-
-<pre class="listing">% select odd pages
+```latex
+% select odd pages
 psselect -o &lt;file&gt;.ps &lt;file&gt;.odd.ps
 
 % select even pages
-psselect -e &lt;file&gt;.ps &lt;file&gt;.even.ps</pre>
+psselect -e &lt;file&gt;.ps &lt;file&gt;.even.ps
+```

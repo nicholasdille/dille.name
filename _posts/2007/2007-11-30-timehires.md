@@ -10,18 +10,16 @@ categories:
 tags:
   - Perl
 ---
-This modules provides high resolution timers.
+This modules provides high resolution timers.<!--more-->
 
-<!--more-->
+* Import:
 
-  * Import:
-  
-    `use Time::HiRes qw(time sleep);`overwrites perl's vanilla routines `time` and <code class="command">sleep</code> to support fractions of seconds
-  * Get the number of seconds since the epoch with fractions:
-  
-    `print time . "n"; # 1073086495.43659`
-  * Sleep for fractions of seconds:
-  
-    `sleep(2.5);`
+  `use Time::HiRes qw(time sleep);`overwrites perl's vanilla routines `time` and `sleep` to support fractions of seconds
 
+* Get the number of seconds since the epoch with fractions:
 
+  `print time . "n"; # 1073086495.43659`
+
+* Sleep for fractions of seconds:
+
+  `sleep(2.5);`

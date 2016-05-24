@@ -10,16 +10,18 @@ categories:
 tags:
   - LaTeX
 ---
-Unparsed text is included without any parsing at all. It is even up to you to add proper line breaks otherwise the line will simple cause an overfull hbox:
-
-<!--more-->
+Unparsed text is included without any parsing at all. It is even up to you to add proper line breaks otherwise the line will simple cause an overfull hbox:<!--more-->
 
 ## Environment
 
-<pre class="listing">\begin{verbatim}
+```latex
+\begin{verbatim}
 some text
-\end{verbatim}</pre>
+\end{verbatim}
+```
 
 ## String
 
-<pre class="listing">\verb#some text#</pre>
+```latex
+\verb#some text#
+```

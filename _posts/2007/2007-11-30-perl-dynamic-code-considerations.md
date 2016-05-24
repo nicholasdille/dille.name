@@ -11,12 +11,6 @@ tags:
   - Performance
   - Perl
 ---
-There isn't very much to be said about that. During my work on one of my perl projects, I started playing with both function references and eval blocks. I noticed a significant increase in overall performance when using function references.
+There isn't very much to be said about that. During my work on one of my perl projects, I started playing with both function references and eval blocks. I noticed a significant increase in overall performance when using function references.<!--more-->
 
-<!--more-->
-
-<p class="note">
-  NOTE: Unfortunately I have thrown away all the code justifying that statement. But i will have to provide you with some proof. For now you need to trust me ;-)
-</p>
-
-
+NOTE: Unfortunately I have thrown away all the code justifying that statement. But i will have to provide you with some proof. For now you need to trust me ;-)

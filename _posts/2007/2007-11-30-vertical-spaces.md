@@ -10,26 +10,17 @@ categories:
 tags:
   - LaTeX
 ---
-<div id="content">
-  <p>
-    Include vertical spaces in your text:
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <pre class="listing">% 0.25 baselineskip
+Include vertical spaces in your text:<!--more-->
+
+```latex
+% 0.25 baselineskip
 \smallskip
 
 % 0.5 baselineskip
 \medskip
 
 % baselineskip
-\bigskip</pre>
-  
-  <p>
-    See also [Paragraphs]("Paragraphs" /blog/2007/11/30/paragraphs/)
-  </p>
-</div>
+\bigskip
+```
 
+See also [Paragraphs](/blog/2007/11/30/paragraphs/)

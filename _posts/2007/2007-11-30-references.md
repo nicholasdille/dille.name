@@ -10,31 +10,35 @@ categories:
 tags:
   - LaTeX
 ---
-References allow you to refer to arbitrary positions inside your document.
-
-<!--more-->
+References allow you to refer to arbitrary positions inside your document.<!--more-->
 
 ## Creating labels:
 
-<pre class="listing">\label{blarg}</pre>
+```latex
+\label{blarg}
+```
 
 ## Inserting the section number:
 
-<pre class="listing">\ref{blarg}</pre>
+```latex
+\ref{blarg}
+```
 
 ## Inserting the page number:
 
-<pre class="listing">\pageref{blarg}</pre>
+```latex
+\pageref{blarg}
+```
 
 ## References
 
 Referring to figures is referring to captions:
 
-<pre class="listing">\caption{CAPTION}
-\label{LABEL}</pre>
+```latex
+\caption{CAPTION}
+\label{LABEL}
+```
 
-See [Captions](/blog/2007/11/30/captions/ "Captions") on where to place a caption.
+See [Captions](/blog/2007/11/30/captions/) on where to place a caption.
 
-<p class="note">
-  NOTE: The order of the commands above is crucial.
-</p>
+NOTE: The order of the commands above is crucial.

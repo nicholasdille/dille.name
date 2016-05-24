@@ -10,26 +10,30 @@ categories:
 tags:
   - Perl
 ---
-This module provides a variable containing the results for all known error constants:
+This module provides a variable containing the results for all known error constants:<!--more-->
 
-<!--more-->
+* Import:
 
-  * Import:
-  
-    <code class="command">use Errno qw(:POSIX);</code>
+  ```perl
+  use Errno qw(:POSIX);
+  ```
 
-  * Imports POSIX error constants from <code class="command">error.h</code>
+* Imports POSIX error constants from `error.h`
 
-  * Makes <code class="command">%!</code> magic
+* Makes `%!` magic
 
-  * Example: <pre class="listing">my $fh;
-if (not open($fh, 'test')) {
-    my $message = 'unknown error';
+* Example:
 
-    if ($!{'ENOENT'}) {
-        $message = 'no such file or directory';
-    }
+  ```perl
+  my $fh;
+  if (not open($fh, 'test')) {
+      my $message = 'unknown error';
 
-    die $message . "n";
-}
-close($fh);</pre>
+      if ($!{'ENOENT'}) {
+          $message = 'no such file or directory';
+      }
+
+      die $message . "n";
+  }
+  close($fh);
+  ```

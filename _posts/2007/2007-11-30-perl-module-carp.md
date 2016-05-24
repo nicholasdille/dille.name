@@ -10,29 +10,24 @@ categories:
 tags:
   - Perl
 ---
-... helps producing error messages.
+... helps producing error messages.<!--more-->
 
-<!--more-->
+* Import:
 
-  * Import:
-  
-    <code class="command">use Carp;</code>
+  `use Carp;`
 
-  * Warn of errors from perspective of caller:
-  
-    <code class="command">carp "MESSAGE";</code>
+* Warn of errors from perspective of caller:
 
-  * Die of errors from perspective of caller:
-  
-    <code class="command">cluck "MESSAGE";</code>
+  `carp "MESSAGE";`
 
-  * Warn of errors with stack backtrace:
-  
-    <code class="command">croak "MESSAGE";</code>
+* Die of errors from perspective of caller:
 
-  * Die of errors with stack backtrace:
-  
-    <code class="command">confess "MESSAGE";</code>
+  `cluck "MESSAGE";`
 
+* Warn of errors with stack backtrace:
 
+  `croak "MESSAGE";`
 
+* Die of errors with stack backtrace:
+
+  `confess "MESSAGE";`

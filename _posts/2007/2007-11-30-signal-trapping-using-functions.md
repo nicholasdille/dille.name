@@ -10,11 +10,10 @@ categories:
 tags:
   - Bash
 ---
-You can easily catch signals thrown at your process and call a function which needs to be defined beforehand:
+You can easily catch signals thrown at your process and call a function which needs to be defined beforehand:<!--more-->
 
-<!--more-->
-
-<pre class="listing">function sigtrap() {
+```bash
+function sigtrap() {
 	echo sigtrap
 }
 
@@ -26,4 +25,5 @@ do
 	sleep 1
 done
 
-trap -</pre>
+trap -
+```
