@@ -1,17 +1,16 @@
 ---
 title: 'WordPress to Jekyll Part 6 - Pimp my Site'
-#date: 2016-03-05T07:02:56+00:00
+date: 2016-04-18T13:02:56+02:00
 author: Nicholas Dille
 layout: post
-#permalink: /blog/2016/03/01/wordpress-to-jekyll-part-6-pimp-my-site/
+permalink: /blog/2016/04/18/wordpress-to-jekyll-part-6-pimp-my-site/
 categories:
-  - Makro Factory
+  - Haufe
 tags:
   - WordPress
+  - Jekyll
 ---
-XXX
-
-<!--more-->
+XXX<!--more-->
 
 ## Theme
 
@@ -52,3 +51,7 @@ XXX lunrjs
 ## Lightbox
 
 XXX slimbox2
+
+## Live Tile
+
+XXX buildmypinnedsite.com
