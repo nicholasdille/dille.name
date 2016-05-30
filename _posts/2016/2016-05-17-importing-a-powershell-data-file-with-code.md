@@ -5,7 +5,7 @@ author: Nicholas Dille
 layout: post
 permalink: /blog/2016/05/17/importing-a-powershell-data-file-with-code/
 categories:
-  - Haufe
+  - Makro Factory
 tags:
   - PowerShell
   - Desired State Configuration
