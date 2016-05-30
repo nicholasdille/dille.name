@@ -1,11 +1,11 @@
 ---
-title: 'Writing Pester-based Unit Tests for PowerShell Remoting'
+title: 'Writing #Pester based Unit Tests for #PowerShell Remoting'
 date: 2016-05-30T11:32:56+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2016/05/30/writing-pester-based-unit-tests-for-powershell-remoting/
 categories:
-  - Haufe
+  - Makro Factory
 tags:
   - PowerShell
   - pester
@@ -108,18 +108,9 @@ When running the above code you will get the following error:
 
 ```powershell
 Describing Test remote script blocks
- [-] Creates remote session 962ms
-   PSInvalidCastException: Der Wert "@{ComputerName=server; Availability=Available; ComputerType=RemoteMachine; Id=1; Name=Session1; ConfigurationName=Microsoft.PowerShell; State=System.Management.Automation.PSScriptProperty; IdleTimeout=System.Management.Automation.PSScriptProperty; OutputBufferingMode=System.Management.Automation.PSScriptProperty; DisconnectedOn=System.Management.Automation.PSScriptProperty; ExpiresOn=System.Management.Automation.PSScriptProperty}" vom Typ "System.Management.Automation.Runspaces.PSSession" kann nicht in den Typ "System.Management.Automation.Runspaces.PSSession[]" konvertiert werden.
-   ArgumentTransformationMetadataException: Der Wert "@{ComputerName=server; Availability=Available; ComputerType=RemoteMachine; Id=1; Name=Session1; ConfigurationName=Microsoft.PowerShell; State=System.Management.Automation.PSScriptProperty; IdleTimeout=System.Management.Automation.PSScriptProperty; OutputBufferingMode=System.Management.Automation.PSScriptProperty; DisconnectedOn=System.Management.Automation.PSScriptProperty; ExpiresOn=System.Management.Automation.PSScriptProperty}" vom Typ "System.Management.Automation.Runspaces.PSSession" kann nicht in den Typ "System.Management.Automation.Runspaces.PSSession[]" konvertiert werden.
-   ParameterBindingArgumentTransformationException: Die Argumenttransformation für den Parameter "Session" kann nicht verarbeitet werden. Der Wert "@{ComputerName=server; Availability=Available; ComputerType=RemoteMachine; Id=1; Name=Session1; ConfigurationName=Microsoft.PowerShell; State=System.Management.Automation.PSScriptProperty; IdleTimeout=System.Management.Automation.PSScriptProperty; OutputBufferingMode=System.Management.Automation.PSScriptProperty; DisconnectedOn=System.Management.Automation.PSScriptProperty; ExpiresOn=System.Management.Automation.PSScriptProperty}" vom Typ "System.Management.Automation.Runspaces.PSSession" kann nicht in den Typ "System.Management.Automation.Runspaces.PSSession[]" konvertiert werden.
-   bei Invoke-RemoteScriptblock<Process>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 7
-   bei <ScriptBlock>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 34
-   bei Invoke-Test, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\It.ps1: Zeile 253
-   bei ItImpl, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\It.ps1: Zeile 203
-   bei It, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\It.ps1: Zeile 117
-   bei <ScriptBlock>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 33
-   bei Describe, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\Describe.ps1: Zeile 100
-   bei <ScriptBlock>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 13
+ [-] Creates remote session 130ms
+   Cannot process argument transformation on parameter 'Session'. Cannot convert the "@{ComputerName=server; Availability=Available; ComputerType=RemoteMachine; Id=1; Name=Session1; ConfigurationName=Microsoft.PowerShell; State=System.Management.Automation.PSScriptProperty; IdleTimeout=System.Management.Automation.PSScriptProperty; OutputBufferingMode=System.Management.Automation.PSScriptProperty; DisconnectedOn=System.Management.Automation.PSScriptProperty; ExpiresOn=System.Management.Automation.PSScriptProperty}" value of type "System.Management.Automation.Runspaces.PSSession" to type "System.Management.Automation.Runspaces.PSSession[]".
+   at line: 34 in C:\Users\ndille\Desktop\Test-NewPSSession.ps1
 ```
 
 Apparently, the fake `PSSession` object cannot be cast for use in `Invoke-Command`. If you have a solution for this issue, please let me know!
