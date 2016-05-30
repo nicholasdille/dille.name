@@ -1,9 +1,9 @@
 ---
 title: 'Writing Pester-based Unit Tests for PowerShell Remoting'
-date: 2016-05-25T13:02:56+02:00
+date: 2016-05-30T11:32:56+02:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2016/05/25/writing-pester-based-unit-tests-for-powershell-remoting/
+permalink: /blog/2016/05/30/writing-pester-based-unit-tests-for-powershell-remoting/
 categories:
   - Haufe
 tags:
@@ -16,7 +16,9 @@ I was facing several issues when testing remote sessions:
 
 * For one thing, the remote endpoint may not be available causing the test to fail
 
-*
+* Commands executed in the remote session cannot be mocked
+
+The following code demonstrates how to test a function which is using `Invoke-Command` to execute remote commands. By mocking Invoke-Command the code can be executed in the current session. Consequently, all other mocked cmdlets work as expected.
 
 ```powershell
 Function Invoke-RemoteScriptblock {
@@ -52,7 +54,7 @@ Describe 'Test remote script blocks' {
 }
 ```
 
-XXX
+Unfortunately, things get more complicated when using `New-PSSession` to create the remote session and then use `Invoke-Command` against it. In this case, you need to mock both cmdlets to handle the remote session. Although I am publishing the code below, it does not work properly because I am still struggling to fake the `PSSession` object.
 
 ```powershell
 Function Invoke-RemoteScriptblock {
@@ -89,17 +91,35 @@ Describe 'Test remote script blocks' {
 
     It 'Creates remote session' {
         Invoke-RemoteScriptblock
-        #Assert-MockCalled New-PSSession -Scope It -Exactly -Times 1
+        Assert-MockCalled New-PSSession -Scope It -Exactly -Times 1
     }
-    <#It 'Calls remote scriptblock' {
+    It 'Calls remote scriptblock' {
         Invoke-RemoteScriptblock
         Assert-MockCalled Invoke-Command -Scope It -Exactly -Times 1
     }
     It 'Calls command from remote scriptblock' {
         Invoke-RemoteScriptblock
         Assert-MockCalled Get-CimInstance -Scope It -Exactly -Times 1
-    }#>
+    }
 }
 ```
 
-XXX
+When running the above code you will get the following error:
+
+```powershell
+Describing Test remote script blocks
+ [-] Creates remote session 962ms
+   PSInvalidCastException: Der Wert "@{ComputerName=server; Availability=Available; ComputerType=RemoteMachine; Id=1; Name=Session1; ConfigurationName=Microsoft.PowerShell; State=System.Management.Automation.PSScriptProperty; IdleTimeout=System.Management.Automation.PSScriptProperty; OutputBufferingMode=System.Management.Automation.PSScriptProperty; DisconnectedOn=System.Management.Automation.PSScriptProperty; ExpiresOn=System.Management.Automation.PSScriptProperty}" vom Typ "System.Management.Automation.Runspaces.PSSession" kann nicht in den Typ "System.Management.Automation.Runspaces.PSSession[]" konvertiert werden.
+   ArgumentTransformationMetadataException: Der Wert "@{ComputerName=server; Availability=Available; ComputerType=RemoteMachine; Id=1; Name=Session1; ConfigurationName=Microsoft.PowerShell; State=System.Management.Automation.PSScriptProperty; IdleTimeout=System.Management.Automation.PSScriptProperty; OutputBufferingMode=System.Management.Automation.PSScriptProperty; DisconnectedOn=System.Management.Automation.PSScriptProperty; ExpiresOn=System.Management.Automation.PSScriptProperty}" vom Typ "System.Management.Automation.Runspaces.PSSession" kann nicht in den Typ "System.Management.Automation.Runspaces.PSSession[]" konvertiert werden.
+   ParameterBindingArgumentTransformationException: Die Argumenttransformation für den Parameter "Session" kann nicht verarbeitet werden. Der Wert "@{ComputerName=server; Availability=Available; ComputerType=RemoteMachine; Id=1; Name=Session1; ConfigurationName=Microsoft.PowerShell; State=System.Management.Automation.PSScriptProperty; IdleTimeout=System.Management.Automation.PSScriptProperty; OutputBufferingMode=System.Management.Automation.PSScriptProperty; DisconnectedOn=System.Management.Automation.PSScriptProperty; ExpiresOn=System.Management.Automation.PSScriptProperty}" vom Typ "System.Management.Automation.Runspaces.PSSession" kann nicht in den Typ "System.Management.Automation.Runspaces.PSSession[]" konvertiert werden.
+   bei Invoke-RemoteScriptblock<Process>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 7
+   bei <ScriptBlock>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 34
+   bei Invoke-Test, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\It.ps1: Zeile 253
+   bei ItImpl, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\It.ps1: Zeile 203
+   bei It, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\It.ps1: Zeile 117
+   bei <ScriptBlock>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 33
+   bei Describe, C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\Describe.ps1: Zeile 100
+   bei <ScriptBlock>, C:\Users\nicho\Desktop\Test-NewPSSession.ps1: Zeile 13
+```
+
+Apparently, the fake `PSSession` object cannot be cast for use in `Invoke-Command`. If you have a solution for this issue, please let me know!
