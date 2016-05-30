@@ -1,5 +1,5 @@
 ---
-title: 'XenApp 7 Database Migration Made Easy'
+title: '#XenApp 7 Database Migration Made Easy'
 date: 2016-05-03T23:07:56+02:00
 author: Nicholas Dille
 layout: post
