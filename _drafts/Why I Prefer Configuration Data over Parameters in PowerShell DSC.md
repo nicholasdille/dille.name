@@ -1,3 +1,18 @@
+---
+title: 'Why I Prefer Configuration Data over Parameters in #PowerShell Desired State Configuration (#PSDSC)'
+date: 2020-01-01T00:00:00+00:00
+author: Nicholas Dille
+layout: post
+permalink: /blog/20xx/xx/xx/why-i-prefer-configuration-data-over-parameters-in-powershell-desired-state-configuration-psdsc/
+categories:
+  - Haufe
+tags:
+  - PowerShell
+  - PowerShell Desired State Configuration
+  - Desired State Configuration
+  - PSDSC
+  - DSC
+---
 XXX intro
 
 XXX CMDB

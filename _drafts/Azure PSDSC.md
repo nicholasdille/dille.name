@@ -1,3 +1,19 @@
+---
+title: '#Azure Desired State Configuration (#DSC)'
+date: 2020-01-01T00:00:00+00:00
+author: Nicholas Dille
+layout: post
+permalink: /blog/20xx/xx/xx/azure-desired-state-configuration/
+categories:
+  - Haufe
+tags:
+  - Azure
+  - PowerShell
+  - Desired State Configuration
+  - PSDSC
+  - DSC
+  - PowerShell Desired State Configuration
+---
 XXX installing azure tools: http://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/
 
 

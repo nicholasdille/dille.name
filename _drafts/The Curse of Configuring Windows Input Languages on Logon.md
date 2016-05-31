@@ -1,18 +1,15 @@
 ---
-#id: nnnn
 title: 'The Curse of Configuring Windows Input Languages on Logon'
-#date: 2016-03-05T07:02:56+00:00
+date: 2020-01-01T00:00:00+00:00
 author: Nicholas Dille
 layout: post
-#permalink: /blog/2016/03/01/are-windows-containers-a-new-deployment-model-for-end-user-applications/
+permalink: /blog/20xx/xx/xx/the-curse-of-configuring-windows-input-languages-on-logon/
 categories:
-  - Makro Factory
+  - Haufe
 tags:
   - Language
 ---
-XXX
-
-<!--more-->
+XXX<!--more-->
 
 XXX
 
