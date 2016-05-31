@@ -10,11 +10,28 @@ tags:
   - WordPress
   - Jekyll
 ---
-XXX<!--more-->
+So far, I have provided a detailed [introduction to Jekyll](/blog/2016/03/14/wordpress-to-jekyll-part-2-how-jekyll-works/) and using it to create your own blog by [exporting your content from WordPress](/blog/2016/03/18/wordpress-to-jekyll-part-3-exporting-your-blog-content/) as well as [hosting on Azure Websites](/blog/2016/04/07/wordpress-to-jekyll-part-5-hosting-on-azure-websites/) and [hosting on GitHub Pages](/blog/2016/03/21/wordpress-to-jekyll-part-4-hosting-on-github-pages/). Those posts only describe how to get started but leave a lot to be desired when comparing with full-blown content management systems. In this post I will close this gap.<!--more-->
+
+## Contents
+
+* <a href="#theme">Theme</a>
+* <a href="#social-buttons">Social Buttons</a>
+* <a href="#analytics">Analytics</a>
+* <a href="#comments">Comments</a>
+* <a href="#scheduled-posts">Scheduled Posts</a>
+* <a href="#post-archive">Post Archive</a>
+* <a href="#tag-archive">Tag Archive</a>
+* <a href="#search">Search</a>
+* <a href="#lightbox">Lightbox</a>
+* <a href="#live-tile">Live Tile</a>
+* <a href="#order-of-includes">Order of Includes</a>
+* <a href="#summary">Summary</a>
+
+This post describes several features requiring stylesheets and or JavaScript code. Some of those items have dependencies and may cause conflicts. Therefore, I have added a section at the end of this post about my setup including the working order of stylesheets and code.
 
 ## Theme
 
-[Hyde](https://github.com/poole/hyde)
+XXX [Hyde](https://github.com/poole/hyde)
 
 ## Social Buttons
 
@@ -47,19 +64,64 @@ So far, I have not implemented a backend, therefore, you are on your own ;-)
 
 ## Analytics
 
-XXX Google
+For the owner of a site, it is very important to understand your visitors. Where are visitors referred from? How many pages have they viewed? Where do visitors reside? In the case of GitHub Pages, you do not have access to log files (at the time of writing). Therefore, a analytics services must be used to answer those questions.
+
+Another important aspect is the privacy of your visitors. In Germany, we have very strict laws regarding privacy of data that can be linked to an individual. As a consequence, many of those analytics services implement features to anonymize the data retrieved from your visitors.
+
+I have decided to use Google Analytics. To adhere to the privacy laws, I have enabled IP anonymization and honor the opt-out cookie.
+
+The following code disables data collection when the opt-out cookie is present:
+
+```html
+<!-- Google Analytics Opt-Out Cookie -->
+<script>
+var gaProperty = 'UA-27700931-1';
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+}
+function gaOptout() {
+document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+}
+</script>
+```
+
+The following code collects analytics data and enable IP anonymization:
+
+```html
+<!-- Google Analytics with IP Anonymization -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-27700931-1', 'auto');
+ga('set', 'anonymizeIp', true);
+ga('send', 'pageview');
+</script>
+```
+
+I have also added a privacy statement to inform visitors of the method I have chosen for analytics and how I am honor German privacy laws. For details, see [\blog\impressum.md](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/blog/impressum.md) which results in [/blog/impressum/](/blog/impressum/).
 
 ## Comments
 
-XXX ???
+Comments are a difficult topic for a static site because without server-side code, comments cannot be submitted and displayed. If comments are a requirement for you, the server-side code must be moved to a specialized service (like [Disqus](https://disqus.com/)). You need to be aware that those services compromise the privacy of your visitors because viewing a post involves a separate call against a foreign website.
+
+I have discovered an [alternative comment system called talaria](https://github.com/m2w/talaria) which uses GitHub as a backend for storing comments. It involves using a GitHub gist or an issue per post as well as a method for mapping posts.
+
+In the end, I have decided not to implement a comment system. But there are many guide for implementing Disqus.
 
 ## Scheduled Posts
 
-XXX ???
+Like comment, scheduled posts require server-side code responsible for publishing at the configured point in time. There is a blog post about [using Zapier to automate the process of publishing a scheduled post](http://blog.east5th.co/2014/12/29/scheduling-posts-with-jekyll-github-pages-and-zapier/). This process involves using a branch in your GitHub repository to store the scheduled post, Zapier to pick up commits and create a calendar event for publishing the post. As soon as the calendar event triggers, Zapier merges the commits from the special branch into the master branch.
+
+I have not implemented this for my site, but it looks like an exciting solution for this feature.
 
 ## Post Archive
 
-XXX [\blog\archive.md](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/blog/archive.md) results in [/blog/archive/](/blog/archive/)
+An archive of your posts must be created dynamically whenever the site is generated. I am using the following code to create a post archive grouped by year. It is stored in [\blog\archive.md](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/blog/archive.md) and results in [/blog/archive/](/blog/archive/).
 
 {% raw %}```
 ---
@@ -89,7 +151,7 @@ title: Archive
 
 ## Tag Archive
 
-XXX [\blog\tags.md](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/blog/tags.md) results in [/blog/tags/](/blog/tags)
+Tags are a widely used method for grouping posts with similar topics. I am using the following code to dynamically generate a page with an index of all tags using in my posts. These tags are linked to a list of corresponding posts. The code is stored in [\blog\tags.md](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/blog/tags.md) and results in [/blog/tags/](/blog/tags).
 
 {% raw %}```
 ---
@@ -139,17 +201,15 @@ title: Tags
 
 ## Search
 
-XXX lunrjs
+Searching a site is something that is not used on a daily basis but comes in handy. I have decided not to use any of the well-known search engines. Instead I am utilizing a project called [lunrjs](https://github.com/olivernn/lunr.js) which implements a client-side search based on JavaScript. The search index is created when the site is updated and must be downloaded by the client.
 
-XXX https://github.com/olivernn/lunr.js
-
-XXX requires jQuery to be loaded at the top of body; works with lightbox (see below); in [\_layouts\default.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html)
+lunrjs requires jQuery to be loaded at the top of body in [\_layouts\default.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html):
 
 ```html
 <script src="http://code.jquery.com/jquery-1.12.1.min.js" type="text/javascript"></script>
 ```
 
-XXX [\blog\search.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/blog/search.html)
+The [search page](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/blog/search.html) only contains an input field, the JavaScript code as well as the search index.
 
 ```
 ---
@@ -166,7 +226,7 @@ title: Search
 <script src="/media/js/lunr-feed.js"></script>
 ```
 
-XXX [\media\js\lunr-feed.js](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/media/js/lunr-feed.js)
+It is important to find the balance between the size of the search index and the information contained therein. I have limited the index to the title, the abstract and the tags which results in 344KB. For details see the following code or [\media\js\lunr-feed.js](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/media/js/lunr-feed.js).
 
 {% raw %}```
 ---
@@ -216,45 +276,56 @@ $(document).ready(function() {
 });
 ```{% endraw %}
 
-XXX
-
 ## Lightbox
 
-XXX lightbox2
+Lightbox is an established project to display images as an overlay to the web page instead of loading the image as a separate page. I am using [lightbox2](https://github.com/lokesh/lightbox2) which requires several includes to work.
 
-XXX https://github.com/lokesh/lightbox2
-
-XXX load stylesheet in head ([\_includes\head.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_includes/head.html)):
+The stylesheet for lightbox2 must be loaded in the HTML head ([\_includes\head.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_includes/head.html)):
 
 ```html
 <link rel="stylesheet" href="/media/lightbox/2.8.2/css/lightbox.min.css">
 ```
 
-XXX load jQuery at the top of the body ([\_includes\default.html}(https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html)):
+At the top of the HTML body, jQuery must be loaded for lightbox2 to operate ([\_includes\default.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html)):
 
 ```html
 <script src="http://code.jquery.com/jquery-1.12.1.min.js" type="text/javascript"></script>
 ```
 
-XXX example code
+At this point, images can be defined using the data-lightbox tag in the link. All images using the same value for this tag, will be displayed in a gallery:
 
 ```html
 <a href="/media/2016/04/WebSites_FtpUpload.png" data-lightbox="AzureWebsites" title="Settings for Azure Website"><img src="/media/2016/04/WebSites_FtpUpload.png" alt="FTP Upload for Azure Website" style="width: 75%;" /></a>
 ```
 
-XXX example image
-
-XXX load code at the bottom of the body ([\_includes\default.html}(https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html)):
+At the bottom of the body, the JavaScript code for lightbox2 must be loaded to collect the image links and generate the gallery ([\_includes\default.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html)):
 
 ```html
 <script src="/media/lightbox/2.8.2/js/lightbox.min.js"></script>
 ```
 
-XXX order
+## Live Tile
 
-## Order of Stylesheets and JavaScript mentioned above
+<a href="/media/2016/05/buildbypinnedsite_config.png" data-lightbox="post"><img src="/media/2016/05/buildbypinnedsite_config.png" style="float: right; width: 5em;" /></a>As a Microsoft fanboi, I implemented several meta tags to support an automatically updated live tile on Windows 8 and later (PC and mobile). Microsoft offers a [web services for updating the live tile based on the RSS feed](http://www.buildmypinnedsite.com/). Usually, the setup for a live tile is a lot more complex and involves server-side code.
 
-XXX
+<a href="/media/2016/05/buildbypinnedsite_preview.png" data-lightbox="post"><img src="/media/2016/05/buildbypinnedsite_preview.png" style="float: right; width: 5em;" /></a>By uploading a background image, you can customize the live tile with your own logo or picture. It is used for square as well as wide live tiles and can be cropped for those sizes separately.
+
+At the end of the page, you can copy the resulting meta tags for your HTML header and download the cropped images. The following code is used for my site in [\_includes\head.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_includes/head.html).
+
+```html
+<!-- Live Tile -->
+<meta name="application-name" content="dille.name"/>
+<meta name="msapplication-square70x70logo" content="/media/live_tile/small.jpg"/>
+<meta name="msapplication-square150x150logo" content="/media/live_tile/medium.jpg"/>
+<meta name="msapplication-wide310x150logo" content="/media/live_tile/wide.jpg"/>
+<meta name="msapplication-square310x310logo" content="/media/live_tile/large.jpg"/>
+<meta name="msapplication-TileColor" content="#6a9fb5"/>
+<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=5; cycle=1"/>
+```
+
+## Order of Includes
+
+The HTML code below demonstrates how Shariff, lunrjs and lightbox2 can be used together without causing conflicts between those features and their prerequisites.
 
 ```html
 <html>
@@ -284,29 +355,8 @@ XXX
 </html>
 ```
 
-XXX see [\_includes\head.html}(https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_includes/head.html) and [\_layouts\default.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html)
+Those definitions are contained in [\_includes\head.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_includes/head.html) as well as [\_layouts\default.html](https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_layouts/default.html).
 
-## Live Tile
+## Summary
 
-XXX buildmypinnedsite.com
-
-![](/media/2016/05/buildbypinnedsite_config.png)
-
-![](/media/2016/05/buildbypinnedsite_preview.png)
-
-XXX crop for square and wide
-
-XXX code and image download
-
-XXX [\_includes\head.html}(https://github.com/nicholasdille/nicholasdille.github.io/blob/master/_includes/head.html)
-
-```html
-<!-- Live Tile -->
-<meta name="application-name" content="dille.name"/>
-<meta name="msapplication-square70x70logo" content="/media/live_tile/small.jpg"/>
-<meta name="msapplication-square150x150logo" content="/media/live_tile/medium.jpg"/>
-<meta name="msapplication-wide310x150logo" content="/media/live_tile/wide.jpg"/>
-<meta name="msapplication-square310x310logo" content="/media/live_tile/large.jpg"/>
-<meta name="msapplication-TileColor" content="#6a9fb5"/>
-<meta name="msapplication-notification" content="frequency=30;polling-uri=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=1;polling-uri2=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=2;polling-uri3=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=3;polling-uri4=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=4;polling-uri5=http://notifications.buildmypinnedsite.com/?feed=http://dille.name/feed.xml&amp;id=5; cycle=1"/>
-```
+This post covers many different topics all of which have enhanced the user experience on my blog. In case I have missed something, get in touch with me and let me know.
