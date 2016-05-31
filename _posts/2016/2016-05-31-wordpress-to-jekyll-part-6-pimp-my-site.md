@@ -1,6 +1,6 @@
 ---
 title: '#WordPress to #Jekyll Part 6 - Pimp my Site'
-date: 2016-05-31T13:02:56+02:00
+date: 2016-05-31T11:32:56+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2016/05/31/wordpress-to-jekyll-part-6-pimp-my-site/
@@ -31,7 +31,15 @@ This post describes several features requiring stylesheets and or JavaScript cod
 
 ## Theme
 
-XXX [Hyde](https://github.com/poole/hyde)
+As I have already explained in [my post about Jekyll](), you can choose a theme from a wide range of publicly available projects, e.g. [Jekyll Themes (org)](http://jekyllthemes.org/), [Jekyll Tips](http://jekyll.tips/templates/) or [Jekyll Themes (io)](http://www.jekyllthemes.io/). Although the directory layout of Jekyll isolates the files responsible for the layout in the folders called `_includes` and `_layout` but those files will be heavily modified when customizing your blog. The recommendation is to fork the GitHub repository for the layout and build your blog on top of it. This way you can update the theme from the original repository.
+
+I have decided to use the theme called [Hyde](https://github.com/poole/hyde) and build my blog on a copy instead of a fork because I did not want the dependency to another repository. The downside is that I have to update the theme manually.
+
+I have configured Hyde to use the reverse layout (sidebar on the right) to focus on the content instead of the sidebar. The following code defines the reverse layout as well as the color theme:
+
+```html
+<body class="theme-base-0d layout-reverse">
+```
 
 ## Social Buttons
 
@@ -276,7 +284,7 @@ $(document).ready(function() {
 });
 ```{% endraw %}
 
-## Lightbox
+## Image Gallery
 
 Lightbox is an established project to display images as an overlay to the web page instead of loading the image as a separate page. I am using [lightbox2](https://github.com/lokesh/lightbox2) which requires several includes to work.
 
