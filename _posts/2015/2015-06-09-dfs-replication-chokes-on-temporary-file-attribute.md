@@ -44,8 +44,8 @@ Unfortunately, I was unable to determine how this file attribute was set in the 
 
 The following cmdlets implement setting and clearing the temporary file attribute:You can use any of the following commands to clear the temporary file attribute. Of course, settings works exactly the same way.
 
-  * Clear-TemporaryFileAttribute -Path .\badfile.txt
-  * Clear-TemporaryFileAttribute -Path .\badfile.txt,.\badfile2.txt
-  * Get-Item .\badfile*.txt | Clear-TemporaryFileAttribute
+* Clear temporary flag on one file: `Clear-TemporaryFileAttribute -Path .\badfile.txt`
+* Clear temporary flag on several files: `Clear-TemporaryFileAttribute -Path .\badfile.txt,.\badfile2.txt`
+* Clear temporary flag on one or more files from the pipe: `Get-Item .\badfile*.txt | Clear-TemporaryFileAttribute`
 
 HTH!

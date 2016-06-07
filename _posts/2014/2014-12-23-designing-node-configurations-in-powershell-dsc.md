@@ -13,9 +13,7 @@ tags:
   - PowerShell
   - PSDSC
 ---
-If you are planning to use PowerShell Desired State Configuration on a larger scale you need to take a step back and think about the design of your node configurations. In this post I will give you some hints how to approach this.
-
-<!--more-->
+If you are planning to use PowerShell Desired State Configuration on a larger scale you need to take a step back and think about the design of your node configurations. In this post I will give you some hints how to approach this.<!--more-->
 
 # Server Roles
 
@@ -59,7 +57,7 @@ Configuration WebServer {
         }
     }
 
-    &lt;# ... #>
+    <# ... #>
 }
 
 Configuration DatabaseServer {
@@ -95,7 +93,7 @@ Configuration DatabaseServer {
         }
     }
 
-   &lt;# ... #>
+   <# ... #>
 }
 ```
 
@@ -151,7 +149,7 @@ Configuration WebShop {
     }
 }
 
-&lt;# ... #>
+<# ... #>
 }
 ```
 
@@ -190,7 +188,7 @@ Configuration WebShop {
         ,$NodeConfig
         ,$RoleConfig
     )
-    &lt;# ... #>
+    <# ... #>
 }
 WebShow -NodeName web-01 -NodeConfig @{DomainName = 'contoso.com'} -RoleConfig @{WebContentSourcePath = '\\filer01\inst$\WebContent'}
 ```

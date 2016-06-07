@@ -14,7 +14,7 @@ tags:
   - VDI
   - Windows
 ---
-In 2009, Ruben Spruijt ([@rspruijt]https://twitter.com/rspruijt)) and Jeroen van de Kamp ([@thejeroen(https://twitter.com/thejeroen)) started [Project Virtual Reality Check](http://www.projectvrc.com/) (Project VRC). Since then, they have published numerous, valuable whitepapers with performance results and best practices with regard to different hypervisors, application virtualization solutions, Windows operating systems, antivirus solutions and Microsoft Office versions.
+In 2009, Ruben Spruijt ([@rspruijt]https://twitter.com/rspruijt)) and Jeroen van de Kamp ([@thejeroen(https://twitter.com/thejeroen)) started [Project Virtual Reality Check](http://www.projectvrc.com/) (Project VRC). Since then, they have published numerous, valuable whitepapers with performance results and best practices with regard to different hypervisors, application virtualization solutions, Windows operating systems, antivirus solutions and Microsoft Office versions.<!--more-->
 
 Since 2013 they are publishing an annual survey about VDI and SBC environments called "State of the VDI and SBC union". The results are available with all the other [whitepapers by Project VRC](http://www.projectvrc.com/white-papers) and provide valuable insights into the usage of desktop virtualization around the world.
 

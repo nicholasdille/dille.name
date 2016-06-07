@@ -14,9 +14,7 @@ tags:
   - PSDSC
   - Splatting
 ---
-You are probably using a regular PowerShell script to compile your node configurations into MOF files. If you are [using configuration data instead of parameters](/blog/2014/12/05/are-you-separating-configuration-and-environment-data-in-powershell-dsc-you-should/ "Are You Separating Configuration and Environment Data in PowerShell DSC? You Should!"), you need to pull it into your script to pass it on to the node configuration. There are two very different approaches to this.
-
-<!--more-->
+You are probably using a regular PowerShell script to compile your node configurations into MOF files. If you are [using configuration data instead of parameters](/blog/2014/12/05/are-you-separating-configuration-and-environment-data-in-powershell-dsc-you-should/ "Are You Separating Configuration and Environment Data in PowerShell DSC? You Should!"), you need to pull it into your script to pass it on to the node configuration. There are two very different approaches to this.<!--more-->
 
 # Using a data file
 
@@ -37,7 +35,7 @@ Note that the contents of you `ConfigurationData.psd1` must look like the follow
 ```powershell
 @{
     AllNodes = @(
-        &lt;# ... #>
+        <# ... #>
     )
 }
 ```

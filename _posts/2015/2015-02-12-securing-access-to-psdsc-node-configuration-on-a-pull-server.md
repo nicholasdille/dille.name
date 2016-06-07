@@ -21,7 +21,9 @@ In one of my posts about PowerShell Desired State Configuration, I presented sev
 
 When a pull client connects to its configured pull server it uses the following request to download the configuration:
 
-`https://pullserver.example.com/PSDSCPullServer/PSDSCPullServer.svc/Action(ConfigurationId='9565b711-30c2-43d5-a929-2167955733d3')/GetAction`
+```
+https://pullserver.example.com/PSDSCPullServer/PSDSCPullServer.svc/Action(ConfigurationId='9565b711-30c2-43d5-a929-2167955733d3')/GetAction
+```
 
 Apparently anyone can build such a request. The only obstacle is obtaining a valid GUID but this method only relies on security by obscurity.
 
