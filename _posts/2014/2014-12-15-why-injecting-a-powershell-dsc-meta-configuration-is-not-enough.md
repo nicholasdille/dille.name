@@ -20,25 +20,25 @@ In a previous post I described how to inject the meta as well as the node config
 
 The LCM uses up to two scheduled tasks as triggers for its internal operations:
 
-  1. DSCRestartBootTask is triggered after a reboot.
+1. DSCRestartBootTask is triggered after a reboot.
   
-    ![Boot Task](/media/2014/12/DSCRestartBootTask.png)
+  ![Boot Task](/media/2014/12/DSCRestartBootTask.png)
 
-    The following command is executed:
+  The following command is executed:
     
-    ```powershell
-    PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]2 }"
-    ```
+  ```powershell
+  PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]2 }"
+  ```
 
-  2. Consistency is triggered as configured by the ConfigurationModeFrequencyMins:
+2. Consistency is triggered as configured by the ConfigurationModeFrequencyMins:
   
-    ![Consistency Check](/media/2014/12/Consistency.png)
+  ![Consistency Check](/media/2014/12/Consistency.png)
 
-    The following command is executed:
+  The following command is executed:
     
-    ```powershell
-    PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]1 }"
-    ```
+  ```powershell
+  PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]1 }"
+  ```
 
 These tasks are not present on a newly installed system.
 
