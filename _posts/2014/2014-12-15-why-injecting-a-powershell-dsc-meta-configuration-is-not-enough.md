@@ -24,12 +24,23 @@ The LCM uses up to two scheduled tasks as triggers for its internal operations:
 
   1. DSCRestartBootTask is triggered after a reboot.
   
-    [<img class="alignnone size-medium wp-image-3138" src="/media/2014/12/DSCRestartBootTask-300x106.png" alt="DSCRestartBootTask" width="300" height="106" /><br /> ](/media/2014/12/DSCRestartBootTask.png)The following command is executed:
-    <pre>PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]2 }"</pre>
+    [<img class="alignnone size-medium wp-image-3138" src="/media/2014/12/DSCRestartBootTask-300x106.png" alt="DSCRestartBootTask" width="300" height="106" />](/media/2014/12/DSCRestartBootTask.png)
+
+    The following command is executed:
+    
+    ```powershell
+    PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]2 }"
+    ```
 
   2. Consistency is triggered as configured by the ConfigurationModeFrequencyMins:
   
-    [<img class="alignnone size-medium wp-image-3137" src="/media/2014/12/Consistency-300x94.png" alt="Consistency" width="300" height="94" /><br /> ](/media/2014/12/Consistency.png)The following command is executed: <pre class="">PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]1 }"</pre>
+    [<img class="alignnone size-medium wp-image-3137" src="/media/2014/12/Consistency-300x94.png" alt="Consistency" width="300" height="94" /><br /> ](/media/2014/12/Consistency.png)
+
+    The following command is executed:
+    
+    ```powershell
+    PowerShell.exe -NonInt -Windows Hidden -Comand "Invoke-CimMethod -Namespace root/Microsoft/Windows/DesiredStateConfiguration –ClassName MSFT_DSCLocalConfigurationManager -MethodName PerformRequiredConfigurationChecks -Arg @{Flags = [System.UInt32]1 }"
+    ```
 
 These tasks are not present on a newly installed system.
 
