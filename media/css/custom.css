@@ -31,3 +31,8 @@
 .shariff .share_text {
     color: white;
 }
+
+/** Customizations */
+.highlighter-rouge {
+    font-size: smaller;
+}
