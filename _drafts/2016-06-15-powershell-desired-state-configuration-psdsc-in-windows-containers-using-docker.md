@@ -1,5 +1,5 @@
 ---
-title: 'PowerShell Desired State Configuration (#PSDSC) in Windows Containers using #Docker'
+title: '#PowerShell Desired State Configuration (#PSDSC) in Windows Containers using #Docker'
 date: 2016-06-15T21:33:00+02:00
 author: Nicholas Dille
 layout: post
