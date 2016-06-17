@@ -156,8 +156,6 @@ When a container is created, Docker executes the command specified by the `CMD` 
 
 I have added such a `CMD` instruction to the end of the Dockerfile to call the script `SetNodeName.ps1`. The caveat at this point is the fact that the environment variable specified in the `docker run` command will only exist in the context around `powershell.exe`. As soon as `SetNodeName.ps1` is started, the variable is not accessible any more. Therefore, I am passing it on using the command line.
 
-If you decided to create a container using the command above, you may have noticed that it XXX.
-
 ```powershell
 Param(
     [Parameter(Mandatory)]
