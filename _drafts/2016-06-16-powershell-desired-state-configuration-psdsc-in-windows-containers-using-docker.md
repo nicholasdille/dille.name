@@ -22,9 +22,9 @@ The node configuration is usually considered to be highly individual. In the con
 
 ## Example 1: Handling the Node Configuration
 
-XXX nicholasdille/dsc2
+The first example integrates a simple node configuration into the container image. Before DSC will work, it is necessary to install an additional Windows feature called *Dsc-Service*. I have decided to use Chocolatey to install packages during the image creation process. The node configuration requires a DSC resource because only few are builtin with DSC after installation of the DSC feature.
 
-XXX https://github.com/nicholasdille/docker/tree/master/dsc2
+The build script (called `docker-build.cmd`) downloads the module containing the DSC resource `cChoco` required for the configuration. The Dockerfile then adds this directory to the image before the configuration is applied.
 
 ```
 FROM windowsservercore
@@ -51,7 +51,7 @@ RUN powershell -Command \
 c:\docker\EnsurePackage.ps1 -Name Win32-OpenSSH,docker
 ```
 
-XXX
+The node configuration is applied using the script `EnsurePackages.ps1` (see below). It first defines that Chocolatey needs to be installed and then enumerates all package names supplied on the command line. For each package, a definition is added which depends on Chocolatey before installing the package. That way, no package will be processed before Chocolatey is installed on the system.
 
 ```powershell
 Param(
@@ -91,7 +91,7 @@ EnsurePackage -Name $Name -OutputPath "$PSScriptRoot\Output"
 Start-DscConfiguration -Path "$PSScriptRoot\Output" -Wait -Verbose
 ```
 
-XXX
+All files for this example are located in [my GitHub repository for docker](https://github.com/nicholasdille/docker/tree/master/dsc2).
 
 ## Example 2: Handling the Meta Configuration
 
