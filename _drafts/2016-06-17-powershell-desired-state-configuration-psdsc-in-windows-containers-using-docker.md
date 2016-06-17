@@ -26,7 +26,7 @@ The first example integrates a simple node configuration into the container imag
 
 The build script (called `docker-build.cmd`) downloads the module containing the DSC resource `cChoco` required for the configuration. The Dockerfile then adds this directory to the image before the configuration is applied.
 
-```
+```Dockerfile
 FROM windowsservercore
 MAINTAINER nicholas.dille@mailbox.org
 LABEL Description="PowerShell Desired State Configuration" Vendor="Nicholas Dille" Version="0.1"
@@ -91,17 +91,17 @@ EnsurePackage -Name $Name -OutputPath "$PSScriptRoot\Output"
 Start-DscConfiguration -Path "$PSScriptRoot\Output" -Wait -Verbose
 ```
 
+You can still push new configurations to the LCM after you have created instance of the image.
+
 All files for this example are located in [my GitHub repository for docker](https://github.com/nicholasdille/docker/tree/master/dsc2).
 
 ## Example 2: Handling the Meta Configuration
 
-XXX nicholasdille/dsc
+The second example focusses on the meta configuration and how it can be split into one part applied during image creation and a second part applied during instantiation.
 
-XXX https://github.com/nicholasdille/docker/tree/master/dsc
+The Dockerfile displayed below begins with the same commands as in the first example. But then it adds and executed a script called `MetaConfiguration.ps1` which applies the static configuration for the LCM (see below after the Docker file). It is followed by several commands configuring the image to apply the configuration ID during instantiation of the container based on this image using an environment variable called `NODENAME`. I will explain how this work in detail.
 
-XXX https://hub.docker.com/r/nicholasdille/dsc/
-
-```
+```Dockerfile
 FROM windowsservercore
 MAINTAINER nicholas.dille@mailbox.org
 LABEL Description="PowerShell Desired State Configuration" Vendor="Nicholas Dille" Version="0.1"
@@ -129,7 +129,7 @@ COPY SetNodeName.ps1 c:\docker
 CMD powershell c:\docker\SetNodeName.ps1 %nodename%
 ```
 
-XXX
+The following script (`MetaConfiguration.ps1`) is used to configure the LCM with a global baseline.
 
 ```powershell
 Configuration MetaConfiguration {
@@ -146,11 +146,17 @@ MetaConfiguration -OutputPath "$PSScriptRoot\Output"
 Set-DscLocalConfigurationManager -Path "$PSScriptRoot\Output" -Verbose
 ```
 
-XXX more about SetNodeName.ps1 below
+I have uploaded the resulting image to [my repository on Docker Hub](https://hub.docker.com/r/nicholasdille/dsc/) to make testing this image easier for you. Please use the following command to create a container based on this image. Note that the environment variable `NODENAME` will be used to set the configuration ID.
 
-## How ENTRYPOINT works in the Dockerfile
+```
+docker run -d -e NODENAME=node1 nicholasdille/dsc
+```
 
-XXX
+When a container is created, Docker executes the command specified by the `CMD` instruction. This is usually a long-running command but it can even serve a very simple task like the [hello-world container](https://hub.docker.com/_/hello-world/) which is provided to ensure the Docker engine is configured correctly.
+
+I have added such a `CMD` instruction to the end of the Dockerfile to call the script `SetNodeName.ps1`. The caveat at this point is the fact that the environment variable specified in the `docker run` command will only exist in the context around `powershell.exe`. As soon as `SetNodeName.ps1` is started, the variable is not accessible any more. Therefore, I am passing it on using the command line.
+
+If you decided to create a container using the command above, you may have noticed that it XXX.
 
 ```powershell
 Param(
@@ -178,16 +184,7 @@ Configuration SetNodeName {
 SetNodeName -ComputerName $ComputerName -OutputPath "$PSScriptRoot\Output"
 Set-DscLocalConfigurationManager -Path "$PSScriptRoot\Output" -Verbose
 
-if ($args.Count -gt 0) {
-    $Command = $args[0]
-    If ($args.Count -gt 1) {
-        $Arguments = $args[1..($args.Count - 1)]
-    }
-    & $Command $Arguments
-
-} else {
-    while ($true) { Start-Sleep -Seconds 60 }
-}
+ping -t localhost
 ```
 
-XXX
+All files for this example are located in [my GitHub repository for docker](https://github.com/nicholasdille/docker/tree/master/dsc).
