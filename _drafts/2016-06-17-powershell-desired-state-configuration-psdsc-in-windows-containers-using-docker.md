@@ -1,9 +1,9 @@
 ---
 title: '#PowerShell Desired State Configuration (#PSDSC) in Windows Containers using #Docker'
-date: 2016-06-16T21:33:00+02:00
+date: 2016-06-17T16:28:18+02:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2016/06/16/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/
+permalink: /blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/
 categories:
   - Haufe
 tags:
