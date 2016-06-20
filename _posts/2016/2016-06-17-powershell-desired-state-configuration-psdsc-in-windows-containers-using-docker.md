@@ -7,7 +7,7 @@ permalink: /blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-wind
 categories:
   - Haufe
 tags:
-  - Docker
+  - docker
   - PSDSC
   - PowerShell
   - Desired State Configuration
