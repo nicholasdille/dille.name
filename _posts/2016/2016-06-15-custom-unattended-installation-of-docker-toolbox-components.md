@@ -7,7 +7,7 @@ permalink: /blog/2016/06/15/custom-unattended-installation-of-docker-toolbox-com
 categories:
   - Haufe
 tags:
-  - Docker
+  - docker
 ---
 The [Docker toolbox](https://www.docker.com/products/docker-toolbox) is a package to install the binaries required for managing a Docker-based container environment targetting Windows and OS X. Unfortunately, it forces you to install VirtualBox, Oracle's type 2 hypervisor. Although a silent installation is documented, it is very successfully hidden how the individual components of this package can be installed or left out.<!--more-->
 
