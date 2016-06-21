@@ -7,8 +7,8 @@ permalink: /blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-t
 categories:
   - Haufe-Lexware
 tags:
-  - docker
-  - container
+  - Docker
+  - Container
 ---
 Microsoft is working hard to align the management experience of containers on Windows Server 2016 with the industry standard Docker on Linux. I will demonstrate how the same concepts and the same management tools now apply to containers in Windows Server 2016 Technical Preview 5 as well. Let's take a closer look at the famous Docker slogan *Build, Ship and Run*.<!--more-->
 

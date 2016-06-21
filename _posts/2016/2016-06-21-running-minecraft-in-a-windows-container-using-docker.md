@@ -8,7 +8,7 @@ categories:
   - Haufe-Lexware
 tags:
   - Docker
-  - container
+  - Container
   - Minecraft
 ---
 Last year I blogged about [running a Minecraft server for friends and family](http://dille.name/blog/2015/09/09/how-to-build-a-custom-minecraft-server-for-friends-and-family/). Today I will explain how I have banished it into a Windows container using Docker! This is another step avoiding Java on the host. But let's start at the beginning.<!--more-->
@@ -60,7 +60,7 @@ The container builds on top of the Java container described above and adds the f
   $LatestJar = Get-ChildItem spigot-*.jar | Sort-Object LastWriteTime | Select-Object -Last 1 -ExpandProperty Name
   & "$Env:ProgramFiles\Java\jre1.8.0_91\bin\Java.exe" -Xmx1024M -Xms32M -jar $LatestJar -W .\worlds
   ```
-  
+
   Note that I am dynamically selecting the youngest spigot-*.jar so that updating does not require changing any script.
 
 In the end, I have added a PowerShell-based wrapper script for launching the Minecraft container ([nicholasdille/spigotmc](https://hub.docker.com/r/nicholasdille/spigotmc/)) which only requires you to adjust the local path for the volume:
