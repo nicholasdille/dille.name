@@ -35,12 +35,46 @@ As you can see from the code above I decided to use the `ADD` instruction to dow
 
 ## Adding Minecraft ... Not!
 
-I am using [SpigotMC](https://www.spigotmc.org/) for the Minecraft server which may not be distributed as a JAR file. 
+I am using [SpigotMC](https://www.spigotmc.org/) for the Minecraft server which may not be distributed as a JAR file. Therefore, I decided to use the container as a pure runtime environment without adding the Minecraft directory to the container. The following [Dockerfile prepares a simple container image for Minecraft](https://github.com/nicholasdille/docker/blob/master/spigotmc/Dockerfile):
 
-XXX
+```Dockerfile
+FROM nicholasdille/javaruntime:8u91
+MAINTAINER nicholas.dille@mailbox.org
 
-nicholasdille/javaruntime:8u91
+EXPOSE 25565
+EXPOSE 25575
+VOLUME c:\\minecraft
 
-docker run -d --name minecraft -v C:\Users\Administrator\Documents\minecraft:c:\minecraft -p 25565:25565 -p 25575:25575 -w c:\minecraft nicholasdille/javaruntime:8u91 'C:\Program Files\Java\jre1.8.0_91\bin\java.exe' -jar spigot-1.9.2.jar -W .\worlds
+ADD minecraft.ps1 /
+CMD powershell -command c:\minecraft.ps1
+```
 
-docker logs -f minecraft
+The container builds on top of the Java container described above and adds the following:
+
+- It exposes the server port (25565) as well as the remote console port (25575)
+- It defines a volume for the Minecraft server directory (containing configuration files, plugins, worlds etc.)
+- It adds a PowerShell script for launching the minecraft server:
+
+  ```PowerShell
+  Set-Location -Path \minecraft
+  $LatestJar = Get-ChildItem spigot-*.jar | Sort-Object LastWriteTime | Select-Object -Last 1 -ExpandProperty Name
+  & "$Env:ProgramFiles\Java\jre1.8.0_91\bin\Java.exe" -Xmx1024M -Xms32M -jar $LatestJar -W .\worlds
+  ```
+  
+  Note that I am dynamically selecting the youngest spigot-*.jar so that updating does not require changing any script.
+
+In the end, I have added a PowerShell-based wrapper script for launching the Minecraft container which only requires you to adjust the local path for the volume:
+
+```PowerShell
+docker run -d --name minecraft -v D:\Apps\MinecraftSpigot:c:\minecraft -p 25565:25565 -p 25575:25575 nicholasdille/spigotmc
+```
+
+## Managing the Minecraft Container
+
+You can easily look at the server starting up inside the container: `docker logs -f minecraft`
+
+If the server requires any kind of intervention, use the remote console (RCON) to interact with the server.
+
+## Future Enhancements
+
+It seems I have not found the perfect solution for handling the Minecraft server directory. The container built in this post simply mounts a local directory into the container. If any of you Docker veterans has a better solution, please [get in touch with me on Twitter](https://twitter.com/nicholasdille).
