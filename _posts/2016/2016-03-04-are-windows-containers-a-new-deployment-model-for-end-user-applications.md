@@ -7,6 +7,7 @@ permalink: /blog/2016/03/04/are-windows-containers-a-new-deployment-model-for-en
 categories:
   - Makro Factory
 tags:
+  - Container
   - Containers
   - Hyper-V
   - App-V
