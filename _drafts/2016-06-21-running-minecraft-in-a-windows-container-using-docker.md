@@ -13,13 +13,13 @@ tags:
 ---
 Last year I blogged about [running a Minecraft server for friends and family](http://dille.name/blog/2015/09/09/how-to-build-a-custom-minecraft-server-for-friends-and-family/). Today I will explain how I have banished it into a Windows container using Docker! This is another step avoiding Java on the host. But let's start at the beginning.<!--more-->
 
-Minecraft hat a very inconvenient dependency. It is based on Java for which we have seem many as well as serious security bulletins in the last few years. I could have isolated the Minecraft server in a virtual machine but I did not accept the overhead of another operating system with the sole purpose of serving Minecraft.
+Minecraft has a very inconvenient dependency - it is based on Java for which we have seen many as well as serious security bulletins in the last few years. I could have isolated the Minecraft server in a virtual machine but I did not want to accept the overhead of another operating system instance with the sole purpose of serving Minecraft.
 
-A container sounds like a great opportunity to reduce the overhead while isolating the processes from the host at the same time. When Windows Server 2016 Technical Preview 5 was released I was thrilled about [the management experience using Docker on Windows](http://dille.name/blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-tp5/) as well as the opportunities of [integrating PowerShell Desired State Configuration into containers](http://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/).
+A container sounds like a great opportunity to reduce the overhead while isolating the processes from the host at the same time. When Windows Server 2016 Technical Preview 5 was released I was thrilled about [the management experience using Docker on Windows](http://dille.name/blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-tp5/) as well as the advantages of [integrating PowerShell Desired State Configuration into containers](http://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/).
 
 ## Isolating Java
 
-After those first steps with Docker, I decided to start building a container for Minecraft. Like a said, this requires Java. I found an interesting [article about Java in Windows containers](https://alexandrnikitin.github.io/blog/running-java-inside-windows-container-on-windows-server/) which gave me a head start. Building on this I created a container image and published it on Ducker Hub: [nicholasdille/javaruntime](https://hub.docker.com/r/nicholasdille/javaruntime/). I have also published the [corresponding Dockerfile](https://github.com/nicholasdille/docker/blob/master/java/Dockerfile):
+After those first steps with Docker, I decided to start building a container for Minecraft. Like I said, this requires Java. I found an interesting [article about Java in Windows containers](https://alexandrnikitin.github.io/blog/running-java-inside-windows-container-on-windows-server/) which gave me a head start. Building on this I created a container image and published it on Ducker Hub: [nicholasdille/javaruntime](https://hub.docker.com/r/nicholasdille/javaruntime/). I have also published the [corresponding Dockerfile](https://github.com/nicholasdille/docker/blob/master/java/Dockerfile):
 
 ```Dockerfile
 FROM windowsservercore
@@ -63,7 +63,7 @@ The container builds on top of the Java container described above and adds the f
   
   Note that I am dynamically selecting the youngest spigot-*.jar so that updating does not require changing any script.
 
-In the end, I have added a PowerShell-based wrapper script for launching the Minecraft container which only requires you to adjust the local path for the volume:
+In the end, I have added a PowerShell-based wrapper script for launching the Minecraft container ([nicholasdille/spigotmc](https://hub.docker.com/r/nicholasdille/spigotmc/)) which only requires you to adjust the local path for the volume:
 
 ```PowerShell
 docker run -d --name minecraft -v D:\Apps\MinecraftSpigot:c:\minecraft -p 25565:25565 -p 25575:25575 nicholasdille/spigotmc
@@ -77,4 +77,4 @@ If the server requires any kind of intervention, use the remote console (RCON) t
 
 ## Future Enhancements
 
-It seems I have not found the perfect solution for handling the Minecraft server directory. The container built in this post simply mounts a local directory into the container. If any of you Docker veterans has a better solution, please [get in touch with me on Twitter](https://twitter.com/nicholasdille).
+I have the feeling I have not found the best solution for handling the Minecraft server directory. The container built in this post simply mounts a local directory into the container. If any of you Docker veterans has a better solution, please [get in touch with me on Twitter](https://twitter.com/nicholasdille).
