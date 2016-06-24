@@ -1,6 +1,6 @@
 ---
 title: 'Building #SpigotMC in a Windows #Container using #Docker (#WindowsContainer)'
-date: 2016-06-24T21:34:49+02:00
+date: 2016-06-24T21:35:03+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2016/06/24/building-spigotmc-in-a-windows-container-using-docker/
