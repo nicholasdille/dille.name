@@ -1,6 +1,6 @@
 ---
-title: 'Building #SpigotMC in a Windows #Container using #Docker'
-date: 2016-06-24T20:34:49+02:00
+title: 'Building #SpigotMC in a Windows #Container using #Docker (#WindowsContainer)'
+date: 2016-06-24T21:34:49+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2016/06/24/building-spigotmc-in-a-windows-container-using-docker/
@@ -11,11 +11,11 @@ tags:
   - Container
   - Minecraft
 ---
-When I started working on a [Windows container for my Minecraft server](http://dille.name/blog/2016/06/21/running-minecraft-in-a-windows-container-using-docker/), I realized that it was also in dire need of an update to the latest version of [SpigotMC](https://spigot.org). This does not come as a source release so it needs to be compiled manually. Therefore, I investigated how the build process can be banished into a container. Here is how it is done!<!--more-->
+When I started working on a [Windows container for my Minecraft server](http://dille.name/blog/2016/06/21/running-minecraft-in-a-windows-container-using-docker/), I realized that my installation was also in dire need of an update to the latest version of [SpigotMC](https://spigot.org). This does not come as a source release so it needs to be compiled manually. Therefore, I investigated how the build process can be banished into a container. Here is how it is done!<!--more-->
 
-SpigotMC offer a very [detailed guide how to build the SpigotMC Minecraft server](https://www.spigotmc.org/wiki/buildtools/) from source. They have automated this process and provide it in a JAR called [BuildTools.jar which must be downlaoded from the website](https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar). These build tools require a Java Runtime Environment and a git installation.
+SpigotMC offers a very [detailed guide how to build the SpigotMC Minecraft server](https://www.spigotmc.org/wiki/buildtools/) from source. The developers have automated this process and provide it in a JAR called [BuildTools.jar which must be downlaoded from the website](https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar). These build tools require a Java Runtime Environment and a Git installation.
 
-I have created an image with all the prerequisites which is based on the following Dockerfile and my [java docker image](https://hub.docker.com/r/nicholasdille/javaruntime/):
+I have created an image with all the prerequisites which is created using the following Dockerfile and my [java docker image](https://hub.docker.com/r/nicholasdille/javaruntime/):
 
 ```Dockerfile
 FROM nicholasdille/javaruntime:8u91
@@ -32,7 +32,7 @@ ADD https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact
 CMD powershell -command c:\build\RunBuildTools.ps1
 ```
 
-As soon as a container is launched based on this image, the build tools are launched by the PowerShell script called RunBuildTools.ps1:
+As soon as a container is launched based on this image, the build tools are launched automatically by the PowerShell script called RunBuildTools.ps1:
 
 ```powershell
 $Env:JAVA_HOME = "$Env:ProgramFiles\Java\jre1.8.0u91"
