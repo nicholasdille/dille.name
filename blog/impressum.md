@@ -6,17 +6,7 @@ author: Nicholas Dille
 layout: page
 guid: http://dille.name/blog/?page_id=2809
 ---
-dille.name ist ein nichtkommerzielles Angebot und mit keinem Unternehmen verbunden.
-
-## Betreiber und Redakteur:
-
-Nicholas Dille, Furtwänglerstr. 5, 79117 Freiburg
-
-Telefon: 0761 / 2141 0735
-
-Mail: Nicholas at Dille dot name
-
-Inhaltlich Verantwortlicher gemäß § 6 MDStV: Nicholas Dille
+Dieser Blog ist ein nichtkommerzielles Angebot und mit keinem Unternehmen verbunden.
 
 Hinweis: Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
 
