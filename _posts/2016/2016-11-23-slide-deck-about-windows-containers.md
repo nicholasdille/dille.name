@@ -11,6 +11,8 @@ tags:
   - Container
   - Docker
   - PowerShell
+  - Slide Deck
+  - Slides
 ---
 This week I talked (in German) about Windows Containers and Docker at [DCUG TecCon](https://www.dcug.de/teccon/) in Kassel. DCUG is a German Citrix User Group run by [Roy Textor](https://twitter.com/roytextor) which has organized many meetups in Germany. TecCon is the first two-day conference held in the same spirit. Today, I'd like to share the slide deck as well as the code for my demo.<!--more-->
 
