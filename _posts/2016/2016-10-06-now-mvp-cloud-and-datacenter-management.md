@@ -1,5 +1,5 @@
 ---
-title: 'Now MVP Cloud and Datacenter Management'
+title: 'Now #MVP Cloud and Datacenter Management (#MVPBuzz)'
 date: 2016-10-06T17:51:19+02:00
 author: Nicholas Dille
 layout: post
