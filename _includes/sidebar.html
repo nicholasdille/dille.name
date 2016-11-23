@@ -5,6 +5,14 @@
             <p class="lead">{{ site.description }}</p>
         </div>
 
+        <div>
+        <a href="https://twitter.com/nicholasdille"><i aria-hidden="true" class="fa fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/nicholasdille"><i aria-hidden="true" class="fa fa-linkedin"></i></a>
+        <a href="https://www.xing.com/profile/Nicholas_Dille"><i aria-hidden="true" class="fa fa-xing"></i></a>
+        <a href="https://github.com/nicholasdille"><i aria-hidden="true" class="fa fa-github"></i></a>
+        <a href="https://www.facebook.com/nicholas.dille"><i aria-hidden="true" class="fa fa-facebook"></i></a>
+        </div>
+
         <nav class="sidebar-nav">
             <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/blog/">Home</a>
             {% for node in site.pages %}{% if node.layout == "page"" and node.title != null and node.sidebar_exclude != true %}
