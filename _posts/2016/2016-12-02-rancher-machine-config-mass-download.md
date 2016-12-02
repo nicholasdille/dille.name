@@ -39,102 +39,120 @@ The above steps must be repeated for each and every host. Although this can be d
 
 Rancher comes with an extensive API to automate the management operations. When taking a closer look at the API you realize that there is lot more going on behind the covers than meets the eye. The following steps describe the process to download one machine configuration tarball. But do not despair, down below you will find three PowerShell cmdlets to automate this process and download multiple tarballs at once.
 
-0. The following process assumes that you have a running Rancher server with one or more hosts connected to it. Note the URL to the server because it is required for all requests against the API (e.g. https://rancher.dille.name).
+## Rancher URL
 
-1. Before you can access the API you need to create an API key. The following steps assume, you have an accont based API key which is available for all environments your account has access to.
+The following process assumes that you have a running Rancher server with one or more hosts connected to it. Note the URL to the server because it is required for all requests against the API (e.g. https://rancher.dille.name).
 
-    ![Create account based API key](/media/2016/12/Rancher-Account-API-Key.png)
+## API Key
 
-2. Next you need the ID of the environment in which your hosts reside. When you are looking at the hosts you can simply read the ID from the URL or from the screenshot above (endpoint URL for environment API keys). For example, in my case it is `1a5`.
+Before you can access the API you need to create an API key. The following steps assume, you have an accont based API key which is available for all environments your account has access to.
+
+![Create account based API key](/media/2016/12/Rancher-Account-API-Key.png)
+
+## Environment ID
+
+Next you need the ID of the environment in which your hosts reside. When you are looking at the hosts you can simply read the ID from the URL or from the screenshot above (endpoint URL for environment API keys). For example, in my case it is `1a5`.
   
-  Note that Rancher uses different terms in the GUI and in the API. This is caused by the different terminology of the supported orchestration engines. When the GUI shows you an environment, the API is talking about projects. Therefore, the following steps reference the environment ID as `PROJECTID`
+Note that Rancher uses different terms in the GUI and in the API. This is caused by the different terminology of the supported orchestration engines. When the GUI shows you an environment, the API is talking about projects. Therefore, the following steps reference the environment ID as `PROJECTID`
 
-3. Before we can start talking to the API you need to decide which host to download the configuration for. You can find the HOSTID from the API page for the specific host - klick the three dots next to the host name and select *View in API*. There is a field called `physicalHostId` which contains the ID required for the API calls below.
+## Host ID
+
+Before we can start talking to the API you need to decide which host to download the configuration for. You can find the HOSTID from the API page for the specific host - klick the three dots next to the host name and select *View in API*. There is a field called `physicalHostId` which contains the ID required for the API calls below.
   
-  In my case, the ID of the sever is `1ph23` which will be references as `HOSTID` in the steps below.
+In my case, the ID of the sever is `1ph23` which will be references as `HOSTID` in the steps below.
 
 Thanks for hanging in. We are finally ready to start talking to the API. First we need to create a token which is required to access some of the information including machine config tarballs. Creating the token consist of two steps: requesting and retrieving the token.
 
-4. First you need to request a token using the following parameters. Note that the URL is specific to an environment. The request body can (but must not) contain a name and description to easily identify the token later (see [the appropriate part of the API documentation](http://docs.rancher.com/rancher/v1.2/en/api/v2-beta/api-resources/registrationToken/)).
+## Request token
 
-    Parameter    | Value
-    -------------|------
-    URL          | /v1/projects/PROJECTID/registrationTokens
-    Method       | POST
-    Content-Type | application/json
-    Body         | `{"name":"test"}`
-    Accept       | application/json
-    Credentials  | API key in the form `key:secret`
+First you need to request a token using the following parameters. Note that the URL is specific to an environment. The request body can (but must not) contain a name and description to easily identify the token later (see [the appropriate part of the API documentation](http://docs.rancher.com/rancher/v1.2/en/api/v2-beta/api-resources/registrationToken/)).
 
-    For Linux, this request can easily be sent using the following command: `curl -sLu "$APIKEY" -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -d '{"name":"test"}' https://RANCHER/v1/projects/PROJECTID/registrationTokens`
+Parameter    | Value
+-------------|------
+URL          | /v1/projects/PROJECTID/registrationTokens
+Method       | POST
+Content-Type | application/json
+Body         | `{"name":"test"}`
+Accept       | application/json
+Credentials  | API key in the form `key:secret`
 
-    On Windows, PowerShell provides the same functionality using the following command: `Invoke-WebRequest -Uri https://RANCHER/v1/projects/PROJECTID/registrationTokens -Method Post -Headers @{'Content-Type' = 'application/json'; 'Accept' = 'application/json'} -Body '{"name":"test"}' -Credential (Get-Credential)` (This assumes you enter the API key and secret as username and password, respectively.)
+For Linux, this request can easily be sent using the following command: `curl -sLu "$APIKEY" -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -d '{"name":"test"}' https://RANCHER/v1/projects/PROJECTID/registrationTokens`
 
-5. The response will contain a JSON data structure stating that a key with the given name (see step 4) is requested. See the following stripped example:
+On Windows, PowerShell provides the same functionality using the following command: `Invoke-WebRequest -Uri https://RANCHER/v1/projects/PROJECTID/registrationTokens -Method Post -Headers @{'Content-Type' = 'application/json'; 'Accept' = 'application/json'} -Body '{"name":"test"}' -Credential (Get-Credential)` (This assumes you enter the API key and secret as username and password, respectively.)
 
-    ```json
-    id                    : 1c8
-    type                  : registrationToken
-    name                  : test
-    state                 : registering
-    accountId             : 1a5
-    created               : 2016-12-02T21:04:18Z
-    description           :
-    token                 :
-    uuid                  : b1ca03c4-397b-474f-b26a-8d7d954f95b2
-    ```
+## Request token response
 
-6. Contrary to requesting the token (which is environment specific), retrieving the token is a global task. A simple request produces a list of all token for the given API key using the following parameters.
+The response will contain a JSON data structure stating that a key with the given name (see step 4) is requested. See the following stripped example:
 
-    Parameter   | Value
-    ------------|------
-    URI         | /v1/registrationTokens
-    Method      | GET
-    Accept      | application/json
-    Credentials | API key in the form `key:secret`
+```json
+id                    : 1c8
+type                  : registrationToken
+name                  : test
+state                 : registering
+accountId             : 1a5
+created               : 2016-12-02T21:04:18Z
+description           :
+token                 :
+uuid                  : b1ca03c4-397b-474f-b26a-8d7d954f95b2
+```
 
-    Again this task can be performed using ...
+## List tokens
 
-    - Linux: `curl -sLu "$APIKEY" -X GET -H 'Content-Type: application/json' http://RANCHER/v1/registrationTokens`
+Contrary to requesting the token (which is environment specific), retrieving the token is a global task. A simple request produces a list of all token for the given API key using the following parameters.
 
-    - PowerShell: `Invoke-WebRequest -Uri http://RANCHER/v1/registrationTokens -Method Get -Headers @{'Accept' = 'application/json'} -Credential $Cred`
+Parameter   | Value
+------------|------
+URI         | /v1/registrationTokens
+Method      | GET
+Accept      | application/json
+Credentials | API key in the form `key:secret`
 
-7. The response will contain a JSON data structure mentioning a token with the name included in the request. Note that the token may not be ready yet. If the `state` is not set to `active` yet, repeat the request. The field called `token` contains the token to be used in the following request. See the following stripped example:
+Again this task can be performed using ...
 
-    ```json
-    id                    : 1c8
-    type                  : registrationToken
-    name                  : test
-    state                 : active
-    accountId             : 1a5
-    created               : 2016-12-02T21:04:18Z
-    description           :
-    token                 : 4F30E46A1311DFA0AED1:1480712400000:pwC5099DopGPx4DngRNuK2kxk
-    uuid                  : b1ca03c4-397b-474f-b26a-8d7d954f95b2
-    ```
+- Linux: `curl -sLu "$APIKEY" -X GET -H 'Content-Type: application/json' http://RANCHER/v1/registrationTokens`
 
-8. You have made it to the final request to download the machine config. Compared to the previous requests, this is really simple. Note that the URL contains the environment ID in two places:
+- PowerShell: `Invoke-WebRequest -Uri http://RANCHER/v1/registrationTokens -Method Get -Headers @{'Accept' = 'application/json'} -Credential $Cred`
 
-    Parameter | Value
-    ----------|-------
-    URL       | /v1/projects/PROJECTID/machines/MACHINEID/config?token=TOKEN&projectId=PROJECTID
-    Method    | GET
+## Extract token
 
-    The tarball is included in the response and can be stored easily on Linux in a single command: `curl -O -J -L -u "$APIKEY" -X GET http://RANCHER/v1/projects/PROJECTID/machines/HOSTID/config?token=TOKEN&projectId=PROJECTID`
+The response will contain a JSON data structure mentioning a token with the name included in the request. Note that the token may not be ready yet. If the `state` is not set to `active` yet, repeat the request. The field called `token` contains the token to be used in the following request. See the following stripped example:
 
-    PowerShell needs to separate this task into multiple lines:
+```json
+id                    : 1c8
+type                  : registrationToken
+name                  : test
+state                 : active
+accountId             : 1a5
+created               : 2016-12-02T21:04:18Z
+description           :
+token                 : 4F30E46A1311DFA0AED1:1480712400000:pwC5099DopGPx4DngRNuK2kxk
+uuid                  : b1ca03c4-397b-474f-b26a-8d7d954f95b2
+```
 
-    - First, get the response data structure using the following command: `$Response = Invoke-WebRequest -Uri 'http://RANCHER/v1/projects/PROJECTID/machines/HOSTID/config?token=TOKEN&projectId=PROJECTID' -Method Get -Credential $Cred`
-    
-    - When inspecting the response, note that the header includes the original filename in `Content-Disposition`
-    
-    - The following lines of code download the tarball to your profile directory:
-      ```powershell
-      If ($Response.Headers['Content-Disposition'] -match '\=(.+\.tar\.gz)$') {
-        $FileName = $Matches[1]
-      }
-      [System.IO.File]::WriteAllBytes($FileName, $Response.Content)
-      ```
+## Download machine config
+
+You have made it to the final request to download the machine config. Compared to the previous requests, this is really simple. Note that the URL contains the environment ID in two places:
+
+Parameter | Value
+----------|-------
+URL       | /v1/projects/PROJECTID/machines/MACHINEID/config?token=TOKEN&projectId=PROJECTID
+Method    | GET
+
+The tarball is included in the response and can be stored easily on Linux in a single command: `curl -O -J -L -u "$APIKEY" -X GET http://RANCHER/v1/projects/PROJECTID/machines/HOSTID/config?token=TOKEN&projectId=PROJECTID`
+
+PowerShell needs to separate this task into multiple lines:
+
+- First, get the response data structure using the following command: `$Response = Invoke-WebRequest -Uri 'http://RANCHER/v1/projects/PROJECTID/machines/HOSTID/config?token=TOKEN&projectId=PROJECTID' -Method Get -Credential $Cred`
+
+- When inspecting the response, note that the header includes the original filename in `Content-Disposition`
+
+- The following lines of code download the tarball to your profile directory:
+  ```powershell
+  If ($Response.Headers['Content-Disposition'] -match '\=(.+\.tar\.gz)$') {
+    $FileName = $Matches[1]
+  }
+  [System.IO.File]::WriteAllBytes($FileName, $Response.Content)
+  ```
   
 Although this whole process may seem rather complex, this can be hidden using a fully automated solution. Read on!
 
