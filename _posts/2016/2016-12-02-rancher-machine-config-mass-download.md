@@ -47,13 +47,13 @@ Rancher comes with an extensive API to automate the management operations. When 
 
 2. Next you need the ID of the environment in which your hosts reside. When you are looking at the hosts you can simply read the ID from the URL or from the screenshot above (endpoint URL for environment API keys). For example, in my case it is `1a5`.
   
-  Note that Rancher uses different terms in the GUI and in the API. This is caused by the different terminology of the supported orchestration engines. When the GUI shows you an environment, the API is talking about projects. Therefore, the following steps reference the environment ID as `PROJECTID`
+    Note that Rancher uses different terms in the GUI and in the API. This is caused by the different terminology of the supported orchestration engines. When the GUI shows you an environment, the API is talking about projects. Therefore, the following steps reference the environment ID as `PROJECTID`
 
 3. Before we can start talking to the API you need to decide which host to download the configuration for. You can find the HOSTID from the API page for the specific host - klick the three dots next to the host name and select *View in API*. There is a field called `physicalHostId` which contains the ID required for the API calls below.
   
-  In my case, the ID of the sever is `1ph23` which will be references as `HOSTID` in the steps below.
+    In my case, the ID of the sever is `1ph23` which will be references as `HOSTID` in the steps below.
 
-Thanks for hanging in. We are finally ready to start talking to the API. First we need to create a token which is required to access some of the information including machine config tarballs. Creating the token consist of two steps: requesting and retrieving the token.
+    Thanks for hanging in. We are finally ready to start talking to the API. First we need to create a token which is required to access some of the information including machine config tarballs. Creating the token consist of two steps: requesting and retrieving the token.
 
 4. First you need to request a token using the following parameters. Note that the URL is specific to an environment. The request body can (but must not) contain a name and description to easily identify the token later (see [the appropriate part of the API documentation](http://docs.rancher.com/rancher/v1.2/en/api/v2-beta/api-resources/registrationToken/)).
 
