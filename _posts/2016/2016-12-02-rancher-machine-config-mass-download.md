@@ -124,11 +124,14 @@ Rancher comes with an extensive API to automate the management operations. When 
 
     PowerShell needs to separate this task into multiple lines:
 
-    - First, get the response data structure using the following command: `$Response = Invoke-WebRequest -Uri 'http://RANCHER/v1/projects/PROJECTID/machines/HOSTID/config?token=TOKEN&projectId=PROJECTID' -Method Get -Credential $Cred`
+    - First, get the response data structure using the following command:
+    
+      `$Response = Invoke-WebRequest -Uri 'http://RANCHER/v1/projects/PROJECTID/machines/HOSTID/config?token=TOKEN&projectId=PROJECTID' -Method Get -Credential $Cred`
     
     - When inspecting the response, note that the header includes the original filename in `Content-Disposition`
     
     - The following lines of code download the tarball to your profile directory:
+    
       ```powershell
       If ($Response.Headers['Content-Disposition'] -match '\=(.+\.tar\.gz)$') {
         $FileName = $Matches[1]
