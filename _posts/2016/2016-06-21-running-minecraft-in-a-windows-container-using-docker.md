@@ -17,6 +17,8 @@ Minecraft has a very inconvenient dependency - it is based on Java for which we 
 
 A container sounds like a great opportunity to reduce the overhead while isolating the processes from the host at the same time. When Windows Server 2016 Technical Preview 5 was released I was thrilled about [the management experience using Docker on Windows](http://dille.name/blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-tp5/) as well as the advantages of [integrating PowerShell Desired State Configuration into containers](http://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/).
 
+**Note that I have published an [updated guide to running Minecraft in a container](/blog/2017/01/03/generic-docker-windows-container-for-minecraft-servers/).**
+
 ## Isolating Java
 
 After those first steps with Docker, I decided to start building a container for Minecraft. Like I said, this requires Java. I found an interesting [article about Java in Windows containers](https://alexandrnikitin.github.io/blog/running-java-inside-windows-container-on-windows-server/) which gave me a head start. Building on this I created a container image and published it on Ducker Hub: [nicholasdille/javaruntime](https://hub.docker.com/r/nicholasdille/javaruntime/).
