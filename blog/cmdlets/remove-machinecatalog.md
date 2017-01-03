@@ -4,7 +4,6 @@ title: Remove-MachineCatalog
 date: 2015-01-28T10:42:45+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=3312
 sidebar_exclude: true
 ---
 Back to [overview]({{ site.baseurl }}/cmdlets/ "Cmdlet Reference")

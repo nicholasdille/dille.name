@@ -4,7 +4,6 @@ title: Cmdlet Reference
 date: 2015-01-23T16:01:54+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=3288
 sidebar_exclude: true
 ---
 ## XenApp 7

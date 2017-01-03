@@ -4,7 +4,6 @@ title: About
 date: 2011-12-13T18:51:04+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=5
 ---
 
 <img src="/media/nicholas.jpg" style="height: 9em; float: right; padding-left: 0,5em; margin: 0;"/>Nicholas Dille discovered his passion for it at the age of eight when his parents bought the first computer initially intended for his dad. After enduring DOS and GEM for some time, he developed an ever growing interest in the internals and the inner workings of computers and servers. All of this made him realize that the studies of Computer Science at the University of Bonn focusing on computer networks would be the next logical step.

@@ -4,7 +4,6 @@ title: Rename-MachineCatalog
 date: 2015-01-28T10:42:08+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=3310
 sidebar_exclude: true
 ---
 Back to [overview]({{ site.baseurl }}/cmdlets/ "Cmdlet Reference")

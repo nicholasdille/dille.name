@@ -13,7 +13,7 @@ tags:
   - GitHub Pages
   - Continuous Delivery
 ---
-In the previous posts I have concentrated on [generating a static site on your workstation](http://dille.name/blog/2016/03/14/wordpress-to-jekyll-part-2-how-jekyll-works/) and [integrating your content from WordPress](http://dille.name/blog/2016/03/18/wordpress-to-jekyll-part-3-exporting-your-blog-content/). Fortunately, the static content can be hosted anywhere but there are some publicly available services that offer a pipeline for continuous delivery like GitHub Pages.<!--more-->
+In the previous posts I have concentrated on [generating a static site on your workstation](/blog/2016/03/14/wordpress-to-jekyll-part-2-how-jekyll-works/) and [integrating your content from WordPress](/blog/2016/03/18/wordpress-to-jekyll-part-3-exporting-your-blog-content/). Fortunately, the static content can be hosted anywhere but there are some publicly available services that offer a pipeline for continuous delivery like GitHub Pages.<!--more-->
 
 ## GitHub Pages
 

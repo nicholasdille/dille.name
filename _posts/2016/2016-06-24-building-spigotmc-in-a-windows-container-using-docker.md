@@ -11,7 +11,7 @@ tags:
   - Container
   - Minecraft
 ---
-When I started working on a [Windows container for my Minecraft server](http://dille.name/blog/2016/06/21/running-minecraft-in-a-windows-container-using-docker/), I realized that my installation was also in dire need of an update to the latest version of [SpigotMC](https://spigot.org). This does not come as a source release so it needs to be compiled manually. Therefore, I investigated how the build process can be banished into a container. Here is how it is done!<!--more-->
+When I started working on a [Windows container for my Minecraft server](/blog/2016/06/21/running-minecraft-in-a-windows-container-using-docker/), I realized that my installation was also in dire need of an update to the latest version of [SpigotMC](https://spigot.org). This does not come as a source release so it needs to be compiled manually. Therefore, I investigated how the build process can be banished into a container. Here is how it is done!<!--more-->
 
 SpigotMC offers a very [detailed guide how to build the SpigotMC Minecraft server](https://www.spigotmc.org/wiki/buildtools/) from source. The developers have automated this process and provide it in a JAR called [BuildTools.jar which must be downlaoded from the website](https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar). These build tools require a Java Runtime Environment and a Git installation.
 

@@ -4,7 +4,6 @@ title: Sync-MachineCatalog
 date: 2015-01-28T10:51:56+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=3328
 sidebar_exclude: true
 ---
 Back to [overview]({{ site.baseurl }}/cmdlets/ "Cmdlet Reference")

@@ -11,11 +11,11 @@ tags:
   - Container
   - Minecraft
 ---
-Last year I blogged about [running a Minecraft server for friends and family](http://dille.name/blog/2015/09/09/how-to-build-a-custom-minecraft-server-for-friends-and-family/). Today I will explain how I have banished it into a Windows container using Docker! This is another step avoiding Java on the host. But let's start at the beginning.<!--more-->
+Last year I blogged about [running a Minecraft server for friends and family](/blog/2015/09/09/how-to-build-a-custom-minecraft-server-for-friends-and-family/). Today I will explain how I have banished it into a Windows container using Docker! This is another step avoiding Java on the host. But let's start at the beginning.<!--more-->
 
 Minecraft has a very inconvenient dependency - it is based on Java for which we have seen many as well as serious security bulletins in the last few years. I could have isolated the Minecraft server in a virtual machine but I did not want to accept the overhead of another operating system instance with the sole purpose of serving Minecraft.
 
-A container sounds like a great opportunity to reduce the overhead while isolating the processes from the host at the same time. When Windows Server 2016 Technical Preview 5 was released I was thrilled about [the management experience using Docker on Windows](http://dille.name/blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-tp5/) as well as the advantages of [integrating PowerShell Desired State Configuration into containers](http://dille.name/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/).
+A container sounds like a great opportunity to reduce the overhead while isolating the processes from the host at the same time. When Windows Server 2016 Technical Preview 5 was released I was thrilled about [the management experience using Docker on Windows](/blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-tp5/) as well as the advantages of [integrating PowerShell Desired State Configuration into containers](/blog/2016/06/17/powershell-desired-state-configuration-psdsc-in-windows-containers-using-docker/).
 
 **Note that I have published an [updated guide to running Minecraft in a container](/blog/2017/01/03/generic-docker-windows-container-for-minecraft-servers/).**
 

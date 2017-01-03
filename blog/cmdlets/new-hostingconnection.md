@@ -4,7 +4,6 @@ title: New-HostingConnection
 date: 2015-01-28T10:51:35+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=3326
 sidebar_exclude: true
 ---
 Back to [overview]({{ site.baseurl }}/cmdlets/ "Cmdlet Reference")

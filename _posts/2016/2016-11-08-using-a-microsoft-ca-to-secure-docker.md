@@ -50,8 +50,8 @@ Unfortunately, you cannot avoid [OpenSSL](https://www.openssl.org/) because `cer
 In addition, there is no equivalent to OpenSSL when it comes to conversions. Windows usually expects and produces DER formatted certificates while many tools expect PEM formatted certificates. In fact, PEM format is only a Base64 encoded DER format.
 
 Further reading on my blog:
-- [How to request a certificate](http://dille.name/blog/2011/12/23/how-to-request-a-certificate/)
-- More about [formats and conversions](http://dille.name/blog/2012/01/09/certificate-file-formats-and-conversion/)
+- [How to request a certificate](/blog/2011/12/23/how-to-request-a-certificate/)
+- More about [formats and conversions](/blog/2012/01/09/certificate-file-formats-and-conversion/)
 
 # Pitfall #2
 

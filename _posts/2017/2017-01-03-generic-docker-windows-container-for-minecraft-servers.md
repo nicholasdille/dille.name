@@ -11,13 +11,13 @@ tags:
   - Container
   - Minecraft
 ---
-Half a year ago, I presented a [Windows container for running Minecraft servers](http://dille.name/blog/2016/06/21/running-minecraft-in-a-windows-container-using-docker/). In the meantime, I have enhanced the experience and created a generic container which can be used to run Minecraft servers.<!--more-->
+Half a year ago, I presented a [Windows container for running Minecraft servers](/blog/2016/06/21/running-minecraft-in-a-windows-container-using-docker/). In the meantime, I have enhanced the experience and created a generic container which can be used to run Minecraft servers.<!--more-->
 
 # Types of data
 
 Containers must be considered to be something shortlived. Therefore, all data that must survive updates or migrations of the container must be persisted in one way or another. A Minecraft server consist of several different types of data which required different handling:
 
-1. The **server JAR** is a binary which can be recreated at any time (see [my previous post about this](http://dille.name/blog/2016/06/24/building-spigotmc-in-a-windows-container-using-docker/)). Therefore, it does not need any special handling for persistence.
+1. The **server JAR** is a binary which can be recreated at any time (see [my previous post about this](/blog/2016/06/24/building-spigotmc-in-a-windows-container-using-docker/)). Therefore, it does not need any special handling for persistence.
 
 2. The **server configuration** must be strictly managed and can be considered as code because the Minecraft server will behave identical when based on the same configuration files.
 
@@ -80,7 +80,7 @@ The code for this container image is [available on GitHub](https://github.com/ni
 
 # Using the Image
 
-The minimal setup required a [SpigotMC](https://www.spigotmc.org/) server JAR to be placed in `c:\`. The name of the JAR must conform to `spigot-*.jar` (it can also be [created in a Windows container](http://dille.name/blog/2016/06/24/building-spigotmc-in-a-windows-container-using-docker/)). To achieve this, create your own `Dockerfile` and `ADD` the server JAR.
+The minimal setup required a [SpigotMC](https://www.spigotmc.org/) server JAR to be placed in `c:\`. The name of the JAR must conform to `spigot-*.jar` (it can also be [created in a Windows container](/blog/2016/06/24/building-spigotmc-in-a-windows-container-using-docker/)). To achieve this, create your own `Dockerfile` and `ADD` the server JAR.
 
 Note that you need to take care of persisting the configuration as well as the worlds on your own. The container does not handle this for you.
 

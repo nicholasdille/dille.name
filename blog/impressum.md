@@ -4,7 +4,6 @@ title: Impressum
 date: 2014-08-25T13:11:16+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=2809
 ---
 Dieser Blog ist ein nichtkommerzielles Angebot und mit keinem Unternehmen verbunden.
 

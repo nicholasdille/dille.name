@@ -15,7 +15,7 @@ tags:
   - DSC
   - PowerShell Desired State Configuration
 ---
-You have probably noticed my enthusiasm for [PowerShell Desired State Configuration](http://dille.name/blog/tags/#PSDSC) (PSDSC). After posting how Microsoft has integrated the [Docker engine with containers in Windows Server 2016 TP5](http://dille.name/blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-tp5/), I started investigating how PSDSC can be used in container. I have created two examples to demonstrate this.<!--more-->
+You have probably noticed my enthusiasm for [PowerShell Desired State Configuration](/blog/tags/#PSDSC) (PSDSC). After posting how Microsoft has integrated the [Docker engine with containers in Windows Server 2016 TP5](/blog/2016/06/08/build-ship-run-containers-with-windows-server-2016-tp5/), I started investigating how PSDSC can be used in container. I have created two examples to demonstrate this.<!--more-->
 
 Desired State Configuration implements the Local Configuration Manager (LCM) which is responsible for applying the node configuration. Although it works out of the box, [the LCM is highly configurable](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig) using the meta configuration. Although many of the configuration options specify global behaviour, there is the so-called *configuration ID* identifying the node with an individual name.
 

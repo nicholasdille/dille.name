@@ -4,7 +4,6 @@ title: Export-MachineCatalog
 date: 2015-01-28T10:41:51+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=3308
 sidebar_exclude: true
 ---
 Back to [overview]({{ site.baseurl }}/cmdlets/ "Cmdlet Reference")

@@ -19,7 +19,7 @@ When using [Rancher](http://rancher.com/rancher/) for container management, you 
 
 # Manual download process
 
-The following steps describe downloading the machine configuration manually. It comes as a tarball containing not only the SSH key pair but also the certificates used to [secure the Docker daemon](http://dille.name/blog/2016/11/08/using-a-microsoft-ca-to-secure-docker/).
+The following steps describe downloading the machine configuration manually. It comes as a tarball containing not only the SSH key pair but also the certificates used to [secure the Docker daemon](/blog/2016/11/08/using-a-microsoft-ca-to-secure-docker/).
 
 1. Log in
 

@@ -4,7 +4,6 @@ title: News Sites
 date: 2015-06-22T10:16:08+00:00
 author: Nicholas Dille
 layout: page
-guid: http://dille.name/blog/?page_id=3467
 sidebar_exclude: true
 ---
 News sites that I like to visit regularly.

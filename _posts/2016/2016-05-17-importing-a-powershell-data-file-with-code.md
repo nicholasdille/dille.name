@@ -13,7 +13,7 @@ tags:
   - DSC
   - pester
 ---
-In a previous post, I demonstrated how [pester can be used for writing unit tests checking configuration data for PowerShell Desired State Configuration](http://dille.name/blog/2015/11/25/testing-configuration-data-in-psdsc-using-pester/). I assumed that the data structure for configuration data was already present in memory. In real life, the environment data contained in configuration data is stored in a file. Therefore, I will show you how to load data structures from a file with and without code.<!--more-->
+In a previous post, I demonstrated how [pester can be used for writing unit tests checking configuration data for PowerShell Desired State Configuration](/blog/2015/11/25/testing-configuration-data-in-psdsc-using-pester/). I assumed that the data structure for configuration data was already present in memory. In real life, the environment data contained in configuration data is stored in a file. Therefore, I will show you how to load data structures from a file with and without code.<!--more-->
 
 PowerShell Desired State Configuration requires a data structure called configuration data. This is nothing more than a hash with a key called `AllNodes` which is an array of hashes each representing a node to be configured using DSC:
 
