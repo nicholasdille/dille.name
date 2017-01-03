@@ -12,7 +12,7 @@ Containerization is a faily new technology for isolating individual processes fr
 
 <ul class="this" style="list-style-type:none">
 {% for post in site.posts %}
-{% if post.tags contains 'container' %}<li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
+{% if post.tags contains 'Container' %}<li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
 {% endfor %}
 </ul>
 
@@ -20,6 +20,6 @@ Containerization is a faily new technology for isolating individual processes fr
 
 <ul class="this" style="list-style-type:none">
 {% for post in site.posts %}
-{% if post.tags contains 'docker' %}<li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
+{% if post.tags contains 'Docker' %}<li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
 {% endfor %}
 </ul>
