@@ -1,5 +1,5 @@
 ---
-title: '#Rancher Machine Config Mass Download (#Docker)'
+title: '#Rancher Machine Config Mass Download (#Docker #PowerShell)'
 date: 2016-12-02T22:09:57+01:00
 author: Nicholas Dille
 layout: post
