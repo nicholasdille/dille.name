@@ -1,6 +1,6 @@
 ---
 title: 'Handling Persistent Data in #Minecraft Containers (#Docker #WindowsContainer)'
-date: 2017-01-03T17:40:00+01:00
+date: 2017-01-06T17:40:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2017/01/06/handling-persistent-data-in-minecraft-containers/
