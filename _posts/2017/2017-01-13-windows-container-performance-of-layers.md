@@ -20,7 +20,7 @@ Docker images consist of layers. Many commands in your `Dockerfile` result in a 
 - `COPY`
 - `RUN`
 
-Each layer adds to the size of the whole image and must be processed by the Docker daemon. The layers are similar to difference disks. Whenever a file is accessed the Docker daemon must traverse the layers from the bottom (latest changes) to the bottom (oldest changes) until the file is found.
+Each layer adds to the size of the whole image and must be processed by the Docker daemon. The layers are similar to difference disks. Whenever a file is accessed the Docker daemon must traverse the layers from the bottom (latest changes) to the top (oldest changes) until the file is found.
 
 Regarding the number of layers, the [official best practices published by Docker](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) state the following:
 
