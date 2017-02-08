@@ -7,7 +7,6 @@ permalink: /blog/2017/02/08/will-you-be-able-to-run-a-fully-supported-windows-co
 categories:
   - Haufe-Lexware
 tags:
-  - Docker
   - Container
   - Microsoft
 ---
