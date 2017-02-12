@@ -26,7 +26,7 @@ Instead, I recommend, you define the environment variables for the whole system.
 
 System variables can either be configured using the builtin dialog:
 
-<div style="position: relative; overflow: hidden; width: 550px; height: 75px;"><a href="../../media/2017/02/Environment-Variables-Proxy.png" data-lightbox="WordPress2Jekyll" title="Dialog for system variables"><img src="../../media/2017/02/Environment-Variables-Proxy.png" alt="Dialog for system variables" style="max-width: none; position: absolute; top: -751px; left: -53px;" /></a></div>
+<div style="position: relative; overflow: hidden; width: 550px; height: 75px;"><a href="/media/2017/02/Environment-Variables-Proxy.png" data-lightbox="DockerProxy" title="Dialog for system variables"><img src="/media/2017/02/Environment-Variables-Proxy.png" alt="Dialog for system variables" style="max-width: none; position: absolute; top: -751px; left: -53px;" /></a></div>
 
 If you are switching between proxy servers regularly, using the following code make this process a lot easier:
 
