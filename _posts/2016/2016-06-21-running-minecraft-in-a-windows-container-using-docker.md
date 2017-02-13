@@ -35,7 +35,7 @@ RUN powershell -Command \
 RUN del c:\jre-8u91-windows-x64.exe
 ```
 
-As you can see from the code above I decided to use the `ADD` instruction to download the Java installation package. This does not require the container to have internet access. Note that the Dockerfile comes with a [script called `docker-build.cmd`](https://github.com/nicholasdille/docker/blob/master/java/docker-build.cmd) which is responsible for building the container image using `docker build`. It also takes care of tagging the image because right now it used Java 1.8.0u91 (tagged as 8u91 as well as latest). When a new patch is released you can easily update the Dockerfile and the build script.-->
+As you can see from the code above I decided to use the `ADD` instruction to download the Java installation package. This does not require the container to have internet access. Note that the Dockerfile comes with a [script called `docker-build.cmd`](https://github.com/nicholasdille/docker/blob/master/javaruntime/docker-build.cmd) which is responsible for building the container image using `docker build`. It also takes care of tagging the image because right now it used Java 1.8.0u91 (tagged as 8u91 as well as latest). When a new patch is released you can easily update the Dockerfile and the build script.-->
 
 **Important note:** The `Dockerfile` included above displays outdated code for this image. But due to recent enhancements, please inspect the [repository for my Java image](https://github.com/nicholasdille/docker/tree/master/java).
 
