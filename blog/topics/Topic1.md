@@ -13,6 +13,7 @@ Containerization is a faily new technology for isolating individual processes fr
 I have also published several [container images on Docker Hub](https://hub.docker.com/u/nicholasdille/)
 
 <div style="font-size: smaller;">
+
 Name | Source | Image | Run | Build | Blog
 -----|--------|-------|-----|-------|-----
 chocolatey | [Source](https://github.com/nicholasdille/docker/tree/master/chocolatey) | [DockerHub](https://hub.docker.com/r/nicholasdille/chocolatey) | docker run nicholasdille/chocolatey | docker build https://github.com/nicholasdille/docker.git#master:chocolatey
@@ -30,6 +31,7 @@ SpigotMC | [Source](https://github.com/nicholasdille/docker/tree/master/spigotmc
 SpigotMC-Build | [Source](https://github.com/nicholasdille/docker/tree/master/spigotmc-build) | [DockerHub](https://hub.docker.com/r/nicholasdille/spigotmc-build) | docker run nicholasdille/spigotmc-build | docker build https://github.com/nicholasdille/docker.git#master:spigotmc-build | [Post](http://dille.name/blog/2016/06/24/building-spigotmc-in-a-windows-container-using-docker/)
 supervisord | [Source](https://github.com/nicholasdille/docker/tree/master/supervisord) | [DockerHub](https://hub.docker.com/r/nicholasdille/supervisord) | docker run nicholasdille/supervisord | docker build https://github.com/nicholasdille/docker.git#master:supervisord
 Volume | [Source](https://github.com/nicholasdille/docker/tree/master/volume) |  |  | docker build https://github.com/nicholasdille/docker.git#master:volume | [Post](http://dille.name/blog/2017/02/06/initializing-docker-volumes-in-windowscontainer/)
+
 </div>
 
 ## Previously Published Articles about Containers
