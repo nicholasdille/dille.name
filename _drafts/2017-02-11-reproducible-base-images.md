@@ -1,9 +1,9 @@
 ---
 title: 'XXX'
-date: 2017-02-10T07:51:00+01:00
+date: 2017-02-11T07:51:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2017/02/10/XXX/
+permalink: /blog/2017/02/11/XXX/
 categories:
   - Haufe-Lexware
 tags:
