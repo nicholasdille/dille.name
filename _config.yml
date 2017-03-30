@@ -10,7 +10,7 @@ author:
 
 gems:
  - jekyll-paginate
- - jekyll-sitemap
+# - jekyll-sitemap
  - jekyll-feed
  - jekyll-mentions
 
