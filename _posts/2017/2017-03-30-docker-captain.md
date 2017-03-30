@@ -11,6 +11,6 @@ tags:
   - Container
   - Community
 ---
-I am proud to announce that Docker honours my community contributions by including me in the [Docker Captains Program](https://www.docker.com/community/docker-captains).
+I am proud to announce that Docker honours my community contributions by including me in the [Docker Captains Program](https://www.docker.com/community/docker-captains).<!--more-->
 
 ![Docker Captains Program](https://www.docker.com/sites/default/files/docker_captian_image.png)
