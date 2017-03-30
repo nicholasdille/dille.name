@@ -16,7 +16,7 @@ For nearly 15 years, Nicholas is concerned with automation as well as virtualiza
 
 <img src="/media/mvp_logo.png" style="height: 4em; float: right; padding-left: 0,5em; margin: 0;"/><img src="/media/captains_logo.png" style="height: 4em; float: right; padding-left: 0,5em; margin: 0;"/>His passion for technology and his community activity has been [recognized by Microsoft](https://mvp.microsoft.com/en-us/PublicProfile/4029117?fullName=Nicholas%20%20Dille) since 2010 when he was first awarded MVP for Remote Desktop Services / Enterprise Mobility and has been renewed ever since. Currently, he is MVP for Cloud and Datacenter Management. In addition, in March 2017 Docker recognized his community contributions and included him in the [Docker Captains Program](https://www.docker.com/community/docker-captains).
 
-Nicholas is a member of the organizational team for [x-celerate](https://www.x-celerate.de) - a developer conference taking place in Freiburg, Germany on October 10th 2017. The event focuses on Continuous Delivery and Infrastructure as code.
+Nicholas is also a member of the organizing team for [x-celerate](https://www.x-celerate.de) - a developer conference taking place in Freiburg, Germany on October 10th 2017. The event focuses on Continuous Delivery and Infrastructure as code.
 
 [Haufe-Lexware](https://www.haufe-lexware.com/) is a digital media group based in Freiburg, Germany - one of Germany's leading providers for digital workplace solutions and services.
 
