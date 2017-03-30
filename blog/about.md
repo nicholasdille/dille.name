@@ -6,6 +6,8 @@ author: Nicholas Dille
 layout: page
 ---
 
+## Husband, father, geek, aikidoka
+
 <img src="/media/nicholas.jpg" style="height: 9em; float: right; padding-left: 0,5em; margin: 0;"/>Nicholas Dille discovered his passion for it at the age of eight when his parents bought the first computer initially intended for his dad. After enduring DOS and GEM for some time, he developed an ever growing interest in the internals and the inner workings of computers and servers. All of this made him realize that the studies of Computer Science at the University of Bonn focusing on computer networks would be the next logical step.
 
 For nearly 15 years, Nicholas is concerned with automation as well as virtualization on all layers. Currently, he is a DevOps Engineer at [Haufe-Lexware](https://www.haufe-lexware.com/), a digital media group based in Freiburg, Germany. In this role he uses continuous delivery to create and maintain containerized environments. Before that, he has been working as an IT architect for end-user computing and infrastructure services - for [Makro Factory](http://www.makrofactory.com/) and [sepago](http://www.sepago.de/). Nicholas has excelled in many large enterprise projects by providing strategic market insights as well as by designing and implementing large scale environments.
