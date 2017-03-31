@@ -13,13 +13,17 @@
 {% endif %}
 </title>
 
-{% if page.description %}
-  <meta name="description" content="{{ page.description }}" />
+<!--{% if page.author %}
+<meta name="author" content="{{ page.author }}" />
 {% endif %}
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.tags | join: ', ' }}" />
+{% else %}
+<meta name="keywords" content="{{ site.keywords }}" />
+{% endif %}-->
 
-{% if page.author %}
-  <meta name="author" content="{{ page.author }}" />
-{% endif %}
+{% seo %}
 
 <!-- CSS -->
 <link rel="stylesheet" href="/media/css/poole.css">
