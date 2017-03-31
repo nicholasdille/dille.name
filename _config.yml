@@ -2,6 +2,7 @@ title:              'Nicholas Dille'
 tagline:            'Cloud, Virtualization and Automation'
 description:        'Cloud, Virtualization and Automation'
 url:                http://dille.name
+keywords:           'automation, virtualization, powershell, docker, container'
 #baseurl:           /blog/
 
 author:
@@ -10,7 +11,6 @@ author:
 
 gems:
  - jekyll-paginate
-# - jekyll-sitemap
  - jekyll-feed
  - jekyll-mentions
 
