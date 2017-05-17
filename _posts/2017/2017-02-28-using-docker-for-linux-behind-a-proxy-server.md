@@ -35,12 +35,15 @@ docker build --build-arg http_proxy=http://1.2.3.4:3128 --build-arg https_proxy=
 
 After the first two common issues with proxy servers, the last one if harder to solve. When pulling an image from a registry, it is the responsibility of the Docker daemon to download the image. Therefore, the Docker daemon needs to know about the proxy server. Unfortunately, this cannot be done with user privileges like working with the Docker daemon. The following steps need to be performed with administrative privileges:
 
+**I have added `systemctl daemon-reload` to the commands below because the changes will only take effect after systemd has been notified.**
+
 ```bash
 $ mkdir -p /etc/systemd/system/docker.service.d
 $ cat >> /etc/systemd/system/docker.service.d/proxy.conf <<EOF
 [Service]
 Environment="HTTP_PROXY=http://1.2.3.4:3128" "HTTPS_PROXY=http://1.2.3.4:3128"
 EOF
+$ systemctl daemon-reload
 $ service docker restart
 ```
 
