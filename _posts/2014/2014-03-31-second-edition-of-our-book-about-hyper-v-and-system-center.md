@@ -7,14 +7,6 @@ layout: post
 permalink: /blog/2014/03/31/second-edition-of-our-book-about-hyper-v-and-system-center/
 categories:
   - sepago
-tags:
-  - Galileo Press
-  - Rheinwerk
-  - Hyper-V
-  - Book
-  - Community
-  - Microsoft
-  - MVP
 ---
 When the [first edition](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-3276) of our German book was published, it was solely focussed on Windows Server 2012 but at the same time Windows Server 2012 R2 was getting close to its RTM date. Therefore we decided to update the book with new content. In the [second edition](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-3570?GalileoSession=58836078A6dtVC.DW8M), we added over 100 pages of in-depth information about Windows Server 2012 R2.
 
