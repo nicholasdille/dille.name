@@ -9,11 +9,13 @@ categories:
   - sepago
 tags:
   - Galileo Press
+  - Rheinwerk
   - Hyper-V
   - Microsoft
   - MVP
   - System Center
   - Virtual Machine Manager
+  - Book
 ---
 It has been rather quiet in this blog and on Twitter as well. In fact, I have been working on a related project with three other IT Pros that has consumed a lot of my available time. I can finally break the silence and make the announcement that in Juli, Galileo Press will publishing our (German) [book about Hyper-V and System Center](http://www.galileocomputing.de/katalog/buecher/titel/gp/titelID-3276).
 
