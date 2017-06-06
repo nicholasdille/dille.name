@@ -133,6 +133,8 @@ P25
 PS C:\>
 ```
 
+**Note: As of version 1.1, I removed the pipeline capabilities from some cmdlets because of performance issues. The above example changes to: `$m = $Processes | Measure-Object -Property WorkingSet64; Show-Measurement $m`**
+
 Using the percentiles (P10, P25, P75 and P90) and the median (M), it is easy to understand how values are distributed. Remember, the 25% percentile means that 25% of all values are smaller than this value.
 
 The 95% confidence interval (c and C) gives and interval in which the average (A) is likely to fall with a probability of 95%.
