@@ -1,9 +1,9 @@
 ---
 title: 'Using #PowerShell Dynamic Functions to Initialize a Job'
-date: 2017-07-05T22:14:00+02:00
+date: 2017-07-07T19:55:00+02:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2017/07/05/using-powershell-dynamic-functions-to-initialize-a-job/
+permalink: /blog/2017/07/07/using-powershell-dynamic-functions-to-initialize-a-job/
 categories:
   - Haufe-Lexware
 tags:
