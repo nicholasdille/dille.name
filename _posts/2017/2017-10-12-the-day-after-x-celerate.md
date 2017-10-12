@@ -14,7 +14,7 @@ tags:
 - Container
 - xcelerate
 ---
-On 10-10-2017 our very own conference <strong>x-celerate</strong> took place at the trade fair in Freiburg, Germany. With well over 100 attendees, the feedback proved it was a success in its first year.<!--more-->
+On 10-10-2017 our very own conference [x-celerate](https://www.x-celerate.de) took place at the trade fair in Freiburg, Germany. With well over 100 attendees, the feedback proved it was a success in its first year.<!--more-->
 
 All of this would not have been possible without [a great team](https://www.x-celerate.de/aboutus). We were very lucky with such a great speaker line-up (in alphabetical order):
 
@@ -28,9 +28,13 @@ All of this would not have been possible without [a great team](https://www.x-ce
 
 The trade fair in Freiburg was a superb choice as venue with enough room to accomodate all attendees without getting crowded and extraordinary food. Although my talk was scheduled to the smaller room, it was packed with an audience of roughly 50.
 
-<div style="width: 40%"><a href="/media/2017/10/before_keynote.jpg" data-lightbox="x-celerate" title="The room is filling up for the keynote"><img src="/media/2017/10/before_keynote.jpg" alt="The room is filling up for the keynote" /></a></div>
+<div style="display: flex; justify-content: space-between; height: 5em; margin-bottom: 1em;">
 
-<div style="width: 40%"><a href="/media/2017/10/my_talk.jpg" data-lightbox="x-celerate" title="Ready for my talk"><img src="/media/2017/10/my_talk.jpg" alt="Ready for my talk" /></a></div>
+<a href="/media/2017/10/before_keynote.jpg" data-lightbox="x-celerate" title="The room is filling up for the keynote"><img src="/media/2017/10/before_keynote.jpg" alt="The room is filling up for the keynote" /></a>
+
+<a href="/media/2017/10/my_talk.jpg" data-lightbox="x-celerate" title="Ready for my talk"><img src="/media/2017/10/my_talk.jpg" alt="Ready for my talk" /></a>
+
+</div>
 
 If you are curious to take a look at my talk, you'll find the [slides on SlideShare](https://www.slideshare.net/NicholasDille/tipps-und-tricks-im-umgang-mit-docker) or [download them here](/media/2017/10/Tipps und Tricks im Umgang mit Docker (x-celerate 2017).pdf).
 
