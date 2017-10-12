@@ -26,7 +26,7 @@ All of this would not have been possible without [a great team](https://www.x-ce
 - [Manuel Rauber](https://twitter.com/ManuelRauber)
 - [Stefan Scherer](https://twitter.com/stefscherer)
 
-The trade fair in Freiburg was a superb choice as venue with enough room to accomodate all attendees without getting crowded and extraordinary food. Although my talk was scheduled to the smaller room, it was packed with an audience of roughly 50.
+The [trade fair in Freiburg](http://www.messe.freiburg.de) was a superb choice as venue with enough room to accomodate all attendees without getting crowded and extraordinary food. Although my talk was scheduled to the smaller room, it was packed with an audience of roughly 50.
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 1em;">
 
