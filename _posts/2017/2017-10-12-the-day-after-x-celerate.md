@@ -26,16 +26,14 @@ All of this would not have been possible without [a great team](https://www.x-ce
 - [Manuel Rauber](https://twitter.com/ManuelRauber)
 - [Stefan Scherer](https://twitter.com/stefscherer)
 
-The trade fair in Freiburg was a superb choice as venue with enough room to accomodate all attendees without getting crowded and extraordinary food.
+The trade fair in Freiburg was a superb choice as venue with enough room to accomodate all attendees without getting crowded and extraordinary food. Although my talk was scheduled to the smaller room, it was packed with an audience of roughly 50.
 
-![The room is filling up for the keynote](/media/2017/10/before_keynote.jpg)
+<div style="width: 40%"><a href="/media/2017/10/before_keynote.jpg" data-lightbox="x-celerate" title="The room is filling up for the keynote"><img src="/media/2017/10/before_keynote.jpg" alt="The room is filling up for the keynote" /></a></div>
 
-Although my talk was scheduled to the smaller room, it was packed with an audience of roughly 50.
+<div style="width: 40%"><a href="/media/2017/10/my_talk.jpg" data-lightbox="x-celerate" title="Ready for my talk"><img src="/media/2017/10/my_talk.jpg" alt="Ready for my talk" /></a></div>
 
-![Ready for my talk](/media/2017/10/my_talk.jpg)
+If you are curious to take a look at my talk, you'll find the [slides on SlideShare](https://www.slideshare.net/NicholasDille/tipps-und-tricks-im-umgang-mit-docker) or [download them here](/media/2017/10/Tipps und Tricks im Umgang mit Docker (x-celerate 2017).pdf).
 
-If you are curious to take a look at my talk, you'll find the [slides on SlideShare](https://www.slideshare.net/NicholasDille/tipps-und-tricks-im-umgang-mit-docker).
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/3HGWFWu9egeUSE" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/NicholasDille/tipps-und-tricks-im-umgang-mit-docker" title="Tipps und Tricks im Umgang mit Docker" target="_blank">Tipps und Tricks im Umgang mit Docker</a> </strong> from <strong><a href="https://www.slideshare.net/NicholasDille" target="_blank">Nicholas Dille</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/3HGWFWu9egeUSE" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 In the coming days, we will distribute the slides of all presentations and publish some fotos of the event.
