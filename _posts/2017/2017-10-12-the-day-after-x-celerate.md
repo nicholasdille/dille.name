@@ -28,7 +28,7 @@ All of this would not have been possible without [a great team](https://www.x-ce
 
 The trade fair in Freiburg was a superb choice as venue with enough room to accomodate all attendees without getting crowded and extraordinary food. Although my talk was scheduled to the smaller room, it was packed with an audience of roughly 50.
 
-<div style="display: flex; justify-content: space-between; height: 5em; margin-bottom: 1em;">
+<div style="display: flex; justify-content: space-between; margin-bottom: 1em;">
 
 <a href="/media/2017/10/before_keynote.jpg" data-lightbox="x-celerate" title="The room is filling up for the keynote"><img src="/media/2017/10/before_keynote.jpg" alt="The room is filling up for the keynote" /></a>
 
