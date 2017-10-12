@@ -30,9 +30,9 @@ The trade fair in Freiburg was a superb choice as venue with enough room to acco
 
 <div style="display: flex; justify-content: space-between; margin-bottom: 1em;">
 
-<a href="/media/2017/10/before_keynote.jpg" data-lightbox="x-celerate" title="The room is filling up for the keynote"><img src="/media/2017/10/before_keynote.jpg" alt="The room is filling up for the keynote" /></a>
+<a href="/media/2017/10/before_keynote.jpg" data-lightbox="x-celerate" title="The room is filling up for the keynote"><img src="/media/2017/10/before_keynote.jpg" alt="The room is filling up for the keynote" style="width: 95%;" /></a>
 
-<a href="/media/2017/10/my_talk.jpg" data-lightbox="x-celerate" title="Ready for my talk"><img src="/media/2017/10/my_talk.jpg" alt="Ready for my talk" /></a>
+<a href="/media/2017/10/my_talk.jpg" data-lightbox="x-celerate" title="Ready for my talk"><img src="/media/2017/10/my_talk.jpg" alt="Ready for my talk" style="width: 95%;" /></a>
 
 </div>
 
