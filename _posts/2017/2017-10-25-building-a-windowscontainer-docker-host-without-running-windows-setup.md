@@ -31,8 +31,17 @@ The following sections provide example commands for this process but at the end 
 Creating a virtual hard disk from the installation files requires the `\sources\install.wim` located on the ISO - meaning that the ISO must be mounted before the virtual hard disk can be created. The variable `$IsoPath` contains the path to the ISO file.
 
 ```powershell
-$DriveLetter = Mount-DiskImage -ImagePath $IsoPath -PassThru Get-Volume | Select-Object -ExpandProperty DriveLetter
-Convert-WindowsImage -SourcePath "$($DriveLetter):\sources\install.wim" -Edition $EditionIndex -VHDPath c:\my.vhdx -SizeBytes 128GB -VHDFormat VHDX -DiskLayout UEFI
+$DriveLetter = Mount-DiskImage `
+        -ImagePath $IsoPath `
+        -PassThru Get-Volume `
+    | Select-Object -ExpandProperty DriveLetter
+Convert-WindowsImage `
+    -SourcePath "$($DriveLetter):\sources\install.wim" `
+    -Edition $EditionIndex `
+    -VHDPath c:\my.vhdx `
+    -SizeBytes 128GB `
+    -VHDFormat VHDX `
+    -DiskLayout UEFI
 Dismount-DiskImage -ImagePath $IsoPath
 ```
 
@@ -94,15 +103,31 @@ In this case, `SetupComplete.cmd` only lanches a PowerShell script called `Setup
 
 ```powershell
 #region Download and install Docker EE
-New-Item -Path "$env:ProgramFiles\Docker" -ItemType Directory
-$DockerUrl = Get-Content -Path c:\docker_url.txt
-Invoke-WebRequest -UseBasicparsing -Outfile "$env:ProgramFiles\Docker\docker.zip" -Uri $DockerUrl
-Expand-Archive -Path "$env:ProgramFiles\Docker\docker.zip" -DestinationPath "$env:ProgramFiles"
-Remove-Item -Path "$env:ProgramFiles\Docker\docker.zip"
+New-Item `
+    -Path "$env:ProgramFiles\Docker" `
+    -ItemType Directory
+$DockerUrl = Get-Content `
+    -Path c:\docker_url.txt
+Invoke-WebRequest `
+    -UseBasicparsing `
+    -Outfile "$env:ProgramFiles\Docker\docker.zip" `
+    -Uri $DockerUrl
+Expand-Archive `
+    -Path "$env:ProgramFiles\Docker\docker.zip" `
+    -DestinationPath "$env:ProgramFiles"
+Remove-Item `
+    -Path "$env:ProgramFiles\Docker\docker.zip"
 $env:path += ";$env:ProgramFiles\docker"
 & dockerd.exe --register-service
-$CurrentPath = [Environment]::GetEnvironmentVariable("PATH", [EnvironmentVariableTarget]::Machine)
-[Environment]::SetEnvironmentVariable("PATH", $CurrentPath + ";$env:ProgramFiles\Docker", [EnvironmentVariableTarget]::Machine)
+$CurrentPath = [Environment]::GetEnvironmentVariable(
+    "PATH",
+    [EnvironmentVariableTarget]::Machine
+)
+[Environment]::SetEnvironmentVariable(
+    "PATH",
+    $CurrentPath + ";$env:ProgramFiles\Docker",
+    [EnvironmentVariableTarget]::Machine
+)
 #endregion
 
 #region Start docker
