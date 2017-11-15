@@ -1,5 +1,5 @@
 ---
-title: 'What's new in the #Docker Universe at #Container_Conf'
+title: "What's new in the #Docker Universe at #Container_Conf"
 date: 2017-11-15T13:42:00+01:00
 author: Nicholas Dille
 layout: post
