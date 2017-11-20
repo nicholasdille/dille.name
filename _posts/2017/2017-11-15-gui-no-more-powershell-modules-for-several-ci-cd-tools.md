@@ -55,3 +55,7 @@ Also note that WebRequests has proxy support built in. In case you are using the
 $ProxyPreference = 'Proxy'
 $ProxyServer = 'http://1.2.3.4:3128'
 ```
+
+## Introductory posts
+
+[Using PowerShell to talk to InfluxDB](/blog/2017/11/15/gui-no-more-powershell-modules-for-several-ci-cd-tools/)
