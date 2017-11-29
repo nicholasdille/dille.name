@@ -12,7 +12,7 @@ tags:
 - Container
 - Windows Container
 ---
-When using Windows containers you will quickly notice that Docker requires an elevated prompt to use the named pipe at `\\.\pipe\docker_engine`. Today I will demonstrate how to change the permissions of the named pipe to have a similar UX as on Linux.<!--more-->
+When using Windows containers you will quickly notice that Docker on a Windows Server requires an elevated prompt to use the named pipe at `\\.\pipe\docker_engine`. Today I will demonstrate how to change the permissions of the named pipe to have a similar UX as on Linux.<!--more-->
 
 ## How it works on Linux
 
@@ -20,7 +20,7 @@ On Linux, the Docker CLI and daemon are communicating over the named pipe `/var/
 
 ## How to change Permissions of the Named Pipe on Windows
 
-On Windows, the Docker service creates a named pipe called `\\.\pipe\docker_engine` (the dot addresses the local machine). Unfortunately, the permissions are not adjusted to include any additional groups of non-admin users.
+On Windows Server, the Docker service creates a named pipe called `\\.\pipe\docker_engine` (the dot addresses the local machine). Unfortunately, the permissions are not adjusted to include any additional groups of non-admin users.
 
 It is rather funny to note that you can specify a group in `daemon.json` or as a parameter `--group` and the Docker service will check its existence. It will even die if the group is not present. But unfortunately, the group is never used for anything useful.
 
