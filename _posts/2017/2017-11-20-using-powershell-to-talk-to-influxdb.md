@@ -18,7 +18,7 @@ In my last post, [I released several PowerShell modules to talk to several CI/CD
 As mentioned in my original announcement of the PowerShell modules for CI/CD tools, they all require two base modules called [`Helpers`](https://github.com/nicholasdille/PowerShell-Helpers) and [`WebRequest`](https://github.com/nicholasdille/PowerShell-WebRequest) which can be installed right before `InfluxDb`:
 
 ```powershell
-Install-Module -Name Helpers, WebRequest, InfluxDb -Scope LocalUser -AllowClobber
+Install-Module -Name Helpers, WebRequest, InfluxDb -Scope CurrentUser -AllowClobber
 ```
 
 If you need to make this work through a proxy, tell `WebRequest` to do so for you:
