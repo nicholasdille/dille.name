@@ -9,6 +9,10 @@ author:
   name:             'Nicholas Dille'
   url:              https://twitter.com/nicholasdille
 
+collections:
+  snippets:
+    output: true
+
 gems:
  - jekyll-paginate
  - jekyll-feed

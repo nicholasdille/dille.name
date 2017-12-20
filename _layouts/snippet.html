@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<div class="snippet">
+<h1 class="snippet-title">{{ snippet.title }}</h1>
+<span class="snippet-date">
+Tags{% for tag in snippet.tags %} <a href="/blog/tags/#{{tag}}">#{{tag}}</a>{% endfor %}
+</span>
+
+{{ content }}
+
+</div>
