@@ -6,7 +6,7 @@ title: Snippets
 <h1>Snippets</h1>
 {% for snippet in site.snippets %}
 <div class="snippet">
-<h2 class="snippet-title">{{ snippet.title }}</h1>
+<h2 class="snippet-title">{{ snippet.title }}</h2>
 <span class="snippet-date">{% for tag in snippet.tags %}<a href="/blog/tags/#{{tag}}">#{{tag}}</a> {% endfor %}</span>
 {{ snippet.content }}
 {% endfor %}
