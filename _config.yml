@@ -27,6 +27,7 @@ exclude:
  - Set-StaticAzureWebsite.clixml
  - Set-StaticAzureWebsite.ps1
 
+markdown:           kramdown
 highlighter:        rouge
 permalink:          pretty
 
