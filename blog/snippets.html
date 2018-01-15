@@ -4,7 +4,7 @@ title: Snippets
 ---
 <div class="snippets">
 <h1>Snippets</h1>
-{% for snippet in site.snippets %}<a href="/blog/snippets/#{{ snippet.title | handleize }}">{{ snippet.title }}</a><br />{% endfor %}
+{% for snippet in site.snippets %}<a href="/blog/snippets/#{{ snippet.title | handle }}">{{ snippet.title }}</a><br />{% endfor %}
 {% for snippet in site.snippets %}
 <div class="snippet">
 <h2 class="snippet-title">{{ snippet.title }}</h2>
