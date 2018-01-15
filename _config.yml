@@ -1,8 +1,8 @@
 title:              'Nicholas Dille'
-tagline:            'Cloud, Virtualization and Automation'
-description:        'Cloud, Virtualization and Automation'
+tagline:            'Automation, Containerization and DevOps'
+description:        'Automation, Containerization and DevOps'
 url:                http://dille.name
-keywords:           'automation, virtualization, powershell, docker, container'
+keywords:           'automation, virtualization, powershell, docker, container, devops'
 #baseurl:           /blog/
 
 author:
