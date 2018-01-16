@@ -1,26 +1,46 @@
 ---
-title: 'Docker tipps and tricks'
+title: 'Docker lessons learned'
 layout: snippet
 tags:
 - Docker
 ---
+### Writing
+
 - Only use library images from Docker Hub
-- Build everything else yourself
-- Don't derive from latest, use versioned tags
+- Derive from code
+- Build yourself
+- Use versioned tags
 - Test your images before promoting them to production
 - Use SHELL ["bash", "-e", "-x", "-c"]
-- Readability over layer consolidation
+- Readability over size
 - Use a single ADD statement to integrate a directory tree
+- Dependencies before code
+- Check downloads against checksum or signature
+- Drop root privileges
+- Gosu instead of sudo
+
+### Building
+
+- Build with --pull to ensure current upstream images
 - Build pipelines over multi-stage builds
 - Use microlabeling
-- Check downloads against checksum or signature
 - Separate deployment information from build (e.g. credentials, proxy)
-- When using the build cache, also use explicit pull
+
+### Building (maybe deprecated)
+
 - Create sane environment (clean up before your build)
 - Clean up after your build
+
+### Deployment
+
+- Use environment variables in docker-compose.yml
+
+### Running
+
 - Always do test deployments
 - Monitor your environments
-- Dependencies before code
-- Don't run as root
-- Gosu instead of sudo
-- Use variables in docker-compose.yml
+
+### Advanced
+
+- Scan your images and mitigate
+
