@@ -25,11 +25,13 @@ USER jailed
 
 Let's quickly build the image (calling it `jailimage`), start the container called `jailtest`, and store the container ID:
 
+{% raw %}
 ```powershell
 docker build -t jailimage .
 docker run -d --name jailtest jailimage ping -t localhost
 $Id = & docker inspect --format "{{.ID}}" jailtest
 ```
+{% endraw %}
 
 As soon as you begin to troubleshoot the behaviour, running `docker exec` only allows you to analyze as the user `jailed`:
 
