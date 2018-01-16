@@ -1,12 +1,10 @@
 ---
-title: 'Ubuntu Packages for troubleshooting'
+title: 'Ubuntu packages for troubleshooting'
 layout: snippet
 tags:
 - Docker
 - Ubuntu
 ---
-## Base packages
-
 - ca-certificates
 - apt-transport-https
 - curl
