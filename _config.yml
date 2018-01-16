@@ -1,6 +1,6 @@
 title:              'Nicholas Dille'
-tagline:            'Automation, Containerization and DevOps'
-description:        'Automation, Containerization and DevOps'
+tagline:            'Automation, DevOps and Containerization'
+description:        'Automation, DevOps and Containerization'
 url:                http://dille.name
 keywords:           'automation, virtualization, powershell, docker, container, devops'
 #baseurl:           /blog/
@@ -13,7 +13,7 @@ collections:
   snippets:
     output: true
 
-gems:
+plugins:
  - jekyll-paginate
  - jekyll-feed
  - jekyll-seo-tag
@@ -21,6 +21,7 @@ gems:
 
 exclude:
  - .git
+ - Dockerfile
  - psakefile.ps1
  - CNAME
  - README.md
@@ -40,3 +41,4 @@ excerpt_separator:  <!--more-->
 
 jekyll-mentions:
   base_url: https://www.twitter.com
+
