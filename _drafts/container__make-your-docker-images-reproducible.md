@@ -38,3 +38,5 @@ apt list --installed \
 
         done
 ```
+
+XXX store in source control to restore pinned versions
