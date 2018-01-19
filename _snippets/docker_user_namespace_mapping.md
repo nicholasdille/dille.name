@@ -1,5 +1,5 @@
 ---
-title: 'Docker lessons learned'
+title: 'Docker user namespace mapping'
 layout: snippet
 tags:
 - Docker
