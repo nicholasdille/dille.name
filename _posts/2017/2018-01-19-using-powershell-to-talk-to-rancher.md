@@ -69,7 +69,7 @@ Function        Get-RancherVolume                                  0.1.19     Ra
 Function        Set-RancherServer                                  0.1.19     Rancher
 ```
 
-XXX env, pscustomobject, filter, all properties, raw
+Query and filter environments:
 
 ```powershell
 PS> Get-RancherEnvironment
@@ -87,6 +87,8 @@ PS> Get-RancherEnvironment -Id 1a5
  -- ----     -----  ------
 1a5 Live-AWS active healthy
 
+The resulting objects have more properties than displayed:
+
 PS> Get-RancherEnvironment -Id 1a5 | fl *
 
 Id            : 1a5
@@ -95,6 +97,8 @@ State         : active
 Health        : healthy
 Orchestration : cattle
 Uuid          : adminProject
+
+You can even view the raw output from the Rancher API:
 
 PS> Get-RancherEnvironment -Id 1a5 -Raw
 
@@ -173,7 +177,7 @@ version                : 2
 virtualMachine         : False
 ```
 
-XXX hosts
+Query all hosts or only those located in a specific environment:
 
 ```powershell
 C:\Users\nicho> Get-RancherHost -EnvironmentId 1a5
@@ -210,7 +214,7 @@ Environment Id                         Name  State
 1a9         1h50      vlprdlb01.haufe-ep.de active
 ```
 
-XXX stacks
+Query and filter stacks:
 
 ```powershell
 C:\Users\nicho> Get-RancherStack | ? Name -eq ipsec
