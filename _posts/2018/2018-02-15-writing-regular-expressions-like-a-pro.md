@@ -24,12 +24,17 @@ You may be tempted to use whitespaces as the delimiter but this will fail becaus
 
 ```text
 /^(.+)\s(.+)\s(.+)\s\[(.+)\]\s\"(.+)\s(.+)\s(.+)\"\s(.+)\s(.+)$/
+```
+
+... or ...
+
+```text
 /^(\S+)\s(\S+)\s(\w+)\s\[([^\]])\]\s\"(\S+)\s(\S+)\s([^\]]+)\"\s(\d+)\s(\d+|-)$/
 ```
 
 All of them are very hard to read.
 
-## RexEx like a Pro
+## RexExes like a Pro
 
 In PowerShell you will usually use a construct similar to the following:
 
@@ -43,21 +48,21 @@ The following pattern parses the common log format, is easier to read and includ
 
 ```powershell
 $Pattern = '(?x)
-    ^                                                  # Beginning of the line
-    (?<SourceIp>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})    # IP address
-    \s                                                 # field separator
-    \S+                                                # username provided by identd (deprecated)
-    \s                                                 # field separator
-    (?<User>\S+)                                       # username provided by HTTP authentication
-    \s                                                 # field separator
-    \[(?<Timestamp>[^]]+)\]                            # date enclosed in brackets
-    \s                                                 # field separator
-    (?<Request>".+")                                   # request enclosed in quotation marks
-    \s                                                 # field separator
-    (?<Code>\d+)                                       # HTTP return code
-    \s                                                 # field separator
-    (?<Size>\d+|-)                                     # Size of response
-    $                                                  # End of the line
+    ^                          # Beginning of the line
+    (?<SourceIp>\S+)           # IP address
+    \s                         # field separator
+    \S+                        # username provided by identd (deprecated)
+    \s                         # field separator
+    (?<User>\S+)               # username provided by HTTP authentication
+    \s                         # field separator
+    \[(?<Timestamp>[^]]+)\]    # date enclosed in brackets
+    \s                         # field separator
+    (?<Request>".+")           # request enclosed in quotation marks
+    \s                         # field separator
+    (?<Code>\d+)               # HTTP return code
+    \s                         # field separator
+    (?<Size>\d+|-)             # Size of response
+    $                          # End of the line
     '
 ```
 
