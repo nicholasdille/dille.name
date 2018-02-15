@@ -10,13 +10,11 @@ tags:
 - PowerShell
 - RegEx
 ---
-## Writing Readable Regular Expressions in PowerShell
-
 Regular expressions are often considered the holy grail of parsing data. Regexes are very powerful but most of them are unreadable as well as seldomly documented. But *with great power comes great responsibility*. I will demonstrate how to write complex regular expressions, make them readable and even include proper documentation.
 
 <!--more-->
 
-# Typical RexEx
+## Typical RexEx
 
 I recently had to parse the access log of web server. Web servers offer different format for this access log. The common log format produced lines like the following:
 
@@ -31,7 +29,7 @@ You may be tempted to use whitespaces as the delimiter but this will fail becaus
 
 All of them are very hard to read.
 
-# RexEx like a Pro
+## RexEx like a Pro
 
 In PowerShell you will usually use a construct similar to the following:
 
