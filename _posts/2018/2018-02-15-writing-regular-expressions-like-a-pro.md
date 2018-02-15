@@ -51,9 +51,9 @@ $Pattern = '(?x)
     ^                          # Beginning of the line
     (?<SourceIp>\S+)           # IP address
     \s                         # field separator
-    \S+                        # username provided by identd (deprecated)
+    \S+                        # identd username (deprecated)
     \s                         # field separator
-    (?<User>\S+)               # username provided by HTTP authentication
+    (?<User>\S+)               # username provided by HTTP auth
     \s                         # field separator
     \[(?<Timestamp>[^]]+)\]    # date enclosed in brackets
     \s                         # field separator
@@ -84,7 +84,11 @@ Request                        "GET /apache_pb.gif HTTP/1.0"
 As a side effect, this also makes your code more readable because it becomes obvious which part of the expression you are refencing:
 
 ```powershell
-PS> [datetime]::ParseExact($Matches['Timestamp'], 'dd/MMM/yyyy:HH:mm:ss zz00', [System.Globalization.CultureInfo]::InvariantCulture).ToString([Globalization.CultureInfo]'en-US')
+PS> [datetime]::ParseExact(
+        $Matches['Timestamp'],
+        'dd/MMM/yyyy:HH:mm:ss zz00',
+        [System.Globalization.CultureInfo]::InvariantCulture
+    ).ToString([Globalization.CultureInfo]'en-US')
 
 10/10/2000 10:55:36 PM
 ```
