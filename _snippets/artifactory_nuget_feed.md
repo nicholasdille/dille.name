@@ -1,5 +1,5 @@
 ---
-title: 'Docker lessons learned'
+title: 'Artifactory NuGet feed for PowerShell modules'
 layout: snippet
 tags:
 - Docker
