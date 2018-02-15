@@ -1,5 +1,5 @@
 ---
-title: 'Writing Regular Expressions like a Pro'
+title: 'Writing Regular Expressions in #PowerShell like a Pro'
 date: 2018-02-15T20:20:00+01:00
 author: Nicholas Dille
 layout: post
