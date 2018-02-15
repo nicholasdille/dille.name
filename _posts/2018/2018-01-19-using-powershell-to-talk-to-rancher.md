@@ -104,51 +104,51 @@ PS> Get-RancherEnvironment -Id 1a5 -Raw
 
 id                     : 1a5
 type                   : project
-links                  : @{self=https://rancher.haufedev.systems/v2-beta/projects/1a5;
-                         agents=https://rancher.haufedev.systems/v2-beta/projects/1a5/agents;
-                         auditLogs=https://rancher.haufedev.systems/v2-beta/projects/1a5/auditlogs;
-                         backupTargets=https://rancher.haufedev.systems/v2-beta/projects/1a5/backuptargets;
-                         backups=https://rancher.haufedev.systems/v2-beta/projects/1a5/backups;
-                         certificates=https://rancher.haufedev.systems/v2-beta/projects/1a5/certificates;
-                         configItemStatuses=https://rancher.haufedev.systems/v2-beta/projects/1a5/configitemstatuses;
-                         containerEvents=https://rancher.haufedev.systems/v2-beta/projects/1a5/containerevents;
-                         credentials=https://rancher.haufedev.systems/v2-beta/projects/1a5/credentials;
-                         externalEvents=https://rancher.haufedev.systems/v2-beta/projects/1a5/externalevents;
-                         genericObjects=https://rancher.haufedev.systems/v2-beta/projects/1a5/genericobjects; healthche
-                         ckInstanceHostMaps=https://rancher.haufedev.systems/v2-beta/projects/1a5/healthcheckinstanceho
-                         stmaps; hostTemplates=https://rancher.haufedev.systems/v2-beta/projects/1a5/hosttemplates;
-                         hosts=https://rancher.haufedev.systems/v2-beta/projects/1a5/hosts;
-                         images=https://rancher.haufedev.systems/v2-beta/projects/1a5/images;
-                         instanceLinks=https://rancher.haufedev.systems/v2-beta/projects/1a5/instancelinks;
-                         instances=https://rancher.haufedev.systems/v2-beta/projects/1a5/instances;
-                         ipAddresses=https://rancher.haufedev.systems/v2-beta/projects/1a5/ipaddresses;
-                         labels=https://rancher.haufedev.systems/v2-beta/projects/1a5/labels;
-                         mounts=https://rancher.haufedev.systems/v2-beta/projects/1a5/mounts;
-                         networkDrivers=https://rancher.haufedev.systems/v2-beta/projects/1a5/networkdrivers;
-                         networks=https://rancher.haufedev.systems/v2-beta/projects/1a5/networks;
-                         physicalHosts=https://rancher.haufedev.systems/v2-beta/projects/1a5/physicalhosts;
-                         ports=https://rancher.haufedev.systems/v2-beta/projects/1a5/ports;
-                         processInstances=https://rancher.haufedev.systems/v2-beta/projects/1a5/processinstances;
-                         projectMembers=https://rancher.haufedev.systems/v2-beta/projects/1a5/projectmembers;
-                         projectTemplate=https://rancher.haufedev.systems/v2-beta/projects/1a5/projecttemplate;
-                         projectTemplates=https://rancher.haufedev.systems/v2-beta/projects/1a5/projecttemplates;
-                         scheduledUpgrades=https://rancher.haufedev.systems/v2-beta/projects/1a5/scheduledupgrades;
-                         secrets=https://rancher.haufedev.systems/v2-beta/projects/1a5/secrets;
-                         serviceConsumeMaps=https://rancher.haufedev.systems/v2-beta/projects/1a5/serviceconsumemaps;
-                         serviceEvents=https://rancher.haufedev.systems/v2-beta/projects/1a5/serviceevents;
-                         serviceExposeMaps=https://rancher.haufedev.systems/v2-beta/projects/1a5/serviceexposemaps;
-                         serviceLogs=https://rancher.haufedev.systems/v2-beta/projects/1a5/servicelogs;
-                         services=https://rancher.haufedev.systems/v2-beta/projects/1a5/services;
-                         snapshots=https://rancher.haufedev.systems/v2-beta/projects/1a5/snapshots;
-                         stacks=https://rancher.haufedev.systems/v2-beta/projects/1a5/stacks;
-                         storageDrivers=https://rancher.haufedev.systems/v2-beta/projects/1a5/storagedrivers;
-                         storagePools=https://rancher.haufedev.systems/v2-beta/projects/1a5/storagepools;
-                         subnets=https://rancher.haufedev.systems/v2-beta/projects/1a5/subnets;
-                         userPreferences=https://rancher.haufedev.systems/v2-beta/projects/1a5/userpreferences;
-                         volumeTemplates=https://rancher.haufedev.systems/v2-beta/projects/1a5/volumetemplates;
-                         volumes=https://rancher.haufedev.systems/v2-beta/projects/1a5/volumes;
-                         hostStats=https://rancher.haufedev.systems/v2-beta/projects/1a5/projects/1a5/hoststats}
-actions                : @{defaultNetworkId=https://rancher.haufedev.systems/v2-beta/projects/1a5/?action=defaultnetwor
+links                  : @{self=https://rancher.mydomain.com/v2-beta/projects/1a5;
+                         agents=https://rancher.mydomain.com/v2-beta/projects/1a5/agents;
+                         auditLogs=https://rancher.mydomain.com/v2-beta/projects/1a5/auditlogs;
+                         backupTargets=https://rancher.mydomain.com/v2-beta/projects/1a5/backuptargets;
+                         backups=https://rancher.mydomain.com/v2-beta/projects/1a5/backups;
+                         certificates=https://rancher.mydomain.com/v2-beta/projects/1a5/certificates;
+                         configItemStatuses=https://rancher.mydomain.com/v2-beta/projects/1a5/configitemstatuses;
+                         containerEvents=https://rancher.mydomain.com/v2-beta/projects/1a5/containerevents;
+                         credentials=https://rancher.mydomain.com/v2-beta/projects/1a5/credentials;
+                         externalEvents=https://rancher.mydomain.com/v2-beta/projects/1a5/externalevents;
+                         genericObjects=https://rancher.mydomain.com/v2-beta/projects/1a5/genericobjects; healthche
+                         ckInstanceHostMaps=https://rancher.mydomain.com/v2-beta/projects/1a5/healthcheckinstanceho
+                         stmaps; hostTemplates=https://rancher.mydomain.com/v2-beta/projects/1a5/hosttemplates;
+                         hosts=https://rancher.mydomain.com/v2-beta/projects/1a5/hosts;
+                         images=https://rancher.mydomain.com/v2-beta/projects/1a5/images;
+                         instanceLinks=https://rancher.mydomain.com/v2-beta/projects/1a5/instancelinks;
+                         instances=https://rancher.mydomain.com/v2-beta/projects/1a5/instances;
+                         ipAddresses=https://rancher.mydomain.com/v2-beta/projects/1a5/ipaddresses;
+                         labels=https://rancher.mydomain.com/v2-beta/projects/1a5/labels;
+                         mounts=https://rancher.mydomain.com/v2-beta/projects/1a5/mounts;
+                         networkDrivers=https://rancher.mydomain.com/v2-beta/projects/1a5/networkdrivers;
+                         networks=https://rancher.mydomain.com/v2-beta/projects/1a5/networks;
+                         physicalHosts=https://rancher.mydomain.com/v2-beta/projects/1a5/physicalhosts;
+                         ports=https://rancher.mydomain.com/v2-beta/projects/1a5/ports;
+                         processInstances=https://rancher.mydomain.com/v2-beta/projects/1a5/processinstances;
+                         projectMembers=https://rancher.mydomain.com/v2-beta/projects/1a5/projectmembers;
+                         projectTemplate=https://rancher.mydomain.com/v2-beta/projects/1a5/projecttemplate;
+                         projectTemplates=https://rancher.mydomain.com/v2-beta/projects/1a5/projecttemplates;
+                         scheduledUpgrades=https://rancher.mydomain.com/v2-beta/projects/1a5/scheduledupgrades;
+                         secrets=https://rancher.mydomain.com/v2-beta/projects/1a5/secrets;
+                         serviceConsumeMaps=https://rancher.mydomain.com/v2-beta/projects/1a5/serviceconsumemaps;
+                         serviceEvents=https://rancher.mydomain.com/v2-beta/projects/1a5/serviceevents;
+                         serviceExposeMaps=https://rancher.mydomain.com/v2-beta/projects/1a5/serviceexposemaps;
+                         serviceLogs=https://rancher.mydomain.com/v2-beta/projects/1a5/servicelogs;
+                         services=https://rancher.mydomain.com/v2-beta/projects/1a5/services;
+                         snapshots=https://rancher.mydomain.com/v2-beta/projects/1a5/snapshots;
+                         stacks=https://rancher.mydomain.com/v2-beta/projects/1a5/stacks;
+                         storageDrivers=https://rancher.mydomain.com/v2-beta/projects/1a5/storagedrivers;
+                         storagePools=https://rancher.mydomain.com/v2-beta/projects/1a5/storagepools;
+                         subnets=https://rancher.mydomain.com/v2-beta/projects/1a5/subnets;
+                         userPreferences=https://rancher.mydomain.com/v2-beta/projects/1a5/userpreferences;
+                         volumeTemplates=https://rancher.mydomain.com/v2-beta/projects/1a5/volumetemplates;
+                         volumes=https://rancher.mydomain.com/v2-beta/projects/1a5/volumes;
+                         hostStats=https://rancher.mydomain.com/v2-beta/projects/1a5/projects/1a5/hoststats}
+actions                : @{defaultNetworkId=https://rancher.mydomain.com/v2-beta/projects/1a5/?action=defaultnetwor
                          kid}
 baseType               : account
 name                   : Live-AWS
