@@ -68,7 +68,7 @@ $Pattern = '(?x)
 
 At the beginning, the pattern enables extended mode by specifying `(?x)`. It forces the parser to ignore whitespaces (space, tab and newlines) and enables comments using `#`. Each important item is assigned a name by using `(?<Name>*subexpression*)`. PowerShell make all matches available in a hashtable called `$Matches` but - instead of assigning an index to every expression enclosed in brackets - those matches are assigned the specified name:
 
-```
+```powershell
 PS> $Matches
 Name                           Value
 ----                           -----
