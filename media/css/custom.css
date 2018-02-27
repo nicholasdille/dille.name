@@ -36,3 +36,12 @@
 .highlighter-rouge {
     font-size: smaller;
 }
+pre {
+    font-size: .75rem;
+    background-color: #ededed;
+}
+code {
+    font-size: .75rem;
+    color: black;
+    background-color: #ededed;
+}
