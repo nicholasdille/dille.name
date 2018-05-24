@@ -9,17 +9,17 @@ layout: page
 
 Angaben gemäß § 5 TMG
 
-Nicholas Dille
-Dreisamstraße 1b
+Nicholas Dille<br/>
+Dreisamstraße 1b<br/>
 79232 March
 
-Kontakt:
-Telefon: 07665/9419418
+Telefon: 07665/9419418<br/>
 E-Mail: webmaster@dille.name
 
 Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
-Nicholas Dille
-Dreisamstraße 1b
+
+Nicholas Dille<br/>
+Dreisamstraße 1b<br/>
 79232 March
 
 ## Haftungsausschluss

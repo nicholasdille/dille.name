@@ -11,10 +11,11 @@ Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der V
 
 ### Verantwortlicher
 
-Nicholas Dille
-Dreisamstraße 1b
-79232 March
+Nicholas Dille<br/>
+Dreisamstraße 1b<br/>
+79232 March<br/>
 webmaster@dille.name
+
 Link zum Impressum: [http://dille.name/blog/impressum/](http://dille.name/blog/impressum/)
 
 ### Arten der verarbeiteten Daten
