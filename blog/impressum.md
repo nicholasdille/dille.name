@@ -7,20 +7,9 @@ layout: page
 ---
 **Dieser Blog ist ein nichtkommerzielles Angebot und mit keinem Unternehmen verbunden.**
 
-Angaben gemäß § 5 TMG
+Verantwortlich für den Inhalt nach §55 Abs. 2 RStV und Angaben nach §5 TMG:
 
-Nicholas Dille<br/>
-Dreisamstraße 1b<br/>
-79232 March
-
-Telefon: 07665/9419418<br/>
-E-Mail: webmaster@dille.name
-
-Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
-
-Nicholas Dille<br/>
-Dreisamstraße 1b<br/>
-79232 March
+![Nicholas Dille, Dreisamstraße 1b, 79232 March, webmaster@dille.name, 076659419418](/media/impressum_adresse.png)
 
 ## Haftungsausschluss
 
