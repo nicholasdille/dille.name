@@ -4,7 +4,7 @@ title: Tags
 ---
 
 <div class='list-group'>
-  {% assign tags_list = site.tags %}
+  {% assign tags_list = (site.tags | sort) %}
 
   {% if tags_list.first[0] == null %}
     {% for tag in tags_list %}
@@ -20,7 +20,7 @@ title: Tags
 </div>
 
 
-{% for tag in site.tags %}
+{% for tag in tags_list %}
   <h2 class='tag-header' id="{{ tag[0] }}">{{ tag[0] }}</h2>
   <ul>
     {% assign pages_list = tag[1] %}
