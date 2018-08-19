@@ -23,7 +23,7 @@ build_script:
 
     cd /home/appveyor/projects/blog
 
-    docker run -v $(pwd):/srv/jekyll jekyll/jekyll:3.7.3 jekyll build
+    docker run -v $(pwd):/srv/jekyll jekyll/jekyll:3.8 jekyll build
 deploy_script:
 - sh: >-
     pwd
