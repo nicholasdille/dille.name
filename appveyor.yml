@@ -27,7 +27,7 @@ build_script:
 
     docker run --name jekyll jekyll jekyll build
 
-    docker cp jekyll:/srv/jekyll/ ./_site
+    docker cp jekyll:/srv/jekyll/_site/ ./_site
 deploy_script:
 - sh: >-
     pwd
