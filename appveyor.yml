@@ -23,7 +23,11 @@ build_script:
 
     cd /home/appveyor/projects/blog
 
-    docker run -v $(pwd):/srv/jekyll jekyll/jekyll:3.8 jekyll build
+    docker build --file Dockerfile.jekyll --tag jekyll .
+
+    docker run --name jekyll jekyll jekyll build
+
+    docker cp jekyll:/srv/jekyll/ ./_site
 deploy_script:
 - sh: >-
     pwd
