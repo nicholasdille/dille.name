@@ -14,11 +14,11 @@ Everyone is trying really hard to separate functionality in their Docker images.
 
 ## Table of Contents
 
-1. How to Reduce the Build Time of a Monolithic Docker Image (this post)
+1. How to Reduce the Build Time of a Monolithic Docker Image by merging Layers from Docker Images (this post)
 
-1. How to Automate the Parallalization in PowerShell (coming soon)
+1. [How to Automate the Merging of Layers from Docker Images in PowerShell](/blog/2018/09/07/how-to-automate-the-merging-of-layers-from-docker-images-in-powershell/) (published)
 
-1. How to Fix the Package Manager Database (coming soon)
+1. How to Fix Package Manager Databases when Merging Layers from Docker Images (coming soon)
 
 ## Why Reduce the Build Time
 
@@ -415,8 +415,12 @@ docker build --tag localhost:5000/maven:<next_build> --file Dockerfile.maven --c
 
 This approach is especially helpful if you are using a CI/CD tool to build your images. Populating the build cache from the previous build reduces build times even when build agents are recreated.
 
+## Automation
+
+I have published a [PowerShell modules automating the process of merging layers](/blog/2018/09/07/how-to-automate-the-merging-of-layers-from-docker-images-in-powershell/) from a base image and all derived images.
+
 ## Limitations
 
 At this stage, assembling an image requires the layers to be independent. The last change to every single file wins, meaning that only one layer is able to change a file. For example, if one section modifies a configuration file and another section modifies the same configuration file, only the last change will be present in the resulting image.
 
-As a consequence, package managers like `dpkg` and `rpm` will not work out of the box using this approach. This will be the topic of part 2 in this series.
+As a consequence, package managers like `dpkg` and `rpm` will not work out of the box using this approach. This will be the topic of part 3 in this series.
