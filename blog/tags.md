@@ -3,7 +3,7 @@ layout: page
 title: Tags
 ---
 
-{% assign tags_list = (site.tags | sort) %}
+{% assign tags_list = site.tags | sort %}
 
 <div class='list-group'>
   {% for tag in tags_list %}
