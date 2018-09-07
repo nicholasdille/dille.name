@@ -67,7 +67,13 @@ These functions perform rather basic tasks necessary for `Merge-DockerImageLayer
 
 ```powershell
 Install-Module -Name DockerRegistry
-Merge-DockerImageLayer -Registry 'http://10.0.0.100:5000' -Name 'target' -BaseRepository 'base' -ParallelRepository 'maven', 'golang'
+$Params = @{
+    Registry           = 'http://10.0.0.100:5000'
+    Name               = 'target'
+    BaseRepository     = 'base'
+    ParallelRepository = 'maven', 'golang'
+}
+Merge-DockerImageLayer @Params
 ```
 
 The above commands will result in the follow rudimentary output to show you the progress of the process:
