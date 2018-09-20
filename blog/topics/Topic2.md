@@ -1,5 +1,5 @@
 ---
-title: PowerShell Desired State Configuration
+title: PowerShell
 author: Nicholas Dille
 layout: page
 featured_topic: true
@@ -12,6 +12,6 @@ PowerShell 4 introduced a new feature called Desired State Configuration (PSDSC)
 
 <ul class="this" style="list-style-type:none">
 {% for post in site.posts %}
-{% if post.tags contains 'PSDSC' %}<li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
+{% if post.tags contains 'PowerShell' %}<li>{{ post.date | date:"%Y-%m-%d" }} <a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
 {% endfor %}
 </ul>
