@@ -29,6 +29,7 @@ docker run -d \
     --env CA_CRT=$(cat ca.pem) \
     --env SERVER_KEY=$(cat server_key.pem) \
     --env SERVER_CRT=$(cat server_cert.pem) \
+    --volume /var/run/docker.sock:/var/run/docker.sock
     --net=host
     nicholasdille/docker-auth-proxy
 ```
@@ -40,6 +41,7 @@ docker run -d \
     --env CA_CRT=$(cat ca.pem) \
     --env SERVER_KEY=$(cat server_key.pem) \
     --env SERVER_CRT=$(cat server_cert.pem) \
+    --volume /var/run/docker.sock:/var/run/docker.sock
     -p 2376:2376
     nicholasdille/docker-auth-proxy
 ```
