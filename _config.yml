@@ -1,13 +1,29 @@
 title:              'Nicholas Dille'
 tagline:            'Automation, DevOps and Containerization'
 description:        'Automation, DevOps and Containerization'
-url:                http://dille.name
+url:                https://dille.name
 keywords:           'automation, virtualization, powershell, docker, container, devops'
 #baseurl:           /blog/
 
 author:
   name:             'Nicholas Dille'
   url:              https://twitter.com/nicholasdille
+
+twitter:
+  username: nicholasdille
+  card: summary
+
+social:
+  name: Nicholas Dille
+  links:
+    - https://twitter.com/nicholasdille
+    - https://www.linkedin.com/in/nicholasdille/
+    - https://www.xing.com/profile/Nicholas_Dille
+
+lang: en_US
+
+webmaster_verifications:
+  google: MFi9wm_TjR4XDF8yNCEc1V1pRO3vkro_COmJtsySst4
 
 collections:
   snippets:
