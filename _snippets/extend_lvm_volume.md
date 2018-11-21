@@ -54,14 +54,14 @@ How to extend a LVM volume:
 
     a. extN:
 
-        ```bash
-        resize2fs /dev/centos/root
-        ```
+    ```bash
+    resize2fs /dev/centos/root
+    ```
 
 
     b. xfs:
 
-        ```bash
-        xfs_grow /dev/centos/root
-        ```
+    ```bash
+    xfs_growfs /dev/centos/root
+    ```
 
