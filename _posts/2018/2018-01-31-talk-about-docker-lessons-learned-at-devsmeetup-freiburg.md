@@ -17,3 +17,5 @@ At the end of January 2018 I had the opportunity to talk at [DevsMeetup Freiburg
 I was very fortunate to have a very interactive crowd. Thanks for having me and for the controversial discussions.
 
 Here are [my slides](https://github.com/nicholasdille/Sessions/tree/master/2018-01-31%20Docker%20%40%20Devsmeetup).
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/8rM5rU5vMZWykE" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/NicholasDille/lessons-learned-from-running-docker-in-production-134206568" title="Lessons Learned from Running Docker in Production" target="_blank">Lessons Learned from Running Docker in Production</a> </strong> from <strong><a href="https://www.slideshare.net/NicholasDille" target="_blank">Nicholas Dille</a></strong> </div>
