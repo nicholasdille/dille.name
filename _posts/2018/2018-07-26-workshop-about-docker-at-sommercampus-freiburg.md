@@ -1,9 +1,9 @@
 ---
 title: 'Workshop about #Docker at Sommercampus #Freiburg'
-date: 2019-01-30T23:34:00+01:00
+date: 2018-07-26T23:34:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2019/01/30/talk-about-docker-security-at-devsmeetup-freiburg/
+permalink: /blog/2018/07/26/talk-about-docker-security-at-devsmeetup-freiburg/
 categories:
   - Haufe-Lexware
 tags:
