@@ -18,13 +18,13 @@
 
         <nav class="sidebar-nav">
             <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/blog/">Home</a>
-            <a class="sidebar-nav-item" href="/blog/about/">About</a>
-            <a class="sidebar-nav-item" href="/blog/archive/">Archive</a>
-            <a class="sidebar-nav-item" href="/blog/impressum/">Impressum</a>
-            <a class="sidebar-nav-item" href="/blog/privacy/">Privacy / Datenschutz</a>
-            <a class="sidebar-nav-item" href="/blog/search/">Search</a>
-            <a class="sidebar-nav-item" href="/blog/slides/">Slide Decks</a>
-            <a class="sidebar-nav-item" href="/blog/tags/">Tags</a>
+            <a class="sidebar-nav-item{% if page.url == '/blog/about/' %} active{% endif %}" href="/blog/about/">About</a>
+            <a class="sidebar-nav-item{% if page.url == '/blog/archive/' %}" href="/blog/archive/">Archive</a>
+            <a class="sidebar-nav-item{% if page.url == '/blog/impressum/' %}" href="/blog/impressum/">Impressum</a>
+            <a class="sidebar-nav-item{% if page.url == '/blog/privacy/' %}" href="/blog/privacy/">Privacy / Datenschutz</a>
+            <a class="sidebar-nav-item{% if page.url == '/blog/search/' %}" href="/blog/search/">Search</a>
+            <a class="sidebar-nav-item{% if page.url == '/blog/slides/' %}" href="/blog/slides/">Slide Decks</a>
+            <a class="sidebar-nav-item{% if page.url == '/blog/tags/' %}" href="/blog/tags/">Tags</a>
         </nav>
 
         <p>&copy; 2001-{{ site.time | date: '%Y' }}. All rights reserved.</p>
