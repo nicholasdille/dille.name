@@ -28,4 +28,4 @@ In my workshop I covered the following topics:
 - Inception (nested containers)
 - Security
 
-Please find the slides [here](/slides/2019-06-06/Devps Essentials 2019.html). The demos are part of the [repository hosting the slides](https://github.com/nicholasdille/Sessions/tree/2019-06-06/containers).
+Please find the slides [here](/slides/2019-06-06/DevOps Essentials 2019.html). The demos are part of the [repository hosting the slides](https://github.com/nicholasdille/Sessions/tree/2019-06-06/containers).

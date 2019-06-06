@@ -181,26 +181,13 @@
         transition: 'convex',
         backgroundTransition: 'fade',
 
-        allottedTime: 180 * 60 * 1000,
-        keyboard: {
-            // pause/resume time when Enter is pressed
-            13: () => {
-                ElapsedTimeBar.isPaused ? ElapsedTimeBar.resume() : ElapsedTimeBar.pause();
-            },
-            // reset timer when 'r' is pressed
-            82: () => {
-                ElapsedTimeBar.reset();
-            }
-        },
-
         dependencies: [
             { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
             { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
             { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
             { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
             { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/zoom-js/zoom.js', async: true },
-            { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/notes/notes.js' },
-            { src: 'plugins/elapsed-time-bar-2699fc8/elapsed-time-bar.js'}
+            { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/notes/notes.js' }
 
         ]
     });
