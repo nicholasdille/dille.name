@@ -1,28 +1,26 @@
 ---
 
 ---
-// builds lunr
+// collect documents
+var documents = [{% for post in site.posts %}{
+  "title": {{ post.title | jsonify }},
+  "link": {{ post.url | jsonify }},
+  "date": {{ post.date | date: '%B %-d, %Y' | jsonify }},
+  "excerpt": {{ post.excerpt | strip_html | jsonify }}
+}{% unless forloop.last %},{% endunless %}{% endfor %}];
+
+// builds index
 var index = lunr(function () {
   this.field('title')
   this.field('content', {boost: 10})
   this.field('tags')
   this.ref('id')
+
+  documents.forEach(function (doc) {
+    this.add(doc)
+  }, this)
 });
-{% assign count = 0 %}{% for post in site.posts %}
-index.add({
-  title: {{ post.title | jsonify }},
-  content: {{ post.excerpt | strip_html | jsonify }},
-  tags: {{ post.tags | jsonify }},
-  id: {{ count }}
-});{% assign count = count | plus: 1 %}{% endfor %}
-console.log( jQuery.type(index) );
-// builds reference data
-var store = [{% for post in site.posts %}{
-  "title": {{ post.title | jsonify }},
-  "link": {{ post.url | jsonify }},
-  "date": {{ post.date | date: '%B %-d, %Y' | jsonify }},
-  "excerpt": {{ post.excerpt | strip_html | jsonify }}
-}{% unless forloop.last %},{% endunless %}{% endfor %}]
+
 // builds search
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
