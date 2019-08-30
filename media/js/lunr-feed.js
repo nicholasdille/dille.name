@@ -3,7 +3,7 @@
 ---
 // collect documents
 var data = [{% for post in site.posts %}{
-  "id": {{ forloop.index0 }}
+  "id": {{ forloop.index0 }},
   "title": {{ post.title | jsonify }},
   "link": {{ post.url | jsonify }},
   "date": {{ post.date | date: '%B %-d, %Y' | jsonify }},
