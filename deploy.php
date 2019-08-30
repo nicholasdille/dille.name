@@ -18,4 +18,6 @@
     print_r(nl2br2($message));
     $message=shell_exec("rmdir ../www2 2>&1");
     print_r(nl2br2($message));
+    $message=shell_exec("rmdir ../site.tar.gz 2>&1");
+    print_r(nl2br2($message));
 ?>
