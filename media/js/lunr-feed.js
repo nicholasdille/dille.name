@@ -36,7 +36,7 @@ $(document).ready(function() {
     // Add status
     resultdiv.prepend('<p class="">Found '+result.length+' result(s)</p>');
     // Loop through, match, and add results
-    for (var item in result.reverse()) {
+    for (var item in result) {
       var ref = result[item].ref;
       var searchitem = '<div class="post"><h1 class="post-title"><a href="'+data[ref].link+'">'+data[ref].title+'</a></h1><span class="post-date">'+data[ref].date+'</span>'+data[ref].excerpt+'</div>';
       resultdiv.append(searchitem);
