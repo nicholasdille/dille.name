@@ -3,7 +3,7 @@
 set -o errexit
 
 echo "########## Check"
-sha256sum -c ../site.tar.gz.sha256
+(cd .. && sha256sum -c site.tar.gz.sha256)
 
 echo "########## Unpacking"
 mkdir -p ../www2
@@ -18,4 +18,4 @@ rsync --verbose --recursive --delete-after ../www2/ ../www/
 echo "########## Cleaning up"
 rm -rfv ../www2/* ../www2/.htaccess
 rmdir ../www2
-rmdir ../site.tar.gz
+rm ../site.tar.gz ../site.tar.gz.sha256
