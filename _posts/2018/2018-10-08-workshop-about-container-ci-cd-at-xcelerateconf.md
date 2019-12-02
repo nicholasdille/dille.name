@@ -13,6 +13,7 @@ tags:
 - Continuous Delivery
 - Slide Deck
 - Slides
+- xcelerate
 ---
 This year, I co-organized [x-celerate conference](https://www.x-celerate.de/) for the second time and contributed a [half-day workshop about CI/CD for containers](https://www.x-celerate.de/programm2018).<!--more-->
 
