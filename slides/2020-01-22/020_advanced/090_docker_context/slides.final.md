@@ -37,15 +37,3 @@ Check remote host:
 ```bash
 docker run --uts host alpine hostname
 ```
-
---
-
-## `docker context`
-
-Manage connections to Kubernetes clusters
-
-```bash
-k3d create --name context --worker 3
-KUBECONFIG=$(k3d get-kubeconfig --name=context)
-docker context create k3d --docker 'host=unix:///var/run/docker.sock' --kubernetes config-file=${KUBECONFIG}
-```

@@ -21,16 +21,16 @@ Based on manifest-tool (by Docker Captain Phil Estes)
 ```bash
 $ docker run mplatform/mquery openjdk:8-jdk
 Image: openjdk:8-jdk
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Manifest List: Yes
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Supported platforms:
+* Manifest List: Yes
+* Supported platforms:
 - linux/amd64
 - windows/amd64:10.0.17763.805
 - windows/amd64:10.0.17134.1069
 - windows/amd64:10.0.14393.3274
 $ docker run mplatform/mquery openjdk:8-jdk-nanoserver
 Image: openjdk:8-jdk-nanoserver
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Manifest List: Yes
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Supported platforms:
+* Manifest List: Yes
+* Supported platforms:
 - windows/amd64:10.0.17763.802
 - windows/amd64:10.0.17134.1069
 ```
@@ -42,8 +42,8 @@ Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command b
 ```bash
 $ docker run mplatform/mquery hello-world
 Image: hello-world
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Manifest List: Yes
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Supported platforms:
+* Manifest List: Yes
+* Supported platforms:
 - linux/amd64
 - linux/arm/v5
 - linux/arm/v7
@@ -62,8 +62,8 @@ Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command b
 ```bash
 $ docker run mplatform/mquery docker
 Image: docker
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Manifest List: Yes
-Dockerfile buildx-0.command buildx-1.command buildx-2.command buildx-3.command buildx-4.command buildx.demo clean.sh hello.c manifest-0.command manifest-1.command manifest-2.command manifest.demo prepare.sh slides.final.md slides.template.md Supported platforms:
+* Manifest List: Yes
+* Supported platforms:
 - linux/amd64
 - linux/arm/v6
 - linux/arm/v7
