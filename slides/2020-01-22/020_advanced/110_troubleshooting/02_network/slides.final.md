@@ -23,3 +23,12 @@ Run container which needs troubleshooting:
 ```bash
 docker run -d --name nginx nginx
 ```
+
+Join namespaces with existing container:
+
+```bash
+docker run -it --rm \
+    --net container:nginx \
+    --pid container:nginx \
+    alpine
+```

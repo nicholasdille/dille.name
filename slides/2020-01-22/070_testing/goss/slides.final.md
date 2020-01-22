@@ -44,7 +44,7 @@ Do not change behaviour specially entrypoint, commands and parameters
 
 It runs a container, mounts goss and executes tests
 
-Run dgoss using `goss.yaml`:
+Run dgoss using `./goss.yaml`:
 
 ```bash
 dgoss run nginx
@@ -91,5 +91,8 @@ docker run -d --name nginx-healthz nginx-healthz
 Check health endpoint:
 
 ```bash
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nginx-healthz | xargs -I '{}' curl http://{}:8080/healthz
+docker inspect \
+    --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' \
+    nginx-healthz \
+    | xargs -I '{}' curl http://{}:8080/healthz
 ```

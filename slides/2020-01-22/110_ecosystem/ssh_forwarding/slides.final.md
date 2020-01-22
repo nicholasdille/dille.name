@@ -65,5 +65,8 @@ ssh-add -l
 Forward into build:
 
 ```bash
-docker run -it --rm --mount type=bind,src=${SSH_AUTH_SOCK},dst=${SSH_AUTH_SOCK} --env SSH_AUTH_SOCK alpine-ssh
+docker run -it --rm \
+    --mount type=bind,src=${SSH_AUTH_SOCK},dst=${SSH_AUTH_SOCK} \
+    --env SSH_AUTH_SOCK \
+    alpine-ssh
 ```
