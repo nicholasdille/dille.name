@@ -33,7 +33,7 @@ My talk focused on [`buildkit`](https://github.com/moby/buildkit) as the next-ge
 - Using `docker context` to manage multiple instances of the Docker engine
 - Troubleshooting running containers
 
-The talk was recorded and was published on the Docker blog - a link will follow as soon as it is available.
+The talk was [recorded and was published on the Docker blog](https://www.docker.com/blog/january-virtual-meetup-recap/).
 
 Find my slides [here](https://dille.name/slides/2020-01-22/Docker-HowToImproveYourDockerImageBuilds.html#/).
 
