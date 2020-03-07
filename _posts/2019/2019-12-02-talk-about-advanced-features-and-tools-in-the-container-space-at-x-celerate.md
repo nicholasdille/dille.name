@@ -16,7 +16,7 @@ tags:
 - Continuous Integration
 - xcelerate
 ---
-For the third time in a row, I co-organized a regional IT conference held in Freiburg, Germany. This time, I contributed a talk about covering the following topics:
+For the third time in a row, I co-organized a regional IT conference called [x-celerate](https://www.x-celerate.de) held in Freiburg, Germany. This time, I contributed a talk about covering the following topics:
 
 - Remote build cache using [BuildKit](https://github.com/moby/buildkit)
 - Build secrets using [BuildKit](https://github.com/moby/buildkit)

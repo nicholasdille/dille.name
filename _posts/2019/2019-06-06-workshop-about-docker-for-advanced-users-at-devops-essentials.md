@@ -14,7 +14,7 @@ tags:
 - Security
 - Kubernetes
 ---
-This week, I attended a new kind of conference organized by [dpunkt](https://www.dpunkt.de/), [heise Developer](https://www.heise.de/developer/) and [iX](https://www.heise.de/ix/). They decided to have most half-day workshops with only one keynote-like talk per day. I was able to contribute one of the half-day workshops for advanced users of Docker.<!--more-->
+This week, I attended a new kind of conferencecalled [DevOps Essentials](https://www.devops-essentials.de/2019/) organized by [dpunkt](https://www.dpunkt.de/), [heise Developer](https://www.heise.de/developer/) and [iX](https://www.heise.de/ix/). They decided to have most half-day workshops with only one keynote-like talk per day. I was able to contribute one of the half-day workshops for advanced users of Docker.<!--more-->
 
 In my workshop I covered the following topics:
 - Building from git

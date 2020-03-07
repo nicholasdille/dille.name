@@ -15,7 +15,7 @@ tags:
 - Security
 - Continuous Integration
 ---
-Last week I had the honour of talking again at Container Conf in Mannheim. I consider this conference to be the best German event in the container space. Just like in the two previous years I talked about news with regard to containers. But this year, I decided to stop focussing on Docker but covered Kubernetes as well.
+Last week I had the honour of talking again at [ContainerConf 2019](https://www.containerconf.de/2019/programm.php) in Mannheim. I consider this conference to be the best German event in the container space. Just like in the two previous years I talked about news with regard to containers. But this year, I decided to stop focussing on Docker but covered Kubernetes as well.
 
 <img src="/media/2019/11/talk_conconf2019.png" /><!-- .element: style="width: 80%" -->
 

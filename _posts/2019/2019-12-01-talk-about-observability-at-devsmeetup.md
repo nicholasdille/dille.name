@@ -14,7 +14,7 @@ tags:
 - Performance Monitoring
 ---
 
-Last week I had the chance to talk about observability at our local Devsmeetup. As usual, after the talk we had a very lively discussion about monitoring in general but also about Prometheus and long term storage.
+Last week I had the chance to [talk about observability](https://www.meetup.com/de-DE/Devsmeetup-Freiburg/events/vlftklyzpbkc/) at our local [Devsmeetup](https://www.meetup.com/de-DE/Devsmeetup-Freiburg/). As usual, after the talk we had a very lively discussion about monitoring in general but also about Prometheus and long term storage.
 
 <img src="/media/2019/11/talk_devsmeetup.png" /><!-- .element: style="width: 80%" -->
 
