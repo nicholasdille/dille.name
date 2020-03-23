@@ -16,9 +16,17 @@ XXX
 
 <!--more-->
 
+XXX
+
 XXX reference token auth for registry: https://docs.docker.com/registry/spec/auth/token/
 
-XXX reference pod post: https://dille.name/blog/2019/10/11/how-to-use-the-pod-concept-for-an-isolated-environment-in-docker-workshops/
+XXX https://github.com/cesanta/docker_auth
+
+XXX client, registry, authentication service
+
+## Let's prepare for token authentication
+
+We need to prepare the environment by generating a self-signed certificate. It is required as part of the process because the token is signed by the authentication service. Please note that the use of a self-signed certificate must not be used in production. In this case, it easily demonstrates how the components work together.
 
 ```bash
 # Generate certificates
@@ -33,6 +41,8 @@ openssl req \
     -subj "/C=EU/ST=Germany/L=Freiburg/O=registry/CN=localhost"
 ```
 
+XXX
+
 ```bash
 # Fetch sample configuration
 mkdir -p docker_auth_config
@@ -42,6 +52,12 @@ fi
 sed -i 's|/path/to/|/ssl/|g' docker_auth_config/simple.yml
 ```
 
+## Let's build this as a pod
+
+I have recently published a post about [building a pod using Docker](/blog/2019/10/11/how-to-use-the-pod-concept-for-an-isolated-environment-in-docker-workshops/). As Docker does not implement the concept of a pod, some magic is required to create a pod. In essence, a pod is a set of containers sharing the network namespace.
+
+The first step is creating a container XXX
+
 ```bash
 # Start pod
 docker run -d \
@@ -50,6 +66,10 @@ docker run -d \
     --publish 127.0.0.1:5001:5001 \
     alpine sh -c 'while true; do sleep 10; done'
 ```
+
+Next we start the authentication service responsible for creating tokens for authenticated users. The containers joins the network namespace created by the first container.
+
+XXX volumes
 
 ```bash
 # Start docker_auth
@@ -62,6 +82,8 @@ docker run -d \
     --env TZ=Europe/Berlin \
     cesanta/docker_auth:1 --v=2 --alsologtostderr /config/simple.yml
 ```
+
+Now it is time to start the registry. It must be configured to use an external authentication service. The registry must be able to validate the token prosented by the client. Therefore, is requires a root certificate to verify the signature in the token.
 
 ```bash
 # Start registry
@@ -79,10 +101,12 @@ docker run -d \
     registry:2
 ```
 
+## Let's test authentication
+
 XXX test (will fail)
 
 ```bash
-curl -svu admin:badmin http://localhost:5000/v2/
+curl --silent --verbose http://localhost:5000/v2/
 ```
 
 XXX login using `docker`
@@ -90,3 +114,7 @@ XXX login using `docker`
 ```bash
 docker login --username admin --password badmin localhost:5000
 ```
+
+## Let's make this ready for production
+
+XXX
