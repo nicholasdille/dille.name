@@ -1,16 +1,15 @@
 ---
 title: 'Running a Private Container Registry with Token Authentication'
-date: 2020-03-23T06:55:00+01:00
+date: 2020-03-25T06:55:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2020/03/23/running-a-private-registry-with-token-authentication/
+permalink: /blog/2020/03/25/running-a-private-registry-with-token-authentication/
 categories:
   - Haufe-Lexware
 tags:
 - Docker
 - Container
 - Security
-published: false
 ---
 When authenticating against a container registry, the user only supplies username and password. But in the background, Docker daemon and registry are using token authentication. This post demonstrates how to build a registry with a separate authentication service for token authentication.
 
