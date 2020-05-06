@@ -1,4 +1,4 @@
-FROM jekyll/jekyll:stable
+FROM jekyll/jekyll:3
 
 ADD . /srv/jekyll
 RUN chown -R jekyll:jekyll /srv/jekyll/
