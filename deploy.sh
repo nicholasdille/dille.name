@@ -7,6 +7,10 @@ echo "########## Check"
 
 echo "########## Unpacking"
 mkdir -p ../www2
+if ! test -f ../site.tar.gz; then
+    echo "ERROR: Unable to find site.tar.gz. Aborting."
+    exit 1
+fi
 tar -xvzf ../site.tar.gz -C ../www2 --strip-components=1
 
 echo "########## Backing up professional-powershell"
