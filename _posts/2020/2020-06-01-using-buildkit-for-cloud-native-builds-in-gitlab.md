@@ -21,15 +21,15 @@ After my talk about [BuildKit](https://github.com/moby/buildkit) at [DockerCon L
 
 <!--more-->
 
-When the question came up during the talk, I only answered that I have successfully tested running BuildKit in GitLab CI but the situaton did not allow for a detailed answer so I will present you with two answers. Both will be using [rootless](https://github.com/moby/buildkit/blob/master/docs/rootless.md) to reduce the attack surface against the container runtime.
+When the question came up during the talk, I only answered that I have successfully tested running BuildKit in GitLab CI but the situaton did not allow for a detailed answer so I will present you with two answers to make up for leaving this open. Both will be using [rootless](https://github.com/moby/buildkit/blob/master/docs/rootless.md) to reduce the attack surface against the container runtime.
 
 ## Answer 1: Running the BuildKit daemon as a service
 
-The most obvious approach to running BuildKit in GitLab CI is executing the daemon and the CLI separately. As `buildkitd` must be running in the background, a [service](https://docs.gitlab.com/ee/ci/yaml/#services) can be defined to achieve this. Services are launched before executing any commands of the job and will not be stopped until after the job has finished. There are a few things to note in the following example:
+The most obvious approach to running BuildKit in GitLab CI is executing the daemon and the CLI separately. As `buildkitd` must be running to execute `buildctl`, a [service](https://docs.gitlab.com/ee/ci/yaml/#services) can be defined to achieve this. Services are launched before executing any commands of the job and will not be stopped until after the job has finished. The approach is based on exposing the BuildKit daemon on TCP. There are a few things to note in the following example:
 
-- Using an `alias` for the service makes accessing the service easier
+- Using an `alias` for the service makes accessing it easier from the pipeline job
 
-- `buildctl` accepts an environment variable `BUILDKIT_HOST` to access the daemon over TCP
+- `buildctl` accepts an environment variable `BUILDKIT_HOST` how to access the daemon
 
 - The image `moby/buildkit:rootless` starts the BuildKit daemon by default, therefore the `entrypoint` must be overridden
 
@@ -65,11 +65,11 @@ buildkitd:
 
 ## Answer 2: Running BuildKit daemonless
 
-Instead of running the BuildKit daemon as a service, it is possible to use the `buildctl-daemonless.sh` script to transparently start the daemon in the background and then launch `buildctl` with the specified parameters - this is called [daemonless](https://github.com/moby/buildkit#daemonless). There are a few things to note in the following example:
+Instead of running the BuildKit daemon as a service, it is possible to use the `buildctl-daemonless.sh` script to transparently start the daemon in the background and then launch `buildctl` with the specified parameters - this is called [daemonless](https://github.com/moby/buildkit#daemonless). The advantage is that the daemon is not exposed on the network and will be only accessible inside the pipeline job. There are a few things to note in the following example:
 
 - The daemonless script accepts an environment variable `BUILDKITD_FLAGS` with parameters for the BuildKit daemon
 
-- The image `moby/buildkit:rootless` starts the BuildKit daemon by default, therefore the `entrypoint` must be overridden
+- The image `moby/buildkit:rootless` starts the BuildKit daemon by default therefore the `entrypoint` must be overridden
 
 ```yaml
 stages:
@@ -96,7 +96,7 @@ daemonless:
 
 The above pipeline jobs will work out-of-the-box on shared runners provided by [GitLab.com](https://gitlab.com/). When using the same on self-hosted runners, make sure that [seccomp profile](https://docs.docker.com/engine/security/seccomp/) and [apparmor profile](https://docs.docker.com/engine/security/apparmor/) are set to `unconfined`.
 
-The only alternative is to abandon using rootless to descrease the attach surface of the container runtime.
+The only alternative is to abandon using rootless and abandon to decrease the attach surface against the container runtime.
 
 ## Sidenote 2: Parameter `--oci-worker-no-process-sandbox`
 
