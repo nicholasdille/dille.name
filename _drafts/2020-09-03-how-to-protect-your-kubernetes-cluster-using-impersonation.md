@@ -9,7 +9,6 @@ categories:
 tags:
 - Kubernetes
 - Security
-published: false
 ---
 Just like me, you are probably working as a superuser in your Kubernetes cluster. And just like me, you have probably broken something because of these permissions. But with role based access control in Kubernetes, you can create limited service accounts with the option to impersonate another user with additional permissions.
 
