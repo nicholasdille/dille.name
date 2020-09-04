@@ -17,7 +17,7 @@ Just like me, you are probably working as a superuser in your Kubernetes cluster
 
 <!--more-->
 
-XXX https://gist.github.com/nicholasdille/c33cd289fab30aecbd06e8e3956658ce
+XXX https://github.com/nicholasdille/k8s-impersonation
 
 ## Impersonation for administering namespaces
 
