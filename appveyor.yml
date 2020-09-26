@@ -21,6 +21,8 @@ environment:
     secure: JEwE7kVMoyui1IG8H3pvYqpUMtKGPwV2V4HY3GGglv06PEt1gSff+I3IKNBu6z0Z
 build_script:
 - sh: >-
+    set -o errexit
+
     git clone https://github.com/clarkwang/passh.git /home/appveyor/projects/passh
 
     cd /home/appveyor/projects/passh
