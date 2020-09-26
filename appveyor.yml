@@ -15,6 +15,10 @@ environment:
     secure: ohsHTmnC9yFEISEZZxbjCA==
   sftppass:
     secure: IYfz8DMZk78p0+8a17iCfol2qbi7HWFsHM+b8/iaTx8=
+  docker_hub_username:
+    secure: alPNT03adZMyIa5p2nK0lQ==
+  docker_hub_password:
+    secure: JEwE7kVMoyui1IG8H3pvYqpUMtKGPwV2V4HY3GGglv06PEt1gSff+I3IKNBu6z0Z
 build_script:
 - sh: >-
     git clone https://github.com/clarkwang/passh.git /home/appveyor/projects/passh
@@ -24,6 +28,8 @@ build_script:
     make
 
     cd /home/appveyor/projects/blog
+
+    echo "${docker_hub_password}" | docker login --username ${docker_hub_username} --password-stdin
 
     docker build --file Dockerfile.jekyll --tag jekyll .
 
