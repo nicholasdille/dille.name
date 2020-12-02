@@ -74,6 +74,14 @@ Check layers:
 docker history hello-world-java
 ```
 
+Analyze layers:
+
+```plaintext
+dive hello-world-java
+```
+
+https://github.com/wagoodman/dive
+
 --
 
 ## Demo: Image Manifest
@@ -94,7 +102,13 @@ curl http://localhost:5000/v2/hello-world-java/manifests/latest \
 Fetch image configuration:
 
 ```plaintext
-curl http://localhost:5000/v2/hello-world-java/manifests/latest \
+DIGEST=$(
+  curl http://localhost:5000/v2/hello-world-java/manifests/latest \
+    --silent \
+    --header "Accept: application/vnd.docker.distribution.manifest.v2+json" \
+  | jq --raw-output '.config.digest'
+)
+curl http://localhost:5000/v2/hello-world-java/blobs/${DIGEST} \
   --silent \
   --header "Accept: application/vnd.docker.container.image.v1+json" \
 | jq
@@ -184,7 +198,7 @@ Download existing manifest:
 MANIFEST=$(
   curl http://localhost:5000/v2/hello-world-java/manifests/latest \
     --silent \
-    --header "Accept: application/vnd.docker.distribution.manifest.v2+json"        
+    --header "Accept: application/vnd.docker.distribution.manifest.v2+json"
 )
 ```
 
@@ -200,5 +214,5 @@ curl http://localhost:5000/v2/hello-world-java/manifests/new \
 Test new tag:
 
 ```plaintext
-docker pull localhost:5000/v2/hello-world-java/manifests/new
+docker pull localhost:5000/hello-world-java:new
 ```
