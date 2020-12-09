@@ -55,10 +55,9 @@ Image: docker
 
 Prepare for new sub command `buildx`
 
-Enable experimental mode for client and enable qemu:
+Enable qemu:
 
 ```plaintext
-export DOCKER_CLI_EXPERIMENTAL=enabled
 docker run --privileged --rm tonistiigi/binfmt --install all
 ```
 

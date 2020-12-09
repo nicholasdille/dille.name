@@ -34,12 +34,8 @@ Run BuildKit daemon:
 kubectl apply -f pod.rootless.yaml
 ```
 
-Run build:
+Wait for pod to deploy:
 
 ```plaintext
-export BUILDKIT_HOST=kube-pod://buildkitd
-buildctl build \
-    --frontend=dockerfile.v0 \
-    --local context=. \
-    --local dockerfile=.
+watch kubectl get pods
 ```
