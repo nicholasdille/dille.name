@@ -1,9 +1,9 @@
 ---
 title: 'Using #traefik to display maintenance information'
-date: 2021-03-15T119:02:00+01:00
+date: 2021-03-14T19:02:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2021/03/15/using-traefik-to-display-maintenance-information/
+permalink: /blog/2021/03/14/using-traefik-to-display-maintenance-information/
 categories:
   - Haufe-Lexware
 tags:
@@ -218,4 +218,4 @@ You can also take a look at the `Set-Cookie` header using `curl`:
 curl -sv http://www.127.0.0.1.nip.io
 ```
 
-*See also my other post about [using custom error pages in traefik](/blog/2021/03/15/using-traefik-error-pages-to-handle-unavailable-services/) to implement a custom 404 page when an unknown host is accessed as well as showing custom error pages when services produce 5xx errors.*
+*See also my other post about [using custom error pages in traefik](/blog/2021/03/14/using-traefik-error-pages-to-handle-unavailable-services/) to implement a custom 404 page when an unknown host is accessed as well as showing custom error pages when services produce 5xx errors.*

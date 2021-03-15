@@ -1,9 +1,9 @@
 ---
 title: 'Using #traefik error pages to handle unavailable services'
-date: 2021-03-15T18:02:00+01:00
+date: 2021-03-14T18:02:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2021/03/15/using-traefik-error-pages-to-handle-unavailable-services/
+permalink: /blog/2021/03/14/using-traefik-error-pages-to-handle-unavailable-services/
 categories:
   - Haufe-Lexware
 tags:
@@ -244,4 +244,4 @@ You can either test this in a browser by [forcing an 5xx response code](http://b
 curl -sv http://bin.127.0.0.1.nip.io/status/500
 ```
 
-*See also my other post about [using cookies with traefik](/blog/2021/03/15/using-traefik-to-display-maintenance-information/) to display an informational page during maintenance as well as a message of the day (MOTD).*
+*See also my other post about [using cookies with traefik](/blog/2021/03/14/using-traefik-to-display-maintenance-information/) to display an informational page during maintenance as well as a message of the day (MOTD).*
