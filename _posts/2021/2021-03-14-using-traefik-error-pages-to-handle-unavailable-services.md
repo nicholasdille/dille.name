@@ -48,7 +48,8 @@ services:
   www:
     image: nginx:stable
     volumes:
-    - ./service:/usr/share/nginx/html
+    - ./www/pages:/usr/share/nginx/html
+    - ./www/default.conf:/etc/nginx/conf.d/default.conf
     - /etc/localtime:/etc/localtime:ro
     labels:
       traefik.enable: "true"
@@ -102,7 +103,7 @@ services:
       traefik.http.routers.traefik.rule: HostRegexp(`traefik.127.0.0.1.nip.io`)
 
   catch-all:
-    image: nginx:latest
+    image: nginx:stable
     volumes:
     - ./catch-all/pages:/usr/share/nginx/error-pages
     - ./catch-all/default.conf:/etc/nginx/conf.d/default.conf
@@ -120,7 +121,8 @@ services:
   www:
     image: nginx:stable
     volumes:
-    - ./service:/usr/share/nginx/html
+    - ./www/pages:/usr/share/nginx/html
+    - ./www/default.conf:/etc/nginx/conf.d/default.conf
     - /etc/localtime:/etc/localtime:ro
     labels:
       traefik.enable: "true"
@@ -187,7 +189,7 @@ services:
       traefik.http.routers.catch-all.priority: 1
 
   error-pages:
-    image: nginx:latest
+    image: nginx:stable
     volumes:
     - ./error-pages/pages:/usr/share/nginx/html
     - ./error-pages/default.conf:/etc/nginx/conf.d/default.conf
@@ -205,7 +207,8 @@ services:
   www:
     image: nginx:stable
     volumes:
-    - ./service:/usr/share/nginx/html
+    - ./www/pages:/usr/share/nginx/html
+    - ./www/default.conf:/etc/nginx/conf.d/default.conf
     - /etc/localtime:/etc/localtime:ro
     labels:
       traefik.enable: "true"

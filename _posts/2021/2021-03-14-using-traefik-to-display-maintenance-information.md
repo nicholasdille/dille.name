@@ -48,7 +48,8 @@ services:
   www:
     image: nginx:stable
     volumes:
-    - ./service:/usr/share/nginx/html
+    - ./www/pages:/usr/share/nginx/html
+    - ./www/default.conf:/etc/nginx/conf.d/default.conf
     - /etc/localtime:/etc/localtime:ro
     labels:
       traefik.enable: "true"
@@ -104,7 +105,8 @@ services:
   www:
     image: nginx:stable
     volumes:
-    - ./service:/usr/share/nginx/html
+    - ./www/pages:/usr/share/nginx/html
+    - ./www/default.conf:/etc/nginx/conf.d/default.conf
     - /etc/localtime:/etc/localtime:ro
     labels:
       traefik.enable: "true"
@@ -176,7 +178,8 @@ services:
   www:
     image: nginx:stable
     volumes:
-    - ./service:/usr/share/nginx/html
+    - ./www/pages:/usr/share/nginx/html
+    - ./www/default.conf:/etc/nginx/conf.d/default.conf
     - /etc/localtime:/etc/localtime:ro
     labels:
       traefik.enable: "true"
@@ -200,11 +203,12 @@ When accessing the [web server](http://www.127.0.0.1.nip.io) in a browser the re
 ```text
 server {
     listen       80;
-    server_name  localhost;
+    server_name  _;
 
     location / {
         root   /usr/share/nginx/html;
         index  index.html;
+        try_files $uri /index.html;
         add_header Set-Cookie "motd-read=true; Domain=.127.0.0.1.nip.io; Path=/; Max-Age=300; SameSite=Strict";
     }
 }
