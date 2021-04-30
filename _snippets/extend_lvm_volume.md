@@ -9,15 +9,19 @@ How to extend a LVM volume:
 1. Rescan if disk not found:
 
     ```bash
-    echo "- - -" > /sys/class/scsi_host/host0/scan
+    echo 1 >/sys/class/block/sda/device/rescan
     ```
 
-2. Create primary partition of type 8e (Linux LVM)
+2. Create primary partition sda2 of type 8e (Linux LVM):
+
+    ```bash
+    fdisk /dev/sda
+    ```
 
 3. Create physical volume:
 
     ```bash
-    pvcreate /dev/sdc1
+    pvcreate /dev/sda2
     ```
 
 4. Note name of existing volume group:
@@ -29,7 +33,7 @@ How to extend a LVM volume:
 5. Extend volume group
 
     ```bash
-    vgextend centos /dev/sdc1
+    vgextend ubuntu-vg /dev/sda2
     ```
 
 6. Scan for physical volumes
@@ -47,7 +51,7 @@ How to extend a LVM volume:
 8. Extend logical volume
 
     ```bash
-    lvextend /dev/centos/root /dev/sdc1
+    lvextend /dev/ubuntu-vg/root /dev/sda2
     ```
 
 9. Resize filesystem
@@ -55,7 +59,7 @@ How to extend a LVM volume:
     a. extN:
 
     ```bash
-    resize2fs /dev/centos/root
+    resize2fs /dev/ubuntu-vg/root
     ```
 
 
