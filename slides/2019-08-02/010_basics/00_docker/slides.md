@@ -72,7 +72,7 @@ XXX illustration
 
 ## Advantages
 
-![DevOps infinite loop](../images/DevOps.png)
+![DevOps infinite loop](images/DevOps.png)
 
 ### Development
 
