@@ -72,7 +72,7 @@ jobs:
           test -f site.tar.gz
           test -f site.tar.gz.sha256
           echo -e "put site.tar.gz\nput site.tar.gz.sha256\ncd www\nput deploy.php\nput deploy.sh" > sftp
-          sftp -o BatchMode=no -b sftp $sftpuser@$sftphost
+          sftp -b sftp ${{ secrets.SFTPUSER }}@${{ secrets.SFTPHOST }}
 
       - name: Trigger deployment
         run: |
