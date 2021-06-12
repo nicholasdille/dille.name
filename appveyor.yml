@@ -34,7 +34,7 @@ build_script:
     --rm \
     --mount "type=bind,source=$PWD,target=/srv/jekyll" \
     --workdir /srv/jekyll \
-    "jekyll/jekyll:${JEKYLL_VERSION}" \
+    "jekyll/jekyll:stable" \
     jekyll build
 
     tar -czf site.tar.gz _site
