@@ -56,7 +56,7 @@ jobs:
           retention-days: 2
 
   deploy:
-    name: Build
+    name: Deploy
     needs:
     - build
     runs-on: ubuntu-20.04
