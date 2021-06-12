@@ -82,7 +82,7 @@ jobs:
         run: |
           test -f site.tar.gz
           test -f site.tar.gz.sha256
-          echo -e "lpwd\nlls -l\ncd public_html/dille.name\nput site.tar.gz\nput site.tar.gz.sha256\npwd\ncd www\nput deploy.php\nput deploy.sh" > sftp
+          echo -e "cd public_html/dille.name\nput site.tar.gz\nput site.tar.gz.sha256\npwd\ncd www\nput deploy.php\nput deploy.sh" > sftp
           sftp -b sftp ${{ secrets.SFTPUSER }}@${{ secrets.SFTPHOST }}
 
       - name: Trigger deployment
