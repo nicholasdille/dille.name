@@ -31,8 +31,7 @@ build_script:
     echo "${docker_hub_password}" | docker login --username ${docker_hub_username} --password-stdin
 
     docker run \
-    --name jekyll \
-    --interactive --tty \
+    --rm \
     --mount "type=bind,source=$PWD,target=/srv/jekyll" \
     --workdir /srv/jekyll \
     "jekyll/jekyll:${JEKYLL_VERSION}" \
