@@ -20,7 +20,7 @@ environment:
   docker_hub_password:
     secure: JEwE7kVMoyui1IG8H3pvYqpUMtKGPwV2V4HY3GGglv06PEt1gSff+I3IKNBu6z0Z
 build_script:
-- sh: >-
+- sh: |
     set -o errexit
 
     git clone https://github.com/clarkwang/passh.git /home/appveyor/projects/passh
@@ -30,14 +30,18 @@ build_script:
     cd /home/appveyor/projects/blog
     echo "${docker_hub_password}" | docker login --username ${docker_hub_username} --password-stdin
 
-    docker build --file Dockerfile.jekyll --tag jekyll .
-    docker run --name jekyll jekyll jekyll build
+    docker run \
+    --name jekyll \
+    --interactive --tty \
+    --mount "type=bind,source=$PWD,target=/srv/jekyll" \
+    --workdir /srv/jekyll \
+    "jekyll/jekyll:${JEKYLL_VERSION}" \
+    jekyll build
 
-    docker cp jekyll:/srv/jekyll/_site/ - > site.tar
-    gzip site.tar
+    tar -czf site.tar.gz _site
     sha256sum site.tar.gz >site.tar.gz.sha256
 deploy_script:
-- sh: >-
+- sh:
     echo -e "put site.tar.gz\nput site.tar.gz.sha256\ncd www\nput deploy.php\nput deploy.sh" > sftp
     /home/appveyor/projects/passh/passh -p $sftppass bash -c "sftp -o BatchMode=no -o StrictHostKeyChecking=no -b sftp $sftpuser@$sftphost"
     curl https://dille.name/deploy.php
