@@ -8,8 +8,8 @@ on:
 
 jobs:
 
-  deploy:
-    name: Deploy
+  build:
+    name: Build
     runs-on: ubuntu-20.04
     steps:
 
@@ -20,11 +20,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SFTPKEY }}
 
-      - name: Test SFTP
+      - name: Update known_hosts
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan www244.your-server.de >>~/.ssh/known_hosts
-          echo "bye" | sftp ${{ secrets.SFTPUSER }}@${{ secrets.SFTPHOST }}
 
       - name: Login to Docker Hub
         uses: docker/login-action@v1
@@ -55,3 +54,20 @@ jobs:
             site.tar.gz
             site.tar.gz.sha256
           retention-days: 2
+
+  deploy:
+    name: Build
+    needs:
+    - build
+    runs-on: ubuntu-20.04
+    if: "!contains(github.event.head_commit.message, 'skip deploy')"
+    steps:
+
+      - name: Upload artifact
+        run: |
+          echo -e "put site.tar.gz\nput site.tar.gz.sha256\ncd www\nput deploy.php\nput deploy.sh" > sftp
+          sftp -b sftp $sftpuser@$sftphost
+
+      - name: Trigger deployment
+        run: |
+          curl https://dille.name/deploy.php
