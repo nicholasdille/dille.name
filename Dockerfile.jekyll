@@ -1,4 +1,0 @@
-FROM jekyll/jekyll:4.2.0
-
-ADD . /srv/jekyll
-RUN chown -R jekyll:jekyll /srv/jekyll/
