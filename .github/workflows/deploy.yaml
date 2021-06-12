@@ -69,6 +69,8 @@ jobs:
 
       - name: Upload artifact
         run: |
+          test -f site.tar.gz
+          test -f site.tar.gz.sha256
           echo -e "put site.tar.gz\nput site.tar.gz.sha256\ncd www\nput deploy.php\nput deploy.sh" > sftp
           sftp -b sftp $sftpuser@$sftphost
 
