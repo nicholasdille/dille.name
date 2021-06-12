@@ -34,20 +34,7 @@ jobs:
 
       - name: Build site
         run: |
-          whoami
-          docker run \
-              --rm \
-              --mount "type=bind,source=$PWD,target=/srv/jekyll" \
-              --workdir /srv/jekyll \
-              "jekyll/jekyll:stable" \
-              whoami
-          id -u
-          docker run \
-              --rm \
-              --mount "type=bind,source=$PWD,target=/srv/jekyll" \
-              --workdir /srv/jekyll \
-              "jekyll/jekyll:stable" \
-              id -u
+          mkdir -p _site
           docker run \
               --rm \
               --mount "type=bind,source=$PWD,target=/srv/jekyll" \
