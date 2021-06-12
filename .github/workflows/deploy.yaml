@@ -34,7 +34,7 @@ jobs:
           mkdir -p _site
           docker run \
               --rm \
-              --volume="$PWD/.bundle:/usr/local/bundle" \
+              --mount "type=bind,source=$PWD/.bundle,target=/usr/local/bundle" \
               --mount "type=bind,source=$PWD,target=/srv/jekyll" \
               --workdir /srv/jekyll \
               "jekyll/jekyll:stable" \
