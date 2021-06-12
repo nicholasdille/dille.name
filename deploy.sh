@@ -12,6 +12,7 @@ if ! test -f ../site.tar.gz; then
     exit 1
 fi
 tar -xvzf ../site.tar.gz -C ../www2 --strip-components=1
+test -f ../www2/sitemap.xml
 
 echo "########## Backing up professional-powershell"
 rsync --verbose --recursive ./professional-powershell ../www2
