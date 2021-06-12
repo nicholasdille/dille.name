@@ -50,4 +50,4 @@ jobs:
           path: |
             site.tar.gz
             site.tar.gz.sha256
-          retention-days: 3
+          retention-days: 2
