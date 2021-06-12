@@ -22,6 +22,8 @@ jobs:
 
       - name: Test SFTP
         run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan www244.your-server.de >>~/.ssh/known_hosts
           echo "bye" | sftp ${{ secrets.SFTPUSER }}@${{ secrets.SFTPHOST }}
 
       - name: Login to Docker Hub
