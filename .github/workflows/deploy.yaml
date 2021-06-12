@@ -24,6 +24,8 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan www244.your-server.de >>~/.ssh/known_hosts
+          touch ~/.ssh/id_rsa_hetzner_sftp
+          chmod 0600 ~/.ssh/id_rsa_hetzner_sftp
           echo "${{ secrets.SFTPKEY }}" >~/.ssh/id_rsa_hetzner_sftp
           echo "bye" | sftp -i ~/.ssh/id_rsa_hetzner_sftp ${{ secrets.SFTPUSER }}@${{ secrets.SFTPHOST }}
 
