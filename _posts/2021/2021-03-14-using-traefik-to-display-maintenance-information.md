@@ -13,7 +13,7 @@ tags:
 ---
 When maintenance is performed on a service users should get a meaningful message while administrators need to be able to access the service at the same time. I will demonstrate how to achieve this using traefik and cookies. In addition I will show how to display a message of the day (MOTD) using the same approach.
 
-<img src="/media/2021/03/biscuit-1832917_1920.jpg" style="object-fit: cover; object-position: middle; width: 100%; height: 150px;" />
+<img src="/media/2021/03/biscuit-1832917_1920.jpg" style="object-fit: cover; object-position: center; width: 100%; height: 150px;" />
 
 <!--more-->
 
