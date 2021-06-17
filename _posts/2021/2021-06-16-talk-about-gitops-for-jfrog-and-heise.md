@@ -17,6 +17,8 @@ tags:
 
 This week, [JFrog](https://www.jfrog.com/) and [heise Academy](https://heise-academy.de/) held a one day conference about [DevOps in enterprises](https://konferenzen.heise.de/devops-im-unternehmen/). I was lucky to contribute a talk about GitOps. I explained what GitOps is and demonstrated [FluxCD](https://fluxcd.io/), [ArgoCD](https://argoproj.github.io/argo-cd/) and [kapp-controller](https://carvel.dev/kapp-controller/).
 
+<img src="/media/2021/06/barn-raising-unsplash.jpg" style="object-fit: cover; object-position: middle; width: 100%; height: 150px;" />
+
 <!--more-->
 
 Find my slides [here](https://dille.name/slides/2021-06-08/heise-Docker-und-Co-leicht-gemacht.html).
