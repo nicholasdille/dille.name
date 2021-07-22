@@ -13,7 +13,7 @@ tags:
 ---
 Docker does not implement the concept of a pod. But pods can be created by explicitly sharing the network namespace of containers. With `docker-compose` it is possible to manage pods in an declarative way using the `network_mode` field.
 
-![](/media/2020/09/container-4203677_1280.jpg)
+![](/media/2020/09/container-4203677_1280.webp)
 
 <!--more-->
 
