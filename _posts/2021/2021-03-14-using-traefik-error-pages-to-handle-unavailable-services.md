@@ -13,7 +13,7 @@ tags:
 ---
 When a request is unknown, traefik displays a very basic 404 page. Wouldn't it be nice to provide more guidance to your users? Fortunately, you can customize error pages for services behind traefik and use that feature to catch unknown services. Let's take a closer look at this!
 
-<img src="/media/2021/03/error-2129569_1920.webp" style="object-fit: cover; object-position: bottom; width: 100%; height: 250px;" />
+<img src="/media/2021/03/error-2129569_1920_cropped.webp" style="object-fit: cover; object-position: bottom; width: 100%; height: 250px;" />
 
 <!--more-->
 

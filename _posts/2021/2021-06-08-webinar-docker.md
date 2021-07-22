@@ -15,7 +15,7 @@ tags:
 ---
 [heise Academy](https://heise-academy.de/) has organized a series of [webinars around containers and Kubernetes](https://webinare.heise.de/kubernetes/). I had the honour to contribute two half-day webinars - one about Docker for beginners and a second one about Kubernetes for beginners. On June 8th, I held the first one with 230 attendees.
 
-<img src="/media/2021/06/cameron-venti-1cqIcrWFQBI-unsplash.webp" style="object-fit: cover; object-position: center; width: 100%; height: 150px;" />
+<img src="/media/2021/06/cameron-venti-1cqIcrWFQBI-unsplash_cropped.webp" style="object-fit: cover; object-position: center; width: 100%; height: 150px;" />
 
 <!--more-->
 

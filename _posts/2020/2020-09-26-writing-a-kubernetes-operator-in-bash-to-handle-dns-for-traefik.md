@@ -14,7 +14,7 @@ tags:
 ---
 I am using traefik as the ingress controller in multiple Kubernetes clusters. Those instances are running standalone (without the integrated high availability). To make sure that users are able to reach traefik, a DNS record points to the host IP. So far, an init container was responsible for updating DNS if the traefik pod restarts. But recently I decided to decouple the DNS update from traefik. This led to writing a Kubernetes controller to watch the traefik pod for restarts and update DNS accordingly. This post provides details about writing the controller in bash.
 
-<img src="/media/2020/09/analysis-4402809_1920.webp" style="object-fit: cover; object-position: bottom; width: 100%; height: 250px;" />
+<img src="/media/2020/09/analysis-4402809_1920_cropped.webp" style="object-fit: cover; object-position: bottom; width: 100%; height: 250px;" />
 
 <!--more-->
 
