@@ -3,7 +3,7 @@ title: 'Processing response headers and body at once using #curl'
 date: 2021-06-19T17:05:00+02:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2021/09/13/processing-response-headers-and-body-at-once-using-curl
+permalink: /blog/2021/09/13/processing-response-headers-and-body-at-once-using-curl/
 categories:
   - Haufe-Lexware
 tags:
