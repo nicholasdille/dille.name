@@ -22,6 +22,10 @@ Multiple pods can run simultaneously
 
 Build is passed to any one of them by the service
 
+### CLI
+
+`buildx` comes with options to deploy BuildKit based pods
+
 --
 
 ## Demo: BuildKit and Kubernetes
@@ -50,7 +54,7 @@ watch kubectl get pods
 
 ## Managing BuildKit using buildx
 
-Create builder instances in Kubernetes:
+Configure buildx to use Kubernetes:
 
 ```plaintext
 docker buildx create \
@@ -62,7 +66,7 @@ docker buildx create \
     --use
 ```
 
-Check builder instances in Kubernetes:
+Deploy builder instances in Kubernetes:
 
 ```plaintext
 docker buildx inspect k8s --bootstrap
@@ -71,7 +75,5 @@ docker buildx inspect k8s --bootstrap
 Build using Kubernetes:
 
 ```plaintext
-docker buildx build . \
-    --tag localhost:5000/hello \
-    --push
+docker buildx build .
 ```
