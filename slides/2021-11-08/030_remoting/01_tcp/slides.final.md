@@ -14,7 +14,7 @@ Do not open TCP without authentication
 
 More later!
 
---
+---
 
 ## Demo: TCP Remoting
 
@@ -27,7 +27,7 @@ docker run --name tcp \
     --detach \
     --privileged \
     --publish 127.0.0.1:2375:2375 \
-    docker:stable-dind \
+    docker:dind \
         dockerd --host tcp://0.0.0.0:2375
 ```
 

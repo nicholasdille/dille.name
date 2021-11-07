@@ -12,28 +12,35 @@ Check pre-defined context:
 docker context ls
 ```
 
---
+---
 
 ## Demo: `docker context`
 
-Create and use new context:
+Start DinD container:
 
 ```plaintext
-docker context create docker-hcloud \
-    --description 'Remote@Hetzner' \
-    --docker 'host=ssh://020advanced-090dockercontext'
-docker context use docker-hcloud
+docker run -d --name dind --privileged \
+    --publish 127.0.0.1:12376:2376 docker:dind
+```
+
+Copy certificates:
+
+```plaintext
+mkdir -p dind-certs
+docker cp dind:/certs/client dind-certs
+```
+
+Create context:
+
+```plaintext
+docker context create dind \
+    --docker 'host=tcp://127.0.0.1:12376,ca=dind-certs/client/ca.pem,cert=dind-certs/client/cert.pem,key=dind-certs/client/key.pem'
+```
+
+Set default context:
+
+```plaintext
+docker context use dind
 docker context ls
-```
-
-Check connectivity:
-
-```plaintext
 docker version
-```
-
-Check remote host:
-
-```plaintext
-docker run --uts host alpine hostname
 ```

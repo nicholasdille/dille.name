@@ -15,7 +15,7 @@ Can be nested
 
 Must be root to use cgroups v1
 
---
+---
 
 ## Demo: Control groups (cgroups)
 
@@ -39,18 +39,8 @@ cat /sys/fs/cgroup/cpu/docker/${ID}/cpu.cfs_period_us
 cat /sys/fs/cgroup/cpu/docker/${ID}/cpu.cfs_quota_us
 ```
 
---
+---
 
 ## Control groups v2
 
 XXX
-
---
-
-## Further reading
-
-[cgroup Part 1](https://www.redhat.com/sysadmin/cgroups-part-one)
-
-[cgroup Part 2](https://www.redhat.com/sysadmin/cgroups-part-two)
-
-[cgroup Part 3](https://www.redhat.com/sysadmin/cgroups-part-three)

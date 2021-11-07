@@ -22,7 +22,7 @@ Official image: `alpine:stable`
 
 Community image: `nicholasdille/insulatr`
 
---
+---
 
 ## Images and layers
 
@@ -50,11 +50,9 @@ Stored as blob
 
 ![](020_advanced/030_layers/image.svg) <!-- .element: style="display: block; margin-left: auto; margin-right: auto;" -->
 
---
+---
 
 ## Demo: Layers
-
-### Preparation
 
 Upload image to local registry
 
@@ -65,8 +63,6 @@ docker run -d -p 5000:5000 registry:2
 docker build --tag localhost:5000/hello-world-java .
 docker push localhost:5000/hello-world-java
 ```
-
-### Investigate layers locally
 
 Check layers:
 
@@ -82,7 +78,7 @@ dive hello-world-java
 
 https://github.com/wagoodman/dive
 
---
+---
 
 ## Demo: Image Manifest
 
@@ -95,7 +91,7 @@ curl http://localhost:5000/v2/hello-world-java/manifests/latest \
 | jq
 ```
 
---
+---
 
 ## Demo: Image Configuration
 
@@ -114,7 +110,7 @@ curl http://localhost:5000/v2/hello-world-java/blobs/${DIGEST} \
 | jq
 ```
 
---
+---
 
 ## Demo: Download image layer
 
@@ -138,7 +134,7 @@ curl http://localhost:5000/v2/hello-world-java/blobs/${DIGEST} \
 | tar -tvz
 ```
 
---
+---
 
 ## Demo: Verifying a layer
 
@@ -164,7 +160,7 @@ curl http://localhost:5000/v2/hello-world-java/blobs/${DIGEST} \
 
 ## Registries
 
-REST API
+[REST API](https://docs.docker.com/registry/spec/api/) and [Image Manifest Specification v2.2](https://docs.docker.com/registry/spec/manifest-v2-2/)
 
 No UI
 
@@ -180,13 +176,7 @@ Insecure registries must be defined expicitly
 
 Accepted insecure registry: `127.0.0.1/8`
 
-### Further reading
-
-[Registry API](https://docs.docker.com/registry/spec/api/)
-
-[Image Manifest Specification v2.2](https://docs.docker.com/registry/spec/manifest-v2-2/)
-
---
+---
 
 ## Demo: Registries
 
@@ -209,10 +199,4 @@ curl http://localhost:5000/v2/hello-world-java/manifests/new \
   --request PUT \
   --header "Content-Type: application/vnd.docker.distribution.manifest.v2+json" \
   --data "${MANIFEST}"
-```
-
-Test new tag:
-
-```plaintext
-docker pull localhost:5000/hello-world-java:new
 ```
