@@ -25,7 +25,7 @@ Fist line of `Dockerfile` must be:
 
 ---
 
-## Demo: Heredocs
+## Demo: Heredocs <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/180_heredocs</span></i>
 
 Use `RUN` like a script block
 
@@ -45,7 +45,7 @@ docker build . --file Dockerfile.run
 
 ---
 
-## Demo: Heredocs
+## Demo: Heredocs <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/180_heredocs</span></i>
 
 Use a custom interpreter for the script block
 
@@ -63,7 +63,7 @@ docker build . --file Dockerfile.interpreter
 
 ---
 
-## Demo: Heredocs
+## Demo: Heredocs <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/180_heredocs</span></i>
 
 Provide shebang to set interpreter
 
@@ -82,7 +82,7 @@ docker build . --file Dockerfile.script
 
 ---
 
-## Demo: Heredocs
+## Demo: Heredocs <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/180_heredocs</span></i>
 
 Provide inline file
 
@@ -101,7 +101,7 @@ docker build . --file Dockerfile.copy
 
 ---
 
-## Demo: Heredocs
+## Demo: Heredocs <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/180_heredocs</span></i>
 
 Create multiple files in a single `COPY`
 

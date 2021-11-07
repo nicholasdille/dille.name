@@ -22,7 +22,7 @@ Load balancing works
 
 ---
 
-## Demo: BuildKit and Kubernetes
+## Demo: BuildKit and Kubernetes <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">110_ecosystem/buildkit/k8s</span></i>
 
 Create cluster:
 
@@ -54,7 +54,7 @@ buildctl build \
 
 ---
 
-## Managing BuildKit using `buildx`
+## Demo: Managing BuildKit using `buildx` <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">110_ecosystem/buildkit/k8s</span></i>
 
 Configure buildx to use Kubernetes:
 

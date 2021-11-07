@@ -16,7 +16,7 @@ Can be nested
 
 ---
 
-## Demo: Namespaces
+## Demo: Namespaces <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/170_kernel</span></i>
 
 - Show namespaces created by Docker
 - Enter existing namespaces
@@ -28,7 +28,7 @@ See `namespaces.demo`
 
 ---
 
-## Demo: Sharing namespaces
+## Demo: Sharing namespaces <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/170_kernel</span></i>
 
 The nginx container image does not contain `ps`
 

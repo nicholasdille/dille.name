@@ -14,7 +14,7 @@ Privileged containers enable host breakouts
 
 ---
 
-## Demo: Docker-in-Docker (DinD)
+## Demo: Docker-in-Docker (DinD) <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">040_inception/02_dind</span></i>
 
 Isolating a Docker daemon:
 

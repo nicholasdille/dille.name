@@ -8,7 +8,7 @@ Having all capabilities is equivalent to privileged
 
 ---
 
-## Demo: Capabilities
+## Demo: Capabilities <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/170_kernel</span></i>
 
 Check default capabilities of processes in container:
 

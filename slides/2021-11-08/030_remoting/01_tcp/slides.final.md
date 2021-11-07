@@ -16,7 +16,7 @@ More later!
 
 ---
 
-## Demo: TCP Remoting
+## Demo: TCP Remoting <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">030_remoting/01_tcp</span></i>
 
 Test containerized
 

@@ -52,7 +52,7 @@ Stored as blob
 
 ---
 
-## Demo: Layers
+## Demo: Layers <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/030_layers</span></i>
 
 Upload image to local registry
 
@@ -80,7 +80,7 @@ https://github.com/wagoodman/dive
 
 ---
 
-## Demo: Image Manifest
+## Demo: Image Manifest <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/030_layers</span></i>
 
 Fetch image manifest:
 
@@ -93,7 +93,7 @@ curl http://localhost:5000/v2/hello-world-java/manifests/latest \
 
 ---
 
-## Demo: Image Configuration
+## Demo: Image Configuration <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/030_layers</span></i>
 
 Fetch image configuration:
 
@@ -112,7 +112,7 @@ curl http://localhost:5000/v2/hello-world-java/blobs/${DIGEST} \
 
 ---
 
-## Demo: Download image layer
+## Demo: Download image layer <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/030_layers</span></i>
 
 Fetch digest of last layer:
 
@@ -136,7 +136,7 @@ curl http://localhost:5000/v2/hello-world-java/blobs/${DIGEST} \
 
 ---
 
-## Demo: Verifying a layer
+## Demo: Verifying a layer <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/030_layers</span></i>
 
 Verifying a layer digest:
 
@@ -178,7 +178,7 @@ Accepted insecure registry: `127.0.0.1/8`
 
 ---
 
-## Demo: Registries
+## Demo: Registries <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/030_layers</span></i>
 
 ### Tagging images remotely
 

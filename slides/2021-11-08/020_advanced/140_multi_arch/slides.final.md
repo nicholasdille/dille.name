@@ -57,7 +57,7 @@ Manifests:
 
 ---
 
-## Demo: Building for other Architectures
+## Demo: Building for other Architectures <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/140_multi_arch</span></i>
 
 Prepare for new sub command `buildx`
 
@@ -76,7 +76,7 @@ docker buildx inspect --bootstrap
 
 ---
 
-## Demo: Building for other Architectures
+## Demo: Building for other Architectures <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/140_multi_arch</span></i>
 
 Build multi-arch:
 
@@ -97,7 +97,7 @@ docker buildx imagetools inspect \
 
 ---
 
-## Demo: Build multi-arch with proper tags (1)
+## Demo: Build multi-arch with proper tags (1) <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/140_multi_arch</span></i>
 
 Build individual images to control tagging
 
@@ -124,7 +124,7 @@ This allows for proper versioning
 
 ---
 
-## Demo: Build multi-arch with proper tags (2)
+## Demo: Build multi-arch with proper tags (2) <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/140_multi_arch</span></i>
 
 Create manifest list with all images:
 

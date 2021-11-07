@@ -18,7 +18,7 @@ Required on server and client
 
 --
 
-## Demo: SSH Remoting
+## Demo: SSH Remoting <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">030_remoting/03_ssh</span></i>
 
 Test containerized
 

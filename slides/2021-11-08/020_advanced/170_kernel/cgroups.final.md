@@ -17,7 +17,7 @@ Must be root to use cgroups v1
 
 ---
 
-## Demo: Control groups (cgroups)
+## Demo: Control groups (cgroups) <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/170_kernel</span></i>
 
 Start container with 10% CPU limit:
 
