@@ -59,7 +59,7 @@ Upload image to local registry
 Build and push image:
 
 ```plaintext
-docker run -d -p 5000:5000 registry:2
+docker run -d -p 127.0.0.1:5000:5000 registry:2
 docker build --tag localhost:5000/hello-world-java .
 docker push localhost:5000/hello-world-java
 ```
@@ -67,7 +67,7 @@ docker push localhost:5000/hello-world-java
 Check layers:
 
 ```plaintext
-docker history hello-world-java
+docker history localhost:5000/hello-world-java
 ```
 
 Analyze layers:
@@ -120,7 +120,7 @@ Fetch digest of last layer:
 DIGEST=$(
   curl http://localhost:5000/v2/hello-world-java/manifests/latest \
     --silent \
-    --header "Accept: application/vnd.docker.container.image.v1+json" \
+    --header "Accept: application/vnd.docker.distribution.manifest.v2+json" \
   | jq --raw-output '.layers[-1].digest'
 )
 ```

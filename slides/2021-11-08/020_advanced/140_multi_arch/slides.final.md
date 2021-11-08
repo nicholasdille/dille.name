@@ -59,7 +59,7 @@ Manifests:
 
 ## Demo: Building for other Architectures <i class="far fa-folder-open tooltip"><span class="tooltiptext tooltip-right">020_advanced/140_multi_arch</span></i>
 
-Prepare for new sub command `buildx`
+Prepare for new sub command [`buildx`](https://github.com/docker/buildx)
 
 Enable qemu:
 
