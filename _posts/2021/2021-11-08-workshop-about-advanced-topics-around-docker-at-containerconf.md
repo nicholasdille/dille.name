@@ -15,8 +15,6 @@ tags:
 ---
 As part of [ContainerConf](https://www.containerconf.de/) I held a workshop covering advanced topics around containerization.
 
-<img src="/media/2021/11/rinson-chory-2vPGGOU-wLA-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
-
 <!--more-->
 
 The agenda offered the following topics:
