@@ -18,15 +18,15 @@ tags:
 
 <!--more-->
 
-T~ypically, t~he `--write-out` option is used to retrieve ~a set of header fields or~ timing information. ~This also involves writing the response body to a file and read it afterwards to process response header as well as the body.~
+T~~ypically, t~~he `--write-out` option is used to retrieve ~~a set of header fields or~~ timing information. ~~This also involves writing the response body to a file and read it afterwards to process response header as well as the body.~~
 
-Fortunately, the `--write-out` option also supported formatting ~all response headers~ as JSON using the `%{json}` directive:
+Fortunately, the `--write-out` option also supported formatting ~~all response headers~~ as JSON using the `%{json}` directive:
 
 ```bash
 curl -s --write-out '%{json}' pie.dev/get
 ```
 
-Unfortunately, the response header cannot be obtained in JSON but `curl` can print the response header on standard output together with the body when `--include` is supplied. Let's assume for now that the response header is shown in JSON. Then, you can merge headers and body using `jq`. ~`curl` prints header as well as body as two separate JSON documents.~
+Unfortunately, the response header cannot be obtained in JSON but `curl` can print the response header on standard output together with the body when `--include` is supplied. Let's assume for now that the response header is shown in JSON. Then, you can merge headers and body using `jq`. ~~`curl` prints header as well as body as two separate JSON documents.~~
 
 ```bash
 echo '{"foo": "bar"}{"foo2": "bar2}' | jq -s '.[1] * .[0]'
@@ -140,4 +140,4 @@ When applying this script to `curl` with `--write-out` the response header, the 
 }
 ```
 
-~This works even when the JSON documents for response header and body are swapped in a future version.~
+~~This works even when the JSON documents for response header and body are swapped in a future version.~~
