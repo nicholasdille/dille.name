@@ -1,0 +1,11 @@
+## Environment variables
+
+![Environment variables in containers](120_kubernetes/09_variables/env.drawio.svg) <!-- .element: style="float: right; width: 8em;" -->
+
+Environment variables are used for runtime configuration
+
+Container entrypoints process environment variables
+
+Environment variables are defined in the pod specification
+
+The pod specification can be wrapped by a ReplicaSets or a Deployment
