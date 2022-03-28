@@ -15,7 +15,7 @@ tags:
 ---
 As soon as in-person meetup events were possible, I gave a talk at [DevOps Meetup Freiburg](https://www.meetup.com/de-DE/DevOps-Freiburg/events/280512257) about rootless containers.
 
-<img src="/media/2021/09/forest-2599720_640.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2021/09/forest-2599720_640.jpg" style="object-fit: cover; object-position: center 50%; width: 100%; height: 150px;" />
 
 <!--more-->
 
