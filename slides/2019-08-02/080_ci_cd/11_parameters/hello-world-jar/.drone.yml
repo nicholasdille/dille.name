@@ -8,7 +8,7 @@ pipeline:
     secrets: [ WEBDAV_USER, WEBDAV_PASS ]
 
   package:
-    image: openjdk:8-jdk
+    image: openjdk:8-jdk@sha256:bda4739c44b15f4a6ef4aa044e032809dd0ced24263c972bb728a0388275548b
     commands:
     - jar -cvf HelloWorld.jar HelloWorld.class
 

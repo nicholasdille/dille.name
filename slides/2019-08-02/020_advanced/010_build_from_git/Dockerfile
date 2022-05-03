@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM openjdk:8-jdk@sha256:bda4739c44b15f4a6ef4aa044e032809dd0ced24263c972bb728a0388275548b
 COPY HelloWorld.java .
 RUN javac HelloWorld.java
 CMD [ "java", "HelloWorld" ]
