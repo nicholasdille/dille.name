@@ -1,0 +1,73 @@
+<!-- .slide: id="gitlab_server_settings" class="vertical-center" -->
+
+<i class="fa-duotone fa-sliders fa-8x fa-duotone-colors" style="float: right; color: grey;"></i>
+
+## Server Settings
+
+---
+
+## Visibility
+
+Control defaults for group and project visibility
+
+Default visibility
+
+Available visibility options
+
+XXX
+
+---
+
+## Sign-up
+
+Disable registration of new users
+
+Require admin approval
+
+Password length
+
+Domain allowlist and denylist
+
+Sign-up test
+
+---
+
+## Sign-in
+
+Allow password authentication for web UI
+
+Allow password authentication for git-over-HTTP
+
+Enforce two factor authentication
+
+Redirect non-authenticated users
+
+Sign-out page
+
+Sign-in text
+
+---
+
+## Rate Limits
+
+Separate rate limits for...
+
+- Unauthenticted requests
+- Authenticated requests
+
+Separate rate limits against...
+
+- API
+- Web
+- Package registry
+- Files API
+- Search (only authenticated)
+- Deprecated API
+- Git LFS (only authenticated)
+
+In addition, rate limits for...
+
+- Outbound requests
+- Issues
+- Notes
+- Import/export
