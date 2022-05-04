@@ -1,14 +1,14 @@
 pipeline:
 
   frontend:
-    image: docker:18.06
+    image: docker:20.10@sha256:41978d1974f05f80e1aef23ac03040491a7e28bd4551d4b469b43e558341864e
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     commands:
     - docker build --tag frontend frontend
 
   backend:
-    image: docker:18.06
+    image: docker:20.10@sha256:41978d1974f05f80e1aef23ac03040491a7e28bd4551d4b469b43e558341864e
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     commands:
