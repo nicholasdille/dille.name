@@ -46,7 +46,7 @@ jobs:
           sha256sum site.tar.gz >site.tar.gz.sha256
 
       - name: Store artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: site
           path: |
