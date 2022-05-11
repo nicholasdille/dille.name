@@ -12,7 +12,7 @@
 
 GitLab releases regularly [<i class="fa-solid fa-arrow-up-right-from-square"></i>](https://about.gitlab.com/releases/categories/releases/)
 
-New minor version on the 20th every month
+New minor version on the 22th every month
 
 New major version every May
 
@@ -27,6 +27,8 @@ Upcoming releases [<i class="fa-solid fa-arrow-up-right-from-square"></i>](https
 Upcoming releases by product tier [<i class="fa-solid fa-arrow-up-right-from-square"></i>](https://about.gitlab.com/direction/paid_tiers/)
 
 Deprecations are documented [<i class="fa-solid fa-arrow-up-right-from-square"></i>](https://docs.gitlab.com/ee/update/deprecations)
+
+Make sure you have a backup [<i class="fa-solid fa-arrow-up-right-from-square"></i>](https://docs.gitlab.com/ee/raketasks/backup_restore.html)
 
 ---
 
