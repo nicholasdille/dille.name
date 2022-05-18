@@ -2,4 +2,10 @@
 
 ## Shared runners
 
-XXX
+Shared across all projects
+
+Managed from admin area
+
+Privileges reserved for instance administrators
+
+Can run untagged jobs

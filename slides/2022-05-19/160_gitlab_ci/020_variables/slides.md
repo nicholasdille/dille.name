@@ -6,6 +6,24 @@
 
 ---
 
-## Variables
+## Flavors
 
-XXX
+Variables can be...
+
+- defined in the pipeline definition
+- predefined by GitLab
+- defined in the UI
+
+### Hands-On
+
+1. Update files from `src/`
+1. `variables` in definition:
+
+    ```yaml
+    job_name:
+      variables:
+        version: dev
+      script:
+      # ...
+      - go build -o hello -ldflags "-X main.Version=${version}" .
+    ```

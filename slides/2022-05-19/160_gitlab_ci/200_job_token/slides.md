@@ -8,4 +8,15 @@
 
 ## Job token
 
-XXX
+Every job has a dedicated job token [](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html)
+
+Job tokens can be used to authenticate
+
+- Access the package registry [](https://docs.gitlab.com/ee/user/packages/package_registry/index.html#use-gitlab-cicd-to-build-packages)
+- Access the container registry (see later [<i class="fa-solid fa-arrow-right-to-bracket"></i>](#/gitlab_registries))
+- Download job artifacts [](https://docs.gitlab.com/ee/api/job_artifacts.html#get-job-artifacts)
+- Get details of corresponding job [](https://docs.gitlab.com/ee/api/jobs.html#get-job-tokens-job)
+
+Job token inherits permissions of triggering user
+
+Limit access to specific projects [](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html#configure-the-job-token-scope-limit)
