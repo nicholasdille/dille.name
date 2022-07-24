@@ -1,7 +1,7 @@
 pipeline:
 
   docker:
-    image: docker:18.06
+    image: docker:20.10@sha256:75290344f118171da5c4525a3d08d726b8ec339808b21eec0ee792f35e55a30b
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     environment:
