@@ -1,7 +1,7 @@
 pipeline:
 
   build:
-    image: openjdk:8-jdk
+    image: openjdk:8-jdk@sha256:8a8e46d5c427bbca16298e63a20dafe95ab9edcd01644d3f6132f557987a5b43
     commands:
     - javac HelloWorld.java
     - jar -cvf HelloWorld.jar HelloWorld.class
@@ -15,7 +15,7 @@ pipeline:
     secrets: [ WEBDAV_USER, WEBDAV_PASS ]
 
   trigger:
-    image: plugins/downstream
+    image: plugins/downstream@sha256:b7924a1048636fbcf7ce9f0e706017c9b5ed705aa440ee8a76b387575f8b33e8
     server: https://ci.go-nerd.de
     fork: true
     repositories:

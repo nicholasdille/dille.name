@@ -3,7 +3,7 @@ version: "3.3"
 services:
 
   proxy:
-    image: traefik:1.7
+    image: traefik:1.7@sha256:1d8a41ae1bd54c9e9a5e0cc8da9002638932c53cc3d50c6f0c172238374ebe8f
     command: "--debug --docker --docker.endpoint='unix:///var/run/docker.sock' --docker.watch=true --docker.exposedByDefault=false --entryPoints='Name:http Address::80' --defaultEntryPoints='http'"
     ports:
       - 80:80
@@ -11,7 +11,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
   registry:
-    image: registry:2
+    image: registry:2@sha256:c631a581c6152f5a4a141a974b74cf308ab2ee660287a3c749d88e0b536c0c20
     labels:
       traefik.enable: "true"
       traefik.frontend.rule: "HostRegexp: registry.{domain:.+}"
@@ -19,7 +19,7 @@ services:
       traefik.protocol: "http"
 
   web:
-    image: konradkleine/docker-registry-frontend:v2
+    image: konradkleine/docker-registry-frontend:v2@sha256:181aad54ee64312a57f8ccba5247c67358de18886d5e2f383b8c4b80a7a5edf6
     depends_on:
       - registry
     environment:
