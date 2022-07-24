@@ -33,6 +33,10 @@
   "patch":  { "labels": ["bump/patch"] },
   "pin":    { "labels": ["bump/pin"] },
   "digest": { "labels": ["bump/digest"] },
+  
+  "ignorePaths": [
+    "/slides/**"
+  ],
 
   "regexManagers": [
     {
