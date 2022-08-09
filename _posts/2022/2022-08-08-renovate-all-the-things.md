@@ -13,7 +13,7 @@ tags:
 ---
 Modern software is built on top of dozens if not hundreds of dependencies. This help developers to focus on business value instead of reinventing the wheel. But those dependencies must be updated to prevent shipping security vulnerabilities. Renovate scans your source code repository for a wide range of languages and offers updates as merge requests. This post provides an introduction to use Renovate with Docker, containers and container images.
 
-<img src="/media/2022/08/mark-de-jong-FQmwJSK0vB8-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2022/08/mark-de-jong-FQmwJSK0vB8-unsplash.jpg" style="object-fit: cover; object-position: center 50%; width: 100%; height: 150px;" />
 
 <!--more-->
 
