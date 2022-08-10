@@ -8,7 +8,7 @@ pipeline:
     - java HelloWorld
 
   docker:
-    image: docker:18.06
+    image: docker:18.09@sha256:58469a43b529313091f1df424037895a9961b27149aafec812ce8fd8d7ac0c9d
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     commands:
