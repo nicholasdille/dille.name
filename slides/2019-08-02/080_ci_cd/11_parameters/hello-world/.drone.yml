@@ -1,7 +1,7 @@
 pipeline:
 
   build:
-    image: openjdk:8-jdk
+    image: openjdk:17.0.2-jdk@sha256:528707081fdb9562eb819128a9f85ae7fe000e2fbaeaf9f87662e7b3f38cb7d8
     commands:
     - javac HelloWorld.java
     - curl -fT HelloWorld.java -u "$${WEBDAV_USER}:$${WEBDAV_PASS}" https://webdav.dille.io/${CI_REPO_NAME}/${CI_BUILD_NUMBER}/
