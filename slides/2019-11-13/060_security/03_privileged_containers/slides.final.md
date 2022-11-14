@@ -25,7 +25,7 @@ nsenter -t 1 -m -u -n -i sh
 
 ### For example
 
-![](https://katacontainers.io/assets/img/logo_white.e69d7ea6.svg) <!-- .element: style="width: 35%" -->
+![](images/katcontainers.svg) <!-- .element: style="width: 35%" -->
 
 Isolates containers in a lightweight VM
 

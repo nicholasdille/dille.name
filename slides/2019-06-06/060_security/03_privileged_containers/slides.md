@@ -42,7 +42,7 @@ docker run --rm --privileged --pid=host -it alpine:3.8 \
 
 ### For example
 
-![](https://katacontainers.io/assets/img/logo_white.e69d7ea6.svg) <!-- .element: style="width: 35%" -->
+![](images/katcontainers.svg) <!-- .element: style="width: 35%" -->
 
 Isolates containers in a lightweight VM
 
