@@ -18,7 +18,7 @@ tags:
 ---
 This week I attended [ContainerConf](https://www.containerconf.de) in Mannheim - the first in-person conference in three years. I had the pleasure to contribute a full-day workshop about CI/CD with GitLab as well as a talk about optimizing container image.
 
-<img src="/media/2022/11/joao-cruz-IkEpl3JkVqU-unsplash.jpg" /><!-- .element: style="width: 80%" -->
+<img src="/media/2022/11/joao-cruz-IkEpl3JkVqU-unsplash.jpg" style="object-fit: cover; object-position: center 70%; width: 100%; height: 150px;" />
 
 <!--more-->
 

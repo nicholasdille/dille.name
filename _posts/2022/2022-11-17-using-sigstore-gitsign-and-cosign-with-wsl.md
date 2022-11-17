@@ -14,7 +14,7 @@ tags:
 ---
 [Sigstore](https://www.sigstore.dev/) has been all over my newsfeeds for their efforts in supply chain security especially signing containers and SBoMs documents with shortlived key pairs using [cosign](https://github.com/sigstore/cosign). This "keyless" approach can also be applied to signing git commits using [gitsign](https://github.com/sigstore/gitsign) eliminating the need for PGP key pairs. Utilizing these tools involves authenticating via OIDC in a browser. In WSL this requires some preparation to open the authentication page in the default browser on Windows.
 
-<img src="/media/2022/11/call-me-fred-pPyHkWYSFbk-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2022/11/call-me-fred-pPyHkWYSFbk-unsplash.jpg" style="object-fit: cover; object-position: center 45%; width: 100%; height: 200px;" />
 
 <!--more-->
 
