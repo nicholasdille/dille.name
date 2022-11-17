@@ -84,6 +84,6 @@ services:
 
 ## Managing pods explicitly
 
-Please refer to [my earlier post about managing pods using Docker](https://dille.name/blog/2019/10/11/how-to-use-the-pod-concept-for-an-isolated-environment-in-docker-workshops/) how to achieve this manually.
+Please refer to [my earlier post about managing pods using Docker](/blog/2019/10/11/how-to-use-the-pod-concept-for-an-isolated-environment-in-docker-workshops/) how to achieve this manually.
 
 I have also published a [Docker CLI plugin for managing pods](https://github.com/nicholasdille/docker-pod).

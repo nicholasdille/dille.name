@@ -36,6 +36,6 @@ My talk focused on [`buildkit`](https://github.com/moby/buildkit) as the next-ge
 
 The talk was [recorded and was published on the Docker blog](https://www.docker.com/blog/january-virtual-meetup-recap/).
 
-Find my slides [here](https://dille.name/slides/2020-01-22/Docker-HowToImproveYourDockerImageBuilds.html#/).
+Find my slides [here](/slides/2020-01-22/Docker-HowToImproveYourDockerImageBuilds.html#/).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/2020-01-22).

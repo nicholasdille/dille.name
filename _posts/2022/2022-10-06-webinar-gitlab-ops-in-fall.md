@@ -43,6 +43,6 @@ I covered the following topics:
   - Using GitLab Pages
   - Monitoring GitLab
 
-Find my slides [here](https://dille.name/slides/2022-10-06/heise-Workshop-GitLab-Ops.html).
+Find my slides [here](/slides/2022-10-06/heise-Workshop-GitLab-Ops.html).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/20221006).

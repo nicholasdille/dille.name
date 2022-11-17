@@ -30,4 +30,4 @@ For the third time in a row, I co-organized a regional IT conference called [x-c
 
 <!--more-->
 
-Find my slides [here](https://dille.name/slides/2019-11-19/x-celerate 2019 - Container Universum.html).
+Find my slides [here](/slides/2019-11-19/x-celerate 2019 - Container Universum.html).

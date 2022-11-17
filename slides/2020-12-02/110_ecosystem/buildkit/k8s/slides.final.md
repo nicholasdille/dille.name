@@ -54,7 +54,7 @@ buildctl build \
 
 ## Using BuildKit with GitLab CI
 
-Described in my [blog post](https://dille.name/blog/2020/06/01/using-buildkit-for-cloud-native-builds-in-gitlab/)
+Described in my [blog post](/blog/2020/06/01/using-buildkit-for-cloud-native-builds-in-gitlab/)
 
 Published [demo on gitlab.com](https://gitlab.com/nicholasdille/demo-buildkit)
 

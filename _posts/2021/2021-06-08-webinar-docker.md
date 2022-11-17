@@ -19,6 +19,6 @@ tags:
 
 <!--more-->
 
-Find my slides [here](https://dille.name/slides/2021-06-08/heise-Docker-und-Co-leicht-gemacht.html#/).
+Find my slides [here](/slides/2021-06-08/heise-Docker-und-Co-leicht-gemacht.html#/).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/2021-06-08).

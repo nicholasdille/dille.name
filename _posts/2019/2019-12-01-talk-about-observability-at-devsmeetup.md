@@ -20,4 +20,4 @@ Last week I had the chance to [talk about observability](https://www.meetup.com/
 
 <!--more-->
 
-Find my slides [here](https://dille.name/slides/2019-11-27/DevsMeetup%20-%20o11y.html).
+Find my slides [here](/slides/2019-11-27/DevsMeetup%20-%20o11y.html).

@@ -51,4 +51,4 @@ To start working in the pod, execute an interactive container based on `docker:s
 docker run -it --pid container:pod --network container:pod docker:stable
 ```
 
-The result feels like a single host although it is assembled from multiple containers. This can even be combined with my earlier port about [Shell-In-A-Box](https://dille.name/blog/2019/08/25/using-shellinabox-for-docker-workshops/) to simplify the setup. Mind that [`docker-compose` only supports sharing the network namespace](https://docs.docker.com/compose/compose-file/#network_mode) between containers.
+The result feels like a single host although it is assembled from multiple containers. This can even be combined with my earlier port about [Shell-In-A-Box](/blog/2019/08/25/using-shellinabox-for-docker-workshops/) to simplify the setup. Mind that [`docker-compose` only supports sharing the network namespace](https://docs.docker.com/compose/compose-file/#network_mode) between containers.

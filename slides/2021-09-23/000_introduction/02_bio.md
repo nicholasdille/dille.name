@@ -8,7 +8,7 @@
 
 <i class="fas fa-globe" style="width: 1.5em; text-align: center;"></i> [Blogger](https://dille.name) since 2003
 
-<i class="fas fa-microphone" style="width: 1.5em; text-align: center;"></i> [Speaker](https://dille.name/blog/topics/Topic3/) since 2009
+<i class="fas fa-microphone" style="width: 1.5em; text-align: center;"></i> [Speaker](/blog/topics/Topic3/) since 2009
 
 <i class="fab fa-windows" style="width: 1.5em; text-align: center;"></i> [Microsoft MVP](https://mvp.microsoft.com/en-us/PublicProfile/4029117?fullName=Nicholas%20%20Dille) since 2010
 

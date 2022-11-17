@@ -12,4 +12,4 @@ Insecure `dockerd` enables breakout
 
 Do not open TCP directly
 
-Use [containerized reverse proxy](https://dille.name/blog/2018/11/18/publishing-the-docker-daemon-using-a-containerized-reverse-proxy/)
+Use [containerized reverse proxy](/blog/2018/11/18/publishing-the-docker-daemon-using-a-containerized-reverse-proxy/)

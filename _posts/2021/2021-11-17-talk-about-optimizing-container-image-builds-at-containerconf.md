@@ -34,6 +34,6 @@ I covered the following topics:
 - Dependency update using RenovateBot
 - Auto merging patch updates
 
-Find my slides [here](https://dille.name/slides/2021-11-17/ContainerConf-Optimize-container-images.html#/).
+Find my slides [here](/slides/2021-11-17/ContainerConf-Optimize-container-images.html#/).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/20211117).

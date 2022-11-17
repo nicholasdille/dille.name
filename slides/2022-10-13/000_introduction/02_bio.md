@@ -20,7 +20,7 @@
 
 
 [1]: https://dille.name
-[2]: https://dille.name/blog/tags/#Slides
+[2]: /blog/tags/#Slides
 [3]: https://mvp.microsoft.com/en-us/PublicProfile/4029117?fullName=Nicholas%20%20Dille
 [4]: https://www.docker.com/captains/nicholas-dille
 [5]: https://info.traefik.io/traefik-ambassador-program

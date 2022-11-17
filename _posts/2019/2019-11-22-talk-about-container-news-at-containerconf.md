@@ -22,4 +22,4 @@ Last week I had the honour of talking again at [ContainerConf 2019](https://www.
 
 <!--more-->
 
-Find my slides [here](https://dille.name/slides/2019-11-13/ContainerConf%202019%20-%20Container%20Universum.html).
+Find my slides [here](/slides/2019-11-13/ContainerConf%202019%20-%20Container%20Universum.html).

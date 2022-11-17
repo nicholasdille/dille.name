@@ -11,7 +11,7 @@ tags:
 - Container
 - PowerShell
 ---
-In my last post, [I explained how to create Docker images from the layers of other images](https://dille.name/blog/2018/08/19/how-to-reduce-the-build-time-of-a-monolithic-docker-image/). As this is a rather complex process, I have published a PowerShell module to automate this.<!--more-->
+In my last post, [I explained how to create Docker images from the layers of other images](/blog/2018/08/19/how-to-reduce-the-build-time-of-a-monolithic-docker-image/). As this is a rather complex process, I have published a PowerShell module to automate this.<!--more-->
 
 ## Table of Contents
 
@@ -63,7 +63,7 @@ The module called [DockerRegistry](https://github.com/nicholasdille/PowerShell-R
 - `New-DockerImageBlob` - upload an image configuration
 - `New-DockerImageManifest` - upload an image manifest
 
-These functions perform rather basic tasks necessary for `Merge-DockerImageLayer` which is used to merge the layers of the base image and the derived images. The following example assumes that you have followed [the example in the first post about merging layers](https://dille.name/blog/2018/08/19/how-to-reduce-the-build-time-of-a-monolithic-docker-image/).
+These functions perform rather basic tasks necessary for `Merge-DockerImageLayer` which is used to merge the layers of the base image and the derived images. The following example assumes that you have followed [the example in the first post about merging layers](/blog/2018/08/19/how-to-reduce-the-build-time-of-a-monolithic-docker-image/).
 
 ```powershell
 Install-Module -Name DockerRegistry

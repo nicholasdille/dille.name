@@ -27,7 +27,7 @@ Run daemon without remote access
 
 Run reverse proxy to offer secure TCP remoting
 
-My [example implementation from 2018](https://dille.name/blog/2018/11/18/publishing-the-docker-daemon-using-a-containerized-reverse-proxy/)
+My [example implementation from 2018](/blog/2018/11/18/publishing-the-docker-daemon-using-a-containerized-reverse-proxy/)
 
 ---
 

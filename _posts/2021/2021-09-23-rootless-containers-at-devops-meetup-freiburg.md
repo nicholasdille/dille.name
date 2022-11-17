@@ -32,6 +32,6 @@ I covered the following topics:
 - Rootless containerd
 - Rootless Kubernetes
 
-Find my slides [here](https://dille.name/slides/2021-09-23/DevOps-Meetup-Rootless-Containers.html).
+Find my slides [here](/slides/2021-09-23/DevOps-Meetup-Rootless-Containers.html).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/20210923.1).

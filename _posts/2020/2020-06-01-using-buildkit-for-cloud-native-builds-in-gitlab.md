@@ -15,7 +15,7 @@ tags:
 - Slide Deck
 ---
 
-After my talk about [BuildKit](https://github.com/moby/buildkit) at [DockerCon Live 2020](https://dille.name/blog/2020/05/29/my-talk-about-buildkit-at-dockercon-live-2020/) I wanted to provide a detailed answer to a question from the audience. I was asked how to use BuildKit in [GitLab CI](https://docs.gitlab.com/ee/ci/) and this post will explain this for running the BuildKit daemon as a service and using BuildKit daemonless in a job.
+After my talk about [BuildKit](https://github.com/moby/buildkit) at [DockerCon Live 2020](/blog/2020/05/29/my-talk-about-buildkit-at-dockercon-live-2020/) I wanted to provide a detailed answer to a question from the audience. I was asked how to use BuildKit in [GitLab CI](https://docs.gitlab.com/ee/ci/) and this post will explain this for running the BuildKit daemon as a service and using BuildKit daemonless in a job.
 
 <img src="/media/2020/06/pipeline-unsplash-X-NAMq6uP3Q.jpg" /><!-- .element: style="width: 80%" -->
 

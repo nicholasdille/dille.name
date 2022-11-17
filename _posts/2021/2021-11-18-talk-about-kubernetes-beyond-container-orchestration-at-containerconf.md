@@ -26,6 +26,6 @@ I covered the following topics:
 - Controllers with external state (infrastructure services like DNS)
 - Operators, e.g. prometheus-operator
 
-Find my slides [here](https://dille.name/slides/2021-11-18/ContainerConf-Kubernetes-is-so-much-more-than-a-container-orchestrator.html#/).
+Find my slides [here](/slides/2021-11-18/ContainerConf-Kubernetes-is-so-much-more-than-a-container-orchestrator.html#/).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/20211118).

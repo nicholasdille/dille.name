@@ -27,6 +27,6 @@ The agenda offered the following topics:
 - Rootless containers
 - Heredocs in Dockerfile
 
-Find my slides [here](https://dille.name/slides/2021-11-08/ContainerConf-Advanced-Containers.html#/).
+Find my slides [here](/slides/2021-11-08/ContainerConf-Advanced-Containers.html#/).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/20211108).
