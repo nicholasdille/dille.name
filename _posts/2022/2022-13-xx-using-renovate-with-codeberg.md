@@ -12,7 +12,7 @@ tags:
 - Renovate
 published: false
 ---
-XXX https://docs.codeberg.org/getting-started/what-is-codeberg/
+Renovate is well documented for the most prominent development platforms and many resources about them are available on the web. But Renovate also supported [gitea]() as a platform which is poorly documented. This post demonstrates how to use Renovate against gitea. I will be using [Codeberg](https://codeberg.org) in the examples which is a [hosted by a German non-profit organization](https://docs.codeberg.org/getting-started/what-is-codeberg/). Please also checkout [Codebergs bylaws](https://codeberg.org/Codeberg/org/src/branch/main/en/bylaws.md).
 
 XXX gitea
 
