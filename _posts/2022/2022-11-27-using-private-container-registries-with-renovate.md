@@ -1,16 +1,15 @@
 ---
 title: 'Using private container registries with #Renovate #Docker'
-date: 2022-08-10T21:00:00+01:00
+date: 2022-11-27T21:00:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2022/08/10/using-private-container-registries-with-renovate/
+permalink: /blog/2022/11/27/using-private-container-registries-with-renovate/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Renovate
-published: false
 ---
 When [using Renovate to update your dependencies](/blog/2022/08/08/renovate-all-the-things/ "Previous post about using renovate in general"), you will come across container images that are hosted in a private container registry or in a private repository of a public container registry. In both cases, you will need to configure Renovate with credentials to authenticate when checking for new versions of your container image. This post demonstrates how to configure Renovate correctly.
 
