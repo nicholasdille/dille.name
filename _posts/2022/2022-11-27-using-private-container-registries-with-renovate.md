@@ -13,7 +13,7 @@ tags:
 ---
 When [using Renovate to update your dependencies](/blog/2022/08/08/renovate-all-the-things/ "Previous post about using renovate in general"), you will come across container images that are hosted in a private container registry or in a private repository of a public container registry. In both cases, you will need to configure Renovate with credentials to authenticate when checking for new versions of your container image. This post demonstrates how to configure Renovate correctly.
 
-<img src="/media/2022/08/imattsmart-Vp3oWLsPOss-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2022/08/imattsmart-Vp3oWLsPOss-unsplash.jpg" style="object-fit: cover; object-position: center 10%; width: 100%; height: 200px;" />
 
 <!--more-->
 
