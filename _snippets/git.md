@@ -27,3 +27,9 @@ Interactive rebase from very first commit:
 ```bash
 git rebase --interactive --root
 ```
+
+Create orphan branch
+
+```bash
+git checkout --orphan ghpages
+```
