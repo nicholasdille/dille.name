@@ -2,6 +2,9 @@
 
 set -o errexit
 
+echo "########## One-shot deployment"
+rm deploy.php
+
 echo "########## Check"
 (cd .. && sha256sum -c site.tar.gz.sha256)
 
