@@ -1,5 +1,5 @@
 ---
-title: 'Using #Renovate with Codeberg'
+title: 'Using #Renovate with #Codeberg'
 date: 2023-01-15T21:00:00+01:00
 author: Nicholas Dille
 layout: post
