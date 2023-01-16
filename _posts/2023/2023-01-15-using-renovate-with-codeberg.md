@@ -57,6 +57,7 @@ The following example demonstrates a static regex manager for a single dependenc
       "datasourceTemplate": "git-tags",
       "versioningTemplate": "loose"
     }
+  ]
 }
 ```
 
