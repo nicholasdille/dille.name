@@ -8,7 +8,7 @@ pipeline:
     secrets: [ WEBDAV_USER, WEBDAV_PASS ]
 
   docker:
-    image: docker:18.06
+    image: docker:23.0@sha256:3cf33ff6e893a39262bd9f6b85ff46e068fa2a98d201326e9c3058a22a21a6bb
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     environment:
