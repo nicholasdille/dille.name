@@ -1,0 +1,100 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="721px" height="211px" viewBox="-0.5 -0.5 721 211" content="&lt;mxfile&gt;&lt;diagram id=&quot;Jhd511ykswnUaEldbMDs&quot; name=&quot;Page-1&quot;&gt;7VZNc9owEP01HDMDJiFcMXHSHEKZ0GmPGWEvtqayVpVkMP31XdkyNmBCO9NpL+GApKen/dC+tT0Yz/PySTOVvWACYhAMk3IwfhgEwTSY0r8D9jVwP72vgVTzpIZGLbDiP8GDQ48WPAFzRLSIwnJ1DMYoJcT2CGNa4+6YtkFx7FWxFM6AVczEOfqNJzbzad0NW/wT8DRrPI+GfidnDdkDJmMJ7jrQOBqM5xrR1rO8nINwd9fcS33u8cLuITAN0v7Ogdv6wJaJwue21HzLBaSQDIKJICPhWrtA7d5nP/lRuOjCDUp7Y6razIgwmigqb9ju0yz1498wE0nLNYg9cQqpwVjNY+uCDI7MBnSjyk2NBUXHFGiegwXtoWW7DncZt7BSLHb8HSmVsMzmglYjFxkvoRGfW5NL/A5zFKgrV+PH6udz6MW5EA0uUZKhcAvaclLSTPBUEmxReQONp0mV9GkZfWXdcSg7kC/rEyBlpd3t+J669QrbtQI9YFlHnIemYr4p0oOpVjc08dLpl9HdmYxCZkBwSrlT/XM91MgCXUxoLA2S5WBcScwFnurVZ034LCt9GErAdT9TbM0Ft/yiMed06XqSYkdR5O8SnXPUtocyU2qmc3QCB8nWoi+2ykwh6ZG0oWshwnAFcYy5upaG2ZvYCvMh9FOhlyeq/h/Cn5wJ/7XzaLou/Yjy3NuMy9S9hzTmNPxJ63SkchDw0O7V9fZxWjVUH2Y5youGqZg31duItGtA91g9qJhMI+mgJ+yXomqeRKOjseoC329O730RfXkLnxcPb6vo9evzPProgQs9cDv9dz1Ay/b7pNrrfOSNo18=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <path d="M 0 0 L 220 0 L 240 105 L 220 210 L 0 210 L 20 105 Z" fill="none" stroke="#ffffff" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 7px; margin-left: 1px;">
+                        <div data-drawio-colors="color: #FFFFFF; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Privileged
+                                <br style="font-size: 16px;"/>
+                                <br style="font-size: 16px;"/>
+                                Entirely unrestricted
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="120" y="23" fill="#FFFFFF" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    Privileged...
+                </text>
+            </switch>
+        </g>
+        <path d="M 240 0 L 460 0 L 480 105 L 460 210 L 240 210 L 260 105 Z" fill="none" stroke="#ffffff" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 7px; margin-left: 241px;">
+                        <div data-drawio-colors="color: #FFFFFF; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Baseline
+                                <br/>
+                                <br/>
+                                No host namespaces
+                                <br/>
+                                No privileged
+                                <br/>
+                                Only some capabilities
+                                <br/>
+                                No hostPath volumes
+                                <br/>
+                                No host ports
+                                <br/>
+                                AppArmor enabled
+                                <br/>
+                                No unconfined Seccomp
+                                <br/>
+                                Only some sysctls
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="360" y="23" fill="#FFFFFF" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    Baseline...
+                </text>
+            </switch>
+        </g>
+        <path d="M 480 0 L 700 0 L 720 105 L 700 210 L 480 210 L 500 105 Z" fill="none" stroke="#ffffff" stroke-miterlimit="10" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe center; width: 238px; height: 1px; padding-top: 7px; margin-left: 481px;">
+                        <div data-drawio-colors="color: #FFFFFF; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Restricted
+                                <br/>
+                                <br/>
+                                Everything from Baseline
+                                <br/>
+                                <br/>
+                                Only somevolumes types
+                                <br/>
+                                No privilege escalation
+                                <br/>
+                                Only non-root users
+                                <br/>
+                                Seccomp profile
+                                <br/>
+                                Must drop all capabilities
+                                <br/>
+                                Only NET_BIND_SERVICE
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="600" y="23" fill="#FFFFFF" font-family="Helvetica" font-size="16px" text-anchor="middle">
+                    Restricted...
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>
