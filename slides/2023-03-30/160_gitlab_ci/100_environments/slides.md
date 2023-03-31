@@ -22,7 +22,7 @@ WebDAV endpoints emulate deployment targets
 
 ---
 
-## Hands-On (1/2) [<i class="fa fa-comment-code"></i>]((https://github.com/nicholasdille/container-slides/tree/100_environments/demo1 "100_environments/demo1")
+## Hands-On (1/2) [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/160_gitlab_ci/100_environments/demo1 "100_environments/demo1")
 
 1. Retrieve passwords for dev and live environments:
 
@@ -42,7 +42,7 @@ WebDAV endpoints emulate deployment targets
 See new `.gitlab-ci.yml`:
 
 ```bash
-git checkout 100_environments/demo1 -- '*'
+git checkout 160_gitlab_ci/100_environments/demo1 -- '*'
 ```
 
 ---
@@ -56,7 +56,7 @@ Branches can be used to represent target environments:
 
 ---
 
-## Hands-On (2/2) [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/100_environments/demo2 "100_environments/demo2")
+## Hands-On (2/2) [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/160_gitlab_ci/100_environments/demo2 "100_environments/demo2")
 
 1. Create branch called `dev`
 1. Use environment `${CI_COMMIT_REF_NAME}`
@@ -67,5 +67,15 @@ Branches can be used to represent target environments:
 See new `.gitlab-ci.yml`:
 
 ```bash
-git checkout 100_environments/demo2 -- '*'
+git checkout 160_gitlab_ci/100_environments/demo2 -- '*'
 ```
+
+---
+
+## Pro tip: Disposable environments a.k.a. review apps
+
+Additonal use of environments: disposable review apps
+
+Environments can have a [stop action](https://docs.gitlab.com/ee/ci/environments/index.html#stopping-an-environment) for disposal
+
+Environments can have an [expiration time](https://docs.gitlab.com/ee/ci/yaml/#environmentauto_stop_in)

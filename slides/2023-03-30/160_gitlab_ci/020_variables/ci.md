@@ -12,7 +12,7 @@ Careful with protected variables
 
 ---
 
-## Hands-On [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/020_variables/ci "020_variables/ci")
+## Hands-On [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/160_gitlab_ci/020_variables/ci "020_variables/ci")
 
 1. Go to **Settings** > **CI/CD** and unfold **Variables**
 1. Create unprotected variable `AUTHOR` and set to a value of your choice
@@ -32,13 +32,31 @@ Careful with protected variables
 1. Fetch change:
 
     ```bash
-    git checkout 020_variables/ci -- '*'
+    git checkout 160_gitlab_ci/020_variables/ci -- '*'
     ```
     <!-- .element: style="width: 47em;" -->
 
 ---
 
-## Pro tip: Protect masked variables
+## Pro tip: Masked variables for all values
+
+Many values are rejected by GitLab
+
+Store base64-encoded values
+
+Decode values before use:
+
+```yaml
+job_name:
+  script:
+  - echo "$( echo "${MASKED_VAR}" | base64 -d )"
+```
+
+Careful! Original value will not be masked!
+
+---
+
+## Pro tip 2: Protect masked variables
 
 Prevent project maintainers/owners to read masked CI variables:
 

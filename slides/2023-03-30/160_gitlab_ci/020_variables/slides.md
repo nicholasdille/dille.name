@@ -8,7 +8,7 @@
 
 ## Flavors
 
-Variables can be...
+Variables [](https://docs.gitlab.com/ee/ci/yaml/#variables) can be...
 
 - defined in the pipeline definition
 - predefined by GitLab
@@ -16,12 +16,12 @@ Variables can be...
 
 ---
 
-## Hands-On [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/020_variables/inline "020_variables/inline")
+## Hands-On [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/160_gitlab_ci/020_variables/inline "020_variables/inline")
 
 1. Update files:
 
     ```yaml
-    git checkout 020_variables/inline -- '*'
+    git checkout 160_gitlab_ci/020_variables/inline -- '*'
     ```
     <!-- .element: style="width: 40em;" -->
 
