@@ -12,9 +12,9 @@ tags:
 - containerd
 published: true
 ---
-With the release of the prerelease versions for Docker 24.0.0, a feature flag was added to enable the containerd image store. This extends the integration of Docker with containerd by delegating image operations. XXX
+With the release of the prerelease versions for Docker 24.0.0, a feature flag was added to enable the containerd image store. This extends the integration of Docker with containerd by delegating image operations. This post dives into setting up the new version of Docker and enabling the containerd image store.
 
-<img src="/media/2023/05/ethan-hoover-vasU4-TlC5I-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2023/05/ethan-hoover-vasU4-TlC5I-unsplash.jpg" style="object-fit: cover; object-position: center 60%; width: 100%; height: 200px;" />
 
 <!--more-->
 
@@ -23,14 +23,22 @@ Disclaimer: Only test the new version of Docker on a dedicated machine.
 Download and install the release candidate of Docker 24.0.0 and unpack it to `/usr/local/bin`. At the time of this writing, 24.0.0-rc.2 is the latest version.
 
 ```bash
-curl -sL https://download.docker.com/linux/static/test/x86_64/docker-24.0.0-rc.2.tgz | tar -xzC /usr/local/bin --strip=1
+curl --silent --location \
+  --url https://download.docker.com/linux/static/test/x86_64/docker-24.0.0-rc.2.tgz \
+| tar --extract --gzip --directory=/usr/local/bin --strip-components=1
 ```
 
 The containerd image store is enabled by setting the feature `containerd-snapshotter`:
 
 ```bash
 mkdir /etc/docker
-echo '{"features":{"containerd-snapshotter": true}}' >/etc/docker/daemon.json
+cat <<EOF >/etc/docker/daemon.json
+{
+  "features": {
+    "containerd-snapshotter": true
+  }
+}
+EOF
 ```
 
 The following command starts Docker in the background and writes the log to `/var/log/docker.log`:
@@ -69,8 +77,10 @@ docker container run -it alpine true
 The effect of the above command is best investigated in containerd. Docker is using a namespace called `moby` in containerd (see output of first command below). The image pulled by the above run command is stored inside this namespace and can be displayed using the second command below.
 
 ```bash
-ctr --address /var/run/docker/containerd/containerd.sock namespace list
-ctr --address /var/run/docker/containerd/containerd.sock --namespace moby images list
+ctr --address /var/run/docker/containerd/containerd.sock \
+    namespace list
+ctr --address /var/run/docker/containerd/containerd.sock --namespace moby \
+    images list
 ```
 
 More tests can be performed by running `docker image pull` as well as `docker image rm` and then checking the contents of the image store in containerd.
