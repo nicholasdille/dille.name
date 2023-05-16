@@ -1,6 +1,6 @@
 ---
 title: 'Webinar Series about #Kubernetes - Part 4: Supply Chain Security (German)'
-date: 2023-05-17T21:00:00+02:00
+date: 2023-05-17T00:02:00+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2023/05/17/webinar-series-about-kubernetes-part-3-supply-chain-security/
