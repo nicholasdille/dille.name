@@ -15,7 +15,7 @@ tags:
 ---
 I have started a new webinar series with [heise Academy](https://heise-academy.de/) about [Kubernetes security](https://webinare.heise.de/kubernetes-security/). This is about the first part called Platform-as-a-Service. Part 2 will be about [network policies](/blog/2023/04/26/webinar-series-about-kubernetes-part-2-network-policies/), part 3 will be about [policies](/blog/2023/04/26/webinar-series-about-kubernetes-part-3-policies/) and part 4 will be about [supply chain security](/blog/2023/04/26/webinar-series-about-kubernetes-part-4-supply-chain-security/).
 
-<img src="/media/2021/06/conductor-5157150_1920_cropped.webp" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2023/04/claudio-schwarz-294j9hG1N3w-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
 
 <!--more-->
 
