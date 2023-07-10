@@ -61,7 +61,9 @@ It is a bad idea to include the plaintext password in your `renovate.json`. Fort
 - GitHub Action secret
 - Similar approaches exist for other services/products/tools
 
-The environmet variable can be access from the configuration using `process.env.VARIABLE_NAME`:
+The tricky part is accessing the secret from the configuration file. The `renovate.json` does not support reading secrets from the environment.
+
+If you are using [`config.js`](https://docs.renovatebot.com/getting-started/running/#using-configjs) to configure Renovate, you can use the following code to the an [environment variable using `process.env.VARIABLE_NAME`](https://docs.renovatebot.com/getting-started/private-packages/#package-manager-credentials-for-artifact-updating):
 
 ```json
 {
@@ -95,6 +97,13 @@ When using the Renovate GitHub app, [you do not get access to secret due to secu
     }
   ]
 }
+```
+
+Renovate can also read configuration values for host rules from environent variables when [`detecthostrulesfromenv`](https://docs.renovatebot.com/self-hosted-configuration/#detecthostrulesfromenv) is set to `true`. For example, the following environment variables can be used to configure a host rule:
+
+```bash
+DOCKER_MY_REGISTRY_COMPANY_COM_USERNAME=foo_user
+DOCKER_MY_REGISTRY_COMPANY_COM_PASSWORD=bar_pass
 ```
 
 ## Providing the registry URL
