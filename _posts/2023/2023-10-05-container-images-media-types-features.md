@@ -17,7 +17,7 @@ published: true
 ---
 BuildKit has added many features to building container images. The resulting images will look very differently in the registry. This post will focus on the layout of the manifests stored in the registry when switching media types, building multi-arch images or adding prevenance (e.g. SBOM).
 
-<img src="media/2023/10/nana-smirnova-IEiAmhXehwE-unsplash.jpg" style="object-fit: cover; object-position: center 60%; width: 100%; height: 200px;" />
+<img src="/media/2023/10/nana-smirnova-IEiAmhXehwE-unsplash.jpg" style="object-fit: cover; object-position: center 60%; width: 100%; height: 200px;" />
 
 <!--more-->
 
