@@ -149,7 +149,7 @@ Over the years, Docker has added support for different compression types for lay
 Let's take a look at the manifests of image with different compression types:
 
 ```bash
-$ docker buildx build --file - --provenance=false                                    . --output type=registry,name=localhost:5000/test:oci-tar,oci-mediatypes=true,buildinto=true,compression=uncompressed,force-compression=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-tar,oci-mediatypes=true,buildinto=true,compression=uncompressed,force-compression=true,push=true
 $ regctl manifest get localhost:5000/test:oci-tar
 Name:        localhost:5000/test:oci-tar
 MediaType:   application/vnd.oci.image.manifest.v1+json
@@ -168,7 +168,7 @@ Layers:
   MediaType: application/vnd.oci.image.layer.v1.tar
   Size:      80.347MB
 
-$ docker buildx build --file - --provenance=false                                    . --output type=registry,name=localhost:5000/test:oci-estargz,oci-mediatypes=true,buildinto=true,compression=estargz,force-compression=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-estargz,oci-mediatypes=true,buildinto=true,compression=estargz,force-compression=true,push=true
 $ regctl manifest get localhost:5000/test:oci-estargz
 Name:                                         localhost:5000/test:oci-estargz
 MediaType:                                    application/vnd.oci.image.manifest.v1+json
@@ -190,7 +190,7 @@ Layers:
     containerd.io/snapshot/stargz/toc.digest: sha256:61dd4cc6018bab50b9d94f335ef8eab5c086fef0b777bf9df2a1f8ac4a807274
     io.containers.estargz.uncompressed-size:  81402368
 
-$ docker buildx build --file - --provenance=false                                    . --output type=registry,name=localhost:5000/test:oci-zstd,oci-mediatypes=true,buildinto=true,compression=zstd,force-compression=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-zstd,oci-mediatypes=true,buildinto=true,compression=zstd,force-compression=true,push=true
 $ regctl manifest get localhost:5000/test:oci-zstd
 Name:        localhost:5000/test:oci-zstd
 MediaType:   application/vnd.oci.image.manifest.v1+json
