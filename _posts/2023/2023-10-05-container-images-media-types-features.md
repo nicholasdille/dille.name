@@ -1,9 +1,9 @@
 ---
 title: 'What container images look like in the registry - testing media types and more'
-date: 2023-10-06T21:00:00+02:00
+date: 2023-10-05T21:00:00+02:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2023/10/06/what-container-images-look-like-in-the-registry/
+permalink: /blog/2023/10/05/what-container-images-look-like-in-the-registry/
 categories:
 - Haufe-Lexware
 tags:
