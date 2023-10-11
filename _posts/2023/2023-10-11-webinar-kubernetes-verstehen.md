@@ -1,6 +1,6 @@
 ---
 title: 'Webinar Series about #Kubernetes - Part 1: Kubernetes verstehen (German)'
-date: 2023-10-11T13:00:00+02:00
+date: 2023-10-11T13:02:00+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2023/10/11/webinar-series-about-kubernetes-part-1-kubernetes-verstehen/
