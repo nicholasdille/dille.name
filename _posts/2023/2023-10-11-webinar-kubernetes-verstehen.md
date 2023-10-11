@@ -19,6 +19,6 @@ I have started a new webinar series with [heise Academy](https://heise-academy.d
 
 <!--more-->
 
-Find my slides [here](/slides/2023-10-1/heise-Kubernetes-verstehen.html).
+Find my slides [here](/slides/2023-10-11/heise-Kubernetes-verstehen.html).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this event](https://github.com/nicholasdille/container-slides/releases/tag/20231011).
