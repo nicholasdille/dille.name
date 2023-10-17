@@ -1,9 +1,9 @@
 ---
-title: 'Webinar Series about #Kubernetes - Part 1: Kubernetes automatisieren (German)'
+title: 'Webinar Series about #Kubernetes - Part 2: Kubernetes automatisieren (German)'
 date: 2023-10-18T13:02:00+02:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2023/10/18/webinar-series-about-kubernetes-part-1-kubernetes-automatisieren/
+permalink: /blog/2023/10/18/webinar-series-about-kubernetes-part-2-kubernetes-automatisieren/
 categories:
 - Haufe-Lexware
 tags:
