@@ -30,7 +30,7 @@ When Docker created the predecessors of the current standards for container imag
 Let's take a look at the manifests of a Docker image and an OCI image:
 
 ```bash
-$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:docker-image,oci-mediatypes=false,buildinto=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:docker-image,oci-mediatypes=false,push=true
 $ regctl manifest get localhost:5000/test:docker-image
 Name:        localhost:5000/test:docker-image
 MediaType:   application/vnd.docker.distribution.manifest.v2+json
@@ -49,7 +49,7 @@ Layers:
   MediaType: application/vnd.docker.image.rootfs.diff.tar.gzip
   Size:      29.538MB
 
-$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-image,oci-mediatypes=true,buildinto=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-image,oci-mediatypes=true,push=true
 $ regctl manifest get localhost:5000/test:oci-image
 Name:        localhost:5000/test:oci-image
 MediaType:   application/vnd.oci.image.manifest.v1+json
@@ -76,7 +76,7 @@ BuildKit enables building container images for multiple architectures by using q
 Let's take a look at the manifests of a multi-archtecture images:
 
 ```bash
-$ docker buildx build --provenance=false --platform linux/amd64,linux/arm64 . --output type=registry,name=localhost:5000/test:docker-list,oci-mediatypes=false,buildinto=true,push=true
+$ docker buildx build --provenance=false --platform linux/amd64,linux/arm64 . --output type=registry,name=localhost:5000/test:docker-list,oci-mediatypes=false,push=true
 $ regctl manifest get localhost:5000/test:docker-list
 Name:        localhost:5000/test:docker-list
 MediaType:   application/vnd.docker.distribution.manifest.list.v2+json
@@ -94,7 +94,7 @@ Manifests:
   MediaType: application/vnd.docker.distribution.manifest.v2+json
   Platform:  linux/arm64
 
-$ docker buildx build --provenance=false --platform linux/amd64,linux/arm64 . --output type=registry,name=localhost:5000/test:oci-list,oci-mediatypes=true,buildinto=true,push=true
+$ docker buildx build --provenance=false --platform linux/amd64,linux/arm64 . --output type=registry,name=localhost:5000/test:oci-list,oci-mediatypes=true,push=true
 $ regctl manifest get localhost:5000/test:oci-list
 Name:        localhost:5000/test:oci-list
 MediaType:   application/vnd.oci.image.index.v1+json
@@ -120,7 +120,7 @@ BuildKit has recently added options to create provenance information for contain
 Let's take a look at the manifests of image with provenance:
 
 ```bash
-$ docker buildx build --attest=type=sbom . --output type=registry,name=localhost:5000/test:oci-sbom,oci-mediatypes=true,buildinto=true,push=true
+$ docker buildx build --attest=type=sbom . --output type=registry,name=localhost:5000/test:oci-sbom,oci-mediatypes=true,push=true
 $ regctl manifest get localhost:5000/test:oci-sbom
 Name:                            localhost:5000/test:oci-sbom
 MediaType:                       application/vnd.oci.image.index.v1+json
@@ -149,7 +149,7 @@ Over the years, Docker has added support for different compression types for lay
 Let's take a look at the manifests of image with different compression types:
 
 ```bash
-$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-tar,oci-mediatypes=true,buildinto=true,compression=uncompressed,force-compression=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-tar,oci-mediatypes=true,compression=uncompressed,force-compression=true,push=true
 $ regctl manifest get localhost:5000/test:oci-tar
 Name:        localhost:5000/test:oci-tar
 MediaType:   application/vnd.oci.image.manifest.v1+json
@@ -168,7 +168,7 @@ Layers:
   MediaType: application/vnd.oci.image.layer.v1.tar
   Size:      80.347MB
 
-$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-estargz,oci-mediatypes=true,buildinto=true,compression=estargz,force-compression=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-estargz,oci-mediatypes=true,compression=estargz,force-compression=true,push=true
 $ regctl manifest get localhost:5000/test:oci-estargz
 Name:                                         localhost:5000/test:oci-estargz
 MediaType:                                    application/vnd.oci.image.manifest.v1+json
@@ -190,7 +190,7 @@ Layers:
     containerd.io/snapshot/stargz/toc.digest: sha256:61dd4cc6018bab50b9d94f335ef8eab5c086fef0b777bf9df2a1f8ac4a807274
     io.containers.estargz.uncompressed-size:  81402368
 
-$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-zstd,oci-mediatypes=true,buildinto=true,compression=zstd,force-compression=true,push=true
+$ docker buildx build --provenance=false . --output type=registry,name=localhost:5000/test:oci-zstd,oci-mediatypes=true,compression=zstd,force-compression=true,push=true
 $ regctl manifest get localhost:5000/test:oci-zstd
 Name:        localhost:5000/test:oci-zstd
 MediaType:   application/vnd.oci.image.manifest.v1+json
