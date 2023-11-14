@@ -45,7 +45,7 @@ Load stages and jobs from a file using `include` [](https://docs.gitlab.com/ee/c
 See new `.gitlab-ci.yml`:
 
 ```bash
-git checkout 160_gitlab_ci/110_triggers/curl -- '*'
+git checkout origin/160_gitlab_ci/110_triggers/curl -- '*'
 ```
 
 ---

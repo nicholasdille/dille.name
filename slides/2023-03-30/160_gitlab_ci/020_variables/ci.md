@@ -32,7 +32,7 @@ Careful with protected variables
 1. Fetch change:
 
     ```bash
-    git checkout 160_gitlab_ci/020_variables/ci -- '*'
+    git checkout origin/160_gitlab_ci/020_variables/ci -- '*'
     ```
     <!-- .element: style="width: 47em;" -->
 

@@ -42,7 +42,7 @@ Run the `deploy` job only for the `main` branch
 See new `.gitlab-ci.yml`:
 
 ```bash
-git checkout 160_gitlab_ci/130_rules -- '*'
+git checkout origin/160_gitlab_ci/130_rules -- '*'
 ```
 
 Also see GitLab Pages [](https://docs.gitlab.com/ee/user/project/pages/index.html)
