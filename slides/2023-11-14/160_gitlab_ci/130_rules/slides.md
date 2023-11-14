@@ -117,3 +117,28 @@ job_name:
   - .rule-only-web
   #...
 ```
+
+---
+
+## Pro tip: Use CI_DEPLOY_FREEZE with rules
+
+Disable pipeline:
+
+```yaml
+workflow:
+  rules:
+  - if: '$CI_DEPLOY_FREEZE'
+    when: manual
+  - when: on_success
+```
+
+Template to disable job:
+
+```yaml
+.freeze-deployment:
+  rules:
+  - if: '$CI_DEPLOY_FREEZE'
+    when: manual
+    allow_failure: true
+  - when: on_success
+```

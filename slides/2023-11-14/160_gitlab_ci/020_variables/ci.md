@@ -10,6 +10,8 @@ Available in project-, group- and instance-level
 
 Careful with protected variables
 
+Loops are detected, e.g. `FOO=$BAR` and `BAR=$FOO`
+
 ---
 
 ## Hands-On [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/160_gitlab_ci/020_variables/ci "020_variables/ci")

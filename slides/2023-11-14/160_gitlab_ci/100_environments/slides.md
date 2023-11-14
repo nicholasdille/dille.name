@@ -65,10 +65,33 @@ git checkout origin/160_gitlab_ci/100_environments/demo2 -- '*'
 
 ---
 
-## Pro tip: Disposable environments a.k.a. review apps
+## Pro tip: Disposable environments
 
 Additonal use of environments: disposable review apps
 
 Environments can have a [stop action](https://docs.gitlab.com/ee/ci/environments/index.html#stopping-an-environment) for disposal
 
 Environments can have an [expiration time](https://docs.gitlab.com/ee/ci/yaml/#environmentauto_stop_in)
+
+```yaml
+vscode:
+  when: manual
+  environment:
+    name: quick-help
+    url: https://quick-help.vscode.inmylab.de
+    on_stop: vscode-cleanup
+    auto_stop_in: 1h
+  script: echo DEPLOY
+
+vscode-cleanup:
+  needs:
+  - vscode
+  environment:
+    name: quick-help
+    url: https://quick-help.vscode.inmylab.de
+    action: stop
+  when: manual
+  script: echo DESTROY
+```
+
+<!-- .element: style="font-size: x-large;" -->

@@ -33,6 +33,8 @@ job_name:
 
 `after_script` runs even if the job failed (useful for cleanup)
 
+Beware of collapsed multi-line commands in the job log
+
 ---
 
 ## Hands-On [<i class="fa fa-comment-code"></i>](https://github.com/nicholasdille/container-slides/tree/160_gitlab_ci/030_script_blocks "030_script_blocks")
