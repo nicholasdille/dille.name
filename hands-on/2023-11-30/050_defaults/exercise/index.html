@@ -357,6 +357,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../you_are_ready/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    You are ready
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -613,6 +634,27 @@
   
   <span class="md-ellipsis">
     Job Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../070_schedules/exercise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedules
   </span>
   
 
@@ -1095,8 +1137,8 @@
 <p class="admonition-title">Goal</p>
 <p>Learn how to...</p>
 <ul>
-<li>Avoid repetition in jobs</li>
-<li>Specify defaults are the top of your pipeline</li>
+<li>avoid repetition in jobs</li>
+<li>specify defaults are the top of your pipeline</li>
 </ul>
 </div>
 <h2 id="task-dont-repeat-yourself">Task: Don't repeat yourself<a class="headerlink" href="#task-dont-repeat-yourself" title="Permanent link">&para;</a></h2>
@@ -1112,6 +1154,7 @@
 </details>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
+<p><code>.gitlab-ci.yml</code>:</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1176,7 +1219,11 @@
 <li>Check out how the executation environment changes</li>
 </ol>
 <h2 id="bonus-2-default-values-for-variables">Bonus 2: Default values for variables<a class="headerlink" href="#bonus-2-default-values-for-variables" title="Permanent link">&para;</a></h2>
-<p>XXX <code>variables</code> outside <code>default</code></p>
+<p>See the official documentation for <a href="https://docs.gitlab.com/ee/ci/yaml/#default"><code>default</code></a> as well as <a href="https://docs.gitlab.com/ee/ci/yaml/#variables"><code>variables</code></a> and check how they are related.</p>
+<details class="example">
+<summary>Solution (Click if you are stuck)</summary>
+<p>Global variables are not located under <code>default</code> but under the global <code>variables</code> keyword.</p>
+</details>
 
 
 
