@@ -357,6 +357,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../you_are_ready/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    You are ready
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -604,6 +625,27 @@
   
   <span class="md-ellipsis">
     Job Dependencies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../070_schedules/exercise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedules
   </span>
   
 
@@ -1078,13 +1120,12 @@
 <p>Learn how to...</p>
 <ul>
 <li>specify which container image to use for a job</li>
-<li>XXX</li>
+<li>tailor the execution environment to your needs</li>
 </ul>
 </div>
 <h2 id="task-simplify-using-container-images">Task: Simplify using container images<a class="headerlink" href="#task-simplify-using-container-images" title="Permanent link">&para;</a></h2>
 <p>In the previous exampes, we called <code>apk</code> at the beginning of every job to install Go. This had to be repeated for every job because Go was not present. Choosing an image for a job using the <code>image</code> directive, time is saved by avoiding commands to install required tools. See the <a href="https://docs.gitlab.com/ee/ci/yaml/#image">official documentation</a>.</p>
 <p>Replace the calls to <code>apk</code> with the container image <code>golang:1.19.2</code>.</p>
-<p>XXX version bump for <code>golang</code> image</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
@@ -1095,6 +1136,7 @@
 </details>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
+<p><code>.gitlab-ci.yml</code>:</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>

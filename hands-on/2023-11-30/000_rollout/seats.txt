@@ -1,0 +1,105 @@
+
+Host seat1.vscode.inmylab.de
+User seat1
+Code ZR8WZU
+Password b6b17dedc52181d920bcfa1d06182fdba58e6892a36d8fdf35848d0a8a01a472
+
+Host seat2.vscode.inmylab.de
+User seat2
+Code A7Y9W9
+Password 7746b98ad6628c2a644c332bbae265cbde9ad1ac16bc351cf66699bdb61fd555
+
+Host seat3.vscode.inmylab.de
+User seat3
+Code N7NWAZ
+Password ae8ac2f5903a66b9992748cdfe47f92d45523a5d0dabf750541594fa346ac2b7
+
+Host seat4.vscode.inmylab.de
+User seat4
+Code 4GY9RJ
+Password 9a1193ac5222ea5c8828725bdf6c1a877f4f4c190394611082367eafe86b81ef
+
+Host seat5.vscode.inmylab.de
+User seat5
+Code TMXYYK
+Password 45a2101fd1a72bff2851c51f5fe9005f8017a2d3776178e9ff26a506bb1828ea
+
+Host seat6.vscode.inmylab.de
+User seat6
+Code FBE3SY
+Password e91a092901ea889fdecbcf7341a19eb98f9bac334234712d0bf4bc458cc1495d
+
+Host seat7.vscode.inmylab.de
+User seat7
+Code 2UN4J9
+Password a23d7614866b7bc6d78aa9fca5cc2b2f95b00cc01723f298ead2e28a0117ab4a
+
+Host seat8.vscode.inmylab.de
+User seat8
+Code A8WSWL
+Password fdae8b158d1c038b205b6cb22f7db324d396cd5dac2b5778bc261ae3a31a2233
+
+Host seat9.vscode.inmylab.de
+User seat9
+Code KAX3PY
+Password 3be0f3121695f7e45ed3a994a089889d82d8cc9ab50586904f22d587e4c2a297
+
+Host seat10.vscode.inmylab.de
+User seat10
+Code YF9TLP
+Password 1cd4573f25b12e138cb78d5984d0552b313a7e09674ffafe3285814e209a6e5a
+
+Host seat11.vscode.inmylab.de
+User seat11
+Code 8PV8H4
+Password 21cf341c3f96ea7b9ba360ab2f92b2756d4ce13ddc7f3974a81930b87eb30de2
+
+Host seat12.vscode.inmylab.de
+User seat12
+Code LA2957
+Password fbb5f3377a98aa56123d262279d19f04d0edfa7cb08d3f5f5fe6a5682d75d3f7
+
+Host seat13.vscode.inmylab.de
+User seat13
+Code 3ZBDP4
+Password 950173340cb78d430c41cbf4d80d93cd2aece0aacae4829d7eaa50a32f6c8a41
+
+Host seat14.vscode.inmylab.de
+User seat14
+Code D6UNHU
+Password cd274ff97dfaee05b534c8b7e2c30bc312b32a92717b01fdc2a18f3fa3c6fcbb
+
+Host seat15.vscode.inmylab.de
+User seat15
+Code PL3LSU
+Password 785305f44f99e1f0dff19d5a41274912ff8cd23389f67073508ea2d301da4bfa
+
+Host seat16.vscode.inmylab.de
+User seat16
+Code DU5LTB
+Password 0173fad39a6cb6b2e99da19d1a4063a794e28331eb6df1db59a1b9a71c3837f2
+
+Host seat17.vscode.inmylab.de
+User seat17
+Code NB4CPT
+Password 3685c26d61c886f456a4de45e1c96aef780871be6405befe81b1df392b4cc496
+
+Host seat18.vscode.inmylab.de
+User seat18
+Code 8HB4B8
+Password 5703f185f0f5ab2640d4c86ee8b8df332aa9dcfb97aafd308d4f7f3f63cb087d
+
+Host seat19.vscode.inmylab.de
+User seat19
+Code FPJ7RA
+Password a00a3419185b49bb7fc2e2d42f6c22c2012f2a4ad5c7f19cb342c2508c27af10
+
+Host seat20.vscode.inmylab.de
+User seat20
+Code M5K6TC
+Password 690a4a0dbbe46903b6ffbce9e2946e68f7ba4158079b5d1e32c03fdc54f82ec1
+
+Host seat21.vscode.inmylab.de
+User seat21
+Code 8H2B6X
+Password 6720c177be37624264c86c893a4387159c2e8cf89718060917e9e24eaf4b49f3

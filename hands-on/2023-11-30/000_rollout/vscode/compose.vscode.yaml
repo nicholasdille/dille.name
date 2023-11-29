@@ -16,7 +16,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -25,21 +24,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode1-auth.basicauth.users: ${SEAT1_HTPASSWD}
       # Service port
-      traefik.http.services.vscode1.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode1.entrypoints: http
-      traefik.http.routers.vscode1.rule: Host(`seat1.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode1.service: vscode1
-      traefik.http.routers.vscode1.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat1.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode1-s.entrypoints: https
-      traefik.http.routers.vscode1-s.rule: Host(`seat1.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode1-s.service: vscode1
-      traefik.http.routers.vscode1-s.middlewares: vscode1-auth
-      traefik.http.routers.vscode1-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat1.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode2:
     image: vscode
     command:
@@ -57,7 +55,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -66,21 +63,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode2-auth.basicauth.users: ${SEAT2_HTPASSWD}
       # Service port
-      traefik.http.services.vscode2.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode2.entrypoints: http
-      traefik.http.routers.vscode2.rule: Host(`seat2.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode2.service: vscode2
-      traefik.http.routers.vscode2.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat2.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode2-s.entrypoints: https
-      traefik.http.routers.vscode2-s.rule: Host(`seat2.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode2-s.service: vscode2
-      traefik.http.routers.vscode2-s.middlewares: vscode2-auth
-      traefik.http.routers.vscode2-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat2.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode3:
     image: vscode
     command:
@@ -98,7 +94,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -107,21 +102,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode3-auth.basicauth.users: ${SEAT3_HTPASSWD}
       # Service port
-      traefik.http.services.vscode3.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode3.entrypoints: http
-      traefik.http.routers.vscode3.rule: Host(`seat3.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode3.service: vscode3
-      traefik.http.routers.vscode3.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat3.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode3-s.entrypoints: https
-      traefik.http.routers.vscode3-s.rule: Host(`seat3.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode3-s.service: vscode3
-      traefik.http.routers.vscode3-s.middlewares: vscode3-auth
-      traefik.http.routers.vscode3-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat3.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode4:
     image: vscode
     command:
@@ -139,7 +133,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -148,21 +141,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode4-auth.basicauth.users: ${SEAT4_HTPASSWD}
       # Service port
-      traefik.http.services.vscode4.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode4.entrypoints: http
-      traefik.http.routers.vscode4.rule: Host(`seat4.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode4.service: vscode4
-      traefik.http.routers.vscode4.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat4.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode4-s.entrypoints: https
-      traefik.http.routers.vscode4-s.rule: Host(`seat4.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode4-s.service: vscode4
-      traefik.http.routers.vscode4-s.middlewares: vscode4-auth
-      traefik.http.routers.vscode4-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat4.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode5:
     image: vscode
     command:
@@ -180,7 +172,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -189,21 +180,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode5-auth.basicauth.users: ${SEAT5_HTPASSWD}
       # Service port
-      traefik.http.services.vscode5.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode5.entrypoints: http
-      traefik.http.routers.vscode5.rule: Host(`seat5.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode5.service: vscode5
-      traefik.http.routers.vscode5.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat5.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode5-s.entrypoints: https
-      traefik.http.routers.vscode5-s.rule: Host(`seat5.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode5-s.service: vscode5
-      traefik.http.routers.vscode5-s.middlewares: vscode5-auth
-      traefik.http.routers.vscode5-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat5.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode6:
     image: vscode
     command:
@@ -221,7 +211,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -230,21 +219,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode6-auth.basicauth.users: ${SEAT6_HTPASSWD}
       # Service port
-      traefik.http.services.vscode6.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode6.entrypoints: http
-      traefik.http.routers.vscode6.rule: Host(`seat6.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode6.service: vscode6
-      traefik.http.routers.vscode6.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat6.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode6-s.entrypoints: https
-      traefik.http.routers.vscode6-s.rule: Host(`seat6.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode6-s.service: vscode6
-      traefik.http.routers.vscode6-s.middlewares: vscode6-auth
-      traefik.http.routers.vscode6-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat6.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode7:
     image: vscode
     command:
@@ -262,7 +250,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -271,21 +258,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode7-auth.basicauth.users: ${SEAT7_HTPASSWD}
       # Service port
-      traefik.http.services.vscode7.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode7.entrypoints: http
-      traefik.http.routers.vscode7.rule: Host(`seat7.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode7.service: vscode7
-      traefik.http.routers.vscode7.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat7.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode7-s.entrypoints: https
-      traefik.http.routers.vscode7-s.rule: Host(`seat7.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode7-s.service: vscode7
-      traefik.http.routers.vscode7-s.middlewares: vscode7-auth
-      traefik.http.routers.vscode7-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat7.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode8:
     image: vscode
     command:
@@ -303,7 +289,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -312,21 +297,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode8-auth.basicauth.users: ${SEAT8_HTPASSWD}
       # Service port
-      traefik.http.services.vscode8.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode8.entrypoints: http
-      traefik.http.routers.vscode8.rule: Host(`seat8.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode8.service: vscode8
-      traefik.http.routers.vscode8.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat8.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode8-s.entrypoints: https
-      traefik.http.routers.vscode8-s.rule: Host(`seat8.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode8-s.service: vscode8
-      traefik.http.routers.vscode8-s.middlewares: vscode8-auth
-      traefik.http.routers.vscode8-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat8.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode9:
     image: vscode
     command:
@@ -344,7 +328,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -353,21 +336,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode9-auth.basicauth.users: ${SEAT9_HTPASSWD}
       # Service port
-      traefik.http.services.vscode9.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode9.entrypoints: http
-      traefik.http.routers.vscode9.rule: Host(`seat9.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode9.service: vscode9
-      traefik.http.routers.vscode9.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat9.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode9-s.entrypoints: https
-      traefik.http.routers.vscode9-s.rule: Host(`seat9.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode9-s.service: vscode9
-      traefik.http.routers.vscode9-s.middlewares: vscode9-auth
-      traefik.http.routers.vscode9-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat9.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode10:
     image: vscode
     command:
@@ -385,7 +367,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -394,21 +375,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode10-auth.basicauth.users: ${SEAT10_HTPASSWD}
       # Service port
-      traefik.http.services.vscode10.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode10.entrypoints: http
-      traefik.http.routers.vscode10.rule: Host(`seat10.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode10.service: vscode10
-      traefik.http.routers.vscode10.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat10.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode10-s.entrypoints: https
-      traefik.http.routers.vscode10-s.rule: Host(`seat10.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode10-s.service: vscode10
-      traefik.http.routers.vscode10-s.middlewares: vscode10-auth
-      traefik.http.routers.vscode10-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat10.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode11:
     image: vscode
     command:
@@ -426,7 +406,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -435,21 +414,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode11-auth.basicauth.users: ${SEAT11_HTPASSWD}
       # Service port
-      traefik.http.services.vscode11.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode11.entrypoints: http
-      traefik.http.routers.vscode11.rule: Host(`seat11.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode11.service: vscode11
-      traefik.http.routers.vscode11.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat11.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode11-s.entrypoints: https
-      traefik.http.routers.vscode11-s.rule: Host(`seat11.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode11-s.service: vscode11
-      traefik.http.routers.vscode11-s.middlewares: vscode11-auth
-      traefik.http.routers.vscode11-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat11.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode12:
     image: vscode
     command:
@@ -467,7 +445,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -476,21 +453,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode12-auth.basicauth.users: ${SEAT12_HTPASSWD}
       # Service port
-      traefik.http.services.vscode12.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode12.entrypoints: http
-      traefik.http.routers.vscode12.rule: Host(`seat12.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode12.service: vscode12
-      traefik.http.routers.vscode12.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat12.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode12-s.entrypoints: https
-      traefik.http.routers.vscode12-s.rule: Host(`seat12.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode12-s.service: vscode12
-      traefik.http.routers.vscode12-s.middlewares: vscode12-auth
-      traefik.http.routers.vscode12-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat12.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode13:
     image: vscode
     command:
@@ -508,7 +484,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -517,21 +492,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode13-auth.basicauth.users: ${SEAT13_HTPASSWD}
       # Service port
-      traefik.http.services.vscode13.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode13.entrypoints: http
-      traefik.http.routers.vscode13.rule: Host(`seat13.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode13.service: vscode13
-      traefik.http.routers.vscode13.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat13.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode13-s.entrypoints: https
-      traefik.http.routers.vscode13-s.rule: Host(`seat13.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode13-s.service: vscode13
-      traefik.http.routers.vscode13-s.middlewares: vscode13-auth
-      traefik.http.routers.vscode13-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat13.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode14:
     image: vscode
     command:
@@ -549,7 +523,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -558,21 +531,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode14-auth.basicauth.users: ${SEAT14_HTPASSWD}
       # Service port
-      traefik.http.services.vscode14.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode14.entrypoints: http
-      traefik.http.routers.vscode14.rule: Host(`seat14.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode14.service: vscode14
-      traefik.http.routers.vscode14.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat14.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode14-s.entrypoints: https
-      traefik.http.routers.vscode14-s.rule: Host(`seat14.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode14-s.service: vscode14
-      traefik.http.routers.vscode14-s.middlewares: vscode14-auth
-      traefik.http.routers.vscode14-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat14.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode15:
     image: vscode
     command:
@@ -590,7 +562,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -599,21 +570,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode15-auth.basicauth.users: ${SEAT15_HTPASSWD}
       # Service port
-      traefik.http.services.vscode15.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode15.entrypoints: http
-      traefik.http.routers.vscode15.rule: Host(`seat15.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode15.service: vscode15
-      traefik.http.routers.vscode15.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat15.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode15-s.entrypoints: https
-      traefik.http.routers.vscode15-s.rule: Host(`seat15.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode15-s.service: vscode15
-      traefik.http.routers.vscode15-s.middlewares: vscode15-auth
-      traefik.http.routers.vscode15-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat15.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode16:
     image: vscode
     command:
@@ -631,7 +601,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -640,21 +609,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode16-auth.basicauth.users: ${SEAT16_HTPASSWD}
       # Service port
-      traefik.http.services.vscode16.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode16.entrypoints: http
-      traefik.http.routers.vscode16.rule: Host(`seat16.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode16.service: vscode16
-      traefik.http.routers.vscode16.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat16.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode16-s.entrypoints: https
-      traefik.http.routers.vscode16-s.rule: Host(`seat16.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode16-s.service: vscode16
-      traefik.http.routers.vscode16-s.middlewares: vscode16-auth
-      traefik.http.routers.vscode16-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat16.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode17:
     image: vscode
     command:
@@ -672,7 +640,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -681,21 +648,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode17-auth.basicauth.users: ${SEAT17_HTPASSWD}
       # Service port
-      traefik.http.services.vscode17.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode17.entrypoints: http
-      traefik.http.routers.vscode17.rule: Host(`seat17.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode17.service: vscode17
-      traefik.http.routers.vscode17.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat17.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode17-s.entrypoints: https
-      traefik.http.routers.vscode17-s.rule: Host(`seat17.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode17-s.service: vscode17
-      traefik.http.routers.vscode17-s.middlewares: vscode17-auth
-      traefik.http.routers.vscode17-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat17.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode18:
     image: vscode
     command:
@@ -713,7 +679,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -722,21 +687,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode18-auth.basicauth.users: ${SEAT18_HTPASSWD}
       # Service port
-      traefik.http.services.vscode18.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode18.entrypoints: http
-      traefik.http.routers.vscode18.rule: Host(`seat18.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode18.service: vscode18
-      traefik.http.routers.vscode18.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat18.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode18-s.entrypoints: https
-      traefik.http.routers.vscode18-s.rule: Host(`seat18.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode18-s.service: vscode18
-      traefik.http.routers.vscode18-s.middlewares: vscode18-auth
-      traefik.http.routers.vscode18-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat18.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode19:
     image: vscode
     command:
@@ -754,7 +718,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -763,21 +726,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode19-auth.basicauth.users: ${SEAT19_HTPASSWD}
       # Service port
-      traefik.http.services.vscode19.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode19.entrypoints: http
-      traefik.http.routers.vscode19.rule: Host(`seat19.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode19.service: vscode19
-      traefik.http.routers.vscode19.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat19.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode19-s.entrypoints: https
-      traefik.http.routers.vscode19-s.rule: Host(`seat19.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode19-s.service: vscode19
-      traefik.http.routers.vscode19-s.middlewares: vscode19-auth
-      traefik.http.routers.vscode19-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat19.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode20:
     image: vscode
     command:
@@ -795,7 +757,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -804,21 +765,20 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode20-auth.basicauth.users: ${SEAT20_HTPASSWD}
       # Service port
-      traefik.http.services.vscode20.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode20.entrypoints: http
-      traefik.http.routers.vscode20.rule: Host(`seat20.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode20.service: vscode20
-      traefik.http.routers.vscode20.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat20.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode20-s.entrypoints: https
-      traefik.http.routers.vscode20-s.rule: Host(`seat20.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode20-s.service: vscode20
-      traefik.http.routers.vscode20-s.middlewares: vscode20-auth
-      traefik.http.routers.vscode20-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat20.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"
   vscode21:
     image: vscode
     command:
@@ -836,7 +796,6 @@ services:
     - /var/run/docker.sock:/var/run/docker.sock
     - vscode_config:/home/coder/.config
     - vscode_project:/home/coder/project
-    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
       interval: 10s
@@ -845,18 +804,17 @@ services:
       start_period: 5s
     labels:
       traefik.enable: "true"
-      # Auth
-      traefik.http.middlewares.vscode21-auth.basicauth.users: ${SEAT21_HTPASSWD}
       # Service port
-      traefik.http.services.vscode21.loadbalancer.server.port: 8080
+      traefik.http.services.vscode.loadbalancer.server.port: 8080
       # Redirection to HTTPS
-      traefik.http.routers.vscode21.entrypoints: http
-      traefik.http.routers.vscode21.rule: Host(`seat21.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode21.service: vscode21
-      traefik.http.routers.vscode21.middlewares: redirect-to-https
+      traefik.http.routers.vscode.entrypoints: http
+      traefik.http.routers.vscode.rule: Host(`seat21.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode.service: vscode
+      traefik.http.routers.vscode.middlewares: redirect-to-https
       # Authenticated endpoint
-      traefik.http.routers.vscode21-s.entrypoints: https
-      traefik.http.routers.vscode21-s.rule: Host(`seat21.vscode.${DOMAIN}`)
-      traefik.http.routers.vscode21-s.service: vscode21
-      traefik.http.routers.vscode21-s.middlewares: vscode21-auth
-      traefik.http.routers.vscode21-s.tls: "true"
+      traefik.http.routers.vscode-s.entrypoints: https
+      traefik.http.routers.vscode-s.rule: Host(`seat21.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode-s.service: vscode
+      # TODO: Fix auth
+      #traefik.http.routers.vscode-s.middlewares: seat-auth
+      traefik.http.routers.vscode-s.tls: "true"

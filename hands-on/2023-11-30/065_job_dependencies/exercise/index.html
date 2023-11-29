@@ -16,7 +16,7 @@
         <link rel="prev" href="../../060_artifacts/exercise/">
       
       
-        <link rel="next" href="../../090_unit_tests/exercise/">
+        <link rel="next" href="../../070_schedules/exercise/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -357,6 +357,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../you_are_ready/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    You are ready
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -587,18 +608,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#task-start-the-build-job-early" class="md-nav__link">
+  <a href="#task-start-a-job-early" class="md-nav__link">
     <span class="md-ellipsis">
-      Task: Start the build job early
+      Task: Start a job early
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-start-the-lint-job-late" class="md-nav__link">
+  <a href="#bonus-start-a-job-late" class="md-nav__link">
     <span class="md-ellipsis">
-      Bonus: Start the lint job late
+      Bonus: Start a job late
     </span>
   </a>
   
@@ -608,6 +629,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../070_schedules/exercise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schedules
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1037,18 +1079,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#task-start-the-build-job-early" class="md-nav__link">
+  <a href="#task-start-a-job-early" class="md-nav__link">
     <span class="md-ellipsis">
-      Task: Start the build job early
+      Task: Start a job early
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-start-the-lint-job-late" class="md-nav__link">
+  <a href="#bonus-start-a-job-late" class="md-nav__link">
     <span class="md-ellipsis">
-      Bonus: Start the lint job late
+      Bonus: Start a job late
     </span>
   </a>
   
@@ -1077,18 +1119,16 @@
 <p class="admonition-title">Goal</p>
 <p>Learn how to...</p>
 <ul>
-<li>XXX</li>
+<li>ignore stages</li>
+<li>start jobs as soon as dependencies are met</li>
 </ul>
 </div>
-<h2 id="task-start-the-build-job-early">Task: Start the build job early<a class="headerlink" href="#task-start-the-build-job-early" title="Permanent link">&para;</a></h2>
-<p>XXX start <code>build</code> after <code>audit</code> without waiting for <code>lint</code></p>
+<h2 id="task-start-a-job-early">Task: Start a job early<a class="headerlink" href="#task-start-a-job-early" title="Permanent link">&para;</a></h2>
+<p>Start the job <code>build</code> as soon as the job <code>audit</code> completes without waiting for other job of the stage <code>check</code> to finish. Check out the official documentation of <a href="https://docs.gitlab.com/ee/ci/yaml/#needs"><code>needs</code></a>.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
-<details class="info">
-<summary>Hint (Click if you are stuck)</summary>
-<p>XXX</p>
-</details>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
+<p><code>.gitlab-ci.yml</code>:</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1165,15 +1205,12 @@
 </span></code></pre></div></td></tr></table></div>
 </details>
 <p>This was just a demonstration. The changes will not be preserved in the following chapters.</p>
-<h2 id="bonus-start-the-lint-job-late">Bonus: Start the lint job late<a class="headerlink" href="#bonus-start-the-lint-job-late" title="Permanent link">&para;</a></h2>
-<p>XXX start <code>lint</code> after <code>audit</code></p>
+<h2 id="bonus-start-a-job-late">Bonus: Start a job late<a class="headerlink" href="#bonus-start-a-job-late" title="Permanent link">&para;</a></h2>
+<p>If two jobs in the same stage should not be executed at the same time, the <a href="https://docs.gitlab.com/ee/ci/yaml/#needs"><code>needs</code></a> keyword can also delay a job until the dependencies are met. Modify the job <code>lint</code> so that it waits for the job <code>audit</code> to finish.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
-<details class="info">
-<summary>Hint (Click if you are stuck)</summary>
-<p>XXX</p>
-</details>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
+<p><code>.gitlab-ci.yml</code>:</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -1292,13 +1329,13 @@
         
         
           
-          <a href="../../090_unit_tests/exercise/" class="md-footer__link md-footer__link--next" aria-label="Next: Unit Tests">
+          <a href="../../070_schedules/exercise/" class="md-footer__link md-footer__link--next" aria-label="Next: Schedules">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Unit Tests
+                Schedules
               </div>
             </div>
             <div class="md-footer__button md-icon">
