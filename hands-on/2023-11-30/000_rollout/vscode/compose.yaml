@@ -1,0 +1,54 @@
+# https://docs.docker.com/compose/compose-file
+
+volumes:
+  vscode_config:
+  vscode_project:
+
+services:
+
+  # https://doc.traefik.io/traefik/
+  traefik:
+    image: traefik:v2.10.5
+    command:
+    - --log=true
+    - --log.level=DEBUG
+    - --api=true
+    - --api.dashboard=true
+    - --entrypoints.http.address=:80
+    - --entrypoints.https.address=:443
+    - --providers.file.directory=/etc/traefik/conf.d
+    - --providers.docker=true
+    - --providers.docker.exposedByDefault=false
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ./traefik.d:/etc/traefik/conf.d:ro
+    - /etc/ssl:/etc/traefik/ssl:ro
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "netstat -tunapl | grep LISTEN | grep :80"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Global redirection middleware
+      traefik.http.middlewares.redirect-to-https.redirectscheme.scheme: https
+      # Auth
+      traefik.http.middlewares.traefik-auth.basicauth.users: ${TRAEFIK_HTPASSWD}
+      # traefik dashboard: redirection to HTTPS
+      traefik.http.routers.traefik.entrypoints: http
+      traefik.http.routers.traefik.service: api@internal
+      traefik.http.routers.traefik.rule: Host(`traefik.vscode.${DOMAIN}`)
+      traefik.http.routers.traefik.middlewares: redirect-to-https
+      # traefik dashboard: authenticated endpoint
+      traefik.http.routers.traefik-s.entrypoints: https
+      traefik.http.routers.traefik-s.service: api@internal
+      traefik.http.routers.traefik-s.rule: Host(`traefik.vscode.${DOMAIN}`)
+      traefik.http.routers.traefik-s.tls: "true"
+      # TODO: Fix auth
+      #traefik.http.routers.traefik-s.middlewares: seat-auth

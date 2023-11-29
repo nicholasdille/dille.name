@@ -1,0 +1,862 @@
+services:
+  vscode1:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat1.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat1"
+      GIT_EMAIL: "seat1@.inmylab.de"
+      GIT_CRED: "https://seat1:b6b17dedc52181d920bcfa1d06182fdba58e6892a36d8fdf35848d0a8a01a472@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode1-auth.basicauth.users: ${SEAT1_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode1.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode1.entrypoints: http
+      traefik.http.routers.vscode1.rule: Host(`seat1.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode1.service: vscode1
+      traefik.http.routers.vscode1.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode1-s.entrypoints: https
+      traefik.http.routers.vscode1-s.rule: Host(`seat1.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode1-s.service: vscode1
+      traefik.http.routers.vscode1-s.middlewares: vscode1-auth
+      traefik.http.routers.vscode1-s.tls: "true"
+  vscode2:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat2.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat2"
+      GIT_EMAIL: "seat2@.inmylab.de"
+      GIT_CRED: "https://seat2:7746b98ad6628c2a644c332bbae265cbde9ad1ac16bc351cf66699bdb61fd555@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode2-auth.basicauth.users: ${SEAT2_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode2.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode2.entrypoints: http
+      traefik.http.routers.vscode2.rule: Host(`seat2.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode2.service: vscode2
+      traefik.http.routers.vscode2.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode2-s.entrypoints: https
+      traefik.http.routers.vscode2-s.rule: Host(`seat2.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode2-s.service: vscode2
+      traefik.http.routers.vscode2-s.middlewares: vscode2-auth
+      traefik.http.routers.vscode2-s.tls: "true"
+  vscode3:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat3.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat3"
+      GIT_EMAIL: "seat3@.inmylab.de"
+      GIT_CRED: "https://seat3:ae8ac2f5903a66b9992748cdfe47f92d45523a5d0dabf750541594fa346ac2b7@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode3-auth.basicauth.users: ${SEAT3_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode3.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode3.entrypoints: http
+      traefik.http.routers.vscode3.rule: Host(`seat3.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode3.service: vscode3
+      traefik.http.routers.vscode3.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode3-s.entrypoints: https
+      traefik.http.routers.vscode3-s.rule: Host(`seat3.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode3-s.service: vscode3
+      traefik.http.routers.vscode3-s.middlewares: vscode3-auth
+      traefik.http.routers.vscode3-s.tls: "true"
+  vscode4:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat4.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat4"
+      GIT_EMAIL: "seat4@.inmylab.de"
+      GIT_CRED: "https://seat4:9a1193ac5222ea5c8828725bdf6c1a877f4f4c190394611082367eafe86b81ef@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode4-auth.basicauth.users: ${SEAT4_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode4.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode4.entrypoints: http
+      traefik.http.routers.vscode4.rule: Host(`seat4.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode4.service: vscode4
+      traefik.http.routers.vscode4.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode4-s.entrypoints: https
+      traefik.http.routers.vscode4-s.rule: Host(`seat4.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode4-s.service: vscode4
+      traefik.http.routers.vscode4-s.middlewares: vscode4-auth
+      traefik.http.routers.vscode4-s.tls: "true"
+  vscode5:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat5.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat5"
+      GIT_EMAIL: "seat5@.inmylab.de"
+      GIT_CRED: "https://seat5:45a2101fd1a72bff2851c51f5fe9005f8017a2d3776178e9ff26a506bb1828ea@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode5-auth.basicauth.users: ${SEAT5_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode5.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode5.entrypoints: http
+      traefik.http.routers.vscode5.rule: Host(`seat5.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode5.service: vscode5
+      traefik.http.routers.vscode5.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode5-s.entrypoints: https
+      traefik.http.routers.vscode5-s.rule: Host(`seat5.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode5-s.service: vscode5
+      traefik.http.routers.vscode5-s.middlewares: vscode5-auth
+      traefik.http.routers.vscode5-s.tls: "true"
+  vscode6:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat6.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat6"
+      GIT_EMAIL: "seat6@.inmylab.de"
+      GIT_CRED: "https://seat6:e91a092901ea889fdecbcf7341a19eb98f9bac334234712d0bf4bc458cc1495d@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode6-auth.basicauth.users: ${SEAT6_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode6.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode6.entrypoints: http
+      traefik.http.routers.vscode6.rule: Host(`seat6.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode6.service: vscode6
+      traefik.http.routers.vscode6.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode6-s.entrypoints: https
+      traefik.http.routers.vscode6-s.rule: Host(`seat6.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode6-s.service: vscode6
+      traefik.http.routers.vscode6-s.middlewares: vscode6-auth
+      traefik.http.routers.vscode6-s.tls: "true"
+  vscode7:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat7.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat7"
+      GIT_EMAIL: "seat7@.inmylab.de"
+      GIT_CRED: "https://seat7:a23d7614866b7bc6d78aa9fca5cc2b2f95b00cc01723f298ead2e28a0117ab4a@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode7-auth.basicauth.users: ${SEAT7_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode7.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode7.entrypoints: http
+      traefik.http.routers.vscode7.rule: Host(`seat7.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode7.service: vscode7
+      traefik.http.routers.vscode7.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode7-s.entrypoints: https
+      traefik.http.routers.vscode7-s.rule: Host(`seat7.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode7-s.service: vscode7
+      traefik.http.routers.vscode7-s.middlewares: vscode7-auth
+      traefik.http.routers.vscode7-s.tls: "true"
+  vscode8:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat8.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat8"
+      GIT_EMAIL: "seat8@.inmylab.de"
+      GIT_CRED: "https://seat8:fdae8b158d1c038b205b6cb22f7db324d396cd5dac2b5778bc261ae3a31a2233@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode8-auth.basicauth.users: ${SEAT8_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode8.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode8.entrypoints: http
+      traefik.http.routers.vscode8.rule: Host(`seat8.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode8.service: vscode8
+      traefik.http.routers.vscode8.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode8-s.entrypoints: https
+      traefik.http.routers.vscode8-s.rule: Host(`seat8.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode8-s.service: vscode8
+      traefik.http.routers.vscode8-s.middlewares: vscode8-auth
+      traefik.http.routers.vscode8-s.tls: "true"
+  vscode9:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat9.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat9"
+      GIT_EMAIL: "seat9@.inmylab.de"
+      GIT_CRED: "https://seat9:3be0f3121695f7e45ed3a994a089889d82d8cc9ab50586904f22d587e4c2a297@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode9-auth.basicauth.users: ${SEAT9_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode9.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode9.entrypoints: http
+      traefik.http.routers.vscode9.rule: Host(`seat9.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode9.service: vscode9
+      traefik.http.routers.vscode9.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode9-s.entrypoints: https
+      traefik.http.routers.vscode9-s.rule: Host(`seat9.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode9-s.service: vscode9
+      traefik.http.routers.vscode9-s.middlewares: vscode9-auth
+      traefik.http.routers.vscode9-s.tls: "true"
+  vscode10:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat10.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat10"
+      GIT_EMAIL: "seat10@.inmylab.de"
+      GIT_CRED: "https://seat10:1cd4573f25b12e138cb78d5984d0552b313a7e09674ffafe3285814e209a6e5a@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode10-auth.basicauth.users: ${SEAT10_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode10.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode10.entrypoints: http
+      traefik.http.routers.vscode10.rule: Host(`seat10.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode10.service: vscode10
+      traefik.http.routers.vscode10.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode10-s.entrypoints: https
+      traefik.http.routers.vscode10-s.rule: Host(`seat10.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode10-s.service: vscode10
+      traefik.http.routers.vscode10-s.middlewares: vscode10-auth
+      traefik.http.routers.vscode10-s.tls: "true"
+  vscode11:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat11.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat11"
+      GIT_EMAIL: "seat11@.inmylab.de"
+      GIT_CRED: "https://seat11:21cf341c3f96ea7b9ba360ab2f92b2756d4ce13ddc7f3974a81930b87eb30de2@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode11-auth.basicauth.users: ${SEAT11_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode11.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode11.entrypoints: http
+      traefik.http.routers.vscode11.rule: Host(`seat11.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode11.service: vscode11
+      traefik.http.routers.vscode11.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode11-s.entrypoints: https
+      traefik.http.routers.vscode11-s.rule: Host(`seat11.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode11-s.service: vscode11
+      traefik.http.routers.vscode11-s.middlewares: vscode11-auth
+      traefik.http.routers.vscode11-s.tls: "true"
+  vscode12:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat12.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat12"
+      GIT_EMAIL: "seat12@.inmylab.de"
+      GIT_CRED: "https://seat12:fbb5f3377a98aa56123d262279d19f04d0edfa7cb08d3f5f5fe6a5682d75d3f7@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode12-auth.basicauth.users: ${SEAT12_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode12.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode12.entrypoints: http
+      traefik.http.routers.vscode12.rule: Host(`seat12.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode12.service: vscode12
+      traefik.http.routers.vscode12.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode12-s.entrypoints: https
+      traefik.http.routers.vscode12-s.rule: Host(`seat12.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode12-s.service: vscode12
+      traefik.http.routers.vscode12-s.middlewares: vscode12-auth
+      traefik.http.routers.vscode12-s.tls: "true"
+  vscode13:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat13.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat13"
+      GIT_EMAIL: "seat13@.inmylab.de"
+      GIT_CRED: "https://seat13:950173340cb78d430c41cbf4d80d93cd2aece0aacae4829d7eaa50a32f6c8a41@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode13-auth.basicauth.users: ${SEAT13_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode13.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode13.entrypoints: http
+      traefik.http.routers.vscode13.rule: Host(`seat13.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode13.service: vscode13
+      traefik.http.routers.vscode13.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode13-s.entrypoints: https
+      traefik.http.routers.vscode13-s.rule: Host(`seat13.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode13-s.service: vscode13
+      traefik.http.routers.vscode13-s.middlewares: vscode13-auth
+      traefik.http.routers.vscode13-s.tls: "true"
+  vscode14:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat14.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat14"
+      GIT_EMAIL: "seat14@.inmylab.de"
+      GIT_CRED: "https://seat14:cd274ff97dfaee05b534c8b7e2c30bc312b32a92717b01fdc2a18f3fa3c6fcbb@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode14-auth.basicauth.users: ${SEAT14_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode14.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode14.entrypoints: http
+      traefik.http.routers.vscode14.rule: Host(`seat14.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode14.service: vscode14
+      traefik.http.routers.vscode14.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode14-s.entrypoints: https
+      traefik.http.routers.vscode14-s.rule: Host(`seat14.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode14-s.service: vscode14
+      traefik.http.routers.vscode14-s.middlewares: vscode14-auth
+      traefik.http.routers.vscode14-s.tls: "true"
+  vscode15:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat15.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat15"
+      GIT_EMAIL: "seat15@.inmylab.de"
+      GIT_CRED: "https://seat15:785305f44f99e1f0dff19d5a41274912ff8cd23389f67073508ea2d301da4bfa@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode15-auth.basicauth.users: ${SEAT15_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode15.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode15.entrypoints: http
+      traefik.http.routers.vscode15.rule: Host(`seat15.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode15.service: vscode15
+      traefik.http.routers.vscode15.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode15-s.entrypoints: https
+      traefik.http.routers.vscode15-s.rule: Host(`seat15.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode15-s.service: vscode15
+      traefik.http.routers.vscode15-s.middlewares: vscode15-auth
+      traefik.http.routers.vscode15-s.tls: "true"
+  vscode16:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat16.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat16"
+      GIT_EMAIL: "seat16@.inmylab.de"
+      GIT_CRED: "https://seat16:0173fad39a6cb6b2e99da19d1a4063a794e28331eb6df1db59a1b9a71c3837f2@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode16-auth.basicauth.users: ${SEAT16_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode16.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode16.entrypoints: http
+      traefik.http.routers.vscode16.rule: Host(`seat16.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode16.service: vscode16
+      traefik.http.routers.vscode16.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode16-s.entrypoints: https
+      traefik.http.routers.vscode16-s.rule: Host(`seat16.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode16-s.service: vscode16
+      traefik.http.routers.vscode16-s.middlewares: vscode16-auth
+      traefik.http.routers.vscode16-s.tls: "true"
+  vscode17:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat17.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat17"
+      GIT_EMAIL: "seat17@.inmylab.de"
+      GIT_CRED: "https://seat17:3685c26d61c886f456a4de45e1c96aef780871be6405befe81b1df392b4cc496@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode17-auth.basicauth.users: ${SEAT17_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode17.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode17.entrypoints: http
+      traefik.http.routers.vscode17.rule: Host(`seat17.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode17.service: vscode17
+      traefik.http.routers.vscode17.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode17-s.entrypoints: https
+      traefik.http.routers.vscode17-s.rule: Host(`seat17.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode17-s.service: vscode17
+      traefik.http.routers.vscode17-s.middlewares: vscode17-auth
+      traefik.http.routers.vscode17-s.tls: "true"
+  vscode18:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat18.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat18"
+      GIT_EMAIL: "seat18@.inmylab.de"
+      GIT_CRED: "https://seat18:5703f185f0f5ab2640d4c86ee8b8df332aa9dcfb97aafd308d4f7f3f63cb087d@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode18-auth.basicauth.users: ${SEAT18_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode18.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode18.entrypoints: http
+      traefik.http.routers.vscode18.rule: Host(`seat18.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode18.service: vscode18
+      traefik.http.routers.vscode18.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode18-s.entrypoints: https
+      traefik.http.routers.vscode18-s.rule: Host(`seat18.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode18-s.service: vscode18
+      traefik.http.routers.vscode18-s.middlewares: vscode18-auth
+      traefik.http.routers.vscode18-s.tls: "true"
+  vscode19:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat19.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat19"
+      GIT_EMAIL: "seat19@.inmylab.de"
+      GIT_CRED: "https://seat19:a00a3419185b49bb7fc2e2d42f6c22c2012f2a4ad5c7f19cb342c2508c27af10@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode19-auth.basicauth.users: ${SEAT19_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode19.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode19.entrypoints: http
+      traefik.http.routers.vscode19.rule: Host(`seat19.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode19.service: vscode19
+      traefik.http.routers.vscode19.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode19-s.entrypoints: https
+      traefik.http.routers.vscode19-s.rule: Host(`seat19.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode19-s.service: vscode19
+      traefik.http.routers.vscode19-s.middlewares: vscode19-auth
+      traefik.http.routers.vscode19-s.tls: "true"
+  vscode20:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat20.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat20"
+      GIT_EMAIL: "seat20@.inmylab.de"
+      GIT_CRED: "https://seat20:690a4a0dbbe46903b6ffbce9e2946e68f7ba4158079b5d1e32c03fdc54f82ec1@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode20-auth.basicauth.users: ${SEAT20_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode20.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode20.entrypoints: http
+      traefik.http.routers.vscode20.rule: Host(`seat20.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode20.service: vscode20
+      traefik.http.routers.vscode20.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode20-s.entrypoints: https
+      traefik.http.routers.vscode20-s.rule: Host(`seat20.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode20-s.service: vscode20
+      traefik.http.routers.vscode20-s.middlewares: vscode20-auth
+      traefik.http.routers.vscode20-s.tls: "true"
+  vscode21:
+    image: vscode
+    command:
+    - --auth
+    - none
+    - --proxy-domain
+    - seat21.vscode.${DOMAIN}
+    - --disable-telemetry
+    environment:
+      GIT_USER: "seat21"
+      GIT_EMAIL: "seat21@.inmylab.de"
+      GIT_CRED: "https://seat21:6720c177be37624264c86c893a4387159c2e8cf89718060917e9e24eaf4b49f3@gitlab.inmylab.de"
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - vscode_config:/home/coder/.config
+    - vscode_project:/home/coder/project
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    labels:
+      traefik.enable: "true"
+      # Auth
+      traefik.http.middlewares.vscode21-auth.basicauth.users: ${SEAT21_HTPASSWD}
+      # Service port
+      traefik.http.services.vscode21.loadbalancer.server.port: 8080
+      # Redirection to HTTPS
+      traefik.http.routers.vscode21.entrypoints: http
+      traefik.http.routers.vscode21.rule: Host(`seat21.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode21.service: vscode21
+      traefik.http.routers.vscode21.middlewares: redirect-to-https
+      # Authenticated endpoint
+      traefik.http.routers.vscode21-s.entrypoints: https
+      traefik.http.routers.vscode21-s.rule: Host(`seat21.vscode.${DOMAIN}`)
+      traefik.http.routers.vscode21-s.service: vscode21
+      traefik.http.routers.vscode21-s.middlewares: vscode21-auth
+      traefik.http.routers.vscode21-s.tls: "true"
