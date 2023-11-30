@@ -1126,7 +1126,7 @@
 <p>This exercise adds a unit test to the hello world application.</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <p>Let's update the code:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>chechout<span class="w"> </span>origin/160_gitlab_ci/090_unit_tests<span class="w"> </span>--<span class="w"> </span>main_test.go<span class="w"> </span>go.mod<span class="w"> </span>go.sum
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>origin/160_gitlab_ci/090_unit_tests<span class="w"> </span>--<span class="w"> </span>main_test.go<span class="w"> </span>go.mod<span class="w"> </span>go.sum
 </span></code></pre></div>
 <h2 id="task-publish-unit-test-results">Task: Publish unit test results<a class="headerlink" href="#task-publish-unit-test-results" title="Permanent link">&para;</a></h2>
 <p>The following commands execute unit tests and automatically convert the results to JUnit using <a href="https://github.com/gotestyourself/gotestsum">gotestsum</a>:</p>
@@ -1134,6 +1134,7 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>gotestsum<span class="w"> </span>--junitfile<span class="w"> </span>report.xml
 </span></code></pre></div>
 <p>See the official documentation for <a href="https://docs.gitlab.com/ee/ci/yaml/artifacts_reports.html#artifactsreportsjunit">special artifacts and specifically reports</a>.</p>
+<p>XXX</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run which shows the unit test results on the tab in the overview.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
