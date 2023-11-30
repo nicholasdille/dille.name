@@ -111,7 +111,7 @@ Variables are merged!
 
 ## Hands-On
 
-See chapter [Templates](/hands-on/20231130/120_templates/exercise/)
+See chapter [Templates](/hands-on/2023-11-30/120_templates/exercise/)
 
 ---
 

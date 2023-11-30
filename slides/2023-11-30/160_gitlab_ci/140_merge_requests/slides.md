@@ -37,4 +37,4 @@ Do not have access to protected variables
 
 ## Hands-On
 
-See chapter [Merge requests](/hands-on/20231130/140_merge_requests/exercise/)
+See chapter [Merge requests](/hands-on/2023-11-30/140_merge_requests/exercise/)
