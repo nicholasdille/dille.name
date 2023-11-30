@@ -30,11 +30,22 @@ Load stages and jobs from a file using `include` [](https://docs.gitlab.com/ee/c
 
 ## Nomenclature
 
-The preceding pipeline is upstream
+The preceding pipeline is **upstream**
 
-The following pipeline is downstream
+The following pipeline is **downstream**
 
-![](160_gitlab_ci/110_triggers/upstream_downstream.drawio.svg) <!-- .element: style="width: 50%; margin-top: 0.5em;" -->
+The pipeline triggering you is the **upstream pipeline**
+
+The pipeline you trigger is the **downstream pipeline**
+
+![](160_gitlab_ci/110_triggers/upstream_downstream.drawio.svg) <!-- .element: style="width: 70%; margin-top: 0.5em;" -->
+
+Relationship between pipelines in the above picture:
+
+- Pipeline 1 is upstream of pipeline 2
+- Pipeline 2 is downstream of pipeline 1
+- Pipeline 2 is upstream of pipeline 3
+- Pipeline 3 is downstream of pipeline 2
 
 ---
 
