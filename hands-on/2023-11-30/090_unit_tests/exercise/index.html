@@ -1134,7 +1134,7 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>gotestsum<span class="w"> </span>--junitfile<span class="w"> </span>report.xml
 </span></code></pre></div>
 <p>See the official documentation for <a href="https://docs.gitlab.com/ee/ci/yaml/artifacts_reports.html#artifactsreportsjunit">special artifacts and specifically reports</a>.</p>
-<p>XXX</p>
+<p>Add a job <code>unit_test</code> to the stage <code>check</code> containing the above commands. The job needs to define a special artifact from the file <code>report.xml</code> so that GitLab recognizes it as as JUnit XML report.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run which shows the unit test results on the tab in the overview.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
