@@ -24,7 +24,7 @@ Avoid maintaining custom image
 
 ### Hands-On
 
-See chapter [Variables](/hands-on/2023-11-30/040_image/exercise/)
+See chapter [Image](/hands-on/2023-11-30/040_image/exercise/)
 
 ---
 
@@ -50,6 +50,6 @@ Fill from environment variables:
 ```bash
 jq --null-input \
     --arg host "${REG_HOST}" \
-    --arg user_pass_base64 "$(echo "${REG_USER}:${REG_PASS}" | base64 -w0)" \
-    '{"auths": {$host:{"auth": $user_pass_base64}}}'
+    --arg auth "$(echo "${REG_USER}:${REG_PASS}" | base64 -w0)" \
+    '{"auths": {$host:{"auth": $auth}}}'
 ```

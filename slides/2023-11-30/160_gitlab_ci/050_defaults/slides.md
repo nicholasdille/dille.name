@@ -29,4 +29,4 @@ job_name:
 
 ### Hands-On
 
-See chapter [Variables](/hands-on/2023-11-30/050_defaults/exercise/)
+See chapter [Defaults](/hands-on/2023-11-30/050_defaults/exercise/)
