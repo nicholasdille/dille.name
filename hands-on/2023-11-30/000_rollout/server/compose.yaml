@@ -56,7 +56,7 @@ services:
 
   # https://docs.gitlab.com/ee/install/docker.html
   gitlab:
-    image: gitlab/gitlab-ce:16.5.1-ce.0
+    image: gitlab/gitlab-ce:16.5.3-ce.0@sha256:b4a72ab3ae9ffa66025365861509150afc2500024245dbbbbb35474aa7be1c65
     environment:
       # https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template
       GITLAB_OMNIBUS_CONFIG: |
