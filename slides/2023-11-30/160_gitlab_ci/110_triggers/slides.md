@@ -114,7 +114,7 @@ job_name2:
 
 ## Hands-On
 
-See chapter [Triggers](/hands-on/20231130/110_triggers/exercise/)
+See chapter [Triggers](/hands-on/2023-11-30/110_triggers/exercise/)
 
 ---
 

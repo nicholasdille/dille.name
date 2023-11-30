@@ -12,7 +12,7 @@ Careful with protected variables
 
 ### Hands-On
 
-See chapter [Variables](/hands-on/20231130/020_variables/exercise/)
+See chapter [Variables](/hands-on/2023-11-30/020_variables/exercise/)
 
 ---
 

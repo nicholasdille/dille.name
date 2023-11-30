@@ -24,4 +24,4 @@ Avoid maintaining custom image
 
 ### Hands-On
 
-See chapter [Variables](/hands-on/20231130/040_image/exercise/)
+See chapter [Variables](/hands-on/2023-11-30/040_image/exercise/)
