@@ -25,3 +25,31 @@ Avoid maintaining custom image
 ### Hands-On
 
 See chapter [Variables](/hands-on/2023-11-30/040_image/exercise/)
+
+---
+
+## Pro tip: Using private registries
+
+Private container registries are supported [](https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#access-an-image-from-a-private-container-registry)
+
+Credentials must be provided in variable `DOCKER_AUTH_CONFIG` [](https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#use-statically-defined-credentials)
+
+- Either defined in pipeline/job
+- Or defined globally in runner
+
+### Fill `DOCKER_AUTH_CONFIG`
+
+Variable context matches `~/.docker/config.json`
+
+```json
+{ "auths": { "reg.comp.org": { "auth": "<user:pass-base64-encoded>" } } }
+```
+
+Fill from environment variables:
+
+```bash
+jq --null-input \
+    --arg host "${REG_HOST}" \
+    --arg user_pass_base64 "$(echo "${REG_USER}:${REG_PASS}" | base64 -w0)" \
+    '{"auths": {$host:{"auth": $user_pass_base64}}}'
+```
