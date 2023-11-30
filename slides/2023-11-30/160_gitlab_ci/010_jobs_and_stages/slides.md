@@ -48,8 +48,8 @@ Literal multiline block:
 job_name:
   script:
   - |
-    multi
-    line
+    pwd
+    whoami
 ```
 
 Shell here documents:
