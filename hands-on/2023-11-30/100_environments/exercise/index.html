@@ -1168,7 +1168,7 @@
 </ol>
 <h2 id="task-1-add-target-environment">Task 1: Add target environment<a class="headerlink" href="#task-1-add-target-environment" title="Permanent link">&para;</a></h2>
 <p>Add a new stage <code>deploy</code> with a job called <code>deploy</code> and use the following commands to upload the binary to the dev environment:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>https://seat<span class="si">${</span><span class="nv">SEAT_INDEX</span><span class="si">}</span>.dev.inmylab.de/<span class="w"> </span><span class="se">\</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>https://seat<span class="si">${</span><span class="nv">SEAT_INDEX</span><span class="si">}</span>.dev.webdav.inmylab.de/<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>--fail<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>--verbose<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--upload-file<span class="w"> </span>hello<span class="w"> </span><span class="se">\</span>
@@ -1178,7 +1178,7 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apt-get<span class="w"> </span>update
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>curl<span class="w"> </span>ca-certificates
 </span></code></pre></div>
-<p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run and be able to download the <code>hello</code> binary from <code>https://seatN.dev.inmylab.de/hello</code>.</p>
+<p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run and be able to download the <code>hello</code> binary from <code>https://seatN.dev.webdav.inmylab.de/hello</code>.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
 <p>Install <code>curl</code> in a <code>before_script</code> to separate the preparation from the core steps:</p>
@@ -1308,7 +1308,7 @@
 </span></span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
 </span></span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span></span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span></span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="hll"><span class="w">    </span><span class="no">curl https://dev.seat${SEAT_INDEX}.inmylab.de/ \</span>
+</span></span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="hll"><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
 </span></span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="hll"><span class="w">        </span><span class="no">--fail \</span>
 </span></span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="hll"><span class="w">        </span><span class="no">--verbose \</span>
 </span></span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="hll"><span class="w">        </span><span class="no">--upload-file hello \</span>
