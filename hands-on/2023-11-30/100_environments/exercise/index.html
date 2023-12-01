@@ -1172,7 +1172,7 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>--fail<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>--verbose<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--upload-file<span class="w"> </span>hello<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--user<span class="w"> </span>seat:<span class="si">${</span><span class="nv">PASS</span><span class="si">}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--user<span class="w"> </span>seatN:<span class="si">${</span><span class="nv">PASS</span><span class="si">}</span>
 </span></code></pre></div>
 <p>Mind that <code>curl</code> is not available in the default image <code>golang:1.19.2</code> but must be installed using the following commands. Apply what you learned about script blocks as well as separating commands into preparation, core steps and cleanup.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apt-get<span class="w"> </span>update
@@ -1312,7 +1312,7 @@
 </span></span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="hll"><span class="w">        </span><span class="no">--fail \</span>
 </span></span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="hll"><span class="w">        </span><span class="no">--verbose \</span>
 </span></span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="hll"><span class="w">        </span><span class="no">--upload-file hello \</span>
-</span></span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="hll"><span class="w">        </span><span class="no">--user seat:${PASS}</span>
+</span></span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="hll"><span class="w">        </span><span class="no">--user seatN:${PASS}</span>
 </span></span></code></pre></div></td></tr></table></div>
 </details>
 <h2 id="task-2-add-deployment-to-development-environment">Task 2: Add deployment to development environment<a class="headerlink" href="#task-2-add-deployment-to-development-environment" title="Permanent link">&para;</a></h2>
@@ -1440,7 +1440,7 @@
 </span></span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58"></a><span class="w">        </span><span class="no">--fail \</span>
 </span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="w">        </span><span class="no">--verbose \</span>
 </span><span id="__span-4-60"><a id="__codelineno-4-60" name="__codelineno-4-60"></a><span class="w">        </span><span class="no">--upload-file hello \</span>
-</span><span id="__span-4-61"><a id="__codelineno-4-61" name="__codelineno-4-61"></a><span class="w">        </span><span class="no">--user seat:${PASS}</span>
+</span><span id="__span-4-61"><a id="__codelineno-4-61" name="__codelineno-4-61"></a><span class="w">        </span><span class="no">--user seatN:${PASS}</span>
 </span></code></pre></div></td></tr></table></div>
 </details>
 <p>This was just a demonstration. The changes will not be preseved in the following chapters.</p>
