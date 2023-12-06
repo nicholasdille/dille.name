@@ -1059,6 +1059,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Wrap Up
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Wrap Up
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../you_are_done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    You are done
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1253,7 +1321,7 @@
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml --format testname</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
@@ -1284,13 +1352,13 @@
 </span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="nt">deploy</span><span class="p">:</span>
 </span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 </span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
 </span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 </span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
 </span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
 </span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
 </span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63"></a><span class="w">        </span><span class="no">--fail \</span>
 </span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64"></a><span class="w">        </span><span class="no">--verbose \</span>
 </span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="w">        </span><span class="no">--upload-file hello \</span>
@@ -1425,7 +1493,7 @@
 </span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
 </span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml --format testname</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
 </span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
 </span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 </span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
@@ -1448,13 +1516,13 @@
 </span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48"></a><span class="nt">deploy</span><span class="p">:</span>
 </span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 </span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
 </span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 </span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
 </span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
 </span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
 </span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58"></a><span class="w">        </span><span class="no">--fail \</span>
 </span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59"></a><span class="w">        </span><span class="no">--verbose \</span>
 </span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60"></a><span class="w">        </span><span class="no">--upload-file hello \</span>

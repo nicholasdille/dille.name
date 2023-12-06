@@ -1068,6 +1068,74 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Wrap Up
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Wrap Up
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../you_are_done/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    You are done
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1155,7 +1223,11 @@
 <p class="admonition-title">Goal</p>
 <p>Learn how to...</p>
 <ul>
-<li>XXX</li>
+<li>trigger pipelines in other projects</li>
+<li>learn about upstream and downstream pipelines</li>
+<li>use trigger tokens</li>
+<li>use multi-project pipelines</li>
+<li>use parent-child pipelines</li>
 </ul>
 </div>
 <div class="admonition info">
@@ -1165,7 +1237,7 @@
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <p>Triggering another pipeline requires a seconds project:</p>
 <ol>
-<li>Create a new project (anywhere!)</li>
+<li>Create a new project, e.g. a private project called <code>trigger</code></li>
 <li>Add <code>.gitlab-ci.yml</code> with the following content to the root of new project:
     <div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">test</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
@@ -1287,7 +1359,7 @@
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml --format testname</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
 </span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
@@ -1314,13 +1386,13 @@
 </span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="nt">deploy</span><span class="p">:</span>
 </span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 </span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
 </span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 </span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
 </span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
 </span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="w">    </span><span class="no">curl https://${CI_COMMIT_REF_NAME}.seat${SEAT_INDEX}.inmylab.de/ \</span>
 </span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59"></a><span class="w">        </span><span class="no">--fail \</span>
 </span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="w">        </span><span class="no">--verbose \</span>
 </span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61"></a><span class="w">        </span><span class="no">--upload-file hello \</span>
@@ -1328,13 +1400,13 @@
 </span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63"></a>
 </span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64"></a><span class="hll"><span class="nt">trigger</span><span class="p">:</span>
 </span></span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="hll"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trigger</span>
-</span></span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span></span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span></span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="hll"><span class="w">    </span><span class="no">curl -X POST \</span>
-</span></span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="hll"><span class="w">        </span><span class="no">--fail \</span>
-</span></span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="hll"><span class="w">        </span><span class="no">-F token=$TOKEN \</span>
-</span></span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71"></a><span class="hll"><span class="w">        </span><span class="no">-F ref=main \</span>
-</span></span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72"></a><span class="hll"><span class="w">        </span><span class="no">https://gitlab.inmylab.de/api/v4/projects/9999/trigger/pipeline</span>
+</span></span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span></span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="hll"><span class="w">    </span><span class="no">curl https://gitlab.inmylab.de/api/v4/projects/seat${SEAT_INDEX}%2ftrigger/trigger/pipeline \</span>
+</span></span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="hll"><span class="w">        </span><span class="no">--request POST \</span>
+</span></span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="hll"><span class="w">        </span><span class="no">--silent \</span>
+</span></span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="hll"><span class="w">        </span><span class="no">--fail \</span>
+</span></span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71"></a><span class="hll"><span class="w">        </span><span class="no">-F &quot;token=${TOKEN}&quot; \</span>
+</span></span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72"></a><span class="hll"><span class="w">        </span><span class="no">-F &quot;ref=main&quot;</span>
 </span></span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>origin/160_gitlab_ci/110_triggers/curl<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
@@ -1440,7 +1512,7 @@
 </span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
 </span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml --format testname</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
 </span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
 </span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 </span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
@@ -1467,13 +1539,13 @@
 </span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49"></a><span class="nt">deploy</span><span class="p">:</span>
 </span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 </span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
 </span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 </span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
 </span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
 </span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
+</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="w">    </span><span class="no">curl https://${CI_COMMIT_REF_NAME}.seat${SEAT_INDEX}.inmylab.de/ \</span>
 </span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="w">        </span><span class="no">--fail \</span>
 </span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="w">        </span><span class="no">--verbose \</span>
 </span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="w">        </span><span class="no">--upload-file hello \</span>
@@ -1486,7 +1558,7 @@
 </details>
 <p>This was just a demonstration. The changes will not be preserved in the following chapters.</p>
 <h2 id="task-3-using-a-parent-child-pipeline">Task 3: Using a parent-child pipeline<a class="headerlink" href="#task-3-using-a-parent-child-pipeline" title="Permanent link">&para;</a></h2>
-<p>A parent-child pipeline executes a downstream pipeline from a YAML file. Modify the contents of the <code>trigger</code> keyword to use <a href="https://docs.gitlab.com/ee/ci/pipelines/parent_child_pipelines.html"><code>include</code></a> to execute a pipeline with the same content as in the first task.</p>
+<p>A parent-child pipeline executes a downstream pipeline from a YAML file. Modify the contents of the <code>trigger</code> keyword to use <a href="https://docs.gitlab.com/ee/ci/pipelines/parent_child_pipelines.html"><code>include</code></a> to execute a pipeline with the same content as in the first task but - this time - from a local file <code>child.yaml</code>.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run and be able to expand the downstream pipeline to see the jobs and their status.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
@@ -1595,7 +1667,7 @@
 </span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
 </span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml --format testname</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
 </span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
 </span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
 </span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
@@ -1622,13 +1694,13 @@
 </span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49"></a><span class="nt">deploy</span><span class="p">:</span>
 </span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 </span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
 </span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
 </span><span id="__span-6-54"><a id="__codelineno-6-54" name="__codelineno-6-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
 </span><span id="__span-6-55"><a id="__codelineno-6-55" name="__codelineno-6-55"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
 </span><span id="__span-6-56"><a id="__codelineno-6-56" name="__codelineno-6-56"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span><span id="__span-6-57"><a id="__codelineno-6-57" name="__codelineno-6-57"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-6-58"><a id="__codelineno-6-58" name="__codelineno-6-58"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
+</span><span id="__span-6-58"><a id="__codelineno-6-58" name="__codelineno-6-58"></a><span class="w">    </span><span class="no">curl https://${CI_COMMIT_REF_NAME}.seat${SEAT_INDEX}.inmylab.de/ \</span>
 </span><span id="__span-6-59"><a id="__codelineno-6-59" name="__codelineno-6-59"></a><span class="w">        </span><span class="no">--fail \</span>
 </span><span id="__span-6-60"><a id="__codelineno-6-60" name="__codelineno-6-60"></a><span class="w">        </span><span class="no">--verbose \</span>
 </span><span id="__span-6-61"><a id="__codelineno-6-61" name="__codelineno-6-61"></a><span class="w">        </span><span class="no">--upload-file hello \</span>
