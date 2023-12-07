@@ -1212,7 +1212,7 @@
 </div>
 <h2 id="task-1-create-a-job-variable">Task 1: Create a job variable<a class="headerlink" href="#task-1-create-a-job-variable" title="Permanent link">&para;</a></h2>
 <p>This exercise requires an updates version of our hello world program:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>origin/160_gitlab_ci/020_variables/inline<span class="w"> </span>--<span class="w"> </span>main.go
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/020_variables/inline<span class="w"> </span>--<span class="w"> </span>main.go
 </span></code></pre></div>
 <p>Add a variable called <code>version</code> to the job called <code>build</code> and modify the build command as follows:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>-ldflags<span class="w"> </span><span class="s2">&quot;-X main.Version=</span><span class="si">${</span><span class="nv">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>.
@@ -1292,7 +1292,7 @@
 </span></span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
 </span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
-<p>git checkout origin/160_gitlab_ci/020_variables/inline -- '*'</p>
+<p>git checkout upstream/160_gitlab_ci/020_variables/inline -- '*'</p>
 </details>
 <h2 id="task-2-use-a-predefined-variable">Task 2: Use a predefined variable<a class="headerlink" href="#task-2-use-a-predefined-variable" title="Permanent link">&para;</a></h2>
 <p>Read the <a href="https://docs.gitlab.com/ee/ci/variables/index.html#predefined-cicd-variables">official documentation about predefined variables</a> and replace the job variable with the predefined variable <code>CI_COMMIT_REF_NAME</code>.</p>
@@ -1366,11 +1366,11 @@
 </span></span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
 </span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
-<p>git checkout origin/160_gitlab_ci/020_variables/predefined -- '*'</p>
+<p>git checkout upstream/160_gitlab_ci/020_variables/predefined -- '*'</p>
 </details>
 <h2 id="task-3-add-a-ci-variable-in-the-ui">Task 3: Add a CI variable in the UI<a class="headerlink" href="#task-3-add-a-ci-variable-in-the-ui" title="Permanent link">&para;</a></h2>
 <p>This exercise requires an updates version of our hello world application:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>origin/160_gitlab_ci/020_variables/ci<span class="w"> </span>--<span class="w"> </span>main.go
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/020_variables/ci<span class="w"> </span>--<span class="w"> </span>main.go
 </span></code></pre></div>
 <p>The application now also prints the name of the author which must be supplied during compilation as well.</p>
 <p>Read the <a href="https://docs.gitlab.com/ee/ci/variables/#define-a-cicd-variable-in-the-ui">official documentation about CI variables</a> and extend the build command to provide <code>main.Author</code> through a CI variable called <code>AUTHOR</code>.</p>
@@ -1448,7 +1448,7 @@
 </span></span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
 </span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>origin/160_gitlab_ci/020_variables/ci<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/020_variables/ci<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </span></code></pre></div>
 </details>
 <!-- TODO: masked variables -->
