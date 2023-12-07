@@ -1177,6 +1177,8 @@
 <h2 id="task-add-renovate-to-your-pipeline">Task: Add Renovate to your pipeline<a class="headerlink" href="#task-add-renovate-to-your-pipeline" title="Permanent link">&para;</a></h2>
 <p>The easiest way to get Renovate on GitLab is to integrated it into your pipeline:</p>
 <ol>
+<li>Create a new project access token <code>renovate</code> with role <code>Developer</code> and scopes <code>api</code>, <code>read_repository</code>, <code>read_registry</code></li>
+<li>Add project access token <code>renovate</code> to CI variable <code>RENOVATE_TOKEN</code></li>
 <li>Add a job <code>renovate</code> to the stage <code>check</code></li>
 <li>Limit execution to a) scheduled pipelines and b) if the variable <code>$RENOVATE</code> is set</li>
 <li>Use the image <code>renovate/renovate</code></li>
@@ -1184,7 +1186,7 @@
 <li>Use the following script to execute Renovate:
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>renovate<span class="w"> </span>--platform<span class="w"> </span>gitlab<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>--endpoint<span class="w"> </span><span class="si">${</span><span class="nv">CI_API_V4_URL</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>--token<span class="w"> </span><span class="si">${</span><span class="nv">CI_JOB_TOKEN</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>--token<span class="w"> </span><span class="si">${</span><span class="nv">RENOVATE_TOKEN</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="si">${</span><span class="nv">CI_PROJECT_PATH</span><span class="si">}</span>
 </span></code></pre></div></li>
 <li>Create a scheduled pipeline and define a variable <code>RENOVATE</code> with the value <code>true</code></li>
@@ -1387,7 +1389,7 @@
 </span></span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="hll"><span class="w">    </span><span class="no">renovate --platform gitlab \</span>
 </span></span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="hll"><span class="w">        </span><span class="no">--endpoint ${CI_API_V4_URL} \</span>
 </span></span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="hll"><span class="w">        </span><span class="no">--token ${CI_JOB_TOKEN} \</span>
-</span></span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="hll"><span class="w">        </span><span class="no">${CI_PROJECT_PATH}</span>
+</span></span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="hll"><span class="w">        </span><span class="no">--autodiscover true</span>
 </span></span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50"></a>
 </span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51"></a><span class="nt">lint</span><span class="p">:</span>
 </span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
