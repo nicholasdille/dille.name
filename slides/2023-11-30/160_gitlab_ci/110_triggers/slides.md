@@ -110,6 +110,8 @@ job_name2:
       file: <relative-path-to-file>
 ```
 
+File must match `/\.ya?ml$/`
+
 ---
 
 ## Hands-On
@@ -153,7 +155,7 @@ Wait for successul downstream pipeline using `strategy` [](https://docs.gitlab.c
 ```yaml
 job_name:
   trigger:
-    include: child.ymal
+    include: child.yaml
     strategy: depend
 ```
 

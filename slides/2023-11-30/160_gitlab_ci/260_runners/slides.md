@@ -63,3 +63,27 @@ Shared across a group or a project
 Accessible to members with **Owner** role
 
 Shared runners can be disabled
+
+---
+
+## Runner tags
+
+Runners can have tags
+
+Tags specify features based on...
+
+- Networking locations
+- Hardware
+- Runner configuration
+
+### Selecting runners in pipelines
+
+Each can use a different runner:
+
+```yaml
+job_name:
+  tags:
+  - foo
+```
+
+All features work across different runners
