@@ -1188,7 +1188,7 @@
 <li>Login to the registry before building: <code>docker login -u "${CI_REGISTRY_USER}" -p "${CI_REGISTRY_PASSWORD}" "${CI_REGISTRY}"</code></li>
 <li>Logout from the registry after pushing: <code>docker logout "${CI_REGISTRY}"</code></li>
 </ol>
-<p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
+<p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run. Check the web UI under <strong>Deploy</strong> -&gt; <strong>Container Registry</strong>.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
 <p>Use <code>before_script</code> for logging in and <code>after_script</code> after logging out.</p>
@@ -1454,6 +1454,7 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/240_registries<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </span></code></pre></div>
 </details>
+<!-- TODO: --password-stdin -->
 
 
 

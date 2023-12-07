@@ -48,7 +48,7 @@ Jobs are executed in a dedicated containers in a pod per pipeline
 
 ## Runner scopes
 
-## Instance runners
+### Instance runners
 
 Shared across all groups and projects
 
@@ -56,7 +56,7 @@ Reserved for instance administrators
 
 Managed from admin area
 
-## Group/project runners
+### Group/project runners
 
 Shared across a group or a project
 

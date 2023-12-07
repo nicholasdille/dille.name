@@ -189,6 +189,8 @@ use:
 
 ## Pro tip: Artifacts from parent pipeline
 
+<i class="fa-duotone fa-triangle-exclamation"></i> Requires Enterprise Edition Premium [](https://docs.gitlab.com/ee/ci/pipelines/downstream_pipelines.html?tab=Multi-project+pipeline#fetch-artifacts-from-an-upstream-pipeline)
+
 Generate artifact and trigger child pipeline:
 
 ```yaml

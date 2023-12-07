@@ -1420,6 +1420,7 @@
 </details>
 <h2 id="task-2-prevent-a-pipeline-from-running">Task 2: Prevent a pipeline from running<a class="headerlink" href="#task-2-prevent-a-pipeline-from-running" title="Permanent link">&para;</a></h2>
 <p>Rules can also be placed under the global <a href="https://docs.gitlab.com/ee/ci/yaml/#workflowrules"><code>workflow</code></a> keyword to apply to the whole pipeline instead of individual jobs.</p>
+<p>Allow the pipeline to run for the triggers <code>push</code>, <code>merge_request_event</code>, <code>web</code>, <code>schedule</code> and <code>pipeline</code> and prevent the pipeline for triggers <code>api</code> and <code>trigger</code>.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
