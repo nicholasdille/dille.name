@@ -6,5 +6,5 @@ services:
       context: .
     container_name: svc1
   svc2:
-    image: nginx
+    image: nginx@sha256:c26ae7472d624ba1fafd296e73cecc4f93f853088e6a9c13c0d52f6ca5865107
     container_name: svc2
