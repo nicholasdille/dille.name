@@ -46,7 +46,7 @@ jobs:
           sha256sum site.tar.gz >site.tar.gz.sha256
 
       - name: Store artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: site
           path: |
@@ -74,7 +74,7 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan ${{ secrets.SFTPHOST }} >>~/.ssh/known_hosts
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: site
 
