@@ -53,5 +53,15 @@
       ],
       "datasourceTemplate": "docker"
     }
+  ],
+
+  "packageRules": [
+    {
+      "matchFileNames": [
+        "slides/**",
+        "hands-on/**"
+      ],
+      "enabled": false
+    }
   ]
 }
