@@ -60,6 +60,9 @@ jobs:
     - build
     runs-on: ubuntu-22.04
     if: "!contains(github.event.head_commit.message, 'skip deploy')"
+    concurrency:
+      group: deploy
+      cancel-in-progress: false
     steps:
 
       - name: Checkout code
