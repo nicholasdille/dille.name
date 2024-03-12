@@ -52,6 +52,6 @@ I covered the following topics:
   - Using runners
   - Renovating dependencies
 
-Find my slides [here](/slides/2023-03-30/) as well as the [exercises](/hands-on/2023-11-30/).
+Find my slides [here](/slides/2023-11-30/) as well as the [exercises](/hands-on/2023-11-30/).
 
 The slides and exercises are a result of my slide and demo build system. Take a look at the [release for this event](https://github.com/nicholasdille/container-slides/releases/tag/20231130.3).
