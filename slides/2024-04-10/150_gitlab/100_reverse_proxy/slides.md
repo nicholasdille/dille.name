@@ -49,6 +49,7 @@ Deploy using `docker compose` v2:
 # Clone repository with slides and demos
 git clone https://github.com/nicholasdille/container-slides
 cd container-slides/150_gitlab/100_reverse_proxy
+git pull
 
 # Remove existing instance of GitLab
 docker rm -f gitlab
@@ -62,7 +63,7 @@ Your VM has the necessary environment variables: `DOMAIN` and `IP`
 Extract password (or [reset](#/gitlab_troubleshooting)):
 
 ```bash
-docker compose --project-name gitlab exec gitlab
+docker compose --project-name gitlab exec gitlab \
     cat /etc/gitlab/initial_root_password \
     | grep ^Password | cut -d' ' -f2
 ```
@@ -83,6 +84,9 @@ Purge data by removing volumes:
 docker volume rm gitlab_config
 docker volume rm gitlab_logs
 docker volume rm gitlab_data
+docker volume create gitlab_config
+docker volume create gitlab_logs
+docker volume create gitlab_data
 ```
 
 A fresh instance has a new initial root password
