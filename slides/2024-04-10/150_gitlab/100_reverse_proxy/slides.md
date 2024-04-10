@@ -22,6 +22,10 @@ Docker
 
 Template [](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template)
 
+### Alternative
+
+Community container image [](https://github.com/sameersbn/docker-gitlab)
+
 ---
 
 ## Reverse Proxy in front of GitLab
