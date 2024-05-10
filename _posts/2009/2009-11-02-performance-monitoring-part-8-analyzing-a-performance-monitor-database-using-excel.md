@@ -55,7 +55,7 @@ FROM
 
 After closing the dialog, Excel may ask you to confirm the change of the connection definition. Please confirm this by clicking "Yes".
 
-[![Confirm chaning the definition](/media/2009/11/Dialog.png)](/media/2009/11/Dialog.png)
+[![Confirm changing the definition](/media/2009/11/Dialog.png)](/media/2009/11/Dialog.png)
 
 ## Using the PivotChart
 

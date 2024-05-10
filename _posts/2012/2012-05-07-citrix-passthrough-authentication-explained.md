@@ -42,7 +42,7 @@ Basic authentication is specified in the HTTP standard and relys on the transmis
 
 ## IIS Integrated Windows Authentication
 
-Integrated authentication uses a [Challenge/Response algorithm](http://en.wikipedia.org/wiki/Challenge-response_authentication) which forces the client to prove that the user is successfully authenticated. This is achived by exchaning a digitally signed hash.
+Integrated authentication uses a [Challenge/Response algorithm](http://en.wikipedia.org/wiki/Challenge-response_authentication) which forces the client to prove that the user is successfully authenticated. This is achived by exchanging a digitally signed hash.
 
 ## WebInterface Explicit Authentication
 

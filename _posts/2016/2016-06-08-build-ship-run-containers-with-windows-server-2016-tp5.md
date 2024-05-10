@@ -106,7 +106,7 @@ I have published all the above code in [my docker repository on GitHub](https://
 
 ## Windows Containers on Docker Hub
 
-In addition to building container images locally, Docker offers a public site for exchaning those images called [Docker Hub](https://hub.docker.com/). I have already uploaded the images created above to [my repositories on Docker Hub](https://hub.docker.com/u/nicholasdille/). You can pull them by executing `docker pull nicholasdille/chocolatey` or have the Docker client download them implicitly by calling `docker run -d nicholasdille/git`.
+In addition to building container images locally, Docker offers a public site for exchanging those images called [Docker Hub](https://hub.docker.com/). I have already uploaded the images created above to [my repositories on Docker Hub](https://hub.docker.com/u/nicholasdille/). You can pull them by executing `docker pull nicholasdille/chocolatey` or have the Docker client download them implicitly by calling `docker run -d nicholasdille/git`.
 
 Microsoft offers [several examples on Docker Hub](https://hub.docker.com/u/microsoft/) which are built from the [source located on GitHub](https://github.com/Microsoft/Virtualization-Documentation/tree/master/windows-container-samples/windowsservercore). This is [documented here](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start_windows_server#4-deploy-your-first-container).
 
