@@ -13,7 +13,7 @@ tags:
 ---
 How did I miss this? Late in 2023, Docker [buildx](https://github.com/docker/buildx) [v0.12.0](https://github.com/docker/buildx/releases/tag/v0.12.0) introduced an integrated debugger for image building. This is a great feature to help you analyze why a build is failing. Instead of reading the build output you can now check the build interactively after it failed.
 
-<img src="/media/2024/02/freestocks-kmcl6-RSBdw-unsplash.jpg" style="object-fit: cover; object-position: center 45%; width: 100%; height: 250px;" />
+<img src="/media/2024/05/freestocks-kmcl6-RSBdw-unsplash.jpg" style="object-fit: cover; object-position: center 45%; width: 100%; height: 250px;" />
 
 <!--more-->
 
