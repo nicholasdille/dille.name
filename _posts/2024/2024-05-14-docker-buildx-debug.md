@@ -37,6 +37,8 @@ export BUILDX_EXPERIMENTAL=1
 docker buildx debug --invoke=/bin/bash build .
 ```
 
+This greatly improves developing a new `Dockerfile` which usually be some an endless loop of editing and building - wasting a lot of time. With the interactive debug, the fix is created in the context of the build and is implemented in the `Dockerfile` after testing. 
+
 This also features a [monitor mode](https://github.com/docker/buildx/blob/master/docs/debugging.md#monitor-mode) which allows you to control the debug environment. You can switch between the shell and the monitor mode by pressing `Ctrl-a-c`.
 
 Also refer to the [official documentation](https://github.com/docker/buildx/blob/master/docs/debugging.md).
