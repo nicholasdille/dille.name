@@ -43,6 +43,6 @@ I covered the following topics:
   - Using GitLab Pages
   - Monitoring GitLab
 
-Find my slides [here](https://dille.name/slides/2024-04-10/).
+Find my slides [here](/slides/2024-04-10/).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this event](https://github.com/nicholasdille/container-slides/releases/tag/20240410.1).

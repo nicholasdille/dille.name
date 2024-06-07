@@ -17,6 +17,6 @@ This week, I had the pleasure to talk about using Renovate for automated promoti
 
 <!--more-->
 
-Find my slides for the talk [here](https://dille.name/slides/2024-04-16/).
+Find my slides for the talk [here](/slides/2024-04-16/).
 
 The corresponding release in my slides repository is [here](https://github.com/nicholasdille/container-slides/releases/tag/20240416.0).

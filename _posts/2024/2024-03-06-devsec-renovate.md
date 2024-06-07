@@ -18,6 +18,6 @@ This week, I had the pleasure to talk about automated dependency updates using R
 
 <!--more-->
 
-Find my slides for the talk [here](https://dille.name/slides/2024-03-06/heise-devsec-Dependency-Updates.html).
+Find my slides for the talk [here](/slides/2024-03-06/heise-devsec-Dependency-Updates.html).
 
 The corresponding release in my slides repository is [here](https://github.com/nicholasdille/container-slides/releases/tag/20240306.2).

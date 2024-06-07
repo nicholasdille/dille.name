@@ -19,6 +19,6 @@ I gave a talk at [DevOps Meetup Freiburg](https://www.meetup.com/de-DE/devops-fr
 
 <!--more-->
 
-Find my slides [here](https://dille.name/slides/2024-05-08/).
+Find my slides [here](/slides/2024-05-08/).
 
 The slides are a result of my slide and demo build system. Take a look at the [release for this talk](https://github.com/nicholasdille/container-slides/releases/tag/20240508.2).
