@@ -40,7 +40,7 @@ http://studio.code.org/s/flappy/reset
 
 https://compute-it.toxicode.fr/
 
-**KI mit Scratch:** https://studio.code.org/s/dance-ai-2023/lessons/1/levels/1
+**Bonus: KI mit Scratch:** https://studio.code.org/s/dance-ai-2023/lessons/1/levels/1
 
 ---
 
@@ -190,7 +190,11 @@ Nicht nur Entwicklung von Frontend und Backend...
 
 ## Echter Programmcode
 
-### Python
+### Einführung in Python
+
+https://silentteacher.toxicode.fr/hour_of_code.html
+
+### Eine Burg mit Python
 
 https://pytamaro.si.usi.ch/hoc/castle
 
