@@ -40,7 +40,7 @@ http://studio.code.org/s/flappy/reset
 
 https://compute-it.toxicode.fr/
 
-**Bonus: KI mit Scratch:** https://studio.code.org/s/dance-ai-2023/lessons/1/levels/1
+**KI mit Scratch:** https://studio.code.org/s/dance-ai-2023/lessons/1/levels/1
 
 ---
 
@@ -142,7 +142,7 @@ Probleme werden gemeinsam behoben
 
 ---
 
-## Tag 2
+## Tag 1 - Teil 2
 
 Scratch mit Minecraft: https://code.org/minecraft
 
@@ -185,6 +185,14 @@ Es braucht eine spannende Geschichte
 Nicht nur Entwicklung von Frontend und Backend...
 
 ...sondern auch Grafik und Musik gehören dazu
+
+---
+
+## Echter Programmcode
+
+### Python
+
+https://pytamaro.si.usi.ch/hoc/castle
 
 ---
 
