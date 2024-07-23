@@ -202,6 +202,10 @@ https://silentteacher.toxicode.fr/hour_of_code.html
 
 https://pytamaro.si.usi.ch/hoc/castle
 
+### Erstelle ein Arcade-Spiel <!-- .element: style="color: white;" -->
+
+https://codecombat.com/play/game-dev-hoc-2?hour_of_code=true
+
 ---
 
 ## Code.org
