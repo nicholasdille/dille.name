@@ -1,9 +1,9 @@
 ---
-title: 'Webinar about #GitLab CI - Fall 2022 (German)'
-date: 2022-10-13T21:00:00+01:00
+title: 'Webinar about #Kubernetes (German)'
+date: 2022-11-10T21:00:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2022/10/13/webinar-about-gitlab-ci/
+permalink: /blog/2022/11/10/webinar-about-kubernetes/
 categories:
 - Haufe-Lexware
 tags:
