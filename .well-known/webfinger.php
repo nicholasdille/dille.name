@@ -67,7 +67,7 @@ $accounts = array(
             array(
                 "rel" => 'alternate',
                 "type" => 'application/rss+xml',
-                "href" => 'https://blog.bajonczak.com/rss/',
+                "href" => 'https://dille.name/feed.xml',
             )
         )
     )
