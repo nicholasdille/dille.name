@@ -1,3 +1,7 @@
 RewriteEngine On
+
 RewriteCond %{HTTPS} !on
 RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [L]
