@@ -16,9 +16,9 @@ twitter:
 social:
   name: Nicholas Dille
   links:
-    - https://twitter.com/nicholasdille
+    - https://bsky.app/profile/nicholasdille.bsky.social
     - https://www.linkedin.com/in/nicholasdille/
-    - https://www.xing.com/profile/Nicholas_Dille
+    - https://github.com/nicholasdille
 
 lang: en_US
 
@@ -34,7 +34,6 @@ plugins:
  - jekyll-paginate
  - jekyll-feed
  - jekyll-seo-tag
- - jekyll-mentions
 
 include:
  - .htaccess
@@ -59,7 +58,4 @@ kramdown:
 paginate:           10
 paginate_path:      /blog/page:num/
 excerpt_separator:  <!--more-->
-
-jekyll-mentions:
-  base_url: https://www.twitter.com
 
