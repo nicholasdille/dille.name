@@ -50,8 +50,7 @@ Examples in this workshop use [`traefik`](https://traefik.io/traefik/)
 Deploy using `docker compose` v2:
 
 ```
-# Clone repository with slides and demos
-git clone https://github.com/nicholasdille/container-slides
+# Go to repository with slides and demos
 cd container-slides/150_gitlab/100_reverse_proxy
 git pull
 
