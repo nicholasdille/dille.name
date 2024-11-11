@@ -1,12 +1,12 @@
 <!-- .slide: id="gitlab_steps" class="vertical-center" -->
 
-<i class="fa-duotone fa-box-open-full fa-8x fa-duotone-colors" style="float: right; color: grey;"></i>
+<i class="fa-duotone fa-stairs fa-8x fa-duotone-colors" style="float: right; color: grey;"></i>
 
-## CI/CD Steps
+## CI/CD Steps (experimental)
 
 ---
 
-## CI/CD Steps
+## CI/CD Steps (experimental)
 
 Steps are reusable units of a job [](https://docs.gitlab.com/ee/ci/steps/)
 
@@ -20,10 +20,14 @@ job:
     MESSAGE: "GitLab workshop"
   run:
     - name: say_hi
-      step: message@v1.0.0
+      step: gitlab.inmylab.de/steps/message@v1.0.0
       inputs:
         message: "hello, ${{ job.MESSAGE }}"
 ```
+
+Requires `step-runner` binary [](https://gitlab.com/gitlab-org/step-runner)
+
+Steps can also be used to run existing GitHub Actions [](https://docs.gitlab.com/ee/ci/steps/#run-a-github-action)
 
 Eventually steps will be discoverable in the CI/CD Catalog [](https://gitlab.com/gitlab-org/gitlab/-/issues/425891)
 
@@ -53,4 +57,4 @@ Steps are easier to compose...
 
 ## Hands-On
 
-See chapter [Security](/hands-on/2024-11-12/310_steps/exercise/)
+See chapter [CI/CD Steps](/hands-on/2024-11-12/310_steps/exercise/)
