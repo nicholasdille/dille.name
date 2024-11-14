@@ -1,5 +1,5 @@
 ---
-title: 'My contributions at ContainerConf 2023 #ConCon2023 #GitLab #Renovate #OCI'
+title: 'My contributions at ContainerConf 2024 #CLC_Conf #GitLab #kubernetes #RBAC'
 date: 2024-11-12T23:08:00+01:00
 author: Nicholas Dille
 layout: post
