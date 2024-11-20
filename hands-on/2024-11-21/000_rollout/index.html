@@ -959,6 +959,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../255_troubleshooting/exercise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../265_caches/exercise/" class="md-nav__link">
         
   
@@ -1217,6 +1238,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1251,7 +1281,77 @@
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span>apply
 </span></code></pre></div>
 <h2 id="bootstrap-services">Bootstrap services<a class="headerlink" href="#bootstrap-services" title="Permanent link">&para;</a></h2>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bash<span class="w"> </span>bootstrap.sh
+<p>Checkout the next directories called <code>../00?_*</code> and follow the instructions</p>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<p>View GitLab:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>gitlab<span class="w"> </span>env<span class="w"> </span>-C<span class="w"> </span>/root/container-slides/160_gitlab_ci/001_server<span class="w"> </span>docker-compose<span class="w"> </span>ps<span class="w"> </span>-a
+</span></code></pre></div>
+<p>View GitLab Runner:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh<span class="w"> </span>gitlab<span class="w"> </span>env<span class="w"> </span>-C<span class="w"> </span>/root/container-slides/160_gitlab_ci/002_runner<span class="w"> </span>docker-compose<span class="w"> </span>ps<span class="w"> </span>-a
+</span></code></pre></div>
+<p>View instances of Visual Studio Code:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ssh<span class="w"> </span>vscode<span class="w"> </span>env<span class="w"> </span>-C<span class="w"> </span>/root/container-slides/160_gitlab_ci/003_vscode<span class="w"> </span>docker-compose<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </span>--format<span class="w"> </span><span class="s2">&quot;table {{.ID}}\t{{.Name}}\t{{.State}}&quot;</span>
+</span></code></pre></div>
+<p>Test DNS resolution:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>dig<span class="w"> </span>+short<span class="w"> </span>code.inmylab.de
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>dig<span class="w"> </span>+short<span class="w"> </span>gitlab.inmylab.de
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>dig<span class="w"> </span>+short<span class="w"> </span>vscode.inmylab.de
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>dig<span class="w"> </span>+short<span class="w"> </span>grafana.inmylab.de
+</span></code></pre></div>
+<p>Test endpoints:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-sSI<span class="w"> </span>https://code.inmylab.de/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>curl<span class="w"> </span>-sSI<span class="w"> </span>https://gitlab.inmylab.de/
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>curl<span class="w"> </span>-sSI<span class="w"> </span>https://grafana.inmylab.de/
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="o">{}</span><span class="w"> </span>curl<span class="w"> </span>-sSI<span class="w"> </span>https://seat<span class="o">{}</span>.vscode.inmylab.de
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="o">{}</span><span class="w"> </span>curl<span class="w"> </span>-sSI<span class="w"> </span>https://code.inmylab.de/seat<span class="o">{}</span>/
+</span></code></pre></div>
+<p>List runners:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl<span class="w"> </span>-sSLfH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="k">$(</span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.gitlab_admin_token&#39;</span><span class="w"> </span>seats.json<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>https://gitlab.inmylab.de/api/v4/runners/all?type<span class="o">=</span>instance_type<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>.
+</span></code></pre></div>
+<p>Test authentication for code.inmylab.de:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>INDEX<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nv">CODE</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>--arg<span class="w"> </span>index<span class="w"> </span><span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="w"> </span><span class="s1">&#39;.seats[$index | tonumber].code&#39;</span><span class="w"> </span>seats.json<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nv">AUTH</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;seat</span><span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">CODE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-w0<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span>curl<span class="w"> </span>-sSIH<span class="w"> </span><span class="s2">&quot;Authorization: Basic </span><span class="si">${</span><span class="nv">AUTH</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>https://code.inmylab.de/seat<span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span>/
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">done</span>
+</span></code></pre></div>
+<p>Test authentication for vscode.inmylab.de:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>INDEX<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nv">PASS</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>--arg<span class="w"> </span>index<span class="w"> </span><span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="w"> </span><span class="s1">&#39;.seats[$index | tonumber].password&#39;</span><span class="w"> </span>seats.json<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nv">AUTH</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;seat</span><span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">PASS</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-w0<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span>curl<span class="w"> </span>-sSIH<span class="w"> </span><span class="s2">&quot;Authorization: Basic </span><span class="si">${</span><span class="nv">AUTH</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>https://seat<span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span>.vscode.inmylab.de/
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">done</span>
+</span></code></pre></div>
+<p>Test PAT for gitlab.inmylab.de:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>INDEX<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nv">PAT</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>--arg<span class="w"> </span>index<span class="w"> </span><span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="w"> </span><span class="s1">&#39;.[$index | tonumber]&#39;</span><span class="w"> </span>../001_server/personal_access_tokens.json<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span>curl<span class="w"> </span>-sSH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="si">${</span><span class="nv">PAT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>https://gitlab.inmylab.de/api/v4/user<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.username
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">done</span>
+</span></code></pre></div>
+<p>Block all users:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>INDEX<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nv">PAT</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.gitlab_admin_token&#39;</span><span class="w"> </span>seats.json<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nv">USER_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>curl<span class="w"> </span>-sSH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="si">${</span><span class="nv">PAT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>https://gitlab.inmylab.de/api/v4/users?username<span class="o">=</span>seat<span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.id<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span>curl<span class="w"> </span>-sSH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="si">${</span><span class="nv">PAT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://gitlab.inmylab.de/api/v4/users/<span class="si">${</span><span class="nv">USER_ID</span><span class="si">}</span>/block
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">done</span>
+</span></code></pre></div>
+<p>Unblock all users:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>INDEX<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nv">PAT</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.gitlab_admin_token&#39;</span><span class="w"> </span>seats.json<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nv">USER_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>curl<span class="w"> </span>-sSH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="si">${</span><span class="nv">PAT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>https://gitlab.inmylab.de/api/v4/users?username<span class="o">=</span>seat<span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.id<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span>curl<span class="w"> </span>-sSH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="si">${</span><span class="nv">PAT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://gitlab.inmylab.de/api/v4/users/<span class="si">${</span><span class="nv">USER_ID</span><span class="si">}</span>/unblock
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">done</span>
+</span></code></pre></div>
+<p>Fetch last activity:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>INDEX<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nv">PAT</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.gitlab_admin_token&#39;</span><span class="w"> </span>seats.json<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nv">USER_ID</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>curl<span class="w"> </span>-sSH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="si">${</span><span class="nv">PAT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>https://gitlab.inmylab.de/api/v4/users?username<span class="o">=</span>seat<span class="si">${</span><span class="nv">INDEX</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span>.<span class="o">[</span><span class="m">0</span><span class="o">]</span>.id<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span>curl<span class="w"> </span>-sSH<span class="w"> </span><span class="s2">&quot;Private-Token: </span><span class="si">${</span><span class="nv">PAT</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>https://gitlab.inmylab.de/api/v4/users/<span class="si">${</span><span class="nv">USER_ID</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;&quot;last_sign_in_at: \(.last_sign_in_at)\nlast_activity_on: \(.last_activity_on)\nsign_in_count: \(.sign_in_count)&quot;&#39;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="k">done</span>
 </span></code></pre></div>
 
 
