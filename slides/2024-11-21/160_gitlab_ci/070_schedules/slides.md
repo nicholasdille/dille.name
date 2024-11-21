@@ -38,4 +38,4 @@ The internal pipeline schedule worker is configured with...
 
 Scheduled pipelines cannot run more often
 
-Adjust the masximum frequency for schedules pipelines [](https://docs.gitlab.com/ee/administration/cicd.html#change-maximum-scheduled-pipeline-frequency)
+Adjust the maximum frequency for schedules pipelines [](https://docs.gitlab.com/ee/administration/cicd.html#change-maximum-scheduled-pipeline-frequency)
