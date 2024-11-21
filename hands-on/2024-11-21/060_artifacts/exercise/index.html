@@ -634,18 +634,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-1-define-from-which-jobs-to-receive-artifacts" class="md-nav__link">
+  <a href="#bonus-task-1-define-from-which-jobs-to-receive-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
-      Bonus 1: Define from which jobs to receive artifacts
+      Bonus task 1: Define from which jobs to receive artifacts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-2-passing-environment-variables" class="md-nav__link">
+  <a href="#bonus-task-2-passing-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      Bonus 2: Passing environment variables
+      Bonus task 2: Passing environment variables
     </span>
   </a>
   
@@ -1287,18 +1287,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-1-define-from-which-jobs-to-receive-artifacts" class="md-nav__link">
+  <a href="#bonus-task-1-define-from-which-jobs-to-receive-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
-      Bonus 1: Define from which jobs to receive artifacts
+      Bonus task 1: Define from which jobs to receive artifacts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-2-passing-environment-variables" class="md-nav__link">
+  <a href="#bonus-task-2-passing-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      Bonus 2: Passing environment variables
+      Bonus task 2: Passing environment variables
     </span>
   </a>
   
@@ -1428,7 +1428,7 @@
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/060_artifact<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </span></code></pre></div>
 </details>
-<h2 id="bonus-1-define-from-which-jobs-to-receive-artifacts">Bonus 1: Define from which jobs to receive artifacts<a class="headerlink" href="#bonus-1-define-from-which-jobs-to-receive-artifacts" title="Permanent link">&para;</a></h2>
+<h2 id="bonus-task-1-define-from-which-jobs-to-receive-artifacts">Bonus task 1: Define from which jobs to receive artifacts<a class="headerlink" href="#bonus-task-1-define-from-which-jobs-to-receive-artifacts" title="Permanent link">&para;</a></h2>
 <p>Usually, artifacts are received from all jobs in the previous stages. Decide from which jobs to receive artifacts using the <code>dependencies</code> keyword. See the <a href="https://docs.gitlab.com/ee/ci/yaml/#dependencies">official documentation</a>.</p>
 <p>Modify the job <code>test</code> to consume artifacts only from the job <code>build</code>.</p>
 <details class="example">
@@ -1510,7 +1510,7 @@
 </span></code></pre></div></td></tr></table></div>
 </details>
 <p>This was just a demonstration. The changes will not be preserved in the following chapters.</p>
-<h2 id="bonus-2-passing-environment-variables">Bonus 2: Passing environment variables<a class="headerlink" href="#bonus-2-passing-environment-variables" title="Permanent link">&para;</a></h2>
+<h2 id="bonus-task-2-passing-environment-variables">Bonus task 2: Passing environment variables<a class="headerlink" href="#bonus-task-2-passing-environment-variables" title="Permanent link">&para;</a></h2>
 <p>In some situations, artifacts are to heavy-weight and passing a variable would be enough. Read the documentation for <a href="https://docs.gitlab.com/ee/ci/variables/index.html#pass-an-environment-variable-to-another-job">passing environment variables</a> and implement this between two jobs of your choice.</p>
 <p>The following hint and solution are a working example.</p>
 <details class="info">

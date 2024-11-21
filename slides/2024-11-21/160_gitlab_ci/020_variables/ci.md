@@ -48,5 +48,5 @@ But masked values can always be leaked through a pipeline:
 ```yaml
 job_name:
   script:
-  - echo "${MASKED_VAR}" | base64 -d
+  - echo "${MASKED_VAR}" | base64
 ```

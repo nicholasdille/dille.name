@@ -93,10 +93,12 @@ Sometimes a pipeline run is not desirable
 
 ### Option 1
 
-Skip pipeline by prefixing the commit message:
+Skip pipeline by adding `[skip ci]` in the commit message:
 
 ```plaintext
 [skip ci] My awesome commit message
+OR
+My awesome commit message [skip ci]
 ```
 
 ### Option 2
