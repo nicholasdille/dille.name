@@ -14,22 +14,20 @@
       
       
       
-        <link rel="next" href="navigation/">
       
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
     
     
       
-        <title>GitLab CI</title>
+        <title>Exercises - GitLab CI</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,11 +65,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#workshop-gitlab-ci" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -84,7 +77,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="GitLab CI" class="md-header__button md-logo" aria-label="GitLab CI" data-md-component="logo">
+    <a href="../.." title="GitLab CI" class="md-header__button md-logo" aria-label="GitLab CI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
@@ -104,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Exercises
             
           </span>
         </div>
@@ -227,7 +220,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="GitLab CI" class="md-nav__button md-logo" aria-label="GitLab CI" data-md-component="logo">
+    <a href="../.." title="GitLab CI" class="md-nav__button md-logo" aria-label="GitLab CI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m503.5 204.6-.7-1.8-69.7-181.78c-1.4-3.57-3.9-6.59-7.2-8.64-2.4-1.55-5.1-2.515-8-2.81s-5.7.083-8.4 1.11c-2.7 1.02-5.1 2.66-7.1 4.78-1.9 2.12-3.3 4.67-4.1 7.44l-47 144H160.8l-47.1-144c-.8-2.77-2.2-5.31-4.1-7.43-2-2.12-4.4-3.75-7.1-4.77a18.1 18.1 0 0 0-8.38-1.113 18.4 18.4 0 0 0-8.04 2.793 18.1 18.1 0 0 0-7.16 8.64L9.267 202.8l-.724 1.8a129.57 129.57 0 0 0-3.52 82c7.747 26.9 24.047 50.7 46.447 67.6l.27.2.59.4 105.97 79.5 52.6 39.7 32 24.2c3.7 1.9 8.3 4.3 13 4.3s9.3-2.4 13-4.3l32-24.2 52.6-39.7 106.7-79.9.3-.3c22.4-16.9 38.7-40.6 45.6-67.5 8.6-27 7.4-55.8-2.6-82"/></svg>
@@ -254,30 +247,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -286,73 +259,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
-    <span class="md-ellipsis">
-      Audience
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#duration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Duration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expected-knowledge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Expected knowledge
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Goals
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -364,7 +270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="navigation/" class="md-nav__link">
+      <a href="../../navigation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -424,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="000_rollout/exercise_gitlab/" class="md-nav__link">
+      <a href="../../000_rollout/exercise_gitlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -445,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="000_rollout/exercise_ide/" class="md-nav__link">
+      <a href="../../000_rollout/exercise_ide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -466,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="000_rollout/exercise_project/" class="md-nav__link">
+      <a href="../../000_rollout/exercise_project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="you_are_ready/" class="md-nav__link">
+      <a href="../../you_are_ready/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="010_jobs_and_stages/exercise/" class="md-nav__link">
+      <a href="../../010_jobs_and_stages/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="020_variables/exercise/" class="md-nav__link">
+      <a href="../../020_variables/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -597,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="030_script_blocks/exercise/" class="md-nav__link">
+      <a href="../../030_script_blocks/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -618,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="040_image/exercise/" class="md-nav__link">
+      <a href="../../040_image/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="050_defaults/exercise/" class="md-nav__link">
+      <a href="../../050_defaults/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="060_artifacts/exercise/" class="md-nav__link">
+      <a href="../../060_artifacts/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="065_job_dependencies/exercise/" class="md-nav__link">
+      <a href="../../065_job_dependencies/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -702,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="070_schedules/exercise/" class="md-nav__link">
+      <a href="../../070_schedules/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="090_unit_tests/exercise/" class="md-nav__link">
+      <a href="../../090_unit_tests/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="100_environments/exercise/" class="md-nav__link">
+      <a href="../../100_environments/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="110_triggers/exercise/" class="md-nav__link">
+      <a href="../../110_triggers/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="120_templates/exercise/" class="md-nav__link">
+      <a href="../../120_templates/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="130_rules/exercise/" class="md-nav__link">
+      <a href="../../130_rules/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="140_merge_requests/exercise/" class="md-nav__link">
+      <a href="../../140_merge_requests/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="150_matrix_jobs/exercise/" class="md-nav__link">
+      <a href="../../150_matrix_jobs/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="200_permissions/exercise.md" class="md-nav__link">
+      <a href="../exercise.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="220_services/exercise/" class="md-nav__link">
+      <a href="../../220_services/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="230_docker/exercise/" class="md-nav__link">
+      <a href="../../230_docker/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1027,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="240_registries/exercise/" class="md-nav__link">
+      <a href="../../240_registries/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1048,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="250_releases/exercise/" class="md-nav__link">
+      <a href="../../250_releases/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1069,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="252_branch_protection/exercise.md" class="md-nav__link">
+      <a href="../../252_branch_protection/exercise.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1090,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="255_troubleshooting/exercise/" class="md-nav__link">
+      <a href="../../255_troubleshooting/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1111,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="265_caches/exercise/" class="md-nav__link">
+      <a href="../../265_caches/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1132,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="270_renovate/exercise/" class="md-nav__link">
+      <a href="../../270_renovate/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1153,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="280_security/exercise/" class="md-nav__link">
+      <a href="../../280_security/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1174,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="300_components/exercise/" class="md-nav__link">
+      <a href="../../300_components/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1195,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="310_steps/exercise/" class="md-nav__link">
+      <a href="../../310_steps/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1216,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="320_secure_files/exercise/" class="md-nav__link">
+      <a href="../../320_secure_files/exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1284,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="you_are_done/" class="md-nav__link">
+      <a href="../../you_are_done/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1324,61 +1230,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
-    <span class="md-ellipsis">
-      Audience
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#duration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Duration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expected-knowledge" class="md-nav__link">
-    <span class="md-ellipsis">
-      Expected knowledge
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Goals
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1396,21 +1247,9 @@
   
 
 
-<h1 id="workshop-gitlab-ci">Workshop: GitLab CI<a class="headerlink" href="#workshop-gitlab-ci" title="Permanent link">&para;</a></h1>
-<p>This site contains the exercises to learn about GitLab CI.</p>
-<h2 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h2>
-<p>Software developers and system administrators who want to learn how to use GitLab CI.</p>
-<h2 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h2>
-<p>Two days</p>
-<h2 id="expected-knowledge">Expected knowledge<a class="headerlink" href="#expected-knowledge" title="Permanent link">&para;</a></h2>
-<p>Basic understanding of another CI/CD server, e.g. GitHub and Jenkins</p>
-<p>Basic understanding of bash</p>
-<h2 id="goals">Goals<a class="headerlink" href="#goals" title="Permanent link">&para;</a></h2>
-<p>Learn about the features of GitLab CI and how to use then in a software development project.</p>
-<h2 id="style">Style<a class="headerlink" href="#style" title="Permanent link">&para;</a></h2>
-<p>20% theoretical introduction</p>
-<p>80% practical exercises</p>
-<p>The instructor will provide an introduction to each topic. Participants will then work on exercises. The instructor will be available to answer questions and provide hints. The instructor will also demonstrate solutions to the exercises.</p>
+  <h1>Exercises</h1>
+
+
 
 
 
@@ -1435,28 +1274,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-        
-          
-          <a href="navigation/" class="md-footer__link md-footer__link--next" aria-label="Next: Navigation">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Navigation
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1535,10 +1352,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["tabs", "navigation.sections", "navigation.footer"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs", "navigation.sections", "navigation.footer"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
