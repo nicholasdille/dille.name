@@ -1,2 +1,5 @@
 User-agent: *
 Sitemap: http://dille.name/sitemap.xml
+Disallow: /slides/
+Disallow: /hands-on/
+Allow: /
