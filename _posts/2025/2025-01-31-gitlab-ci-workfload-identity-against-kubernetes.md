@@ -1,9 +1,9 @@
 ---
-title: 'GitLab CI Workload Identity against Kubernetes'
-date: 2025-01-25T21:02:00+01:00
+title: 'Using GitLab OIDC to authenticate against Kubernetes'
+date: 2025-01-31T21:02:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2025/01/25/gitlab-ci-workload-identity-against-kubernetes/
+permalink: /blog/2025/01/31/using-gitlab-oidc-to-authenticate-against-kubernetes/
 categories:
 - Haufe-Lexware
 tags:
@@ -11,8 +11,10 @@ tags:
 - kubernetes
 - oidc
 - authentication
+- workload
+- identity
 ---
-XXX
+OpenID Connect (OIDC) and workload identity have been hot topics for a couple of years. XXX
 
 <img src="/media/2025/01/merry-christmas-5219496_1920.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
 
