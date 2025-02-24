@@ -1,9 +1,9 @@
 ---
-title: 'Using GitLab OIDC to authenticate against Kubernetes'
-date: 2025-02-25T21:02:00+01:00
+title: 'Using #GitLab #OIDC to authenticate against #Kubernetes'
+date: 2025-02-24T21:02:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2025/02/25/using-gitlab-oidc-to-authenticate-against-kubernetes/
+permalink: /blog/2025/02/24/using-gitlab-oidc-to-authenticate-against-kubernetes/
 categories:
 - Haufe-Lexware
 tags:
