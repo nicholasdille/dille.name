@@ -16,7 +16,7 @@ tags:
 ---
 OpenID Connect (OIDC) and workload identity have been hot topics for a couple of years. This post demonstrates how to use GitLab as an OIDC provider to authenticate against a Kubernetes cluster - covering interactive access by users as well as automated access from pipeline jobs.
 
-<img src="/media/2025/01/merry-christmas-5219496_1920.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2025/01/merry-christmas-5219496_1920.jpg" style="object-fit: cover; object-position: center 25%; width: 100%; height: 150px;" />
 
 <!--more-->
 
@@ -28,11 +28,7 @@ For example, a user authenticates against GitLab and receives a token containing
 
 Other use cases include using Kubernetes services accounts to authenticate and authorize against cloud services or signing container images and artifacts using [sigstore](https://sigstore.dev/).
 
-## GitLab OIDC provider
-
-GitLab ships with an integrated OIDC provider which can be used to authenticate users and pipeline jobs. The issued tokens can be used to authenticate against Kubernetes and authorize access to resources using RBAC.
-
-XXX GitLab application
+GitLab ships with an [integrated OIDC provider](https://docs.gitlab.com/integration/openid_connect_provider/) which can be used to authenticate users and pipeline jobs. The issued tokens can be used to authenticate against Kubernetes and authorize access to resources using RBAC.
 
 ## Part 1: Authenticating users
 
@@ -143,9 +139,9 @@ The options `--oidc-groups-prefix` and `--oidc-username-prefix` are used to pref
 
 Considering the two example tokens above, it becomes obvious that the API server cannot be configured to accept both token because of the difference in the fields: The primary use case for identifying a user is the list of group memberships. This field is missing from the ID token generated for a pipeline job. Pipelines are using fields that are not present in the ID token generated for a user.
 
-<i class="fa-duotone fa-solid fa-triangle-exclamation"></i> Familiarize yourself with the command line options and thoroughly test them in a development cluster because syntax errors can cause the API server to fail during startup. <i class="fa-duotone fa-solid fa-triangle-exclamation"></i>
+<i class="fa-duotone fa-solid fa-triangle-exclamation"></i> Familiarize yourself with the command line options and thoroughly test them in a development cluster because syntax errors can cause the API server to fail during startup.
 
-<i class="fa-duotone fa-solid fa-hand-holding-heart"></i> Fortunately, if authentication of ID token against the OIDC provider fails, the API server still recognizes and accepts all traditional ways of authentication including service account tokens. <i class="fa-duotone fa-solid fa-hand-holding-heart"></i>
+<i class="fa-duotone fa-solid fa-hand-holding-heart"></i> Fortunately, if authentication of ID token against the OIDC provider fails, the API server still recognizes and accepts all traditional ways of authentication including service account tokens.
 
 ## Part 4: Using structured authentication Configuration
 
