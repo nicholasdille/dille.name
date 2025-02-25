@@ -14,7 +14,7 @@ tags:
 - workload
 - identity
 ---
-OpenID Connect (OIDC) and workload identity have been hot topics for a couple of years. This post demonstrates how to use GitLab as an OIDC provider to authenticate against a Kubernetes cluster - covering interactive access by users as well as automated access from pipeline jobs.
+OpenID Connect (OIDC) and workload identity have been hot topics for a couple of years. This post demonstrates how to use GitLab as an OIDC provider to authenticate against a Kubernetes cluster - covering interactive access by users as well as automated access from pipeline jobs. The challenge is to combine both use cases in a single configuration.
 
 <img src="/media/2025/01/merry-christmas-5219496_1920.jpg" style="object-fit: cover; object-position: center 25%; width: 100%; height: 150px;" />
 
