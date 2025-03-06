@@ -1,9 +1,9 @@
 ---
 title: 'Configuring the #Kubernetes #OIDC provider'
-date: 2025-02-28T21:02:00+01:00
+date: 2025-03-06T21:02:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2025/02/28/configuring-the-kubernetes-oidc-provider/
+permalink: /blog/2025/03/06/configuring-the-kubernetes-oidc-provider/
 categories:
 - Haufe-Lexware
 tags:
@@ -18,6 +18,10 @@ XXX
 <img src="/media/2025/01/merry-christmas-5219496_1920.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
 
 <!--more-->
+
+XXX https://github.com/aws/amazon-eks-pod-identity-webhook
+
+XXX S3 as per self-hosted setup https://github.com/aws/amazon-eks-pod-identity-webhook/blob/master/SELF_HOSTED_SETUP.md
 
 XXX k8s is an oidc provider
 
