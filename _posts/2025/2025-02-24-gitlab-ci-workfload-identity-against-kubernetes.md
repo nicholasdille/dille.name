@@ -171,7 +171,8 @@ jwt:
     username:
       expression: 'has(claims.preferred_username) ? "gitlab:" + claims.preferred_username : "gitlab-ci:" + claims.sub'
     groups:
-      expression: 'has(claims.groups_direct) ? "gitlab:" + claims.groups_direct : "gitlab-ci:" + claims.namespace_path'
+      claim: grouops_direct
+      prefix: "gitlab:"
     uid:
       expression: 'has(claims.preferred_username) ? "gitlab:" + claims.preferred_username : "gitlab-ci:" + claims.sub'
 ```
@@ -252,4 +253,91 @@ users:
 
 By referencing the user `oidc` in a context, `kubectl` will use the plugin to obtain an ID token from the OIDC provider, present it to the Kubernetes API server and execute the requested subcommand like `kubectl get pods`. It will also take care of refreshing the token when it expires.
 
-Happy authenticating!
+## Part 7: Authenticating using `id_tokens` from GitLab CI
+
+Any pipeline job can easily request an ID token from the integrated OIDC provider using the [`id_tokens`](https://docs.gitlab.com/ci/yaml/#id_tokens) keyword. The audience must be set using the sub-keyword `aud`.
+
+When presenting such an ID token to Kubernetes (configured as dedscribed above), the pipeline job is effectively authenticated by the Kubernetes API server and `User` as well as `Group` resources are created based on the claims contained in the token.
+
+The following pipeline requests an ID token with the audience `kubernetes` and creates a `kubeconfig` to Kubernetes using the environment variables `CONTROL_PLANE_ENDPOINT` and `CONTROL_PLANE_CA` containing the hostname and the CA certificate of the control plane, respectively.
+
+```yaml
+demo:
+  id_tokens:
+    K8S_TOKEN:
+      aud: kubernetes
+  image: alpine
+  before_script: |
+    apk add --update-cache \
+        kubectl
+  script: |
+    echo -n "${CONTROL_PLANE_CA}" | base64 -d >ca.pem
+    kubectl config set-cluster demo --server=${CONTROL_PLANE_ENDPOINT} --certificate-authority=./ca.pem
+    kubectl config set-credentials oidc-token --token=${K8S_TOKEN}
+    kubectl config set-context demo --cluster=demo --user=oidc-token --namespace=default
+    kubectl config use-context demo
+    kubectl get pods --all-namespaces
+```
+
+Based on the authentication configuration presented above, Kubernetes creates a `User` resource for the `sub` claim in the ID token which uniquely identifies the pipeline (project path and branch). The `User` can be used for authorizing access to the cluster. The following command creates a new `ClusterRoleBinding` to grant viewer permissions to a specific pipeline:
+
+```shell
+kubectl create clusterrolebinding pipeline-foo-bar-main --clusterrole view --user=gitlab-ci:project_path:foo/bar:ref_type:branch:ref:main
+```
+
+**Happy authenticating!**
+
+## Sidenote: Rolling out the Authentication Configuration File using Cluster API
+
+The authentication configuration file can also be rolled out using [Cluster API](https://cluster-api.sigs.k8s.io/):
+
+1. Add a new item under `files` to create `/etc/kubernetes/auth/auth-config.yaml` on the node
+1. Add `extraVolumes` to mount the file into the `kube-apiserver` pods
+1. Add `authentication-config` under `extraArgs`
+
+```yaml
+apiVersion: controlplane.cluster.x-k8s.io/v1beta1
+kind: KubeadmControlPlane
+metadata:
+  name: my-cluster
+spec:
+  kubeadmConfigSpec:
+    clusterConfiguration:
+      apiServer:
+        extraVolumes:
+        - name: auth-config
+          mountPath: /etc/kubernetes/auth
+          hostPath: /etc/kubernetes/auth
+          pathType: Directory
+          readOnly: true
+        extraArgs:
+          cloud-provider: external
+          authentication-config: /etc/kubernetes/auth/auth-config.yaml
+      controllerManager:
+        extraArgs:
+          cloud-provider: external
+    files:
+    # REDACTED
+    - content: |
+        apiVersion: apiserver.config.k8s.io/v1beta1
+        kind: AuthenticationConfiguration
+        jwt:
+        - issuer:
+            url: https://gitlab.example.com
+            audiences:
+            - group_application_id
+            - id_token_audience
+            audienceMatchPolicy: MatchAny
+          claimMappings:
+            username:
+              expression: 'has(claims.preferred_username) ? "gitlab:" + claims.preferred_username : "gitlab-ci:" + claims.sub'
+            groups:
+              claims: groups_direct
+              prefix: "gitlab:"
+            uid:
+              expression: 'has(claims.preferred_username) ? "gitlab:" + claims.preferred_username : "gitlab-ci:" + claims.sub'
+      owner: root:root
+      path: /etc/kubernetes/auth/auth-config.yaml
+      permissions: "0600"
+# REDACTED
+```
