@@ -27,3 +27,7 @@ Nicholas was a founder and a member of the organizing team for [x-celerate](http
 <!--
 Nicholas Dille ist Senior DevOps Engineer bei der Haufe Gruppe, einer digitalen Mediengruppe in Freiburg. Er beschäftigt sich mit Kubernetes, Observability und CI/CD in heterogenen Umgebungen. Seit 20 Jahren ist er als Blogger, Sprecher und Autor aktiv und ist seit 2017 Docker Captain. Microsoft zeichnete ihn 2010-2023 als MVP aus.
 -->
+
+<!--
+Nicholas Dille is a Senior DevOps Engineer at Haufe.Group. He is concerned with Kubernetes, observability and CI/CD in heterogenous environments. For over 20 years, Nicholas has been a blogger, speaker and author. He is a Docker Captain since 2017 and was awarded Microsoft MVP from 2010 to 2023.
+-->
