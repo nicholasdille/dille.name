@@ -23,3 +23,7 @@ Nicholas was a founder and a member of the organizing team for [x-celerate](http
 [Makro Factory](http://www.makrofactory.com/) is a consultancy for end-user conputing (EUC) based in Karlsruhe, Germany. In addition to being a Citrix Platinum partner they possess several Microsoft Gold competencies.
 
 [sepago](https://www.sepago.de) is a consultancy for end-user conputing (EUC) based in Cologne, Germany with a Citrix Gold partnership and several Microsoft Gold competencies.
+
+<!--
+Nicholas Dille ist Senior DevOps Engineer bei der Haufe Gruppe, einer digitalen Mediengruppe in Freiburg. Er beschäftigt sich mit Kubernetes, Observability und CI/CD in heterogenen Umgebungen. Seit 20 Jahren ist er als Blogger, Sprecher und Autor aktiv und ist seit 2017 Docker Captain. Microsoft zeichnete ihn 2010-2023 als MVP aus.
+-->
