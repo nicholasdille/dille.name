@@ -90,7 +90,7 @@ See chapter [Artifacts](/hands-on/2025-05-14/060_artifacts/exercise/)
 
 ## Maximum artifact size
 
-By default, artifacts can not be larger tham 100MB [](https://docs.gitlab.com/ee/administration/settings/continuous_integration.html#maximum-artifacts-size)
+By default, artifacts can not be larger than 100MB [](https://docs.gitlab.com/ee/administration/settings/continuous_integration.html#maximum-artifacts-size)
 
 Can be configured...
 

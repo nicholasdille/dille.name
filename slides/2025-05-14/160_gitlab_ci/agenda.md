@@ -12,11 +12,11 @@
 
 5, 2, 1
 
-### Linux or Windows?
+### Are you comfortable with Linux?
 
-XXX
+6
 
-### Cloud or Self-hosted?
+### Is your GitLAb running self-hosted?
 
 6
 
@@ -48,7 +48,7 @@ XXX
 
 ### Fundamentals
 
-[Jobs and stages](#/gitlab_jobs) - [Variables](#/gitlab_variables) - [Image](#/gitlab_image) - [Before and after script](#/gitlab_script_blocks) - [Defaults](#/gitlab_default) - [Artifacts and dependencies](#/gitlab_artifacts) - [Job dependencies](#/gitlab_job_deps) - [Schedules](#/gitlab_schedules) - [Configuration](#/gitlab_ci_configuration) - [Unit tests](#/gitlab_unit_tests)
+[Jobs and stages](#/gitlab_jobs) - [Variables](#/gitlab_variables) - [Before and after script](#/gitlab_script_blocks) - [Image](#/gitlab_image) - [Defaults](#/gitlab_default) - [Artifacts and dependencies](#/gitlab_artifacts) - [Job dependencies](#/gitlab_job_deps) - [Schedules](#/gitlab_schedules) - [Configuration](#/gitlab_ci_configuration) - [Unit tests](#/gitlab_unit_tests)
 
 ### Advanced
 
