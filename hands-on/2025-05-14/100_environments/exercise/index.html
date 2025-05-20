@@ -1248,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../320_secure_files/exercise/" class="md-nav__link">
+      <a href="../../320_secure_files/exercise.md" class="md-nav__link">
         
   
   
@@ -1439,160 +1439,152 @@
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <p>Create CI variables for use in the following exercises:</p>
 <ol>
+<li>Create two environments called <code>dev</code> and <code>live</code> in the GitLab UI. No other settings are required</li>
 <li>Retrieve passwords for dev and live environments from the info page</li>
 <li>Create unprotected but masked CI variable <code>PASS</code> twice with scope <code>dev</code> and <code>live</code></li>
 <li>Create unprotected CI variable <code>SEAT_INDEX</code> with your seat number</li>
 </ol>
 <h2 id="task-1-add-target-environment">Task 1: Add target environment<a class="headerlink" href="#task-1-add-target-environment" title="Permanent link">&para;</a></h2>
-<p>Add a new stage <code>deploy</code> with a job called <code>deploy</code> and use the following commands to upload the binary to the dev environment:</p>
+<p>Add a new stage <code>deploy</code> with a job called <code>deploy</code>. Use the following commands and add an environment to the job in order to upload the binary to the dev environment:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>https://seat<span class="si">${</span><span class="nv">SEAT_INDEX</span><span class="si">}</span>.dev.webdav.inmylab.de/<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>--fail<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>--verbose<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--upload-file<span class="w"> </span>hello<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--user<span class="w"> </span>seat<span class="si">${</span><span class="nv">SEAT_INDEX</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PASS</span><span class="si">}</span>
 </span></code></pre></div>
-<p>Mind that <code>curl</code> is not available in the default image <code>golang:1.23.2</code> but must be installed using the following commands. Apply what you learned about script blocks as well as separating commands into preparation, core steps and cleanup.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apt-get<span class="w"> </span>update
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>curl<span class="w"> </span>ca-certificates
-</span></code></pre></div>
+<p>Mind that <code>curl</code> is not available in the default image <code>golang:1.24.3</code>. You can use <code>curlimages/curl:8.13.0</code>.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run and be able to download the <code>hello</code> binary from <code>https://seatN.dev.webdav.inmylab.de/hello</code>.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
 <p>Install <code>curl</code> in a <code>before_script</code> to separate the preparation from the core steps:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">job_name</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">job_name</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curlimages/curl:8.13.0</span>
 </span></code></pre></div>
 <p>Now place the <code>curl</code> command under <code>script</code>.</p>
 </details>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
 <p><code>.gitlab-ci.yml</code>:</p>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span>
-<span class="normal"><a href="#__codelineno-3-20">20</a></span>
-<span class="normal"><a href="#__codelineno-3-21">21</a></span>
-<span class="normal"><a href="#__codelineno-3-22">22</a></span>
-<span class="normal"><a href="#__codelineno-3-23">23</a></span>
-<span class="normal"><a href="#__codelineno-3-24">24</a></span>
-<span class="normal"><a href="#__codelineno-3-25">25</a></span>
-<span class="normal"><a href="#__codelineno-3-26">26</a></span>
-<span class="normal"><a href="#__codelineno-3-27">27</a></span>
-<span class="normal"><a href="#__codelineno-3-28">28</a></span>
-<span class="normal"><a href="#__codelineno-3-29">29</a></span>
-<span class="normal"><a href="#__codelineno-3-30">30</a></span>
-<span class="normal"><a href="#__codelineno-3-31">31</a></span>
-<span class="normal"><a href="#__codelineno-3-32">32</a></span>
-<span class="normal"><a href="#__codelineno-3-33">33</a></span>
-<span class="normal"><a href="#__codelineno-3-34">34</a></span>
-<span class="normal"><a href="#__codelineno-3-35">35</a></span>
-<span class="normal"><a href="#__codelineno-3-36">36</a></span>
-<span class="normal"><a href="#__codelineno-3-37">37</a></span>
-<span class="normal"><a href="#__codelineno-3-38">38</a></span>
-<span class="normal"><a href="#__codelineno-3-39">39</a></span>
-<span class="normal"><a href="#__codelineno-3-40">40</a></span>
-<span class="normal"><a href="#__codelineno-3-41">41</a></span>
-<span class="normal"><a href="#__codelineno-3-42">42</a></span>
-<span class="normal"><a href="#__codelineno-3-43">43</a></span>
-<span class="normal"><a href="#__codelineno-3-44">44</a></span>
-<span class="normal"><a href="#__codelineno-3-45">45</a></span>
-<span class="normal"><a href="#__codelineno-3-46">46</a></span>
-<span class="normal"><a href="#__codelineno-3-47">47</a></span>
-<span class="normal"><a href="#__codelineno-3-48">48</a></span>
-<span class="normal"><a href="#__codelineno-3-49">49</a></span>
-<span class="normal"><a href="#__codelineno-3-50">50</a></span>
-<span class="normal"><a href="#__codelineno-3-51">51</a></span>
-<span class="normal"><a href="#__codelineno-3-52">52</a></span>
-<span class="normal"><a href="#__codelineno-3-53">53</a></span>
-<span class="normal"><a href="#__codelineno-3-54">54</a></span>
-<span class="normal"><a href="#__codelineno-3-55">55</a></span>
-<span class="normal"><a href="#__codelineno-3-56">56</a></span>
-<span class="normal"><a href="#__codelineno-3-57">57</a></span>
-<span class="normal"><a href="#__codelineno-3-58">58</a></span>
-<span class="normal"><a href="#__codelineno-3-59">59</a></span>
-<span class="normal"><a href="#__codelineno-3-60">60</a></span>
-<span class="normal"><a href="#__codelineno-3-61">61</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">stages</span><span class="p">:</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="hll"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
-</span></span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nt">default</span><span class="p">:</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.23.2</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nt">lint</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go fmt .</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="nt">audit</span><span class="p">:</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet .</span>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="nt">unit_tests</span><span class="p">:</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
-</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
-</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span>
-</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29"></a>
-</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="nt">build</span><span class="p">:</span>
-</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">    </span><span class="no">go build \</span>
-</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">        </span><span class="no">-ldflags &quot;-X main.Version=${CI_COMMIT_REF_NAME} -X &#39;main.Author=${AUTHOR}&#39;&quot; \</span>
-</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">        </span><span class="no">-o hello \</span>
-</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w">        </span><span class="no">.</span>
-</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
-</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41"></a>
-</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="nt">test</span><span class="p">:</span>
-</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
-</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
-</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
-</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47"></a>
-</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48"></a><span class="hll"><span class="nt">deploy</span><span class="p">:</span>
-</span></span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49"></a><span class="hll"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
-</span></span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="hll"><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span></span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51"></a><span class="hll"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
-</span></span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="hll"><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
-</span></span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
-</span></span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
-</span></span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span></span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span></span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="hll"><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
-</span></span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="hll"><span class="w">        </span><span class="no">--fail \</span>
-</span></span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="hll"><span class="w">        </span><span class="no">--verbose \</span>
-</span></span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="hll"><span class="w">        </span><span class="no">--upload-file hello \</span>
-</span></span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="hll"><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span>
+<span class="normal"><a href="#__codelineno-2-40">40</a></span>
+<span class="normal"><a href="#__codelineno-2-41">41</a></span>
+<span class="normal"><a href="#__codelineno-2-42">42</a></span>
+<span class="normal"><a href="#__codelineno-2-43">43</a></span>
+<span class="normal"><a href="#__codelineno-2-44">44</a></span>
+<span class="normal"><a href="#__codelineno-2-45">45</a></span>
+<span class="normal"><a href="#__codelineno-2-46">46</a></span>
+<span class="normal"><a href="#__codelineno-2-47">47</a></span>
+<span class="normal"><a href="#__codelineno-2-48">48</a></span>
+<span class="normal"><a href="#__codelineno-2-49">49</a></span>
+<span class="normal"><a href="#__codelineno-2-50">50</a></span>
+<span class="normal"><a href="#__codelineno-2-51">51</a></span>
+<span class="normal"><a href="#__codelineno-2-52">52</a></span>
+<span class="normal"><a href="#__codelineno-2-53">53</a></span>
+<span class="normal"><a href="#__codelineno-2-54">54</a></span>
+<span class="normal"><a href="#__codelineno-2-55">55</a></span>
+<span class="normal"><a href="#__codelineno-2-56">56</a></span>
+<span class="normal"><a href="#__codelineno-2-57">57</a></span>
+<span class="normal"><a href="#__codelineno-2-58">58</a></span>
+<span class="normal"><a href="#__codelineno-2-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">stages</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="hll"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+</span></span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nt">default</span><span class="p">:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.24.3</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nt">lint</span><span class="p">:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go fmt .</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nt">audit</span><span class="p">:</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet .</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="nt">unit_tests</span><span class="p">:</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="nt">build</span><span class="p">:</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="w">    </span><span class="no">go build \</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="w">        </span><span class="no">-ldflags &quot;-X main.Version=${CI_COMMIT_REF_NAME} -X &#39;main.Author=${AUTHOR}&#39;&quot; \</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="w">        </span><span class="no">-o hello \</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="w">        </span><span class="no">.</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41"></a>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="nt">test</span><span class="p">:</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47"></a>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48"></a><span class="hll"><span class="nt">deploy</span><span class="p">:</span>
+</span></span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49"></a><span class="hll"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+</span></span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50"></a><span class="hll"><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span></span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51"></a><span class="hll"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+</span></span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52"></a><span class="hll"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curlimages/curl:8.13.0</span>
+</span></span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span></span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span></span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55"></a><span class="hll"><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.dev.webdav.inmylab.de/ \</span>
+</span></span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56"></a><span class="hll"><span class="w">        </span><span class="no">--fail \</span>
+</span></span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57"></a><span class="hll"><span class="w">        </span><span class="no">--verbose \</span>
+</span></span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58"></a><span class="hll"><span class="w">        </span><span class="no">--upload-file hello \</span>
+</span></span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59"></a><span class="hll"><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
 </span></span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/100_environments/demo1<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/100_environments/demo1<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </span></code></pre></div>
 </details>
 <h2 id="task-2-add-deployment-to-development-environment">Task 2: Add deployment to development environment<a class="headerlink" href="#task-2-add-deployment-to-development-environment" title="Permanent link">&para;</a></h2>
@@ -1600,130 +1592,126 @@
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span>
-<span class="normal"><a href="#__codelineno-5-24">24</a></span>
-<span class="normal"><a href="#__codelineno-5-25">25</a></span>
-<span class="normal"><a href="#__codelineno-5-26">26</a></span>
-<span class="normal"><a href="#__codelineno-5-27">27</a></span>
-<span class="normal"><a href="#__codelineno-5-28">28</a></span>
-<span class="normal"><a href="#__codelineno-5-29">29</a></span>
-<span class="normal"><a href="#__codelineno-5-30">30</a></span>
-<span class="normal"><a href="#__codelineno-5-31">31</a></span>
-<span class="normal"><a href="#__codelineno-5-32">32</a></span>
-<span class="normal"><a href="#__codelineno-5-33">33</a></span>
-<span class="normal"><a href="#__codelineno-5-34">34</a></span>
-<span class="normal"><a href="#__codelineno-5-35">35</a></span>
-<span class="normal"><a href="#__codelineno-5-36">36</a></span>
-<span class="normal"><a href="#__codelineno-5-37">37</a></span>
-<span class="normal"><a href="#__codelineno-5-38">38</a></span>
-<span class="normal"><a href="#__codelineno-5-39">39</a></span>
-<span class="normal"><a href="#__codelineno-5-40">40</a></span>
-<span class="normal"><a href="#__codelineno-5-41">41</a></span>
-<span class="normal"><a href="#__codelineno-5-42">42</a></span>
-<span class="normal"><a href="#__codelineno-5-43">43</a></span>
-<span class="normal"><a href="#__codelineno-5-44">44</a></span>
-<span class="normal"><a href="#__codelineno-5-45">45</a></span>
-<span class="normal"><a href="#__codelineno-5-46">46</a></span>
-<span class="normal"><a href="#__codelineno-5-47">47</a></span>
-<span class="normal"><a href="#__codelineno-5-48">48</a></span>
-<span class="normal"><a href="#__codelineno-5-49">49</a></span>
-<span class="normal"><a href="#__codelineno-5-50">50</a></span>
-<span class="normal"><a href="#__codelineno-5-51">51</a></span>
-<span class="normal"><a href="#__codelineno-5-52">52</a></span>
-<span class="normal"><a href="#__codelineno-5-53">53</a></span>
-<span class="normal"><a href="#__codelineno-5-54">54</a></span>
-<span class="normal"><a href="#__codelineno-5-55">55</a></span>
-<span class="normal"><a href="#__codelineno-5-56">56</a></span>
-<span class="normal"><a href="#__codelineno-5-57">57</a></span>
-<span class="normal"><a href="#__codelineno-5-58">58</a></span>
-<span class="normal"><a href="#__codelineno-5-59">59</a></span>
-<span class="normal"><a href="#__codelineno-5-60">60</a></span>
-<span class="normal"><a href="#__codelineno-5-61">61</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">stages</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="nt">default</span><span class="p">:</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.23.2</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="nt">lint</span><span class="p">:</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go fmt .</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="nt">audit</span><span class="p">:</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet .</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="nt">unit_tests</span><span class="p">:</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="nt">build</span><span class="p">:</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="w">    </span><span class="no">go build \</span>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="w">        </span><span class="no">-ldflags &quot;-X main.Version=${CI_COMMIT_REF_NAME} -X &#39;main.Author=${AUTHOR}&#39;&quot; \</span>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="w">        </span><span class="no">-o hello \</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37"></a><span class="w">        </span><span class="no">.</span>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
-</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41"></a>
-</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42"></a><span class="nt">test</span><span class="p">:</span>
-</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
-</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
-</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
-</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47"></a>
-</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48"></a><span class="nt">deploy</span><span class="p">:</span>
-</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
-</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51"></a><span class="hll"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
-</span></span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
-</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
-</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install curl ca-certificates</span>
-</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57"></a><span class="hll"><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
-</span></span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58"></a><span class="w">        </span><span class="no">--fail \</span>
-</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59"></a><span class="w">        </span><span class="no">--verbose \</span>
-</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60"></a><span class="w">        </span><span class="no">--upload-file hello \</span>
-</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61"></a><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span>
+<span class="normal"><a href="#__codelineno-4-40">40</a></span>
+<span class="normal"><a href="#__codelineno-4-41">41</a></span>
+<span class="normal"><a href="#__codelineno-4-42">42</a></span>
+<span class="normal"><a href="#__codelineno-4-43">43</a></span>
+<span class="normal"><a href="#__codelineno-4-44">44</a></span>
+<span class="normal"><a href="#__codelineno-4-45">45</a></span>
+<span class="normal"><a href="#__codelineno-4-46">46</a></span>
+<span class="normal"><a href="#__codelineno-4-47">47</a></span>
+<span class="normal"><a href="#__codelineno-4-48">48</a></span>
+<span class="normal"><a href="#__codelineno-4-49">49</a></span>
+<span class="normal"><a href="#__codelineno-4-50">50</a></span>
+<span class="normal"><a href="#__codelineno-4-51">51</a></span>
+<span class="normal"><a href="#__codelineno-4-52">52</a></span>
+<span class="normal"><a href="#__codelineno-4-53">53</a></span>
+<span class="normal"><a href="#__codelineno-4-54">54</a></span>
+<span class="normal"><a href="#__codelineno-4-55">55</a></span>
+<span class="normal"><a href="#__codelineno-4-56">56</a></span>
+<span class="normal"><a href="#__codelineno-4-57">57</a></span>
+<span class="normal"><a href="#__codelineno-4-58">58</a></span>
+<span class="normal"><a href="#__codelineno-4-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">stages</span><span class="p">:</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="nt">default</span><span class="p">:</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.24.3</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="nt">lint</span><span class="p">:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go fmt .</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="nt">audit</span><span class="p">:</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet .</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="nt">unit_tests</span><span class="p">:</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="nt">build</span><span class="p">:</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">    </span><span class="no">go build \</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">        </span><span class="no">-ldflags &quot;-X main.Version=${CI_COMMIT_REF_NAME} -X &#39;main.Author=${AUTHOR}&#39;&quot; \</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">        </span><span class="no">-o hello \</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">        </span><span class="no">.</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41"></a>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="nt">test</span><span class="p">:</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47"></a>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="nt">deploy</span><span class="p">:</span>
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="hll"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
+</span></span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curlimages/curl:8.13.0</span>
+</span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
+</span><span id="__span-4-56"><a id="__codelineno-4-56" name="__codelineno-4-56"></a><span class="w">        </span><span class="no">--fail \</span>
+</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="hll"><span class="w">        </span><span class="no">--verbose \</span>
+</span></span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58"></a><span class="w">        </span><span class="no">--upload-file hello \</span>
+</span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59"></a><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/100_environments/demo2<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/100_environments/demo2<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </span></code></pre></div>
 </details>
 <p>This was just a demonstration. The changes will not be preseved in the following chapters.</p>
@@ -1830,17 +1818,6 @@
   
     
     
-    
-    
-      
-      
-    
-    <a href="https://hub.docker.com/r/squidfunk/mkdocs-material/" target="_blank" rel="noopener" title="hub.docker.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
-    </a>
-  
-    
-    
       
     
     
@@ -1859,8 +1836,8 @@
       
       
     
-    <a href="https://twitter.com/nicholasdille" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    <a href="https://bsky.app/profile/nicholas.dille.name" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
     </a>
   
 </div>
