@@ -57,6 +57,12 @@ See GitLab API [](https://docs.gitlab.com/ee/api/job_artifacts.html#download-the
 
 ---
 
+## Hands-On
+
+See chapter [Artifacts](/hands-on/2025-05-14/060_artifacts/exercise/)
+
+---
+
 ## Pro tip: When variables are enough
 
 Passing variables between jobs **is** possible (since GitLab 12.9)
@@ -82,21 +88,17 @@ job_name2:
 
 ---
 
-## Hands-On
-
-See chapter [Artifacts](/hands-on/2025-05-14/060_artifacts/exercise/)
-
----
-
 ## Maximum artifact size
 
-By default, artifacts can not be larger than 100MB [](https://docs.gitlab.com/ee/administration/settings/continuous_integration.html#maximum-artifacts-size)
+By default, artifacts can not be larger than 100MB [](https://docs.gitlab.com/administration/settings/continuous_integration/#set-maximum-artifacts-size)
 
 Can be configured...
 
 - for the whole instance
 - per group
 - per project
+
+Only available to instance administrators
 
 ---
 
