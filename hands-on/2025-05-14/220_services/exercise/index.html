@@ -1403,7 +1403,7 @@
 <h2 id="task-1-create-and-use-a-service">Task 1: Create and use a service<a class="headerlink" href="#task-1-create-and-use-a-service" title="Permanent link">&para;</a></h2>
 <p>Service are launched in parallel to the regular job to add missing functionality, e.g. a database backend to execute integration tests. See the <a href="https://docs.gitlab.com/ee/ci/yaml/#services">official documentation</a> and modify the pipeline:</p>
 <ol>
-<li>Create service for the whole pipeline based on the container image <code>nginx:1.20.2</code></li>
+<li>Create service for the whole pipeline based on the container image <code>nginx:1.27.5</code></li>
 <li>Add a new job <code>test-service</code> to the stage <code>test</code> with the following code:
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://nginx
 </span></code></pre></div></li>
@@ -1414,7 +1414,7 @@
 <summary>Hint (Click if you are stuck)</summary>
 <p>The service is defined globally in the <code>gitlab-ci.yml</code> using the keyword <code>services</code>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.20.2</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.27.5</span>
 </span></code></pre></div>
 </details>
 <details class="example">
@@ -1570,7 +1570,7 @@
 </span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.24.3</span>
 </span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35"></a>
 </span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="hll"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.20.2</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="hll"><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.27.5</span>
 </span></span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="hll">
 </span></span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="nt">lint</span><span class="p">:</span>
 </span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">check</span>
@@ -1827,7 +1827,7 @@
 </span><span id="__span-4-64"><a id="__codelineno-4-64" name="__codelineno-4-64"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
 </span><span id="__span-4-65"><a id="__codelineno-4-65" name="__codelineno-4-65"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
 </span><span id="__span-4-66"><a id="__codelineno-4-66" name="__codelineno-4-66"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-4-67"><a id="__codelineno-4-67" name="__codelineno-4-67"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.20.2</span>
+</span><span id="__span-4-67"><a id="__codelineno-4-67" name="__codelineno-4-67"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.27.5</span>
 </span></span><span id="__span-4-68"><a id="__codelineno-4-68" name="__codelineno-4-68"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span></span><span id="__span-4-69"><a id="__codelineno-4-69" name="__codelineno-4-69"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl -s http://nginx</span>
 </span><span id="__span-4-70"><a id="__codelineno-4-70" name="__codelineno-4-70"></a>

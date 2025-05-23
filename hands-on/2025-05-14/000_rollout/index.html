@@ -1287,6 +1287,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
@@ -1378,6 +1387,23 @@
 
 
 <h1 id="rollout-of-160_gitlab_ci">Rollout of 160_gitlab_ci<a class="headerlink" href="#rollout-of-160_gitlab_ci" title="Permanent link">&para;</a></h1>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Set a timestamp for the event (<code>YYYY-mm-dd</code>)</li>
+<li>Update links from slides to exercises using regex <code>/hands-on/\d{4}-\d{2}-\d{2}/</code></li>
+<li>Update syntax definitions for <code>Dockerfile</code> using regex: <code>docker/dockerfile:\d+.\d+.\d+</code></li>
+<li>Update nginx using regex: <code>nginx:\d+.\d+.\d+</code></li>
+<li>Update traefik using regex: <code>traefik:v\d+.\d+.\d+</code></li>
+<li>Update GitLab using regex: <code>gitlab/gitlab-ce:\d+.\d+.\d+-ce.0</code></li>
+<li>Update GitLab Runner using regex: <code>gitlab/gitlab-runner:v\d+.\d+.\d+</code></li>
+<li>Update code-server using regex: <code>codercom/code-server:\d+.\d+.\d+</code></li>
+<li>Update golang using regex: <code>golang:\d+.\d+.\d+</code></li>
+<li>Update curl using regex: <code>curlimages/curl:\d+.\d+.\d+</code></li>
+<li>Update docker using regex: <code>docker:\d+.\d+.\d+(-dind)?</code> with replacement <code>docker:28.1.1$1</code></li>
+<li>Update ubuntu using regex: <code>ubuntu:\d+.\d+</code></li>
+<li>Update release-cli using regex: <code>registry.gitlab.com/gitlab-org/release-cli:v\d+\.\d+\.\d+</code></li>
+<li>Update versions in <code>160_gitlab_ci/000_rollout/gitlab.pkr.hcl</code> for pre-pulling container images</li>
+</ol>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uniget<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>packer<span class="w"> </span><span class="se">\</span>

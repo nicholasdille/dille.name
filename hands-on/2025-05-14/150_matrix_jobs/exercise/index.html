@@ -1451,6 +1451,10 @@
 <li>Fix the job <code>pages</code> to copy the <code>hello</code> binary for <code>linux/amd64</code></li>
 </ol>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
+<details class="info">
+<summary>Hint (Click if you are stuck)</summary>
+<p>Matrix pipelines require the <code>parallel:matrix</code> keyword.</p>
+</details>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
 <p><code>go.yaml</code>:</p>

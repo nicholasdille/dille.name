@@ -1393,7 +1393,7 @@
 </ol>
 <p>For the <code>release</code> keyword to work, the <code>release-cli</code> binary must be present in the execution environment of the job:</p>
 <ol>
-<li>Set <code>image</code> to <code>registry.gitlab.com/gitlab-org/release-cli:v0.14.0</code></li>
+<li>Set <code>image</code> to <code>registry.gitlab.com/gitlab-org/release-cli:v0.23.0</code></li>
 </ol>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
 <details class="info">
@@ -1634,7 +1634,7 @@
 </span><span id="__span-1-91"><a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 </span><span id="__span-1-92"><a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
 </span><span id="__span-1-93"><a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
-</span><span id="__span-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.gitlab.com/gitlab-org/release-cli:v0.14.0</span>
+</span><span id="__span-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.gitlab.com/gitlab-org/release-cli:v0.23.0</span>
 </span><span id="__span-1-95"><a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="w">  </span><span class="nt">release</span><span class="p">:</span>
 </span><span id="__span-1-96"><a id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="w">    </span><span class="nt">tag_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_PIPELINE_IID}</span>
 </span><span id="__span-1-97"><a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="hll"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Release ${CI_PIPELINE_IID}</span>
@@ -1649,12 +1649,12 @@
 </span><span id="__span-1-106"><a id="__codelineno-1-106" name="__codelineno-1-106"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
 </span><span id="__span-1-107"><a id="__codelineno-1-107" name="__codelineno-1-107"></a>
 </span><span id="__span-1-108"><a id="__codelineno-1-108" name="__codelineno-1-108"></a><span class="nt">package</span><span class="p">:</span>
-</span><span id="__span-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:20.10.18</span>
+</span><span id="__span-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:28.1.1</span>
 </span><span id="__span-1-110"><a id="__codelineno-1-110" name="__codelineno-1-110"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">package</span>
 </span><span id="__span-1-111"><a id="__codelineno-1-111" name="__codelineno-1-111"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
 </span><span id="__span-1-112"><a id="__codelineno-1-112" name="__codelineno-1-112"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
 </span><span id="__span-1-113"><a id="__codelineno-1-113" name="__codelineno-1-113"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-1-114"><a id="__codelineno-1-114" name="__codelineno-1-114"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:20.10.18-dind</span>
+</span><span id="__span-1-114"><a id="__codelineno-1-114" name="__codelineno-1-114"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:28.1.1-dind</span>
 </span><span id="__span-1-115"><a id="__codelineno-1-115" name="__codelineno-1-115"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&quot;dockerd&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;--host&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;tcp://0.0.0.0:2375&quot;</span><span class="w"> </span><span class="p p-Indicator">]</span>
 </span><span id="__span-1-116"><a id="__codelineno-1-116" name="__codelineno-1-116"></a><span class="w">  </span><span class="nt">variables</span><span class="p">:</span>
 </span><span id="__span-1-117"><a id="__codelineno-1-117" name="__codelineno-1-117"></a><span class="w">    </span><span class="nt">DOCKER_HOST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp://docker:2375</span>

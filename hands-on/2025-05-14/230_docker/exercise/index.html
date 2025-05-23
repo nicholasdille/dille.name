@@ -1427,10 +1427,10 @@
 <ol>
 <li>Add a new stage <code>package</code> to the pipeline</li>
 <li>Add a new job <code>package</code> to the pipeline</li>
-<li>Use the image <code>docker:27.3.1</code> for the job</li>
+<li>Use the image <code>docker:28.1.1</code> for the job</li>
 <li>Add a rule to limit execution to pushes to the default branch</li>
-<li>Add a service to the job using the image <code>docker:27.3.1-dind</code></li>
-<li>Add a variable <code>DOCKER_CERT_DIR</code> to the job and set it to an empty string</li>
+<li>Add a service to the job using the image <code>docker:28.1.1-dind</code></li>
+<li>Add a variable <code>DOCKER_TLS_CERTDIR</code> to the job and set it to an empty string</li>
 <li>Execute the command <code>docker build --tag hello .</code></li>
 </ol>
 <div class="admonition tip">
@@ -1441,9 +1441,10 @@
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
 <p>The service should be set to:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:27.3.1-dind</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="s">&quot;dockerd&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;--host&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;tcp://0.0.0.0:2375&quot;</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">variables</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">DOCKER_TLS_CERTDIR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">services</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:28.1.1-dind</span>
 </span></code></pre></div>
 </details>
 <details class="example">
@@ -1667,14 +1668,14 @@
 </span><span id="__span-2-99"><a id="__codelineno-2-99" name="__codelineno-2-99"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
 </span><span id="__span-2-100"><a id="__codelineno-2-100" name="__codelineno-2-100"></a>
 </span><span id="__span-2-101"><a id="__codelineno-2-101" name="__codelineno-2-101"></a><span class="nt">package</span><span class="p">:</span>
-</span><span id="__span-2-102"><a id="__codelineno-2-102" name="__codelineno-2-102"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:27.3.1</span>
+</span><span id="__span-2-102"><a id="__codelineno-2-102" name="__codelineno-2-102"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:28.1.1</span>
 </span><span id="__span-2-103"><a id="__codelineno-2-103" name="__codelineno-2-103"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">package</span>
 </span><span id="__span-2-104"><a id="__codelineno-2-104" name="__codelineno-2-104"></a><span class="hll"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
 </span></span><span id="__span-2-105"><a id="__codelineno-2-105" name="__codelineno-2-105"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;push&quot;</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">$CI_DEFAULT_BRANCH&#39;</span>
 </span></span><span id="__span-2-106"><a id="__codelineno-2-106" name="__codelineno-2-106"></a><span class="hll"><span class="w">  </span><span class="nt">variables</span><span class="p">:</span>
 </span></span><span id="__span-2-107"><a id="__codelineno-2-107" name="__codelineno-2-107"></a><span class="hll"><span class="w">    </span><span class="nt">DOCKER_TLS_CERTDIR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 </span></span><span id="__span-2-108"><a id="__codelineno-2-108" name="__codelineno-2-108"></a><span class="hll"><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span></span><span id="__span-2-109"><a id="__codelineno-2-109" name="__codelineno-2-109"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:27.3.1-dind</span>
+</span></span><span id="__span-2-109"><a id="__codelineno-2-109" name="__codelineno-2-109"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:28.1.1-dind</span>
 </span></span><span id="__span-2-110"><a id="__codelineno-2-110" name="__codelineno-2-110"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
 </span></span><span id="__span-2-111"><a id="__codelineno-2-111" name="__codelineno-2-111"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker build --tag hello .</span>
 </span></span><span id="__span-2-112"><a id="__codelineno-2-112" name="__codelineno-2-112"></a><span class="hll">

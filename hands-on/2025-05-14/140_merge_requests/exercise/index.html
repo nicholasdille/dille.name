@@ -1440,7 +1440,7 @@
 <p>In the last chapter about <code>rules</code>, you learned how to use <code>$CI_PIPELINE_SOURCE</code> to restrict execution to specific events. You will need this now.</p>
 <p>On the branch <code>main</code>, add rules to the jobs to specify when to run them:</p>
 <ol>
-<li>For the jobs <code>lint</code>, <code>audit</code>, <code>unit_tests</code>, <code>build</code> and <code>test</code>, add rules so that the jobs are executed when...<ol>
+<li>Add rules the jobs <code>lint</code>, <code>audit</code>, <code>unit_tests</code>, <code>build</code> and <code>test</code> so that they are executed when...<ol>
 <li>pushing to the default branch</li>
 <li>running in merge request context</li>
 </ol>
@@ -1449,6 +1449,7 @@
 <li>Run the job <code>deploy</code> only when on the branches <code>dev</code> and <code>live</code></li>
 <li>Do not modify the existing rules for the job <code>pages</code></li>
 </ol>
+<p>Also add the merge request event to the workflow rules to allow the pipeline to run in merge request context.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
@@ -1680,6 +1681,7 @@
 <p>Now we want to check which jobs are executed in the context of a merge request:</p>
 <ol>
 <li>Create a new branch based on <code>main</code></li>
+<li>Push a change to the new branch, e.g. small change to the <code>README.md</code> file</li>
 <li>Create a merge request into <code>main</code></li>
 </ol>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
