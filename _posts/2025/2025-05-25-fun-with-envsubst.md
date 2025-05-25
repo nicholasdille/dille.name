@@ -11,7 +11,7 @@ tags:
 ---
 When using `enbsubst` to substitute environment variables, empty variables will be replaced with an empty string. This may not be the desired result. Even though, `envsubst` supports explcitly naming the variables to substitute, it is uncomfortable to use. This post demonstrated additional options to preserve environment variables that have no value set.
 
-<img src="/media/2025/05/woliul-hasan-bUbk6ge6Ze0-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 150px;" />
+<img src="/media/2025/05/woliul-hasan-bUbk6ge6Ze0-unsplash.jpg" style="object-fit: cover; object-position: center 45%; width: 100%; height: 300px;" />
 
 <!--more-->
 
