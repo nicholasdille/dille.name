@@ -64,6 +64,7 @@ Mehr als 2 Milliarden Nutzer weltweit (Stand 2020)
 
 - <span class=fa-li><i class="fa-solid fa-address-book"></i></span> Kontakte werden veruntreut
 - <span class=fa-li><i class="fa-solid fa-people-arrows"></i></span> Metadaten werden gesammelt
+- <span class=fa-li><i class="fa-solid fa-microchip"></i></span> Meta AI hebelt Ende-zu-Ende-Verschlüsselung aus
 
 <!-- .element: class="fa-ul" -->
 
@@ -75,61 +76,45 @@ Mehr als 2 Milliarden Nutzer weltweit (Stand 2020)
 
 ---
 
-## Chat-Gruppen
-
-<i class="fa-duotone fa-solid fa-comments fa-4x"></i> <!-- .element: style="float: right;" -->
-
-XXX
-
-### Frank geht ran
-
-Rufnummern für nervige Gesprächspartner
-
-Anrufbeantworter [](https://digitalcourage.de/frank-geht-ran)
-
-Mobil: 01631737743
-
-Festnetz: 052116391643
-
----
-
 ## Anbieterwahl
 
 <i class="fa-duotone fa-solid fa-hands-bound fa-4x"></i> <!-- .element: style="float: right;" -->
 
-XXX deutsche oder europäische Anbieter
+Deutsche oder europäische Anbieter
 
-XXX muss es wirklich immer kostenlos sein?
+Muss es wirklich immer kostenlos sein?
+
+Datenschutz hat seinen Preis!
 
 ### Beispiele
 
-EMail: Mailbox, XXX
+EMail: [Mailbox](https://mailbox.org), [Posteo](https://posteo.de/de) (nicht GMX und web.de)
 
-Speicher: Strato HiDrive, XXX
+Speicher: [Strato HiDrive](https://www.strato.de/cloud-speicher/), [MagentaCLOUD](https://cloud.telekom-dienste.de/), [luckycloud](https://luckycloud.de/) ([aktueller Vergleich](https://www.heise.de/download/specials/Die-10-besten-Cloud-Speicher-3149052))
 
-Termine koordinieren mit Nuudel [](https://nuudel.digitalcourage.de/) statt Doodle
+Termine koordinieren mit [Nuudel](https://nuudel.digitalcourage.de/) statt Doodle
 
-Gemeinsam Dokumente bearbeiten mit Cryptpads [](https://cryptpad.digitalcourage.de/)
-
----
-
-## Konten
-
-<i class="fa-duotone fa-solid fa-id-card fa-4x"></i> <!-- .element: style="float: right;" -->
-
-XXX Identität
-
-XXX Präsenz
+Gemeinsam Dokumente bearbeiten mit [Cryptpads](https://cryptpad.digitalcourage.de/)
 
 ---
 
-## Jugendfilter
+## Jugendschutzprogramm
 
 <i class="fa-duotone fa-solid fa-filters fa-4x"></i> <!-- .element: style="float: right;" -->
 
-XXX mehr
+[JusProg](https://www.jugendschutzprogramm.de) ist ein gemeinnütziger Verein...
 
-XXX https://www.jugendschutzprogramm.de/en/
+...zum Schutz von Kindern und Jugendlichen im Internet
+
+Schutz vor nicht altersgerechten Inhalten im Internet
+
+Kostenloser Schutz für alle Endgeräte
+
+### Auf dem Smartphone
+
+System-App zum Filtern von Inhalten
+
+App verwaltet Kinder und Erwachsene für die Kindersicherung und deren Verwaltung
 
 ---
 
@@ -164,23 +149,40 @@ Blockieren von Trackern mit Privacy Badger [](https://privacybadger.org/de/)
 
 <i class="fa-duotone fa-solid fa-rss fa-4x"></i> <!-- .element: style="float: right;" -->
 
-XXX Inhalte abhängig von Konsumiertem
+Inhalte sind abhängig von Konsumiertem
 
-XXX Doomscrolling
+Vorschläge passen in der Regel
+
+Konsumierte Inhalte werden verstärkt angezeigt
+
+Die Inhalte verändern sich - gewollt oder nicht
+
+Der Feed endet nicht
+
+### Achtung: Doomscrolling
 
 ---
 
 ## Informationsquellen
 
-XXX wem kann ich vertrauen?
+Welche Quellen sind vertrauenswürdig?
 
----
+- Wissenschaft
+- Zeitungen inkl. Online-Präsenz
+- Öffentlich-rechtliche Medien
 
-## Betrug / Scam
+Welche Quellen sind es nicht?
 
-XXX QR-Codes
+- Chat-Gruppe
+- Soziale Medien
 
-XXX Phishing (Vortrag Twitter Video)
+Warum nicht?
+
+- Hidden Agenda
+- Desinformation
+- Betrug
+
+Informationen prüfen, skeptisch sein, nicht instrumentalisieren lassen
 
 ---
 
@@ -188,12 +190,22 @@ XXX Phishing (Vortrag Twitter Video)
 
 <i class="fa-duotone fa-solid fa-book-section fa-4x"></i> <!-- .element: style="float: right;" -->
 
-Dies ist keine Rechtsberatung! [](https://de.wikipedia.org/wiki/Rechtsberatung#Deutschland)
+Dies ist [keine Rechtsberatung](https://de.wikipedia.org/wiki/Rechtsberatung#Deutschland)!
 
-- <i class="fa-solid fa-file-contract"></i> AGBs
-- <i class="fa-solid fa-section"></i> DSGVO Artikel 8
+- <span class="fa-li"><i class="fa-solid fa-file-contract"></i></span> Allgemeine Geschäftsbedingungen (AGBn) lesen und verstehen
+- <span class="fa-li"><i class="fa-solid fa-section"></i></span> [DSGVO Artikel 8](https://dsgvo-gesetz.de/art-8-dsgvo/) - Verarbeitung personenbezogener Daten</br>nach Einwilligung erst ab dem 16. Lebensjahr
 
-XXX Verträge [](https://www.verbraucherzentrale-niedersachsen.de/themen/kaufen-reklamieren/kurz-erklaert-minderjaehrige-vertraege)
+<!-- .element: class="fa-ul" -->
+
+### Verträge
+
+Minderjährige ab 7 Jahren können nur *rechtlich vorteilhafte* Verträge abschließen
+
+Rechtlich vorteilhaft = keine rechtlichen Verpflichtungen, z.B. Abonnements
+
+Einmalige Zahlungen aus dem Taschengeld sind wirksam (siehe [Taschengeldparagraph](https://de.wikipedia.org/wiki/Taschengeldparagraph))
+
+Quelle: [Verbraucherzentrale Niedersachsen](https://www.verbraucherzentrale-niedersachsen.de/themen/kaufen-reklamieren/kurz-erklaert-minderjaehrige-vertraege)
 
 ---
 
@@ -245,16 +257,18 @@ Ins Netz gehen [](https://www.ins-netz-gehen.info/)
 
 ### Vereine
 
-Freiburg Social [](https://freiburg.social/)
+[Freiburg Social](https://freiburg.social/)
 
-Digital Courage [](https://digitalcourage.de)
+[Digital Courage](https://digitalcourage.de) ([digitale Selbstverteidigung](https://digitalcourage.de/digitale-selbstverteidigung))
 
-https://noyb.eu/en
+[noyb](https://noyb.eu/en)
 
-XXX https://digitalcourage.de/digitale-selbstverteidigung
+### Informationen
 
-XXX https://www.privacy-handbuch.de
+[Privacy-Handbuch](https://www.privacy-handbuch.de)
 
-XXX https://www.privacytools.io
+Alternative [Tools zur Wahrung der Privatsphäre](https://www.privacytools.io)
 
-XXX https://quad9.net/de/
+### Tools
+
+[Werbung blockieren mit DNS-Dienst Quad9](https://quad9.net/de/)
