@@ -9,7 +9,7 @@ layout: page
 
 Verantwortlich für den Inhalt nach §55 Abs. 2 RStV und Angaben nach §5 TMG:
 
-![Nicholas Dille, Dreisamstraße 1b, 79232 March, webmaster@dille.name, 076659419418](/media/impressum_adresse.png)
+![](/media/impressum_adresse.png)
 
 ## Haftungsausschluss
 
