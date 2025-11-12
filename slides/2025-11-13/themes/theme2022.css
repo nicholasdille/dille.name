@@ -1,0 +1,71 @@
+:root {
+    --r-main-font-size: 50px;
+
+    --r-code-font: monospace;
+
+    --r-main-color: #fff;
+    --r-heading-color: #7cbad4;
+    --r-background-color: #191919;
+
+    --r-heading-line-height: 1.2;
+    --r-heading-letter-spacing: normal;
+    --r-heading-text-transform: none;
+    --r-heading-text-shadow: none;
+    --r-heading-font-weight: 600;
+    --r-heading1-text-shadow: none;
+
+    --r-link-color: #7cbad4;
+    --r-link-color-dark: #7cbad4;
+    --r-link-color-hover: #7cbad4;
+
+    --r-selection-background-color: #dcdcdc;
+    --r-selection-color: black;
+
+    --fa-family: var(--fa-family-duotone);
+    --fa-style: 900;
+    --fa-primary-color: #fff;
+    --fa-secondary-color: grey; /*#7cbad4;*/
+    --fa-primary-opacity: 1;
+    --fa-secondary-opacity: 1;
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal img {
+    margin: 0;
+}
+
+.reveal pre code {
+    margin-bottom: 1.5em;
+}
+
+.reveal ul.fa-ul {
+    list-style-type: none;
+    line-height: 200%;
+}
+
+.reveal .fa-li {
+    left: calc(var(--fa-li-width, 1em)*-1);
+}
+
+.reveal .fa-ul > li {
+    padding-left: 1em;
+}
+
+.reveal a:empty::before {
+    position: absolute;
+    margin-left: 0.25em;
+    font: var(--fa-font-duotone);
+    content: '\f08e';
+    color: var(--fa-primary-color);
+}
+
+.reveal a:empty::after {
+    position: absolute;
+    margin-left: 0.25em;
+    font: var(--fa-font-duotone);
+    content: '\f08e\f08e';
+    color: var(--fa-secondary-color);
+}
