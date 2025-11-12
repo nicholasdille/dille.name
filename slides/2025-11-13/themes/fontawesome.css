@@ -19364,7 +19364,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../node_modules/@fortawesome/fontawesome-pro/webfonts/fa-solid-900.woff2");
+  src: url("https://cdn.dille.name/fontawesome-pro@7.0.1/webfonts/fa-solid-900.woff2");
 }
 .fas {
   --fa-family: var(--fa-family-classic);
@@ -19396,7 +19396,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../node_modules/@fortawesome/fontawesome-pro/webfonts/fa-duotone-900.woff2");
+  src: url("https://cdn.dille.name/fontawesome-pro@7.0.1/webfonts/fa-duotone-900.woff2");
 }
 .fad,
 .fa-duotone,
@@ -19467,7 +19467,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("../node_modules/@fortawesome/fontawesome-pro/webfonts/fa-brands-400.woff2");
+  src: url("https://cdn.dille.name/fontawesome-pro@7.0.1/webfonts/fa-brands-400.woff2");
 }
 .fab,
 .fa-brands,
