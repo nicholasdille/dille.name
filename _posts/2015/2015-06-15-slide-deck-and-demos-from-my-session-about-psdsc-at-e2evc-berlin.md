@@ -1,20 +1,23 @@
 ---
 id: 3420
-title: 'Slide Deck and Demos from my Session about #PSDSC at #E2EVC Berlin'
+title: "Slide Deck: Power Shell Desired State Configuration #PSDSC @ #E2EVC in Berlin"
 date: 2015-06-15T17:51:35+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2015/06/15/slide-deck-and-demos-from-my-session-about-psdsc-at-e2evc-berlin/
 categories:
-  - Makro Factory
+- Makro Factory
 tags:
-  - Desired State Configuration
-  - DSC
-  - E2EVC
-  - PowerShell
-  - PSDSC
-  - Slide Deck
-  - Slides
+- Desired State Configuration
+- DSC
+- E2EVC
+- PowerShell
+- PSDSC
+- Slide Deck
+- Slides
+- Event
+- Conference
+- Talk
 ---
 I had the chance to talk about PowerShell Desired State Configuration or short #PSDSC at #[E2EVC](http://www.e2evc.com) Berlin. I'd like to share my slide deck, the code for my demos and the videos I recorded for two of my demos.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Webinar about #Docker (German)'
+title: "Webinar about #Docker (German)"
 date: 2022-10-27T21:00:00+01:00
 author: Nicholas Dille
 layout: post
@@ -11,6 +11,8 @@ tags:
 - Container
 - Slides
 - Slide Deck
+- Event
+- Webinar
 ---
 In addition to the GitLab webinars ([ops](/blog/2022/10/06/webinar-about-operating-gitlab/) and [dev](/blog/2022/10/13/webinar-about-gitlab-ci/)) I held a half-day webinar for [heise](https://events.heise.de/) to demonstrate the concepts of containerization and how to leverage them using Docker.
 

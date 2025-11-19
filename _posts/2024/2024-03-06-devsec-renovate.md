@@ -10,7 +10,9 @@ tags:
 - renovate
 - Slides
 - Slide Deck
-- Meetup
+- Event
+- Conference
+- Talk
 ---
 This week, I had the pleasure to talk about automated dependency updates using Renovate at [heise devSec](https://www.heise-devsec.de/2024/programm_hannover.php).
 

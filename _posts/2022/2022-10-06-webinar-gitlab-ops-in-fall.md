@@ -1,17 +1,19 @@
 ---
-title: 'Webinar about operating #GitLab - Fall 2022 (German)'
+title: "Webinar about operating #GitLab - Fall 2022 (German)"
 date: 2022-10-06T21:00:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2022/10/06/webinar-about-operating-gitlab/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
 - GitLab
+- Event
+- Webinar
 ---
 Part of my daily work is operating a GitLab instance for our development teams. Based on this experience I held the fall 2022 edition of a webinar for [heise](https://events.heise.de/) to share my knowledge.
 

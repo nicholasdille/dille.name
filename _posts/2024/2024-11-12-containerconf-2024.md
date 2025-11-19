@@ -1,5 +1,5 @@
 ---
-title: 'My contributions at ContainerConf 2024 #CLC_Conf #GitLab #kubernetes #RBAC'
+title: 'My contributions @ ContainerConf 2024 #CLC_Conf #GitLab #kubernetes #RBAC'
 date: 2024-11-12T23:08:00+01:00
 author: Nicholas Dille
 layout: post
@@ -14,6 +14,10 @@ tags:
 - Kubernetes
 - Security
 - Continuous Integration
+- Event
+- Conference
+- Talk
+- Workshop
 ---
 I just attended this year's [ContainerConf](https://www.containerconf.de) in Mannheim. It was awesome meeting old and new friends and talking all things containers. I had the pleasure to contribute a full-day workshop about CI/CD with GitLab as well as a talk about tricks and caveats when using Kubernetes Role Based Access Control (RBAC).
 

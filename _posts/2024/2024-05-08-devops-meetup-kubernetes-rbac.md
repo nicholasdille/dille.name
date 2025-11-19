@@ -1,5 +1,5 @@
 ---
-title: 'Talk about #Kubernetes #RBAC at #DevOps #Meetup #Freiburg'
+title: 'Talk about #Kubernetes #RBAC @ #DevOps #Meetup #Freiburg'
 date: 2024-05-08T21:00:00+01:00
 author: Nicholas Dille
 layout: post
@@ -11,7 +11,9 @@ tags:
 - Container
 - Slides
 - Slide Deck
+- Event
 - Meetup
+- Talk
 ---
 I gave a talk at [DevOps Meetup Freiburg](https://www.meetup.com/de-DE/devops-freiburg/events/291726649/) about RBAC in Kubernetes with a focus on little known facts, tricks as well as caveats.
 

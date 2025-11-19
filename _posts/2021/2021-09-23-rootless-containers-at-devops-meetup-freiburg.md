@@ -1,16 +1,17 @@
 ---
-title: 'Talk about #rootless containers at DevOps Meetup Freiburg'
+title: "Talk about #rootless containers @ DevOps Meetup Freiburg"
 date: 2021-09-24T21:00:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2021/09/24/talk-about-rootless-containers-at-devops-meetup-freiburg/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
+- Event
 - Meetup
 ---
 As soon as in-person meetup events were possible, I gave a talk at [DevOps Meetup Freiburg](https://www.meetup.com/de-DE/DevOps-Freiburg/events/280512257) about rootless containers.

@@ -1,17 +1,19 @@
 ---
-title: 'Lightning Talk about #BuildKit at the High Performance Container Workshop'
+title: "Lightning Talk about #BuildKit @ High Performance Container Workshop"
 date: 2020-06-16T21:56:00+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2020/06/16/lightning-talk-about-buildkit-at-the-high-performance-container-workshop/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - BuildKit
 - Slides
 - Slide Deck
+- Event
+- Talk
 ---
 
 I has the opportunity to speak at the high performance container workshop which is held as part of the ISC 2020, Europe's largest conference for high performance computing. I gave a lightning talk about BuildKit.

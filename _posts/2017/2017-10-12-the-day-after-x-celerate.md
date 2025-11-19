@@ -1,11 +1,11 @@
 ---
-title: 'The Day after x-celerate #xcelerate2017'
+title: "Slide Deck: The Day after x-celerate #xcelerate2017"
 date: 2017-10-12T21:17:00+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2017/10/12/the-day-after-x-celerate/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Conference
 - Slides
@@ -13,6 +13,9 @@ tags:
 - Docker
 - Container
 - xcelerate
+- Event
+- Conference
+- Talk
 ---
 On 10-10-2017 our very own conference [x-celerate](https://www.x-celerate.de) took place at the trade fair in Freiburg, Germany. With well over 100 attendees, the feedback proved it was a success in its first year.<!--more-->
 

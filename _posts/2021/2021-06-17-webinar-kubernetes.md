@@ -1,17 +1,19 @@
 ---
-title: 'Webinar about #Kubernetes for Beginners'
+title: "Webinar about #Kubernetes for Beginners"
 date: 2021-06-17T13:00:00+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2021/06/17/webinar-about-kubernetes-for-beginners/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
 - Kubernetes
+- Event
+- Webinar
 ---
 [heise Academy](https://heise-academy.de/) has organized a series of [webinars around containers and Kubernetes](https://webinare.heise.de/kubernetes/). I had the honour to contribute two half-day webinars - one about Docker for beginners and a second one about Kubernetes for beginners. On June 17th, I held the second one with 250 attendees.
 

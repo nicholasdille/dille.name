@@ -1,11 +1,11 @@
 ---
-title: 'My Talk about #BuildKit at #DockerCon Live 2020'
+title: "My Talk about #BuildKit @ #DockerCon Live 2020"
 date: 2020-05-29T01:41:00+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2020/05/29/my-talk-about-buildkit-at-dockercon-live-2020/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
@@ -13,6 +13,9 @@ tags:
 - BuildKit
 - Slides
 - Slide Deck
+- Event
+- Conference
+- Talk
 ---
 
 This week I had the honor of talking at [DockerCon Live 2020](https://docker.events.cube365.net/docker/dockercon/). It was a dream come true and I was really excited considering that over roughly 70K registered for the event and nearly 24K watched the keynote. I presented how to improve container image builds using [BuildKit](https://github.com/moby/buildkit). In contrast to many other virtual conferences, talks were pre-recorded and played at the designated time. This approach allowed speakers to interact with the audience during the talk.

@@ -12,6 +12,8 @@ tags:
 - Slides
 - Slide Deck
 - Kubernetes
+- Event
+- Webinar
 ---
 I have started a new webinar series with [heise Academy](https://heise-academy.de/) about [Kubernetes security](https://webinare.heise.de/kubernetes-security/). This is about the second part called network policies. Part 1 was about [Platform-as-a-Service](/blog/2023/04/26/webinar-series-about-kubernetes-part-1-platform-as-a-service/), part 3 will be about [policies](/blog/2023/04/26/webinar-series-about-kubernetes-part-3-policies/) and part 4 will be about [supply chain security](/blog/2023/04/26/webinar-series-about-kubernetes-part-4-supply-chain-security/).
 

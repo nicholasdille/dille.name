@@ -1,16 +1,19 @@
 ---
-title: "What's new in the #Docker Universe at #Container_Conf"
+title: "What's new in the #Docker Universe @ #Container_Conf (German)"
 date: 2017-11-15T13:42:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2017/11/15/whats-new-in-the-docker-universe-at-containerconf/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
+- Event
+- Conference
+- Talk
 ---
 Today, I had the opportunity to speak at ContainerConf in Mannheim. I talked about the news in the Docker ecosystem with a special focus on the Moby project. This post not only publishes my slides but also the demos from this talk.
 

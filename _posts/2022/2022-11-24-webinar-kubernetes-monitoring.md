@@ -13,6 +13,8 @@ tags:
 - Slide Deck
 - Kubernetes
 - Monitoring
+- Event
+- Webinar
 ---
 [heise Academy](https://heise-academy.de/) has repeated a series of [webinars around Kubernetes](https://webinare.heise.de/kubernetes/). I had the honour to contribute two half-day webinars - one about monitoring Kubernetes (see below) and [a second one about Kubernetes security](/blog/2022/12/01/webinar-about-kubernetes-security/).
 

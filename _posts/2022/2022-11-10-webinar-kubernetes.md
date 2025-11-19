@@ -11,6 +11,8 @@ tags:
 - Slides
 - Slide Deck
 - Kubernetes
+- Event
+- Webinar
 ---
 In addition to the GitLab webinars ([ops](/blog/2022/10/06/webinar-about-operating-gitlab/) and [dev](/blog/2022/10/13/webinar-about-gitlab-ci/)) I held a half-day webinar for [heise](https://events.heise.de/) to demonstrate the concepts of Kubernetes and provide an introduction for using it to deploy applications.
 

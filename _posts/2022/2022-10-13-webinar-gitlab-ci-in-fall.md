@@ -1,17 +1,19 @@
 ---
-title: 'Webinar about #GitLab CI - Fall 2022 (German)'
+title: "Webinar about #GitLab CI - Fall 2022 (German)"
 date: 2022-10-13T21:00:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2022/10/13/webinar-about-gitlab-ci/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
 - GitLab
+- Event
+- Webinar
 ---
 In addition to operating GitLab for our development teams, we are also using GitLab ourselves to automate the deployment and update of our services. Based on this experience I held a webinar for [heise](https://events.heise.de/) to demonstrate the wide range of features provided by GitLab CI.
 

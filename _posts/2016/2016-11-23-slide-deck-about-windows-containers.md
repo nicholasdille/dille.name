@@ -1,18 +1,21 @@
 ---
 id: 3573
-title: '(German) Slide Deck about Windows Containers and #Docker (#WindowsContainer)'
+title: "Slide Deck: Windows Containers and #Docker #WindowsContainer @ #DCUG TecCon (German)"
 date: 2016-11-23T20:49:21+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2016/11/23/slide-deck-about-windows-container-and-docker/
 categories:
-  - Haufe
+- Haufe
 tags:
-  - Container
-  - Docker
-  - PowerShell
-  - Slide Deck
-  - Slides
+- Container
+- Docker
+- PowerShell
+- Slide Deck
+- Slides
+- Event
+- Conference
+- Talk
 ---
 This week I talked (in German) about Windows Containers and Docker at [DCUG TecCon](https://www.dcug.de/teccon/) in Kassel. DCUG is a German Citrix User Group run by [Roy Textor](https://twitter.com/roytextor) which has organized many meetups in Germany. TecCon is the first two-day conference held in the same spirit. Today, I'd like to share the slide deck as well as the code for my demo.<!--more-->
 

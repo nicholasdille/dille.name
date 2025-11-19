@@ -1,29 +1,32 @@
 ---
 id: 3551
-title: 'Slide Deck about #Azure #RemoteApp at #DuCuG'
+title: "Slide Deck: #Azure #RemoteApp @ #DuCuG in Amsterdam"
 date: 2015-09-26T11:06:37+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2015/09/26/slide-deck-about-azure-remoteapp-at-ducug/
 categories:
-  - Makro Factory
+- Makro Factory
 tags:
-  - AAD
-  - AD Connect
-  - ARA
-  - Azure
-  - Azure Active Directory
-  - Azure RemoteApp
-  - Azure VNet
-  - Azure VPN
-  - PowerShell
-  - RDS
-  - Remote Desktop Services
-  - RemoteApp
-  - Slide Deck
-  - Slides
-  - Virtual Network
-  - VPN
+- AAD
+- AD Connect
+- ARA
+- Azure
+- Azure Active Directory
+- Azure RemoteApp
+- Azure VNet
+- Azure VPN
+- PowerShell
+- RDS
+- Remote Desktop Services
+- RemoteApp
+- Slide Deck
+- Slides
+- Virtual Network
+- VPN
+- Event
+- Meetup
+- Talk
 ---
 Today I talked about #Azure #RemoteApp at #DuCuG in Amsterdam. I'd like to share my slide deck and the code for one of my demos.
 

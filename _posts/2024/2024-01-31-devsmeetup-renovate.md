@@ -8,6 +8,9 @@ categories:
 - Haufe-Lexware
 tags:
 - renovate
+- Event
+- Meetup
+- Talk
 ---
 This week, I had the pleasure to talk about automated dependency updates using Renovate at the Devsmeetup. I was happy to see that the audience was very interested in the topic and asked many questions.
 

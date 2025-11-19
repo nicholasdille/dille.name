@@ -1,11 +1,11 @@
 ---
-title: 'Using #BuildKit for Cloud Native Build in #GitLab'
+title: "Using #BuildKit for Cloud Native Build in #GitLab"
 date: 2020-06-01T21:56:00+02:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2020/06/01/using-buildkit-for-cloud-native-builds-in-gitlab/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
@@ -13,6 +13,9 @@ tags:
 - BuildKit
 - Slides
 - Slide Deck
+- Event
+- Conference
+- Talk
 ---
 
 After my talk about [BuildKit](https://github.com/moby/buildkit) at [DockerCon Live 2020](/blog/2020/05/29/my-talk-about-buildkit-at-dockercon-live-2020/) I wanted to provide a detailed answer to a question from the audience. I was asked how to use BuildKit in [GitLab CI](https://docs.gitlab.com/ee/ci/) and this post will explain this for running the BuildKit daemon as a service and using BuildKit daemonless in a job.

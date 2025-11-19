@@ -11,7 +11,9 @@ tags:
 - Container
 - Slides
 - Slide Deck
+- Event
 - Meetup
+- Talk
 ---
 I gave a talk at [Docker Meetup Freiburg](https://www.meetup.com/de-DE/docker-black-forest/events/293749060/) about my pet project [docker-setup](https://github.com/nicholasdille/docker-setup).
 

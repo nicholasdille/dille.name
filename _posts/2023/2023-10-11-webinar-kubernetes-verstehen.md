@@ -12,6 +12,8 @@ tags:
 - Slides
 - Slide Deck
 - Kubernetes
+- Event
+- Webinar
 ---
 I have started a new webinar series with [heise Academy](https://heise-academy.de/) about [Kubernetes](https://heise-academy.de/webinare/kubernetes1023) - in German. This is about the first part called "Kubernetes verstehen". Part 2 will be ["Kubernetes automatisieren"](/blog/2023/10/18/webinar-series-about-kubernetes-part-2-kubernetes-automatisieren/), part 3 will be ["Kubernetes überwachen"](/blog/2023/10/25/webinar-series-about-kubernetes-part-3-kubernetes-ueberwachen/) and part 4 will be ["Kubernetes absichern"](/blog/2023/11/03/webinar-series-about-kubernetes-part-4-kubernetes-absichern/).
 

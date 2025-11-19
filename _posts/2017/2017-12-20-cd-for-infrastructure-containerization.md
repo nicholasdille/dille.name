@@ -1,17 +1,20 @@
 ---
-title: "Slide Deck (German): Continuous Delivery for Containerized Infrastructure Services"
+title: "Slide Deck: Continuous Delivery for Containerized Infrastructure Services @ IT-Tage (German)"
 date: 2017-12-20T12:17:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2017/12/20/slide-deck-german-continuous-delivery-for-containerized-infrastructure-services/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
 - Continuous Delivery
+- Event
+- Conference
+- Talk
 ---
 In mid-December I had the opportunity to [talk at a German conferences called IT-Tage](https://www.ittage.informatik-aktuell.de/programm/2017/continuous-delivery-fuer-infrastrukturdienste-in-containerumgebungen/) held in Frankfurt. The event was organized by [Informatik Aktuell](https://www.informatik-aktuell.de/index.php). In my talk I described how traditional infrastructure services can profit from containerization and continuous delivery as well as which challanges arise when automating the deployment as a scalable, highly available service.<!--more-->
 

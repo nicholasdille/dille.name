@@ -1,16 +1,20 @@
 ---
-title: 'One Workshop and Two Talks about #Docker at ContainerConf #concon2018'
+title: "One Workshop and Two Talks about #Docker @ ContainerConf #concon2018"
 date: 2018-11-18T23:34:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2018/10/18/one-workshop-and-two-talks-about-docker-at-containerconf/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slide Deck
 - Slides
+- Event
+- Conference
+- Workshop
+- Talk
 ---
 [ContainerConf](https://www.containerconf.de) marked a very special moment this year because I was able to contribute one workshop and two talks about Docker.<!--more-->
 

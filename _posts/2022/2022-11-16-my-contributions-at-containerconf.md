@@ -1,5 +1,5 @@
 ---
-title: 'Talk about news from the container space at ContainerConf #ConConf2022'
+title: 'Talk about news from the container space @ ContainerConf #ConConf2022'
 date: 2022-11-16T23:08:00+01:00
 author: Nicholas Dille
 layout: post
@@ -15,6 +15,9 @@ tags:
 - Kubernetes
 - Security
 - Continuous Integration
+- Event
+- Conference
+- Talk
 ---
 This week I attended [ContainerConf](https://www.containerconf.de) in Mannheim - the first in-person conference in three years. I had the pleasure to contribute a full-day workshop about CI/CD with GitLab as well as a talk about optimizing container image.
 

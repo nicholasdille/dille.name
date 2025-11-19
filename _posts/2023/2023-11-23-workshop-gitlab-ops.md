@@ -12,6 +12,8 @@ tags:
 - Slides
 - Slide Deck
 - GitLab
+- Event
+- Workshop
 ---
 Part of my daily work is operating a GitLab instance for our development teams. Based on this experience I held a workshop for [heise Academy](https://heise-academy.de/) to share my knowledge.
 

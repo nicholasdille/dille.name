@@ -1,24 +1,27 @@
 ---
 id: 3479
-title: 'Slide Deck (German) about #PSDSC at #DCUG'
+title: "Slide Deck: PowerShell Desired State Configuration #PSDSC @ #DCUG (German)"
 date: 2015-07-12T18:34:16+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2015/07/12/slide-deck-german-about-psdsc-at-dcug/
 categories:
-  - Makro Factory
+- Makro Factory
 tags:
-  - Citrix
-  - DCUG
-  - Desired State Configuration
-  - DSC
-  - German
-  - PowerShell
-  - PSDSC
-  - Slide Deck
-  - Slides
-  - XenApp
-  - XenDesktop
+- Citrix
+- DCUG
+- Desired State Configuration
+- DSC
+- German
+- PowerShell
+- PSDSC
+- Slide Deck
+- Slides
+- XenApp
+- XenDesktop
+- Event
+- Meetup
+- Talk
 ---
 I recently talked about PowerShell Desired State Configuration, #PSDSC at #DCUG - a German speaking Citrix User Group. I'd like to share my slide deck and the code for my demo.
 

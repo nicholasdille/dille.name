@@ -1,20 +1,23 @@
 ---
 id: 3573
-title: 'Slide Deck about Automating #XenApp using #PowerShell'
+title: "Slide Deck: Automating #XenApp using #PowerShell @ #DCUG"
 date: 2015-11-10T20:00:08+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2015/11/10/slide-deck-about-automating-xenapp-using-powershell/
 categories:
-  - Makro Factory
+- Makro Factory
 tags:
-  - MCS
-  - PowerShell
-  - PowerShell Remoting
-  - Slide Deck
-  - Slides
-  - XenApp
-  - XenDesktop
+- MCS
+- PowerShell
+- PowerShell Remoting
+- Slide Deck
+- Slides
+- XenApp
+- XenDesktop
+- Event
+- Meetup
+- Talk
 ---
 Today I talked (in German) about automating #XenApp using #PowerShell at [DCUG](https://www.dcug.de/) in Freiburg. I'd like to share the short slide deck as well as the code for my extensive demos. DCUG is a Citrix User Group event held in German and is organized by [Roy Textor](https://twitter.com/roytextor).
 

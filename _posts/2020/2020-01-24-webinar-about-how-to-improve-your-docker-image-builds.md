@@ -1,11 +1,11 @@
 ---
-title: 'Webinar about how to improve your #Docker image builds'
+title: "Webinar about how to improve your #Docker image builds"
 date: 2020-01-24T12:41:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2020/01/24/webinar-about-how-to-improve-your-docker-image-builds/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
@@ -14,6 +14,8 @@ tags:
 - BuildKit
 - Security
 - Continuous Integration
+- Event
+- Webinar
 ---
 This week I had the honour of giving a talk at the [Docker Virtual Meetup about how to improve your Docker image builds](https://events.docker.com/events/details/docker-docker-virtual-meetups-presents-how-to-improve-your-docker-image-builds/). It was a very interactive crowd :-)
 

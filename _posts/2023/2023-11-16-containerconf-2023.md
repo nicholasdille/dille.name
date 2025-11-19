@@ -1,5 +1,5 @@
 ---
-title: 'My contributions at ContainerConf 2023 #ConCon2023 #GitLab #Renovate #OCI'
+title: 'My contributions @ ContainerConf 2023 #ConCon2023 #GitLab #Renovate #OCI'
 date: 2023-11-16T23:08:00+01:00
 author: Nicholas Dille
 layout: post
@@ -14,6 +14,10 @@ tags:
 - Kubernetes
 - Security
 - Continuous Integration
+- Event
+- Conference
+- Talk
+- Workshop
 ---
 I recently attended this year's [ContainerConf](https://www.containerconf.de) in Mannheim. I was awesome meeting old and new friends and talking all things containers. I had the pleasure to contribute a full-day workshop about CI/CD with GitLab as well as a talk about using container registries for generic artifacts with and without OCI 1.1 and another one about automatically updating dependencies using Renovate.
 

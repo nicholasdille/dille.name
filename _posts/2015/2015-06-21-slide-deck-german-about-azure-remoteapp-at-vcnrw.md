@@ -1,29 +1,32 @@
 ---
 id: 3451
-title: 'Slide Deck (German) about #Azure #RemoteApp at #VCNRW'
+title: "Sldie Deck: #Azure #RemoteApp @ #VCNRW (German)"
 date: 2015-06-21T22:04:51+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2015/06/21/slide-deck-german-about-azure-remoteapp-at-vcnrw/
 categories:
-  - Makro Factory
+- Makro Factory
 tags:
-  - AAD
-  - AD Connect
-  - ARA
-  - Azure
-  - Azure Active Directory
-  - Azure RemoteApp
-  - Azure VNet
-  - Azure VPN
-  - PowerShell
-  - RDS
-  - Remote Desktop Services
-  - RemoteApp
-  - Slide Deck
-  - Slides
-  - Virtual Network
-  - VPN
+- AAD
+- AD Connect
+- ARA
+- Azure
+- Azure Active Directory
+- Azure RemoteApp
+- Azure VNet
+- Azure VPN
+- PowerShell
+- RDS
+- Remote Desktop Services
+- RemoteApp
+- Slide Deck
+- Slides
+- Virtual Network
+- VPN
+- Event
+- Meetup
+- Talk
 ---
 Last week I talked about #Azure #RemoteApp at #VCNRW, the Virtualization Community NRW in Cologne, Germany. I'd like to share my slide deck and the code for one of my demos.
 

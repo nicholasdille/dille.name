@@ -1,5 +1,5 @@
 ---
-title: 'Webinar about operating #GitLab (German)'
+title: "Webinar about operating #GitLab (German)"
 date: 2022-05-05T21:00:00+01:00
 author: Nicholas Dille
 layout: post
@@ -12,6 +12,8 @@ tags:
 - Slides
 - Slide Deck
 - GitLab
+- Event
+- Webinar
 ---
 Part of my daily work is operating a GitLab instance for our development teams. Based on this experience I held a webinar for [heise](https://events.heise.de/) to share my knowledge.
 

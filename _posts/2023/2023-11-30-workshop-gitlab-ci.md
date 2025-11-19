@@ -12,6 +12,8 @@ tags:
 - Slides
 - Slide Deck
 - GitLab
+- Event
+- Workshop
 ---
 In addition to operating GitLab for our development teams, we are also using GitLab ourselves to automate the deployment and update of our services. Based on this experience I held a workshop for [heise Academy](https://heise-academy.de/) to demonstrate the wide range of features provided by GitLab CI. This time, I extended the workshop to two days and used updated slides and exercises.
 

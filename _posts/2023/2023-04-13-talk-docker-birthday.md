@@ -11,7 +11,9 @@ tags:
 - Container
 - Slides
 - Slide Deck
+- Event
 - Meetup
+- Talk
 ---
 I gave a talk at [Docker Meetup Freiburg](https://www.meetup.com/de-DE/docker-black-forest/events/292284637/) about the impact of Docker on my career.
 

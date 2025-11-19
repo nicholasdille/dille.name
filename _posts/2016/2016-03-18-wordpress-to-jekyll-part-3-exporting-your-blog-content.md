@@ -1,15 +1,15 @@
 ---
-title: '#WordPress to #Jekyll Part 3 - Exporting your Blog Content'
+title: "#WordPress to #Jekyll Part 3 - Exporting your Blog Content"
 date: 2016-03-18T19:55:23+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2016/03/18/wordpress-to-jekyll-part-3-exporting-your-blog-content/
 categories:
-  - Makro Factory
+- Makro Factory
 tags:
-  - WordPress
-  - Jekyll
-  - PowerShell
+- WordPress
+- Jekyll
+- PowerShell
 ---
 After having presented the [arguments for a static blog](/blog/2016/03/10/wordpress-to-jekyll-part-1-arguments-for-a-static-site/) as well as an [introduction to Jekyll](/blog/2016/03/14/wordpress-to-jekyll-part-2-how-jekyll-works/), this post will be more hands-on.<a href="http://ps.w.org/jekyll-exporter/assets/banner-772x250.png" data-lightbox="WordPress2Jekyll" title="WordPress to Jekyll exporter"><img src="http://ps.w.org/jekyll-exporter/assets/banner-772x250.png" alt="WordPress to Jekyll exporter" style="height: 5em; float: right; margin-left: 0.5em; margin-top: 0.5em;" /></a>I will demonstrate how to export all your pages and posts from WordPress to markdown. Most of the work will be done by the WordPress plugin called [Jekyll Exporter](https://wordpress.org/plugins/jekyll-exporter/).<!--more-->
 

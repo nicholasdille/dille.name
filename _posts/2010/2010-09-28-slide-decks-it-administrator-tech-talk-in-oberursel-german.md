@@ -1,20 +1,22 @@
 ---
 id: 2928
-title: 'Slide Decks: IT-Administrator Tech Talk in Oberursel (German)'
+title: "Slide Deck: IT-Administrator Tech Talk in Oberursel (German)"
 date: 2010-09-28T22:32:10+00:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2010/09/28/slide-decks-it-administrator-tech-talk-in-oberursel-german/
 categories:
-  - sepago
+- sepago
 tags:
-  - Citrix
-  - Cloud
-  - Microsoft
-  - Windows
-  - XenApp
-  - Slides
-  - Slide Deck
+- Citrix
+- Cloud
+- Microsoft
+- Windows
+- XenApp
+- Slides
+- Slide Deck
+- Event
+- Talk
 ---
 At the IT-Administrator Tech Talk in Oberursel, I held three talks which can be downloaded here:
 

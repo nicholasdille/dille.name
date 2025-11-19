@@ -1,11 +1,11 @@
 ---
-title: 'Talk about advanced features and tools in the container space at x-celerate #xcelerateconf'
+title: "Talk about advanced features and tools in the container space @ x-celerate #xcelerateconf"
 date: 2019-12-02T20:01:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2019/12/02/talk-about-advanced-features-and-tools-in-the-container-space-at-x-celerate/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
@@ -16,6 +16,9 @@ tags:
 - Security
 - Continuous Integration
 - xcelerate
+- Event
+- Conference
+- Talk
 ---
 For the third time in a row, I co-organized a regional IT conference called [x-celerate](https://www.x-celerate.de) held in Freiburg, Germany. This time, I contributed a talk about covering the following topics:
 

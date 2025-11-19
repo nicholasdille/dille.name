@@ -1,16 +1,18 @@
 ---
-title: 'Webinar about #Docker (German)'
+title: "Webinar about #Docker (German)"
 date: 2022-03-03T21:00:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2022/03/03/webinar-about-docker/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
+- Event
+- Webinar
 ---
 [heise Academy](https://heise-academy.de/) has repeated a series of [webinars around containers and Kubernetes](https://webinare.heise.de/kubernetes/). I had the honour to contribute two half-day webinars - one about Docker for beginners (see below) and a [second one about Kubernetes for beginners](/blog/2022/03/03/webinar-about-kubernetes/).
 

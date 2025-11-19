@@ -1,17 +1,20 @@
 ---
-title: 'Talk about optimizing container image builds @ContainerConf'
+title: "Talk about optimizing container image builds @ContainerConf"
 date: 2021-11-17T21:00:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2021/11/17/talk-about-optimizing-container-image-builds-at-containerconf/
 categories:
-  - Haufe-Lexware
+- Haufe-Lexware
 tags:
 - Docker
 - Container
 - Slides
 - Slide Deck
 - ContainerConf
+- Event
+- Conference
+- Talk
 ---
 As part of [ContainerConf](https://www.containerconf.de/) I gave a talk about optimizing the build process of container images. This can be achieved in the following dimensions: faster builds, smaller images, more secure contents and easier maintenance.
 

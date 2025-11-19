@@ -10,6 +10,9 @@ tags:
 - renovate
 - Slides
 - Slide Deck
+- Event
+- Meetup
+- Talk
 ---
 This week, I had the pleasure to talk about using Renovate for automated promotion in GitOps at [Mastering GitOps](https://www.mastering-gitops.de).
 
