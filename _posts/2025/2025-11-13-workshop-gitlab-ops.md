@@ -1,9 +1,9 @@
 ---
 title: 'Workshop about operating #GitLab (German)'
-date: 2024-11-07T21:00:00+01:00
+date: 2025-11-13T21:00:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2024/11/07/workshop-about-operating-gitlab/
+permalink: /blog/2025/11/13/workshop-about-operating-gitlab/
 categories:
 - Haufe-Lexware
 tags:
@@ -15,7 +15,7 @@ tags:
 - Event
 - Workshop
 ---
-Part of my daily work is operating a GitLab instance for our development teams. Based on this experience I held a workshop for [heise Academy](https://heise-academy.de/) to share my knowledge.
+Part of my daily work is operating a GitLab instance for our development teams. Based on this experience I am offering a workshop for [heise Academy](https://heise-academy.de/) to share my knowledge.
 
 <img src="/media/2022/03/abby-ar-1uwzsExrKzY-unsplash.jpg" style="object-fit: cover; object-position: center 60%; width: 100%; height: 150px;" />
 
@@ -45,6 +45,6 @@ I covered the following topics:
   - Using GitLab Pages
   - Monitoring GitLab
 
-Find my slides [here](/slides/2024-11-07/).
+Find my slides [here](/slides/2025-11-13/).
 
-The slides are a result of my slide and demo build system. Take a look at the [release for this event](https://github.com/nicholasdille/container-slides/releases/tag/20241107.0).
+The slides are a result of my slide and demo build system. Take a look at the [release for this event](https://github.com/nicholasdille/container-slides/releases/tag/20251113.0).

@@ -1,9 +1,9 @@
 ---
 title: 'Two day workshop about #GitLab CI (German)'
-date: 2025-05-14T21:00:00+01:00
+date: 2025-11-27T21:00:00+01:00
 author: Nicholas Dille
 layout: post
-permalink: /blog/2025/05/14/Two-day-workshop-about-gitlab-ci/
+permalink: /blog/2025/11/27/Two-day-workshop-about-gitlab-ci/
 categories:
 - Haufe-Lexware
 tags:
@@ -14,6 +14,7 @@ tags:
 - GitLab
 - Event
 - Workshop
+published: false
 ---
 In addition to operating GitLab for our development teams, we are also using GitLab ourselves to automate the deployment and update of our services. Based on this experience I held a two day workshop for [heise Academy](https://heise-academy.de/) to demonstrate the wide range of features provided by GitLab CI.
 
@@ -69,6 +70,6 @@ I covered the following topics:
   - Using pipeline inputs
   - Using secure files
 
-Find my slides [here](/slides/2025-05-14/) as well as the [exercises](/hands-on/2025-05-14/).
+Find my slides [here](/slides/2025-11-27/) as well as the [exercises](/hands-on/2025-11-27/).
 
-The slides and exercises are a result of my slide and demo build system. Take a look at the [release for this event](https://github.com/nicholasdille/container-slides/releases/tag/20250514.3).
+The slides and exercises are a result of my slide and demo build system. Take a look at the [release for this event](https://github.com/nicholasdille/container-slides/releases/tag/20251127.0).
