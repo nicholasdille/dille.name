@@ -1,5 +1,5 @@
 ---
-title: 'Workshop about #GitLab CI @ CLC 2025 #CLC_Conf'
+title: 'Workshop about #GitLab CI @ CLC Conference #CLC_Conf'
 date: 2025-11-18T21:00:00+01:00
 author: Nicholas Dille
 layout: post
