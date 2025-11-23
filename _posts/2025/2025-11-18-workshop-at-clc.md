@@ -1,6 +1,6 @@
 ---
 title: 'Workshop about #GitLab CI @ CLC 2025 #CLC_Conf'
-date: 2024-11-18T21:00:00+01:00
+date: 2025-11-18T21:00:00+01:00
 author: Nicholas Dille
 layout: post
 permalink: /blog/2025/11/18/workshop-about-gitlab-ci-at-clc/
