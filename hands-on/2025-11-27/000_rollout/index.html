@@ -1649,6 +1649,7 @@
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Set a timestamp for the event (<code>YYYY-mm-dd</code>)</li>
+<li>Update links to slides using regex <code>/slides/\d{4}-\d{2}-\d{2}/</code></li>
 <li>Update links from slides to exercises using regex <code>/hands-on/\d{4}-\d{2}-\d{2}/</code></li>
 <li>Update syntax definitions for <code>Dockerfile</code> using regex: <code>docker/dockerfile:\d+.\d+.\d+</code> (https://hub.docker.com/r/docker/dockerfile)</li>
 <li>Update nginx using regex: <code>nginx:\d+.\d+.\d+</code> (https://hub.docker.com/_/nginx)</li>
@@ -1662,10 +1663,10 @@
 <li>Update code-server using regex: <code>codercom/code-server:\d+.\d+.\d+</code> (https://hub.docker.com/r/codercom/code-server)</li>
 <li>Update golang using regex: <code>golang:\d+.\d+.\d+</code> (https://hub.docker.com/_/golang/)</li>
 <li>Update curl using regex: <code>curlimages/curl:\d+.\d+.\d+</code> (https://hub.docker.com/r/curlimages/curl)</li>
-<li>Update docker using regex: <code>docker:\d+.\d+.\d+(-dind)?</code> with replacement <code>docker:28.1.1$1</code></li>
+<li>Update docker using regex: <code>docker:\d+.\d+.\d+(-dind)?</code> with replacement <code>docker:29.0.4$1</code></li>
 <li>Update ubuntu using regex: <code>ubuntu:\d+.\d+</code></li>
 <li>Update grafana using regex: <code>grafana/grafana:\d+.\d+.\d+</code> (https://hub.docker.com/r/grafana/grafana)</li>
-<li>Update release-cli using regex: <code>registry.gitlab.com/gitlab-org/cli:v\d+\.\d+\.\d+</code> (https://gitlab.com/gitlab-org/cli)</li>
+<li>Update release-cli using regex: <code>registry.gitlab.com/gitlab-org/cli:v\d+\.\d+\.\d+</code> (https://gitlab.com/gitlab-org/cli/-/releases)</li>
 <li>Update versions in <code>160_gitlab_ci/000_rollout/gitlab.pkr.hcl</code> for pre-pulling container images</li>
 <li>Run <code>scripts/update_code_branches.sh</code> to update code branches</li>
 </ol>

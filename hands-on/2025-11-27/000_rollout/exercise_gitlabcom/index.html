@@ -1734,13 +1734,13 @@
 <p>A few exercises will not work as expected because of differences between the demo environment and <code>gitlab.com</code>.</p>
 <ol>
 <li>
-<p>The first three exercises (<a href="/hands-on/2025-11-18/010_jobs_and_stages/exercise/">Jobs and stages</a>, <a href="/hands-on/2025-11-18/020_variables/exercise/">Variables</a>, <a href="/hands-on/2025-11-18/030_script_blocks/exercise/">Scriptblocks</a>) will not run without a fix because the default runner on <code>gitlab.com</code> does not use <code>alpine</code>. You need to add the following lines at the top of you <code>.gitlab-ci.yml</code>:</p>
+<p>The first three exercises (<a href="/hands-on/2025-11-27/010_jobs_and_stages/exercise/">Jobs and stages</a>, <a href="/hands-on/2025-11-27/020_variables/exercise/">Variables</a>, <a href="/hands-on/2025-11-27/030_script_blocks/exercise/">Scriptblocks</a>) will not run without a fix because the default runner on <code>gitlab.com</code> does not use <code>alpine</code>. You need to add the following lines at the top of you <code>.gitlab-ci.yml</code>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">default</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
 </span></code></pre></div>
 </li>
 <li>
-<p>In the exercise for <a href="/hands-on/2025-11-18/100_environments/exercise/">environments</a>, the job <code>deploy</code> will fail because it attempts to deploy to a WebDAV server which is specific to the demo environment. This also affects the following two exercises (<a href="/hands-on/2025-11-18/110_triggers/exercise/">Triggers</a>, <a href="/hands-on/2025-11-18/120_templates/exercise/">Templates</a>). Due to the changes introduced in the exercise about <a href="/hands-on/2025-11-18/130_rules/exercise/">rules</a>, the error disappears.</p>
+<p>In the exercise for <a href="/hands-on/2025-11-27/100_environments/exercise/">environments</a>, the job <code>deploy</code> will fail because it attempts to deploy to a WebDAV server which is specific to the demo environment. This also affects the following two exercises (<a href="/hands-on/2025-11-27/110_triggers/exercise/">Triggers</a>, <a href="/hands-on/2025-11-27/120_templates/exercise/">Templates</a>). Due to the changes introduced in the exercise about <a href="/hands-on/2025-11-27/130_rules/exercise/">rules</a>, the error disappears.</p>
 </li>
 </ol>
 

@@ -28,7 +28,7 @@ XXX [](https://docs.gitlab.com/runner/executors/kubernetes.html#restrict-docker-
 
 Use `image` instead of `before_script`
 
-1. Add `image: golang:1.19.2` to all jobs
+1. Add `image: golang:1.25.4` to all jobs
 1. Remove `before_script` from all jobs
 
 See new `.gitlab-ci.yml`:

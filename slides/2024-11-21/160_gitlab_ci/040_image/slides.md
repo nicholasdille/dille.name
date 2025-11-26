@@ -24,7 +24,7 @@ Avoid maintaining custom image
 
 ### Hands-On
 
-See chapter [Image](/hands-on/2025-05-14/040_image/exercise/)
+See chapter [Image](/hands-on/2025-11-27/040_image/exercise/)
 
 ---
 

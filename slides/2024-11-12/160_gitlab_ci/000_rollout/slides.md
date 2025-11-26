@@ -14,4 +14,4 @@ Containerized service stack for this workshop
 
 Available from 2024-11-12 at 9:00 until 2024-11-12 at 18:00
 
-See [introduction](/hands-on/2024-11-12/)
+See [introduction](/hands-on/2025-11-27/)

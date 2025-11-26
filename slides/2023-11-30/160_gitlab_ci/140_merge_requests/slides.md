@@ -58,7 +58,7 @@ job_name:
 
 ## Hands-On
 
-See chapter [Merge requests](/hands-on/2023-11-30/140_merge_requests/exercise/)
+See chapter [Merge requests](/hands-on/2025-11-27/140_merge_requests/exercise/)
 
 ---
 

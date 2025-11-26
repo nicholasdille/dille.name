@@ -62,4 +62,4 @@ job_name:
 
 ## Hands-On
 
-See chapter [Job dependencies](/hands-on/2024-11-12/065_job_dependencies/exercise/)
+See chapter [Job dependencies](/hands-on/2025-11-27/065_job_dependencies/exercise/)

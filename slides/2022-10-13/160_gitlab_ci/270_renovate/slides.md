@@ -56,7 +56,7 @@ renovate:
   variables:
     DOCKER_HOST: tcp://127.0.0.1:2375
   services:
-  - name: docker:20.10.18-dind
+  - name: docker:29.0.4-dind
     command: [ "dockerd", "--host", "tcp://0.0.0.0:2375" ]
   script: |
     renovate --platform gitlab \

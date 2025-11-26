@@ -1643,7 +1643,7 @@
 </ol>
 <p>For the <code>release</code> keyword to work, the <code>glab</code> binary must be present in the execution environment of the job:</p>
 <ol>
-<li>Set <code>image</code> to <code>registry.gitlab.com/gitlab-org/cli:v1.76.2</code></li>
+<li>Set <code>image</code> to <code>registry.gitlab.com/gitlab-org/cli:v1.78.3</code></li>
 </ol>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
 <details class="info">
@@ -1810,7 +1810,7 @@
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;merge_request_event&quot;&#39;</span>
 </span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="nt">default</span><span class="p">:</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.3</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.4</span>
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a>
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="nt">lint</span><span class="p">:</span>
 </span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
@@ -1870,7 +1870,7 @@
 </span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
 </span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
 </span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
-</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.gitlab.com/gitlab-org/cli:v1.78.2</span>
+</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.gitlab.com/gitlab-org/cli:v1.78.3</span>
 </span><span id="__span-1-88"><a id="__codelineno-1-88" name="__codelineno-1-88"></a><span class="hll"><span class="w">  </span><span class="nt">release</span><span class="p">:</span>
 </span></span><span id="__span-1-89"><a id="__codelineno-1-89" name="__codelineno-1-89"></a><span class="hll"><span class="w">    </span><span class="nt">tag_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_PIPELINE_IID}</span>
 </span></span><span id="__span-1-90"><a id="__codelineno-1-90" name="__codelineno-1-90"></a><span class="hll"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Release ${CI_PIPELINE_IID}</span>
@@ -1888,11 +1888,11 @@
 </span><span id="__span-1-102"><a id="__codelineno-1-102" name="__codelineno-1-102"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
 </span><span id="__span-1-103"><a id="__codelineno-1-103" name="__codelineno-1-103"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
 </span><span id="__span-1-104"><a id="__codelineno-1-104" name="__codelineno-1-104"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
-</span><span id="__span-1-105"><a id="__codelineno-1-105" name="__codelineno-1-105"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:28.5.2</span>
+</span><span id="__span-1-105"><a id="__codelineno-1-105" name="__codelineno-1-105"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:29.0.4</span>
 </span><span id="__span-1-106"><a id="__codelineno-1-106" name="__codelineno-1-106"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
 </span><span id="__span-1-107"><a id="__codelineno-1-107" name="__codelineno-1-107"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
 </span><span id="__span-1-108"><a id="__codelineno-1-108" name="__codelineno-1-108"></a><span class="w">  </span><span class="nt">services</span><span class="p">:</span>
-</span><span id="__span-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:28.5.2-dind</span>
+</span><span id="__span-1-109"><a id="__codelineno-1-109" name="__codelineno-1-109"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:29.0.4-dind</span>
 </span><span id="__span-1-110"><a id="__codelineno-1-110" name="__codelineno-1-110"></a><span class="w">  </span><span class="nt">variables</span><span class="p">:</span>
 </span><span id="__span-1-111"><a id="__codelineno-1-111" name="__codelineno-1-111"></a><span class="w">    </span><span class="nt">DOCKER_TLS_CERTDIR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 </span><span id="__span-1-112"><a id="__codelineno-1-112" name="__codelineno-1-112"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>

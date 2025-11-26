@@ -1714,7 +1714,7 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>--upload-file<span class="w"> </span>hello<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span>--user<span class="w"> </span>seat<span class="si">${</span><span class="nv">SEAT_INDEX</span><span class="si">}</span>:<span class="si">${</span><span class="nv">PASS</span><span class="si">}</span>
 </span></code></pre></div>
-<p>Mind that <code>curl</code> is not available in the default image <code>golang:1.25.3</code>. You can use <code>curlimages/curl:8.17.0</code>.</p>
+<p>Mind that <code>curl</code> is not available in the default image <code>golang:1.25.4</code>. You can use <code>curlimages/curl:8.17.0</code>.</p>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run and be able to download the <code>hello</code> binary from <code>https://seatN.dev.webdav.inmylab.de/hello</code>.</p>
 <details class="info">
 <summary>Hint (Click if you are stuck)</summary>
@@ -1785,7 +1785,7 @@
 <span class="normal"><a href="#__codelineno-2-56">56</a></span>
 <span class="normal"><a href="#__codelineno-2-57">57</a></span>
 <span class="normal"><a href="#__codelineno-2-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">default</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.3</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.4</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nt">lint</span><span class="p">:</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
@@ -1910,7 +1910,7 @@
 <span class="normal"><a href="#__codelineno-4-56">56</a></span>
 <span class="normal"><a href="#__codelineno-4-57">57</a></span>
 <span class="normal"><a href="#__codelineno-4-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">default</span><span class="p">:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.3</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.4</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="nt">lint</span><span class="p">:</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>

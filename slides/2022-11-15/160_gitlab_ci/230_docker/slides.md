@@ -32,7 +32,7 @@ Package binary in container image
 
     ```yaml
     package:
-      image: docker:20.10.21
+      image: docker:29.0.4
       stage: package
       script:
       - docker build --tag hello .
@@ -44,7 +44,7 @@ Package binary in container image
     ```yaml
     package:
       services:
-      - name: docker:20.10.21-dind
+      - name: docker:29.0.4-dind
         command: [ "dockerd", "--host", "tcp://0.0.0.0:2375" ]
       #...
     ```

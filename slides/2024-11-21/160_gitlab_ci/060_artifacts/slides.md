@@ -84,7 +84,7 @@ job_name2:
 
 ## Hands-On
 
-See chapter [Artifacts](/hands-on/2025-05-14/060_artifacts/exercise/)
+See chapter [Artifacts](/hands-on/2025-11-27/060_artifacts/exercise/)
 
 ---
 
