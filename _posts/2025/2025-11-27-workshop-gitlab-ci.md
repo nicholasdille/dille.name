@@ -14,7 +14,7 @@ tags:
 - GitLab
 - Event
 - Workshop
-published: false
+#published: false
 ---
 In addition to operating GitLab for our development teams, we are also using GitLab ourselves to automate the deployment and update of our services. Based on this experience I held a two day workshop for [heise Academy](https://heise-academy.de/) to demonstrate the wide range of features provided by GitLab CI.
 
