@@ -8,9 +8,17 @@
 
 ## Artifacts
 
-Transfer files between jobs using [`artifacts`](https://docs.gitlab.com/ee/ci/yaml/#artifacts)
+Store generated files using `artifacts` [](https://docs.gitlab.com/ee/ci/yaml/#artifacts)
 
-All jobs in subsequent stages will receive the artifacts (by default)
+```yaml
+build:
+  #...
+  artifacts:
+    paths:
+    - hello
+```
+
+All later jobs consume the artifact
 
 ![](160_gitlab_ci/060_artifacts/artifacts.drawio.svg) <!-- .element: style="width: 50%; float: right;" -->
 
@@ -24,17 +32,13 @@ When to create artifacts (jobs success, failure, always)
 
 Expire artifacts
 
-Add untracked files
-
-`artifacts` can be in `default` [<i class="fa fa-solid fa-arrow-right-to-bracket"></i>](#/gitlab_default)
-
 ---
 
 ## Dependencies
 
 Jobs can restrict which job artifacts to receive
 
-Add [`dependencies`](https://docs.gitlab.com/ee/ci/yaml/#dependencies)
+Add `dependencies` [](https://docs.gitlab.com/ee/ci/yaml/#dependencies)
 
 ```yaml
 job_name:
@@ -53,7 +57,7 @@ job_name:
 
 ### Download artifact from another pipeline
 
-See [GitLab API](https://docs.gitlab.com/ee/api/job_artifacts.html#download-the-artifacts-archive)
+See GitLab API [](https://docs.gitlab.com/ee/api/job_artifacts.html#download-the-artifacts-archive)
 
 ---
 
@@ -67,7 +71,7 @@ See chapter [Artifacts](/hands-on/2025-11-27/060_artifacts/exercise/)
 
 Passing variables between jobs **is** possible (since GitLab 12.9)
 
-One job defined a [`dotenv` artifact](https://docs.gitlab.com/ee/ci/variables/index.html#pass-an-environment-variable-to-another-job):
+One job defined a `dotenv` artifact [](https://docs.gitlab.com/ee/ci/variables/index.html#pass-an-environment-variable-to-another-job):
 
 ```yaml
 job_name:
@@ -90,7 +94,7 @@ job_name2:
 
 ## Maximum artifact size
 
-By default, artifacts can [not be larger than 100MB](https://docs.gitlab.com/administration/settings/continuous_integration/#set-maximum-artifacts-size)
+By default, artifacts can not be larger than 100MB [](https://docs.gitlab.com/administration/settings/continuous_integration/#set-maximum-artifacts-size)
 
 Can be configured...
 
@@ -116,7 +120,7 @@ When two jobs produce an artifact with the same name...
 
 Defaults to keep artifacts from most recent successful jobs
 
-- Configurable in [project settings](https://docs.gitlab.com/ee/ci/jobs/job_artifacts.html#keep-artifacts-from-most-recent-successful-jobs)
-- Configurable in [instance settings](https://docs.gitlab.com/ee/administration/settings/continuous_integration.html#keep-the-latest-artifacts-for-all-jobs-in-the-latest-successful-pipelines)
+- Configurable in project settings [](https://docs.gitlab.com/ee/ci/jobs/job_artifacts.html#keep-artifacts-from-most-recent-successful-jobs)
+- Configurable in instance settings [](https://docs.gitlab.com/ee/administration/settings/continuous_integration.html#keep-the-latest-artifacts-for-all-jobs-in-the-latest-successful-pipelines)
 
 If enabled, `expire_in` does not apply to most recent artifacts

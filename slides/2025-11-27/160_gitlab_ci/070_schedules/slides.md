@@ -44,10 +44,14 @@ Adjust the [maximum frequency](https://docs.gitlab.com/ee/administration/cicd.ht
 
 ## Pro tip: Schedules have an owner
 
-If the owner is block...
+If the owner is blocked...
 
 ...the scheduled pipeline becomes inactive
 
 If a user is deleted...
 
 ...the user is first blocked
+
+Other users can assume ownership...
+- through the [web UI](https://docs.gitlab.com/ci/pipelines/schedules/#take-ownership) or
+- through the [API](https://docs.gitlab.com/api/pipeline_schedules/#take-ownership-of-a-pipeline-schedule)
