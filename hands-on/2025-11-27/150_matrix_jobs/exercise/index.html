@@ -1106,10 +1106,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-2-test-an-alternative-to-specify-the-same-inputs" class="md-nav__link">
+  <a href="#bonus-task-1-test-an-alternative-to-specify-the-same-inputs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Task 2: Test an alternative to specify the same inputs
+        Bonus task 1: Test an alternative to specify the same inputs
       
     </span>
   </a>
@@ -1117,10 +1117,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-task-check-binaries-for-correct-platform" class="md-nav__link">
+  <a href="#task-2-check-binaries-for-correct-platform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bonus task: Check binaries for correct platform
+        Task 2: Check binaries for correct platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-task-2-test-job-dependencies-for-matrix-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bonus task 2: Test job dependencies for matrix jobs
       
     </span>
   </a>
@@ -1648,10 +1659,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-2-test-an-alternative-to-specify-the-same-inputs" class="md-nav__link">
+  <a href="#bonus-task-1-test-an-alternative-to-specify-the-same-inputs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Task 2: Test an alternative to specify the same inputs
+        Bonus task 1: Test an alternative to specify the same inputs
       
     </span>
   </a>
@@ -1659,10 +1670,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bonus-task-check-binaries-for-correct-platform" class="md-nav__link">
+  <a href="#task-2-check-binaries-for-correct-platform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bonus task: Check binaries for correct platform
+        Task 2: Check binaries for correct platform
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-task-2-test-job-dependencies-for-matrix-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bonus task 2: Test job dependencies for matrix jobs
       
     </span>
   </a>
@@ -1774,105 +1796,107 @@
 </span></span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span>
 </span></code></pre></div></td></tr></table></div>
 <p><code>.gitlab-ci.yml</code>:</p>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span>
-<span class="normal"><a href="#__codelineno-1-29">29</a></span>
-<span class="normal"><a href="#__codelineno-1-30">30</a></span>
-<span class="normal"><a href="#__codelineno-1-31">31</a></span>
-<span class="normal"><a href="#__codelineno-1-32">32</a></span>
-<span class="normal"><a href="#__codelineno-1-33">33</a></span>
-<span class="normal"><a href="#__codelineno-1-34">34</a></span>
-<span class="normal"><a href="#__codelineno-1-35">35</a></span>
-<span class="normal"><a href="#__codelineno-1-36">36</a></span>
-<span class="normal"><a href="#__codelineno-1-37">37</a></span>
-<span class="normal"><a href="#__codelineno-1-38">38</a></span>
-<span class="normal"><a href="#__codelineno-1-39">39</a></span>
-<span class="normal"><a href="#__codelineno-1-40">40</a></span>
-<span class="normal"><a href="#__codelineno-1-41">41</a></span>
-<span class="normal"><a href="#__codelineno-1-42">42</a></span>
-<span class="normal"><a href="#__codelineno-1-43">43</a></span>
-<span class="normal"><a href="#__codelineno-1-44">44</a></span>
-<span class="normal"><a href="#__codelineno-1-45">45</a></span>
-<span class="normal"><a href="#__codelineno-1-46">46</a></span>
-<span class="normal"><a href="#__codelineno-1-47">47</a></span>
-<span class="normal"><a href="#__codelineno-1-48">48</a></span>
-<span class="normal"><a href="#__codelineno-1-49">49</a></span>
-<span class="normal"><a href="#__codelineno-1-50">50</a></span>
-<span class="normal"><a href="#__codelineno-1-51">51</a></span>
-<span class="normal"><a href="#__codelineno-1-52">52</a></span>
-<span class="normal"><a href="#__codelineno-1-53">53</a></span>
-<span class="normal"><a href="#__codelineno-1-54">54</a></span>
-<span class="normal"><a href="#__codelineno-1-55">55</a></span>
-<span class="normal"><a href="#__codelineno-1-56">56</a></span>
-<span class="normal"><a href="#__codelineno-1-57">57</a></span>
-<span class="normal"><a href="#__codelineno-1-58">58</a></span>
-<span class="normal"><a href="#__codelineno-1-59">59</a></span>
-<span class="normal"><a href="#__codelineno-1-60">60</a></span>
-<span class="normal"><a href="#__codelineno-1-61">61</a></span>
-<span class="normal"><a href="#__codelineno-1-62">62</a></span>
-<span class="normal"><a href="#__codelineno-1-63">63</a></span>
-<span class="normal"><a href="#__codelineno-1-64">64</a></span>
-<span class="normal"><a href="#__codelineno-1-65">65</a></span>
-<span class="normal"><a href="#__codelineno-1-66">66</a></span>
-<span class="normal"><a href="#__codelineno-1-67">67</a></span>
-<span class="normal"><a href="#__codelineno-1-68">68</a></span>
-<span class="normal"><a href="#__codelineno-1-69">69</a></span>
-<span class="normal"><a href="#__codelineno-1-70">70</a></span>
-<span class="normal"><a href="#__codelineno-1-71">71</a></span>
-<span class="normal"><a href="#__codelineno-1-72">72</a></span>
-<span class="normal"><a href="#__codelineno-1-73">73</a></span>
-<span class="normal"><a href="#__codelineno-1-74">74</a></span>
-<span class="normal"><a href="#__codelineno-1-75">75</a></span>
-<span class="normal"><a href="#__codelineno-1-76">76</a></span>
-<span class="normal"><a href="#__codelineno-1-77">77</a></span>
-<span class="normal"><a href="#__codelineno-1-78">78</a></span>
-<span class="normal"><a href="#__codelineno-1-79">79</a></span>
-<span class="normal"><a href="#__codelineno-1-80">80</a></span>
-<span class="normal"><a href="#__codelineno-1-81">81</a></span>
-<span class="normal"><a href="#__codelineno-1-82">82</a></span>
-<span class="normal"><a href="#__codelineno-1-83">83</a></span>
-<span class="normal"><a href="#__codelineno-1-84">84</a></span>
-<span class="normal"><a href="#__codelineno-1-85">85</a></span>
-<span class="normal"><a href="#__codelineno-1-86">86</a></span>
-<span class="normal"><a href="#__codelineno-1-87">87</a></span>
-<span class="normal"><a href="#__codelineno-1-88">88</a></span>
-<span class="normal"><a href="#__codelineno-1-89">89</a></span>
-<span class="normal"><a href="#__codelineno-1-90">90</a></span>
-<span class="normal"><a href="#__codelineno-1-91">91</a></span>
-<span class="normal"><a href="#__codelineno-1-92">92</a></span>
-<span class="normal"><a href="#__codelineno-1-93">93</a></span>
-<span class="normal"><a href="#__codelineno-1-94">94</a></span>
-<span class="normal"><a href="#__codelineno-1-95">95</a></span>
-<span class="normal"><a href="#__codelineno-1-96">96</a></span>
-<span class="normal"><a href="#__codelineno-1-97">97</a></span>
-<span class="normal"><a href="#__codelineno-1-98">98</a></span>
-<span class="normal"><a href="#__codelineno-1-99">99</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">workflow</span><span class="p">:</span>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">  1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">  2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">  3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">  4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">  5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">  6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">  7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">  8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">  9</a></span>
+<span class="normal"><a href="#__codelineno-1-10"> 10</a></span>
+<span class="normal"><a href="#__codelineno-1-11"> 11</a></span>
+<span class="normal"><a href="#__codelineno-1-12"> 12</a></span>
+<span class="normal"><a href="#__codelineno-1-13"> 13</a></span>
+<span class="normal"><a href="#__codelineno-1-14"> 14</a></span>
+<span class="normal"><a href="#__codelineno-1-15"> 15</a></span>
+<span class="normal"><a href="#__codelineno-1-16"> 16</a></span>
+<span class="normal"><a href="#__codelineno-1-17"> 17</a></span>
+<span class="normal"><a href="#__codelineno-1-18"> 18</a></span>
+<span class="normal"><a href="#__codelineno-1-19"> 19</a></span>
+<span class="normal"><a href="#__codelineno-1-20"> 20</a></span>
+<span class="normal"><a href="#__codelineno-1-21"> 21</a></span>
+<span class="normal"><a href="#__codelineno-1-22"> 22</a></span>
+<span class="normal"><a href="#__codelineno-1-23"> 23</a></span>
+<span class="normal"><a href="#__codelineno-1-24"> 24</a></span>
+<span class="normal"><a href="#__codelineno-1-25"> 25</a></span>
+<span class="normal"><a href="#__codelineno-1-26"> 26</a></span>
+<span class="normal"><a href="#__codelineno-1-27"> 27</a></span>
+<span class="normal"><a href="#__codelineno-1-28"> 28</a></span>
+<span class="normal"><a href="#__codelineno-1-29"> 29</a></span>
+<span class="normal"><a href="#__codelineno-1-30"> 30</a></span>
+<span class="normal"><a href="#__codelineno-1-31"> 31</a></span>
+<span class="normal"><a href="#__codelineno-1-32"> 32</a></span>
+<span class="normal"><a href="#__codelineno-1-33"> 33</a></span>
+<span class="normal"><a href="#__codelineno-1-34"> 34</a></span>
+<span class="normal"><a href="#__codelineno-1-35"> 35</a></span>
+<span class="normal"><a href="#__codelineno-1-36"> 36</a></span>
+<span class="normal"><a href="#__codelineno-1-37"> 37</a></span>
+<span class="normal"><a href="#__codelineno-1-38"> 38</a></span>
+<span class="normal"><a href="#__codelineno-1-39"> 39</a></span>
+<span class="normal"><a href="#__codelineno-1-40"> 40</a></span>
+<span class="normal"><a href="#__codelineno-1-41"> 41</a></span>
+<span class="normal"><a href="#__codelineno-1-42"> 42</a></span>
+<span class="normal"><a href="#__codelineno-1-43"> 43</a></span>
+<span class="normal"><a href="#__codelineno-1-44"> 44</a></span>
+<span class="normal"><a href="#__codelineno-1-45"> 45</a></span>
+<span class="normal"><a href="#__codelineno-1-46"> 46</a></span>
+<span class="normal"><a href="#__codelineno-1-47"> 47</a></span>
+<span class="normal"><a href="#__codelineno-1-48"> 48</a></span>
+<span class="normal"><a href="#__codelineno-1-49"> 49</a></span>
+<span class="normal"><a href="#__codelineno-1-50"> 50</a></span>
+<span class="normal"><a href="#__codelineno-1-51"> 51</a></span>
+<span class="normal"><a href="#__codelineno-1-52"> 52</a></span>
+<span class="normal"><a href="#__codelineno-1-53"> 53</a></span>
+<span class="normal"><a href="#__codelineno-1-54"> 54</a></span>
+<span class="normal"><a href="#__codelineno-1-55"> 55</a></span>
+<span class="normal"><a href="#__codelineno-1-56"> 56</a></span>
+<span class="normal"><a href="#__codelineno-1-57"> 57</a></span>
+<span class="normal"><a href="#__codelineno-1-58"> 58</a></span>
+<span class="normal"><a href="#__codelineno-1-59"> 59</a></span>
+<span class="normal"><a href="#__codelineno-1-60"> 60</a></span>
+<span class="normal"><a href="#__codelineno-1-61"> 61</a></span>
+<span class="normal"><a href="#__codelineno-1-62"> 62</a></span>
+<span class="normal"><a href="#__codelineno-1-63"> 63</a></span>
+<span class="normal"><a href="#__codelineno-1-64"> 64</a></span>
+<span class="normal"><a href="#__codelineno-1-65"> 65</a></span>
+<span class="normal"><a href="#__codelineno-1-66"> 66</a></span>
+<span class="normal"><a href="#__codelineno-1-67"> 67</a></span>
+<span class="normal"><a href="#__codelineno-1-68"> 68</a></span>
+<span class="normal"><a href="#__codelineno-1-69"> 69</a></span>
+<span class="normal"><a href="#__codelineno-1-70"> 70</a></span>
+<span class="normal"><a href="#__codelineno-1-71"> 71</a></span>
+<span class="normal"><a href="#__codelineno-1-72"> 72</a></span>
+<span class="normal"><a href="#__codelineno-1-73"> 73</a></span>
+<span class="normal"><a href="#__codelineno-1-74"> 74</a></span>
+<span class="normal"><a href="#__codelineno-1-75"> 75</a></span>
+<span class="normal"><a href="#__codelineno-1-76"> 76</a></span>
+<span class="normal"><a href="#__codelineno-1-77"> 77</a></span>
+<span class="normal"><a href="#__codelineno-1-78"> 78</a></span>
+<span class="normal"><a href="#__codelineno-1-79"> 79</a></span>
+<span class="normal"><a href="#__codelineno-1-80"> 80</a></span>
+<span class="normal"><a href="#__codelineno-1-81"> 81</a></span>
+<span class="normal"><a href="#__codelineno-1-82"> 82</a></span>
+<span class="normal"><a href="#__codelineno-1-83"> 83</a></span>
+<span class="normal"><a href="#__codelineno-1-84"> 84</a></span>
+<span class="normal"><a href="#__codelineno-1-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-1-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-1-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-1-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-1-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-1-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-1-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-1-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-1-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-1-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-1-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-1-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-1-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-1-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-1-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-1-100">100</a></span>
+<span class="normal"><a href="#__codelineno-1-101">101</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">workflow</span><span class="p">:</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_DEPLOY_FREEZE</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
@@ -1934,49 +1958,51 @@
 </span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
 </span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
 </span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
-</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.test-go</span>
-</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64"></a>
-</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="nt">deploy</span><span class="p">:</span>
-</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
-</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
-</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;dev&quot;</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;live&quot;&#39;</span>
-</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
-</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curlimages/curl:8.17.0</span>
-</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
-</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77"></a><span class="w">        </span><span class="no">--fail \</span>
-</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78"></a><span class="w">        </span><span class="no">--verbose \</span>
-</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79"></a><span class="hll"><span class="w">        </span><span class="no">--upload-file hello-linux-amd64 \</span>
-</span></span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80"></a><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
-</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81"></a>
-</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82"></a><span class="nt">pages</span><span class="p">:</span>
-</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
-</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
-</span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
-</span><span id="__span-1-88"><a id="__codelineno-1-88" name="__codelineno-1-88"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
-</span><span id="__span-1-89"><a id="__codelineno-1-89" name="__codelineno-1-89"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-1-90"><a id="__codelineno-1-90" name="__codelineno-1-90"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp hello-linux-amd64 public/hello</span>
-</span></span><span id="__span-1-91"><a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-1-92"><a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-</span><span id="__span-1-93"><a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
-</span><span id="__span-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94"></a>
-</span><span id="__span-1-95"><a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="nt">trigger</span><span class="p">:</span>
-</span><span id="__span-1-96"><a id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-1-97"><a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
-</span><span id="__span-1-98"><a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span>
-</span><span id="__span-1-99"><a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child.yaml</span>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./hello</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66"></a>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="nt">deploy</span><span class="p">:</span>
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;dev&quot;</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;live&quot;&#39;</span>
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curlimages/curl:8.17.0</span>
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
+</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79"></a><span class="hll"><span class="w">        </span><span class="no">--fail \</span>
+</span></span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80"></a><span class="w">        </span><span class="no">--verbose \</span>
+</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81"></a><span class="w">        </span><span class="no">--upload-file hello-linux-amd64 \</span>
+</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82"></a><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
+</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83"></a>
+</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="nt">pages</span><span class="p">:</span>
+</span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+</span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-1-87"><a id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
+</span><span id="__span-1-88"><a id="__codelineno-1-88" name="__codelineno-1-88"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-1-89"><a id="__codelineno-1-89" name="__codelineno-1-89"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
+</span><span id="__span-1-90"><a id="__codelineno-1-90" name="__codelineno-1-90"></a><span class="hll"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
+</span></span><span id="__span-1-91"><a id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-1-92"><a id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp hello-linux-amd64 public/hello</span>
+</span><span id="__span-1-93"><a id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-1-94"><a id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+</span><span id="__span-1-95"><a id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
+</span><span id="__span-1-96"><a id="__codelineno-1-96" name="__codelineno-1-96"></a>
+</span><span id="__span-1-97"><a id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="nt">trigger</span><span class="p">:</span>
+</span><span id="__span-1-98"><a id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-1-99"><a id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
+</span><span id="__span-1-100"><a id="__codelineno-1-100" name="__codelineno-1-100"></a><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span>
+</span><span id="__span-1-101"><a id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child.yaml</span>
 </span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/150_matrix_jobs_demo1<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </span></code></pre></div>
 </details>
-<h2 id="task-2-test-an-alternative-to-specify-the-same-inputs">Task 2: Test an alternative to specify the same inputs<a class="headerlink" href="#task-2-test-an-alternative-to-specify-the-same-inputs" title="Permanent link">&para;</a></h2>
+<h2 id="bonus-task-1-test-an-alternative-to-specify-the-same-inputs">Bonus task 1: Test an alternative to specify the same inputs<a class="headerlink" href="#bonus-task-1-test-an-alternative-to-specify-the-same-inputs" title="Permanent link">&para;</a></h2>
 <p>Test whether the following syntax for the inputs produces the same results in a pipeline:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">.build-go</span><span class="p">:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">parallel</span><span class="p">:</span>
@@ -1984,97 +2010,21 @@
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GOOS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">GOARCH</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">amd64</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">arm64</span><span class="w"> </span><span class="p p-Indicator">]</span>
 </span></code></pre></div>
-<h2 id="bonus-task-check-binaries-for-correct-platform">Bonus task: Check binaries for correct platform<a class="headerlink" href="#bonus-task-check-binaries-for-correct-platform" title="Permanent link">&para;</a></h2>
+<h2 id="task-2-check-binaries-for-correct-platform">Task 2: Check binaries for correct platform<a class="headerlink" href="#task-2-check-binaries-for-correct-platform" title="Permanent link">&para;</a></h2>
 <p>Add another matrix job to check the target platform of the <code>hello</code> binaries:</p>
 <ol>
 <li>Move the <code>parallel</code> keyword from <code>.build-go</code> to a new template called <code>.go-targets</code></li>
 <li>Add another template called <code>.test-go</code> defining a matrix job using the same inputs as for <code>.build-go</code></li>
-<li>In the new template run <code>file hello-${GOOS}-${GOARCH}</code> to display the target platform</li>
+<li>Add matrix input <code>LINUXARCH</code> with <code>x86-64</code> for <code>amd64</code>  and <code>aarch64</code> for <code>arm64</code></li>
+<li>In the new template run
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>file<span class="w"> </span>hello-<span class="si">${</span><span class="nv">GOOS</span><span class="si">}</span>-<span class="si">${</span><span class="nv">GOARCH</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LINUXARCH</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div></li>
 <li>Modify the job <code>test</code> to use the new template</li>
 </ol>
 <p>Afterwards check the pipeline in the GitLab UI. You should see a successful pipeline run.</p>
 <details class="example">
 <summary>Solution (Click if you are stuck)</summary>
 <p><code>go.yaml</code>:</p>
-<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span>
-<span class="normal"><a href="#__codelineno-4-15">15</a></span>
-<span class="normal"><a href="#__codelineno-4-16">16</a></span>
-<span class="normal"><a href="#__codelineno-4-17">17</a></span>
-<span class="normal"><a href="#__codelineno-4-18">18</a></span>
-<span class="normal"><a href="#__codelineno-4-19">19</a></span>
-<span class="normal"><a href="#__codelineno-4-20">20</a></span>
-<span class="normal"><a href="#__codelineno-4-21">21</a></span>
-<span class="normal"><a href="#__codelineno-4-22">22</a></span>
-<span class="normal"><a href="#__codelineno-4-23">23</a></span>
-<span class="normal"><a href="#__codelineno-4-24">24</a></span>
-<span class="normal"><a href="#__codelineno-4-25">25</a></span>
-<span class="normal"><a href="#__codelineno-4-26">26</a></span>
-<span class="normal"><a href="#__codelineno-4-27">27</a></span>
-<span class="normal"><a href="#__codelineno-4-28">28</a></span>
-<span class="normal"><a href="#__codelineno-4-29">29</a></span>
-<span class="normal"><a href="#__codelineno-4-30">30</a></span>
-<span class="normal"><a href="#__codelineno-4-31">31</a></span>
-<span class="normal"><a href="#__codelineno-4-32">32</a></span>
-<span class="normal"><a href="#__codelineno-4-33">33</a></span>
-<span class="normal"><a href="#__codelineno-4-34">34</a></span>
-<span class="normal"><a href="#__codelineno-4-35">35</a></span>
-<span class="normal"><a href="#__codelineno-4-36">36</a></span>
-<span class="normal"><a href="#__codelineno-4-37">37</a></span>
-<span class="normal"><a href="#__codelineno-4-38">38</a></span>
-<span class="normal"><a href="#__codelineno-4-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="hll"><span class="nt">.go-targets</span><span class="p">:</span>
-</span></span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="hll"><span class="w">  </span><span class="nt">parallel</span><span class="p">:</span>
-</span></span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="hll"><span class="w">    </span><span class="nt">matrix</span><span class="p">:</span>
-</span></span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GOOS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux</span>
-</span></span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="hll"><span class="w">      </span><span class="nt">GOARCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
-</span></span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GOOS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux</span>
-</span></span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="hll"><span class="w">      </span><span class="nt">GOARCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
-</span></span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="nt">.build-go</span><span class="p">:</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="hll"><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span></span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.go-targets</span>
-</span></span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="no">go build \</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="no">-ldflags &quot;-X main.Version=${version} -X &#39;main.Author=${AUTHOR}&#39;&quot; \</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">        </span><span class="no">-o hello-${GOOS}-${GOARCH} \</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">        </span><span class="no">.</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello-${GOOS}-${GOARCH}</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="hll"><span class="nt">.test-go</span><span class="p">:</span>
-</span></span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="hll"><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span></span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.go-targets</span>
-</span></span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="hll"><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
-</span></span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
-</span></span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install file</span>
-</span></span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span></span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span></span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="hll"><span class="w">    </span><span class="no">file hello-${GOOS}-${GOARCH}</span>
-</span></span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>
-</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="nt">.unit-tests-go</span><span class="p">:</span>
-</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
-</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
-</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
-</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
-</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span>
-</span></code></pre></div></td></tr></table></div>
-<p><code>.gitlab-ci.yml</code>:</p>
 <div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -2115,168 +2065,268 @@
 <span class="normal"><a href="#__codelineno-5-38">38</a></span>
 <span class="normal"><a href="#__codelineno-5-39">39</a></span>
 <span class="normal"><a href="#__codelineno-5-40">40</a></span>
-<span class="normal"><a href="#__codelineno-5-41">41</a></span>
-<span class="normal"><a href="#__codelineno-5-42">42</a></span>
-<span class="normal"><a href="#__codelineno-5-43">43</a></span>
-<span class="normal"><a href="#__codelineno-5-44">44</a></span>
-<span class="normal"><a href="#__codelineno-5-45">45</a></span>
-<span class="normal"><a href="#__codelineno-5-46">46</a></span>
-<span class="normal"><a href="#__codelineno-5-47">47</a></span>
-<span class="normal"><a href="#__codelineno-5-48">48</a></span>
-<span class="normal"><a href="#__codelineno-5-49">49</a></span>
-<span class="normal"><a href="#__codelineno-5-50">50</a></span>
-<span class="normal"><a href="#__codelineno-5-51">51</a></span>
-<span class="normal"><a href="#__codelineno-5-52">52</a></span>
-<span class="normal"><a href="#__codelineno-5-53">53</a></span>
-<span class="normal"><a href="#__codelineno-5-54">54</a></span>
-<span class="normal"><a href="#__codelineno-5-55">55</a></span>
-<span class="normal"><a href="#__codelineno-5-56">56</a></span>
-<span class="normal"><a href="#__codelineno-5-57">57</a></span>
-<span class="normal"><a href="#__codelineno-5-58">58</a></span>
-<span class="normal"><a href="#__codelineno-5-59">59</a></span>
-<span class="normal"><a href="#__codelineno-5-60">60</a></span>
-<span class="normal"><a href="#__codelineno-5-61">61</a></span>
-<span class="normal"><a href="#__codelineno-5-62">62</a></span>
-<span class="normal"><a href="#__codelineno-5-63">63</a></span>
-<span class="normal"><a href="#__codelineno-5-64">64</a></span>
-<span class="normal"><a href="#__codelineno-5-65">65</a></span>
-<span class="normal"><a href="#__codelineno-5-66">66</a></span>
-<span class="normal"><a href="#__codelineno-5-67">67</a></span>
-<span class="normal"><a href="#__codelineno-5-68">68</a></span>
-<span class="normal"><a href="#__codelineno-5-69">69</a></span>
-<span class="normal"><a href="#__codelineno-5-70">70</a></span>
-<span class="normal"><a href="#__codelineno-5-71">71</a></span>
-<span class="normal"><a href="#__codelineno-5-72">72</a></span>
-<span class="normal"><a href="#__codelineno-5-73">73</a></span>
-<span class="normal"><a href="#__codelineno-5-74">74</a></span>
-<span class="normal"><a href="#__codelineno-5-75">75</a></span>
-<span class="normal"><a href="#__codelineno-5-76">76</a></span>
-<span class="normal"><a href="#__codelineno-5-77">77</a></span>
-<span class="normal"><a href="#__codelineno-5-78">78</a></span>
-<span class="normal"><a href="#__codelineno-5-79">79</a></span>
-<span class="normal"><a href="#__codelineno-5-80">80</a></span>
-<span class="normal"><a href="#__codelineno-5-81">81</a></span>
-<span class="normal"><a href="#__codelineno-5-82">82</a></span>
-<span class="normal"><a href="#__codelineno-5-83">83</a></span>
-<span class="normal"><a href="#__codelineno-5-84">84</a></span>
-<span class="normal"><a href="#__codelineno-5-85">85</a></span>
-<span class="normal"><a href="#__codelineno-5-86">86</a></span>
-<span class="normal"><a href="#__codelineno-5-87">87</a></span>
-<span class="normal"><a href="#__codelineno-5-88">88</a></span>
-<span class="normal"><a href="#__codelineno-5-89">89</a></span>
-<span class="normal"><a href="#__codelineno-5-90">90</a></span>
-<span class="normal"><a href="#__codelineno-5-91">91</a></span>
-<span class="normal"><a href="#__codelineno-5-92">92</a></span>
-<span class="normal"><a href="#__codelineno-5-93">93</a></span>
-<span class="normal"><a href="#__codelineno-5-94">94</a></span>
-<span class="normal"><a href="#__codelineno-5-95">95</a></span>
-<span class="normal"><a href="#__codelineno-5-96">96</a></span>
-<span class="normal"><a href="#__codelineno-5-97">97</a></span>
-<span class="normal"><a href="#__codelineno-5-98">98</a></span>
-<span class="normal"><a href="#__codelineno-5-99">99</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">workflow</span><span class="p">:</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_DEPLOY_FREEZE</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;push&#39;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;web&#39;</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;schedule&#39;</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;merge_request_event&#39;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;pipeline&#39;</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;api&#39;</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;trigger&#39;</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="nt">include</span><span class="p">:</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">local</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go.yaml</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="nt">.run-on-push-to-default-branch</span><span class="p">:</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;push&quot;</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">$CI_DEFAULT_BRANCH&#39;</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="nt">.run-on-push-and-in-mr</span><span class="p">:</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;push&quot;</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">$CI_DEFAULT_BRANCH&#39;</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;merge_request_event&quot;&#39;</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a>
-</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="nt">default</span><span class="p">:</span>
-</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.4</span>
-</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="nt">lint</span><span class="p">:</span>
-</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
-</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go fmt .</span>
-</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35"></a>
-</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="nt">audit</span><span class="p">:</span>
-</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
-</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet .</span>
-</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41"></a>
-</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42"></a><span class="nt">unit_tests</span><span class="p">:</span>
-</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
-</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.unit-tests-go</span>
-</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46"></a>
-</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47"></a><span class="nt">build</span><span class="p">:</span>
-</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
-</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lint</span>
-</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">audit</span>
-</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
-</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
-</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.build-go</span>
-</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55"></a><span class="w">  </span><span class="nt">variables</span><span class="p">:</span>
-</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56"></a><span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_COMMIT_REF_NAME</span>
-</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57"></a>
-</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58"></a><span class="nt">test</span><span class="p">:</span>
-</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
-</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
-</span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.test-go</span>
-</span></span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64"></a>
-</span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65"></a><span class="nt">deploy</span><span class="p">:</span>
-</span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
-</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
-</span><span id="__span-5-69"><a id="__codelineno-5-69" name="__codelineno-5-69"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
-</span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;dev&quot;</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;live&quot;&#39;</span>
-</span><span id="__span-5-71"><a id="__codelineno-5-71" name="__codelineno-5-71"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
-</span><span id="__span-5-72"><a id="__codelineno-5-72" name="__codelineno-5-72"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
-</span><span id="__span-5-73"><a id="__codelineno-5-73" name="__codelineno-5-73"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curlimages/curl:8.17.0</span>
-</span><span id="__span-5-74"><a id="__codelineno-5-74" name="__codelineno-5-74"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-75"><a id="__codelineno-5-75" name="__codelineno-5-75"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-</span><span id="__span-5-76"><a id="__codelineno-5-76" name="__codelineno-5-76"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
-</span><span id="__span-5-77"><a id="__codelineno-5-77" name="__codelineno-5-77"></a><span class="w">        </span><span class="no">--fail \</span>
-</span><span id="__span-5-78"><a id="__codelineno-5-78" name="__codelineno-5-78"></a><span class="w">        </span><span class="no">--verbose \</span>
-</span><span id="__span-5-79"><a id="__codelineno-5-79" name="__codelineno-5-79"></a><span class="w">        </span><span class="no">--upload-file hello-linux-amd64 \</span>
-</span><span id="__span-5-80"><a id="__codelineno-5-80" name="__codelineno-5-80"></a><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
-</span><span id="__span-5-81"><a id="__codelineno-5-81" name="__codelineno-5-81"></a>
-</span><span id="__span-5-82"><a id="__codelineno-5-82" name="__codelineno-5-82"></a><span class="nt">pages</span><span class="p">:</span>
-</span><span id="__span-5-83"><a id="__codelineno-5-83" name="__codelineno-5-83"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
-</span><span id="__span-5-84"><a id="__codelineno-5-84" name="__codelineno-5-84"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-</span><span id="__span-5-85"><a id="__codelineno-5-85" name="__codelineno-5-85"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
-</span><span id="__span-5-86"><a id="__codelineno-5-86" name="__codelineno-5-86"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-5-87"><a id="__codelineno-5-87" name="__codelineno-5-87"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
-</span><span id="__span-5-88"><a id="__codelineno-5-88" name="__codelineno-5-88"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
-</span><span id="__span-5-89"><a id="__codelineno-5-89" name="__codelineno-5-89"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-5-90"><a id="__codelineno-5-90" name="__codelineno-5-90"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp hello-linux-amd64 public/hello</span>
-</span><span id="__span-5-91"><a id="__codelineno-5-91" name="__codelineno-5-91"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-</span><span id="__span-5-92"><a id="__codelineno-5-92" name="__codelineno-5-92"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-</span><span id="__span-5-93"><a id="__codelineno-5-93" name="__codelineno-5-93"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
-</span><span id="__span-5-94"><a id="__codelineno-5-94" name="__codelineno-5-94"></a>
-</span><span id="__span-5-95"><a id="__codelineno-5-95" name="__codelineno-5-95"></a><span class="nt">trigger</span><span class="p">:</span>
-</span><span id="__span-5-96"><a id="__codelineno-5-96" name="__codelineno-5-96"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-5-97"><a id="__codelineno-5-97" name="__codelineno-5-97"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
-</span><span id="__span-5-98"><a id="__codelineno-5-98" name="__codelineno-5-98"></a><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span>
-</span><span id="__span-5-99"><a id="__codelineno-5-99" name="__codelineno-5-99"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child.yaml</span>
+<span class="normal"><a href="#__codelineno-5-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="hll"><span class="nt">.go-targets</span><span class="p">:</span>
+</span></span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="hll"><span class="w">  </span><span class="nt">parallel</span><span class="p">:</span>
+</span></span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="hll"><span class="w">    </span><span class="nt">matrix</span><span class="p">:</span>
+</span></span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GOOS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux</span>
+</span></span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="hll"><span class="w">      </span><span class="nt">GOARCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+</span></span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="hll"><span class="w">      </span><span class="nt">LINUXARCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x86-64</span>
+</span></span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="hll"><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GOOS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux</span>
+</span></span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="hll"><span class="w">      </span><span class="nt">GOARCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arm64</span>
+</span></span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="hll"><span class="w">      </span><span class="nt">LINUX_ARCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aarch64</span>
+</span></span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="nt">.build-go</span><span class="p">:</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="hll"><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span></span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.go-targets</span>
+</span></span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="no">go build \</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="no">-ldflags &quot;-X main.Version=${version} -X &#39;main.Author=${AUTHOR}&#39;&quot; \</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">        </span><span class="no">-o hello-${GOOS}-${GOARCH} \</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">        </span><span class="no">.</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello-${GOOS}-${GOARCH}</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="hll"><span class="nt">.test-go</span><span class="p">:</span>
+</span></span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="hll"><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span></span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.go-targets</span>
+</span></span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="hll"><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
+</span></span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update</span>
+</span></span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get -y install file</span>
+</span></span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="hll"><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span></span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span></span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="hll"><span class="w">    </span><span class="no">file hello-${GOOS}-${GOARCH} | grep &quot;${LINUXARCH}&quot;</span>
+</span></span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33"></a>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="nt">.unit-tests-go</span><span class="p">:</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go install gotest.tools/gotestsum@latest</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gotestsum --junitfile report.xml</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40"></a><span class="w">    </span><span class="nt">reports</span><span class="p">:</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41"></a><span class="w">      </span><span class="nt">junit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report.xml</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>.gitlab-ci.yml</code>:</p>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span>
+<span class="normal"><a href="#__codelineno-6-22">22</a></span>
+<span class="normal"><a href="#__codelineno-6-23">23</a></span>
+<span class="normal"><a href="#__codelineno-6-24">24</a></span>
+<span class="normal"><a href="#__codelineno-6-25">25</a></span>
+<span class="normal"><a href="#__codelineno-6-26">26</a></span>
+<span class="normal"><a href="#__codelineno-6-27">27</a></span>
+<span class="normal"><a href="#__codelineno-6-28">28</a></span>
+<span class="normal"><a href="#__codelineno-6-29">29</a></span>
+<span class="normal"><a href="#__codelineno-6-30">30</a></span>
+<span class="normal"><a href="#__codelineno-6-31">31</a></span>
+<span class="normal"><a href="#__codelineno-6-32">32</a></span>
+<span class="normal"><a href="#__codelineno-6-33">33</a></span>
+<span class="normal"><a href="#__codelineno-6-34">34</a></span>
+<span class="normal"><a href="#__codelineno-6-35">35</a></span>
+<span class="normal"><a href="#__codelineno-6-36">36</a></span>
+<span class="normal"><a href="#__codelineno-6-37">37</a></span>
+<span class="normal"><a href="#__codelineno-6-38">38</a></span>
+<span class="normal"><a href="#__codelineno-6-39">39</a></span>
+<span class="normal"><a href="#__codelineno-6-40">40</a></span>
+<span class="normal"><a href="#__codelineno-6-41">41</a></span>
+<span class="normal"><a href="#__codelineno-6-42">42</a></span>
+<span class="normal"><a href="#__codelineno-6-43">43</a></span>
+<span class="normal"><a href="#__codelineno-6-44">44</a></span>
+<span class="normal"><a href="#__codelineno-6-45">45</a></span>
+<span class="normal"><a href="#__codelineno-6-46">46</a></span>
+<span class="normal"><a href="#__codelineno-6-47">47</a></span>
+<span class="normal"><a href="#__codelineno-6-48">48</a></span>
+<span class="normal"><a href="#__codelineno-6-49">49</a></span>
+<span class="normal"><a href="#__codelineno-6-50">50</a></span>
+<span class="normal"><a href="#__codelineno-6-51">51</a></span>
+<span class="normal"><a href="#__codelineno-6-52">52</a></span>
+<span class="normal"><a href="#__codelineno-6-53">53</a></span>
+<span class="normal"><a href="#__codelineno-6-54">54</a></span>
+<span class="normal"><a href="#__codelineno-6-55">55</a></span>
+<span class="normal"><a href="#__codelineno-6-56">56</a></span>
+<span class="normal"><a href="#__codelineno-6-57">57</a></span>
+<span class="normal"><a href="#__codelineno-6-58">58</a></span>
+<span class="normal"><a href="#__codelineno-6-59">59</a></span>
+<span class="normal"><a href="#__codelineno-6-60">60</a></span>
+<span class="normal"><a href="#__codelineno-6-61">61</a></span>
+<span class="normal"><a href="#__codelineno-6-62">62</a></span>
+<span class="normal"><a href="#__codelineno-6-63">63</a></span>
+<span class="normal"><a href="#__codelineno-6-64">64</a></span>
+<span class="normal"><a href="#__codelineno-6-65">65</a></span>
+<span class="normal"><a href="#__codelineno-6-66">66</a></span>
+<span class="normal"><a href="#__codelineno-6-67">67</a></span>
+<span class="normal"><a href="#__codelineno-6-68">68</a></span>
+<span class="normal"><a href="#__codelineno-6-69">69</a></span>
+<span class="normal"><a href="#__codelineno-6-70">70</a></span>
+<span class="normal"><a href="#__codelineno-6-71">71</a></span>
+<span class="normal"><a href="#__codelineno-6-72">72</a></span>
+<span class="normal"><a href="#__codelineno-6-73">73</a></span>
+<span class="normal"><a href="#__codelineno-6-74">74</a></span>
+<span class="normal"><a href="#__codelineno-6-75">75</a></span>
+<span class="normal"><a href="#__codelineno-6-76">76</a></span>
+<span class="normal"><a href="#__codelineno-6-77">77</a></span>
+<span class="normal"><a href="#__codelineno-6-78">78</a></span>
+<span class="normal"><a href="#__codelineno-6-79">79</a></span>
+<span class="normal"><a href="#__codelineno-6-80">80</a></span>
+<span class="normal"><a href="#__codelineno-6-81">81</a></span>
+<span class="normal"><a href="#__codelineno-6-82">82</a></span>
+<span class="normal"><a href="#__codelineno-6-83">83</a></span>
+<span class="normal"><a href="#__codelineno-6-84">84</a></span>
+<span class="normal"><a href="#__codelineno-6-85">85</a></span>
+<span class="normal"><a href="#__codelineno-6-86">86</a></span>
+<span class="normal"><a href="#__codelineno-6-87">87</a></span>
+<span class="normal"><a href="#__codelineno-6-88">88</a></span>
+<span class="normal"><a href="#__codelineno-6-89">89</a></span>
+<span class="normal"><a href="#__codelineno-6-90">90</a></span>
+<span class="normal"><a href="#__codelineno-6-91">91</a></span>
+<span class="normal"><a href="#__codelineno-6-92">92</a></span>
+<span class="normal"><a href="#__codelineno-6-93">93</a></span>
+<span class="normal"><a href="#__codelineno-6-94">94</a></span>
+<span class="normal"><a href="#__codelineno-6-95">95</a></span>
+<span class="normal"><a href="#__codelineno-6-96">96</a></span>
+<span class="normal"><a href="#__codelineno-6-97">97</a></span>
+<span class="normal"><a href="#__codelineno-6-98">98</a></span>
+<span class="normal"><a href="#__codelineno-6-99">99</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">workflow</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_DEPLOY_FREEZE</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;push&#39;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;web&#39;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;schedule&#39;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;merge_request_event&#39;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;pipeline&#39;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;api&#39;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_PIPELINE_SOURCE == &#39;trigger&#39;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14"></a>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="nt">include</span><span class="p">:</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">local</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go.yaml</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17"></a>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="nt">.run-on-push-to-default-branch</span><span class="p">:</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;push&quot;</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">$CI_DEFAULT_BRANCH&#39;</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21"></a>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="nt">.run-on-push-and-in-mr</span><span class="p">:</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;push&quot;</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">$CI_DEFAULT_BRANCH&#39;</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_PIPELINE_SOURCE</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;merge_request_event&quot;&#39;</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a><span class="nt">default</span><span class="p">:</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">golang:1.25.4</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30"></a><span class="nt">lint</span><span class="p">:</span>
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go fmt .</span>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35"></a>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36"></a><span class="nt">audit</span><span class="p">:</span>
+</span><span id="__span-6-37"><a id="__codelineno-6-37" name="__codelineno-6-37"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-6-38"><a id="__codelineno-6-38" name="__codelineno-6-38"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
+</span><span id="__span-6-39"><a id="__codelineno-6-39" name="__codelineno-6-39"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-6-40"><a id="__codelineno-6-40" name="__codelineno-6-40"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">go vet .</span>
+</span><span id="__span-6-41"><a id="__codelineno-6-41" name="__codelineno-6-41"></a>
+</span><span id="__span-6-42"><a id="__codelineno-6-42" name="__codelineno-6-42"></a><span class="nt">unit_tests</span><span class="p">:</span>
+</span><span id="__span-6-43"><a id="__codelineno-6-43" name="__codelineno-6-43"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-6-44"><a id="__codelineno-6-44" name="__codelineno-6-44"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
+</span><span id="__span-6-45"><a id="__codelineno-6-45" name="__codelineno-6-45"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.unit-tests-go</span>
+</span><span id="__span-6-46"><a id="__codelineno-6-46" name="__codelineno-6-46"></a>
+</span><span id="__span-6-47"><a id="__codelineno-6-47" name="__codelineno-6-47"></a><span class="nt">build</span><span class="p">:</span>
+</span><span id="__span-6-48"><a id="__codelineno-6-48" name="__codelineno-6-48"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lint</span>
+</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">audit</span>
+</span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
+</span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
+</span><span id="__span-6-54"><a id="__codelineno-6-54" name="__codelineno-6-54"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.build-go</span>
+</span><span id="__span-6-55"><a id="__codelineno-6-55" name="__codelineno-6-55"></a><span class="w">  </span><span class="nt">variables</span><span class="p">:</span>
+</span><span id="__span-6-56"><a id="__codelineno-6-56" name="__codelineno-6-56"></a><span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_COMMIT_REF_NAME</span>
+</span><span id="__span-6-57"><a id="__codelineno-6-57" name="__codelineno-6-57"></a>
+</span><span id="__span-6-58"><a id="__codelineno-6-58" name="__codelineno-6-58"></a><span class="nt">test</span><span class="p">:</span>
+</span><span id="__span-6-59"><a id="__codelineno-6-59" name="__codelineno-6-59"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+</span><span id="__span-6-60"><a id="__codelineno-6-60" name="__codelineno-6-60"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-6-61"><a id="__codelineno-6-61" name="__codelineno-6-61"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-6-62"><a id="__codelineno-6-62" name="__codelineno-6-62"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-and-in-mr</span>
+</span><span id="__span-6-63"><a id="__codelineno-6-63" name="__codelineno-6-63"></a><span class="hll"><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.test-go</span>
+</span></span><span id="__span-6-64"><a id="__codelineno-6-64" name="__codelineno-6-64"></a>
+</span><span id="__span-6-65"><a id="__codelineno-6-65" name="__codelineno-6-65"></a><span class="nt">deploy</span><span class="p">:</span>
+</span><span id="__span-6-66"><a id="__codelineno-6-66" name="__codelineno-6-66"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+</span><span id="__span-6-67"><a id="__codelineno-6-67" name="__codelineno-6-67"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-6-68"><a id="__codelineno-6-68" name="__codelineno-6-68"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
+</span><span id="__span-6-69"><a id="__codelineno-6-69" name="__codelineno-6-69"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+</span><span id="__span-6-70"><a id="__codelineno-6-70" name="__codelineno-6-70"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;dev&quot;</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">$CI_COMMIT_REF_NAME</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;live&quot;&#39;</span>
+</span><span id="__span-6-71"><a id="__codelineno-6-71" name="__codelineno-6-71"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-6-72"><a id="__codelineno-6-72" name="__codelineno-6-72"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CI_COMMIT_REF_NAME}</span>
+</span><span id="__span-6-73"><a id="__codelineno-6-73" name="__codelineno-6-73"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curlimages/curl:8.17.0</span>
+</span><span id="__span-6-74"><a id="__codelineno-6-74" name="__codelineno-6-74"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-6-75"><a id="__codelineno-6-75" name="__codelineno-6-75"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-6-76"><a id="__codelineno-6-76" name="__codelineno-6-76"></a><span class="w">    </span><span class="no">curl https://seat${SEAT_INDEX}.${CI_COMMIT_REF_NAME}.webdav.inmylab.de/ \</span>
+</span><span id="__span-6-77"><a id="__codelineno-6-77" name="__codelineno-6-77"></a><span class="w">        </span><span class="no">--fail \</span>
+</span><span id="__span-6-78"><a id="__codelineno-6-78" name="__codelineno-6-78"></a><span class="w">        </span><span class="no">--verbose \</span>
+</span><span id="__span-6-79"><a id="__codelineno-6-79" name="__codelineno-6-79"></a><span class="w">        </span><span class="no">--upload-file hello-linux-amd64 \</span>
+</span><span id="__span-6-80"><a id="__codelineno-6-80" name="__codelineno-6-80"></a><span class="w">        </span><span class="no">--user seat${SEAT_INDEX}:${PASS}</span>
+</span><span id="__span-6-81"><a id="__codelineno-6-81" name="__codelineno-6-81"></a>
+</span><span id="__span-6-82"><a id="__codelineno-6-82" name="__codelineno-6-82"></a><span class="nt">pages</span><span class="p">:</span>
+</span><span id="__span-6-83"><a id="__codelineno-6-83" name="__codelineno-6-83"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+</span><span id="__span-6-84"><a id="__codelineno-6-84" name="__codelineno-6-84"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-6-85"><a id="__codelineno-6-85" name="__codelineno-6-85"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
+</span><span id="__span-6-86"><a id="__codelineno-6-86" name="__codelineno-6-86"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-6-87"><a id="__codelineno-6-87" name="__codelineno-6-87"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
+</span><span id="__span-6-88"><a id="__codelineno-6-88" name="__codelineno-6-88"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpine</span>
+</span><span id="__span-6-89"><a id="__codelineno-6-89" name="__codelineno-6-89"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-6-90"><a id="__codelineno-6-90" name="__codelineno-6-90"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cp hello-linux-amd64 public/hello</span>
+</span><span id="__span-6-91"><a id="__codelineno-6-91" name="__codelineno-6-91"></a><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+</span><span id="__span-6-92"><a id="__codelineno-6-92" name="__codelineno-6-92"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+</span><span id="__span-6-93"><a id="__codelineno-6-93" name="__codelineno-6-93"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public</span>
+</span><span id="__span-6-94"><a id="__codelineno-6-94" name="__codelineno-6-94"></a>
+</span><span id="__span-6-95"><a id="__codelineno-6-95" name="__codelineno-6-95"></a><span class="nt">trigger</span><span class="p">:</span>
+</span><span id="__span-6-96"><a id="__codelineno-6-96" name="__codelineno-6-96"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-6-97"><a id="__codelineno-6-97" name="__codelineno-6-97"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
+</span><span id="__span-6-98"><a id="__codelineno-6-98" name="__codelineno-6-98"></a><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span>
+</span><span id="__span-6-99"><a id="__codelineno-6-99" name="__codelineno-6-99"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child.yaml</span>
 </span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/150_matrix_jobs_demo2<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/150_matrix_jobs_demo2<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>
 </span></code></pre></div>
 </details>
+<h2 id="bonus-task-2-test-job-dependencies-for-matrix-jobs">Bonus task 2: Test job dependencies for matrix jobs<a class="headerlink" href="#bonus-task-2-test-job-dependencies-for-matrix-jobs" title="Permanent link">&para;</a></h2>
+<p>Modify all jobs depending on <code>build</code> to only require the matrix job for <code>GOOS=linux</code> and <code>GOARCH=amd64</code>.</p>
+<details class="info">
+<summary>Hint (Click if you are stuck)</summary>
+<p>Example:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">job_name</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">parallel</span><span class="p">:</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">matrix</span><span class="p">:</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GOOS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">          </span><span class="nt">GOARCH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amd64</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unit_tests</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="c1">#....</span>
+</span></code></pre></div>
+</details>
+<p>This was just a demonstration. The changes will not be preserved in the following chapters.</p>
 
 
 

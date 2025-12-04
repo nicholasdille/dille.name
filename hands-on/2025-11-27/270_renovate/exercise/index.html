@@ -1797,7 +1797,12 @@
 <span class="normal"><a href="#__codelineno-1-135">135</a></span>
 <span class="normal"><a href="#__codelineno-1-136">136</a></span>
 <span class="normal"><a href="#__codelineno-1-137">137</a></span>
-<span class="normal"><a href="#__codelineno-1-138">138</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">workflow</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-1-138">138</a></span>
+<span class="normal"><a href="#__codelineno-1-139">139</a></span>
+<span class="normal"><a href="#__codelineno-1-140">140</a></span>
+<span class="normal"><a href="#__codelineno-1-141">141</a></span>
+<span class="normal"><a href="#__codelineno-1-142">142</a></span>
+<span class="normal"><a href="#__codelineno-1-143">143</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">workflow</span><span class="p">:</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_DEPLOY_FREEZE</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">never</span>
@@ -1923,18 +1928,23 @@
 </span><span id="__span-1-124"><a id="__codelineno-1-124" name="__codelineno-1-124"></a><span class="w">  </span><span class="nt">variables</span><span class="p">:</span>
 </span><span id="__span-1-125"><a id="__codelineno-1-125" name="__codelineno-1-125"></a><span class="w">    </span><span class="nt">DOCKER_TLS_CERTDIR</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 </span><span id="__span-1-126"><a id="__codelineno-1-126" name="__codelineno-1-126"></a><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span>
-</span><span id="__span-1-127"><a id="__codelineno-1-127" name="__codelineno-1-127"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker login -u &quot;${CI_REGISTRY_USER}&quot; -p &quot;${CI_REGISTRY_PASSWORD}&quot; &quot;${CI_REGISTRY}&quot;</span>
-</span><span id="__span-1-128"><a id="__codelineno-1-128" name="__codelineno-1-128"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-</span><span id="__span-1-129"><a id="__codelineno-1-129" name="__codelineno-1-129"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker build --tag &quot;${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}&quot; .</span>
-</span><span id="__span-1-130"><a id="__codelineno-1-130" name="__codelineno-1-130"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker push &quot;${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}&quot;</span>
-</span><span id="__span-1-131"><a id="__codelineno-1-131" name="__codelineno-1-131"></a><span class="w">  </span><span class="nt">after_script</span><span class="p">:</span>
-</span><span id="__span-1-132"><a id="__codelineno-1-132" name="__codelineno-1-132"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker logout &quot;${CI_REGISTRY}&quot;</span>
-</span><span id="__span-1-133"><a id="__codelineno-1-133" name="__codelineno-1-133"></a>
-</span><span id="__span-1-134"><a id="__codelineno-1-134" name="__codelineno-1-134"></a><span class="nt">trigger</span><span class="p">:</span>
-</span><span id="__span-1-135"><a id="__codelineno-1-135" name="__codelineno-1-135"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
-</span><span id="__span-1-136"><a id="__codelineno-1-136" name="__codelineno-1-136"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
-</span><span id="__span-1-137"><a id="__codelineno-1-137" name="__codelineno-1-137"></a><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span>
-</span><span id="__span-1-138"><a id="__codelineno-1-138" name="__codelineno-1-138"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child.yaml</span>
+</span><span id="__span-1-127"><a id="__codelineno-1-127" name="__codelineno-1-127"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-1-128"><a id="__codelineno-1-128" name="__codelineno-1-128"></a><span class="w">    </span><span class="no">while ! docker version; do</span>
+</span><span id="__span-1-129"><a id="__codelineno-1-129" name="__codelineno-1-129"></a><span class="w">        </span><span class="no">echo &quot;Waiting for Docker...&quot;</span>
+</span><span id="__span-1-130"><a id="__codelineno-1-130" name="__codelineno-1-130"></a><span class="w">        </span><span class="no">sleep 2</span>
+</span><span id="__span-1-131"><a id="__codelineno-1-131" name="__codelineno-1-131"></a><span class="w">    </span><span class="no">done</span>
+</span><span id="__span-1-132"><a id="__codelineno-1-132" name="__codelineno-1-132"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker login -u &quot;${CI_REGISTRY_USER}&quot; -p &quot;${CI_REGISTRY_PASSWORD}&quot; &quot;${CI_REGISTRY}&quot;</span>
+</span><span id="__span-1-133"><a id="__codelineno-1-133" name="__codelineno-1-133"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+</span><span id="__span-1-134"><a id="__codelineno-1-134" name="__codelineno-1-134"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker build --provenance=false --tag &quot;${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}&quot; .</span>
+</span><span id="__span-1-135"><a id="__codelineno-1-135" name="__codelineno-1-135"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker push &quot;${CI_REGISTRY_IMAGE}:${CI_COMMIT_REF_NAME}&quot;</span>
+</span><span id="__span-1-136"><a id="__codelineno-1-136" name="__codelineno-1-136"></a><span class="w">  </span><span class="nt">after_script</span><span class="p">:</span>
+</span><span id="__span-1-137"><a id="__codelineno-1-137" name="__codelineno-1-137"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker logout &quot;${CI_REGISTRY}&quot;</span>
+</span><span id="__span-1-138"><a id="__codelineno-1-138" name="__codelineno-1-138"></a>
+</span><span id="__span-1-139"><a id="__codelineno-1-139" name="__codelineno-1-139"></a><span class="nt">trigger</span><span class="p">:</span>
+</span><span id="__span-1-140"><a id="__codelineno-1-140" name="__codelineno-1-140"></a><span class="w">  </span><span class="nt">extends</span><span class="p">:</span>
+</span><span id="__span-1-141"><a id="__codelineno-1-141" name="__codelineno-1-141"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.run-on-push-to-default-branch</span>
+</span><span id="__span-1-142"><a id="__codelineno-1-142" name="__codelineno-1-142"></a><span class="w">  </span><span class="nt">trigger</span><span class="p">:</span>
+</span><span id="__span-1-143"><a id="__codelineno-1-143" name="__codelineno-1-143"></a><span class="w">    </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">child.yaml</span>
 </span></code></pre></div></td></tr></table></div>
 <p>If you want to jump to the solution, execute the following command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>upstream/160_gitlab_ci/270_renovate<span class="w"> </span>--<span class="w"> </span><span class="s1">&#39;*&#39;</span>

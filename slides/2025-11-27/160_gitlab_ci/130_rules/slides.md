@@ -79,14 +79,9 @@ Adjust order from most specific...
 
 ---
 
-## Hands-On
+## Hands-On: Rules
 
-Use GitLab Pages [](https://docs.gitlab.com/ee/user/project/pages/) to create a download page
-
-- The job must be called `pages` [](https://docs.gitlab.com/ee/ci/yaml/#pages)
-- The must create an artifact from the directory called `public`
-
-See chapter [Rules](/hands-on/2025-11-27/130_rules/exercise/)
+Go to [exercises](/hands-on/2025-11-27/130_rules/exercise/)
 
 ---
 
@@ -159,10 +154,11 @@ But GitLab still shows a skipped pipelines
 Use a rule to avoid pipelines entirely:
 
 ```
-my_job:
+workflow:
   rules:
   - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_TITLE =~ /skip ci/i
     when: never
+  - when: on_success
 ```
 
 See the pre-defined variables [](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html) for more information about the variables

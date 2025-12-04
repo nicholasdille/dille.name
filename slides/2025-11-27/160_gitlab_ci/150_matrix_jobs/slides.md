@@ -55,9 +55,9 @@ job_name:
 
 ---
 
-## Hands-On
+## Hands-On: Matrix jobs
 
-See chapter [Matrix jobs](/hands-on/2025-11-27/150_matrix_jobs/exercise/)
+Go to [exercises](/hands-on/2025-11-27/150_matrix_jobs/exercise/)
 
 ---
 

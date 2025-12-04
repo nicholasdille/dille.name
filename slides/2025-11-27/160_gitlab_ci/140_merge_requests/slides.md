@@ -37,9 +37,9 @@ See chapter about protected branches [<i class="fa fa-solid fa-arrow-right-to-br
 
 ---
 
-## Hands-On
+## Hands-On: Merge requests
 
-See chapter [Merge requests](/hands-on/2025-11-27/140_merge_requests/exercise/)
+Go to [exercises](/hands-on/2025-11-27/140_merge_requests/exercise/)
 
 ---
 
