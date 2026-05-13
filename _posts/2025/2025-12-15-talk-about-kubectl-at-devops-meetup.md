@@ -16,7 +16,7 @@ tags:
 ---
 I gave a talk at [DevOps Meetup Freiburg](https://www.meetup.com/de-de/devops-freiburg/events/311972440/) about mastering kubectl with a focus on little known facts and tricks.
 
-<img src="../../media/2025/12/jade-lee-h_Uxi-NeNSA-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 250px;" />
+<img src="/media/2025/12/jade-lee-h_Uxi-NeNSA-unsplash.jpg" style="object-fit: cover; object-position: center 30%; width: 100%; height: 250px;" />
 
 <!--more-->
 

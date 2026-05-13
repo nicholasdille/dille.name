@@ -16,7 +16,7 @@ tags:
 ---
 I gave a talk at [DevOps Meetup Freiburg](https://www.meetup.com/de-de/devops-freiburg/events/311972440/) about working with shell code. It is easily available and serves as glue code for many tasks. But shell code suffers from poor readability and maintainability. This talk demonstrates tips and tricks to write better shell code and offers advice how to avoid shell code.
 
-<img src="../../media/2026/05/arjun-kapoor-gR_-FEC_zQc-unsplash.jpg" style="object-fit: cover; object-position: center 80%; width: 100%; height: 150px;" />
+<img src="/media/2026/05/arjun-kapoor-gR_-FEC_zQc-unsplash.jpg" style="object-fit: cover; object-position: center 80%; width: 100%; height: 150px;" />
 
 <!--more-->
 
