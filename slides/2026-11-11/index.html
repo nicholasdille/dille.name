@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+
+<title>Introduction to Cluster API</title>
+
+<!-- https://gauger.io/fonticon/ -->
+<link rel="icon" href="images/favicons/kubernetes.ico"/>
+
+<link rel="stylesheet" href="https://cdn.dille.name/reveal.js@6.0.2/dist/reset.css" />
+<link rel="stylesheet" href="https://cdn.dille.name/reveal.js@6.0.2/dist/reveal.css" />
+<link rel="stylesheet" href="https://cdn.dille.name/reveal.js@6.0.2/dist/theme/black.css" id="theme" />
+<link rel="stylesheet" href="https://cdn.dille.name/highlight.js@11.12.0/styles/rainbow.css" />
+<link rel="stylesheet" href="themes/theme2022.css" id="theme" />
+<link rel="stylesheet" href="themes/common.css" />
+<link rel="stylesheet" href="themes/fontawesome.css" />
+<style>
+.reveal p code,
+.reveal li code {
+    background-color: grey;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    border-radius: 0.2em;
+}
+
+/* theme default is width: 90% -> reduced by 25% */
+.reveal pre {
+    width: 67.5%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+</style>
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section
+    id="title"
+    data-background="images/maria-kovalets-yugJdY4NVrc-unsplash.jpg"
+    data-background-size="120%"
+    data-background-position="left 0% top 30%"
+    style="padding: 1em 1em 1em 1em; background: rgba(0, 0, 0, 0.5); width: 50%; margin: auto; text-align: left;">
+<h1 style="font-size: 1.5em;"><b>Introduction to Cluster API</b></h1>
+<h2 style="font-size: 1.2em; text-transform: none;">Declarative Cluster Management<br/>for Kubernetes</h2>
+<p>Nicholas Dille, Haufe Group</p>
+<p><a href="https://www.continuouslifecycle.de/"><img src="images/logos/clc2026_white.svg" style="height: 1.5em; margin-top: 0.5em;" /></a></p>
+</section>
+
+<section id="agenda">
+<h2>Agenda</h2>
+
+<i class="fa-duotone fa-4x fa-list-check" style="float: right;"></i>
+
+<ul id="bullets" style="font-size: larger;">
+<li><span class="fa-li"><i class="fa-duotone fa-message-question"></i></span> What is Cluster API?</li>
+<li><span class="fa-li"><i class="fa-duotone fa-chart-network"></i></span> Architecture and components</li>
+<li><span class="fa-li"><i class="fa-duotone fa-arrow-progress"></i></span> Cluster creation flow</li>
+<li><span class="fa-li"><i class="fa-duotone fa-terminal"></i></span> Demo</li>
+</ul>
+</section>
+<section data-markdown="000_introduction/02_bio.md" data-separator="^---$" data-separator-vertical="^--$"></section>
+<section data-markdown="120_kubernetes/cluster-api/slides.md" data-separator="^---$" data-separator-vertical="^--$"></section>
+
+<section id="summary">
+<h2>Summary</h2>
+
+<i class="fa-duotone fa-4x fa-lightbulb-on" style="float: right;"></i>
+
+<ul id="bullets" style="font-size: larger;">
+<li><span class="fa-li"><i class="fa-duotone fa-face-grin-stars"></i></span> Kubernetes-native lifecycle model</li>
+<li><span class="fa-li"><i class="fa-duotone fa-face-thinking"></i></span> Even more YAML</li>
+<li><span class="fa-li"><i class="fa-duotone fa-egg"></i></span> Chicken-and-egg problem</li>
+<li><span class="fa-li"><i class="fa-duotone fa-handshake"></i></span> Management and workload clusters</li>
+<li><span class="fa-li"><i class="fa-duotone fa-plug"></i></span> Pluggable providers</li>
+</ul>
+<h3 id="events">Upcoming events</h3>
+<ul>
+<li>2026-11-19 - <a href="https://heise-conferences.de/workshop/observability-fur-kubernetes-umgebungen-yGa7OVTSsUhY4U">Cloud Native Observability</a> @ <a href="https://heise-conferences.de/">heise Conferences</a> (Workshop)</li>
+</ul>
+</section>
+<section data-markdown="120_kubernetes/cluster-api/references.md" data-separator="^---$" data-separator-vertical="^--$"></section>
+
+</div>
+</div>
+
+<script src="https://cdn.dille.name/reveal.js@6.0.2/dist/reveal.js"></script>
+<script src="https://cdn.dille.name/reveal.js@6.0.2/dist/plugin/markdown.js"></script>
+<script src="https://cdn.dille.name/reveal.js@6.0.2/dist/plugin/highlight.js"></script>
+<script src="https://cdn.dille.name/reveal.js@6.0.2/dist/plugin/notes.js"></script>
+<script src="node_modules/reveal.js-mermaid-plugin/plugin/mermaid/mermaid.js"></script>
+<script>
+    Reveal.initialize({
+        width: 1920,
+        height: 1080,
+        minScale: 0.5,
+        maxScale: 2.0,
+        margin: 0.05,
+
+        controls: false,
+        controlsTutorial: false,
+        progress: true,
+        slideNumber: false,
+        keyboard: true,
+        touch: true,
+        mouseWheel: false,
+
+        hash: true,
+        history: false,
+        overview: true,
+        fragments: true,
+        fragmentInURL: true,
+        transition: 'convex',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade',
+        hideInactiveCursor: true,
+
+        autoPlayMedia: null,
+        previewLinks: false,
+
+        center: true,
+        help: true,
+
+        markdown: {
+            smartypants: true
+        },
+
+        plugins: [
+            RevealMarkdown,
+            RevealHighlight,
+            RevealNotes,
+            {
+                id: 'mermaid-fences',
+                init: function (reveal) {
+                    reveal.getRevealElement().querySelectorAll('pre code.mermaid').forEach(function (code) {
+                        const diagram = document.createElement('div');
+                        diagram.className = 'mermaid';
+                        diagram.textContent = code.textContent;
+                        code.closest('pre').replaceWith(diagram);
+                    });
+                }
+            },
+            RevealMermaid
+        ],
+
+
+        mermaid: {
+            theme: 'base',
+            fontFamily: "'Poppins', Helvetica, sans-serif",
+            flowchart: {
+                curve: 'basis',
+                padding: 16,
+                nodeSpacing: 40,
+                rankSpacing: 50,
+                useMaxWidth: true
+            },
+            themeVariables: {
+                darkMode: true,
+                background: 'transparent',
+                primaryTextColor: '#191919',
+                primaryBorderColor: '#7cbad4',
+                secondaryTextColor: '#ffffff',
+                secondaryBorderColor: '#7cbad4',
+                tertiaryTextColor: '#ffffff',
+                lineColor: '#ffffff',
+                arrowheadColor: '#ffffff',
+                textColor: '#ffffff',
+                mainBkg: '#7cbad4',
+                nodeBorder: '#7cbad4',
+                clusterBkg: 'transparent',
+                clusterBorder: '#7cbad4',
+                edgeLabelBackground: '#ffffff',
+                fontSize: '25.5px',
+                actorBkg: '#1c3f50',
+                actorTextColor: '#ffffff',
+                actorBorder: '#7cbad4',
+                actorLineColor: '#7cbad4',
+                signalColor: '#ffffff',
+                signalTextColor: '#ffffff',
+                labelBoxBkgColor: '#1c3f50',
+                labelBoxBorderColor: '#7cbad4',
+                labelTextColor: '#ffffff',
+                loopTextColor: '#ffffff',
+                activationBkgColor: '#234a5c',
+                activationBorderColor: '#7cbad4',
+                noteBkgColor: '#234a5c',
+                noteTextColor: '#ffffff',
+                noteBorderColor: '#7cbad4',
+                sequenceNumberColor: '#ffffff'
+            }
+        },
+    });
+</script>
+
+</body>
+</html>
