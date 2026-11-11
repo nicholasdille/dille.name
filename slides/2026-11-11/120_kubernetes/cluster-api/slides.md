@@ -5,7 +5,7 @@
 <i class="fa-duotone fa-solid fa-4x fa-rocket"></i> <!-- .element: style="float: right;" -->
 
 - Many teams still create clusters by hand
-- Honorable mention for those with managed clusters with automation
+- Honorable mention for those with managed clusters **with automation**
 - Manual setup causes drift, inconsistency, slow recovery
 - Kubernetes already has the right control-loop model
 
@@ -17,8 +17,7 @@
 
 - Kubernetes native cluster lifecycle
 - Everything represented as resources
-- Managed by controllers (think reconciliation loop)
-- Runs in a management cluster, reconciles declaratively
+- Managed by controllers
 - Official project by Kubernetes SIG Cluster Lifecycle
 
 ### The ease of `Deployment` but for nodes <i class="fa fa-sparkles"></i>
@@ -161,9 +160,9 @@ spec:
 
 <i class="fa-duotone fa-solid fa-4x fa-diagram-project"></i> <!-- .element: style="float: right;" -->
 
-- Management cluster is the control plane for CAPI
+- Management cluster is the control plane for Cluster API
 - It hosts controllers and infrastructure providers
-- Workload cluster is created and managed by it
+- It creates and manages workload clusters
 
 ```mermaid
 flowchart LR
@@ -279,7 +278,7 @@ flowchart LR
 
 <i class="fa-duotone fa-solid fa-4x fa-cloud"></i> <!-- .element: style="float: right;" -->
 
-- The API stays generic
+- The API in Cluster API stays generic
 - Providers add platform specifics
 - Providers create VMs, networks, disks, load balancers
 - Additional provider-specific resources
@@ -491,32 +490,43 @@ spec:
 
 ---
 
+<!-- .slide: data-transition="fade" -->
+
 ## Concepts
 
-![](120_kubernetes/cluster-api/overview.drawio.svg) <!-- .element: style="width: 90%;" -->
+![](120_kubernetes/cluster-api/overview1.drawio.svg) <!-- .element: style="width: 100%;" -->
 
 ---
 
-<!-- .slide: data-visibility="hidden" -->
+<!-- .slide: data-transition="fade" -->
 
-## The reconciliation loop
+## Concepts
 
-<i class="fa-duotone fa-solid fa-4x fa-repeat"></i> <!-- .element: style="float: right;" -->
+![](120_kubernetes/cluster-api/overview2.drawio.svg) <!-- .element: style="width: 100%;" -->
 
-- Controllers watch CAPI objects and provider state
-- Compare desired vs actual to spot drift
-- Create, patch, or replace until converged
+---
 
-```mermaid
-flowchart LR
-    Desired[Desired state] --> Watch[Controller watches]
-    Watch --> Compare[Compare desired vs actual]
-    Compare --> Drift{Drift detected?}
-    Drift -- yes --> Reconcile[Reconcile resources]
-    Reconcile --> Actual[Actual state updates]
-    Drift -- no --> Watch
-    Actual --> Watch
-```
+<!-- .slide: data-transition="fade" -->
+
+## Concepts
+
+![](120_kubernetes/cluster-api/overview3.drawio.svg) <!-- .element: style="width: 100%;" -->
+
+---
+
+<!-- .slide: data-transition="fade" -->
+
+## Concepts
+
+![](120_kubernetes/cluster-api/overview4.drawio.svg) <!-- .element: style="width: 100%;" -->
+
+---
+
+<!-- .slide: data-transition="fade" -->
+
+## Concepts
+
+![](120_kubernetes/cluster-api/overview5.drawio.svg) <!-- .element: style="width: 100%;" -->
 
 ---
 
@@ -554,8 +564,8 @@ sequenceDiagram
 <i class="fa-duotone fa-solid fa-4x fa-arrow-trend-up"></i> <!-- .element: style="float: right;" -->
 
 - Controlled replacement and rollout workflows
-- MachineDeployment for worker-node lifecycle
-- Provider-aware control-plane upgrades
+- MachineDeployment for worker node lifecycle
+- Provider-aware control plane upgrades
 - Repeatable, observable, safer cluster evolution
 
 ---
