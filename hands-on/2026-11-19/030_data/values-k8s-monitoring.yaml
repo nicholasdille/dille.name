@@ -1,0 +1,338 @@
+# yamllint disable rule:line-length rule:comments-indentation
+---
+cluster:
+  name: demo
+
+global:
+  scrapeInterval: 15s
+  scrapeTimeout: 10s
+
+destinations:
+  metrics:
+    name: hostedMetrics
+    type: prometheus
+    url: http://mimir-gateway/api/v1/push
+    headers:
+      X-Scope-OrgID: anonymous
+    rules:
+      enabled: true
+      address: http://mimir-gateway
+      syncInterval: 1m
+  logs:
+    name: hostedLogs
+    type: loki
+    url: http://loki-headless:3100/loki/api/v1/push
+
+clusterMetrics:
+  enabled: true
+  collector: alloy-metrics
+
+  # To see additional options, please see the [Cluster Monitoring feature documentation](https://github.com/grafana/k8s-monitoring-helm/tree/main/charts/k8s-monitoring/charts/feature-cluster-metrics).
+  apiServer:
+    enabled: true
+
+  cadvisor:
+    metricsTuning:
+      useDefaultAllowList: false
+      includeMetrics: [container_.*]
+      extraMetricProcessingRules: |-
+        rule {
+          action = "labeldrop"
+          regex = "id"
+        }
+
+  controlPlane:
+    enabled: true
+
+  kube-state-metrics:
+    enabled: true
+    metricsTuning:
+      includeMetrics:
+      - kube_pod_annotations
+      - kube_pod_labels
+      - kube_pod_created
+      - kube_pod_completion_time
+      - kube_pod_container_status_running
+    metricLabelsAllowlist:
+    - nodes=[*]
+    - pods=[*]
+    - deployments=[*]
+    - jobs=[*]
+    metricAnnotationsAllowList:
+    - pods=[job.runner.gitlab.com/url, job.runner.gitlab.com/name, project.runner.gitlab.com/id]
+    extraMetricProcessingRules: |-
+      rule {
+        action = "labeldrop"
+        regex = "id"
+      }
+  
+  kubeControllerManager:
+    enabled: true
+  
+  kubeDNS:
+    enabled: true
+
+  kubeProxy:
+    enabled: true
+    extraMetricProcessingRules: |-
+      rule {
+        action = "labeldrop"
+        regex = "id"
+      }
+
+  kubeScheduler:
+    enabled: true
+
+  kubelet:
+    metricsTuning:
+      useDefaultAllowList: false
+      excludeMetrics: [apiserver_request_duration_seconds_.*]
+      extraMetricProcessingRules: |-
+        rule {
+          action = "labeldrop"
+          regex = "id"
+        }
+  
+  kubeletProbes:
+    enabled: false
+
+  kubeletResource:
+    enabled: false
+
+costMetrics:
+  enabled: false
+
+hostMetrics:
+  enabled: true
+  linuxHosts:
+    enabled: true
+  windowsHosts:
+    enabled: false
+  energyMetrics:
+    enabled: false
+  collector: alloy-metrics
+
+clusterEvents:
+  enabled: true
+  collector: alloy-singleton
+
+nodeLogs:
+  enabled: false
+
+windowsEventLogs:
+  enabled: false
+
+podLogsViaLoki:
+  enabled: true
+  collector: alloy-logs
+
+podLogsViaOpenTelemetry:
+  enabled: false
+  #collector: alloy-logs
+
+podLogsViaKubernetesApi:
+  enabled: false
+  #collector: alloy-logs
+
+podLogsObjects:
+  enabled: false
+
+applicationObservability:
+  enabled: false
+
+autoInstrumentation:
+  enabled: false
+
+annotationAutodiscovery:
+  enabled: false
+
+prometheusOperatorObjects:
+  enabled: true
+  collector: alloy-metrics
+  podMonitors:
+    enabled: true
+  serviceMonitors:
+    enabled: true
+    labelExpressions: []
+    metricsTuning:
+      extraMetricProcessingRules: |-
+        rule {
+          action = "labeldrop"
+          regex = "id"
+        }
+
+profiling:
+  enabled: false
+
+profilesReceiver:
+  enabled: false
+
+prometheusMetricsReceiver:
+  enabled: false
+
+lokiLogsReceiver:
+  enabled: false
+
+kubernetesManifests:
+  enabled: false
+
+integrations: {}
+
+selfReporting:
+  enabled: true
+
+collectors:
+  alloy-metrics:
+    enabled: true
+    remoteConfig:
+      enabled: false
+    logging:
+      level: info
+      format: logfmt
+    liveDebugging:
+      enabled: false
+    alloy:
+      configMap:
+        create: false
+      clustering:
+        name: alloy-metrics
+        enabled: true
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop: ["ALL"]
+          add:
+            [
+              "CHOWN",
+              "DAC_OVERRIDE",
+              "FOWNER",
+              "FSETID",
+              "KILL",
+              "SETGID",
+              "SETUID",
+              "SETPCAP",
+              "NET_BIND_SERVICE",
+              "NET_RAW",
+              "SYS_CHROOT",
+              "MKNOD",
+              "AUDIT_WRITE",
+              "SETFCAP",
+            ]
+        seccompProfile:
+          type: "RuntimeDefault"
+    controller:
+      type: daemonset
+      replicas: 1
+      nodeSelector:
+        kubernetes.io/os: linux
+      podAnnotations:
+        k8s.grafana.com/logs.job: integrations/alloy
+    crds:
+      create: true
+  alloy-singleton:
+    enabled: true
+    remoteConfig:
+      enabled: false
+    logging:
+      level: info
+      format: logfmt
+    liveDebugging:
+      enabled: false
+    alloy:
+      configMap:
+        create: false
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop: ["ALL"]
+          add:
+            [
+              "CHOWN",
+              "DAC_OVERRIDE",
+              "FOWNER",
+              "FSETID",
+              "KILL",
+              "SETGID",
+              "SETUID",
+              "SETPCAP",
+              "NET_BIND_SERVICE",
+              "NET_RAW",
+              "SYS_CHROOT",
+              "MKNOD",
+              "AUDIT_WRITE",
+              "SETFCAP",
+            ]
+        seccompProfile:
+          type: "RuntimeDefault"
+    controller:
+      type: deployment
+      replicas: 1
+      nodeSelector:
+        kubernetes.io/os: linux
+      podAnnotations:
+        k8s.grafana.com/logs.job: integrations/alloy
+    crds:
+      create: false
+  alloy-logs:
+    enabled: true
+    remoteConfig:
+      enabled: false
+    logging:
+      level: info
+      format: logfmt
+    liveDebugging:
+      enabled: false
+    alloy:
+      configMap:
+        create: false
+      clustering:
+        enabled: false
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop: ["ALL"]
+          add:
+            [
+              "CHOWN",
+              "DAC_OVERRIDE",
+              "FOWNER",
+              "FSETID",
+              "KILL",
+              "SETGID",
+              "SETUID",
+              "SETPCAP",
+              "NET_BIND_SERVICE",
+              "NET_RAW",
+              "SYS_CHROOT",
+              "MKNOD",
+              "AUDIT_WRITE",
+              "SETFCAP",
+            ]
+        seccompProfile:
+          type: "RuntimeDefault"
+      mounts:
+        varlog: true
+    controller:
+      type: daemonset
+      nodeSelector:
+        kubernetes.io/os: linux
+      podAnnotations:
+        k8s.grafana.com/logs.job: integrations/alloy
+      tolerations:
+        - effect: NoSchedule
+          operator: Exists
+    crds:
+      create: false
+  alloy-receiver:
+    enabled: false
+  alloy-profiles:
+    enabled: false
+
+telemetryServices:
+  kube-state-metrics:
+    deploy: true
+  node-exporter:
+    deploy: true
+
+alloy-operator:
+  deploy: true

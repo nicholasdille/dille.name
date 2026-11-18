@@ -1,0 +1,203 @@
+minio:
+  enabled: false
+
+kafka:
+  enabled: true
+
+metaMonitoring:
+  serviceMonitor:
+    enabled: true
+
+mimir:
+  structuredConfig:
+    multitenancy_enabled: false
+    server:
+      http_listen_address: 0.0.0.0
+      http_listen_port: 9009
+    blocks_storage:
+      backend: filesystem
+    ruler_storage:
+      backend: filesystem
+      filesystem:
+        dir: /data/ruler
+    ruler:
+      rule_path: /data/eval
+      alertmanager_url: http://alertmanager:9093
+
+alertmanager:
+  enabled: false
+
+compactor:
+  persistentVolume:
+    enabled: true
+    storageClass: standard
+    size: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+distributor:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+ingester:
+  persistentVolume:
+    enabled: true
+    storageClass: standard
+    size: 10Gi
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+  zoneAwareReplication:
+    enabled: false
+
+chunks-cache:
+  enabled: true
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+index-cache:
+  enabled: true
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+metadata-cache:
+  enabled: true
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+results-cache:
+  enabled: true
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+overrides_exporter:
+  replicas: 0
+  persistentVolume:
+    enabled: true
+    storageClass: standard
+    size: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+querier:
+  replicas: 1
+  persistentVolume:
+    enabled: true
+    storageClass: standard
+    size: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+query_frontend:
+  replicas: 1
+  persistentVolume:
+    enabled: true
+    storageClass: standard
+    size: 10Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+ruler:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+store_gateway:
+  persistentVolume:
+    enabled: true
+    storageClass: standard
+    size: 10Gi
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+  zoneAwareReplication:
+    enabled: false
+
+gateway:
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
+rollout_operator:
+  enabled: false
+
+query_scheduler:
+  enabled: true
+  replicas: 1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
