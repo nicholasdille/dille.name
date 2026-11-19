@@ -1021,55 +1021,62 @@
 <p>This exercise assumes that you have access to the workshop environment with Visual Studio Code and the Kubernetes cluster.</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <p>You will deploy Helm charts for the components of the LGTM stack. Make sure your <code>helm</code> knows about the necessary repositories:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>grafana-community<span class="w"> </span>https://grafana-community.github.io/helm-charts
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>grafana<span class="w"> </span>https://grafana.github.io/helm-charts
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>prometheus-community<span class="w"> </span>https://prometheus-community.github.io/helm-charts
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>grafana-community<span class="w"> </span>https://grafana-community.github.io/helm-charts
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>grafana<span class="w"> </span>https://grafana.github.io/helm-charts
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
+</span></code></pre></div>
+<p>When replacing Prometheus with modern components, you need to install the custom resource definitions (CRDs) for the Prometheus operator first. The are the defacto standard for declaring scrape targets metrics collection:</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>prometheus-operator-crds<span class="w"> </span>prometheus-community/prometheus-operator-crds
 </span></code></pre></div>
 <h2 id="task-1-deploy-mimir">Task 1: Deploy Mimir<a class="headerlink" href="#task-1-deploy-mimir" title="Permanent link">&para;</a></h2>
 <p>Mimir is deployed as the replacement for Prometheus and offers long-term storage as well as a query engine built for high performance.</p>
 <p>The values for the helm chart are available as file: <code>container-slides/180_observability/020_lgtm/values-mimir.yaml</code>. You can also view it in a web browser <a href="https://github.com/nicholasdille/container-slides/blob/master/180_observability/020_lgtm/values-mimir.yaml">in the repository on Gitub</a>.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span>mimir<span class="w"> </span>grafana/mimir-distributed<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span>--values<span class="o">=</span>values-mimir.yaml
-</span></code></pre></div>
-<p>Wait for the pods to become ready.</p>
-<h2 id="task-2-deploy-loki">Task 2: Deploy Loki<a class="headerlink" href="#task-2-deploy-loki" title="Permanent link">&para;</a></h2>
-<p>Loki is deployed for log aggregation and storage.</p>
-<p>The values for the helm chart are available as file: <code>container-slides/180_observability/020_lgtm/values-loki.yaml</code>. You can also view it in a web browser <a href="https://github.com/nicholasdille/container-slides/blob/master/180_observability/020_lgtm/values-loki.yaml">in the repository on Gitub</a>.</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>loki<span class="w"> </span>grafana-community/loki<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span>--values<span class="o">=</span>values-loki.yaml
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>mimir<span class="w"> </span>grafana/mimir-distributed<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span>--values<span class="o">=</span>values-mimir.yaml
+</span></code></pre></div>
+<p>Wait for the pods to become ready. This will take around two minutes.</p>
+<h2 id="task-2-deploy-loki">Task 2: Deploy Loki<a class="headerlink" href="#task-2-deploy-loki" title="Permanent link">&para;</a></h2>
+<p>Loki is deployed for log aggregation and storage.</p>
+<p>The values for the helm chart are available as file: <code>container-slides/180_observability/020_lgtm/values-loki.yaml</code>. You can also view it in a web browser <a href="https://github.com/nicholasdille/container-slides/blob/master/180_observability/020_lgtm/values-loki.yaml">in the repository on Gitub</a>.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>loki<span class="w"> </span>grafana-community/loki<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span>--values<span class="o">=</span>values-loki.yaml
 </span></code></pre></div>
 <p>Wait for the pods to become ready.</p>
 <h2 id="task-3-deploy-tempo">Task 3: Deploy Tempo<a class="headerlink" href="#task-3-deploy-tempo" title="Permanent link">&para;</a></h2>
 <p>Tempo is deployed for distributed tracing.</p>
 <p>The values for the helm chart are available as file: <code>container-slides/180_observability/020_lgtm/values-tempo.yaml</code>. You can also view it in a web browser <a href="https://github.com/nicholasdille/container-slides/blob/master/180_observability/020_lgtm/values-tempo.yaml">in the repository on Gitub</a>.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span>tempo<span class="w"> </span>grafana-community/tempo<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span>--values<span class="o">=</span>values-tempo.yaml
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span>tempo<span class="w"> </span>grafana-community/tempo<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span>--values<span class="o">=</span>values-tempo.yaml
 </span></code></pre></div>
 <p>Wait for the pods to become ready.</p>
 <h2 id="task-4-deploy-grafana">Task 4: Deploy Grafana<a class="headerlink" href="#task-4-deploy-grafana" title="Permanent link">&para;</a></h2>
 <p>Grafana is deployed for visualization and monitoring of metrics, logs, and traces.</p>
 <p>The values for the helm chart are available as file: <code>container-slides/180_observability/020_lgtm/values-grafana.yaml</code>. You can also view it in a web browser <a href="https://github.com/nicholasdille/container-slides/blob/master/180_observability/020_lgtm/values-grafana.yaml">in the repository on Gitub</a>.</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span>grafana<span class="w"> </span>grafana-community/grafana<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span>--values<span class="o">=</span>values-grafana.yaml
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>helm<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>upgrade<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span>--install<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span>grafana<span class="w"> </span>grafana-community/grafana<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span>--values<span class="o">=</span>values-grafana.yaml
 </span></code></pre></div>
 <p>Wait for the pod to become ready.</p>
 <h2 id="task-5-access-grafana-web-ui">Task 5: Access Grafana Web UI<a class="headerlink" href="#task-5-access-grafana-web-ui" title="Permanent link">&para;</a></h2>
 <p>Create a port forwarding for Grafana:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>kubectl<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>port-forward<span class="w"> </span>svc/grafana<span class="w"> </span><span class="m">3000</span>:80
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kubectl<span class="w"> </span>--namespace<span class="o">=</span>monitoring<span class="w"> </span>port-forward<span class="w"> </span>svc/grafana<span class="w"> </span><span class="m">3000</span>:80
 </span></code></pre></div>
-<p>For Grafana to be accessible, Visual Studio Code must have port forwarding as well to provide access under <code>https://3000.seatN.inmylab.de</code>.</p>
+<p>For Grafana to be accessible, Visual Studio Code must have port forwarding for port 3000 as well to provide access under <code>https://3000.seatN.inmylab.de</code>. To configure this, open the command palette in Visual Studio Code, search for <code>Forward a Port</code>, and enter port 3000.</p>
 <p>As soon as you have access to the Grafana web UI, you can login using the default credentials:</p>
 <ul>
 <li>Username: <code>admin</code></li>

@@ -1075,16 +1075,19 @@
 <ol>
 <li>In the main menu, go to <code>Dashboards</code></li>
 <li>Click <code>New</code> and select <code>New dashboard</code></li>
-<li>Click <code>+ Add visualization</code> and select the data source <code>Mimir</code></li>
+<li>On the right hand side under <code>Panel</code>, click <code>+</code>, then <code>Configure visualization</code> and select the data source <code>Mimir</code></li>
+<li>Switch the query to <code>Code</code> on the right hand side</li>
 <li>Use the query <code>up</code> and click <code>Run query</code></li>
 <li>Save the dashboard using the name <code>Observability</code></li>
 <li>Set the auto-refresh interval to <code>10s</code> using the dropdown in the top right corner. The panels you create below will then update on their own while you generate traffic.</li>
 </ol>
+<p>After finishing with the first panel, click <code>&lt;- Back</code> to return to the whole dashboard.</p>
 <h2 id="task-2-line-chart-panel">Task 2: Line chart panel<a class="headerlink" href="#task-2-line-chart-panel" title="Permanent link">&para;</a></h2>
 <p>Add a panel to the dashboard which shows the request rate of the demo application as a line chart. The metric <code>http_requests_total</code> counts the HTTP requests of <code>podinfo</code> and is scraped from Mimir.</p>
 <ol>
-<li>Click <code>+ Add</code> and select <code>Visualization</code>, then choose the data source <code>Mimir</code></li>
+<li>Click <code>+</code> (twice) in the sidebar on the right hand side and select <code>Configure visualization</code>, then choose the data source <code>Mimir</code></li>
 <li>Enter the query and click <code>Run query</code></li>
+<li>Select a visualization type, for example <code>Time series</code> / <code>Line chart</code></li>
 <li>Set the panel title to <code>Request rate</code></li>
 <li>Set the unit to <code>requests/sec</code> in <code>Standard options</code></li>
 </ol>
@@ -1098,9 +1101,9 @@
 <h2 id="task-3-bar-chart-panel">Task 3: Bar chart panel<a class="headerlink" href="#task-3-bar-chart-panel" title="Permanent link">&para;</a></h2>
 <p>Add a panel which shows the number of requests per status code as a bar chart.</p>
 <ol>
-<li>Click <code>+ Add</code> and select <code>Visualization</code>, then choose the data source <code>Mimir</code></li>
+<li>Click <code>+</code> (twice) in the sidebar on the right hand side and select <code>Configure visualization</code>, then choose the data source <code>Mimir</code></li>
 <li>Enter the query and click <code>Run query</code></li>
-<li>Switch the visualization type from <code>Time series</code> to <code>Bar chart</code> using the dropdown in the top right corner of the panel editor</li>
+<li>Switch the visualization type to <code>Time series</code> / <code>Bar chart</code></li>
 <li>Set the panel title to <code>Requests by status</code></li>
 </ol>
 <p>Generate some more traffic, including errors using <code>/api/status/500</code>, and watch the bars change.</p>
@@ -1113,9 +1116,9 @@
 <h2 id="task-4-multiple-signals-with-left-and-right-axis">Task 4: Multiple signals with left and right axis<a class="headerlink" href="#task-4-multiple-signals-with-left-and-right-axis" title="Permanent link">&para;</a></h2>
 <p>Add a panel which combines two signals with different units: the request rate on the left axis and the 95th percentile of the request duration on the right axis. The metric <code>http_request_duration_seconds_bucket</code> is a histogram of the request durations.</p>
 <ol>
-<li>Click <code>+ Add</code> and select <code>Visualization</code>, then choose the data source <code>Mimir</code></li>
+<li>Click <code>+</code> (twice) in the sidebar on the right hand side and select <code>Configure visualization</code>, then choose the data source <code>Mimir</code></li>
 <li>Enter the query for the request rate as query <code>A</code> and the query for the request duration as query <code>B</code></li>
-<li>Expand the options of query <code>B</code> (below the query) and set <code>Axis</code> to <code>Right</code></li>
+<li>Set the visualization type to <code>Time series</code> / <code>Line chart</code></li>
 <li>Set the unit of the panel to <code>requests/sec</code>, then add a field override for the field of query <code>B</code> and set its unit to <code>seconds (s)</code></li>
 <li>Set the panel title to <code>Request rate vs. duration</code></li>
 </ol>
@@ -1127,12 +1130,12 @@
 <p>Query <code>B</code>:</p>
 <div class="language-promql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.95</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">le</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">{</span><span class="nl">job</span><span class="o">=</span><span class="p">"</span><span class="s">frontend-podinfo</span><span class="p">"}[</span><span class="s">5m</span><span class="p">]</span><span class="o">)))</span>
 </span></code></pre></div>
-<p>Field overrides are configured in the tab <code>All</code> → <code>Field</code> → <code>Overrides</code>: Add an override for the field matching the name of query <code>B</code> and set its unit.</p>
+<p>Field overrides are configured on the right hand side at the bottom: Add an override for the field matching the name of query <code>B</code> and set its unit.</p>
 </details>
 <h2 id="task-5-single-stat-panel">Task 5: Single stat panel<a class="headerlink" href="#task-5-single-stat-panel" title="Permanent link">&para;</a></h2>
 <p>Add a single stat panel which shows the total number of requests of the last hour.</p>
 <ol>
-<li>Click <code>+ Add</code> and select <code>Visualization</code>, then choose the data source <code>Mimir</code></li>
+<li>Click <code>+</code> (twice) in the sidebar on the right hand side and select <code>Configure visualization</code>, then choose the data source <code>Mimir</code></li>
 <li>Enter the query and click <code>Run query</code></li>
 <li>Switch the visualization type to <code>Stat</code></li>
 <li>Set the panel title to <code>Requests (last hour)</code></li>
@@ -1158,7 +1161,7 @@
 <h2 id="bonus-task-2-pie-chart-over-the-selected-time-range">Bonus Task 2: Pie chart over the selected time range<a class="headerlink" href="#bonus-task-2-pie-chart-over-the-selected-time-range" title="Permanent link">&para;</a></h2>
 <p>Add a pie chart which shows the share of each status code over the currently selected dashboard time range - without editing the query when you change the time range.</p>
 <ol>
-<li>Click <code>+ Add</code> and select <code>Visualization</code>, then choose the data source <code>Mimir</code></li>
+<li>Click <code>+</code> (twice) in the sidebar on the right hand side and select <code>Configure visualization</code>, then choose the data source <code>Mimir</code></li>
 <li>Enter the query and click <code>Run query</code></li>
 <li>Switch the visualization type to <code>Pie chart</code></li>
 <li>Set the panel title to <code>Status code distribution</code></li>
