@@ -208,9 +208,9 @@ spec:
     port: http
 ```
 
-<!-- .element: style="width: 30em; float: right;" -->
+<!-- .element: style="height: 22em; width: 30em; float: right;" -->
 
-![](180_observability/030_data/servicemonitor.drawio.svg) <!-- .element: style="width: 30%;" -->
+![](180_observability/030_data/servicemonitor.drawio.svg) <!-- .element: style="width: 50%;" -->
 
 ---
 
