@@ -1066,10 +1066,12 @@
 <h2 id="preparation-log-in-to-grafana">Preparation: Log in to Grafana<a class="headerlink" href="#preparation-log-in-to-grafana" title="Permanent link">&para;</a></h2>
 <p>Create the port forwarding for port 3000 using <code>kubectl</code> and Visual Studio Code. See <a href="../../020_lgtm/exercises/#task-5-access-grafana-web-ui">task 5 in the chapter about Grafana LGTM</a>.</p>
 <p>The panels you will create show the metrics of the demo application <code>podinfo</code> which you deployed in <a href="../../030_data/exercises/#task-5-deploy-demo-application">the chapter about data collection</a>. Keep the port forwarding for port 9898 from <a href="../../030_data/exercises/#task-6-create-a-port-forwarding">task 6 in that chapter</a> and generate some traffic so that the panels have data to display:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>https://9898.seatN.inmylab.de/api/echo
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>http://localhost:9898/api/echo
 </span></code></pre></div>
 <p>Trigger a few errors as well - you will need them for the status code panels:</p>
-<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>https://9898.seatN.inmylab.de/api/status/500
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>http://localhost:9898/status/500
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>http://localhost:9898/status/429
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>curl<span class="w"> </span>http://localhost:9898/status/404
 </span></code></pre></div>
 <h2 id="task-1-create-a-new-dashboard">Task 1: Create a new dashboard<a class="headerlink" href="#task-1-create-a-new-dashboard" title="Permanent link">&para;</a></h2>
 <ol>
